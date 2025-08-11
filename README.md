@@ -1,7 +1,3 @@
-Отлично 👍
-Вот полный объединённый и оформленный `README.md` в одном куске — можно копировать целиком:
-
-````markdown
 # 🎯 AQA Playwright Final Project
 
 [![Playwright](https://img.shields.io/badge/Tested%20with-Playwright-45ba4b?logo=playwright)](https://playwright.dev/)
