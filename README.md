@@ -123,82 +123,26 @@ git commit -am "commit message" -n      # Commit without lint/format checks
 ## 📂 Project Structure
 
 ```
-aqa-pw-final-project
-├── .env.dist
-├── .eslintignore
-├── .eslintrc.cjs
-├── .gitignore
-├── .prettierignore
-├── .prettierrc
-├── package-lock.json
-├── package.json
-├── playwright.config.ts
-├── README.md
-├── tsconfig.json
-├── src
-│   ├── api
-│   │   ├── clients
-│   │   │   ├── products.controller.ts
-│   │   │   ├── signin.controller.ts
-│   │   │   ├── orders.controller.ts
-│   │   │   ├── customers.controller.ts
-│   │   ├── controllers
-│   │   │   └── request.ts
-│   │   └── services
-│   │       ├── customers.api-service.ts
-│   │       ├── signin.api-service.ts
-│   │       ├── orders.api-service.ts
-│   │       └── product.api-service.ts
-│   ├── tests
-│   │   ├── customers
-│   │   ├── orders
-│   │   └── products
-│   ├── ui
-│   │   ├── pages
-│   │   │   ├── modals
-│   │   │   │   └── baseDelivery.page.ts
-│   │   │   ├── orders
-│   │   │   │   └── scheduleDelivery.page.ts
-│   │   │   ├── base.page.ts
-│   │   │   ├── home.page.ts
-│   │   │   ├── pageHolder.page.ts
-│   │   │   └── signin.page.ts
-│   │   └── services
-│   │       ├── home.ui-service.ts
-│   │       ├── order.ui-service.ts
-│   │       ├── orderDetails.ui-service.ts
-│   │       ├── orderSetup.ui-service.ts
-│   │       └── signin.ui-service.ts
-│   └── utils
-│       ├── validations
-│       │   ├── responseValidation.ts
-│       │   ├── schemaValidation.ts
-│       │   └── dataDisposal.utils.ts
-│       ├── date.utils.ts
-│       ├── enum.utils.ts
-│       ├── helper.ts
-│       ├── requestParams.utils.ts
-│       ├── reporter.utils.ts
-│       └── generateUniqueId.utils.ts
-└── tests
-    ├── api-services.fixture.ts
-    ├── controllers.fixture.ts
-    ├── index.fixture.ts
-    ├── mock.fixture.ts
-    ├── orders.fixture.ts
-    ├── ordersCustom.fixture.ts
-    ├── pages.fixture.ts
-    ├── products.fixture.ts
-    ├── tests
-    │   ├── orders
-    │   ├── products
-    │   └── ui
-    │       ├── checkUI
-    │       ├── criticalPath
-    │       └── smoke
-    ├── ui-services.fixture.ts
-    └── auth.setup.ts
-
+QA-PW-FINAL-PROJECT
+├── .husky                      # Git hooks
+├── src                         # Project source code
+│   ├── api                     # API clients, controllers, and services
+│   ├── config                  # Configuration files
+│   ├── data                    # Test data files
+│   ├── fixtures                # Fixtures
+│   ├── types                   # Custom types
+│   ├── ui                      # Page Objects and UI services
+│   └── utils                   # Helper functions and utilities
+├── .env.dist                   # Template for environment variables
+├── .gitignore                  # List of files to ignore
+├── .prettierignore             # List of files to ignore for Prettier
+├── .prettierrc                 # Prettier configuration
+├── .eslintrc.cjs               # ESLint configuration
+├── package-lock.json           # Locked versions of packages
+├── package.json                # Dependencies list and scripts
+├── playwright.config.ts        # Playwright configuration
+├── README.md                   # Project documentation
+└── tsconfig.json               # TypeScript configuration
 ```
 
 ---
