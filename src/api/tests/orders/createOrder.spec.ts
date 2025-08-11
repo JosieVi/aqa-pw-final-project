@@ -14,7 +14,7 @@ test.describe('[API] [Orders] Create a new order', () => {
   const createdCustomerIds: string[] = [];
   let productsId: string[] = [];
 
-  test.beforeEach(async ({ signInApiService, customersApiService, productsApiService }) => {
+  test.beforeEach(async ({ signInApiService }) => {
     token = await signInApiService.loginAsLocalUser();
   });
 
@@ -96,7 +96,7 @@ test.describe('[API] [Orders] Create a new order', () => {
     test(
       '400 Bad Request - Create order without products',
       { tag: [TAGS.API, TAGS.ORDERS, TAGS.REGRESSION] },
-      async ({ ordersController, productsApiService, customersApiService }) => {
+      async ({ ordersController, customersApiService }) => {
         const customer = await customersApiService.createCustomer(token);
 
         productsId = [];
@@ -176,7 +176,7 @@ test.describe('[API] [Orders] Create a new order', () => {
     test(
       '404 Not Found - Create order without customer',
       { tag: [TAGS.API, TAGS.ORDERS, TAGS.REGRESSION] },
-      async ({ ordersController, productsApiService, customersApiService }) => {
+      async ({ ordersController, productsApiService }) => {
         const product = await productsApiService.create(token);
 
         createdProductIds.push(product._id);

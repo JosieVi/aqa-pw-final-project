@@ -38,17 +38,13 @@ test.describe('[API] [Orders] Delete order by id', () => {
       },
     );
 
-    test(
-      '401 Unauthorized - Delete order with empty token',
-      { tag: [TAGS.API, TAGS.ORDERS, TAGS.REGRESSION] },
-      async ({ ordersController, ordersApiService }) => {
-        const id = generateUniqueId();
-        const token = '';
+    test('401 Unauthorized - Delete order with empty token', { tag: [TAGS.API, TAGS.ORDERS, TAGS.REGRESSION] }, async ({ ordersController }) => {
+      const id = generateUniqueId();
+      const token = '';
 
-        const response = await ordersController.delete(id, token);
-        validateResponse(response, STATUS_CODES.UNAUTHORIZED, false, ERROR_MESSAGES.NOT_AUTHORIZED);
-      },
-    );
+      const response = await ordersController.delete(id, token);
+      validateResponse(response, STATUS_CODES.UNAUTHORIZED, false, ERROR_MESSAGES.NOT_AUTHORIZED);
+    });
 
     test('404 Not Found - Delete not exist order', { tag: [TAGS.API, TAGS.ORDERS, TAGS.REGRESSION] }, async ({ ordersController }) => {
       const fakeOrderId = generateUniqueId();

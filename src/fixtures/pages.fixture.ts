@@ -76,6 +76,7 @@ export const test = base.extend<ISalesPortalPages>({
   },
   editDeliveryPage: async ({ page }, use) => {
     await use(new EditDeliveryPage(page));
+  },
 
   notificationsModal: async ({ page }, use) => {
     await use(new NotificationsModal(page));
