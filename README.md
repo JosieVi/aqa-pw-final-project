@@ -1,111 +1,157 @@
-# Установка
+Отлично 👍
+Вот полный объединённый и оформленный `README.md` в одном куске — можно копировать целиком:
 
-1. Заходим в папку на вашем ПК в которой будет ваша папка репозитария и запускаем [Git bash](https://git-scm.com/downloads/win) и клонируем репозитарий командой:
+````markdown
+# 🎯 AQA Playwright Final Project
+
+[![Playwright](https://img.shields.io/badge/Tested%20with-Playwright-45ba4b?logo=playwright)](https://playwright.dev/)
+[![TypeScript](https://img.shields.io/badge/Language-TypeScript-3178c6?logo=typescript)](https://www.typescriptlang.org/)
+[![Lint](https://img.shields.io/badge/Lint-ESLint-4B32C3?logo=eslint)](https://eslint.org/)
+[![Formatter](https://img.shields.io/badge/Format-Prettier-F7B93E?logo=prettier)](https://prettier.io/)
+
+📌 **Final course project for Automated Quality Assurance (AQA) using Playwright and TypeScript.**  
+Covers **UI tests**, **API tests**, **reporting**, and **code quality tools**.
+
+---
+
+## 🚀 Installation Guide
+
+### 1️⃣ Clone the Repository
+Install [Git Bash](https://git-scm.com/downloads/win), open the folder where you want the project, and run:
+```bash
+git clone https://github.com/origamerpro/aqa-pw-final-project.git
+````
+
+---
+
+### 2️⃣ Open the Project
+
+1. Navigate to the project folder.
+2. Open it in [VS Code](https://code.visualstudio.com/Download).
+3. Open the terminal — you should see something like:
 
 ```bash
-git clone https://github.com/origamerpro/AQA_AK_course_project.git
+aqa-pw-final-project (main)
 ```
 
-2. Заходим в папку с проектом и запускаем [VS Code](https://code.visualstudio.com/Download)
-3. Заходим в терминал и там должна быть строка с названием проекта в конце:
+---
+
+### 3️⃣ Install TypeScript (if not already installed)
 
 ```bash
-AQA_AK_course_project (main)
-```
-
-4. Если у вас не установлен TypeScript, то установите его командами:
-
-```bash
-npm i -g typescript --savedev
+npm i -g typescript --save-dev
 npm i -g ts-node
 ```
 
-5. Для установки всех остальных зависимостей прописываем команду:
+---
+
+### 4️⃣ Install Dependencies
 
 ```bash
-npm i
+npm install
 ```
 
-6. Для проверки установленных зависимостей прописываем команду:
+---
+
+### 5️⃣ Verify Installed Packages
 
 ```bash
 npm list
 ```
 
-Скриншот для сверки:
-![list packages](https://live.staticflickr.com/65535/54587212677_9ac9e4f918_b.jpg?raw=true) 7. Создаем файл .env в папке с проектом и добавляем в него свои данные:
+📸 *Example output:*
+![list packages](https://live.staticflickr.com/65535/54587212677_9ac9e4f918_b.jpg?raw=true)
+
+---
+
+### 6️⃣ Configure Environment Variables
+
+Create a `.env` file in the root folder:
 
 ```bash
 USER_LOGIN=yourlogin
 USER_PASSWORD=yourpassword
 ```
 
-8. Файл .env.dist для записи используемых переменных в проекте с комментариями:
+💡 Check `.env.dist` for a commented example.
 
-## Команды:
+---
 
-0. Коммит без проверки кода:
+## 🧪 Running Tests
 
-```bash
-git commit -(a)m "commit message" -n
-```
-
-1. Запуск тестов UI:
+### 🔹 UI Tests
 
 ```bash
-npm run test:ui
+npm run test:ui   # Run all UI tests
+npm run ui-mode   # Open Playwright UI mode
 ```
 
-2. Запуск тестов API:
+### 🔹 API Tests
 
 ```bash
 npm run test:api
 ```
 
-3. Проверка кода на ошибки:
+---
+
+## 🛠 Code Quality
 
 ```bash
-npm run lint
+npm run lint        # Check code for linting issues
+npm run lint-fix    # Fix linting issues
+npm run format      # Check formatting
+npm run format-fix  # Fix formatting
 ```
 
-4. Проверка формата кода:
+---
+
+## 📊 Reporting
 
 ```bash
-npm run format
+npm run report-html-open   # Open Playwright HTML report
+npm run allure-report      # Generate Allure report
+npm run allure-report-open # Open Allure report
 ```
 
-5. Исправление ошибок в коде:
+---
+
+## 🔄 Git Commands
 
 ```bash
-npm run lint-fix
+git commit -m "commit message"          # Commit changes
+git commit -am "commit message" -n      # Commit without lint/format checks
 ```
 
-6. Исправления формата кода:
+---
 
-```bash
-npm run format-fix
+## 📂 Project Structure
+
+```
+📦 aqa-pw-final-project
+ ┣ 📂 tests        # UI & API tests
+ ┣ 📂 helpers      # Utility functions
+ ┣ 📂 fixtures     # Test data
+ ┣ 📂 reports      # Generated reports
+ ┣ .env.dist       # Env variables template
+ ┣ playwright.config.ts
+ ┗ package.json
 ```
 
-7. Запуск Playwright в режиме UI:
+---
 
-```bash
-npm run ui-mode
+## 🏆 Technologies Used
+
+* 🎭 [Playwright](https://playwright.dev/) — E2E testing framework
+* 💙 [TypeScript](https://www.typescriptlang.org/) — Typed JavaScript
+* 📏 [ESLint](https://eslint.org/) — Code linting
+* 🎨 [Prettier](https://prettier.io/) — Code formatting
+* 📈 [Allure](https://docs.qameta.io/allure/) — Beautiful test reports
+
+---
+
+✨ **Happy Testing!**
+
 ```
 
-8. Открытие отчета Playwright:
-
-```bash
-npm run report-html-open
-```
-
-9. Генерация отчета Allure:
-
-```bash
-npm run allure-report
-```
-
-10. Открытие отчета Allure:
-
-```bash
-npm run allure-report-open
+Хочешь, я к этому README добавлю **тёмный баннер с логотипами Playwright, TypeScript и Allure** в шапку, чтобы на GitHub страница выглядела как у больших open-source проектов?
 ```
