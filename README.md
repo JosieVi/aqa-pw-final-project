@@ -58,10 +58,6 @@ npm install
 ```bash
 npm list
 ```
-
-📸 *Example output:*
-![list packages](https://live.staticflickr.com/65535/54587212677_9ac9e4f918_b.jpg?raw=true)
-
 ---
 
 ### 6️⃣ Configure Environment Variables
@@ -127,14 +123,82 @@ git commit -am "commit message" -n      # Commit without lint/format checks
 ## 📂 Project Structure
 
 ```
-📦 aqa-pw-final-project
- ┣ 📂 tests        # UI & API tests
- ┣ 📂 helpers      # Utility functions
- ┣ 📂 fixtures     # Test data
- ┣ 📂 reports      # Generated reports
- ┣ .env.dist       # Env variables template
- ┣ playwright.config.ts
- ┗ package.json
+aqa-pw-final-project
+├── .env.dist
+├── .eslintignore
+├── .eslintrc.cjs
+├── .gitignore
+├── .prettierignore
+├── .prettierrc
+├── package-lock.json
+├── package.json
+├── playwright.config.ts
+├── README.md
+├── tsconfig.json
+├── src
+│   ├── api
+│   │   ├── clients
+│   │   │   ├── products.controller.ts
+│   │   │   ├── signin.controller.ts
+│   │   │   ├── orders.controller.ts
+│   │   │   ├── customers.controller.ts
+│   │   ├── controllers
+│   │   │   └── request.ts
+│   │   └── services
+│   │       ├── customers.api-service.ts
+│   │       ├── signin.api-service.ts
+│   │       ├── orders.api-service.ts
+│   │       └── product.api-service.ts
+│   ├── tests
+│   │   ├── customers
+│   │   ├── orders
+│   │   └── products
+│   ├── ui
+│   │   ├── pages
+│   │   │   ├── modals
+│   │   │   │   └── baseDelivery.page.ts
+│   │   │   ├── orders
+│   │   │   │   └── scheduleDelivery.page.ts
+│   │   │   ├── base.page.ts
+│   │   │   ├── home.page.ts
+│   │   │   ├── pageHolder.page.ts
+│   │   │   └── signin.page.ts
+│   │   └── services
+│   │       ├── home.ui-service.ts
+│   │       ├── order.ui-service.ts
+│   │       ├── orderDetails.ui-service.ts
+│   │       ├── orderSetup.ui-service.ts
+│   │       └── signin.ui-service.ts
+│   └── utils
+│       ├── validations
+│       │   ├── responseValidation.ts
+│       │   ├── schemaValidation.ts
+│       │   └── dataDisposal.utils.ts
+│       ├── date.utils.ts
+│       ├── enum.utils.ts
+│       ├── helper.ts
+│       ├── requestParams.utils.ts
+│       ├── reporter.utils.ts
+│       └── generateUniqueId.utils.ts
+└── tests
+    ├── api-services.fixture.ts
+    ├── controllers.fixture.ts
+    ├── index.fixture.ts
+    ├── mock.fixture.ts
+    ├── orders.fixture.ts
+    ├── ordersCustom.fixture.ts
+    ├── pages.fixture.ts
+    ├── products.fixture.ts
+    ├── tests
+    │   ├── orders
+    │   ├── products
+    │   └── ui
+    │       ├── checkUI
+    │       ├── criticalPath
+    │       └── smoke
+    ├── ui-services.fixture.ts
+    └── auth.setup.ts
+
 ```
 
 ---
@@ -146,12 +210,3 @@ git commit -am "commit message" -n      # Commit without lint/format checks
 * 📏 [ESLint](https://eslint.org/) — Code linting
 * 🎨 [Prettier](https://prettier.io/) — Code formatting
 * 📈 [Allure](https://docs.qameta.io/allure/) — Beautiful test reports
-
----
-
-✨ **Happy Testing!**
-
-```
-
-Хочешь, я к этому README добавлю **тёмный баннер с логотипами Playwright, TypeScript и Allure** в шапку, чтобы на GitHub страница выглядела как у больших open-source проектов?
-```
