@@ -2,18 +2,12 @@ import { BaseModal } from '../baseModal.page';
 import { logStep } from 'utils/reporter.utils';
 
 export class EditCustomerModalPage extends BaseModal {
-  readonly uniqueElement = this.page.locator(
-    '#edit-customer-modal .modal-content',
-  );
+  readonly uniqueElement = this.page.locator('#edit-customer-modal .modal-content');
 
   readonly modalTitle = this.uniqueElement.locator('h5');
-  readonly customersList = this.uniqueElement.locator(
-    'select[name="Customer"]',
-  );
+  readonly customersList = this.uniqueElement.locator('select[name="Customer"]');
   readonly saveButton = this.uniqueElement.locator('#update-customer-btn');
-  readonly cancelButton = this.uniqueElement.locator(
-    '#cancel-edit-customer-modal-btn',
-  );
+  readonly cancelButton = this.uniqueElement.locator('#cancel-edit-customer-modal-btn');
   readonly closeButton = this.uniqueElement.locator('.btn-close.hover-danger');
 
   @logStep('Get modal title')

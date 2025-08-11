@@ -4,16 +4,9 @@ import { IResponse } from 'types/api.types';
 export abstract class BasePage {
   constructor(protected page: Page) {}
 
-  async interceptRequest<T extends unknown[]>(
-    url: string,
-    triggerAction: (...args: T) => Promise<void>,
-    ...args: T
-  ) {
+  async interceptRequest<T extends unknown[]>(url: string, triggerAction: (...args: T) => Promise<void>, ...args: T) {
     return await test.step(`Intercept Request for URL: ${url}`, async () => {
-      const [request] = await Promise.all([
-        this.page.waitForRequest((request) => request.url().includes(url)),
-        triggerAction(...args),
-      ]);
+      const [request] = await Promise.all([this.page.waitForRequest((request) => request.url().includes(url)), triggerAction(...args)]);
       return request;
     });
   }
@@ -23,10 +16,7 @@ export abstract class BasePage {
     triggerAction: (...args: T) => Promise<void>,
     ...args: T
   ): Promise<IResponse<U>> {
-    const [response] = await Promise.all([
-      this.page.waitForResponse((response) => response.url().includes(url)),
-      triggerAction(...args),
-    ]);
+    const [response] = await Promise.all([this.page.waitForResponse((response) => response.url().includes(url)), triggerAction(...args)]);
     return await test.step(`Intercept Response for URL: ${url}`, async () => {
       return {
         status: response.status(),

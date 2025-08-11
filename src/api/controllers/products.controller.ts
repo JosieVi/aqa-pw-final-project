@@ -1,13 +1,7 @@
 import { RequestApi } from 'api/apiClients/request';
 import { apiConfig } from 'config/api-config';
 import { IRequestOptions } from 'types/api.types';
-import {
-  IProduct,
-  IProductFilterParams,
-  IProductResponse,
-  IProductsAllResponse,
-  IProductsFilteredResponse,
-} from 'types/products.types';
+import { IProduct, IProductFilterParams, IProductResponse, IProductsAllResponse, IProductsFilteredResponse } from 'types/products.types';
 import { logStep } from 'utils/reporter.utils';
 import { APIRequestContext } from '@playwright/test';
 import { convertRequestParams } from 'utils/requestParams.utils';
@@ -52,9 +46,7 @@ export class ProductsController {
   async getFilteredProducts(token: string, params?: IProductFilterParams) {
     const options: IRequestOptions = {
       baseURL: apiConfig.BASE_URL,
-      url:
-        apiConfig.ENDPOINTS.PRODUCTS +
-        (params ? convertRequestParams(params) : ''),
+      url: apiConfig.ENDPOINTS.PRODUCTS + (params ? convertRequestParams(params) : ''),
       method: 'get',
       headers: {
         'content-type': 'application/json',

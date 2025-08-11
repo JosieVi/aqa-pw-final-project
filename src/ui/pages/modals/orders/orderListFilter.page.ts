@@ -10,9 +10,7 @@ export class FiltersModal extends BaseModal {
 
   readonly draftCheckbox = this.page.locator('input#Draft-filter');
   readonly inProcessCheckbox = this.page.locator('input#In\\ Process-filter');
-  readonly partiallyReceivedCheckbox = this.page.locator(
-    'input#Partially\\ Received-filter',
-  );
+  readonly partiallyReceivedCheckbox = this.page.locator('input#Partially\\ Received-filter');
   readonly receivedCheckbox = this.page.locator('input#Received-filter');
   readonly canceledCheckbox = this.page.locator('input#Canceled-filter');
 
@@ -24,14 +22,7 @@ export class FiltersModal extends BaseModal {
   }
 
   @logStep('Toggle filter checkbox by name')
-  async toggleFilter(
-    filterName:
-      | 'Draft'
-      | 'In Process'
-      | 'Partially Received'
-      | 'Received'
-      | 'Canceled',
-  ) {
+  async toggleFilter(filterName: 'Draft' | 'In Process' | 'Partially Received' | 'Received' | 'Canceled') {
     const checkboxMap = {
       Draft: this.draftCheckbox,
       'In Process': this.inProcessCheckbox,
@@ -45,14 +36,7 @@ export class FiltersModal extends BaseModal {
   }
 
   @logStep('Check if filter checkbox is checked')
-  async isFilterChecked(
-    filterName:
-      | 'Draft'
-      | 'In Process'
-      | 'Partially Received'
-      | 'Received'
-      | 'Canceled',
-  ): Promise<boolean> {
+  async isFilterChecked(filterName: 'Draft' | 'In Process' | 'Partially Received' | 'Received' | 'Canceled'): Promise<boolean> {
     const checkboxMap = {
       Draft: this.draftCheckbox,
       'In Process': this.inProcessCheckbox,

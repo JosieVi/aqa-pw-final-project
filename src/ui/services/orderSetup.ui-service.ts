@@ -3,10 +3,7 @@ import { OrdersPage } from 'ui/pages/orders/orders.page';
 import { logStep } from 'utils/reporter.utils';
 import { BaseUIService } from './base.ui-service';
 import { HomeUIService } from './home.ui-service';
-import {
-  ICreateOrderData,
-  ICustomOrder as OrderCreationFixtures,
-} from 'fixtures/ordersCustom.fixture';
+import { ICreateOrderData, ICustomOrder as OrderCreationFixtures } from 'fixtures/ordersCustom.fixture';
 import { Page } from '@playwright/test';
 import { ORDER_STATUS } from 'data/orders/statuses.data';
 
@@ -22,15 +19,8 @@ export class OrderSetupService extends BaseUIService {
   }
 
   @logStep('Create order and navigate to details')
-  async createOrderAndNavigateToDetails(
-    status: ORDER_STATUS,
-    productsCount: number = 1,
-    receivedCount?: number,
-  ): Promise<string> {
-    let orderCreationFn: (
-      count?: number,
-      receivedCount?: number,
-    ) => Promise<ICreateOrderData>;
+  async createOrderAndNavigateToDetails(status: ORDER_STATUS, productsCount: number = 1, receivedCount?: number): Promise<string> {
+    let orderCreationFn: (count?: number, receivedCount?: number) => Promise<ICreateOrderData>;
 
     switch (status) {
       case ORDER_STATUS.IN_PROCESS:
@@ -43,8 +33,7 @@ export class OrderSetupService extends BaseUIService {
         orderCreationFn = this.orderFixtures.orderCanceledStatus;
         break;
       case ORDER_STATUS.PARTIALLY_RECEIVED:
-        orderCreationFn = (count, recCount) =>
-          this.orderFixtures.orderPartiallyReceivedStatus(count, recCount);
+        orderCreationFn = (count, recCount) => this.orderFixtures.orderPartiallyReceivedStatus(count, recCount);
         break;
       case ORDER_STATUS.RECEIVED:
         orderCreationFn = this.orderFixtures.orderReceivedStatus;

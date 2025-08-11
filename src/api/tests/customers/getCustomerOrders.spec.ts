@@ -13,45 +13,33 @@ test.describe('[API][Customers] Get Customer Orders by ID', () => {
   let customerWithoutOrdersId = '';
   let orderIds: string[] = [];
 
-  test.beforeAll(
-    async ({
-      signInApiService,
-      customersApiService,
-      ordersApiService,
-      productsApiService,
-    }) => {
-      token = await signInApiService.loginAsLocalUser();
+  test.beforeAll(async ({ signInApiService, customersApiService, ordersApiService, productsApiService }) => {
+    token = await signInApiService.loginAsLocalUser();
 
-      const customer = await customersApiService.createCustomer(token);
-      customerId = customer._id;
+    const customer = await customersApiService.createCustomer(token);
+    customerId = customer._id;
 
-      const customerWithoutOrders =
-        await customersApiService.createCustomer(token);
-      customerWithoutOrdersId = customerWithoutOrders._id;
+    const customerWithoutOrders = await customersApiService.createCustomer(token);
+    customerWithoutOrdersId = customerWithoutOrders._id;
 
-      const order1 = await ordersApiService.create(
-        {
-          customer: customerId,
-          products: (await productsApiService.populate(1, token)).map(
-            (p) => p._id,
-          ),
-        },
-        token,
-      );
+    const order1 = await ordersApiService.create(
+      {
+        customer: customerId,
+        products: (await productsApiService.populate(1, token)).map((p) => p._id),
+      },
+      token,
+    );
 
-      const order2 = await ordersApiService.create(
-        {
-          customer: customerId,
-          products: (await productsApiService.populate(1, token)).map(
-            (p) => p._id,
-          ),
-        },
-        token,
-      );
+    const order2 = await ordersApiService.create(
+      {
+        customer: customerId,
+        products: (await productsApiService.populate(1, token)).map((p) => p._id),
+      },
+      token,
+    );
 
-      orderIds = [order1._id, order2._id];
-    },
-  );
+    orderIds = [order1._id, order2._id];
+  });
 
   test.afterAll(async ({ customersApiService, ordersApiService }) => {
     for (const orderId of orderIds) {
@@ -69,10 +57,7 @@ test.describe('[API][Customers] Get Customer Orders by ID', () => {
       'Should return customer orders with valid ID - 200 OK',
       { tag: [TAGS.API, TAGS.CUSTOMERS, TAGS.SMOKE, TAGS.REGRESSION] },
       async ({ customersController }) => {
-        const response = await customersController.getCustomerOrdersById(
-          customerId,
-          token,
-        );
+        const response = await customersController.getCustomerOrdersById(customerId, token);
 
         validateResponse(response, STATUS_CODES.OK, true, null);
         validateSchema(orderListSchema, response.body.Orders);
@@ -86,77 +71,32 @@ test.describe('[API][Customers] Get Customer Orders by ID', () => {
       },
     );
 
-    test(
-      'Should return empty array for customer without orders - 200 OK',
-      { tag: [TAGS.API, TAGS.CUSTOMERS] },
-      async ({ customersController }) => {
-        const response = await customersController.getCustomerOrdersById(
-          customerWithoutOrdersId,
-          token,
-        );
+    test('Should return empty array for customer without orders - 200 OK', { tag: [TAGS.API, TAGS.CUSTOMERS] }, async ({ customersController }) => {
+      const response = await customersController.getCustomerOrdersById(customerWithoutOrdersId, token);
 
-        validateResponse(response, STATUS_CODES.OK, true, null);
-        expect(response.body.Orders).toHaveLength(0);
-      },
-    );
+      validateResponse(response, STATUS_CODES.OK, true, null);
+      expect(response.body.Orders).toHaveLength(0);
+    });
   });
 
   test.describe('Negative cases', () => {
-    test(
-      'Should return 404 for non-existent customer',
-      { tag: [TAGS.API, TAGS.CUSTOMERS] },
-      async ({ customersController }) => {
-        const nonExistentCustomerId = new ObjectId().toHexString();
-        const response = await customersController.getCustomerOrdersById(
-          nonExistentCustomerId,
-          token,
-        );
+    test('Should return 404 for non-existent customer', { tag: [TAGS.API, TAGS.CUSTOMERS] }, async ({ customersController }) => {
+      const nonExistentCustomerId = new ObjectId().toHexString();
+      const response = await customersController.getCustomerOrdersById(nonExistentCustomerId, token);
 
-        validateResponse(
-          response,
-          STATUS_CODES.NOT_FOUND,
-          false,
-          ERROR_MESSAGES.CUSTOMER_ID_FOR_ORDERS_NOT_FOUND(
-            nonExistentCustomerId,
-          ),
-        );
-      },
-    );
+      validateResponse(response, STATUS_CODES.NOT_FOUND, false, ERROR_MESSAGES.CUSTOMER_ID_FOR_ORDERS_NOT_FOUND(nonExistentCustomerId));
+    });
 
-    test(
-      'Should return 401 when using empty token',
-      { tag: [TAGS.API, TAGS.CUSTOMERS, TAGS.REGRESSION] },
-      async ({ customersController }) => {
-        const response = await customersController.getCustomerOrdersById(
-          customerId,
-          '',
-        );
+    test('Should return 401 when using empty token', { tag: [TAGS.API, TAGS.CUSTOMERS, TAGS.REGRESSION] }, async ({ customersController }) => {
+      const response = await customersController.getCustomerOrdersById(customerId, '');
 
-        validateResponse(
-          response,
-          STATUS_CODES.UNAUTHORIZED,
-          false,
-          'Not authorized',
-        );
-      },
-    );
+      validateResponse(response, STATUS_CODES.UNAUTHORIZED, false, 'Not authorized');
+    });
 
-    test(
-      'Should return 401 when using invalid token',
-      { tag: [TAGS.API, TAGS.CUSTOMERS, TAGS.REGRESSION] },
-      async ({ customersController }) => {
-        const response = await customersController.getCustomerOrdersById(
-          customerId,
-          'Invalid access token',
-        );
+    test('Should return 401 when using invalid token', { tag: [TAGS.API, TAGS.CUSTOMERS, TAGS.REGRESSION] }, async ({ customersController }) => {
+      const response = await customersController.getCustomerOrdersById(customerId, 'Invalid access token');
 
-        validateResponse(
-          response,
-          STATUS_CODES.UNAUTHORIZED,
-          false,
-          'Invalid access token',
-        );
-      },
-    );
+      validateResponse(response, STATUS_CODES.UNAUTHORIZED, false, 'Invalid access token');
+    });
   });
 });

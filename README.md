@@ -13,10 +13,12 @@ Covers **UI tests**, **API tests**, **reporting**, and **code quality tools**.
 ## 🚀 Installation Guide
 
 ### 1️⃣ Clone the Repository
+
 Install [Git Bash](https://git-scm.com/downloads/win), open the folder where you want the project, and run:
+
 ```bash
 git clone https://github.com/origamerpro/aqa-pw-final-project.git
-````
+```
 
 ---
 
@@ -54,6 +56,41 @@ npm install
 ```bash
 npm list
 ```
+
+📸 Example output:
+
+```bash
+"devDependencies": {
+"@eslint/js": "9.29.0",
+"@faker-js/faker": "9.7.0",
+"@playwright/test": "1.51.1",
+"@types/ajv": "0.0.5",
+"@types/dotenv": "6.1.1",
+"@types/lodash": "4.17.16",
+"@types/moment": "2.11.29",
+"@types/node": "22.14.1",
+"@types/rimraf": "3.0.2",
+"@typescript-eslint/eslint-plugin": "8.34.0",
+"@typescript-eslint/parser": "8.34.0",
+"ajv-formats": "3.0.1",
+"ajv": "8.17.1",
+"allure-commandline": "2.34.0",
+"allure-playwright": "3.2.2",
+"bson": "6.10.4",
+"dotenv": "16.5.0",
+"eslint-config-prettier": "10.1.5",
+"eslint-plugin-prettier": "5.4.1",
+"eslint": "9.29.0",
+"globals": "16.2.0",
+"husky": "9.1.7",
+"lodash": "4.17.21",
+"moment": "2.30.1",
+"prettier": "3.5.3",
+"rimraf": "6.0.1",
+"typescript-eslint": "8.34.0"
+}
+```
+
 ---
 
 ### 6️⃣ Configure Environment Variables
@@ -145,8 +182,8 @@ QA-PW-FINAL-PROJECT
 
 ## 🏆 Technologies Used
 
-* 🎭 [Playwright](https://playwright.dev/) — E2E testing framework
-* 💙 [TypeScript](https://www.typescriptlang.org/) — Typed JavaScript
-* 📏 [ESLint](https://eslint.org/) — Code linting
-* 🎨 [Prettier](https://prettier.io/) — Code formatting
-* 📈 [Allure](https://docs.qameta.io/allure/) — Beautiful test reports
+- 🎭 [Playwright](https://playwright.dev/) — E2E testing framework
+- 💙 [TypeScript](https://www.typescriptlang.org/) — Typed JavaScript
+- 📏 [ESLint](https://eslint.org/) — Code linting
+- 🎨 [Prettier](https://prettier.io/) — Code formatting
+- 📈 [Allure](https://docs.qameta.io/allure/) — Beautiful test reports

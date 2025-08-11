@@ -2,11 +2,7 @@ import { APIRequestContext } from '@playwright/test';
 import { CustomersController } from 'api/controllers/customers.controller';
 import { generateCustomerData } from 'data/customers/generateCustomer.data';
 import { STATUS_CODES } from 'data/statusCodes';
-import {
-  ICustomer,
-  ICustomerFilterParams,
-  ICustomersAllResponse,
-} from 'types/customer.types';
+import { ICustomer, ICustomerFilterParams, ICustomersAllResponse } from 'types/customer.types';
 import { logStep } from 'utils/reporter.utils';
 import { validateResponse } from 'utils/validations/responseValidation';
 
@@ -60,11 +56,7 @@ export class CustomersApiService {
   }
 
   @logStep('Create multiple test customers via API')
-  async createTestUsers(
-    token: string,
-    count = 3,
-    customData: Partial<ICustomer> = {},
-  ) {
+  async createTestUsers(token: string, count = 3, customData: Partial<ICustomer> = {}) {
     const users = [];
     for (let i = 0; i < count; i++) {
       const userData: ICustomer = {

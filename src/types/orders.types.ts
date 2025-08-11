@@ -1,8 +1,4 @@
-import {
-  IResponseFields,
-  ordersSortField,
-  sortDirection,
-} from 'types/api.types';
+import { IResponseFields, ordersSortField, sortDirection } from 'types/api.types';
 import { ICustomerFromResponse } from 'types/customer.types';
 import { IProduct } from 'types/products.types';
 import { COUNTRIES } from 'data/customers/countries.data';

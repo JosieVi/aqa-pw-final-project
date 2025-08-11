@@ -17,17 +17,13 @@ test.describe('[API][Customer] Get Customer By ID', () => {
   });
 
   test.describe('Positive', () => {
-    test(
-      'Get customer by id - 200 OK',
-      { tag: [TAGS.API, TAGS.CUSTOMERS, TAGS.SMOKE, TAGS.REGRESSION] },
-      async ({ customersController }) => {
-        const response = await customersController.getById(customer._id, token);
-        validateResponse(response, STATUS_CODES.OK, true, null);
-        validateSchema(oneCustomerSchema, response.body);
-        const currentCustomer = response.body.Customer;
-        expect.soft(customer).toEqual(currentCustomer);
-      },
-    );
+    test('Get customer by id - 200 OK', { tag: [TAGS.API, TAGS.CUSTOMERS, TAGS.SMOKE, TAGS.REGRESSION] }, async ({ customersController }) => {
+      const response = await customersController.getById(customer._id, token);
+      validateResponse(response, STATUS_CODES.OK, true, null);
+      validateSchema(oneCustomerSchema, response.body);
+      const currentCustomer = response.body.Customer;
+      expect.soft(customer).toEqual(currentCustomer);
+    });
   });
 
   test.afterEach(async ({ customersController }) => {
@@ -41,12 +37,7 @@ test.describe('[API][Customer] Get Customer By ID', () => {
       async ({ customersController }) => {
         const token = '';
         const response = await customersController.getById(customer._id, token);
-        validateResponse(
-          response,
-          STATUS_CODES.UNAUTHORIZED,
-          false,
-          ERROR_MESSAGES.NOT_AUTHORIZED,
-        );
+        validateResponse(response, STATUS_CODES.UNAUTHORIZED, false, ERROR_MESSAGES.NOT_AUTHORIZED);
       },
     );
 
@@ -56,12 +47,7 @@ test.describe('[API][Customer] Get Customer By ID', () => {
       async ({ customersController }) => {
         const token = 'Beer eyJhbGci';
         const response = await customersController.getById(customer._id, token);
-        validateResponse(
-          response,
-          STATUS_CODES.UNAUTHORIZED,
-          false,
-          ERROR_MESSAGES.INVALID_ACCESS_TOKEN,
-        );
+        validateResponse(response, STATUS_CODES.UNAUTHORIZED, false, ERROR_MESSAGES.INVALID_ACCESS_TOKEN);
       },
     );
 
@@ -71,12 +57,7 @@ test.describe('[API][Customer] Get Customer By ID', () => {
       async ({ customersController }) => {
         const invalidId = '684e61b31c508c5d5e53f421';
         const response = await customersController.getById(invalidId, token);
-        validateResponse(
-          response,
-          STATUS_CODES.NOT_FOUND,
-          false,
-          ERROR_MESSAGES.CUSTOMER_NOT_FOUND(invalidId),
-        );
+        validateResponse(response, STATUS_CODES.NOT_FOUND, false, ERROR_MESSAGES.CUSTOMER_NOT_FOUND(invalidId));
       },
     );
   });

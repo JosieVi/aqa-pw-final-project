@@ -1,8 +1,5 @@
 import test from '@playwright/test';
-import {
-  OrdersListColumn,
-  OrdersListColumnForSorting,
-} from 'data/orders/ordersListColumn.data';
+import { OrdersListColumn, OrdersListColumnForSorting } from 'data/orders/ordersListColumn.data';
 import { sortDirection } from 'types/api.types';
 import { SalesPortalPage } from 'ui/pages/salesPortal.page';
 import { logStep } from 'utils/reporter.utils';
@@ -45,10 +42,7 @@ export class OrdersPage extends SalesPortalPage {
     exact: true,
   });
   readonly statusHeader = this.tableHeader.getByText('Status', { exact: true });
-  readonly assignedManagerHeader = this.tableHeader.getByText(
-    'Assigned Manager',
-    { exact: true },
-  );
+  readonly assignedManagerHeader = this.tableHeader.getByText('Assigned Manager', { exact: true });
   readonly createdOnHeader = this.tableHeader.getByText('Created On', {
     exact: true,
   });
@@ -59,34 +53,21 @@ export class OrdersPage extends SalesPortalPage {
   tableRowByOrderNumber(orderNumber: string) {
     return this.tableBody.locator('tr', { hasText: orderNumber });
   }
-  private getSortableColumnHeaderLocator(
-    columnName: OrdersListColumnForSorting,
-  ) {
+  private getSortableColumnHeaderLocator(columnName: OrdersListColumnForSorting) {
     return this.tableHeader.locator('th div[onclick*="sortOrdersInTable"]', {
       hasText: columnName,
     });
   }
 
   // Нижняя часть страницы Orders List (пагинация)
-  readonly paginationControlsContainer = this.page.locator(
-    '#pagination-controls',
-  );
-  readonly itemsOnPageLabel = this.paginationControlsContainer.getByText(
-    'Items on page:',
-    {
-      exact: true,
-    },
-  );
+  readonly paginationControlsContainer = this.page.locator('#pagination-controls');
+  readonly itemsOnPageLabel = this.paginationControlsContainer.getByText('Items on page:', {
+    exact: true,
+  });
   readonly paginationSelect = this.page.locator('#pagination-select');
-  readonly paginationButtonsContainer = this.page.locator(
-    '#pagination-buttons',
-  );
-  readonly previousPageButton = this.paginationButtonsContainer.locator(
-    'button[title="Previous"]',
-  );
-  readonly nextPageButton = this.paginationButtonsContainer.locator(
-    'button[title="Next"]',
-  );
+  readonly paginationButtonsContainer = this.page.locator('#pagination-buttons');
+  readonly previousPageButton = this.paginationButtonsContainer.locator('button[title="Previous"]');
+  readonly nextPageButton = this.paginationButtonsContainer.locator('button[title="Next"]');
   getPageByNumber(pageNumber: number) {
     return this.paginationButtonsContainer.getByRole('button', {
       name: String(pageNumber),
@@ -94,14 +75,10 @@ export class OrdersPage extends SalesPortalPage {
     });
   }
   detailsButtonByOrderNumber(orderNumber: string) {
-    return this.tableRowByOrderNumber(orderNumber).locator(
-      'a.btn-link.table-btn:has(i.bi-card-text)',
-    );
+    return this.tableRowByOrderNumber(orderNumber).locator('a.btn-link.table-btn:has(i.bi-card-text)');
   }
   reopenButtonByOrderNumber(orderNumber: string) {
-    return this.tableRowByOrderNumber(orderNumber).locator(
-      'button.btn-link.table-btn i.bi-box-arrow-in-right',
-    );
+    return this.tableRowByOrderNumber(orderNumber).locator('button.btn-link.table-btn i.bi-box-arrow-in-right');
   }
 
   uniqueElement = this.ordersListTitle;
@@ -133,14 +110,9 @@ export class OrdersPage extends SalesPortalPage {
   }
 
   @logStep('Get Cell Text By Order Number And Column')
-  async getCellTextByOrderNumberAndColumn(
-    orderNumber: string,
-    columnName: OrdersListColumn,
-  ) {
+  async getCellTextByOrderNumberAndColumn(orderNumber: string, columnName: OrdersListColumn) {
     const row = this.tableRowByOrderNumber(orderNumber);
-    const headerTexts = await this.tableHeader
-      .locator('th > div > div')
-      .allTextContents();
+    const headerTexts = await this.tableHeader.locator('th > div > div').allTextContents();
     const columnIndex = headerTexts.indexOf(columnName);
 
     const cell = row.locator('td').nth(columnIndex);
@@ -150,27 +122,20 @@ export class OrdersPage extends SalesPortalPage {
   @logStep('Click Details Button')
   async clickDetailsButton(orderNumber: string) {
     const row = this.tableRowByOrderNumber(orderNumber);
-    const detailsButton = row
-      .locator('a.btn-link.table-btn i.bi-card-text')
-      .locator('..');
+    const detailsButton = row.locator('a.btn-link.table-btn i.bi-card-text').locator('..');
     await detailsButton.click();
   }
 
   @logStep('Click Reopen Button')
   async clickReopenButton(orderNumber: string) {
     const row = this.tableRowByOrderNumber(orderNumber);
-    const reopenButton = row
-      .locator('button.btn-link.table-btn i.bi-box-arrow-in-right')
-      .locator('..');
+    const reopenButton = row.locator('button.btn-link.table-btn i.bi-box-arrow-in-right').locator('..');
     await reopenButton.click();
   }
 
   @logStep('Click Column Header For Sort')
   async clickColumnHeaderForSort(columnName: OrdersListColumnForSorting) {
-    const columnHeader = this.tableHeader.locator(
-      'th div[onclick*="sortOrdersInTable"]',
-      { hasText: columnName },
-    );
+    const columnHeader = this.tableHeader.locator('th div[onclick*="sortOrdersInTable"]', { hasText: columnName });
     await columnHeader.click();
   }
 
@@ -178,20 +143,12 @@ export class OrdersPage extends SalesPortalPage {
     return await test.step(`Get current sort direction for column ${columnName}`, async () => {
       const columnHeader = this.getSortableColumnHeaderLocator(columnName);
 
-      const [current, direction] = await Promise.all([
-        columnHeader.getAttribute('current'),
-        columnHeader.getAttribute('direction'),
-      ]);
-      return current === 'true' && (direction === 'asc' || direction === 'desc')
-        ? direction
-        : 'none';
+      const [current, direction] = await Promise.all([columnHeader.getAttribute('current'), columnHeader.getAttribute('direction')]);
+      return current === 'true' && (direction === 'asc' || direction === 'desc') ? direction : 'none';
     });
   }
 
-  async sortColumnBy(
-    columnName: OrdersListColumnForSorting,
-    direction: sortDirection,
-  ) {
+  async sortColumnBy(columnName: OrdersListColumnForSorting, direction: sortDirection) {
     return await test.step(`Sort column ${columnName} by ${direction} direction`, async () => {
       const currentDirection = await this.getCurrentSortDirection(columnName);
 
@@ -199,8 +156,7 @@ export class OrdersPage extends SalesPortalPage {
         return;
       } else if (currentDirection === 'none') {
         await this.clickColumnHeaderForSort(columnName);
-        const afterFirstClickDirection =
-          await this.getCurrentSortDirection(columnName);
+        const afterFirstClickDirection = await this.getCurrentSortDirection(columnName);
 
         if (afterFirstClickDirection !== direction) {
           await this.clickColumnHeaderForSort(columnName);

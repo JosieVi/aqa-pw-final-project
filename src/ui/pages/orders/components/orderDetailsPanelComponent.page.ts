@@ -6,40 +6,22 @@ export class OrderDetailsPanelComponent extends SalesPortalPage {
   readonly title = this.page.getByRole('heading', {
     name: 'Order Details',
   });
-  readonly orderNumberValue = this.page.locator(
-    'span:has-text("Order number:") + span',
-  );
-  readonly assignManagerButton = this.page.locator(
-    'u[onclick="renderAssigneManagerModal()"]',
-  );
-  readonly editAssignedManagerButton = this.page.locator(
-    '#assigned-manager-container button[title="Edit Assigned Manager"]',
-  );
+  readonly orderNumberValue = this.page.locator('span:has-text("Order number:") + span');
+  readonly assignManagerButton = this.page.locator('u[onclick="renderAssigneManagerModal()"]');
+  readonly editAssignedManagerButton = this.page.locator('#assigned-manager-container button[title="Edit Assigned Manager"]');
 
-  readonly removeAssignedManagerButton = this.page.locator(
-    '#assigned-manager-container button[title="Remove Assigned Manager"]',
-  );
+  readonly removeAssignedManagerButton = this.page.locator('#assigned-manager-container button[title="Remove Assigned Manager"]');
   readonly assignedManagerLink = this.page.locator('#assigned-manager-link');
   readonly cancelOrderButton = this.page.locator('#cancel-order');
   readonly reopenOrderButton = this.page.locator('#reopen-order');
   readonly processOrderButton = this.page.locator('#process-order');
   readonly refreshOrderButton = this.page.locator('#refresh-order');
-  readonly orderStatusBarContainer = this.page.locator(
-    '#order-status-bar-container',
-  );
+  readonly orderStatusBarContainer = this.page.locator('#order-status-bar-container');
 
-  readonly orderStatusValue = this.orderStatusBarContainer
-    .locator('div:has(span.fw-bold:has-text("Order Status")) > span')
-    .nth(1);
-  readonly totalPriceValue = this.orderStatusBarContainer.locator(
-    'div:has-text("Total Price") > span.text-primary',
-  );
-  readonly deliveryDateValue = this.orderStatusBarContainer.locator(
-    'div:has-text("Delivery") > span.text-primary',
-  );
-  readonly createdOnDateValue = this.orderStatusBarContainer.locator(
-    'div:has-text("Created On") > span.text-primary',
-  );
+  readonly orderStatusValue = this.orderStatusBarContainer.locator('div:has(span.fw-bold:has-text("Order Status")) > span').nth(1);
+  readonly totalPriceValue = this.orderStatusBarContainer.locator('div:has-text("Total Price") > span.text-primary');
+  readonly deliveryDateValue = this.orderStatusBarContainer.locator('div:has-text("Delivery") > span.text-primary');
+  readonly createdOnDateValue = this.orderStatusBarContainer.locator('div:has-text("Created On") > span.text-primary');
 
   uniqueElement = this.title;
 
@@ -125,11 +107,7 @@ export class OrderDetailsPanelComponent extends SalesPortalPage {
 
   @logStep('Get Total Price, Delivery Date and Created On Date values')
   async getOrderDetails() {
-    const [totalPrice, deliveryDate, createdOnDate] = await Promise.all([
-      this.getTotalPrice(),
-      this.getDeliveryDate(),
-      this.getCreatedOnDate(),
-    ]);
+    const [totalPrice, deliveryDate, createdOnDate] = await Promise.all([this.getTotalPrice(), this.getDeliveryDate(), this.getCreatedOnDate()]);
     return {
       totalPrice,
       deliveryDate,

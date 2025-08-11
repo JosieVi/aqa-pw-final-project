@@ -7,14 +7,9 @@ export class OrderCustomerDetailsComponentPage extends SalesPortalPage {
   readonly title = this.uniqueElement.getByRole('heading', {
     name: 'Customer Details',
   });
-  readonly editCustomerButton = this.uniqueElement.locator(
-    '#edit-customer-pencil',
-  );
+  readonly editCustomerButton = this.uniqueElement.locator('#edit-customer-pencil');
 
-  readonly valueByField = (name: string) =>
-    this.uniqueElement.locator(
-      `.c-details:has(span:has-text("${name}")) > span.s-span:last-of-type`,
-    );
+  readonly valueByField = (name: string) => this.uniqueElement.locator(`.c-details:has(span:has-text("${name}")) > span.s-span:last-of-type`);
 
   readonly customerEmail = this.valueByField('Email');
   readonly customerName = this.valueByField('Name');
@@ -89,18 +84,7 @@ export class OrderCustomerDetailsComponentPage extends SalesPortalPage {
 
   @logStep('Get All Info Of Customer Details')
   async getAllCustomerDetails() {
-    const [
-      Email,
-      Name,
-      Country,
-      City,
-      Street,
-      House,
-      Flat,
-      Phone,
-      CreatedOn,
-      Notes,
-    ] = await Promise.all([
+    const [Email, Name, Country, City, Street, House, Flat, Phone, CreatedOn, Notes] = await Promise.all([
       this.getCustomerEmail(),
       this.getCustomerName(),
       this.getCustomerCountry(),

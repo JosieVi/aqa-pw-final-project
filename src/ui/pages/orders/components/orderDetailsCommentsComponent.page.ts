@@ -3,18 +3,11 @@ import { logStep } from 'utils/reporter.utils';
 
 export class OrderCommentsTab extends PageHolder {
   readonly tabPane = this.page.locator('#comments');
-  readonly commentsTabContainer = this.tabPane.locator(
-    '#comments-tab-container',
-  );
+  readonly commentsTabContainer = this.tabPane.locator('#comments-tab-container');
 
-  readonly commentInput =
-    this.commentsTabContainer.locator('#textareaComments');
-  readonly createCommentButton = this.commentsTabContainer.locator(
-    '#create-comment-btn',
-  );
-  readonly commentItems = this.commentsTabContainer.locator(
-    '.shadow-sm.rounded.mx-3.my-3.p-3.border',
-  );
+  readonly commentInput = this.commentsTabContainer.locator('#textareaComments');
+  readonly createCommentButton = this.commentsTabContainer.locator('#create-comment-btn');
+  readonly commentItems = this.commentsTabContainer.locator('.shadow-sm.rounded.mx-3.my-3.p-3.border');
   readonly uniqueElement = this.commentsTabContainer;
 
   @logStep('Add new comment')

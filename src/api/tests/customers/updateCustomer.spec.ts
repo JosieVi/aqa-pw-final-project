@@ -19,10 +19,7 @@ test.describe('[API] [Customers] Update the customer by ID', () => {
   test.beforeEach(async ({ signInApiService, customersApiService }) => {
     token = await signInApiService.loginAsLocalUser();
     originalCustomerData = generateCustomerData();
-    const originalCustomer = await customersApiService.createCustomer(
-      token,
-      originalCustomerData,
-    );
+    const originalCustomer = await customersApiService.createCustomer(token, originalCustomerData);
     originalCustomerID = originalCustomer._id;
   });
 
@@ -36,115 +33,39 @@ test.describe('[API] [Customers] Update the customer by ID', () => {
   });
 
   test.describe('Positive', () => {
-    positiveTestCasesForUpdate.forEach(
-      ({
-        name,
-        newCustomerData,
-        expectedStatusCode,
-        isSuccess,
-        errorMessage,
-      }) => {
-        test(
-          `Should update customer: ${name}`,
-          { tag: [TAGS.API, TAGS.CUSTOMERS, TAGS.SMOKE, TAGS.REGRESSION] },
-          async ({ customersController }) => {
-            const response = await customersController.update(
-              originalCustomerID,
-              { ...originalCustomerData, ...newCustomerData },
-              token,
-            );
-            validateResponse(
-              response,
-              expectedStatusCode,
-              isSuccess,
-              errorMessage,
-            );
-          },
-        );
-      },
-    );
+    positiveTestCasesForUpdate.forEach(({ name, newCustomerData, expectedStatusCode, isSuccess, errorMessage }) => {
+      test(`Should update customer: ${name}`, { tag: [TAGS.API, TAGS.CUSTOMERS, TAGS.SMOKE, TAGS.REGRESSION] }, async ({ customersController }) => {
+        const response = await customersController.update(originalCustomerID, { ...originalCustomerData, ...newCustomerData }, token);
+        validateResponse(response, expectedStatusCode, isSuccess, errorMessage);
+      });
+    });
   });
 
   test.describe('Negative', () => {
-    negativeTestCasesForUpdateWithoutToken.forEach(
-      ({
-        name,
-        newCustomerData,
-        token,
-        expectedStatusCode,
-        isSuccess,
-        errorMessage,
-      }) => {
-        test(
-          `Should NOT update customer: ${name}`,
-          { tag: [TAGS.API, TAGS.CUSTOMERS, TAGS.REGRESSION] },
-          async ({ customersController }) => {
-            const response = await customersController.update(
-              originalCustomerID,
-              { ...originalCustomerData, ...newCustomerData },
-              token,
-            );
-            validateResponse(
-              response,
-              expectedStatusCode,
-              isSuccess,
-              errorMessage,
-            );
-          },
-        );
-      },
-    );
+    negativeTestCasesForUpdateWithoutToken.forEach(({ name, newCustomerData, token, expectedStatusCode, isSuccess, errorMessage }) => {
+      test(`Should NOT update customer: ${name}`, { tag: [TAGS.API, TAGS.CUSTOMERS, TAGS.REGRESSION] }, async ({ customersController }) => {
+        const response = await customersController.update(originalCustomerID, { ...originalCustomerData, ...newCustomerData }, token);
+        validateResponse(response, expectedStatusCode, isSuccess, errorMessage);
+      });
+    });
 
-    negativeTestCasesForUpdate.forEach(
-      ({
-        name,
-        newCustomerData,
-        expectedStatusCode,
-        isSuccess,
-        errorMessage,
-      }) => {
-        test(
-          `Should NOT update customer: ${name}`,
-          { tag: [TAGS.API, TAGS.CUSTOMERS, TAGS.REGRESSION] },
-          async ({ customersController }) => {
-            const response = await customersController.update(
-              originalCustomerID,
-              { ...originalCustomerData, ...newCustomerData },
-              token,
-            );
-            validateResponse(
-              response,
-              expectedStatusCode,
-              isSuccess,
-              errorMessage,
-            );
-          },
-        );
-      },
-    );
+    negativeTestCasesForUpdate.forEach(({ name, newCustomerData, expectedStatusCode, isSuccess, errorMessage }) => {
+      test(`Should NOT update customer: ${name}`, { tag: [TAGS.API, TAGS.CUSTOMERS, TAGS.REGRESSION] }, async ({ customersController }) => {
+        const response = await customersController.update(originalCustomerID, { ...originalCustomerData, ...newCustomerData }, token);
+        validateResponse(response, expectedStatusCode, isSuccess, errorMessage);
+      });
+    });
 
     test(
       'Should NOT update customer: Duplicate email',
       { tag: [TAGS.API, TAGS.CUSTOMERS, TAGS.REGRESSION] },
       async ({ customersController, customersApiService }) => {
         const dublicateCustomerData = generateCustomerData();
-        const dublicateCustomer = await customersApiService.createCustomer(
-          token,
-          dublicateCustomerData,
-        );
+        const dublicateCustomer = await customersApiService.createCustomer(token, dublicateCustomerData);
         dublicateCustomerID = dublicateCustomer._id;
 
-        const response = await customersController.update(
-          originalCustomerID,
-          { ...originalCustomerData, email: dublicateCustomerData.email },
-          token,
-        );
-        validateResponse(
-          response,
-          STATUS_CODES.CONFLICT,
-          false,
-          `Customer with email '${dublicateCustomerData.email}' already exists`,
-        );
+        const response = await customersController.update(originalCustomerID, { ...originalCustomerData, email: dublicateCustomerData.email }, token);
+        validateResponse(response, STATUS_CODES.CONFLICT, false, `Customer with email '${dublicateCustomerData.email}' already exists`);
       },
     );
 
@@ -153,24 +74,12 @@ test.describe('[API] [Customers] Update the customer by ID', () => {
       { tag: [TAGS.API, TAGS.CUSTOMERS, TAGS.REGRESSION] },
       async ({ customersController, customersApiService }) => {
         const secondCustomerData = generateCustomerData();
-        const secondCustomer = await customersApiService.createCustomer(
-          token,
-          secondCustomerData,
-        );
+        const secondCustomer = await customersApiService.createCustomer(token, secondCustomerData);
         const secondCustomerID = secondCustomer._id;
         await customersApiService.deleteCustomer(secondCustomerID, token);
 
-        const response = await customersController.update(
-          secondCustomerID,
-          generateCustomerData(),
-          token,
-        );
-        validateResponse(
-          response,
-          STATUS_CODES.NOT_FOUND,
-          false,
-          `Customer with id '${secondCustomerID}' wasn't found`,
-        );
+        const response = await customersController.update(secondCustomerID, generateCustomerData(), token);
+        validateResponse(response, STATUS_CODES.NOT_FOUND, false, `Customer with id '${secondCustomerID}' wasn't found`);
       },
     );
   });

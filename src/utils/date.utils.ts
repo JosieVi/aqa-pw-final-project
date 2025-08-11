@@ -18,7 +18,5 @@ export function generateValidDeliveryDate(): string {
   const end = new Date();
   end.setDate(end.getDate() + 10);
 
-  return convertToDate(
-    faker.date.between({ from: start, to: end }).toISOString(),
-  );
+  return convertToDate(faker.date.between({ from: start, to: end }).toISOString());
 }

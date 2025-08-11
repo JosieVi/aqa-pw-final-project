@@ -48,12 +48,7 @@ export class ProductsApiService {
   }
 
   @logStep('Populate products via API')
-  async populate(
-    count: number = 3,
-    token: string,
-  ): Promise<IProductFromResponse[]> {
-    return await Promise.all(
-      Array.from({ length: count }, async () => await this.create(token)),
-    );
+  async populate(count: number = 3, token: string): Promise<IProductFromResponse[]> {
+    return await Promise.all(Array.from({ length: count }, async () => await this.create(token)));
   }
 }

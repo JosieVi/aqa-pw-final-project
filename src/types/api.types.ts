@@ -24,14 +24,7 @@ export type customersSortField = 'createdOn' | 'email' | 'name' | 'country';
 
 export type productsSortField = 'createdOn' | 'price' | 'name' | 'manufacturer';
 
-export type ordersSortField =
-  | 'createdOn'
-  | 'status'
-  | '_id'
-  | 'email'
-  | 'price'
-  | 'delivery'
-  | 'assignedManager';
+export type ordersSortField = 'createdOn' | 'status' | '_id' | 'email' | 'price' | 'delivery' | 'assignedManager';
 
 export interface ILoginResponseBody extends IResponseFields {
   User: {

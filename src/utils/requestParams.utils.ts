@@ -2,10 +2,7 @@ import { ICustomerFilterParams } from 'types/customer.types';
 import { IOrderFilterParams } from 'types/orders.types';
 import { IProductFilterParams } from 'types/products.types';
 
-type AllowedFilterParams =
-  | ICustomerFilterParams
-  | IProductFilterParams
-  | IOrderFilterParams;
+type AllowedFilterParams = ICustomerFilterParams | IProductFilterParams | IOrderFilterParams;
 
 export function convertRequestParams(params: AllowedFilterParams): string {
   if (!params || Object.keys(params).length === 0) return '';

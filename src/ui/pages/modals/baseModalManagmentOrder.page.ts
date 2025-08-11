@@ -18,17 +18,13 @@ export class ManagmentOrderModal extends BaseModal {
   @logStep('Select product in order')
   async selectProduct(productName: string, productIndex: number = 0) {
     // Выбираем продукт по индексу (по умолчанию первый)
-    await this.productsList
-      .nth(productIndex)
-      .selectOption({ value: productName });
+    await this.productsList.nth(productIndex).selectOption({ value: productName });
   }
 
   @logStep('Select product in specific position')
   async selectProductAtPosition(productName: string, position = 0) {
     // position начинается с 1 для лучшей читаемости в тестах
-    await this.productsList
-      .nth(position - 1)
-      .selectOption({ label: productName });
+    await this.productsList.nth(position - 1).selectOption({ label: productName });
   }
 
   @logStep('Click Add Product button')

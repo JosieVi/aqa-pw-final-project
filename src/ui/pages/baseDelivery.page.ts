@@ -1,11 +1,7 @@
 import { logStep } from 'utils/reporter.utils';
 import { SalesPortalPage } from './salesPortal.page';
 import { IAddress } from 'types/orders.types';
-import {
-  DATE_PICKER_MONTHS,
-  DELIVERY,
-  LOCATION,
-} from 'data/orders/delivery.data';
+import { DATE_PICKER_MONTHS, DELIVERY, LOCATION } from 'data/orders/delivery.data';
 
 export abstract class BaseDeliveryPage extends SalesPortalPage {
   readonly pageContainer = this.page.locator('#delivery-container');
@@ -25,20 +21,11 @@ export abstract class BaseDeliveryPage extends SalesPortalPage {
   readonly dateInputField = this.pageContainer.locator('#date-input');
   readonly dateInputIcon = this.pageContainer.locator('span.d-p-icon');
   readonly datepicker = this.page.locator('.datepicker');
-  readonly datepickerSwitcherToMonths = this.datepicker.locator(
-    '.datepicker-days .datepicker-switch',
-  );
-  readonly datepickerSwitcherToYears = this.datepicker.locator(
-    '.datepicker-months .datepicker-switch',
-  );
-  readonly datepickerYear = (year: string) =>
-    this.datepicker.locator('.year', { hasText: year });
-  readonly datepickerMonth = (month: DATE_PICKER_MONTHS) =>
-    this.datepicker.locator('.month', { hasText: month });
-  readonly datepickerDay = (day: string) =>
-    this.datepicker.locator(
-      `td.day:not(.disabled):not(.old):not(.new):has-text('${day}')`,
-    );
+  readonly datepickerSwitcherToMonths = this.datepicker.locator('.datepicker-days .datepicker-switch');
+  readonly datepickerSwitcherToYears = this.datepicker.locator('.datepicker-months .datepicker-switch');
+  readonly datepickerYear = (year: string) => this.datepicker.locator('.year', { hasText: year });
+  readonly datepickerMonth = (month: DATE_PICKER_MONTHS) => this.datepicker.locator('.month', { hasText: month });
+  readonly datepickerDay = (day: string) => this.datepicker.locator(`td.day:not(.disabled):not(.old):not(.new):has-text('${day}')`);
 
   uniqueElement = this.deliveryType;
   abstract expectedTitle: string;
@@ -69,10 +56,7 @@ export abstract class BaseDeliveryPage extends SalesPortalPage {
   }
 
   @logStep('Fill delivery form (date + address)')
-  async fillAddress(
-    address: IAddress & { finalDate: string },
-    deliveryType: DELIVERY,
-  ) {
+  async fillAddress(address: IAddress & { finalDate: string }, deliveryType: DELIVERY) {
     if (address.finalDate) {
       await this.fillDateInput(address.finalDate);
     }

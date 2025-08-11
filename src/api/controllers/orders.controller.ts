@@ -1,10 +1,4 @@
-import {
-  IDelivery,
-  IOrderData,
-  IOrderFilteredResponse,
-  IOrderRequestParams,
-  IOrderResponse,
-} from 'types/orders.types';
+import { IDelivery, IOrderData, IOrderFilteredResponse, IOrderRequestParams, IOrderResponse } from 'types/orders.types';
 import { logStep } from 'utils/reporter.utils';
 import { apiConfig } from 'config/api-config';
 import { IRequestOptions } from 'types/api.types';
@@ -39,9 +33,7 @@ export class OrdersAPIController {
   async getFilteredOrders(token: string, params?: IOrderRequestParams) {
     const options: IRequestOptions = {
       baseURL: apiConfig.BASE_URL,
-      url:
-        apiConfig.ENDPOINTS.ORDERS +
-        (params ? convertRequestParams(params) : ''),
+      url: apiConfig.ENDPOINTS.ORDERS + (params ? convertRequestParams(params) : ''),
       method: 'get',
       headers: {
         'content-type': 'application/json',

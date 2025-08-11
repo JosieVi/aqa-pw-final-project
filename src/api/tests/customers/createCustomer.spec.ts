@@ -25,89 +25,45 @@ test.describe('[API] [Customers] Create a new customer', () => {
       }
     });
 
-    positiveTestCasesForCreate.forEach(
-      ({ name, data, expectedStatusCode, isSuccess, errorMessage }) => {
-        test(
-          `Should create customer: ${name}`,
-          { tag: [TAGS.API, TAGS.CUSTOMERS, TAGS.SMOKE, TAGS.REGRESSION] },
-          async ({ customersController }) => {
-            const response = await customersController.create(data, token);
-            validateResponse(
-              response,
-              expectedStatusCode,
-              isSuccess,
-              errorMessage,
-            );
+    positiveTestCasesForCreate.forEach(({ name, data, expectedStatusCode, isSuccess, errorMessage }) => {
+      test(`Should create customer: ${name}`, { tag: [TAGS.API, TAGS.CUSTOMERS, TAGS.SMOKE, TAGS.REGRESSION] }, async ({ customersController }) => {
+        const response = await customersController.create(data, token);
+        validateResponse(response, expectedStatusCode, isSuccess, errorMessage);
 
-            id = response.body.Customer._id;
-          },
-        );
-      },
-    );
+        id = response.body.Customer._id;
+      });
+    });
   });
 
   test.describe('Negative', () => {
-    negativeTestCasesForCreateWithoutToken.forEach(
-      ({ name, data, token, expectedStatusCode, isSuccess, errorMessage }) => {
-        test(
-          `Should NOT create customer: ${name}`,
-          { tag: [TAGS.API, TAGS.CUSTOMERS, TAGS.REGRESSION] },
-          async ({ customersController }) => {
-            const response = await customersController.create(data, token);
-            validateResponse(
-              response,
-              expectedStatusCode,
-              isSuccess,
-              errorMessage,
-            );
-          },
-        );
-      },
-    );
+    negativeTestCasesForCreateWithoutToken.forEach(({ name, data, token, expectedStatusCode, isSuccess, errorMessage }) => {
+      test(`Should NOT create customer: ${name}`, { tag: [TAGS.API, TAGS.CUSTOMERS, TAGS.REGRESSION] }, async ({ customersController }) => {
+        const response = await customersController.create(data, token);
+        validateResponse(response, expectedStatusCode, isSuccess, errorMessage);
+      });
+    });
 
-    negativeTestCasesForCreate.forEach(
-      ({ name, data, expectedStatusCode, isSuccess, errorMessage }) => {
-        test(
-          `Should NOT create customer: ${name}`,
-          { tag: [TAGS.API, TAGS.CUSTOMERS, TAGS.REGRESSION] },
-          async ({ customersController }) => {
-            const response = await customersController.create(data, token);
-            validateResponse(
-              response,
-              expectedStatusCode,
-              isSuccess,
-              errorMessage,
-            );
-          },
-        );
-      },
-    );
+    negativeTestCasesForCreate.forEach(({ name, data, expectedStatusCode, isSuccess, errorMessage }) => {
+      test(`Should NOT create customer: ${name}`, { tag: [TAGS.API, TAGS.CUSTOMERS, TAGS.REGRESSION] }, async ({ customersController }) => {
+        const response = await customersController.create(data, token);
+        validateResponse(response, expectedStatusCode, isSuccess, errorMessage);
+      });
+    });
 
     test(
       'Should NOT create customer: Duplicate email',
       { tag: [TAGS.API, TAGS.CUSTOMERS, TAGS.REGRESSION] },
       async ({ customersController, customersApiService }) => {
         const customer1Data = generateCustomerData();
-        const createResponse1 = await customersApiService.createCustomer(
-          token,
-          customer1Data,
-        );
+        const createResponse1 = await customersApiService.createCustomer(token, customer1Data);
 
         const customer2Data = {
           ...generateCustomerData(),
           email: customer1Data.email,
         };
-        const createResponse2 = await customersController.create(
-          customer2Data,
-          token,
-        );
+        const createResponse2 = await customersController.create(customer2Data, token);
 
-        validateResponse(
-          createResponse2,
-          STATUS_CODES.CONFLICT,
-          false,
-          `Customer with email '${customer2Data.email}' already exists`,
-        );
+        validateResponse(createResponse2, STATUS_CODES.CONFLICT, false, `Customer with email '${customer2Data.email}' already exists`);
 
         id = createResponse1._id;
         if (id) {

@@ -5,26 +5,16 @@ export class NotificationsModal extends BaseModal {
   private readonly modalContainer = this.page.locator('#notification-popover');
 
   // Основные элементы модального окна
-  readonly modalTitle = this.modalContainer.locator(
-    '.card-header span.fw-bold',
-  );
+  readonly modalTitle = this.modalContainer.locator('.card-header span.fw-bold');
   readonly markAllReadButton = this.modalContainer.locator('#mark-all-read');
   readonly closeButton = this.modalContainer.locator('.card-header .btn-close');
-  readonly notificationsList =
-    this.modalContainer.locator('#notification-list');
-  readonly notificationItems =
-    this.notificationsList.locator('li.list-group-item');
+  readonly notificationsList = this.modalContainer.locator('#notification-list');
+  readonly notificationItems = this.notificationsList.locator('li.list-group-item');
 
   // Локаторы для элементов уведомлений
-  readonly notificationTexts = this.modalContainer.locator(
-    'span[data-testid="notification-text"]',
-  );
-  readonly notificationDates = this.modalContainer.locator(
-    'small[data-testid="notification-date"]',
-  );
-  readonly orderDetailsLinks = this.modalContainer.locator(
-    'a[data-testid="order-details-link"]',
-  );
+  readonly notificationTexts = this.modalContainer.locator('span[data-testid="notification-text"]');
+  readonly notificationDates = this.modalContainer.locator('small[data-testid="notification-date"]');
+  readonly orderDetailsLinks = this.modalContainer.locator('a[data-testid="order-details-link"]');
   readonly notificationContents = this.modalContainer.locator('div[data-read]');
 
   uniqueElement = this.modalTitle;
@@ -72,9 +62,7 @@ export class NotificationsModal extends BaseModal {
 
   @logStep('Check if notification is unread (bold) by index')
   async isNotificationUnread(index: number) {
-    const isRead =
-      (await this.notificationContents.nth(index).getAttribute('data-read')) ===
-      'true';
+    const isRead = (await this.notificationContents.nth(index).getAttribute('data-read')) === 'true';
     return !isRead;
   }
 

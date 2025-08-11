@@ -19,26 +19,18 @@ export class OrderDetailsService extends BaseUIService {
 
   @logStep('Verify all products are received')
   async verifyAllProductsReceived() {
-    const productAccordionCount =
-      await this.orderDetailsPage.receivedProductsSection.getProductsAccordionCount();
+    const productAccordionCount = await this.orderDetailsPage.receivedProductsSection.getProductsAccordionCount();
     expect(productAccordionCount).toBeGreaterThan(0);
     for (let i = 0; i < productAccordionCount; i++) {
-      const statusText =
-        await this.orderDetailsPage.receivedProductsSection.allReceivedStatusSpans
-          .nth(i)
-          .innerText();
+      const statusText = await this.orderDetailsPage.receivedProductsSection.allReceivedStatusSpans.nth(i).innerText();
       expect(statusText).toBe(PRODUCT_STATUS.RECEIVED);
     }
   }
 
   @logStep('Verify no receive options are available')
   async verifyNoReceiveOptionsAvailable(expectedOrderStatus: string) {
-    await logStep(
-      `Verifying no receive options for order in status: ${expectedOrderStatus}`,
-    );
-    await expect(
-      this.orderDetailsPage.receivedProductsSection.receiveButton,
-    ).not.toBeVisible();
+    await logStep(`Verifying no receive options for order in status: ${expectedOrderStatus}`);
+    await expect(this.orderDetailsPage.receivedProductsSection.receiveButton).not.toBeVisible();
   }
 
   async refreshPage() {

@@ -15,9 +15,7 @@ export function validateSchema(expectedSchema: object, body: object) {
       console.log(`Errors: ${JSON.stringify(validate.errors, null, 2)}`);
     }
 
-    expect
-      .soft(validate.errors == null, 'Should not have JSON schema errors')
-      .toBe(true);
+    expect.soft(validate.errors == null, 'Should not have JSON schema errors').toBe(true);
     expect.soft(isValid, 'Schema validation result').toBe(true);
   });
 }

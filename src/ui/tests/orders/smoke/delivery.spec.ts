@@ -5,30 +5,20 @@ import { test } from 'fixtures/ordersCustom.fixture';
 import { generateValidDeliveryDate } from 'utils/date.utils';
 
 test.describe('[UI] [Orders] [Order Details] [Delivery Tab]', () => {
-  test.beforeEach(
-    async ({
-      homeUIService,
-      orderDraftStatus,
-      ordersPage,
-      signInApiService,
-      page,
-    }) => {
-      const PRODUCTS_TO_CREATE_COUNT = 1;
-      const order = await orderDraftStatus(PRODUCTS_TO_CREATE_COUNT);
-      targetOrderId = order.id;
+  test.beforeEach(async ({ homeUIService, orderDraftStatus, ordersPage, signInApiService, page }) => {
+    const PRODUCTS_TO_CREATE_COUNT = 1;
+    const order = await orderDraftStatus(PRODUCTS_TO_CREATE_COUNT);
+    targetOrderId = order.id;
 
-      let token = await signInApiService.loginAsLocalUser();
+    let token = await signInApiService.loginAsLocalUser();
 
-      await homeUIService.openAsLoggedInUser();
-      // eslint-disable-next-line @typescript-eslint/no-unused-vars
-      token = (await page.context().cookies()).find(
-        (c) => c.name === 'Authorization',
-      )!.value;
+    await homeUIService.openAsLoggedInUser();
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    token = (await page.context().cookies()).find((c) => c.name === 'Authorization')!.value;
 
-      await homeUIService.openModule('Orders');
-      await ordersPage.waitForOpened();
-    },
-  );
+    await homeUIService.openModule('Orders');
+    await ordersPage.waitForOpened();
+  });
   let targetOrderId: string;
   const createdOrderIds: string[] = [];
   const createdCustomerIds: string[] = [];

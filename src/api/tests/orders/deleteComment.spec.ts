@@ -34,105 +34,43 @@ test.describe('[API] Delete order comment', () => {
   });
 
   test.describe('Positive cases', () => {
-    test(
-      'Successful comment deletion',
-      { tag: [TAGS.API, TAGS.ORDERS, TAGS.SMOKE] },
-      async ({ ordersController }) => {
-        const deleteResponse = await ordersController.deleteComment(
-          orderId,
-          commentId,
-          token,
-        );
+    test('Successful comment deletion', { tag: [TAGS.API, TAGS.ORDERS, TAGS.SMOKE] }, async ({ ordersController }) => {
+      const deleteResponse = await ordersController.deleteComment(orderId, commentId, token);
 
-        expect(deleteResponse.status).toBe(STATUS_CODES.DELETED);
-        expect.soft(deleteResponse.body).toBe('');
+      expect(deleteResponse.status).toBe(STATUS_CODES.DELETED);
+      expect.soft(deleteResponse.body).toBe('');
 
-        const orderAfterDelete = await ordersController.getByID(orderId, token);
-        const commentExists = orderAfterDelete.body.Order.comments.some(
-          (c: { _id: string }) => c._id === commentId,
-        );
-        expect(commentExists).toBeFalsy();
-      },
-    );
+      const orderAfterDelete = await ordersController.getByID(orderId, token);
+      const commentExists = orderAfterDelete.body.Order.comments.some((c: { _id: string }) => c._id === commentId);
+      expect(commentExists).toBeFalsy();
+    });
   });
 
   test.describe('Negative cases', () => {
-    test(
-      'Delete non-existent comment',
-      { tag: [TAGS.API, TAGS.ORDERS, TAGS.REGRESSION] },
-      async ({ ordersController }) => {
-        const fakeCommentId = generateUniqueId();
-        const response = await ordersController.deleteComment(
-          orderId,
-          fakeCommentId,
-          token,
-        );
+    test('Delete non-existent comment', { tag: [TAGS.API, TAGS.ORDERS, TAGS.REGRESSION] }, async ({ ordersController }) => {
+      const fakeCommentId = generateUniqueId();
+      const response = await ordersController.deleteComment(orderId, fakeCommentId, token);
 
-        validateResponse(
-          response,
-          STATUS_CODES.BAD_REQUEST,
-          false,
-          ERROR_MESSAGES.COMMENT_NOT_FOUND,
-        );
-      },
-    );
+      validateResponse(response, STATUS_CODES.BAD_REQUEST, false, ERROR_MESSAGES.COMMENT_NOT_FOUND);
+    });
 
-    test(
-      'Delete comment from non-existent order',
-      { tag: [TAGS.API, TAGS.ORDERS, TAGS.REGRESSION] },
-      async ({ ordersController }) => {
-        const nonExistentOrderId = generateUniqueId();
-        const response = await ordersController.deleteComment(
-          nonExistentOrderId,
-          commentId,
-          token,
-        );
+    test('Delete comment from non-existent order', { tag: [TAGS.API, TAGS.ORDERS, TAGS.REGRESSION] }, async ({ ordersController }) => {
+      const nonExistentOrderId = generateUniqueId();
+      const response = await ordersController.deleteComment(nonExistentOrderId, commentId, token);
 
-        validateResponse(
-          response,
-          STATUS_CODES.NOT_FOUND,
-          false,
-          ERROR_MESSAGES.ORDER_NOT_FOUND_WITH_ID(nonExistentOrderId),
-        );
-      },
-    );
+      validateResponse(response, STATUS_CODES.NOT_FOUND, false, ERROR_MESSAGES.ORDER_NOT_FOUND_WITH_ID(nonExistentOrderId));
+    });
 
-    test(
-      'Delete comment with empty token',
-      { tag: [TAGS.API, TAGS.ORDERS, TAGS.REGRESSION] },
-      async ({ ordersController }) => {
-        const response = await ordersController.deleteComment(
-          orderId,
-          commentId,
-          '',
-        );
+    test('Delete comment with empty token', { tag: [TAGS.API, TAGS.ORDERS, TAGS.REGRESSION] }, async ({ ordersController }) => {
+      const response = await ordersController.deleteComment(orderId, commentId, '');
 
-        validateResponse(
-          response,
-          STATUS_CODES.UNAUTHORIZED,
-          false,
-          ERROR_MESSAGES.NOT_AUTHORIZED,
-        );
-      },
-    );
+      validateResponse(response, STATUS_CODES.UNAUTHORIZED, false, ERROR_MESSAGES.NOT_AUTHORIZED);
+    });
 
-    test(
-      'Delete comment with invalid token',
-      { tag: [TAGS.API, TAGS.ORDERS, TAGS.REGRESSION] },
-      async ({ ordersController }) => {
-        const response = await ordersController.deleteComment(
-          orderId,
-          commentId,
-          'Invalid Token',
-        );
+    test('Delete comment with invalid token', { tag: [TAGS.API, TAGS.ORDERS, TAGS.REGRESSION] }, async ({ ordersController }) => {
+      const response = await ordersController.deleteComment(orderId, commentId, 'Invalid Token');
 
-        validateResponse(
-          response,
-          STATUS_CODES.UNAUTHORIZED,
-          false,
-          ERROR_MESSAGES.INVALID_ACCESS_TOKEN,
-        );
-      },
-    );
+      validateResponse(response, STATUS_CODES.UNAUTHORIZED, false, ERROR_MESSAGES.INVALID_ACCESS_TOKEN);
+    });
   });
 });

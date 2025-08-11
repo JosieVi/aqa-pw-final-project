@@ -22,7 +22,7 @@ export default defineConfig([
       prettier: prettierPlugin,
     },
     rules: {
-      'prettier/prettier': ['error', { singleQuote: true, semi: true }],
+      'prettier/prettier': ['error', { singleQuote: true, semi: true, printWidth: 150 }],
       quotes: ['error', 'single', { allowTemplateLiterals: true }],
       '@typescript-eslint/no-explicit-any': 'off',
     },

@@ -17,9 +17,7 @@ export class SignInUIService extends BaseUIService {
     });
     await this.signInPage.clickLogin();
     await this.homePage.waitForOpened();
-    const token = (await this.page.context().cookies()).find(
-      (c) => c.name === 'Authorization',
-    )!.value;
+    const token = (await this.page.context().cookies()).find((c) => c.name === 'Authorization')!.value;
     return token;
   }
 }

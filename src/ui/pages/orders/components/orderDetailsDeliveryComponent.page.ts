@@ -10,10 +10,7 @@ export class OrderDeliveryTab extends OrderTab {
   readonly deliveryTabButton = this.page.locator('#delivery-tab');
   readonly uniqueElement = this.tabContainer.locator('#delivery.active');
 
-  readonly scheduleDeliveryButton = this.page.locator(
-    '#delivery .delivery-btn',
-    { hasText: 'Schedule Delivery' },
-  );
+  readonly scheduleDeliveryButton = this.page.locator('#delivery .delivery-btn', { hasText: 'Schedule Delivery' });
   readonly editDeliveryButton = this.page.locator('#delivery .delivery-btn', {
     hasText: 'Edit Delivery',
   });
@@ -27,9 +24,7 @@ export class OrderDeliveryTab extends OrderTab {
   readonly flatValue = this.getValueLocator('Flat');
 
   private getValueLocator(label: string) {
-    return this.page.locator(
-      `//div[@id="delivery"]//div[contains(@class, "c-details")][span[1][text()="${label}"]]/span[2]`,
-    );
+    return this.page.locator(`//div[@id="delivery"]//div[contains(@class, "c-details")][span[1][text()="${label}"]]/span[2]`);
   }
 
   private async getText(locator: Locator): Promise<string> {
@@ -39,16 +34,15 @@ export class OrderDeliveryTab extends OrderTab {
 
   @logStep('Get full delivery info')
   async getDeliveryInfo(): Promise<IDelivery> {
-    const [condition, finalDate, country, city, street, house, flat] =
-      await Promise.all([
-        this.getText(this.deliveryTypeValue),
-        this.getText(this.deliveryDateValue),
-        this.getText(this.countryValue),
-        this.getText(this.cityValue),
-        this.getText(this.streetValue),
-        this.getText(this.houseValue),
-        this.getText(this.flatValue),
-      ]);
+    const [condition, finalDate, country, city, street, house, flat] = await Promise.all([
+      this.getText(this.deliveryTypeValue),
+      this.getText(this.deliveryDateValue),
+      this.getText(this.countryValue),
+      this.getText(this.cityValue),
+      this.getText(this.streetValue),
+      this.getText(this.houseValue),
+      this.getText(this.flatValue),
+    ]);
 
     return {
       condition: condition as DELIVERY,

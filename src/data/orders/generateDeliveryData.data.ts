@@ -3,11 +3,7 @@ import { COUNTRIES } from 'data/customers/countries.data';
 import { IAddress, IDelivery } from 'types/orders.types';
 import { DELIVERY } from './delivery.data';
 
-export function generateDeliveryData(params?: {
-  finalDate?: string;
-  condition?: DELIVERY;
-  address?: Partial<IAddress>;
-}): IDelivery {
+export function generateDeliveryData(params?: { finalDate?: string; condition?: DELIVERY; address?: Partial<IAddress> }): IDelivery {
   const defaultAddress: IAddress = {
     country: faker.helpers.arrayElement(Object.values(COUNTRIES)),
     city: faker.location.city(),
@@ -17,10 +13,8 @@ export function generateDeliveryData(params?: {
   };
 
   return {
-    finalDate:
-      params?.finalDate ?? faker.date.future().toISOString().split('T')[0],
-    condition:
-      params?.condition ?? faker.helpers.arrayElement(Object.values(DELIVERY)),
+    finalDate: params?.finalDate ?? faker.date.future().toISOString().split('T')[0],
+    condition: params?.condition ?? faker.helpers.arrayElement(Object.values(DELIVERY)),
     address: {
       ...defaultAddress,
       ...(params?.address || {}),

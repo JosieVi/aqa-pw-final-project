@@ -21,99 +21,57 @@ orderDraftStatus.describe('[API] [Orders] Update delivery', () => {
   });
 
   orderDraftStatus.describe('Positive', () => {
-    positiveTestCasesForDelivery.forEach(
-      ({ name, data, expectedStatusCode, isSuccess, errorMessage }) => {
-        orderDraftStatus(
-          `Should update delivery: ${name}`,
-          { tag: [TAGS.API, TAGS.ORDERS, TAGS.SMOKE, TAGS.REGRESSION] },
-          async ({ ordersController, orderDraftStatus }) => {
-            const { id: orderId } = await orderDraftStatus();
+    positiveTestCasesForDelivery.forEach(({ name, data, expectedStatusCode, isSuccess, errorMessage }) => {
+      orderDraftStatus(
+        `Should update delivery: ${name}`,
+        { tag: [TAGS.API, TAGS.ORDERS, TAGS.SMOKE, TAGS.REGRESSION] },
+        async ({ ordersController, orderDraftStatus }) => {
+          const { id: orderId } = await orderDraftStatus();
 
-            const response = await ordersController.updateDelivery(
-              orderId,
-              data,
-              token,
-            );
+          const response = await ordersController.updateDelivery(orderId, data, token);
 
-            validateResponse(
-              response,
-              expectedStatusCode,
-              isSuccess,
-              errorMessage,
-            );
+          validateResponse(response, expectedStatusCode, isSuccess, errorMessage);
 
-            await validateSchema(deliverySchema, response.body.Order.delivery!);
+          await validateSchema(deliverySchema, response.body.Order.delivery!);
 
-            const expectedDelivery = {
-              ...data,
-              finalDate: new Date(data.finalDate).toISOString(),
-            };
-            expect(response.body.Order.delivery).toMatchObject(
-              expectedDelivery as unknown as Record<string, unknown>,
-            );
-          },
-        );
-      },
-    );
+          const expectedDelivery = {
+            ...data,
+            finalDate: new Date(data.finalDate).toISOString(),
+          };
+          expect(response.body.Order.delivery).toMatchObject(expectedDelivery as unknown as Record<string, unknown>);
+        },
+      );
+    });
   });
 
   orderDraftStatus.describe('Negative', () => {
-    negativeTestCasesForDelivery.forEach(
-      ({ name, data, expectedStatusCode, isSuccess, errorMessage }) => {
-        orderDraftStatus(
-          `Should NOT update delivery: ${name}`,
-          { tag: [TAGS.API, TAGS.ORDERS, TAGS.REGRESSION] },
-          async ({ ordersController, orderDraftStatus }) => {
-            const { id: orderId } = await orderDraftStatus();
+    negativeTestCasesForDelivery.forEach(({ name, data, expectedStatusCode, isSuccess, errorMessage }) => {
+      orderDraftStatus(
+        `Should NOT update delivery: ${name}`,
+        { tag: [TAGS.API, TAGS.ORDERS, TAGS.REGRESSION] },
+        async ({ ordersController, orderDraftStatus }) => {
+          const { id: orderId } = await orderDraftStatus();
 
-            const response = await ordersController.updateDelivery(
-              orderId,
-              data,
-              token,
-            );
+          const response = await ordersController.updateDelivery(orderId, data, token);
 
-            validateResponse(
-              response,
-              expectedStatusCode,
-              isSuccess,
-              errorMessage,
-            );
-          },
-        );
-      },
-    );
+          validateResponse(response, expectedStatusCode, isSuccess, errorMessage);
+        },
+      );
+    });
 
-    negativeTestCasesForDeliveryWithoutToken.forEach(
-      ({
-        name,
-        data,
-        invalidToken,
-        expectedStatusCode,
-        isSuccess,
-        errorMessage,
-      }) => {
-        orderDraftStatus(
-          `Should NOT update delivery: ${name}`,
-          { tag: [TAGS.API, TAGS.ORDERS, TAGS.REGRESSION] },
-          async ({ ordersController, orderDraftStatus }) => {
-            const { id: orderId } = await orderDraftStatus();
+    negativeTestCasesForDeliveryWithoutToken.forEach(({ name, data, invalidToken, expectedStatusCode, isSuccess, errorMessage }) => {
+      orderDraftStatus(
+        `Should NOT update delivery: ${name}`,
+        { tag: [TAGS.API, TAGS.ORDERS, TAGS.REGRESSION] },
+        async ({ ordersController, orderDraftStatus }) => {
+          const { id: orderId } = await orderDraftStatus();
 
-            const response = await ordersController.updateDelivery(
-              orderId,
-              data,
-              invalidToken,
-            );
+          const response = await ordersController.updateDelivery(orderId, data, invalidToken);
 
-            validateResponse(
-              response,
-              expectedStatusCode,
-              isSuccess,
-              errorMessage,
-            );
-          },
-        );
-      },
-    );
+          validateResponse(response, expectedStatusCode, isSuccess, errorMessage);
+        },
+      );
+    });
 
     orderDraftStatus(
       'Should NOT update delivery: For non-existent order check',
@@ -122,18 +80,9 @@ orderDraftStatus.describe('[API] [Orders] Update delivery', () => {
         const id = generateUniqueId();
         const delivery = generateDeliveryData();
 
-        const response = await ordersController.updateDelivery(
-          id,
-          delivery,
-          token,
-        );
+        const response = await ordersController.updateDelivery(id, delivery, token);
 
-        validateResponse(
-          response,
-          STATUS_CODES.NOT_FOUND,
-          false,
-          `Order with id '${id}' wasn't found`,
-        );
+        validateResponse(response, STATUS_CODES.NOT_FOUND, false, `Order with id '${id}' wasn't found`);
       },
     );
   });

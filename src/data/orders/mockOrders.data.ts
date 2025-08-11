@@ -1,14 +1,7 @@
 import { COUNTRIES } from 'data/customers/countries.data';
 import { MANUFACTURERS } from 'data/products/manufacturers.data';
 import { ICustomerFromResponse } from 'types/customer.types';
-import {
-  IManager,
-  IDelivery,
-  IHistory,
-  ICommentFromResponse,
-  IOrderFromResponse,
-  IOrderFilteredResponse,
-} from 'types/orders.types';
+import { IManager, IDelivery, IHistory, ICommentFromResponse, IOrderFromResponse, IOrderFilteredResponse } from 'types/orders.types';
 import { IProductFromResponse } from 'types/products.types';
 import { generateUniqueId } from 'utils/generateUniqueID.utils';
 import { DELIVERY } from './delivery.data';

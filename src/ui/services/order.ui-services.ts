@@ -9,8 +9,7 @@ export class OrderService extends BaseUIService {
   @logStep('Check if order with number "{orderNumber}" is visible in list')
   async isOrderVisibleInList(orderNumber: string) {
     return await test.step('Check if order with number "{orderNumber}" is visible in list', async () => {
-      const orderRowLocator =
-        this.ordersPage.tableRowByOrderNumber(orderNumber);
+      const orderRowLocator = this.ordersPage.tableRowByOrderNumber(orderNumber);
       return await orderRowLocator.isVisible();
     });
   }
