@@ -1,9 +1,9 @@
 import { faker } from '@faker-js/faker';
-import { IProduct } from 'types/products.types';
+import { IProductPayload } from 'types/product.types';
 import { getRandromEnumValue } from 'utils/enum.utils';
 import { MANUFACTURERS } from 'data/products/manufacturers.data';
 
-export function generateProductData(params?: Partial<IProduct>): IProduct {
+export function generateProductData(params?: Partial<IProductPayload>): IProductPayload {
   return {
     name: `Test ${faker.string.alpha({ length: 10, casing: 'mixed' })}`,
     manufacturer: getRandromEnumValue(MANUFACTURERS),

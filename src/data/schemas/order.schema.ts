@@ -26,7 +26,7 @@ export const deliverySchema = {
       type: 'string',
       enum: Object.values(DELIVERY),
     },
-    address: addressSchema,
+    address: { type: 'object', properties: addressSchema },
   },
   required: ['finalDate', 'condition', 'address'],
 };

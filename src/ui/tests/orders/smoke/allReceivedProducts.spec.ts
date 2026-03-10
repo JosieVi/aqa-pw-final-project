@@ -1,12 +1,12 @@
 import { PRODUCT_STATUS } from 'data/orders/productStatuses.data';
 import { TAGS } from 'data/testTags.data';
 
-import { expect, test } from 'fixtures/ordersCustom.fixture';
+import { expect, test } from 'fixtures/index.fixture';
 
 test.describe('[UI] [Orders] [Orders Details] [Received Products Section] Order without Received Products', () => {
-  test.beforeEach(async ({ homeUIService, orderInProcessStatus, ordersPage, orderDetailsPage }) => {
+  test.beforeEach(async ({ homeUIService, orderFactory, ordersPage, orderDetailsPage }) => {
     const PRODUCTS_TO_CREATE_COUNT = 3;
-    const { id: orderId } = await orderInProcessStatus(PRODUCTS_TO_CREATE_COUNT);
+    const { id: orderId } = await orderFactory.orderInProcessStatus(PRODUCTS_TO_CREATE_COUNT);
 
     await homeUIService.openAsLoggedInUser();
     await homeUIService.openModule('Orders');
@@ -27,9 +27,9 @@ test.describe('[UI] [Orders] [Orders Details] [Received Products Section] Order 
   let totalProductsCount: number;
   const RECEIVED_AT_START = 1;
 
-  test.beforeEach(async ({ homeUIService, orderPartiallyReceivedStatus, ordersPage, orderDetailsPage }) => {
+  test.beforeEach(async ({ homeUIService, orderFactory, ordersPage, orderDetailsPage }) => {
     const PRODUCTS_TO_CREATE_COUNT = 3;
-    const { id: orderId, productsIds } = await orderPartiallyReceivedStatus(PRODUCTS_TO_CREATE_COUNT, RECEIVED_AT_START);
+    const { id: orderId, productsIds } = await orderFactory.orderPartiallyReceivedStatus(PRODUCTS_TO_CREATE_COUNT, RECEIVED_AT_START);
     totalProductsCount = productsIds.length;
 
     await homeUIService.openAsLoggedInUser();

@@ -7,14 +7,14 @@ import {
   negativeTestCasesForUpdateWithoutToken,
   positiveTestCasesForUpdate,
 } from 'data/customers/updateCustomerCases.data';
-import { ICustomer } from 'types/customer.types';
+import { ICustomerPayload } from 'types/customer.types';
 import { STATUS_CODES } from 'data/statusCodes';
 
 test.describe('[API] [Customers] Update the customer by ID', () => {
   let token = '';
   let originalCustomerID = '';
   let dublicateCustomerID = '';
-  let originalCustomerData: ICustomer = {} as ICustomer;
+  let originalCustomerData: ICustomerPayload = {} as ICustomerPayload;
 
   test.beforeEach(async ({ signInApiService, customersApiService }) => {
     token = await signInApiService.loginAsLocalUser();

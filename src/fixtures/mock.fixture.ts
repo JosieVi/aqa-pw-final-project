@@ -1,4 +1,4 @@
-import { test as base } from 'fixtures/api-services.fixture';
+import { test as base } from '@playwright/test';
 import { Mock } from './mock';
 
 export interface MockFixture {

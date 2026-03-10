@@ -1,42 +1,26 @@
-import { RequestApi } from 'api/apiClients/request';
 import { apiConfig } from 'config/api-config';
-import { ILoginResponseBody, IRequestOptions, IResponseFields } from 'types/api.types';
+import { ILoginResponseBody, IResponseFields } from 'types/api.types';
 import { IAPICredentials } from 'types/signIn.types';
-import { APIRequestContext } from '@playwright/test';
 import { logStep } from 'utils/reporter.utils';
+import { BaseController } from './base.controller';
 
-export class SignInController {
-  private request: RequestApi;
-
-  constructor(context: APIRequestContext) {
-    this.request = new RequestApi(context);
-  }
-
+export class SignInController extends BaseController {
   @logStep('Sign in via API')
   async signIn(body: IAPICredentials) {
-    const options: IRequestOptions = {
-      baseURL: apiConfig.BASE_URL,
+    return await this.request.send<ILoginResponseBody>({
+      ...this.defaultOptions,
       url: apiConfig.ENDPOINTS.LOGIN,
       method: 'post',
       data: body,
-      headers: {
-        'content-type': 'application/json',
-      },
-    };
-    return await this.request.send<ILoginResponseBody>(options);
+    });
   }
 
   @logStep('Sign out via API')
   async signOut(token: string) {
-    const options: IRequestOptions = {
-      baseURL: apiConfig.BASE_URL,
+    return await this.request.send<IResponseFields>({
+      ...this.getAuthorizedOptions(token),
       url: apiConfig.ENDPOINTS.LOGOUT,
       method: 'post',
-      headers: {
-        'content-type': 'application/json',
-        authorization: `Bearer ${token}`,
-      },
-    };
-    return await this.request.send<IResponseFields>(options);
+    });
   }
 }

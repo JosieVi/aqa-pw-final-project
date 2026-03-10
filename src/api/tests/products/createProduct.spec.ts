@@ -1,7 +1,7 @@
 import { test } from 'fixtures/api-services.fixture';
 import { STATUS_CODES } from 'data/statusCodes';
 import { generateProductData } from 'data/products/generateProduct.data';
-import { positiveTestCasesForCreate, negativeTestCasesForCreate } from 'data/products/createProductCases.data';
+import { positiveCreateCustomerCases, negativeCreateCustomerCase } from 'data/products/createProductCases.data';
 import { TAGS } from 'data/testTags.data';
 import { validateResponse } from 'utils/validations/responseValidation';
 import { validateSchema } from 'utils/validations/schemaValidation';
@@ -22,7 +22,7 @@ test.describe('[API] [Products] Create a new product', () => {
       }
     });
 
-    positiveTestCasesForCreate.forEach(({ name, data }) => {
+    positiveCreateCustomerCases.forEach(({ name, data }) => {
       test(`Should create product: ${name}`, { tag: [TAGS.API, TAGS.PRODUCTS, TAGS.SMOKE, TAGS.REGRESSION] }, async ({ productsController }) => {
         const response = await productsController.create(data, token);
         validateSchema(oneProductResponseSchema, response.body);
@@ -33,7 +33,7 @@ test.describe('[API] [Products] Create a new product', () => {
   });
 
   test.describe('Negative', () => {
-    negativeTestCasesForCreate.forEach(({ name, data, token: testCaseToken, expectedError, expectedStatusCode }) => {
+    negativeCreateCustomerCase.forEach(({ name, data, token: testCaseToken, expectedError, expectedStatusCode }) => {
       test(`Should NOT create product: ${name}`, { tag: [TAGS.API, TAGS.PRODUCTS, TAGS.REGRESSION] }, async ({ productsController }) => {
         const usedToken = testCaseToken ?? token;
         const statusCode = expectedStatusCode ?? STATUS_CODES.BAD_REQUEST;

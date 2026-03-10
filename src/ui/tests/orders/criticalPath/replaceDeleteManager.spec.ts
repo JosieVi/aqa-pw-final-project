@@ -2,7 +2,7 @@ import { MOCK_MANAGER_NASTYA } from 'data/orders/mockOrders.data';
 import { NOTIFICATION } from 'data/orders/notification.data';
 import { TOASTER } from 'data/orders/toaster.data';
 import { TAGS } from 'data/testTags.data';
-import { expect, test } from 'fixtures/ordersCustom.fixture';
+import { expect, test } from 'fixtures/index.fixture';
 
 test.describe('[UI] [Orders] [Orders Details] [Edit Products] Replace/delete assigned manager', () => {
   let orderId: string;

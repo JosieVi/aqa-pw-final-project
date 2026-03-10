@@ -40,7 +40,7 @@ export const oneProductResponseSchema = {
     },
     ...baseSchemaPart,
   },
-  required: ['Product', 'IsSuccess', 'ErrorMessage'],
+  required: ['Product', 'isSuccess', 'errorMessage'],
 };
 
 export const allProductsResponseSchema = {
@@ -52,7 +52,7 @@ export const allProductsResponseSchema = {
     },
     ...baseSchemaPart,
   },
-  required: ['Products', 'IsSuccess', 'ErrorMessage'],
+  required: ['Products', 'isSuccess', 'errorMessage'],
 };
 
 export const productsListSchema = {
@@ -70,7 +70,7 @@ export const productsListSchema = {
     ...productsMetaSchema,
     ...baseSchemaPart,
   },
-  required: ['Products', 'sorting', 'IsSuccess', 'ErrorMessage', 'total', 'page', 'limit', 'search', 'manufacturer'],
+  required: ['Products', 'sorting', 'isSuccess', 'errorMessage', 'total', 'page', 'limit', 'search', 'manufacturer'],
 };
 
 export const productInOrderSchema = {
@@ -106,8 +106,8 @@ export const productInOrderSchema = {
 export const errorResponseSchema = {
   type: 'object',
   properties: {
-    IsSuccess: { type: 'boolean', const: false },
-    ErrorMessage: { type: 'string' },
+    isSuccess: { type: 'boolean', const: false },
+    errorMessage: { type: 'string' },
   },
-  required: ['IsSuccess', 'ErrorMessage'],
+  required: ['isSuccess', 'errorMessage'],
 };

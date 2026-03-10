@@ -1,4 +1,4 @@
-import { test } from 'fixtures/ordersCustom.fixture';
+import { test } from 'fixtures/index.fixture';
 import { STATUS_CODES } from 'data/statusCodes';
 import { TAGS } from 'data/testTags.data';
 import { validateResponse } from 'utils/validations/responseValidation';
@@ -74,7 +74,7 @@ test.describe('[API] [Orders] Update order by ID', () => {
       '400 Bad Request - Update order with 6 products',
       { tag: [TAGS.API, TAGS.ORDERS, TAGS.REGRESSION] },
       async ({ ordersController, productsApiService }) => {
-        const allProducts = await productsApiService.populate(6, token);
+        const allProducts = await productsApiService.createMultiple(6, token);
         const productIds = extractIds(allProducts);
 
         createdProductIds.push(...productIds);

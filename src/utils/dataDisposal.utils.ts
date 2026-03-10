@@ -1,21 +1,19 @@
-import { APIRequestContext } from '@playwright/test';
-import { CustomersApiService } from 'api/services/customers.api-service';
+import { CustomersApiService } from 'api/services/customer.api-service';
 import { ProductsApiService } from 'api/services/product.api-service';
-import { OrdersAPIService } from 'api/services/orders.api-service';
+import { OrdersAPIService } from 'api/services/order.api-service';
 import { SignInApiService } from 'api/services/signIn.api-service';
 
 export class DataDisposalUtils {
-  private ordersApiService: OrdersAPIService;
-  private customersApiService: CustomersApiService;
-  private productsApiService: ProductsApiService;
-  private signInApiService: SignInApiService;
+  private trackedOrders: string[] = [];
+  private trackedProducts: string[] = [];
+  private trackedCustomers: string[] = [];
 
-  constructor(context: APIRequestContext) {
-    this.ordersApiService = new OrdersAPIService(context);
-    this.productsApiService = new ProductsApiService(context);
-    this.customersApiService = new CustomersApiService(context);
-    this.signInApiService = new SignInApiService(context);
-  }
+  constructor(
+    private ordersApiService: OrdersAPIService,
+    private customersApiService: CustomersApiService,
+    private productsApiService: ProductsApiService,
+    private signInApiService: SignInApiService,
+  ) {}
 
   private token = '';
 
@@ -30,60 +28,95 @@ export class DataDisposalUtils {
     return token ?? (await this.prepareToken());
   }
 
-  async clearOrders(orderIds: string[] | string) {
-    orderIds = await this.normalizeIds(orderIds);
-    if (!orderIds.length) return;
-    console.log(` Deleting ${orderIds} orderIds`);
+  trackOrder(id: string) {
+    if (id) this.trackedOrders.push(id);
+  }
+
+  removeOrder(id: string) {
+    if (id) this.trackedOrders = this.trackedOrders.filter((orderId) => orderId !== id);
+  }
+
+  trackProduct(id: string) {
+    if (id) this.trackedProducts.push(id);
+  }
+
+  removeProduct(id: string) {
+    if (id) this.trackedProducts = this.trackedProducts.filter((productId) => productId !== id);
+  }
+
+  trackCustomer(id: string) {
+    if (id) this.trackedCustomers.push(id);
+  }
+
+  removeCustomer(id: string) {
+    if (id) this.trackedCustomers = this.trackedCustomers.filter((customerId) => customerId !== id);
+  }
+
+  async clearOrders(orderIds: string[] | string = this.trackedOrders) {
+    const idsToProcess = await this.normalizeIds(orderIds);
+    if (!idsToProcess.length) return;
+    console.log(` Deleting orderIds: ${idsToProcess.join(', ')}`);
     const authToken = await this.getToken();
 
-    for (const orderId of orderIds) {
+    for (const orderId of idsToProcess) {
       try {
         await this.ordersApiService.deleteOrder(orderId, authToken);
-      } catch (error) {
-        console.error(` The order ${orderId} was not deleted}`, error);
+      } catch (error: any) {
+        if (error.response?.status === 404) {
+          console.log(`Order with ID ${orderId} was not found (already deleted or never existed). Skipping.`);
+        } else console.error(` The order ${orderId} was not deleted`, error);
       }
     }
+    if (orderIds === this.trackedOrders) this.trackedOrders = [];
   }
 
-  async clearProducts(productsIds: string[] | string) {
-    productsIds = await this.normalizeIds(productsIds);
-    if (!productsIds.length) return;
-    console.log(` Deleting ${productsIds} productsIds`);
+  async clearProducts(productsIds: string[] | string = this.trackedProducts) {
+    const idsToProcess = await this.normalizeIds(productsIds);
+    if (!idsToProcess.length) return;
+    console.log(` Deleting productsIds: ${idsToProcess.join(', ')}`);
     const authToken = await this.getToken();
 
-    for (const productId of productsIds) {
+    for (const productId of idsToProcess) {
       try {
         await this.productsApiService.delete(productId, authToken);
-      } catch (error) {
-        console.error(` The product ${productId} was not deleted}`, error);
+      } catch (error: any) {
+        if (error.response?.status === 404) {
+          console.log(`Product with ID ${productId} was not found (already deleted or never existed). Skipping.`);
+        } else {
+          console.error(` The product ${productId} was not deleted`, error);
+        }
       }
     }
+    if (productsIds === this.trackedProducts) this.trackedProducts = [];
   }
 
-  async clearCustomers(customerIds: string[] | string) {
-    customerIds = await this.normalizeIds(customerIds);
-    if (!customerIds.length) return;
-    console.log(` Deleting ${customerIds} customersIds`);
+  async clearCustomers(customerIds: string[] | string = this.trackedCustomers) {
+    const idsToProcess = await this.normalizeIds(customerIds);
+    if (!idsToProcess.length) return;
+    console.log(` Deleting customersIds: ${idsToProcess.join(', ')}`);
     const authToken = await this.getToken();
 
-    for (const customerId of customerIds) {
+    for (const customerId of idsToProcess) {
       try {
         await this.customersApiService.deleteCustomer(customerId, authToken);
-      } catch (error) {
-        console.error(` The customer ${customerId} was not deleted}`, error);
+      } catch (error: any) {
+        if (error.response?.status === 404) {
+          console.log(`Customer with ID ${customerId} was not found (already deleted or never existed). Skipping.`);
+        } else console.error(` The customer ${customerId} was not deleted`, error);
       }
     }
+    if (customerIds === this.trackedCustomers) this.trackedCustomers = [];
   }
 
-  async tearDown(orderIds: string[], productsIds: string[], customersIds: string[]) {
-    await this.clearOrders(orderIds);
-    await this.clearProducts(productsIds);
-    await this.clearCustomers(customersIds);
+  async tearDown() {
+    await this.clearOrders();
+    await this.clearProducts();
+    await this.clearCustomers();
   }
 
-  async partialTearDown(productsIds: string[], customersIds: string[]) {
-    await this.clearProducts(productsIds);
-    await this.clearCustomers(customersIds);
+  async partialTearDown() {
+    await this.clearProducts();
+    await this.clearCustomers();
   }
 
   async normalizeIds(input: string | string[]): Promise<string[]> {

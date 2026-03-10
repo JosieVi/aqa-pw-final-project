@@ -52,7 +52,7 @@ test.describe('[API] [Orders] Create a new order', () => {
       { tag: [TAGS.API, TAGS.ORDERS, TAGS.SMOKE] },
       async ({ ordersController, productsApiService, customersApiService }) => {
         const customer = await customersApiService.createCustomer(token);
-        const products = await productsApiService.populate(5, token);
+        const products = await productsApiService.createMultiple(5, token);
 
         productsId = extractIds(products);
         createdCustomerIds.push(customer._id);
@@ -77,7 +77,7 @@ test.describe('[API] [Orders] Create a new order', () => {
       { tag: [TAGS.API, TAGS.ORDERS, TAGS.REGRESSION] },
       async ({ ordersController, productsApiService, customersApiService }) => {
         const customer = await customersApiService.createCustomer(token);
-        const products = await productsApiService.populate(6, token);
+        const products = await productsApiService.createMultiple(6, token);
 
         productsId = extractIds(products);
         createdCustomerIds.push(customer._id);

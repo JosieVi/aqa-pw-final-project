@@ -1,16 +1,18 @@
 import { faker } from '@faker-js/faker';
-import { ICustomer } from 'types/customer.types';
+import { ICustomerPayload } from 'types/customer.types';
 import { COUNTRIES } from 'data/customers/countries.data';
 import { getRandromEnumValue } from 'utils/enum.utils';
-import { randomUUID } from 'node:crypto';
 
-export function generateCustomerData(params?: Partial<ICustomer>): ICustomer {
+export function generateCustomerData(params?: Partial<ICustomerPayload>): ICustomerPayload {
+  const shortId = faker.string.alpha(4).toUpperCase();
+  const prefix = 'test';
+
   return {
-    email: `test${Date.now()}-${randomUUID()}@gmail.com`,
-    name: `Test ${faker.string.alpha(35)}`,
+    email: `${prefix.toLowerCase()}${Date.now()}_${shortId}@example.com`,
+    name: `${prefix} ${faker.string.alpha(35)}`,
     country: getRandromEnumValue(COUNTRIES),
-    city: `City ${faker.string.alpha(15)}`,
-    street: `Street ${faker.string.alphanumeric(33)}`,
+    city: `${prefix}City ${faker.string.alpha(11)}`,
+    street: `${prefix}Street ${faker.string.alphanumeric(29)}`,
     house: faker.number.int(999),
     flat: faker.number.int(9999),
     phone: `+${faker.number.int({ min: 1000000000, max: 9999999999 })}`,

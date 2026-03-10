@@ -1,4 +1,4 @@
-import { expect } from 'fixtures/api-services.fixture';
+import { expect, test } from 'fixtures/index.fixture';
 import { STATUS_CODES } from 'data/statusCodes';
 import { TAGS } from 'data/testTags.data';
 import { orderSchema } from 'data/schemas/order.schema';
@@ -7,29 +7,29 @@ import { validateResponse } from 'utils/validations/responseValidation';
 import { ORDER_STATUS } from 'data/orders/statuses.data';
 import { ERROR_MESSAGES } from 'data/errorMessages';
 import { ORDER_HISTORY_ACTIONS } from 'data/orders/history.data';
-import {
-  orderCanceledStatus,
-  orderDraftStatus,
-  orderDraftWithDeliveryStatus,
-  orderInProcessStatus,
-  orderPartiallyReceivedStatus,
-  orderReceivedStatus,
-} from 'fixtures/ordersCustom.fixture';
+// import {
+//   orderCanceledStatus,
+//   orderDraftStatus,
+//   orderDraftWithDeliveryStatus,
+//   orderInProcessStatus,
+//   orderPartiallyReceivedStatus,
+//   orderReceivedStatus,
+// } from 'fixtures/ordersCustom.fixture';
 import { generateUniqueId } from 'utils/generateUniqueID.utils';
 
-orderDraftStatus.describe('[API][Orders] Draft - Canceled', () => {
+test.describe('[API][Orders] Draft - Canceled', () => {
   let token = '';
 
-  orderDraftStatus.beforeAll(async ({ signInApiService }) => {
+  test.beforeAll(async ({ signInApiService }) => {
     token = await signInApiService.loginAsLocalUser();
   });
 
-  orderDraftStatus.describe('Positive cases', () => {
-    orderDraftStatus(
+  test.describe('Positive cases', () => {
+    test(
       'Successful order status update from "Draft" to "Canceled"',
       { tag: [TAGS.API, TAGS.ORDERS, TAGS.SMOKE] },
-      async ({ orderDraftStatus, ordersController }) => {
-        const { id: orderId } = await orderDraftStatus();
+      async ({ orderFactory, ordersController }) => {
+        const { id: orderId } = await orderFactory.orderDraftStatus();
         const response = await ordersController.updateStatus(orderId, ORDER_STATUS.CANCELED, token);
 
         validateResponse(response, STATUS_CODES.OK, true, null);
@@ -46,19 +46,19 @@ orderDraftStatus.describe('[API][Orders] Draft - Canceled', () => {
   });
 });
 
-orderDraftWithDeliveryStatus.describe('[API][Orders] Draft with delivery - In Process Orders/Canceled', () => {
+test.describe('[API][Orders] Draft with delivery - In Process Orders/Canceled', () => {
   let token = '';
 
-  orderDraftWithDeliveryStatus.beforeAll(async ({ signInApiService }) => {
+  test.beforeAll(async ({ signInApiService }) => {
     token = await signInApiService.loginAsLocalUser();
   });
 
-  orderDraftWithDeliveryStatus.describe('Positive cases', () => {
-    orderDraftWithDeliveryStatus(
+  test.describe('Positive cases', () => {
+    test(
       'Successful order status update from "Draft with delivery" to "In Process"',
       { tag: [TAGS.API, TAGS.ORDERS, TAGS.SMOKE] },
-      async ({ orderDraftWithDeliveryStatus, ordersController }) => {
-        const { id: orderId } = await orderDraftWithDeliveryStatus();
+      async ({ orderFactory, ordersController }) => {
+        const { id: orderId } = await orderFactory.orderDraftWithDeliveryStatus();
         const response = await ordersController.updateStatus(orderId, ORDER_STATUS.IN_PROCESS, token);
 
         validateResponse(response, STATUS_CODES.OK, true, null);
@@ -73,11 +73,11 @@ orderDraftWithDeliveryStatus.describe('[API][Orders] Draft with delivery - In Pr
       },
     );
 
-    orderDraftWithDeliveryStatus(
+    test(
       'Successful order status update from "Draft with delivery" to "Cancelled"',
       { tag: [TAGS.API, TAGS.ORDERS, TAGS.SMOKE] },
-      async ({ orderDraftWithDeliveryStatus, ordersController }) => {
-        const { id: orderId } = await orderDraftWithDeliveryStatus();
+      async ({ orderFactory, ordersController }) => {
+        const { id: orderId } = await orderFactory.orderDraftWithDeliveryStatus();
         const response = await ordersController.updateStatus(orderId, ORDER_STATUS.CANCELED, token);
 
         validateResponse(response, STATUS_CODES.OK, true, null);
@@ -94,19 +94,19 @@ orderDraftWithDeliveryStatus.describe('[API][Orders] Draft with delivery - In Pr
   });
 });
 
-orderCanceledStatus.describe('[API][Orders] Canceled - Draft/In Process', () => {
+test.describe('[API][Orders] Canceled - Draft/In Process', () => {
   let token = '';
 
-  orderCanceledStatus.beforeAll(async ({ signInApiService }) => {
+  test.beforeAll(async ({ signInApiService }) => {
     token = await signInApiService.loginAsLocalUser();
   });
 
-  orderCanceledStatus.describe('Positive cases', () => {
-    orderCanceledStatus(
+  test.describe('Positive cases', () => {
+    test(
       'Successful order status update from "Canceled" to "Draft"',
       { tag: [TAGS.API, TAGS.ORDERS, TAGS.SMOKE] },
-      async ({ orderCanceledStatus, ordersController }) => {
-        const { id: orderId } = await orderCanceledStatus();
+      async ({ orderFactory, ordersController }) => {
+        const { id: orderId } = await orderFactory.orderCanceledStatus();
         const response = await ordersController.updateStatus(orderId, ORDER_STATUS.DRAFT, token);
 
         validateResponse(response, STATUS_CODES.OK, true, null);
@@ -122,33 +122,29 @@ orderCanceledStatus.describe('[API][Orders] Canceled - Draft/In Process', () => 
     );
   });
 
-  orderCanceledStatus.describe('Negative cases', () => {
-    orderCanceledStatus(
-      'Update status to In Process for Canceled order',
-      { tag: [TAGS.API, TAGS.ORDERS] },
-      async ({ orderCanceledStatus, ordersController }) => {
-        const { id: orderId } = await orderCanceledStatus();
-        const response = await ordersController.updateStatus(orderId, ORDER_STATUS.IN_PROCESS, token);
+  test.describe('Negative cases', () => {
+    test('Update status to In Process for Canceled order', { tag: [TAGS.API, TAGS.ORDERS] }, async ({ orderFactory, ordersController }) => {
+      const { id: orderId } = await orderFactory.orderCanceledStatus();
+      const response = await ordersController.updateStatus(orderId, ORDER_STATUS.IN_PROCESS, token);
 
-        validateResponse(response, STATUS_CODES.BAD_REQUEST, false, ERROR_MESSAGES.INVALID_ORDER_STATUS);
-      },
-    );
+      validateResponse(response, STATUS_CODES.BAD_REQUEST, false, ERROR_MESSAGES.INVALID_ORDER_STATUS);
+    });
   });
 });
 
-orderInProcessStatus.describe('[API][Orders] In Process - Draft/Canceled/In Process/Partially Received/Received', () => {
+test.describe('[API][Orders] In Process - Draft/Canceled/In Process/Partially Received/Received', () => {
   let token = '';
 
-  orderInProcessStatus.beforeAll(async ({ signInApiService }) => {
+  test.beforeAll(async ({ signInApiService }) => {
     token = await signInApiService.loginAsLocalUser();
   });
 
-  orderInProcessStatus.describe('Positive cases', () => {
-    orderInProcessStatus(
+  test.describe('Positive cases', () => {
+    test(
       'Successful order status update from "Canceled" to "In Process"',
       { tag: [TAGS.API, TAGS.ORDERS, TAGS.SMOKE] },
-      async ({ orderInProcessStatus, ordersController }) => {
-        const { id: orderId } = await orderInProcessStatus();
+      async ({ orderFactory, ordersController }) => {
+        const { id: orderId } = await orderFactory.orderInProcessStatus();
         const response = await ordersController.updateStatus(orderId, ORDER_STATUS.IN_PROCESS, token);
 
         validateResponse(response, STATUS_CODES.OK, true, null);
@@ -163,11 +159,11 @@ orderInProcessStatus.describe('[API][Orders] In Process - Draft/Canceled/In Proc
       },
     );
 
-    orderInProcessStatus(
+    test(
       'Successful order status update from "In Process" to "Canceled"',
       { tag: [TAGS.API, TAGS.ORDERS, TAGS.SMOKE] },
-      async ({ orderInProcessStatus, ordersController }) => {
-        const { id: orderId } = await orderInProcessStatus();
+      async ({ orderFactory, ordersController }) => {
+        const { id: orderId } = await orderFactory.orderInProcessStatus();
         const response = await ordersController.updateStatus(orderId, ORDER_STATUS.CANCELED, token);
 
         validateResponse(response, STATUS_CODES.OK, true, null);
@@ -183,56 +179,44 @@ orderInProcessStatus.describe('[API][Orders] In Process - Draft/Canceled/In Proc
     );
   });
 
-  orderInProcessStatus.describe('Negative cases', () => {
-    orderInProcessStatus(
-      'Update status to Draft for In Process order',
-      { tag: [TAGS.API, TAGS.ORDERS] },
-      async ({ orderInProcessStatus, ordersController }) => {
-        const { id: orderId } = await orderInProcessStatus();
-        const response = await ordersController.updateStatus(orderId, ORDER_STATUS.DRAFT, token);
+  test.describe('Negative cases', () => {
+    test('Update status to Draft for In Process order', { tag: [TAGS.API, TAGS.ORDERS] }, async ({ orderFactory, ordersController }) => {
+      const { id: orderId } = await orderFactory.orderInProcessStatus();
+      const response = await ordersController.updateStatus(orderId, ORDER_STATUS.DRAFT, token);
 
-        validateResponse(response, STATUS_CODES.BAD_REQUEST, false, ERROR_MESSAGES.CANT_REOPEN_ORDER);
-      },
-    );
+      validateResponse(response, STATUS_CODES.BAD_REQUEST, false, ERROR_MESSAGES.CANT_REOPEN_ORDER);
+    });
 
-    orderInProcessStatus(
-      'Update order status to "Received" from "In Process"',
-      { tag: [TAGS.API, TAGS.ORDERS] },
-      async ({ orderInProcessStatus, ordersController }) => {
-        const { id: orderId } = await orderInProcessStatus();
-        const response = await ordersController.updateStatus(orderId, ORDER_STATUS.RECEIVED, token);
+    test('Update order status to "Received" from "In Process"', { tag: [TAGS.API, TAGS.ORDERS] }, async ({ orderFactory, ordersController }) => {
+      const { id: orderId } = await orderFactory.orderInProcessStatus();
+      const response = await ordersController.updateStatus(orderId, ORDER_STATUS.RECEIVED, token);
 
-        validateResponse(response, STATUS_CODES.BAD_REQUEST, false, ERROR_MESSAGES.INVALID_ORDER_STATUS);
-      },
-    );
+      validateResponse(response, STATUS_CODES.BAD_REQUEST, false, ERROR_MESSAGES.INVALID_ORDER_STATUS);
+    });
 
-    orderInProcessStatus(
+    test(
       'Update order status to "Partially Received" from "In Process"',
       { tag: [TAGS.API, TAGS.ORDERS] },
-      async ({ orderInProcessStatus, ordersController }) => {
-        const { id: orderId } = await orderInProcessStatus();
+      async ({ orderFactory, ordersController }) => {
+        const { id: orderId } = await orderFactory.orderInProcessStatus();
         const response = await ordersController.updateStatus(orderId, ORDER_STATUS.PARTIALLY_RECEIVED, token);
 
         validateResponse(response, STATUS_CODES.BAD_REQUEST, false, ERROR_MESSAGES.INVALID_ORDER_STATUS);
       },
     );
 
-    orderInProcessStatus(
-      'Should return error when order does not exist - 404 Bad Request',
-      { tag: [TAGS.API, TAGS.ORDERS] },
-      async ({ ordersController }) => {
-        const nonExistentOrder = generateUniqueId();
-        const response = await ordersController.updateStatus(nonExistentOrder, ORDER_STATUS.PARTIALLY_RECEIVED, token);
+    test('Should return error when order does not exist - 404 Bad Request', { tag: [TAGS.API, TAGS.ORDERS] }, async ({ ordersController }) => {
+      const nonExistentOrder = generateUniqueId();
+      const response = await ordersController.updateStatus(nonExistentOrder, ORDER_STATUS.PARTIALLY_RECEIVED, token);
 
-        validateResponse(response, STATUS_CODES.NOT_FOUND, false, ERROR_MESSAGES.ORDER_NOT_FOUND_WITH_ID(nonExistentOrder));
-      },
-    );
+      validateResponse(response, STATUS_CODES.NOT_FOUND, false, ERROR_MESSAGES.ORDER_NOT_FOUND_WITH_ID(nonExistentOrder));
+    });
 
-    orderInProcessStatus(
+    test(
       'Should return 401 when using invalid token',
       { tag: [TAGS.API, TAGS.ORDERS, TAGS.REGRESSION] },
-      async ({ orderInProcessStatus, ordersController }) => {
-        const { id: orderId } = await orderInProcessStatus();
+      async ({ orderFactory, ordersController }) => {
+        const { id: orderId } = await orderFactory.orderInProcessStatus();
 
         const response = await ordersController.updateStatus(orderId, ORDER_STATUS.PARTIALLY_RECEIVED, 'Invalid access token');
 
@@ -240,11 +224,11 @@ orderInProcessStatus.describe('[API][Orders] In Process - Draft/Canceled/In Proc
       },
     );
 
-    orderInProcessStatus(
+    test(
       'Should return 401 when using empty token',
       { tag: [TAGS.API, TAGS.ORDERS, TAGS.REGRESSION] },
-      async ({ orderInProcessStatus, ordersController }) => {
-        const { id: orderId } = await orderInProcessStatus();
+      async ({ orderFactory, ordersController }) => {
+        const { id: orderId } = await orderFactory.orderInProcessStatus();
 
         const response = await ordersController.updateStatus(orderId, ORDER_STATUS.PARTIALLY_RECEIVED, '');
 
@@ -253,18 +237,18 @@ orderInProcessStatus.describe('[API][Orders] In Process - Draft/Canceled/In Proc
     );
   });
 
-  orderPartiallyReceivedStatus.describe('[API][Orders] Partially Received - Received', () => {
+  test.describe('[API][Orders] Partially Received - Received', () => {
     let token = '';
 
-    orderPartiallyReceivedStatus.beforeAll(async ({ signInApiService }) => {
+    test.beforeAll(async ({ signInApiService }) => {
       token = await signInApiService.loginAsLocalUser();
     });
-    orderPartiallyReceivedStatus.describe('Negative cases', () => {
-      orderPartiallyReceivedStatus(
+    test.describe('Negative cases', () => {
+      test(
         'Update order status to "Received" from "Partially Received"',
         { tag: [TAGS.API, TAGS.ORDERS] },
-        async ({ orderPartiallyReceivedStatus, ordersController }) => {
-          const { id: orderId } = await orderPartiallyReceivedStatus();
+        async ({ orderFactory, ordersController }) => {
+          const { id: orderId } = await orderFactory.orderPartiallyReceivedStatus();
           const response = await ordersController.updateStatus(orderId, ORDER_STATUS.RECEIVED, token);
 
           validateResponse(response, STATUS_CODES.BAD_REQUEST, false, ERROR_MESSAGES.INVALID_ORDER_STATUS);
@@ -273,23 +257,19 @@ orderInProcessStatus.describe('[API][Orders] In Process - Draft/Canceled/In Proc
     });
   });
 
-  orderReceivedStatus.describe('[API][Orders] Received - In Process', () => {
+  test.describe('[API][Orders] Received - In Process', () => {
     let token = '';
 
-    orderReceivedStatus.beforeAll(async ({ signInApiService }) => {
+    test.beforeAll(async ({ signInApiService }) => {
       token = await signInApiService.loginAsLocalUser();
     });
-    orderReceivedStatus.describe('Negative cases', () => {
-      orderReceivedStatus(
-        'Update order status to "In Process" from "Received"',
-        { tag: [TAGS.API, TAGS.ORDERS] },
-        async ({ orderReceivedStatus, ordersController }) => {
-          const { id: orderId } = await orderReceivedStatus();
-          const response = await ordersController.updateStatus(orderId, ORDER_STATUS.IN_PROCESS, token);
+    test.describe('Negative cases', () => {
+      test('Update order status to "In Process" from "Received"', { tag: [TAGS.API, TAGS.ORDERS] }, async ({ orderFactory, ordersController }) => {
+        const { id: orderId } = await orderFactory.orderReceivedStatus();
+        const response = await ordersController.updateStatus(orderId, ORDER_STATUS.IN_PROCESS, token);
 
-          validateResponse(response, STATUS_CODES.BAD_REQUEST, false, ERROR_MESSAGES.INVALID_ORDER_STATUS);
-        },
-      );
+        validateResponse(response, STATUS_CODES.BAD_REQUEST, false, ERROR_MESSAGES.INVALID_ORDER_STATUS);
+      });
     });
   });
 });

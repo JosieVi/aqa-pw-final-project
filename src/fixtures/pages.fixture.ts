@@ -1,4 +1,4 @@
-import { test as base } from 'fixtures/mock.fixture';
+import { test as base } from '@playwright/test';
 
 import { HomePage } from 'ui/pages/home.page';
 import { SignInPage } from 'ui/pages/signIn.page';
@@ -77,7 +77,6 @@ export const test = base.extend<ISalesPortalPages>({
   editDeliveryPage: async ({ page }, use) => {
     await use(new EditDeliveryPage(page));
   },
-
   notificationsModal: async ({ page }, use) => {
     await use(new NotificationsModal(page));
   },

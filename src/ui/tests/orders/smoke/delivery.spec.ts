@@ -1,13 +1,13 @@
 import { DELIVERY } from 'data/orders/delivery.data';
 import { generateDeliveryData } from 'data/orders/generateDeliveryData.data';
 import { TAGS } from 'data/testTags.data';
-import { test } from 'fixtures/ordersCustom.fixture';
+import { test } from 'fixtures/index.fixture';
 import { generateValidDeliveryDate } from 'utils/date.utils';
 
 test.describe('[UI] [Orders] [Order Details] [Delivery Tab]', () => {
-  test.beforeEach(async ({ homeUIService, orderDraftStatus, ordersPage, signInApiService, page }) => {
+  test.beforeEach(async ({ homeUIService, orderFactory, ordersPage, signInApiService, page }) => {
     const PRODUCTS_TO_CREATE_COUNT = 1;
-    const order = await orderDraftStatus(PRODUCTS_TO_CREATE_COUNT);
+    const order = await orderFactory.orderDraftStatus(PRODUCTS_TO_CREATE_COUNT);
     targetOrderId = order.id;
 
     let token = await signInApiService.loginAsLocalUser();

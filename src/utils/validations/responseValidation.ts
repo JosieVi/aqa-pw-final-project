@@ -4,18 +4,17 @@ import { IResponse, IResponseFields } from 'types/api.types';
 export function validateResponse<T extends IResponseFields | null>(
   response: IResponse<T>,
   status: number,
-  IsSuccess?: boolean | null,
-  ErrorMessage?: string | null,
+  isSuccess?: boolean | null,
+  errorMessage?: string | null,
 ) {
-  return test.step(`Validate response status: ${status}, IsSuccess: ${IsSuccess}, ErrorMessage: ${ErrorMessage}`, () => {
-    expect.soft(response.status).toBe(status);
+  return test.step(`Validate response status: ${status}, isSuccess: ${isSuccess}, errorMessage: ${errorMessage}`, () => {
+    expect.soft(response.status, `Expected status: ${status}, but got: ${response.status}`).toBe(status);
 
-    if (response.body) {
-      expect.soft(response.body.IsSuccess).toBe(IsSuccess);
-      expect.soft(response.body.ErrorMessage).toBe(ErrorMessage);
-    } else {
-      expect.soft(IsSuccess).toBeNull();
-      expect.soft(ErrorMessage).toBeNull();
-    }
+    const actualIsSuccess = response.body ? response.body.IsSuccess : undefined;
+    const actualErrorMessage = response.body ? response.body.ErrorMessage : undefined;
+
+    expect.soft(actualIsSuccess, `Expected isSuccess: ${isSuccess}, but got: ${actualIsSuccess}`).toBe(isSuccess);
+
+    expect.soft(actualErrorMessage, `Expected errorMessage: ${errorMessage}, but got: ${actualErrorMessage}`).toBe(errorMessage);
   });
 }

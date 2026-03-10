@@ -1,7 +1,7 @@
 import { type Locator } from '@playwright/test';
 import { logStep } from 'utils/reporter.utils';
 import { DELIVERY } from 'data/orders/delivery.data';
-import { IDelivery } from 'types/orders.types';
+import { IDelivery } from 'types/order.types';
 import { COUNTRIES } from 'data/customers/countries.data';
 import { OrderTab } from './orderTabs.page';
 

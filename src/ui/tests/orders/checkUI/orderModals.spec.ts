@@ -1,4 +1,4 @@
-import { expect, test } from 'fixtures/ordersCustom.fixture';
+import { expect, test } from 'fixtures/index.fixture';
 import { MOCK_MANAGER_OLGA, MOCK_ORDERS_LIST_API_RESPONSE } from 'data/orders/mockOrders.data';
 import { TAGS } from 'data/testTags.data';
 import { ORDER_STATUS } from 'data/orders/statuses.data';
@@ -41,9 +41,9 @@ test.describe('[UI] [Orders] [Modals] [Create Order Modal]', () => {
 
 test.describe('[UI] [Orders] [Modals] [Reopen Order Modal]', () => {
   let targetOrderId: string;
-  test.beforeEach(async ({ homeUIService, ordersPage, orderDetailsPage, orderCanceledStatus }) => {
+  test.beforeEach(async ({ homeUIService, ordersPage, orderDetailsPage, orderFactory }) => {
     const PRODUCTS_TO_CREATE_COUNT = 1;
-    const { id } = await orderCanceledStatus(PRODUCTS_TO_CREATE_COUNT);
+    const { id } = await orderFactory.orderCanceledStatus(PRODUCTS_TO_CREATE_COUNT);
     targetOrderId = id;
     await homeUIService.openAsLoggedInUser();
     await homeUIService.openModule('Orders');
@@ -73,9 +73,9 @@ test.describe('[UI] [Orders] [Modals] [Reopen Order Modal]', () => {
 
 test.describe('[UI] [Orders] [Modals] [Assign Manager Modal]', () => {
   let targetOrderId: string;
-  test.beforeEach(async ({ homeUIService, ordersPage, orderDetailsPage, orderDraftStatus }) => {
+  test.beforeEach(async ({ homeUIService, ordersPage, orderDetailsPage, orderFactory }) => {
     const PRODUCTS_TO_CREATE_COUNT = 1;
-    const { id } = await orderDraftStatus(PRODUCTS_TO_CREATE_COUNT);
+    const { id } = await orderFactory.orderDraftStatus(PRODUCTS_TO_CREATE_COUNT);
     targetOrderId = id;
 
     await homeUIService.openAsLoggedInUser();
@@ -118,9 +118,9 @@ test.describe('[UI] [Orders] [Modals] [Assign Manager Modal]', () => {
 });
 test.describe('[UI] [Orders] [Modals] [Remove Manager Modal]', () => {
   let targetOrderId: string;
-  test.beforeEach(async ({ homeUIService, ordersPage, orderDetailsPage, orderManagerAssignedStatus }) => {
+  test.beforeEach(async ({ homeUIService, ordersPage, orderDetailsPage, orderFactory }) => {
     const PRODUCTS_TO_CREATE_COUNT = 1;
-    const { id } = await orderManagerAssignedStatus(PRODUCTS_TO_CREATE_COUNT);
+    const { id } = await orderFactory.orderManagerAssignedStatus(PRODUCTS_TO_CREATE_COUNT);
     targetOrderId = id;
 
     await homeUIService.openAsLoggedInUser();

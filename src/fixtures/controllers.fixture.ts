@@ -1,30 +1,29 @@
-import { test as base } from '@playwright/test';
+import { APIRequestContext, test as base } from '@playwright/test';
 import { SignInController } from 'api/controllers/signIn.controller';
-import { CustomersController } from 'api/controllers/customers.controller';
-import { ProductsController } from 'api/controllers/products.controller';
-import { OrdersAPIController } from 'api/controllers/orders.controller';
+import { CustomersController } from 'api/controllers/customer.controller';
+import { ProductsController } from 'api/controllers/product.controller';
+import { OrdersController } from 'api/controllers/order.controller';
+
+type ControllerConstructor<T> = new (request: APIRequestContext) => T;
+
+const useController =
+  <T>(Ctor: ControllerConstructor<T>) =>
+  async ({ request }: { request: APIRequestContext }, use: (inst: T) => Promise<void>) => {
+    await use(new Ctor(request));
+  };
 
 interface ISalesPortalControllers {
+  signInController: SignInController;
   customersController: CustomersController;
   productsController: ProductsController;
-  signInController: SignInController;
-  ordersController: OrdersAPIController;
+  ordersController: OrdersController;
 }
 
 export const test = base.extend<ISalesPortalControllers>({
-  signInController: async ({ request }, use) => {
-    await use(new SignInController(request));
-  },
-  customersController: async ({ request }, use) => {
-    await use(new CustomersController(request));
-  },
-  productsController: async ({ request }, use) => {
-    await use(new ProductsController(request));
-  },
-
-  ordersController: async ({ request }, use) => {
-    await use(new OrdersAPIController(request));
-  },
+  signInController: useController(SignInController),
+  customersController: useController(CustomersController),
+  productsController: useController(ProductsController),
+  ordersController: useController(OrdersController),
 });
 
 export { expect } from '@playwright/test';

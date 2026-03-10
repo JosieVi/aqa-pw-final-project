@@ -1,4 +1,4 @@
-import { test } from 'fixtures/ordersCustom.fixture';
+import { test } from 'fixtures/index.fixture';
 import { STATUS_CODES } from 'data/statusCodes';
 import { TAGS } from 'data/testTags.data';
 import { validateResponse } from 'utils/validations/responseValidation';
@@ -15,10 +15,10 @@ test.describe('[API] [Orders] Get order by id', () => {
   });
 
   test.describe('Positive', () => {
-    test('200 OK - Get order by id', { tag: [TAGS.API, TAGS.ORDERS, TAGS.SMOKE] }, async ({ ordersController, orderDraftStatus }) => {
-      const { id } = await orderDraftStatus(); // получаем созданный заказ в статусе Draft
+    test('200 OK - Get order by id', { tag: [TAGS.API, TAGS.ORDERS, TAGS.SMOKE] }, async ({ ordersController, orderFactory }) => {
+      const { orderId } = await orderFactory.orderDraftStatus(); // получаем созданный заказ в статусе Draft
 
-      const response = await ordersController.getByID(id, token);
+      const response = await ordersController.getByID(orderId, token);
       validateResponse(response, STATUS_CODES.OK, true, null);
       validateSchema(getOrderByIDResponseSchema, response.body.Order);
     });
@@ -35,10 +35,10 @@ test.describe('[API] [Orders] Get order by id', () => {
     test(
       '401 Unauthorized - Get order by id without token',
       { tag: [TAGS.API, TAGS.ORDERS, TAGS.REGRESSION] },
-      async ({ ordersController, orderDraftStatus }) => {
-        const { id } = await orderDraftStatus();
+      async ({ ordersController, orderFactory }) => {
+        const { orderId } = await orderFactory.orderDraftStatus();
 
-        const response = await ordersController.getByID(id, '');
+        const response = await ordersController.getByID(orderId, '');
         validateResponse(response, STATUS_CODES.UNAUTHORIZED, false, ERROR_MESSAGES.NOT_AUTHORIZED);
       },
     );
@@ -46,10 +46,10 @@ test.describe('[API] [Orders] Get order by id', () => {
     test(
       '401 Unauthorized - Get order by id with invalid token',
       { tag: [TAGS.API, TAGS.ORDERS, TAGS.REGRESSION] },
-      async ({ ordersController, orderDraftStatus }) => {
-        const { id } = await orderDraftStatus();
+      async ({ ordersController, orderFactory }) => {
+        const { orderId } = await orderFactory.orderDraftStatus();
 
-        const response = await ordersController.getByID(id, 'Invalid token');
+        const response = await ordersController.getByID(orderId, 'Invalid token');
         validateResponse(response, STATUS_CODES.UNAUTHORIZED, false, ERROR_MESSAGES.INVALID_ACCESS_TOKEN);
       },
     );

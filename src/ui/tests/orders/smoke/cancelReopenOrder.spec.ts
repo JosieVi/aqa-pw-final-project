@@ -1,6 +1,6 @@
 import { ORDER_STATUS } from 'data/orders/statuses.data';
 import { TAGS } from 'data/testTags.data';
-import { expect, test } from 'fixtures/ordersCustom.fixture';
+import { expect, test } from 'fixtures/index.fixture';
 
 test.describe('[UI] [Orders] Cancel Order', () => {
   let token: string;

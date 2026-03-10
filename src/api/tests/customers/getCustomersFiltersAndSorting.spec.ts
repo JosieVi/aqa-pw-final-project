@@ -1,40 +1,78 @@
-import { test, expect } from 'fixtures/api-services.fixture';
+import { test, expect } from 'fixtures/index.fixture';
 import { STATUS_CODES } from 'data/statusCodes';
 import { validateResponse } from 'utils/validations/responseValidation';
 import { TAGS } from 'data/testTags.data';
 import { COUNTRIES } from 'data/customers/countries.data';
 import { generateCustomerData } from 'data/customers/generateCustomer.data';
 import { ICustomerFilterParams } from 'types/customer.types';
-import { customersListSchema } from 'data/schemas/customer.schema';
 import { validateSchema } from 'utils/validations/schemaValidation';
 import { ERROR_MESSAGES } from 'data/errorMessages';
+import { customersListSchema } from 'data/schemas/customer.schema';
 
-test.describe('[API][Customers] GET /api/customers filters and sorting', () => {
+test.describe('[API] [Customers] GET customers - filters and sorting', () => {
   let token = '';
-  const createdCustomerIds: string[] = [];
+  // let expectedCustomer: ICustomerEntity[] = [];
+  const expectedIds: string[] = [];
+
+  // const expectedIds: string[] = [];
 
   test.beforeAll(async ({ signInApiService }) => {
     token = await signInApiService.loginAsLocalUser();
   });
 
-  test.afterEach(async ({ customersApiService }) => {
-    await Promise.all(createdCustomerIds.map((id) => customersApiService.deleteCustomer(id, token).catch(() => {})));
-    createdCustomerIds.length = 0;
-  });
-
   test.describe('Positive', () => {
     test(
-      'Search by name with spaces',
+      'Should return list of customers after searching by name with spaces - 200 OK',
+      {
+        tag: [TAGS.API, TAGS.CUSTOMERS, TAGS.SMOKE, TAGS.REGRESSION],
+      },
+      async ({ customersController, customerFactory }) => {
+        const totalCustomers = 1;
+        const expectedName = `SearchTest${Math.random()
+          .toString(25)
+          .replace(/[^a-z]/g, '')}`;
+        const expectedCustomer = await customerFactory.multipleCustomers(totalCustomers, { name: expectedName });
+
+        expectedIds.push(...expectedCustomer.map((c) => c._id));
+
+        const params: ICustomerFilterParams = {
+          search: expectedName,
+          sortField: 'createdOn',
+          sortOrder: 'desc',
+        };
+
+        const response = await customersController.getFilteredCustomers(token, params);
+        validateResponse(response, STATUS_CODES.OK, true, null);
+        validateSchema(customersListSchema, response.body);
+
+        const actualIds = response.body.Customers.map((c) => c._id);
+
+        expect(response.body.search).toBe(expectedName);
+        expect(response.body.Customers.every((c) => c.name.toLowerCase().includes(expectedName.toLowerCase()))).toBeTruthy();
+        expect(actualIds).toEqual(expect.arrayContaining(expectedIds));
+
+        expect(response.body.Customers.length).toBe(totalCustomers);
+
+        expect(response.body.Customers).toMatchObject(expectedCustomer);
+
+        // TODO: Try to use this approach
+        // expect(response.body.Customers).toMatchObject(expectedCustomers);
+      },
+    );
+
+    test(
+      'Should return list of customers after filtering by single country - 200 OK',
       {
         tag: [TAGS.API, TAGS.CUSTOMERS, TAGS.SMOKE, TAGS.REGRESSION],
       },
       async ({ customersController }) => {
-        const testCustomer = generateCustomerData();
-        const createResponse = await customersController.create(testCustomer, token);
-        createdCustomerIds.push(createResponse.body.Customer._id);
+        const totalCustomers = 1;
+        const expectedCustomerData = generateCustomerData({ country: COUNTRIES.BELARUS });
+        const expectedCustomer = await customersController.create(expectedCustomerData, token);
+        expectedIds.push(expectedCustomer.body.Customer._id);
 
         const params: ICustomerFilterParams = {
-          search: testCustomer.name,
+          country: [expectedCustomerData.country],
           sortField: 'createdOn',
           sortOrder: 'desc',
         };
@@ -44,41 +82,14 @@ test.describe('[API][Customers] GET /api/customers filters and sorting', () => {
         validateResponse(response, STATUS_CODES.OK, true, null);
         validateSchema(customersListSchema, response.body);
 
-        expect(response.body.Customers.length).toBeGreaterThan(0);
-        expect(response.body.search).toBe(testCustomer.name);
-        expect(response.body.Customers.every((c) => c.name.includes(testCustomer.name))).toBeTruthy();
+        expect(response.body.Customers.length).toBeGreaterThan(totalCustomers);
+        expect(response.body.country).toEqual([expectedCustomerData.country]);
+        expect(response.body.Customers.every((c) => c.country === expectedCustomerData.country)).toBeTruthy();
       },
     );
 
     test(
-      'Filter by single country',
-      {
-        tag: [TAGS.API, TAGS.CUSTOMERS, TAGS.SMOKE, TAGS.REGRESSION],
-      },
-      async ({ customersController }) => {
-        const testCustomer = generateCustomerData();
-        const createResponse = await customersController.create(testCustomer, token);
-        createdCustomerIds.push(createResponse.body.Customer._id);
-
-        const params: ICustomerFilterParams = {
-          country: [testCustomer.country],
-          sortField: 'createdOn',
-          sortOrder: 'desc',
-        };
-
-        const response = await customersController.getFilteredCustomers(token, params);
-
-        validateResponse(response, STATUS_CODES.OK, true, null);
-        validateSchema(customersListSchema, response.body);
-
-        expect(response.body.Customers.length).toBeGreaterThan(0);
-        expect(response.body.country).toEqual([testCustomer.country]);
-        expect(response.body.Customers.every((c) => c.country === testCustomer.country)).toBeTruthy();
-      },
-    );
-
-    test(
-      'Filter by multiple countries',
+      'Should return list of customers after filtering by multiple countries - 200 OK',
       {
         tag: [TAGS.API, TAGS.CUSTOMERS, TAGS.REGRESSION],
       },
@@ -86,9 +97,9 @@ test.describe('[API][Customers] GET /api/customers filters and sorting', () => {
         const countries = [COUNTRIES.FRANCE, COUNTRIES.RUSSIA];
         await Promise.all(
           countries.map(async (country) => {
-            const customer = generateCustomerData({ country });
-            const response = await customersController.create(customer, token);
-            createdCustomerIds.push(response.body.Customer._id);
+            const expectedCustomerData = generateCustomerData({ country });
+            const response = await customersController.create(expectedCustomerData, token);
+            expectedIds.push(response.body.Customer._id);
           }),
         );
 
@@ -109,10 +120,11 @@ test.describe('[API][Customers] GET /api/customers filters and sorting', () => {
       },
     );
 
-    test('Sort by createdOn ascending', async ({ customersApiService, customersController }) => {
+    test('Should return list of customers after sorting by createdOn ascending', async ({ customersController }) => {
       // 1. Создаем данные через сервис
-      const users = await customersApiService.createTestUsers(token, 3);
-      createdCustomerIds.push(...users.map((u) => u._id));
+      // const totalCustomers = 1;
+      // const users = await customerFactory.multipleCustomers(totalCustomers);
+      // expectedIds.push(...users.map((u) => u._id));
 
       // 2. Получаем response через контроллер (для валидации)
       const response = await customersController.getFilteredCustomers(token, {
@@ -129,13 +141,14 @@ test.describe('[API][Customers] GET /api/customers filters and sorting', () => {
     });
 
     test(
-      'Sort by createdOn descending',
+      'Should return list of customers after sorting by createdOn descending',
       {
         tag: [TAGS.API, TAGS.CUSTOMERS, TAGS.SMOKE, TAGS.REGRESSION],
       },
-      async ({ customersApiService, customersController }) => {
-        const users = await customersApiService.createTestUsers(token, 3);
-        createdCustomerIds.push(...users.map((u) => u._id));
+      async ({ customerFactory, customersController }) => {
+        const totalCustomers = 1;
+        const users = await customerFactory.multipleCustomers(totalCustomers);
+        expectedIds.push(...users.map((u) => u._id));
 
         const response = await customersController.getFilteredCustomers(token, {
           sortField: 'createdOn',
@@ -155,13 +168,14 @@ test.describe('[API][Customers] GET /api/customers filters and sorting', () => {
     );
 
     test(
-      'Sort by name descending',
+      'Should return list of customers after sorting by name descending',
       {
         tag: [TAGS.API, TAGS.CUSTOMERS, TAGS.REGRESSION],
       },
-      async ({ customersApiService, customersController }) => {
-        const users = await customersApiService.createTestUsers(token, 3);
-        createdCustomerIds.push(...users.map((u) => u._id));
+      async ({ customerFactory, customersController }) => {
+        const totalCustomers = 1;
+        const users = await customerFactory.multipleCustomers(totalCustomers);
+        expectedIds.push(...users.map((u) => u._id));
 
         const response = await customersController.getFilteredCustomers(token, {
           sortField: 'name',
@@ -181,13 +195,14 @@ test.describe('[API][Customers] GET /api/customers filters and sorting', () => {
     );
 
     test(
-      'Sort by name ascending',
+      'Should return list of customers after sorting by name ascending',
       {
         tag: [TAGS.API, TAGS.CUSTOMERS, TAGS.REGRESSION],
       },
-      async ({ customersApiService, customersController }) => {
-        const users = await customersApiService.createTestUsers(token, 3);
-        createdCustomerIds.push(...users.map((u) => u._id));
+      async ({ customerFactory, customersController }) => {
+        const totalCustomers = 1;
+        const users = await customerFactory.multipleCustomers(totalCustomers);
+        expectedIds.push(...users.map((u) => u._id));
 
         const response = await customersController.getFilteredCustomers(token, {
           sortField: 'name',
@@ -208,18 +223,18 @@ test.describe('[API][Customers] GET /api/customers filters and sorting', () => {
     );
 
     test(
-      'Search by email with country filter',
+      'Should return list of customers after searching by email with country filter',
       {
         tag: [TAGS.API, TAGS.CUSTOMERS, TAGS.REGRESSION],
       },
       async ({ customersController }) => {
         const testCountry = COUNTRIES.BELARUS;
-        const testCustomer = generateCustomerData({ country: testCountry });
-        const createResponse = await customersController.create(testCustomer, token);
-        createdCustomerIds.push(createResponse.body.Customer._id);
+        const expectedCustomerData = generateCustomerData({ country: testCountry });
+        const expectedCustomer = await customersController.create(expectedCustomerData, token);
+        expectedIds.push(expectedCustomer.body.Customer._id);
 
         const params: ICustomerFilterParams = {
-          search: testCustomer.email,
+          search: expectedCustomerData.email,
           country: [testCountry],
           sortField: 'createdOn',
           sortOrder: 'desc',
@@ -231,20 +246,21 @@ test.describe('[API][Customers] GET /api/customers filters and sorting', () => {
         validateSchema(customersListSchema, response.body);
 
         expect(response.body.Customers.length).toBeGreaterThan(0);
-        expect(response.body.search).toBe(testCustomer.email);
+        expect(response.body.search).toBe(expectedCustomerData.email);
         expect(response.body.country).toEqual([testCountry]);
-        expect(response.body.Customers.some((c) => c._id === createResponse.body.Customer._id)).toBeTruthy();
+        expect(response.body.Customers.some((c) => c._id === expectedCustomer.body.Customer._id)).toBeTruthy();
       },
     );
 
     test(
-      'Sort by email ascending',
+      'Should return list of customers after sorting by email ascending',
       {
         tag: [TAGS.API, TAGS.CUSTOMERS, TAGS.REGRESSION],
       },
-      async ({ customersApiService, customersController }) => {
-        const users = await customersApiService.createTestUsers(token, 3);
-        createdCustomerIds.push(...users.map((u) => u._id));
+      async ({ customerFactory, customersController }) => {
+        const totalCustomers = 1;
+        const users = await customerFactory.multipleCustomers(totalCustomers);
+        expectedIds.push(...users.map((u) => u._id));
 
         const response = await customersController.getFilteredCustomers(token, {
           sortField: 'email',
@@ -265,13 +281,14 @@ test.describe('[API][Customers] GET /api/customers filters and sorting', () => {
     );
 
     test(
-      'Sort by email descending',
+      'Should return list of customers after sorting by email descending',
       {
         tag: [TAGS.API, TAGS.CUSTOMERS, TAGS.REGRESSION],
       },
-      async ({ customersApiService, customersController }) => {
-        const users = await customersApiService.createTestUsers(token, 3);
-        createdCustomerIds.push(...users.map((u) => u._id));
+      async ({ customerFactory, customersController }) => {
+        const totalCustomers = 1;
+        const users = await customerFactory.multipleCustomers(totalCustomers);
+        expectedIds.push(...users.map((u) => u._id));
 
         const response = await customersController.getFilteredCustomers(token, {
           sortField: 'email',
@@ -292,7 +309,7 @@ test.describe('[API][Customers] GET /api/customers filters and sorting', () => {
     );
 
     test(
-      'Sort by country descending',
+      'Should return list of customers after sorting by country descending',
       {
         tag: [TAGS.API, TAGS.CUSTOMERS, TAGS.REGRESSION],
       },
@@ -318,7 +335,7 @@ test.describe('[API][Customers] GET /api/customers filters and sorting', () => {
     );
 
     test(
-      'Sort by country ascending',
+      'Should return list of customers after sorting by country ascending',
       {
         tag: [TAGS.API, TAGS.CUSTOMERS, TAGS.REGRESSION],
       },
@@ -344,13 +361,13 @@ test.describe('[API][Customers] GET /api/customers filters and sorting', () => {
     );
 
     test(
-      'Pagination: second page',
+      'Should return list of customers on second page',
       {
         tag: [TAGS.API, TAGS.CUSTOMERS, TAGS.REGRESSION],
       },
-      async ({ customersApiService, customersController }) => {
-        const users = await customersApiService.createTestUsers(token, 15);
-        createdCustomerIds.push(...users.map((u) => u._id));
+      async ({ customerFactory, customersController }) => {
+        const users = await customerFactory.multipleCustomers(15);
+        expectedIds.push(...users.map((u) => u._id));
 
         const [firstPage, secondPage] = await Promise.all([
           customersController.getCustomersWithPagination(token, {
@@ -377,16 +394,16 @@ test.describe('[API][Customers] GET /api/customers filters and sorting', () => {
     );
 
     test(
-      'Search by name without spaces',
+      'Should return list of customers after searching by name without spaces',
       {
         tag: [TAGS.API, TAGS.CUSTOMERS, TAGS.REGRESSION],
       },
       async ({ customersController }) => {
         const testName = 'BrycenQuigley';
-        const testCustomer = { ...generateCustomerData(), name: testName };
+        const expectedCustomerData = { ...generateCustomerData(), name: testName };
 
-        const createResponse = await customersController.create(testCustomer, token);
-        createdCustomerIds.push(createResponse.body.Customer._id);
+        const expectedCustomer = await customersController.create(expectedCustomerData, token);
+        expectedIds.push(expectedCustomer.body.Customer._id);
 
         const params: ICustomerFilterParams = {
           search: testName,
@@ -406,16 +423,16 @@ test.describe('[API][Customers] GET /api/customers filters and sorting', () => {
     );
 
     test(
-      'Search by country name',
+      'Should return list of customers after searching by country name',
       {
         tag: [TAGS.API, TAGS.CUSTOMERS, TAGS.REGRESSION],
       },
       async ({ customersController }) => {
-        const testCustomer = generateCustomerData();
-        const testCountry = testCustomer.country;
+        const expectedCustomerData = generateCustomerData();
+        const testCountry = expectedCustomerData.country;
 
-        const createResponse = await customersController.create(testCustomer, token);
-        createdCustomerIds.push(createResponse.body.Customer._id);
+        const expectedCustomer = await customersController.create(expectedCustomerData, token);
+        expectedIds.push(expectedCustomer.body.Customer._id);
 
         const params: ICustomerFilterParams = {
           search: testCountry,
@@ -442,9 +459,9 @@ test.describe('[API][Customers] GET /api/customers filters and sorting', () => {
         tag: [TAGS.API, TAGS.CUSTOMERS],
       },
       async ({ customersController }) => {
-        const testCustomer = generateCustomerData();
-        const createResponse = await customersController.create(testCustomer, token);
-        createdCustomerIds.push(createResponse.body.Customer._id);
+        const expectedCustomerData = generateCustomerData();
+        const expectedCustomer = await customersController.create(expectedCustomerData, token);
+        expectedIds.push(expectedCustomer.body.Customer._id);
 
         const response = await customersController.getFilteredCustomers(token, {
           search: '',
@@ -467,9 +484,9 @@ test.describe('[API][Customers] GET /api/customers filters and sorting', () => {
         tag: [TAGS.API, TAGS.CUSTOMERS],
       },
       async ({ customersController }) => {
-        const testCustomer = generateCustomerData();
-        const createResponse = await customersController.create(testCustomer, token);
-        createdCustomerIds.push(createResponse.body.Customer._id);
+        const expectedCustomerData = generateCustomerData();
+        const expectedCustomer = await customersController.create(expectedCustomerData, token);
+        expectedIds.push(expectedCustomer.body.Customer._id);
 
         const response = await customersController.getCustomersWithPagination(token, {
           page: 1,
@@ -491,9 +508,9 @@ test.describe('[API][Customers] GET /api/customers filters and sorting', () => {
         tag: [TAGS.API, TAGS.CUSTOMERS],
       },
       async ({ customersController }) => {
-        const testCustomer = generateCustomerData();
-        const createResponse = await customersController.create(testCustomer, token);
-        createdCustomerIds.push(createResponse.body.Customer._id);
+        const expectedCustomerData = generateCustomerData();
+        const expectedCustomer = await customersController.create(expectedCustomerData, token);
+        expectedIds.push(expectedCustomer.body.Customer._id);
 
         const response = await customersController.getCustomersWithPagination(token, {
           limit: 10,
@@ -515,9 +532,9 @@ test.describe('[API][Customers] GET /api/customers filters and sorting', () => {
         tag: [TAGS.API, TAGS.CUSTOMERS],
       },
       async ({ customersController }) => {
-        const testCustomer = generateCustomerData();
-        const createResponse = await customersController.create(testCustomer, token);
-        createdCustomerIds.push(createResponse.body.Customer._id);
+        const expectedCustomerData = generateCustomerData();
+        const expectedCustomer = await customersController.create(expectedCustomerData, token);
+        expectedIds.push(expectedCustomer.body.Customer._id);
 
         const allCustomersResponse = await customersController.getAllCustomers(token);
         const totalCustomers = allCustomersResponse.body.Customers.length;
@@ -544,9 +561,9 @@ test.describe('[API][Customers] GET /api/customers filters and sorting', () => {
         tag: [TAGS.API, TAGS.CUSTOMERS],
       },
       async ({ customersController }) => {
-        const testCustomer = generateCustomerData();
-        const createResponse = await customersController.create(testCustomer, token);
-        createdCustomerIds.push(createResponse.body.Customer._id);
+        const expectedCustomerData = generateCustomerData();
+        const expectedCustomer = await customersController.create(expectedCustomerData, token);
+        expectedIds.push(expectedCustomer.body.Customer._id);
 
         const response = await customersController.getFilteredCustomers(token, {
           country: ['Brazil'] as unknown as COUNTRIES[],
@@ -566,9 +583,9 @@ test.describe('[API][Customers] GET /api/customers filters and sorting', () => {
         tag: [TAGS.API, TAGS.CUSTOMERS],
       },
       async ({ customersController }) => {
-        const testCustomer = generateCustomerData();
-        const createResponse = await customersController.create(testCustomer, token);
-        createdCustomerIds.push(createResponse.body.Customer._id);
+        const expectedCustomerData = generateCustomerData();
+        const expectedCustomer = await customersController.create(expectedCustomerData, token);
+        expectedIds.push(expectedCustomer.body.Customer._id);
 
         const response = await customersController.getFilteredCustomers(token, {
           country: [],
@@ -588,9 +605,9 @@ test.describe('[API][Customers] GET /api/customers filters and sorting', () => {
         tag: [TAGS.API, TAGS.CUSTOMERS],
       },
       async ({ customersController }) => {
-        const testCustomer = generateCustomerData();
-        const createResponse = await customersController.create(testCustomer, token);
-        createdCustomerIds.push(createResponse.body.Customer._id);
+        const expectedCustomerData = generateCustomerData();
+        const expectedCustomer = await customersController.create(expectedCustomerData, token);
+        expectedIds.push(expectedCustomer.body.Customer._id);
 
         const response = await customersController.getFilteredCustomers(token, {
           sortField: 'createdOn',
@@ -608,9 +625,9 @@ test.describe('[API][Customers] GET /api/customers filters and sorting', () => {
         tag: [TAGS.API, TAGS.CUSTOMERS],
       },
       async ({ customersController }) => {
-        const testCustomer = generateCustomerData();
-        const createResponse = await customersController.create(testCustomer, token);
-        createdCustomerIds.push(createResponse.body.Customer._id);
+        const expectedCustomerData = generateCustomerData();
+        const expectedCustomer = await customersController.create(expectedCustomerData, token);
+        expectedIds.push(expectedCustomer.body.Customer._id);
 
         const response = await customersController.getFilteredCustomers(token, {
           sortOrder: 'desc',
@@ -651,9 +668,9 @@ test.describe('[API][Customers] GET /api/customers filters and sorting', () => {
         tag: [TAGS.API, TAGS.CUSTOMERS],
       },
       async ({ customersController }) => {
-        const testCustomer = generateCustomerData();
-        const createResponse = await customersController.create(testCustomer, token);
-        createdCustomerIds.push(createResponse.body.Customer._id);
+        const expectedCustomerData = generateCustomerData();
+        const expectedCustomer = await customersController.create(expectedCustomerData, token);
+        expectedIds.push(expectedCustomer.body.Customer._id);
 
         const response = await customersController.getFilteredCustomers(token, {});
 

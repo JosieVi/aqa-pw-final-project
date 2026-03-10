@@ -13,9 +13,9 @@ export class SignInPage extends PageHolder {
   async fillCredentials({ email, password }: ICredentials) {
     if (email) {
       await this.emailInput.fill(email);
-    }
-    if (password) {
-      await this.passwordInput.fill(password);
+      if (password) {
+        await this.passwordInput.fill(password);
+      }
     }
   }
 

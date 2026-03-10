@@ -4,18 +4,18 @@ import { errorResponseSchema, oneProductResponseSchema } from 'data/schemas/prod
 import { STATUS_CODES } from 'data/statusCodes';
 import { TAGS } from 'data/testTags.data';
 import { test } from 'fixtures/api-services.fixture';
-import { IProduct } from 'types/products.types';
+import { IProductPayload } from 'types/product.types';
 import { validateResponse } from 'utils/validations/responseValidation';
 import { validateSchema } from 'utils/validations/schemaValidation';
 
 test.describe('[API] [Products] Update product by ID', () => {
   let token = '';
   let productId = '';
-  let originalProductData: IProduct;
+  let originalProductData: IProductPayload;
 
   test.beforeEach(async ({ signInApiService, productsApiService }) => {
     token = await signInApiService.loginAsLocalUser();
-    originalProductData = generateProductData() as IProduct;
+    originalProductData = generateProductData() as IProductPayload;
     const createdProduct = await productsApiService.create(token, originalProductData);
     productId = createdProduct._id;
   });
@@ -27,7 +27,7 @@ test.describe('[API] [Products] Update product by ID', () => {
 
     positiveTestCasesForUpdate.forEach(({ name, data }) => {
       test(`Should update product: ${name}`, { tag: [TAGS.API, TAGS.PRODUCTS, TAGS.SMOKE, TAGS.REGRESSION] }, async ({ productsController }) => {
-        const updateProduct: Partial<IProduct> = {
+        const updateProduct: Partial<IProductPayload> = {
           ...originalProductData,
           ...data,
         };

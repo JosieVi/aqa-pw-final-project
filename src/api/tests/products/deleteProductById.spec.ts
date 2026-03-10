@@ -1,12 +1,12 @@
 import { STATUS_CODES } from 'data/statusCodes';
 import { TAGS } from 'data/testTags.data';
 import { test } from 'fixtures/api-services.fixture';
-import { IProductFromResponse } from 'types/products.types';
+import { IProduct } from 'types/product.types';
 import { validateResponse } from 'utils/validations/responseValidation';
 
 test.describe('[API] [Products] Delete product', () => {
   let token = '';
-  let product: IProductFromResponse;
+  let product: IProduct;
 
   test.beforeEach(async ({ signInApiService, productsApiService }) => {
     token = await signInApiService.loginAsLocalUser();
@@ -14,9 +14,9 @@ test.describe('[API] [Products] Delete product', () => {
   });
 
   test.describe('Positive', () => {
-    test('Delete product - 200 OK', { tag: [TAGS.API, TAGS.PRODUCTS, TAGS.SMOKE, TAGS.REGRESSION] }, async ({ productsController }) => {
+    test('Should delete product - 200 OK', { tag: [TAGS.API, TAGS.PRODUCTS, TAGS.SMOKE, TAGS.REGRESSION] }, async ({ productsController }) => {
       const response = await productsController.delete(product._id, token);
-      validateResponse(response, STATUS_CODES.DELETED, null, null);
+      validateResponse(response, STATUS_CODES.DELETED);
 
       const responseAfterDelete = await productsController.delete(product._id, token);
       validateResponse(responseAfterDelete, STATUS_CODES.NOT_FOUND, false, `Product with id '${product._id}' wasn't found`);
@@ -25,7 +25,7 @@ test.describe('[API] [Products] Delete product', () => {
 
   test.describe('Negative', () => {
     test(
-      'Delete product with empty token - 401 Unauthorized',
+      'Should NOT delete product with empty token - 401 Unauthorized',
       { tag: [TAGS.API, TAGS.PRODUCTS, TAGS.REGRESSION] },
       async ({ productsController }) => {
         const token = '';
@@ -35,7 +35,7 @@ test.describe('[API] [Products] Delete product', () => {
     );
 
     test(
-      'Delete product with invalid token - 401 Unauthorized',
+      'Should NOT delete product with invalid token - 401 Unauthorized',
       { tag: [TAGS.API, TAGS.PRODUCTS, TAGS.REGRESSION] },
       async ({ productsController }) => {
         const token = 'Invalid Token';
@@ -44,10 +44,14 @@ test.describe('[API] [Products] Delete product', () => {
       },
     );
 
-    test('Delete not exist product - 404 Not Found', { tag: [TAGS.API, TAGS.PRODUCTS, TAGS.REGRESSION] }, async ({ productsController }) => {
-      const productId = '684f45261c508c5d5e553e8a';
-      const response = await productsController.delete(productId, token);
-      validateResponse(response, STATUS_CODES.NOT_FOUND, false, `Product with id '${productId}' wasn't found`);
-    });
+    test(
+      'Should NOT delete not exist product - 404 Not Found',
+      { tag: [TAGS.API, TAGS.PRODUCTS, TAGS.REGRESSION] },
+      async ({ productsController }) => {
+        const productId = '684f45261c508c5d5e553e8a';
+        const response = await productsController.delete(productId, token);
+        validateResponse(response, STATUS_CODES.NOT_FOUND, false, `Product with id '${productId}' wasn't found`);
+      },
+    );
   });
 });

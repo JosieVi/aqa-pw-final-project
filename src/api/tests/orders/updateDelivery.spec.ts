@@ -1,4 +1,4 @@
-import { expect } from 'fixtures/api-services.fixture';
+//import { expect } from 'fixtures/api-services.fixture';
 import { generateDeliveryData } from 'data/orders/generateDeliveryData.data';
 import {
   negativeTestCasesForDelivery,
@@ -8,25 +8,25 @@ import {
 import { deliverySchema } from 'data/schemas/order.schema';
 import { STATUS_CODES } from 'data/statusCodes';
 import { TAGS } from 'data/testTags.data';
-import { orderDraftStatus } from 'fixtures/ordersCustom.fixture';
+import { test, expect } from 'fixtures/index.fixture';
 import { generateUniqueId } from 'utils/generateUniqueID.utils';
 import { validateResponse } from 'utils/validations/responseValidation';
 import { validateSchema } from 'utils/validations/schemaValidation';
 
-orderDraftStatus.describe('[API] [Orders] Update delivery', () => {
+test.describe('[API] [Orders] Update delivery', () => {
   let token = '';
 
-  orderDraftStatus.beforeEach(async ({ signInApiService }) => {
+  test.beforeEach(async ({ signInApiService }) => {
     token = await signInApiService.loginAsLocalUser();
   });
 
-  orderDraftStatus.describe('Positive', () => {
+  test.describe('Positive', () => {
     positiveTestCasesForDelivery.forEach(({ name, data, expectedStatusCode, isSuccess, errorMessage }) => {
-      orderDraftStatus(
+      test(
         `Should update delivery: ${name}`,
         { tag: [TAGS.API, TAGS.ORDERS, TAGS.SMOKE, TAGS.REGRESSION] },
-        async ({ ordersController, orderDraftStatus }) => {
-          const { id: orderId } = await orderDraftStatus();
+        async ({ ordersController, orderFactory }) => {
+          const { id: orderId } = await orderFactory.orderDraftStatus();
 
           const response = await ordersController.updateDelivery(orderId, data, token);
 
@@ -44,36 +44,28 @@ orderDraftStatus.describe('[API] [Orders] Update delivery', () => {
     });
   });
 
-  orderDraftStatus.describe('Negative', () => {
+  test.describe('Negative', () => {
     negativeTestCasesForDelivery.forEach(({ name, data, expectedStatusCode, isSuccess, errorMessage }) => {
-      orderDraftStatus(
-        `Should NOT update delivery: ${name}`,
-        { tag: [TAGS.API, TAGS.ORDERS, TAGS.REGRESSION] },
-        async ({ ordersController, orderDraftStatus }) => {
-          const { id: orderId } = await orderDraftStatus();
+      test(`Should NOT update delivery: ${name}`, { tag: [TAGS.API, TAGS.ORDERS, TAGS.REGRESSION] }, async ({ ordersController, orderFactory }) => {
+        const { id: orderId } = await orderFactory.orderDraftStatus();
 
-          const response = await ordersController.updateDelivery(orderId, data, token);
+        const response = await ordersController.updateDelivery(orderId, data, token);
 
-          validateResponse(response, expectedStatusCode, isSuccess, errorMessage);
-        },
-      );
+        validateResponse(response, expectedStatusCode, isSuccess, errorMessage);
+      });
     });
 
     negativeTestCasesForDeliveryWithoutToken.forEach(({ name, data, invalidToken, expectedStatusCode, isSuccess, errorMessage }) => {
-      orderDraftStatus(
-        `Should NOT update delivery: ${name}`,
-        { tag: [TAGS.API, TAGS.ORDERS, TAGS.REGRESSION] },
-        async ({ ordersController, orderDraftStatus }) => {
-          const { id: orderId } = await orderDraftStatus();
+      test(`Should NOT update delivery: ${name}`, { tag: [TAGS.API, TAGS.ORDERS, TAGS.REGRESSION] }, async ({ ordersController, orderFactory }) => {
+        const { id: orderId } = await orderFactory.orderDraftStatus();
 
-          const response = await ordersController.updateDelivery(orderId, data, invalidToken);
+        const response = await ordersController.updateDelivery(orderId, data, invalidToken);
 
-          validateResponse(response, expectedStatusCode, isSuccess, errorMessage);
-        },
-      );
+        validateResponse(response, expectedStatusCode, isSuccess, errorMessage);
+      });
     });
 
-    orderDraftStatus(
+    test(
       'Should NOT update delivery: For non-existent order check',
       { tag: [TAGS.API, TAGS.ORDERS, TAGS.REGRESSION] },
       async ({ ordersController }) => {

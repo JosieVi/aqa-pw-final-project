@@ -1,6 +1,6 @@
 import { logStep } from 'utils/reporter.utils';
 import { SalesPortalPage } from './salesPortal.page';
-import { IAddress } from 'types/orders.types';
+import { IAddress } from 'types/order.types';
 import { DATE_PICKER_MONTHS, DELIVERY, LOCATION } from 'data/orders/delivery.data';
 
 export abstract class BaseDeliveryPage extends SalesPortalPage {

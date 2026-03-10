@@ -1,13 +1,13 @@
 import { TAGS } from 'data/testTags.data';
-import { expect, test } from 'fixtures/ordersCustom.fixture';
+import { expect, test } from 'fixtures/index.fixture';
 
 test.describe('[UI] [Orders] [Orders Details] [Edit Products] Replace/add/delete product', () => {
   let productNames: string[] = [];
   let orderId: string;
 
-  test.beforeEach(async ({ homeUIService, orderDraftStatus, ordersPage, orderDetailsPage, productsApiService, signInApiService }) => {
+  test.beforeEach(async ({ homeUIService, orderFactory, ordersPage, orderDetailsPage, productsApiService, signInApiService }) => {
     const PRODUCTS_TO_CREATE_COUNT = 3;
-    const result = await orderDraftStatus(PRODUCTS_TO_CREATE_COUNT);
+    const result = await orderFactory.orderDraftStatus(PRODUCTS_TO_CREATE_COUNT);
     orderId = result.id;
 
     const token = await signInApiService.loginAsLocalUser();
@@ -45,8 +45,8 @@ test.describe('[UI] [Orders] [Orders Details] [Edit Products] Replace/add/delete
 
     await orderDetailsPage.editProductsInOrderModal.clickAddProduct();
 
-    const productCount = await orderDetailsPage.editProductsInOrderModal.productsList.count();
-    await orderDetailsPage.editProductsInOrderModal.selectProductAtPosition(firstProductName, productCount);
+    const totalProducts = await orderDetailsPage.editProductsInOrderModal.productsList.count();
+    await orderDetailsPage.editProductsInOrderModal.selectProductAtPosition(firstProductName, totalProducts);
 
     await orderDetailsPage.editProductsInOrderModal.clickSave();
     await orderDetailsPage.waitForSpinner();

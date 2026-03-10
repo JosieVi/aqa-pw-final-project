@@ -2,13 +2,13 @@ import { oneProductResponseSchema } from 'data/schemas/product.schema';
 import { STATUS_CODES } from 'data/statusCodes';
 import { TAGS } from 'data/testTags.data';
 import { test, expect } from 'fixtures/api-services.fixture';
-import { IProductFromResponse } from 'types/products.types';
+import { IProduct } from 'types/product.types';
 import { validateResponse } from 'utils/validations/responseValidation';
 import { validateSchema } from 'utils/validations/schemaValidation';
 
 test.describe('[API] [Products] Get Product By Id', () => {
   let token = '';
-  let product: IProductFromResponse;
+  let product: IProduct;
 
   test.beforeEach(async ({ signInApiService, productsApiService }) => {
     token = await signInApiService.loginAsLocalUser();

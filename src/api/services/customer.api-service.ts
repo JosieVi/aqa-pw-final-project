@@ -1,20 +1,15 @@
-import { APIRequestContext } from '@playwright/test';
-import { CustomersController } from 'api/controllers/customers.controller';
+import { CustomersController } from 'api/controllers/customer.controller';
 import { generateCustomerData } from 'data/customers/generateCustomer.data';
 import { STATUS_CODES } from 'data/statusCodes';
-import { ICustomer, ICustomerFilterParams, ICustomersAllResponse } from 'types/customer.types';
+import { ICustomerPayload, ICustomerFilterParams, ICustomerListResponse } from 'types/customer.types';
 import { logStep } from 'utils/reporter.utils';
 import { validateResponse } from 'utils/validations/responseValidation';
 
 export class CustomersApiService {
-  controller: CustomersController;
-
-  constructor(request: APIRequestContext) {
-    this.controller = new CustomersController(request);
-  }
+  constructor(private readonly controller: CustomersController) {}
 
   @logStep('Create Customer via API')
-  async createCustomer(token: string, customData?: ICustomer) {
+  async createCustomer(token: string, customData?: Partial<ICustomerPayload>) {
     const body = generateCustomerData(customData);
     const response = await this.controller.create(body, token);
     validateResponse(response, STATUS_CODES.CREATED, true, null);
@@ -32,7 +27,7 @@ export class CustomersApiService {
   async getAllCustomers(token: string) {
     const response = await this.controller.getAllCustomers(token);
     validateResponse(response, STATUS_CODES.OK, true, null);
-    return response.body as ICustomersAllResponse;
+    return response.body as ICustomerListResponse;
   }
 
   @logStep('Get Customer by ID via API')
@@ -43,7 +38,7 @@ export class CustomersApiService {
   }
 
   @logStep('Update Customer by ID via API')
-  async updateCustomer(id: string, updates: Partial<ICustomer>, token: string) {
+  async updateCustomer(id: string, updates: Partial<ICustomerPayload>, token: string) {
     const response = await this.controller.update(id, updates, token);
     validateResponse(response, STATUS_CODES.OK, true, null);
     return response.body.Customer;
@@ -52,20 +47,6 @@ export class CustomersApiService {
   @logStep('Delete Customer by ID via API')
   async deleteCustomer(id: string, token: string) {
     const response = await this.controller.delete(id, token);
-    validateResponse(response, STATUS_CODES.DELETED, null, null);
-  }
-
-  @logStep('Create multiple test customers via API')
-  async createTestUsers(token: string, count = 3, customData: Partial<ICustomer> = {}) {
-    const users = [];
-    for (let i = 0; i < count; i++) {
-      const userData: ICustomer = {
-        ...generateCustomerData(), // Полностью сгенерированный объект
-        ...customData, // Перезаписываем кастомными данными
-      };
-      const user = await this.createCustomer(token, userData);
-      users.push(user);
-    }
-    return users;
+    validateResponse(response, STATUS_CODES.DELETED);
   }
 }

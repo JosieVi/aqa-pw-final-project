@@ -1,6 +1,6 @@
 import { faker } from '@faker-js/faker';
 import { COUNTRIES } from 'data/customers/countries.data';
-import { IAddress, IDelivery } from 'types/orders.types';
+import { IAddress, IDelivery } from 'types/order.types';
 import { DELIVERY } from './delivery.data';
 
 export function generateDeliveryData(params?: { finalDate?: string; condition?: DELIVERY; address?: Partial<IAddress> }): IDelivery {

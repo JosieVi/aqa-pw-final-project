@@ -1,6 +1,7 @@
-import { expect, test } from 'fixtures/ordersCustom.fixture';
+import { expect, test } from 'fixtures/index.fixture';
 import { TAGS } from 'data/testTags.data';
-import { OrderSetupService } from 'ui/services/orderSetup.ui-service';
+// import { OrderSetupService } from 'ui/services/orderSetup.ui-service';
+// TODO почему не нужен импорт
 import { ORDER_STATUS } from 'data/orders/statuses.data';
 test.describe('[UI] [Orders] [Customer]', () => {
   test.describe('[Positive]', () => {
@@ -8,9 +9,9 @@ test.describe('[UI] [Orders] [Customer]', () => {
     let initialCustomerNameInOrder: string | null;
     let token: string;
 
-    test.beforeEach(async ({ homeUIService, ordersPage, orderDetailsPage, orderDraftStatus, page }) => {
+    test.beforeEach(async ({ homeUIService, ordersPage, orderDetailsPage, orderFactory, page }) => {
       const PRODUCTS_TO_CREATE_COUNT = 1;
-      const { id } = await orderDraftStatus(PRODUCTS_TO_CREATE_COUNT);
+      const { id } = await orderFactory.orderDraftStatus(PRODUCTS_TO_CREATE_COUNT);
       targetOrderId = id;
 
       await homeUIService.openAsLoggedInUser();
@@ -87,10 +88,10 @@ test.describe('[UI] [Orders] [Customer]', () => {
     test.describe('[Negative] Orders were created without service', () => {
       let targetOrderId: string;
 
-      test.beforeEach(async ({ homeUIService, ordersPage, orderDetailsPage, orderCanceledStatus }) => {
+      test.beforeEach(async ({ homeUIService, ordersPage, orderDetailsPage, orderFactory }) => {
         const PRODUCTS_TO_CREATE_COUNT = 1;
 
-        const { id } = await orderCanceledStatus(PRODUCTS_TO_CREATE_COUNT);
+        const { id } = await orderFactory.orderCanceledStatus(PRODUCTS_TO_CREATE_COUNT);
         targetOrderId = id;
 
         await homeUIService.openAsLoggedInUser();
@@ -111,10 +112,10 @@ test.describe('[UI] [Orders] [Customer]', () => {
     test.describe('[Negative] Orders were created without service', () => {
       let targetOrderId: string;
 
-      test.beforeEach(async ({ homeUIService, ordersPage, orderDetailsPage, orderInProcessStatus }) => {
+      test.beforeEach(async ({ homeUIService, ordersPage, orderDetailsPage, orderFactory }) => {
         const PRODUCTS_TO_CREATE_COUNT = 1;
 
-        const { id } = await orderInProcessStatus(PRODUCTS_TO_CREATE_COUNT);
+        const { id } = await orderFactory.orderInProcessStatus(PRODUCTS_TO_CREATE_COUNT);
         targetOrderId = id;
 
         await homeUIService.openAsLoggedInUser();
@@ -135,10 +136,10 @@ test.describe('[UI] [Orders] [Customer]', () => {
     test.describe('[Negative] Orders were created without service', () => {
       let targetOrderId: string;
 
-      test.beforeEach(async ({ homeUIService, ordersPage, orderDetailsPage, orderReceivedStatus }) => {
+      test.beforeEach(async ({ homeUIService, ordersPage, orderDetailsPage, orderFactory }) => {
         const PRODUCTS_TO_CREATE_COUNT = 1;
 
-        const { id } = await orderReceivedStatus(PRODUCTS_TO_CREATE_COUNT);
+        const { id } = await orderFactory.orderReceivedStatus(PRODUCTS_TO_CREATE_COUNT);
         targetOrderId = id;
 
         await homeUIService.openAsLoggedInUser();
@@ -159,10 +160,10 @@ test.describe('[UI] [Orders] [Customer]', () => {
     test.describe('[Negative] Orders were created without service', () => {
       let targetOrderId: string;
 
-      test.beforeEach(async ({ homeUIService, ordersPage, orderDetailsPage, orderPartiallyReceivedStatus }) => {
+      test.beforeEach(async ({ homeUIService, ordersPage, orderDetailsPage, orderFactory }) => {
         const PRODUCTS_TO_CREATE_COUNT = 1;
 
-        const { id } = await orderPartiallyReceivedStatus(PRODUCTS_TO_CREATE_COUNT);
+        const { id } = await orderFactory.orderPartiallyReceivedStatus(PRODUCTS_TO_CREATE_COUNT);
         targetOrderId = id;
 
         await homeUIService.openAsLoggedInUser();
@@ -180,32 +181,17 @@ test.describe('[UI] [Orders] [Customer]', () => {
     });
 
     test.describe('[Negative] Orders were created dynamically by service', () => {
-      let orderSetupService: OrderSetupService;
+      // let orderSetupService: OrderSetupService;
 
-      test.beforeEach(
-        async ({
-          page,
-          orderInProcessStatus,
-          orderDraftStatus,
-          orderDraftWithDeliveryStatus,
-          orderCanceledStatus,
-          orderPartiallyReceivedStatus,
-          orderReceivedStatus,
-        }) => {
-          const allOrderFixtures = {
-            orderInProcessStatus,
-            orderDraftStatus,
-            orderDraftWithDeliveryStatus,
-            orderCanceledStatus,
-            orderPartiallyReceivedStatus,
-            orderReceivedStatus,
-          };
+      // test.beforeEach(async ({ page, orderFactory }) => {
+      //   const allOrderFixtures = orderFactory;
 
-          orderSetupService = new OrderSetupService(page, allOrderFixtures);
-        },
-      );
+      //   orderSetupService = new OrderSetupService(page, allOrderFixtures);
+      // });
 
-      test('Should not open edit customer modal for Canceled order', { tag: [TAGS.UI] }, async ({ orderDetailsPage }) => {
+      // TODO Проверить остальные тесты на наличие лишнего создания сетапсервиса
+
+      test('Should not open edit customer modal for Canceled order', { tag: [TAGS.UI] }, async ({ orderSetupService, orderDetailsPage }) => {
         await orderSetupService.createOrderAndNavigateToDetails(ORDER_STATUS.CANCELED);
 
         const editButton = orderDetailsPage.customerDetailsSection.editCustomerButton;
@@ -213,15 +199,19 @@ test.describe('[UI] [Orders] [Customer]', () => {
         await expect(editButton).not.toBeVisible();
       });
 
-      test('Should not open edit customer modal for Partially Received order', { tag: [TAGS.UI] }, async ({ orderDetailsPage }) => {
-        await orderSetupService.createOrderAndNavigateToDetails(ORDER_STATUS.PARTIALLY_RECEIVED, 2, 1);
+      test(
+        'Should not open edit customer modal for Partially Received order',
+        { tag: [TAGS.UI] },
+        async ({ orderSetupService, orderDetailsPage }) => {
+          await orderSetupService.createOrderAndNavigateToDetails(ORDER_STATUS.PARTIALLY_RECEIVED, 2, 1);
 
-        const editButton = orderDetailsPage.customerDetailsSection.editCustomerButton;
+          const editButton = orderDetailsPage.customerDetailsSection.editCustomerButton;
 
-        await expect(editButton).not.toBeVisible();
-      });
+          await expect(editButton).not.toBeVisible();
+        },
+      );
 
-      test('Should not open edit customer modal for Received order', { tag: [TAGS.UI] }, async ({ orderDetailsPage }) => {
+      test('Should not open edit customer modal for Received order', { tag: [TAGS.UI] }, async ({ orderSetupService, orderDetailsPage }) => {
         await orderSetupService.createOrderAndNavigateToDetails(ORDER_STATUS.RECEIVED);
 
         const editButton = orderDetailsPage.customerDetailsSection.editCustomerButton;
@@ -229,7 +219,7 @@ test.describe('[UI] [Orders] [Customer]', () => {
         await expect(editButton).not.toBeVisible();
       });
 
-      test('Should not open edit customer modal for In Process order', { tag: [TAGS.UI] }, async ({ orderDetailsPage }) => {
+      test('Should not open edit customer modal for In Process order', { tag: [TAGS.UI] }, async ({ orderSetupService, orderDetailsPage }) => {
         await orderSetupService.createOrderAndNavigateToDetails(ORDER_STATUS.IN_PROCESS);
 
         const editButton = orderDetailsPage.customerDetailsSection.editCustomerButton;

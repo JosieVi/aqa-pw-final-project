@@ -1,4 +1,4 @@
-import { APIRequestContext } from '@playwright/test';
+// import { APIRequestContext } from '@playwright/test';
 import { SignInController } from 'api/controllers/signIn.controller';
 import { USER_LOGIN, USER_PASSWORD } from 'config/environment';
 import { STATUS_CODES } from 'data/statusCodes';
@@ -6,13 +6,13 @@ import { validateResponse } from 'utils/validations/responseValidation';
 import { logStep } from 'utils/reporter.utils';
 
 export class SignInApiService {
-  controller: SignInController;
+  private controller: SignInController;
 
-  constructor(request: APIRequestContext) {
-    this.controller = new SignInController(request);
+  constructor(controller: SignInController) {
+    this.controller = controller;
   }
 
-  @logStep('Login as local user via API with default credentials')
+  @logStep('Login  as local user via API with default credentials')
   async loginAsLocalUser() {
     const response = await this.controller.signIn({
       username: USER_LOGIN,
@@ -31,3 +31,5 @@ export class SignInApiService {
     validateResponse(response, STATUS_CODES.OK, true, null);
   }
 }
+
+// TODO: think about managing the token. FOr instance, create a file AuthTokenManager.ts. Or use worker-scoped fixture without shanging SignInApiService.

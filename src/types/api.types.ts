@@ -1,14 +1,13 @@
 export interface IRequestOptions {
-  baseURL?: string;
+  baseURL: string;
   url: string;
-  method: 'get' | 'post' | 'put' | 'delete';
+  method: 'get' | 'post' | 'put' | 'delete' | 'patch';
   data?: object;
   headers?: Record<string, string>;
 }
 
 export interface IResponse<T extends object | null> {
   status: number;
-  // headers: object;
   headers: Record<string, string>;
   body: T;
 }
@@ -18,13 +17,13 @@ export interface IResponseFields {
   ErrorMessage: string | null;
 }
 
-export type sortDirection = 'asc' | 'desc';
+export type SortDirection = 'asc' | 'desc';
 
-export type customersSortField = 'createdOn' | 'email' | 'name' | 'country';
+export type CustomersSortField = 'createdOn' | 'email' | 'name' | 'country';
 
-export type productsSortField = 'createdOn' | 'price' | 'name' | 'manufacturer';
+export type ProductsSortField = 'createdOn' | 'price' | 'name' | 'manufacturer';
 
-export type ordersSortField = 'createdOn' | 'status' | '_id' | 'email' | 'price' | 'delivery' | 'assignedManager';
+export type OrdersSortField = 'createdOn' | 'status' | '_id' | 'email' | 'price' | 'delivery' | 'assignedManager';
 
 export interface ILoginResponseBody extends IResponseFields {
   User: {

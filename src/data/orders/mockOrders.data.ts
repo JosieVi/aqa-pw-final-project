@@ -1,8 +1,8 @@
 import { COUNTRIES } from 'data/customers/countries.data';
 import { MANUFACTURERS } from 'data/products/manufacturers.data';
-import { ICustomerFromResponse } from 'types/customer.types';
-import { IManager, IDelivery, IHistory, ICommentFromResponse, IOrderFromResponse, IOrderFilteredResponse } from 'types/orders.types';
-import { IProductFromResponse } from 'types/products.types';
+import { ICustomerEntity } from 'types/customer.types';
+import { IManager, IDelivery, IHistory, IComment, IOrder, IOrderSearchResponse } from 'types/order.types';
+import { IProduct } from 'types/product.types';
 import { generateUniqueId } from 'utils/generateUniqueID.utils';
 import { DELIVERY } from './delivery.data';
 import { ORDER_HISTORY_ACTIONS } from './history.data';
@@ -28,8 +28,8 @@ export const MOCK_MANAGER_NASTYA: IManager = {
   createdOn: '2025/04/28 09:48:18',
 };
 
-// Моковые клиенты (ICustomerFromResponse)
-export const MOCK_CUSTOMER_ALICE: ICustomerFromResponse = {
+// Моковые клиенты (ICustomerEntity)
+export const MOCK_CUSTOMER_ALICE: ICustomerEntity = {
   _id: generateUniqueId(),
   name: 'Alice Smith',
   email: 'alice.smith@example.com',
@@ -44,7 +44,7 @@ export const MOCK_CUSTOMER_ALICE: ICustomerFromResponse = {
   createdOn: '2024-06-01T08:00:00Z',
 };
 
-export const MOCK_CUSTOMER_BOB: ICustomerFromResponse = {
+export const MOCK_CUSTOMER_BOB: ICustomerEntity = {
   _id: generateUniqueId(),
   name: 'Bob Johnson',
   email: 'bob.johnson@example.com',
@@ -59,7 +59,7 @@ export const MOCK_CUSTOMER_BOB: ICustomerFromResponse = {
   createdOn: '2024-06-10T09:30:00Z',
 };
 
-export const MOCK_CUSTOMER_CHARLIE: ICustomerFromResponse = {
+export const MOCK_CUSTOMER_CHARLIE: ICustomerEntity = {
   _id: generateUniqueId(),
   name: 'Charlie Brown',
   email: 'charlie.brown@example.com',
@@ -74,8 +74,8 @@ export const MOCK_CUSTOMER_CHARLIE: ICustomerFromResponse = {
   createdOn: '2024-06-15T11:45:00Z',
 };
 
-// Моковые продукты (IProductFromResponse)
-export const MOCK_PRODUCT_TWO: IProductFromResponse = {
+// Моковые продукты (IProduct)
+export const MOCK_PRODUCT_TWO: IProduct = {
   _id: generateUniqueId(),
   name: 'New Product Two',
   price: 99.99,
@@ -85,7 +85,7 @@ export const MOCK_PRODUCT_TWO: IProductFromResponse = {
   createdOn: '2025-01-15T09:30:00Z',
 };
 
-export const MOCK_PRODUCT_ONE: IProductFromResponse = {
+export const MOCK_PRODUCT_ONE: IProduct = {
   _id: generateUniqueId(),
   name: 'New Product One',
   price: 49.99,
@@ -95,7 +95,7 @@ export const MOCK_PRODUCT_ONE: IProductFromResponse = {
   createdOn: '2025-02-20T14:00:00Z',
 };
 
-export const MOCK_PRODUCT_THREE: IProductFromResponse = {
+export const MOCK_PRODUCT_THREE: IProduct = {
   _id: generateUniqueId(),
   name: 'New Product Three',
   price: 1234.0,
@@ -131,15 +131,15 @@ export const MOCK_HISTORY_CREATED_ALICE: IHistory = {
   assignedManager: null,
 };
 
-// Моковый комментарий (ICommentFromResponse)
-export const MOCK_COMMENT_INITIAL: ICommentFromResponse = {
+// Моковый комментарий (IComment)
+export const MOCK_COMMENT_INITIAL: IComment = {
   _id: generateUniqueId(),
   text: 'Initial comment on order',
   createdOn: '2025-07-01T10:05:00Z',
 };
 
-// Моковые ордера (IOrderFromResponse)
-export const MOCK_ORDER_IN_PROCESS: IOrderFromResponse = {
+// Моковые ордера (IOrder)
+export const MOCK_ORDER_IN_PROCESS: IOrder = {
   _id: generateUniqueId(),
   status: ORDER_STATUS.IN_PROCESS,
   customer: MOCK_CUSTOMER_ALICE,
@@ -155,7 +155,7 @@ export const MOCK_ORDER_IN_PROCESS: IOrderFromResponse = {
   assignedManager: MOCK_MANAGER_OLGA,
 };
 
-export const MOCK_ORDER_DRAFT: IOrderFromResponse = {
+export const MOCK_ORDER_DRAFT: IOrder = {
   _id: generateUniqueId(),
   status: ORDER_STATUS.DRAFT,
   customer: MOCK_CUSTOMER_BOB,
@@ -175,7 +175,7 @@ export const MOCK_ORDER_DRAFT: IOrderFromResponse = {
   assignedManager: null,
 };
 
-export const MOCK_ORDER_CANCELED: IOrderFromResponse = {
+export const MOCK_ORDER_CANCELED: IOrder = {
   _id: generateUniqueId(),
   status: ORDER_STATUS.CANCELED,
   customer: MOCK_CUSTOMER_CHARLIE,
@@ -202,10 +202,10 @@ export const MOCK_ORDER_CANCELED: IOrderFromResponse = {
 };
 
 // API Response Mocks
-export const MOCK_ORDERS_LIST_API_RESPONSE: IOrderFilteredResponse = {
+export const MOCK_ORDERS_LIST_API_RESPONSE: IOrderSearchResponse = {
   Orders: [MOCK_ORDER_IN_PROCESS, MOCK_ORDER_DRAFT, MOCK_ORDER_CANCELED],
-  ErrorMessage: null,
-  IsSuccess: true,
+  errorMessage: null,
+  isSuccess: true,
   total: 3,
   page: 1,
   limit: 10,

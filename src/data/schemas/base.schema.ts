@@ -1,10 +1,10 @@
 import { ORDER_STATUS } from 'data/orders/statuses.data';
 
 export const baseSchemaPart = {
-  IsSuccess: {
+  isSuccess: {
     type: 'boolean',
   },
-  ErrorMessage: {
+  errorMessage: {
     type: ['string', 'null'],
   },
 };
@@ -55,10 +55,10 @@ export const ordersMetaSchema = {
 export const errorSchemaPart = {
   type: 'object',
   properties: {
-    IsSuccess: {
+    isSuccess: {
       type: 'boolean',
     },
-    ErrorMessage: {
+    errorMessage: {
       type: ['string', 'null'],
     },
   },
@@ -66,5 +66,5 @@ export const errorSchemaPart = {
 
 export const validationErrorSchema = {
   ...errorSchemaPart,
-  required: ['IsSuccess', 'ErrorMessage'],
+  required: ['isSuccess', 'errorMessage'],
 };

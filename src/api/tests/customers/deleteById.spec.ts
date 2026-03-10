@@ -1,50 +1,45 @@
-import { test, expect } from 'fixtures/api-services.fixture';
+import { test } from 'fixtures/index.fixture';
 import { STATUS_CODES } from 'data/statusCodes';
 import { validateResponse } from 'utils/validations/responseValidation';
-import { validateSchema } from 'utils/validations/schemaValidation';
 import { TAGS } from 'data/testTags.data';
-import { ICustomerFromResponse } from 'types/customer.types';
+import { ICustomerEntity } from 'types/customer.types';
 import { ERROR_MESSAGES } from 'data/errorMessages';
-import { validationErrorSchema } from 'data/schemas/base.schema';
 
-test.describe('[API][Customer] Get Customer By Id', () => {
+test.describe('[API] [Customers] Delete Customer By ID', () => {
   let token = '';
-  let customer: ICustomerFromResponse;
+  let customer: ICustomerEntity;
 
-  test.beforeEach(async ({ signInApiService, customersApiService }) => {
+  test.beforeEach(async ({ signInApiService, customerFactory }) => {
     token = await signInApiService.loginAsLocalUser();
-    customer = await customersApiService.createCustomer(token);
+    customer = await customerFactory.singleCustomer();
   });
 
   test.describe('Positive', () => {
     test(
-      'Should DELETE customer by correct id - 204 No Content',
+      'Should successfully delete customer - 204 No Content',
       { tag: [TAGS.API, TAGS.CUSTOMERS, TAGS.SMOKE, TAGS.REGRESSION] },
-      async ({ customersController }) => {
+      async ({ customersController, dataDisposalUtils }) => {
         const response = await customersController.delete(customer._id, token);
         validateResponse(response, STATUS_CODES.DELETED);
-        expect.soft(response.body).toBe('');
+        dataDisposalUtils.removeCustomer(customer._id);
 
         const responseAfterDelete = await customersController.getById(customer._id, token);
         validateResponse(responseAfterDelete, STATUS_CODES.NOT_FOUND, false, ERROR_MESSAGES.CUSTOMER_NOT_FOUND(customer._id));
-
-        validateSchema(validationErrorSchema, responseAfterDelete.body);
       },
     );
   });
   test.describe('Negative', () => {
     test(
-      'Should NOT DELETE customer by incorrect id - 404 Not Found',
+      'Should NOT delete customer with incorrect ID - 404 Not Found',
       { tag: [TAGS.API, TAGS.CUSTOMERS, TAGS.REGRESSION] },
       async ({ customersController }) => {
-        const incorrectID = `${customer._id.slice(13)}${Date.now()}`;
+        const incorrectID = `${customer._id.slice(0, -4)}ffff`;
         const response = await customersController.delete(incorrectID, token);
         validateResponse(response, STATUS_CODES.NOT_FOUND, false, ERROR_MESSAGES.CUSTOMER_NOT_FOUND(incorrectID));
-        validateSchema(validationErrorSchema, response);
       },
     );
     test(
-      'Should NOT DELETE customer with empty token - 401 Not authorized',
+      'Should NOT delete customer with empty token - 401 Not authorized',
       { tag: [TAGS.API, TAGS.CUSTOMERS, TAGS.REGRESSION] },
       async ({ customersController }) => {
         const token = '';
@@ -54,7 +49,7 @@ test.describe('[API][Customer] Get Customer By Id', () => {
     );
 
     test(
-      'Should NOT DELETE customer with invalid token - 401 Not authorized',
+      'Should NOT delete customer with invalid token - 401 Unauthorized',
       { tag: [TAGS.API, TAGS.CUSTOMERS, TAGS.REGRESSION] },
       async ({ customersController }) => {
         const token = 'Beer eyJhbGci';

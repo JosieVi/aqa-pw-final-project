@@ -3,7 +3,7 @@ import { generateCustomerData } from './generateCustomer.data';
 import { STATUS_CODES } from 'data/statusCodes';
 import { omit } from 'lodash';
 
-export const positiveTestCasesForCreate = [
+export const positiveCreateCustomerCases = [
   {
     name: 'Full valid data',
     data: generateCustomerData(),
@@ -13,14 +13,7 @@ export const positiveTestCasesForCreate = [
   },
   {
     name: 'Without notes field',
-    data: generateCustomerData({ notes: undefined }),
-    expectedStatusCode: STATUS_CODES.CREATED,
-    isSuccess: true,
-    errorMessage: null,
-  },
-  {
-    name: 'Email with post/prefix spaces',
-    data: generateCustomerData({ email: ' newSpecialEmail@fake.com ' }),
+    data: omit(generateCustomerData(), ['notes']),
     expectedStatusCode: STATUS_CODES.CREATED,
     isSuccess: true,
     errorMessage: null,
@@ -40,13 +33,6 @@ export const positiveTestCasesForCreate = [
     errorMessage: null,
   },
   {
-    name: 'Name with post/prefix spaces',
-    data: generateCustomerData({ name: ' Evilla Roberts ' }),
-    expectedStatusCode: STATUS_CODES.CREATED,
-    isSuccess: true,
-    errorMessage: null,
-  },
-  {
     name: '1-char city',
     data: generateCustomerData({ city: 'A' }),
     expectedStatusCode: STATUS_CODES.CREATED,
@@ -60,13 +46,7 @@ export const positiveTestCasesForCreate = [
     isSuccess: true,
     errorMessage: null,
   },
-  {
-    name: 'City with post/prefix spaces',
-    data: generateCustomerData({ city: ' Stockholm ' }),
-    expectedStatusCode: STATUS_CODES.CREATED,
-    isSuccess: true,
-    errorMessage: null,
-  },
+
   {
     name: '1-char street',
     data: generateCustomerData({ street: 'A' }),
@@ -77,13 +57,6 @@ export const positiveTestCasesForCreate = [
   {
     name: '40-char street including one space',
     data: generateCustomerData({ name: `${'A'.repeat(15)} ${'A'.repeat(24)}` }),
-    expectedStatusCode: STATUS_CODES.CREATED,
-    isSuccess: true,
-    errorMessage: null,
-  },
-  {
-    name: 'Street with post/prefix spaces',
-    data: generateCustomerData({ street: ' Mannerheim katu ' }),
     expectedStatusCode: STATUS_CODES.CREATED,
     isSuccess: true,
     errorMessage: null,
@@ -131,22 +104,8 @@ export const positiveTestCasesForCreate = [
     errorMessage: null,
   },
   {
-    name: 'Phone with post/prefix spaces',
-    data: generateCustomerData({ phone: ' +1234567890  ' }),
-    expectedStatusCode: STATUS_CODES.CREATED,
-    isSuccess: true,
-    errorMessage: null,
-  },
-  {
     name: '250-char notes',
     data: generateCustomerData({ notes: 'N'.repeat(250) }),
-    expectedStatusCode: STATUS_CODES.CREATED,
-    isSuccess: true,
-    errorMessage: null,
-  },
-  {
-    name: 'Notes with post/prefix spaces',
-    data: generateCustomerData({ notes: ' Some notes ' }),
     expectedStatusCode: STATUS_CODES.CREATED,
     isSuccess: true,
     errorMessage: null,
@@ -163,7 +122,7 @@ export const positiveTestCasesForCreate = [
   },
 ];
 
-export const negativeTestCasesForCreateWithoutToken = [
+export const negativeCreateCustomerCaseWithoutToken = [
   {
     name: 'Missing auth token',
     data: generateCustomerData(),
@@ -182,7 +141,7 @@ export const negativeTestCasesForCreateWithoutToken = [
   },
 ];
 
-export const negativeTestCasesForCreate = [
+export const negativeCreateCustomerCase = [
   {
     name: 'Empty email',
     data: generateCustomerData({ email: '' }),

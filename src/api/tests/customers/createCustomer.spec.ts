@@ -1,49 +1,49 @@
-import { test } from 'fixtures/api-services.fixture';
+import { test } from 'fixtures/index.fixture';
 import { STATUS_CODES } from 'data/statusCodes';
 import { generateCustomerData } from 'data/customers/generateCustomer.data';
 import { TAGS } from 'data/testTags.data';
 import { validateResponse } from 'utils/validations/responseValidation';
 
 import {
-  positiveTestCasesForCreate,
-  negativeTestCasesForCreate,
-  negativeTestCasesForCreateWithoutToken,
+  positiveCreateCustomerCases,
+  negativeCreateCustomerCase,
+  negativeCreateCustomerCaseWithoutToken,
 } from 'data/customers/createCustomerCases.data';
 
-test.describe('[API] [Customers] Create a new customer', () => {
+test.describe('[API] [Customers] Create A New Customer', () => {
   let token = '';
-  let id = '';
 
   test.beforeEach(async ({ signInApiService }) => {
     token = await signInApiService.loginAsLocalUser();
   });
 
   test.describe('Positive', () => {
-    test.afterEach(async ({ customersApiService }) => {
-      if (id) {
-        await customersApiService.deleteCustomer(id, token);
-      }
-    });
-
-    positiveTestCasesForCreate.forEach(({ name, data, expectedStatusCode, isSuccess, errorMessage }) => {
-      test(`Should create customer: ${name}`, { tag: [TAGS.API, TAGS.CUSTOMERS, TAGS.SMOKE, TAGS.REGRESSION] }, async ({ customersController }) => {
-        const response = await customersController.create(data, token);
-        validateResponse(response, expectedStatusCode, isSuccess, errorMessage);
-
-        id = response.body.Customer._id;
-      });
+    positiveCreateCustomerCases.forEach(({ name, data, expectedStatusCode, isSuccess, errorMessage }) => {
+      test(
+        `Should create customer: ${name} - ${expectedStatusCode} Created`,
+        { tag: [TAGS.API, TAGS.CUSTOMERS, TAGS.SMOKE, TAGS.REGRESSION] },
+        async ({ customersController, dataDisposalUtils }) => {
+          const response = await customersController.create(data, token);
+          dataDisposalUtils.trackCustomer(response.body.Customer._id);
+          validateResponse(response, expectedStatusCode, isSuccess, errorMessage);
+        },
+      );
     });
   });
 
   test.describe('Negative', () => {
-    negativeTestCasesForCreateWithoutToken.forEach(({ name, data, token, expectedStatusCode, isSuccess, errorMessage }) => {
-      test(`Should NOT create customer: ${name}`, { tag: [TAGS.API, TAGS.CUSTOMERS, TAGS.REGRESSION] }, async ({ customersController }) => {
-        const response = await customersController.create(data, token);
-        validateResponse(response, expectedStatusCode, isSuccess, errorMessage);
-      });
+    negativeCreateCustomerCaseWithoutToken.forEach(({ name, data, token, expectedStatusCode, isSuccess, errorMessage }) => {
+      test(
+        `Should not create customer ${name} - ${expectedStatusCode}`,
+        { tag: [TAGS.API, TAGS.CUSTOMERS, TAGS.REGRESSION] },
+        async ({ customersController }) => {
+          const response = await customersController.create(data, token);
+          validateResponse(response, expectedStatusCode, isSuccess, errorMessage);
+        },
+      );
     });
 
-    negativeTestCasesForCreate.forEach(({ name, data, expectedStatusCode, isSuccess, errorMessage }) => {
+    negativeCreateCustomerCase.forEach(({ name, data, expectedStatusCode, isSuccess, errorMessage }) => {
       test(`Should NOT create customer: ${name}`, { tag: [TAGS.API, TAGS.CUSTOMERS, TAGS.REGRESSION] }, async ({ customersController }) => {
         const response = await customersController.create(data, token);
         validateResponse(response, expectedStatusCode, isSuccess, errorMessage);
@@ -51,11 +51,13 @@ test.describe('[API] [Customers] Create a new customer', () => {
     });
 
     test(
-      'Should NOT create customer: Duplicate email',
+      'Should NOT create customer with duplicate email - 409 Conflict',
       { tag: [TAGS.API, TAGS.CUSTOMERS, TAGS.REGRESSION] },
-      async ({ customersController, customersApiService }) => {
+      async ({ customersController, customersApiService, dataDisposalUtils }) => {
         const customer1Data = generateCustomerData();
         const createResponse1 = await customersApiService.createCustomer(token, customer1Data);
+
+        dataDisposalUtils.trackCustomer(createResponse1._id);
 
         const customer2Data = {
           ...generateCustomerData(),
@@ -64,11 +66,6 @@ test.describe('[API] [Customers] Create a new customer', () => {
         const createResponse2 = await customersController.create(customer2Data, token);
 
         validateResponse(createResponse2, STATUS_CODES.CONFLICT, false, `Customer with email '${customer2Data.email}' already exists`);
-
-        id = createResponse1._id;
-        if (id) {
-          await customersApiService.deleteCustomer(id, token);
-        }
       },
     );
   });

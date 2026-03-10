@@ -1,4 +1,4 @@
-import { expect } from 'fixtures/api-services.fixture';
+import { expect, test } from 'fixtures/index.fixture';
 import { STATUS_CODES } from 'data/statusCodes';
 import { TAGS } from 'data/testTags.data';
 import { orderSchema } from 'data/schemas/order.schema';
@@ -7,28 +7,28 @@ import { validateResponse } from 'utils/validations/responseValidation';
 import { ORDER_STATUS } from 'data/orders/statuses.data';
 import { ERROR_MESSAGES } from 'data/errorMessages';
 import { ORDER_HISTORY_ACTIONS } from '../../../data/orders/history.data';
-import {
-  orderCanceledStatus,
-  orderDraftStatus,
-  orderInProcessStatus,
-  orderPartiallyReceivedStatus,
-  orderReceivedStatus,
-} from '../../../fixtures/ordersCustom.fixture';
+// import {
+//   orderCanceledStatus,
+//   orderDraftStatus,
+//   orderInProcessStatus,
+//   orderPartiallyReceivedStatus,
+//   orderReceivedStatus,
+// } from '../../../fixtures/ordersCustom.fixture';
 import { generateUniqueId } from '../../../utils/generateUniqueID.utils';
 
-orderInProcessStatus.describe('[API][Orders] Products Receipt - In Process Orders', () => {
+test.describe('[API][Orders] Products Receipt - In Process Orders', () => {
   let token = '';
 
-  orderInProcessStatus.beforeAll(async ({ signInApiService }) => {
+  test.beforeAll(async ({ signInApiService }) => {
     token = await signInApiService.loginAsLocalUser();
   });
 
-  orderInProcessStatus.describe('Positive cases', () => {
-    orderInProcessStatus(
+  test.describe('Positive cases', () => {
+    test(
       'Should successfully mark all products as received - 200 OK',
       { tag: [TAGS.API, TAGS.ORDERS, TAGS.SMOKE] },
-      async ({ orderInProcessStatus, ordersController }) => {
-        const { id: orderId, productsIds } = await orderInProcessStatus();
+      async ({ orderFactory, ordersController }) => {
+        const { orderId, productsIds } = await orderFactory.orderInProcessStatus();
         const response = await ordersController.receiveProducts(orderId, productsIds, token);
 
         validateResponse(response, STATUS_CODES.OK, true, null);
@@ -52,11 +52,11 @@ orderInProcessStatus.describe('[API][Orders] Products Receipt - In Process Order
       },
     );
 
-    orderInProcessStatus(
+    test(
       'Should successfully mark one product as received - Partial Receipt',
       { tag: [TAGS.API, TAGS.ORDERS, TAGS.REGRESSION] },
-      async ({ orderInProcessStatus, ordersController }) => {
-        const { id: orderId, productsIds } = await orderInProcessStatus(2);
+      async ({ orderFactory, ordersController }) => {
+        const { orderId, productsIds } = await orderFactory.orderInProcessStatus(2);
         const response = await ordersController.receiveProducts(orderId, [productsIds[0]], token);
 
         validateResponse(response, STATUS_CODES.OK, true, null);
@@ -79,11 +79,11 @@ orderInProcessStatus.describe('[API][Orders] Products Receipt - In Process Order
       },
     );
 
-    orderInProcessStatus(
+    test(
       'Should return error when products do not exist in order - 400 Bad Request',
       { tag: [TAGS.API, TAGS.ORDERS] },
-      async ({ orderInProcessStatus, ordersController, ordersApiService }) => {
-        const { id: orderId } = await orderInProcessStatus();
+      async ({ orderFactory, ordersController, ordersApiService }) => {
+        const { orderId } = await orderFactory.orderInProcessStatus();
 
         const orderBefore = await ordersApiService.getOrderByID(orderId, token);
         expect(orderBefore.status).toBe(ORDER_STATUS.IN_PROCESS);
@@ -95,11 +95,11 @@ orderInProcessStatus.describe('[API][Orders] Products Receipt - In Process Order
       },
     );
 
-    orderInProcessStatus(
+    test(
       'Should return 401 when using empty token',
       { tag: [TAGS.API, TAGS.ORDERS, TAGS.REGRESSION] },
-      async ({ orderInProcessStatus, ordersController }) => {
-        const { id: orderId, productsIds } = await orderInProcessStatus();
+      async ({ orderFactory, ordersController }) => {
+        const { orderId, productsIds } = await orderFactory.orderInProcessStatus();
 
         const response = await ordersController.receiveProducts(orderId, [productsIds[0]], '');
 
@@ -107,11 +107,11 @@ orderInProcessStatus.describe('[API][Orders] Products Receipt - In Process Order
       },
     );
 
-    orderInProcessStatus(
+    test(
       'Should return 401 when using invalid token',
       { tag: [TAGS.API, TAGS.ORDERS, TAGS.REGRESSION] },
-      async ({ orderInProcessStatus, ordersController }) => {
-        const { id: orderId, productsIds } = await orderInProcessStatus();
+      async ({ orderFactory, ordersController }) => {
+        const { orderId, productsIds } = await orderFactory.orderInProcessStatus();
 
         const response = await ordersController.receiveProducts(orderId, [productsIds[0]], 'Invalid access token');
 
@@ -121,18 +121,18 @@ orderInProcessStatus.describe('[API][Orders] Products Receipt - In Process Order
   });
 });
 
-orderPartiallyReceivedStatus.describe('[API][Orders] Products Receipt - Partially Received Orders', () => {
+test.describe('[API][Orders] Products Receipt - Partially Received Orders', () => {
   let token = '';
 
-  orderPartiallyReceivedStatus.beforeAll(async ({ signInApiService }) => {
+  test.beforeAll(async ({ signInApiService }) => {
     token = await signInApiService.loginAsLocalUser();
   });
 
-  orderPartiallyReceivedStatus(
+  test(
     'Should successfully mark all products as received from Partially Received status - 200 OK',
     { tag: [TAGS.API, TAGS.ORDERS, TAGS.SMOKE] },
-    async ({ orderPartiallyReceivedStatus, ordersController }) => {
-      const { id: orderId, productsIds } = await orderPartiallyReceivedStatus();
+    async ({ orderFactory, ordersController }) => {
+      const { orderId, productsIds } = await orderFactory.orderPartiallyReceivedStatus();
 
       const fullResponse = await ordersController.receiveProducts(orderId, productsIds, token);
 
@@ -155,18 +155,18 @@ orderPartiallyReceivedStatus.describe('[API][Orders] Products Receipt - Partiall
   );
 });
 
-orderReceivedStatus.describe('[API][Orders] Products Receipt - Already Received Orders', () => {
+test.describe('[API][Orders] Products Receipt - Already Received Orders', () => {
   let token = '';
 
-  orderReceivedStatus.beforeAll(async ({ signInApiService }) => {
+  test.beforeAll(async ({ signInApiService }) => {
     token = await signInApiService.loginAsLocalUser();
   });
 
-  orderReceivedStatus(
+  test(
     'Should return error when trying to receive already received products - 400 Bad Request',
     { tag: [TAGS.API, TAGS.ORDERS] },
-    async ({ orderReceivedStatus, ordersController, ordersApiService }) => {
-      const { id: orderId, productsIds } = await orderReceivedStatus();
+    async ({ orderFactory, ordersController, ordersApiService }) => {
+      const { orderId, productsIds } = await orderFactory.orderReceivedStatus();
 
       const orderBefore = await ordersApiService.getOrderByID(orderId, token);
       expect(orderBefore.status).toBe(ORDER_STATUS.RECEIVED);
@@ -178,18 +178,18 @@ orderReceivedStatus.describe('[API][Orders] Products Receipt - Already Received 
   );
 });
 
-orderDraftStatus.describe('[API][Orders] Products Receipt - Draft Orders', () => {
+test.describe('[API][Orders] Products Receipt - Draft Orders', () => {
   let token = '';
 
-  orderDraftStatus.beforeAll(async ({ signInApiService }) => {
+  test.beforeAll(async ({ signInApiService }) => {
     token = await signInApiService.loginAsLocalUser();
   });
 
-  orderDraftStatus(
+  test(
     'Should return error when trying to receive products for Draft order - 400 Bad Request',
     { tag: [TAGS.API, TAGS.ORDERS] },
-    async ({ orderDraftStatus, ordersController }) => {
-      const { id: orderId, productsIds } = await orderDraftStatus();
+    async ({ orderFactory, ordersController }) => {
+      const { orderId, productsIds } = await orderFactory.orderDraftStatus();
 
       const response = await ordersController.receiveProducts(orderId, productsIds, token);
 
@@ -198,18 +198,18 @@ orderDraftStatus.describe('[API][Orders] Products Receipt - Draft Orders', () =>
   );
 });
 
-orderCanceledStatus.describe('[API][Orders] Products Receipt - Canceled Orders', () => {
+test.describe('[API][Orders] Products Receipt - Canceled Orders', () => {
   let token = '';
 
-  orderCanceledStatus.beforeAll(async ({ signInApiService }) => {
+  test.beforeAll(async ({ signInApiService }) => {
     token = await signInApiService.loginAsLocalUser();
   });
 
-  orderCanceledStatus.skip(
+  test.skip(
     'Should return error when trying to receive products for Canceled order - 400 Bad Request',
     { tag: [TAGS.API, TAGS.ORDERS] },
-    async ({ orderCanceledStatus, ordersController }) => {
-      const { id: orderId, productsIds } = await orderCanceledStatus();
+    async ({ orderFactory, ordersController }) => {
+      const { orderId, productsIds } = await orderFactory.orderCanceledStatus();
 
       const response = await ordersController.receiveProducts(orderId, productsIds, token);
 
@@ -218,23 +218,19 @@ orderCanceledStatus.describe('[API][Orders] Products Receipt - Canceled Orders',
   );
 });
 
-orderInProcessStatus.describe('[API][Orders] Products Receipt - Edge Cases', () => {
+test.describe('[API][Orders] Products Receipt - Edge Cases', () => {
   let token = '';
 
-  orderInProcessStatus.beforeAll(async ({ signInApiService }) => {
+  test.beforeAll(async ({ signInApiService }) => {
     token = await signInApiService.loginAsLocalUser();
   });
 
-  orderInProcessStatus(
-    'Should return error when order does not exist - 404 Not Found',
-    { tag: [TAGS.API, TAGS.ORDERS] },
-    async ({ ordersController }) => {
-      const nonExistentOrderId = generateUniqueId();
-      const anyProductIds = [generateUniqueId()];
+  test('Should return error when order does not exist - 404 Not Found', { tag: [TAGS.API, TAGS.ORDERS] }, async ({ ordersController }) => {
+    const nonExistentOrderId = generateUniqueId();
+    const anyProductIds = [generateUniqueId()];
 
-      const response = await ordersController.receiveProducts(nonExistentOrderId, anyProductIds, token);
+    const response = await ordersController.receiveProducts(nonExistentOrderId, anyProductIds, token);
 
-      validateResponse(response, STATUS_CODES.NOT_FOUND, false, ERROR_MESSAGES.ORDER_NOT_FOUND);
-    },
-  );
+    validateResponse(response, STATUS_CODES.NOT_FOUND, false, ERROR_MESSAGES.ORDER_NOT_FOUND);
+  });
 });

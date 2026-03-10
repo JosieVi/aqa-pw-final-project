@@ -1,6 +1,7 @@
-import { expect, test } from 'fixtures/ui-services.fixture';
+// import { expect, test } from 'fixtures/ui-services.fixture';
 import { TAGS } from 'data/testTags.data';
 import { OrdersListColumnForSorting } from 'data/orders/ordersListColumn.data';
+import { expect, test } from 'fixtures/index.fixture';
 
 test.describe('[UI] [Sales Portal]', () => {
   test.describe('Login via services', () => {
@@ -38,8 +39,8 @@ test.describe('[UI] [Sales Portal]', () => {
       await ordersPage.clickDetailsButton(TEST_ORDER_ID);
       await orderDetailsPage.receivedProductsSection.waitForOpened();
 
-      const productCount = await orderDetailsPage.receivedProductsSection.getProductsAccordionCount();
-      await expect(productCount).toEqual(1);
+      const totalProducts = await orderDetailsPage.receivedProductsSection.getProductsAccordionCount();
+      await expect(totalProducts).toEqual(1);
     });
 
     test('Verify product received statuses', async ({ homeUIService, ordersPage, orderDetailsPage }) => {
@@ -49,9 +50,9 @@ test.describe('[UI] [Sales Portal]', () => {
       await ordersPage.clickDetailsButton(TEST_ORDER_ID);
       await orderDetailsPage.receivedProductsSection.waitForOpened();
 
-      const productCount = await orderDetailsPage.receivedProductsSection.getProductsAccordionCount();
+      const totalProducts = await orderDetailsPage.receivedProductsSection.getProductsAccordionCount();
       const allStatuses = await orderDetailsPage.receivedProductsSection.getAllProductReceivedStatusTexts();
-      await expect(allStatuses.length).toBe(productCount);
+      await expect(allStatuses.length).toBe(totalProducts);
       await expect(allStatuses).toContain('Not Received');
 
       const status1 = await orderDetailsPage.receivedProductsSection.getProductReceivedStatusText(PRODUCT_NAME_1);

@@ -17,7 +17,7 @@ Covers **UI tests**, **API tests**, **reporting**, and **code quality tools**.
 Install [Git Bash](https://git-scm.com/downloads/win), open the folder where you want the project, and run:
 
 ```bash
-git clone https://github.com/origamerpro/aqa-pw-final-project.git
+git clone https://github.com/josievi/aqa-pw-final-project.git
 ```
 
 ---
@@ -187,3 +187,22 @@ QA-PW-FINAL-PROJECT
 - 📏 [ESLint](https://eslint.org/) — Code linting
 - 🎨 [Prettier](https://prettier.io/) — Code formatting
 - 📈 [Allure](https://docs.qameta.io/allure/) — Beautiful test reports
+
+---
+
+Инструкция по сбросу БД через Docker Desktop:
+Открой терминал: Нажми на ту самую иконку CLI напротив твоего контейнера mongo-db в Docker Desktop. Откроется черное окно командной строки.
+
+Запусти оболочку Mongo: Прямо в этом окне напиши команду и нажми Enter:
+mongosh (если вдруг выдаст ошибку, что команда не найдена, значит образ старый, тогда напиши просто mongo).
+
+Найди свою базу: Чтобы вспомнить, как точно называется база твоего проекта, введи:
+show dbs
+
+Выбери базу: Подключись к ней командой use:
+use <имя*твоей*базы> (например: use aqa-shop)
+
+Уничтожь данные: Выполни команду удаления:
+db.dropDatabase()
+
+Выйди: Напиши exit, чтобы выйти из оболочки Mongo.

@@ -1,7 +1,7 @@
 import { COUNTRIES } from 'data/customers/countries.data';
-import { customersSortField, IResponseFields, sortDirection } from './api.types';
+import { CustomersSortField, IResponseFields, SortDirection } from './api.types';
 
-export interface ICustomer {
+export interface ICustomerPayload {
   email?: string;
   name: string;
   country: COUNTRIES;
@@ -14,37 +14,46 @@ export interface ICustomer {
   role?: string;
 }
 
-export type ICustomerInTable = Pick<ICustomer, 'email' | 'country' | 'name'>;
+export type CustomerInTable = Pick<ICustomerPayload, 'email' | 'country' | 'name'>;
 
-export interface ICustomerFromResponse extends ICustomer {
+export interface ICustomerEntity extends ICustomerPayload {
   _id: string;
   createdOn: string;
 }
 
-export interface ICustomerResponse extends IResponseFields {
-  Customer: ICustomerFromResponse;
+export interface ISingleCustomerResponse extends IResponseFields {
+  Customer: ICustomerEntity;
 }
 
-export interface ICustomersAllResponse extends IResponseFields {
-  Customers: ICustomerFromResponse[];
+export interface ICustomerListResponse extends IResponseFields {
+  Customers: ICustomerEntity[];
 }
 
-export interface ICustomersFilteredResponse extends IResponseFields {
-  Customers: ICustomerFromResponse[];
+export interface IFilteredCustomersResponse extends IResponseFields {
+  Customers: ICustomerEntity[];
   total: number;
   page: number;
   limit: number;
   search: string;
   country: COUNTRIES[];
   sorting: {
-    sortField: customersSortField;
-    sortOrder: sortDirection;
+    sortField: CustomersSortField;
+    sortOrder: SortDirection;
   };
 }
 
 export interface ICustomerFilterParams {
   search?: string;
   country?: COUNTRIES[];
-  sortField?: customersSortField;
-  sortOrder?: sortDirection;
+  sortField?: CustomersSortField;
+  sortOrder?: SortDirection;
+}
+
+export interface ICustomerFactory {
+  singleCustomer: (customData?: Partial<ICustomerEntity>) => Promise<ICustomerEntity>;
+  multipleCustomers: (count?: number, customData?: Partial<ICustomerEntity>) => Promise<ICustomerEntity[]>;
+}
+
+export interface ICustomCustomer {
+  customerFactory: ICustomerFactory;
 }
