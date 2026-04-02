@@ -1,34 +1,31 @@
-import { expect } from 'fixtures/api-services.fixture';
+import { expect } from 'fixtures/index.fixture';
 import { assignManagerResponseSchema, unassignManagerResponseSchema } from 'data/schemas/order.schema';
 import { STATUS_CODES } from 'data/statusCodes';
 import { TAGS } from 'data/testTags.data';
-// import { orderDraftStatus } from 'fixtures/ordersCustom.fixture';
 import { test } from 'fixtures/index.fixture';
 import { validateResponse } from 'utils/validations/responseValidation';
-import { validateSchema } from 'utils/validations/schemaValidation';
 import { ERROR_MESSAGES } from 'data/errorMessages';
 
 test.describe('[API] [Orders] Assign manager', () => {
-  let token = '';
-  const managerId = '680795ced006ba3d475fca1f';
-
-  test.beforeEach(async ({ signInApiService }) => {
-    token = await signInApiService.loginAsLocalUser();
-  });
+  const managerId = '69acb6dc273284b7a197451c';
 
   test.describe('Positive', () => {
-    test(`Should assign manager`, { tag: [TAGS.API, TAGS.ORDERS, TAGS.SMOKE, TAGS.REGRESSION] }, async ({ ordersController, orderFactory }) => {
-      const { orderId } = await orderFactory.orderDraftStatus();
+    test(
+      `Should assign manager`,
+      { tag: [TAGS.API, TAGS.ORDERS, TAGS.SMOKE, TAGS.REGRESSION] },
+      async ({ workerToken, ordersController, orderFactory }) => {
+        const { _id: orderId } = await orderFactory.orderDraftStatus();
 
-      const response = await ordersController.assignManager(orderId, managerId, token);
+        const response = await ordersController.assignManager(orderId, managerId, workerToken);
 
-      validateResponse(response, STATUS_CODES.OK, true, null);
-      const assignedOrder = response.body.Order;
+        validateResponse(response, STATUS_CODES.OK, true, null);
+        const assignedOrder = response.body.Order;
 
-      await validateSchema(assignManagerResponseSchema, assignedOrder);
+        await expect(assignedOrder).toMatchSchema(assignManagerResponseSchema);
 
-      expect(assignedOrder.assignedManager?._id).toBe(managerId);
-    });
+        expect(assignedOrder.assignedManager?._id).toBe(managerId);
+      },
+    );
   });
 
   test.describe('Negative', () => {
@@ -36,7 +33,7 @@ test.describe('[API] [Orders] Assign manager', () => {
       'Should return 401 when using invalid token',
       { tag: [TAGS.API, TAGS.ORDERS, TAGS.REGRESSION] },
       async ({ orderFactory, ordersController }) => {
-        const { orderId } = await orderFactory.orderDraftStatus();
+        const { _id: orderId } = await orderFactory.orderDraftStatus();
         const response = await ordersController.assignManager(orderId, managerId, 'Invalid access token');
 
         validateResponse(response, STATUS_CODES.UNAUTHORIZED, false, ERROR_MESSAGES.INVALID_ACCESS_TOKEN);
@@ -48,7 +45,7 @@ test.describe('[API] [Orders] Assign manager', () => {
       'Should return 401 when using empty token',
       { tag: [TAGS.API, TAGS.ORDERS, TAGS.REGRESSION] },
       async ({ orderFactory, ordersController }) => {
-        const { orderId } = await orderFactory.orderDraftStatus();
+        const { _id: orderId } = await orderFactory.orderDraftStatus();
         const response = await ordersController.assignManager(orderId, managerId, '');
 
         validateResponse(response, STATUS_CODES.UNAUTHORIZED, false, ERROR_MESSAGES.NOT_AUTHORIZED);
@@ -59,10 +56,10 @@ test.describe('[API] [Orders] Assign manager', () => {
     test(
       'Should return 404 when invalid Manager id',
       { tag: [TAGS.API, TAGS.ORDERS, TAGS.REGRESSION] },
-      async ({ orderFactory, ordersController }) => {
-        const { orderId } = await orderFactory.orderDraftStatus();
+      async ({ workerToken, orderFactory, ordersController }) => {
+        const { _id: orderId } = await orderFactory.orderDraftStatus();
         const invalidManagerId = '000000000000000000000000';
-        const response = await ordersController.assignManager(orderId, invalidManagerId, token);
+        const response = await ordersController.assignManager(orderId, invalidManagerId, workerToken);
 
         validateResponse(response, STATUS_CODES.NOT_FOUND, false, ERROR_MESSAGES.MANAGER_NOT_FOUND(invalidManagerId));
       },
@@ -71,37 +68,36 @@ test.describe('[API] [Orders] Assign manager', () => {
 });
 
 test.describe('[API] [Orders] Unassign manager', () => {
-  let token = '';
   const managerId = '680795ced006ba3d475fca1f';
 
-  test.beforeEach(async ({ signInApiService }) => {
-    token = await signInApiService.loginAsLocalUser();
-  });
-
   test.describe('Positive', () => {
-    test(`Should unassign manager`, { tag: [TAGS.API, TAGS.ORDERS, TAGS.SMOKE, TAGS.REGRESSION] }, async ({ ordersController, orderFactory }) => {
-      const { orderId } = await orderFactory.orderDraftStatus();
+    test(
+      `Should unassign manager`,
+      { tag: [TAGS.API, TAGS.ORDERS, TAGS.SMOKE, TAGS.REGRESSION] },
+      async ({ workerToken, ordersController, orderFactory }) => {
+        const { _id: orderId } = await orderFactory.orderDraftStatus();
 
-      await ordersController.assignManager(orderId, managerId, token);
+        await ordersController.assignManager(orderId, managerId, workerToken);
 
-      const response = await ordersController.unassignManager(orderId, token);
+        const response = await ordersController.unassignManager(orderId, workerToken);
 
-      validateResponse(response, STATUS_CODES.OK, true, null);
+        validateResponse(response, STATUS_CODES.OK, true, null);
 
-      const unAssignedOrder = response.body.Order;
+        const unAssignedOrder = response.body.Order;
 
-      await validateSchema(unassignManagerResponseSchema, unAssignedOrder);
+        await expect(unAssignedOrder).toMatchSchema(unassignManagerResponseSchema);
 
-      expect(unAssignedOrder._id).toBe(orderId);
-      expect(unAssignedOrder.assignedManager).toBe(null);
-    });
+        expect(unAssignedOrder._id).toBe(orderId);
+        expect(unAssignedOrder.assignedManager).toBe(null);
+      },
+    );
   });
   test.describe('Negative', () => {
     test(
       'Should return 401 when using invalid token',
       { tag: [TAGS.API, TAGS.ORDERS, TAGS.REGRESSION] },
       async ({ orderFactory, ordersController }) => {
-        const { orderId } = await orderFactory.orderDraftStatus();
+        const { _id: orderId } = await orderFactory.orderDraftStatus();
         const response = await ordersController.unassignManager(orderId, 'Invalid access token');
 
         validateResponse(response, STATUS_CODES.UNAUTHORIZED, false, ERROR_MESSAGES.INVALID_ACCESS_TOKEN);
@@ -113,7 +109,7 @@ test.describe('[API] [Orders] Unassign manager', () => {
       'Should return 401 when using empty token',
       { tag: [TAGS.API, TAGS.ORDERS, TAGS.REGRESSION] },
       async ({ orderFactory, ordersController }) => {
-        const { orderId } = await orderFactory.orderDraftStatus();
+        const { _id: orderId } = await orderFactory.orderDraftStatus();
         const response = await ordersController.unassignManager(orderId, '');
 
         validateResponse(response, STATUS_CODES.UNAUTHORIZED, false, ERROR_MESSAGES.NOT_AUTHORIZED);
@@ -121,9 +117,9 @@ test.describe('[API] [Orders] Unassign manager', () => {
     );
   });
   test.describe('Negative', () => {
-    test('Should return 404 when invalid order id', { tag: [TAGS.API, TAGS.ORDERS, TAGS.REGRESSION] }, async ({ ordersController }) => {
+    test('Should return 404 when invalid order id', { tag: [TAGS.API, TAGS.ORDERS, TAGS.REGRESSION] }, async ({ workerToken, ordersController }) => {
       const invalidOrderId = '000000000000000000000000';
-      const response = await ordersController.unassignManager(invalidOrderId, token);
+      const response = await ordersController.unassignManager(invalidOrderId, workerToken);
 
       validateResponse(response, STATUS_CODES.NOT_FOUND, false, ERROR_MESSAGES.ORDER_NOT_FOUND_WITH_ID(invalidOrderId));
     });

@@ -4,6 +4,8 @@ import { ProductsApiService } from 'api/services/product.api-service';
 import { CustomersApiService } from 'api/services/customer.api-service';
 import { OrdersAPIService } from 'api/services/order.api-service';
 import { DataDisposalUtils } from 'utils/dataDisposal.utils';
+import { SignInController } from 'api/controllers/signIn.controller';
+import { apiConfig } from 'config/api-config';
 
 interface IApiServices {
   customersApiService: CustomersApiService;
@@ -12,8 +14,12 @@ interface IApiServices {
   ordersApiService: OrdersAPIService;
   dataDisposalUtils: DataDisposalUtils;
 }
+// NEW
+export interface IWorkerFixtures {
+  workerToken: string;
+}
 
-export const test = base.extend<IApiServices>({
+export const test = base.extend<IApiServices, IWorkerFixtures>({
   signInApiService: async ({ signInController }, use) => {
     await use(new SignInApiService(signInController));
   },
@@ -35,6 +41,19 @@ export const test = base.extend<IApiServices>({
     await use(utils);
     await utils.tearDown();
   },
+
+  workerToken: [
+    async ({ playwright }, use) => {
+      console.log('--- [Worker] Login process started ---');
+      const context = await playwright.request.newContext({ baseURL: apiConfig.BASE_URL });
+      const service = new SignInApiService(new SignInController(context));
+      const token = await service.loginAsLocalUser();
+      await use(token);
+      await context.dispose();
+      console.log('--- [Worker] Token released ---');
+    },
+    { scope: 'worker' },
+  ],
 });
 
 export { expect } from '@playwright/test';

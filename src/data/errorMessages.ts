@@ -14,4 +14,5 @@ export const ERROR_MESSAGES = {
   COMMENT_NOT_FOUND: `Comment was not found`,
   MISSING_CUSTOMER: 'Missing customer',
   PRODUCT_NOT_FOUND: (id: string) => `Product with id '${id}' wasn't found`,
+  CUSTOMER_ALREADY_EXISTS: (email: string) => `Customer with email '${email}' already exists`,
 };

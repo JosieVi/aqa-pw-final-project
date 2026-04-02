@@ -1,4 +1,4 @@
-import { test } from 'fixtures/api-services.fixture';
+import { test } from 'fixtures/index.fixture';
 import { STATUS_CODES } from 'data/statusCodes';
 import { TAGS } from 'data/testTags.data';
 import { validateResponse } from 'utils/validations/responseValidation';
@@ -8,39 +8,28 @@ import { extractIds } from 'utils/helper';
 import { ERROR_MESSAGES } from 'data/errorMessages';
 
 test.describe('[API] [Orders] Create a new order', () => {
-  let token = '';
   const createdOrderIds: string[] = [];
-  const createdProductIds: string[] = [];
-  const createdCustomerIds: string[] = [];
   let productsId: string[] = [];
 
-  test.beforeEach(async ({ signInApiService }) => {
-    token = await signInApiService.loginAsLocalUser();
-  });
-
-  test.afterAll(async ({ dataDisposalUtils }) => {
+  test.afterEach(async ({ dataDisposalUtils }) => {
     await dataDisposalUtils.clearOrders(createdOrderIds);
-    await dataDisposalUtils.clearCustomers(createdCustomerIds);
-    await dataDisposalUtils.clearProducts(createdProductIds);
+    createdOrderIds.length = 0;
   });
 
   test.describe('Positive', () => {
     test(
-      '201 Created - Create order with one product',
+      'Should create order with one product - 201 Created',
       { tag: [TAGS.API, TAGS.ORDERS, TAGS.SMOKE] },
-      async ({ ordersController, customersApiService, productsApiService }) => {
-        const customer = await customersApiService.createCustomer(token);
-        const product = await productsApiService.create(token);
-
-        createdCustomerIds.push(customer._id);
-        createdProductIds.push(product._id);
+      async ({ workerToken, ordersController, customerFactory, productFactory }) => {
+        const customer = await customerFactory.singleCustomer();
+        const product = await productFactory.singleProduct();
 
         const data = {
           customer: customer._id,
           products: [product._id],
         };
 
-        const response = await ordersController.create(data, token);
+        const response = await ordersController.create(data, workerToken);
         validateResponse(response, STATUS_CODES.CREATED, true, null);
         validateSchema(getOrderByIDResponseSchema, response.body.Order);
         createdOrderIds.push(response.body.Order._id);
@@ -48,22 +37,20 @@ test.describe('[API] [Orders] Create a new order', () => {
     );
 
     test(
-      '201 Created - Create order with five products',
+      'Should create order with five products - 201 Created',
       { tag: [TAGS.API, TAGS.ORDERS, TAGS.SMOKE] },
-      async ({ ordersController, productsApiService, customersApiService }) => {
-        const customer = await customersApiService.createCustomer(token);
-        const products = await productsApiService.createMultiple(5, token);
+      async ({ workerToken, ordersController, productFactory, customerFactory }) => {
+        const customer = await customerFactory.singleCustomer();
+        const products = await productFactory.multipleProducts(5);
 
         productsId = extractIds(products);
-        createdCustomerIds.push(customer._id);
-        createdProductIds.push(...productsId);
 
         const data = {
           customer: customer._id,
           products: productsId,
         };
 
-        const response = await ordersController.create(data, token);
+        const response = await ordersController.create(data, workerToken);
         validateResponse(response, STATUS_CODES.CREATED, true, null);
         validateSchema(getOrderByIDResponseSchema, response.body.Order);
         createdOrderIds.push(response.body.Order._id);
@@ -75,20 +62,18 @@ test.describe('[API] [Orders] Create a new order', () => {
     test(
       '400 Bad Request - Create order with 6 products',
       { tag: [TAGS.API, TAGS.ORDERS, TAGS.REGRESSION] },
-      async ({ ordersController, productsApiService, customersApiService }) => {
-        const customer = await customersApiService.createCustomer(token);
-        const products = await productsApiService.createMultiple(6, token);
+      async ({ workerToken, ordersController, productFactory, customerFactory }) => {
+        const customer = await customerFactory.singleCustomer();
+        const products = await productFactory.multipleProducts(6);
 
         productsId = extractIds(products);
-        createdCustomerIds.push(customer._id);
-        createdProductIds.push(...productsId);
 
         const data = {
           customer: customer._id,
           products: productsId,
         };
 
-        const response = await ordersController.create(data, token);
+        const response = await ordersController.create(data, workerToken);
         validateResponse(response, STATUS_CODES.BAD_REQUEST, false, ERROR_MESSAGES.INCORRECT_REQUEST_BODY);
       },
     );
@@ -96,18 +81,17 @@ test.describe('[API] [Orders] Create a new order', () => {
     test(
       '400 Bad Request - Create order without products',
       { tag: [TAGS.API, TAGS.ORDERS, TAGS.REGRESSION] },
-      async ({ ordersController, customersApiService }) => {
-        const customer = await customersApiService.createCustomer(token);
+      async ({ workerToken, ordersController, customerFactory }) => {
+        const customer = await customerFactory.singleCustomer();
 
         productsId = [];
-        createdCustomerIds.push(customer._id);
 
         const data = {
           customer: customer._id,
           products: productsId,
         };
 
-        const response = await ordersController.create(data, token);
+        const response = await ordersController.create(data, workerToken);
         validateResponse(response, STATUS_CODES.BAD_REQUEST, false, ERROR_MESSAGES.INCORRECT_REQUEST_BODY);
       },
     );
@@ -115,12 +99,9 @@ test.describe('[API] [Orders] Create a new order', () => {
     test(
       '401 Unauthorized - Create order without token',
       { tag: [TAGS.API, TAGS.ORDERS, TAGS.REGRESSION] },
-      async ({ ordersController, customersApiService, productsApiService }) => {
-        const customer = await customersApiService.createCustomer(token);
-        const product = await productsApiService.create(token);
-
-        createdCustomerIds.push(customer._id);
-        createdProductIds.push(product._id);
+      async ({ ordersController, customerFactory, productFactory }) => {
+        const customer = await customerFactory.singleCustomer();
+        const product = await productFactory.singleProduct();
 
         const data = {
           customer: customer._id,
@@ -135,12 +116,9 @@ test.describe('[API] [Orders] Create a new order', () => {
     test(
       '401 Unauthorized - Create order with invalid token',
       { tag: [TAGS.API, TAGS.ORDERS, TAGS.REGRESSION] },
-      async ({ ordersController, customersApiService, productsApiService }) => {
-        const customer = await customersApiService.createCustomer(token);
-        const product = await productsApiService.create(token);
-
-        createdCustomerIds.push(customer._id);
-        createdProductIds.push(product._id);
+      async ({ ordersController, customerFactory, productFactory }) => {
+        const customer = await customerFactory.singleCustomer();
+        const product = await productFactory.singleProduct();
 
         const data = {
           customer: customer._id,
@@ -155,20 +133,19 @@ test.describe('[API] [Orders] Create a new order', () => {
     test(
       '404 Not Found - Create order with not exist customer',
       { tag: [TAGS.API, TAGS.ORDERS, TAGS.REGRESSION] },
-      async ({ ordersController, customersApiService, productsApiService }) => {
-        const customer = await customersApiService.createCustomer(token);
-        const product = await productsApiService.create(token);
+      async ({ workerToken, ordersController, customersApiService, customerFactory, productFactory, dataDisposalUtils }) => {
+        const customer = await customerFactory.singleCustomer();
+        const product = await productFactory.singleProduct();
 
-        await customersApiService.deleteCustomer(customer._id, token);
-
-        createdProductIds.push(product._id);
+        await customersApiService.deleteCustomer(customer._id, workerToken);
+        dataDisposalUtils.removeCustomer(customer._id);
 
         const data = {
           customer: customer._id,
           products: [product._id],
         };
 
-        const response = await ordersController.create(data, token);
+        const response = await ordersController.create(data, workerToken);
         validateResponse(response, STATUS_CODES.NOT_FOUND, false, ERROR_MESSAGES.CUSTOMER_NOT_FOUND(customer._id));
       },
     );
@@ -176,17 +153,15 @@ test.describe('[API] [Orders] Create a new order', () => {
     test(
       '404 Not Found - Create order without customer',
       { tag: [TAGS.API, TAGS.ORDERS, TAGS.REGRESSION] },
-      async ({ ordersController, productsApiService }) => {
-        const product = await productsApiService.create(token);
-
-        createdProductIds.push(product._id);
+      async ({ workerToken, ordersController, productFactory }) => {
+        const product = await productFactory.singleProduct();
 
         const data = {
           customer: '',
           products: [product._id],
         };
 
-        const response = await ordersController.create(data, token);
+        const response = await ordersController.create(data, workerToken);
         validateResponse(response, STATUS_CODES.NOT_FOUND, false, ERROR_MESSAGES.MISSING_CUSTOMER);
       },
     );
@@ -194,20 +169,19 @@ test.describe('[API] [Orders] Create a new order', () => {
     test(
       '404 Not Found - Create order with not exist product',
       { tag: [TAGS.API, TAGS.ORDERS, TAGS.REGRESSION] },
-      async ({ ordersController, customersApiService, productsApiService }) => {
-        const customer = await customersApiService.createCustomer(token);
-        const product = await productsApiService.create(token);
+      async ({ workerToken, ordersController, customerFactory, productFactory, productsApiService, dataDisposalUtils }) => {
+        const customer = await customerFactory.singleCustomer();
+        const product = await productFactory.singleProduct();
 
-        await productsApiService.delete(product._id, token);
-
-        createdCustomerIds.push(customer._id);
+        await productsApiService.delete(product._id, workerToken);
+        dataDisposalUtils.removeProduct(product._id);
 
         const data = {
           customer: customer._id,
           products: [product._id],
         };
 
-        const response = await ordersController.create(data, token);
+        const response = await ordersController.create(data, workerToken);
         validateResponse(response, STATUS_CODES.NOT_FOUND, false, ERROR_MESSAGES.PRODUCT_NOT_FOUND(product._id));
       },
     );

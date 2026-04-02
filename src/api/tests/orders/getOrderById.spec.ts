@@ -8,27 +8,24 @@ import { MOCK_ORDER_DRAFT } from '../../../data/orders/mockOrders.data';
 import { ERROR_MESSAGES } from '../../../data/errorMessages';
 
 test.describe('[API] [Orders] Get order by id', () => {
-  let token = '';
-
-  test.beforeEach(async ({ signInApiService }) => {
-    token = await signInApiService.loginAsLocalUser();
-  });
+  let orderId = '';
 
   test.describe('Positive', () => {
-    test('200 OK - Get order by id', { tag: [TAGS.API, TAGS.ORDERS, TAGS.SMOKE] }, async ({ ordersController, orderFactory }) => {
-      const { orderId } = await orderFactory.orderDraftStatus(); // получаем созданный заказ в статусе Draft
+    test('200 OK - Get order by id', { tag: [TAGS.API, TAGS.ORDERS, TAGS.SMOKE] }, async ({ workerToken, ordersController, orderFactory }) => {
+      const order = await orderFactory.orderDraftStatus();
+      orderId = order._id;
 
-      const response = await ordersController.getByID(orderId, token);
+      const response = await ordersController.getByID(orderId, workerToken);
       validateResponse(response, STATUS_CODES.OK, true, null);
       validateSchema(getOrderByIDResponseSchema, response.body.Order);
     });
   });
 
   test.describe('Negative', () => {
-    test('404 Not Found - Get order by invalid id', { tag: [TAGS.API, TAGS.ORDERS, TAGS.REGRESSION] }, async ({ ordersController }) => {
+    test('404 Not Found - Get order by invalid id', { tag: [TAGS.API, TAGS.ORDERS, TAGS.REGRESSION] }, async ({ workerToken, ordersController }) => {
       const id = MOCK_ORDER_DRAFT._id;
 
-      const response = await ordersController.getByID(id, token);
+      const response = await ordersController.getByID(id, workerToken);
       validateResponse(response, STATUS_CODES.NOT_FOUND, false, `Order with id '${id}' wasn't found`);
     });
 
@@ -36,7 +33,8 @@ test.describe('[API] [Orders] Get order by id', () => {
       '401 Unauthorized - Get order by id without token',
       { tag: [TAGS.API, TAGS.ORDERS, TAGS.REGRESSION] },
       async ({ ordersController, orderFactory }) => {
-        const { orderId } = await orderFactory.orderDraftStatus();
+        const order = await orderFactory.orderDraftStatus();
+        orderId = order._id;
 
         const response = await ordersController.getByID(orderId, '');
         validateResponse(response, STATUS_CODES.UNAUTHORIZED, false, ERROR_MESSAGES.NOT_AUTHORIZED);
@@ -47,7 +45,8 @@ test.describe('[API] [Orders] Get order by id', () => {
       '401 Unauthorized - Get order by id with invalid token',
       { tag: [TAGS.API, TAGS.ORDERS, TAGS.REGRESSION] },
       async ({ ordersController, orderFactory }) => {
-        const { orderId } = await orderFactory.orderDraftStatus();
+        const order = await orderFactory.orderDraftStatus();
+        orderId = order._id;
 
         const response = await ordersController.getByID(orderId, 'Invalid token');
         validateResponse(response, STATUS_CODES.UNAUTHORIZED, false, ERROR_MESSAGES.INVALID_ACCESS_TOKEN);

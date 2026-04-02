@@ -2,11 +2,11 @@ import { ICustomProduct, IProductPayload, IProduct } from '../types/product.type
 import { test as base } from './api-services.fixture';
 
 export const test = base.extend<ICustomProduct>({
-  productFactory: async ({ signInApiService, productsApiService, dataDisposalUtils }, use) => {
-    const token = await signInApiService.loginAsLocalUser();
+  productFactory: async ({ workerToken, productsApiService, dataDisposalUtils }, use) => {
+    // const token = await signInApiService.loginAsLocalUser();
 
     const createProductWithCleanup = async (customData?: Partial<IProductPayload>): Promise<IProduct> => {
-      const product = await productsApiService.create(token, customData);
+      const product = await productsApiService.create(workerToken, customData);
       dataDisposalUtils.trackProduct(product._id);
 
       return product;

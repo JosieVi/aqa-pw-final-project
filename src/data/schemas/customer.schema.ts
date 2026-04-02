@@ -87,20 +87,20 @@ export const customersListSchema = {
   required: ['Customers', 'sorting', 'IsSuccess', 'ErrorMessage', 'total', 'page', 'limit', 'search', 'country'],
 };
 
-export const addressSchema = {
-  type: 'object',
-  properties: {
-    country: {
-      type: 'string',
-      enum: Object.values(COUNTRIES),
-    },
-    city: { type: 'string' },
-    street: { type: 'string' },
-    house: { type: 'number' },
-    flat: { type: 'number' },
-  },
-  required: ['country', 'city', 'street', 'house', 'flat'],
-};
+// export const addressSchema = {
+//   type: 'object',
+//   properties: {
+//     country: {
+//       type: 'string',
+//       enum: Object.values(COUNTRIES),
+//     },
+//     city: { type: 'string' },
+//     street: { type: 'string' },
+//     house: { type: 'number' },
+//     flat: { type: 'number' },
+//   },
+//   required: ['country', 'city', 'street', 'house', 'flat'],
+// };
 
 export const customerAssociatedOrdersSchema = {
   type: 'object',
@@ -113,7 +113,7 @@ export const customerAssociatedOrdersSchema = {
     customer: {
       type: 'string',
     },
-    customerSchema,
+    // customerSchema,
     products: {
       type: 'array',
       items: productInOrderSchema,
@@ -123,6 +123,7 @@ export const customerAssociatedOrdersSchema = {
       type: 'string',
       format: 'date-time',
     },
+
     delivery: {
       anyOf: [deliverySchema, { type: 'null' }],
     },
@@ -135,7 +136,18 @@ export const customerAssociatedOrdersSchema = {
       items: orderHistorySchema,
     },
   },
-  required: ['_id', 'status', 'customer', 'products', 'total_price', 'createdOn'],
+  // required: ['_id', 'status', 'customer', 'products', 'total_price', 'createdOn'],
+  if: {
+    properties: { status: { const: ORDER_STATUS.IN_PROCESS } },
+  },
+  then: {
+    required: ['_id', 'status', 'customer', 'products', 'total_price', 'createdOn', 'delivery'],
+  },
+  else: {
+    required: ['_id', 'status', 'customer', 'products', 'total_price', 'createdOn'],
+  },
+
+  // required: ['_id', 'status', 'customer', 'products', 'createdOn'],
 };
 
 export const orderListSchema = {

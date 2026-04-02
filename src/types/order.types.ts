@@ -97,6 +97,7 @@ export interface IOrder {
   readonly products: IProductFromOrder[];
   readonly delivery: IDelivery | null;
   readonly total_price: number;
+  // total_price?: number;
   readonly createdOn: string;
   readonly history: IHistory[];
   readonly comments: IComment[];

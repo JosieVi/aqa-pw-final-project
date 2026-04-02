@@ -9,31 +9,21 @@ import { validateSchema } from 'utils/validations/schemaValidation';
 import { ERROR_MESSAGES } from 'data/errorMessages';
 import { customersListSchema } from 'data/schemas/customer.schema';
 
-test.describe('[API] [Customers] GET customers - filters and sorting', () => {
-  let token = '';
-  // let expectedCustomer: ICustomerEntity[] = [];
+test.describe('[API] [Customers] GET customers - filters and sorting - 200 OK', () => {
   const expectedIds: string[] = [];
-
-  // const expectedIds: string[] = [];
-
-  test.beforeAll(async ({ signInApiService }) => {
-    token = await signInApiService.loginAsLocalUser();
-  });
+  const totalCustomers = 1;
 
   test.describe('Positive', () => {
     test(
-      'Should return list of customers after searching by name with spaces - 200 OK',
+      'Should return list of customers after searching by name with space - 200 OK',
       {
         tag: [TAGS.API, TAGS.CUSTOMERS, TAGS.SMOKE, TAGS.REGRESSION],
       },
-      async ({ customersController, customerFactory }) => {
-        const totalCustomers = 1;
+      async ({ workerToken, customersController, customerFactory }) => {
         const expectedName = `SearchTest${Math.random()
           .toString(25)
           .replace(/[^a-z]/g, '')}`;
         const expectedCustomer = await customerFactory.multipleCustomers(totalCustomers, { name: expectedName });
-
-        expectedIds.push(...expectedCustomer.map((c) => c._id));
 
         const params: ICustomerFilterParams = {
           search: expectedName,
@@ -41,22 +31,14 @@ test.describe('[API] [Customers] GET customers - filters and sorting', () => {
           sortOrder: 'desc',
         };
 
-        const response = await customersController.getFilteredCustomers(token, params);
+        const response = await customersController.getFilteredCustomers(workerToken, params);
         validateResponse(response, STATUS_CODES.OK, true, null);
         validateSchema(customersListSchema, response.body);
 
-        const actualIds = response.body.Customers.map((c) => c._id);
-
-        expect(response.body.search).toBe(expectedName);
+        expect(response.body.search, `The parameter 'search' should be '${expectedName}', but it was '${response.body.search}'`).toBe(expectedName);
         expect(response.body.Customers.every((c) => c.name.toLowerCase().includes(expectedName.toLowerCase()))).toBeTruthy();
-        expect(actualIds).toEqual(expect.arrayContaining(expectedIds));
-
-        expect(response.body.Customers.length).toBe(totalCustomers);
 
         expect(response.body.Customers).toMatchObject(expectedCustomer);
-
-        // TODO: Try to use this approach
-        // expect(response.body.Customers).toMatchObject(expectedCustomers);
       },
     );
 
@@ -65,11 +47,10 @@ test.describe('[API] [Customers] GET customers - filters and sorting', () => {
       {
         tag: [TAGS.API, TAGS.CUSTOMERS, TAGS.SMOKE, TAGS.REGRESSION],
       },
-      async ({ customersController }) => {
-        const totalCustomers = 1;
+      async ({ workerToken, customersController, customerFactory }) => {
         const expectedCustomerData = generateCustomerData({ country: COUNTRIES.BELARUS });
-        const expectedCustomer = await customersController.create(expectedCustomerData, token);
-        expectedIds.push(expectedCustomer.body.Customer._id);
+        const expectedCustomer = await customerFactory.singleCustomer(expectedCustomerData);
+        expectedIds.push(expectedCustomer._id);
 
         const params: ICustomerFilterParams = {
           country: [expectedCustomerData.country],
@@ -77,7 +58,7 @@ test.describe('[API] [Customers] GET customers - filters and sorting', () => {
           sortOrder: 'desc',
         };
 
-        const response = await customersController.getFilteredCustomers(token, params);
+        const response = await customersController.getFilteredCustomers(workerToken, params);
 
         validateResponse(response, STATUS_CODES.OK, true, null);
         validateSchema(customersListSchema, response.body);
@@ -93,13 +74,13 @@ test.describe('[API] [Customers] GET customers - filters and sorting', () => {
       {
         tag: [TAGS.API, TAGS.CUSTOMERS, TAGS.REGRESSION],
       },
-      async ({ customersController }) => {
+      async ({ workerToken, customersController, customerFactory }) => {
         const countries = [COUNTRIES.FRANCE, COUNTRIES.RUSSIA];
         await Promise.all(
           countries.map(async (country) => {
             const expectedCustomerData = generateCustomerData({ country });
-            const response = await customersController.create(expectedCustomerData, token);
-            expectedIds.push(response.body.Customer._id);
+            const response = await customerFactory.singleCustomer(expectedCustomerData);
+            expectedIds.push(response._id);
           }),
         );
 
@@ -109,7 +90,7 @@ test.describe('[API] [Customers] GET customers - filters and sorting', () => {
           sortOrder: 'desc',
         };
 
-        const response = await customersController.getFilteredCustomers(token, params);
+        const response = await customersController.getFilteredCustomers(workerToken, params);
 
         validateResponse(response, STATUS_CODES.OK, true, null);
         validateSchema(customersListSchema, response.body);
@@ -120,20 +101,20 @@ test.describe('[API] [Customers] GET customers - filters and sorting', () => {
       },
     );
 
-    test('Should return list of customers after sorting by createdOn ascending', async ({ customersController }) => {
-      // 1. Создаем данные через сервис
-      // const totalCustomers = 1;
-      // const users = await customerFactory.multipleCustomers(totalCustomers);
-      // expectedIds.push(...users.map((u) => u._id));
+    test('Should return list of customers after sorting by createdOn ascending - 200 OK', async ({
+      workerToken,
+      customersController,
+      customerFactory,
+    }) => {
+      const users = await customerFactory.multipleCustomers(totalCustomers);
+      expectedIds.push(...users.map((u) => u._id));
 
-      // 2. Получаем response через контроллер (для валидации)
-      const response = await customersController.getFilteredCustomers(token, {
+      const response = await customersController.getFilteredCustomers(workerToken, {
         sortField: 'createdOn',
         sortOrder: 'asc',
       });
       validateResponse(response, STATUS_CODES.OK, true, null);
 
-      // 3. Проверяем данные из body
       const dates = response.body.Customers.map((c) => new Date(c.createdOn).getTime());
       for (let i = 0; i < dates.length - 1; i++) {
         expect(dates[i]).toBeLessThanOrEqual(dates[i + 1]);
@@ -141,16 +122,15 @@ test.describe('[API] [Customers] GET customers - filters and sorting', () => {
     });
 
     test(
-      'Should return list of customers after sorting by createdOn descending',
+      'Should return list of customers after sorting by createdOn descending - 200 OK',
       {
         tag: [TAGS.API, TAGS.CUSTOMERS, TAGS.SMOKE, TAGS.REGRESSION],
       },
-      async ({ customerFactory, customersController }) => {
-        const totalCustomers = 1;
+      async ({ workerToken, customerFactory, customersController }) => {
         const users = await customerFactory.multipleCustomers(totalCustomers);
         expectedIds.push(...users.map((u) => u._id));
 
-        const response = await customersController.getFilteredCustomers(token, {
+        const response = await customersController.getFilteredCustomers(workerToken, {
           sortField: 'createdOn',
           sortOrder: 'desc',
         });
@@ -168,16 +148,16 @@ test.describe('[API] [Customers] GET customers - filters and sorting', () => {
     );
 
     test(
-      'Should return list of customers after sorting by name descending',
+      'Should return list of customers after sorting by name descending - 200 OK',
       {
         tag: [TAGS.API, TAGS.CUSTOMERS, TAGS.REGRESSION],
       },
-      async ({ customerFactory, customersController }) => {
+      async ({ workerToken, customerFactory, customersController }) => {
         const totalCustomers = 1;
         const users = await customerFactory.multipleCustomers(totalCustomers);
         expectedIds.push(...users.map((u) => u._id));
 
-        const response = await customersController.getFilteredCustomers(token, {
+        const response = await customersController.getFilteredCustomers(workerToken, {
           sortField: 'name',
           sortOrder: 'desc',
         });
@@ -195,16 +175,16 @@ test.describe('[API] [Customers] GET customers - filters and sorting', () => {
     );
 
     test(
-      'Should return list of customers after sorting by name ascending',
+      'Should return list of customers after sorting by name ascending - 200 OK',
       {
         tag: [TAGS.API, TAGS.CUSTOMERS, TAGS.REGRESSION],
       },
-      async ({ customerFactory, customersController }) => {
+      async ({ workerToken, customerFactory, customersController }) => {
         const totalCustomers = 1;
         const users = await customerFactory.multipleCustomers(totalCustomers);
         expectedIds.push(...users.map((u) => u._id));
 
-        const response = await customersController.getFilteredCustomers(token, {
+        const response = await customersController.getFilteredCustomers(workerToken, {
           sortField: 'name',
           sortOrder: 'asc',
         });
@@ -223,15 +203,15 @@ test.describe('[API] [Customers] GET customers - filters and sorting', () => {
     );
 
     test(
-      'Should return list of customers after searching by email with country filter',
+      'Should return list of customers after searching by email with country filter - 200 OK',
       {
         tag: [TAGS.API, TAGS.CUSTOMERS, TAGS.REGRESSION],
       },
-      async ({ customersController }) => {
+      async ({ workerToken, customersController, customerFactory }) => {
         const testCountry = COUNTRIES.BELARUS;
         const expectedCustomerData = generateCustomerData({ country: testCountry });
-        const expectedCustomer = await customersController.create(expectedCustomerData, token);
-        expectedIds.push(expectedCustomer.body.Customer._id);
+        const expectedCustomer = await customerFactory.singleCustomer(expectedCustomerData);
+        expectedIds.push(expectedCustomer._id);
 
         const params: ICustomerFilterParams = {
           search: expectedCustomerData.email,
@@ -240,7 +220,7 @@ test.describe('[API] [Customers] GET customers - filters and sorting', () => {
           sortOrder: 'desc',
         };
 
-        const response = await customersController.getFilteredCustomers(token, params);
+        const response = await customersController.getFilteredCustomers(workerToken, params);
 
         validateResponse(response, STATUS_CODES.OK, true, null);
         validateSchema(customersListSchema, response.body);
@@ -248,21 +228,21 @@ test.describe('[API] [Customers] GET customers - filters and sorting', () => {
         expect(response.body.Customers.length).toBeGreaterThan(0);
         expect(response.body.search).toBe(expectedCustomerData.email);
         expect(response.body.country).toEqual([testCountry]);
-        expect(response.body.Customers.some((c) => c._id === expectedCustomer.body.Customer._id)).toBeTruthy();
+        expect(response.body.Customers.some((c) => c._id === expectedCustomer._id)).toBeTruthy();
       },
     );
 
     test(
-      'Should return list of customers after sorting by email ascending',
+      'Should return list of customers after sorting by email ascending - 200 OK',
       {
         tag: [TAGS.API, TAGS.CUSTOMERS, TAGS.REGRESSION],
       },
-      async ({ customerFactory, customersController }) => {
+      async ({ workerToken, customerFactory, customersController }) => {
         const totalCustomers = 1;
         const users = await customerFactory.multipleCustomers(totalCustomers);
         expectedIds.push(...users.map((u) => u._id));
 
-        const response = await customersController.getFilteredCustomers(token, {
+        const response = await customersController.getFilteredCustomers(workerToken, {
           sortField: 'email',
           sortOrder: 'asc',
         });
@@ -281,16 +261,16 @@ test.describe('[API] [Customers] GET customers - filters and sorting', () => {
     );
 
     test(
-      'Should return list of customers after sorting by email descending',
+      'Should return list of customers after sorting by email descending - 200 OK',
       {
         tag: [TAGS.API, TAGS.CUSTOMERS, TAGS.REGRESSION],
       },
-      async ({ customerFactory, customersController }) => {
+      async ({ workerToken, customerFactory, customersController }) => {
         const totalCustomers = 1;
         const users = await customerFactory.multipleCustomers(totalCustomers);
         expectedIds.push(...users.map((u) => u._id));
 
-        const response = await customersController.getFilteredCustomers(token, {
+        const response = await customersController.getFilteredCustomers(workerToken, {
           sortField: 'email',
           sortOrder: 'desc',
         });
@@ -309,15 +289,15 @@ test.describe('[API] [Customers] GET customers - filters and sorting', () => {
     );
 
     test(
-      'Should return list of customers after sorting by country descending',
+      'Should return list of customers after sorting by country descending - 200 OK',
       {
         tag: [TAGS.API, TAGS.CUSTOMERS, TAGS.REGRESSION],
       },
-      async ({ customersController }) => {
+      async ({ workerToken, customersController, customerFactory }) => {
         const testCountries = [COUNTRIES.BELARUS, COUNTRIES.USA, COUNTRIES.GERMANY];
-        await Promise.all(testCountries.map((country) => customersController.create({ ...generateCustomerData(), country }, token)));
+        await Promise.all(testCountries.map((country) => customerFactory.singleCustomer({ ...generateCustomerData(), country })));
 
-        const response = await customersController.getFilteredCustomers(token, {
+        const response = await customersController.getFilteredCustomers(workerToken, {
           sortField: 'country',
           sortOrder: 'desc',
         });
@@ -335,15 +315,15 @@ test.describe('[API] [Customers] GET customers - filters and sorting', () => {
     );
 
     test(
-      'Should return list of customers after sorting by country ascending',
+      'Should return list of customers after sorting by country ascending - 200 OK',
       {
         tag: [TAGS.API, TAGS.CUSTOMERS, TAGS.REGRESSION],
       },
-      async ({ customersController }) => {
+      async ({ workerToken, customersController, customerFactory }) => {
         const testCountries = [COUNTRIES.BELARUS, COUNTRIES.USA, COUNTRIES.GERMANY];
-        await Promise.all(testCountries.map((country) => customersController.create({ ...generateCustomerData(), country }, token)));
+        await Promise.all(testCountries.map((country) => customerFactory.singleCustomer({ ...generateCustomerData(), country })));
 
-        const response = await customersController.getFilteredCustomers(token, {
+        const response = await customersController.getFilteredCustomers(workerToken, {
           sortField: 'country',
           sortOrder: 'asc',
         });
@@ -361,20 +341,20 @@ test.describe('[API] [Customers] GET customers - filters and sorting', () => {
     );
 
     test(
-      'Should return list of customers on second page',
+      'Should return list of customers on second page - 200 OK',
       {
         tag: [TAGS.API, TAGS.CUSTOMERS, TAGS.REGRESSION],
       },
-      async ({ customerFactory, customersController }) => {
+      async ({ workerToken, customerFactory, customersController }) => {
         const users = await customerFactory.multipleCustomers(15);
         expectedIds.push(...users.map((u) => u._id));
 
         const [firstPage, secondPage] = await Promise.all([
-          customersController.getCustomersWithPagination(token, {
+          customersController.getCustomersWithPagination(workerToken, {
             page: 1,
             limit: 10,
           }),
-          customersController.getCustomersWithPagination(token, {
+          customersController.getCustomersWithPagination(workerToken, {
             page: 2,
             limit: 10,
           }),
@@ -398,12 +378,12 @@ test.describe('[API] [Customers] GET customers - filters and sorting', () => {
       {
         tag: [TAGS.API, TAGS.CUSTOMERS, TAGS.REGRESSION],
       },
-      async ({ customersController }) => {
+      async ({ workerToken, customersController, customerFactory }) => {
         const testName = 'BrycenQuigley';
         const expectedCustomerData = { ...generateCustomerData(), name: testName };
 
-        const expectedCustomer = await customersController.create(expectedCustomerData, token);
-        expectedIds.push(expectedCustomer.body.Customer._id);
+        const expectedCustomer = await customerFactory.singleCustomer(expectedCustomerData);
+        expectedIds.push(expectedCustomer._id);
 
         const params: ICustomerFilterParams = {
           search: testName,
@@ -411,7 +391,7 @@ test.describe('[API] [Customers] GET customers - filters and sorting', () => {
           sortOrder: 'desc',
         };
 
-        const response = await customersController.getFilteredCustomers(token, params);
+        const response = await customersController.getFilteredCustomers(workerToken, params);
 
         validateResponse(response, STATUS_CODES.OK, true, null);
         validateSchema(customersListSchema, response.body);
@@ -427,12 +407,12 @@ test.describe('[API] [Customers] GET customers - filters and sorting', () => {
       {
         tag: [TAGS.API, TAGS.CUSTOMERS, TAGS.REGRESSION],
       },
-      async ({ customersController }) => {
+      async ({ workerToken, customersController, customerFactory }) => {
         const expectedCustomerData = generateCustomerData();
         const testCountry = expectedCustomerData.country;
 
-        const expectedCustomer = await customersController.create(expectedCustomerData, token);
-        expectedIds.push(expectedCustomer.body.Customer._id);
+        const expectedCustomer = await customerFactory.singleCustomer(expectedCustomerData);
+        expectedIds.push(expectedCustomer._id);
 
         const params: ICustomerFilterParams = {
           search: testCountry,
@@ -440,7 +420,7 @@ test.describe('[API] [Customers] GET customers - filters and sorting', () => {
           sortOrder: 'desc',
         };
 
-        const response = await customersController.getFilteredCustomers(token, params);
+        const response = await customersController.getFilteredCustomers(workerToken, params);
 
         validateResponse(response, STATUS_CODES.OK, true, null);
         validateSchema(customersListSchema, response.body);
@@ -458,12 +438,12 @@ test.describe('[API] [Customers] GET customers - filters and sorting', () => {
       {
         tag: [TAGS.API, TAGS.CUSTOMERS],
       },
-      async ({ customersController }) => {
+      async ({ workerToken, customersController, customerFactory }) => {
         const expectedCustomerData = generateCustomerData();
-        const expectedCustomer = await customersController.create(expectedCustomerData, token);
-        expectedIds.push(expectedCustomer.body.Customer._id);
+        const expectedCustomer = await customerFactory.singleCustomer(expectedCustomerData);
+        expectedIds.push(expectedCustomer._id);
 
-        const response = await customersController.getFilteredCustomers(token, {
+        const response = await customersController.getFilteredCustomers(workerToken, {
           search: '',
           sortField: 'createdOn',
           sortOrder: 'desc',
@@ -483,12 +463,12 @@ test.describe('[API] [Customers] GET customers - filters and sorting', () => {
       {
         tag: [TAGS.API, TAGS.CUSTOMERS],
       },
-      async ({ customersController }) => {
+      async ({ workerToken, customersController, customerFactory }) => {
         const expectedCustomerData = generateCustomerData();
-        const expectedCustomer = await customersController.create(expectedCustomerData, token);
-        expectedIds.push(expectedCustomer.body.Customer._id);
+        const expectedCustomer = await customerFactory.singleCustomer(expectedCustomerData);
+        expectedIds.push(expectedCustomer._id);
 
-        const response = await customersController.getCustomersWithPagination(token, {
+        const response = await customersController.getCustomersWithPagination(workerToken, {
           page: 1,
         });
 
@@ -507,12 +487,12 @@ test.describe('[API] [Customers] GET customers - filters and sorting', () => {
       {
         tag: [TAGS.API, TAGS.CUSTOMERS],
       },
-      async ({ customersController }) => {
+      async ({ workerToken, customersController, customerFactory }) => {
         const expectedCustomerData = generateCustomerData();
-        const expectedCustomer = await customersController.create(expectedCustomerData, token);
-        expectedIds.push(expectedCustomer.body.Customer._id);
+        const expectedCustomer = await customerFactory.singleCustomer(expectedCustomerData);
+        expectedIds.push(expectedCustomer._id);
 
-        const response = await customersController.getCustomersWithPagination(token, {
+        const response = await customersController.getCustomersWithPagination(workerToken, {
           limit: 10,
         });
 
@@ -527,21 +507,21 @@ test.describe('[API] [Customers] GET customers - filters and sorting', () => {
     );
 
     test(
-      'First non-existent page',
+      'First non-existent page - 200 OK',
       {
         tag: [TAGS.API, TAGS.CUSTOMERS],
       },
-      async ({ customersController }) => {
+      async ({ workerToken, customersController, customerFactory }) => {
         const expectedCustomerData = generateCustomerData();
-        const expectedCustomer = await customersController.create(expectedCustomerData, token);
-        expectedIds.push(expectedCustomer.body.Customer._id);
+        const expectedCustomer = await customerFactory.singleCustomer(expectedCustomerData);
+        expectedIds.push(expectedCustomer._id);
 
-        const allCustomersResponse = await customersController.getAllCustomers(token);
+        const allCustomersResponse = await customersController.getAllCustomers(workerToken);
         const totalCustomers = allCustomersResponse.body.Customers.length;
         const limit = 10;
         const firstNonexistentPage = Math.ceil(totalCustomers / limit) + 1;
 
-        const response = await customersController.getCustomersWithPagination(token, {
+        const response = await customersController.getCustomersWithPagination(workerToken, {
           page: firstNonexistentPage,
           limit: limit,
         });
@@ -556,16 +536,16 @@ test.describe('[API] [Customers] GET customers - filters and sorting', () => {
     );
 
     test(
-      'Non-existent country filter',
+      'Non-existent country filter - 200 OK',
       {
         tag: [TAGS.API, TAGS.CUSTOMERS],
       },
-      async ({ customersController }) => {
+      async ({ workerToken, customersController, customerFactory }) => {
         const expectedCustomerData = generateCustomerData();
-        const expectedCustomer = await customersController.create(expectedCustomerData, token);
-        expectedIds.push(expectedCustomer.body.Customer._id);
+        const expectedCustomer = await customerFactory.singleCustomer(expectedCustomerData);
+        expectedIds.push(expectedCustomer._id);
 
-        const response = await customersController.getFilteredCustomers(token, {
+        const response = await customersController.getFilteredCustomers(workerToken, {
           country: ['Brazil'] as unknown as COUNTRIES[],
           sortField: 'createdOn',
           sortOrder: 'asc',
@@ -578,16 +558,16 @@ test.describe('[API] [Customers] GET customers - filters and sorting', () => {
     );
 
     test(
-      'Empty country filter',
+      'Empty country filter - 200 OK',
       {
         tag: [TAGS.API, TAGS.CUSTOMERS],
       },
-      async ({ customersController }) => {
+      async ({ workerToken, customersController, customerFactory }) => {
         const expectedCustomerData = generateCustomerData();
-        const expectedCustomer = await customersController.create(expectedCustomerData, token);
-        expectedIds.push(expectedCustomer.body.Customer._id);
+        const expectedCustomer = await customerFactory.singleCustomer(expectedCustomerData);
+        expectedIds.push(expectedCustomer._id);
 
-        const response = await customersController.getFilteredCustomers(token, {
+        const response = await customersController.getFilteredCustomers(workerToken, {
           country: [],
           sortField: 'createdOn',
           sortOrder: 'desc',
@@ -600,16 +580,16 @@ test.describe('[API] [Customers] GET customers - filters and sorting', () => {
     );
 
     test(
-      'Sort field without sort order',
+      'Sort field without sort order - 200 OK',
       {
         tag: [TAGS.API, TAGS.CUSTOMERS],
       },
-      async ({ customersController }) => {
+      async ({ workerToken, customersController, customerFactory }) => {
         const expectedCustomerData = generateCustomerData();
-        const expectedCustomer = await customersController.create(expectedCustomerData, token);
-        expectedIds.push(expectedCustomer.body.Customer._id);
+        const expectedCustomer = await customerFactory.singleCustomer(expectedCustomerData);
+        expectedIds.push(expectedCustomer._id);
 
-        const response = await customersController.getFilteredCustomers(token, {
+        const response = await customersController.getFilteredCustomers(workerToken, {
           sortField: 'createdOn',
         });
 
@@ -620,16 +600,16 @@ test.describe('[API] [Customers] GET customers - filters and sorting', () => {
     );
 
     test(
-      'Sort order without sort field',
+      'Sort order without sort field - 200 OK',
       {
         tag: [TAGS.API, TAGS.CUSTOMERS],
       },
-      async ({ customersController }) => {
+      async ({ workerToken, customersController, customerFactory }) => {
         const expectedCustomerData = generateCustomerData();
-        const expectedCustomer = await customersController.create(expectedCustomerData, token);
-        expectedIds.push(expectedCustomer.body.Customer._id);
+        const expectedCustomer = await customerFactory.singleCustomer(expectedCustomerData);
+        expectedIds.push(expectedCustomer._id);
 
-        const response = await customersController.getFilteredCustomers(token, {
+        const response = await customersController.getFilteredCustomers(workerToken, {
           sortOrder: 'desc',
         });
 
@@ -641,7 +621,7 @@ test.describe('[API] [Customers] GET customers - filters and sorting', () => {
     );
 
     test(
-      'Invalid auth token',
+      'Invalid auth token - 401 Unauthorized',
       {
         tag: [TAGS.API, TAGS.CUSTOMERS, TAGS.REGRESSION],
       },
@@ -652,7 +632,7 @@ test.describe('[API] [Customers] GET customers - filters and sorting', () => {
     );
 
     test(
-      'Missing auth token',
+      'Missing auth token - 401 Unauthorized',
       {
         tag: [TAGS.API, TAGS.CUSTOMERS, TAGS.REGRESSION],
       },
@@ -663,19 +643,20 @@ test.describe('[API] [Customers] GET customers - filters and sorting', () => {
     );
 
     test(
-      'No parameters',
+      'No parameters - 200 OK',
       {
         tag: [TAGS.API, TAGS.CUSTOMERS],
       },
-      async ({ customersController }) => {
+      async ({ workerToken, customersController, customerFactory }) => {
         const expectedCustomerData = generateCustomerData();
-        const expectedCustomer = await customersController.create(expectedCustomerData, token);
-        expectedIds.push(expectedCustomer.body.Customer._id);
+        const expectedCustomer = await customerFactory.singleCustomer(expectedCustomerData);
+        expectedIds.push(expectedCustomer._id);
 
-        const response = await customersController.getFilteredCustomers(token, {});
+        const response = await customersController.getFilteredCustomers(workerToken, {});
 
         validateResponse(response, STATUS_CODES.OK, true, null);
         validateSchema(customersListSchema, response.body);
+
         expect(response.body.Customers.length).toBeGreaterThan(0);
         expect(response.body.page).toBe(1);
         expect(response.body.limit).toBe(10);

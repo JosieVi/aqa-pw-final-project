@@ -1,4 +1,4 @@
-import { test } from 'fixtures/api-services.fixture';
+import { test } from 'fixtures/index.fixture';
 import { STATUS_CODES } from 'data/statusCodes';
 import { generateProductData } from 'data/products/generateProduct.data';
 import { positiveCreateCustomerCases, negativeCreateCustomerCase } from 'data/products/createProductCases.data';
@@ -8,34 +8,25 @@ import { validateSchema } from 'utils/validations/schemaValidation';
 import { errorResponseSchema, oneProductResponseSchema } from 'data/schemas/product.schema';
 
 test.describe('[API] [Products] Create a new product', () => {
-  let token = '';
-  let productId = '';
-
-  test.beforeEach(async ({ signInApiService }) => {
-    token = await signInApiService.loginAsLocalUser();
-  });
-
   test.describe('Positive', () => {
-    test.afterEach(async ({ productsApiService }) => {
-      if (productId) {
-        await productsApiService.delete(productId, token);
-      }
-    });
-
     positiveCreateCustomerCases.forEach(({ name, data }) => {
-      test(`Should create product: ${name}`, { tag: [TAGS.API, TAGS.PRODUCTS, TAGS.SMOKE, TAGS.REGRESSION] }, async ({ productsController }) => {
-        const response = await productsController.create(data, token);
-        validateSchema(oneProductResponseSchema, response.body);
-        validateResponse(response, STATUS_CODES.CREATED, true, null);
-        productId = response.body.Product._id;
-      });
+      test(
+        `Should create product: ${name}`,
+        { tag: [TAGS.API, TAGS.PRODUCTS, TAGS.SMOKE, TAGS.REGRESSION] },
+        async ({ workerToken, productsController }) => {
+          const response = await productsController.create(data, workerToken);
+          validateSchema(oneProductResponseSchema, response.body);
+          console.log(response.body);
+          validateResponse(response, STATUS_CODES.CREATED, true, null);
+        },
+      );
     });
   });
 
   test.describe('Negative', () => {
     negativeCreateCustomerCase.forEach(({ name, data, token: testCaseToken, expectedError, expectedStatusCode }) => {
-      test(`Should NOT create product: ${name}`, { tag: [TAGS.API, TAGS.PRODUCTS, TAGS.REGRESSION] }, async ({ productsController }) => {
-        const usedToken = testCaseToken ?? token;
+      test(`Should NOT create product: ${name}`, { tag: [TAGS.API, TAGS.PRODUCTS, TAGS.REGRESSION] }, async ({ workerToken, productsController }) => {
+        const usedToken = testCaseToken ?? workerToken;
         const statusCode = expectedStatusCode ?? STATUS_CODES.BAD_REQUEST;
 
         const response = await productsController.create(data, usedToken);
@@ -47,20 +38,20 @@ test.describe('[API] [Products] Create a new product', () => {
     test(
       'Should NOT create product: Duplicate name',
       { tag: [TAGS.API, TAGS.PRODUCTS, TAGS.REGRESSION] },
-      async ({ productsController, productsApiService }) => {
-        const firstProduct = await productsApiService.create(token, generateProductData());
+      async ({ workerToken, productsController, productsApiService }) => {
+        const firstProduct = await productsApiService.create(workerToken, generateProductData());
 
         const duplicateProductData = {
           ...generateProductData(),
           name: firstProduct.name,
         };
 
-        const duplicateResponse = await productsController.create(duplicateProductData, token);
+        const duplicateResponse = await productsController.create(duplicateProductData, workerToken);
 
         validateSchema(errorResponseSchema, duplicateResponse.body);
         validateResponse(duplicateResponse, STATUS_CODES.CONFLICT, false, `Product with name '${firstProduct.name}' already exists`);
 
-        await productsApiService.delete(firstProduct._id, token);
+        await productsApiService.delete(firstProduct._id, workerToken);
       },
     );
   });

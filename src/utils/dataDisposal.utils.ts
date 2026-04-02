@@ -111,6 +111,7 @@ export class DataDisposalUtils {
   async tearDown() {
     await this.clearOrders();
     await this.clearProducts();
+    // await this.clearOrders();
     await this.clearCustomers();
   }
 

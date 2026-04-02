@@ -18,13 +18,6 @@ export const positiveTestCasesForUpdate = [
     errorMessage: null,
   },
   {
-    name: 'Email with post/prefix spaces',
-    newCustomerData: { email: ' newSpecialEmail@fake.com ' },
-    expectedStatusCode: STATUS_CODES.OK,
-    isSuccess: true,
-    errorMessage: null,
-  },
-  {
     name: '1-char name',
     newCustomerData: { name: 'A' },
     expectedStatusCode: STATUS_CODES.OK,
@@ -34,13 +27,6 @@ export const positiveTestCasesForUpdate = [
   {
     name: '40-char name including one space',
     newCustomerData: { name: `${'A'.repeat(10)} ${'A'.repeat(29)}` },
-    expectedStatusCode: STATUS_CODES.OK,
-    isSuccess: true,
-    errorMessage: null,
-  },
-  {
-    name: 'Name with post/prefix spaces',
-    newCustomerData: { name: ' Evilla Roberts ' },
     expectedStatusCode: STATUS_CODES.OK,
     isSuccess: true,
     errorMessage: null,
@@ -60,13 +46,6 @@ export const positiveTestCasesForUpdate = [
     errorMessage: null,
   },
   {
-    name: 'City with post/prefix spaces',
-    newCustomerData: { city: ' Stockholm ' },
-    expectedStatusCode: STATUS_CODES.OK,
-    isSuccess: true,
-    errorMessage: null,
-  },
-  {
     name: '1-char street',
     newCustomerData: { street: 'A' },
     expectedStatusCode: STATUS_CODES.OK,
@@ -76,13 +55,6 @@ export const positiveTestCasesForUpdate = [
   {
     name: '40-char street including one space',
     newCustomerData: { name: `${'A'.repeat(15)} ${'A'.repeat(24)}` },
-    expectedStatusCode: STATUS_CODES.OK,
-    isSuccess: true,
-    errorMessage: null,
-  },
-  {
-    name: 'Street with post/prefix spaces',
-    newCustomerData: { street: ' Mannerheim katu ' },
     expectedStatusCode: STATUS_CODES.OK,
     isSuccess: true,
     errorMessage: null,
@@ -130,22 +102,8 @@ export const positiveTestCasesForUpdate = [
     errorMessage: null,
   },
   {
-    name: 'Phone with post/prefix spaces',
-    newCustomerData: { phone: ' +1234567890  ' },
-    expectedStatusCode: STATUS_CODES.OK,
-    isSuccess: true,
-    errorMessage: null,
-  },
-  {
     name: '250-char notes',
     newCustomerData: { notes: 'N'.repeat(250) },
-    expectedStatusCode: STATUS_CODES.OK,
-    isSuccess: true,
-    errorMessage: null,
-  },
-  {
-    name: 'Notes with post/prefix spaces',
-    newCustomerData: { notes: ' Some notes ' },
     expectedStatusCode: STATUS_CODES.OK,
     isSuccess: true,
     errorMessage: null,

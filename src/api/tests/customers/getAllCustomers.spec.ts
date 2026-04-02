@@ -8,11 +8,9 @@ import { ERROR_MESSAGES } from 'data/errorMessages';
 import { ICustomerEntity } from 'types/customer.types';
 
 test.describe('[API] [Customers] Get All Customers', () => {
-  let token = '';
   let precreatedCustomers: ICustomerEntity[];
 
-  test.beforeEach(async ({ signInApiService, customerFactory }) => {
-    token = await signInApiService.loginAsLocalUser();
+  test.beforeEach(async ({ customerFactory }) => {
     precreatedCustomers = await customerFactory.multipleCustomers();
   });
 
@@ -20,8 +18,8 @@ test.describe('[API] [Customers] Get All Customers', () => {
     test(
       'Should return all precreated customers - 200 OK',
       { tag: [TAGS.API, TAGS.CUSTOMERS, TAGS.SMOKE, TAGS.REGRESSION] },
-      async ({ customersController }) => {
-        const response = await customersController.getAllCustomers(token);
+      async ({ customersController, workerToken }) => {
+        const response = await customersController.getAllCustomers(workerToken);
         validateResponse(response, STATUS_CODES.OK, true, null);
         validateSchema(allCustomersResponseSchema, response.body);
         const actualCustomers = response.body.Customers;
@@ -39,7 +37,7 @@ test.describe('[API] [Customers] Get All Customers', () => {
       'Should NOT return customers with empty token - 401 Unauthorized',
       { tag: [TAGS.API, TAGS.CUSTOMERS, TAGS.REGRESSION] },
       async ({ customersController }) => {
-        token = '';
+        const token = '';
         const response = await customersController.getAllCustomers(token);
         validateResponse(response, STATUS_CODES.UNAUTHORIZED, false, ERROR_MESSAGES.NOT_AUTHORIZED);
       },
@@ -49,7 +47,7 @@ test.describe('[API] [Customers] Get All Customers', () => {
       'Should NOT return customers with invalid token - 401 Unauthorized',
       { tag: [TAGS.API, TAGS.CUSTOMERS, TAGS.REGRESSION] },
       async ({ customersController }) => {
-        token = 'Beer eyJhbGci';
+        const token = 'Beer eyJhbGci';
         const response = await customersController.getAllCustomers(token);
         validateResponse(response, STATUS_CODES.UNAUTHORIZED, false, ERROR_MESSAGES.INVALID_ACCESS_TOKEN);
       },

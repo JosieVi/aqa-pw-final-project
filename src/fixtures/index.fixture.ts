@@ -8,6 +8,7 @@ import { OrderSetupService } from 'ui/services/orderSetup.ui-service';
 export interface IIntegrationServices {
   orderSetupService: OrderSetupService;
 }
+
 const combinedTest = mergeTests(apiServices, uiServices, mocks, customOrders);
 
 export const test = combinedTest.extend<IIntegrationServices>({
@@ -17,4 +18,5 @@ export const test = combinedTest.extend<IIntegrationServices>({
   },
 });
 
-export { expect } from '@playwright/test';
+// export { expect } from '@playwright/test';
+export { expect } from '../../src/utils/validations/customMatchers';

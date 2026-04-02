@@ -2,8 +2,9 @@ import { DELIVERY } from 'data/orders/delivery.data';
 import { ORDER_HISTORY_ACTIONS } from 'data/orders/history.data';
 import { ORDER_STATUS } from 'data/orders/statuses.data';
 import { productInOrderSchema } from './product.schema';
-import { addressSchema, customerSchema } from './customer.schema';
+import { customerSchema } from './customer.schema';
 import { ordersMetaSchema } from './base.schema';
+import { addressSchema } from './address.schema';
 
 export const commentSchema = {
   type: 'object',
@@ -26,7 +27,8 @@ export const deliverySchema = {
       type: 'string',
       enum: Object.values(DELIVERY),
     },
-    address: { type: 'object', properties: addressSchema },
+    // address: { type: 'object', properties: addressSchema },
+    address: addressSchema,
   },
   required: ['finalDate', 'condition', 'address'],
 };

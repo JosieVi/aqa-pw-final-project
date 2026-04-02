@@ -40,7 +40,7 @@ export const oneProductResponseSchema = {
     },
     ...baseSchemaPart,
   },
-  required: ['Product', 'isSuccess', 'errorMessage'],
+  required: ['Product', 'IsSuccess', 'ErrorMessage'],
 };
 
 export const allProductsResponseSchema = {
@@ -109,5 +109,5 @@ export const errorResponseSchema = {
     isSuccess: { type: 'boolean', const: false },
     errorMessage: { type: 'string' },
   },
-  required: ['isSuccess', 'errorMessage'],
+  required: ['IsSuccess', 'ErrorMessage'],
 };
