@@ -3,50 +3,49 @@ import { negativeTestCasesForUpdate, positiveTestCasesForUpdate } from 'data/pro
 import { errorResponseSchema, oneProductResponseSchema } from 'data/schemas/product.schema';
 import { STATUS_CODES } from 'data/statusCodes';
 import { TAGS } from 'data/testTags.data';
-import { test } from 'fixtures/api-services.fixture';
-import { IProductPayload } from 'types/product.types';
+import { test } from 'fixtures/productFactory.fixture';
+import { IProduct, IProductPayload } from 'types/product.types';
 import { validateResponse } from 'utils/validations/responseValidation';
 import { validateSchema } from 'utils/validations/schemaValidation';
 
 test.describe('[API] [Products] Update product by ID', () => {
-  let token = '';
-  let productId = '';
-  let originalProductData: IProductPayload;
+  let product: IProduct;
 
-  test.beforeEach(async ({ signInApiService, productsApiService }) => {
-    token = await signInApiService.loginAsLocalUser();
-    originalProductData = generateProductData() as IProductPayload;
-    const createdProduct = await productsApiService.create(token, originalProductData);
-    productId = createdProduct._id;
+  test.beforeEach(async ({ productFactory }) => {
+    product = await productFactory.singleProduct();
   });
 
   test.describe('Positive', () => {
-    test.afterEach(async ({ productsApiService }) => {
-      await productsApiService.delete(productId, token);
+    test.afterEach(async ({ workerToken, productsApiService }) => {
+      await productsApiService.delete(product._id, workerToken);
     });
 
     positiveTestCasesForUpdate.forEach(({ name, data }) => {
-      test(`Should update product: ${name}`, { tag: [TAGS.API, TAGS.PRODUCTS, TAGS.SMOKE, TAGS.REGRESSION] }, async ({ productsController }) => {
-        const updateProduct: Partial<IProductPayload> = {
-          ...originalProductData,
-          ...data,
-        };
-        const response = await productsController.update(productId, updateProduct, token);
-        validateSchema(oneProductResponseSchema, response.body);
-        validateResponse(response, STATUS_CODES.OK, true, null);
-      });
+      test(
+        `Should update product: ${name}`,
+        { tag: [TAGS.API, TAGS.PRODUCTS, TAGS.SMOKE, TAGS.REGRESSION] },
+        async ({ workerToken, productsController }) => {
+          const updateProduct: Partial<IProductPayload> = {
+            ...product,
+            ...data,
+          };
+          const response = await productsController.update(product._id, updateProduct, workerToken);
+          validateSchema(oneProductResponseSchema, response.body);
+          validateResponse(response, STATUS_CODES.OK, true, null);
+        },
+      );
     });
   });
 
   test.describe('Negative', () => {
-    test.afterEach(async ({ productsApiService }) => {
-      await productsApiService.delete(productId, token);
+    test.afterEach(async ({ workerToken, productsApiService }) => {
+      await productsApiService.delete(product._id, workerToken);
     });
     negativeTestCasesForUpdate.forEach(({ name, data, token: testCaseToken, expectedError, expectedStatusCode }) => {
-      test(`Should NOT update product: ${name}`, { tag: [TAGS.API, TAGS.PRODUCTS, TAGS.REGRESSION] }, async ({ productsController }) => {
-        const usedToken = testCaseToken ?? token;
+      test(`Should NOT update product: ${name}`, { tag: [TAGS.API, TAGS.PRODUCTS, TAGS.REGRESSION] }, async ({ workerToken, productsController }) => {
+        const usedToken = testCaseToken ?? workerToken;
         const statusCode = expectedStatusCode ?? STATUS_CODES.BAD_REQUEST;
-        const response = await productsController.update(productId, data, usedToken);
+        const response = await productsController.update(product._id, data, usedToken);
         validateSchema(errorResponseSchema, response.body);
         validateResponse(response, statusCode, false, expectedError);
       });
@@ -55,32 +54,32 @@ test.describe('[API] [Products] Update product by ID', () => {
     test(
       'Should NOT update product: Duplicate name',
       { tag: [TAGS.API, TAGS.PRODUCTS, TAGS.REGRESSION] },
-      async ({ productsController, productsApiService }) => {
-        const firstProduct = await productsApiService.create(token, generateProductData());
+      async ({ workerToken, productsController, productsApiService }) => {
+        const firstProduct = await productsApiService.create(workerToken, generateProductData());
 
         const duplicateProductData = {
-          ...originalProductData,
+          ...product,
           name: firstProduct.name,
         };
 
-        const duplicateResponse = await productsController.update(productId, duplicateProductData, token);
+        const duplicateResponse = await productsController.update(product._id, duplicateProductData, workerToken);
 
         validateSchema(errorResponseSchema, duplicateResponse.body);
         validateResponse(duplicateResponse, STATUS_CODES.CONFLICT, false, `Product with name '${firstProduct.name}' already exists`);
 
-        await productsApiService.delete(firstProduct._id, token);
+        await productsApiService.delete(firstProduct._id, workerToken);
       },
     );
     test(
       'Should NOT update product: ID of non-existent product',
       { tag: [TAGS.API, TAGS.PRODUCTS, TAGS.REGRESSION] },
-      async ({ productsController, productsApiService }) => {
-        const testProduct = await productsApiService.create(token, generateProductData());
+      async ({ workerToken, productsController, productsApiService }) => {
+        const testProduct = await productsApiService.create(workerToken, generateProductData());
         const testProductId = testProduct._id;
 
-        await productsApiService.delete(testProductId, token);
+        await productsApiService.delete(testProductId, workerToken);
 
-        const response = await productsController.update(testProductId, generateProductData(), token);
+        const response = await productsController.update(testProductId, generateProductData(), workerToken);
         validateSchema(errorResponseSchema, response.body);
         validateResponse(response, STATUS_CODES.NOT_FOUND, false, `Product with id '${testProductId}' wasn't found`);
       },

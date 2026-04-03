@@ -6,6 +6,7 @@ import { TAGS } from 'data/testTags.data';
 import { oneCustomerSchema } from 'data/schemas/customer.schema';
 import { ERROR_MESSAGES } from 'data/errorMessages';
 import { ICustomerEntity } from 'types/customer.types';
+import { generateNonExistentId } from 'utils/testIdGenerator.utils';
 
 test.describe('[API] [Customers] Get Customer By ID', () => {
   let customer: ICustomerEntity;
@@ -53,9 +54,9 @@ test.describe('[API] [Customers] Get Customer By ID', () => {
       'Should NOT get customer with non-existing id - 404 Not Found',
       { tag: [TAGS.API, TAGS.CUSTOMERS, TAGS.REGRESSION] },
       async ({ workerToken, customersController }) => {
-        const invalidId = '684e61b31c508c5d5e53f421';
-        const response = await customersController.getById(invalidId, workerToken);
-        validateResponse(response, STATUS_CODES.NOT_FOUND, false, ERROR_MESSAGES.CUSTOMER_NOT_FOUND(invalidId));
+        const nonExistentId = generateNonExistentId();
+        const response = await customersController.getById(nonExistentId, workerToken);
+        validateResponse(response, STATUS_CODES.NOT_FOUND, false, ERROR_MESSAGES.CUSTOMER_NOT_FOUND(nonExistentId));
       },
     );
   });

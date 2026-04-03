@@ -5,7 +5,7 @@ import { validateSchema } from 'utils/validations/schemaValidation';
 import { TAGS } from 'data/testTags.data';
 import { ERROR_MESSAGES } from 'data/errorMessages';
 import { orderListSchema } from 'data/schemas/customer.schema';
-import { ObjectId } from 'bson';
+import { generateNonExistentId } from 'utils/testIdGenerator.utils';
 
 test.describe('[API] [Customers] Get Customer Orders by ID', () => {
   let customerId = '';
@@ -63,7 +63,7 @@ test.describe('[API] [Customers] Get Customer Orders by ID', () => {
       'Should NOT return orders for non-existent customer - 404 Not Found',
       { tag: [TAGS.API, TAGS.CUSTOMERS] },
       async ({ workerToken, customersController }) => {
-        const nonExistentCustomerId = new ObjectId().toHexString();
+        const nonExistentCustomerId = generateNonExistentId();
         const response = await customersController.getCustomerOrdersById(nonExistentCustomerId, workerToken);
         validateResponse(response, STATUS_CODES.NOT_FOUND, false, ERROR_MESSAGES.CUSTOMER_ID_FOR_ORDERS_NOT_FOUND(nonExistentCustomerId));
       },

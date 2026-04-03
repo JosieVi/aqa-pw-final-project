@@ -3,8 +3,6 @@ import { test as base } from './api-services.fixture';
 
 export const test = base.extend<ICustomCustomer>({
   customerFactory: async ({ workerToken, customersApiService, dataDisposalUtils }, use) => {
-    // const token = await signInApiService.loginAsLocalUser();
-
     const createCustomerWithCleanup = async (customData?: Partial<ICustomerPayload>): Promise<ICustomerEntity> => {
       const customer = await customersApiService.createCustomer(workerToken, customData);
       dataDisposalUtils.trackCustomer(customer._id);
