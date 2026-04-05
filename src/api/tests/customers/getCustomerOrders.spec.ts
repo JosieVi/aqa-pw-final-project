@@ -4,8 +4,8 @@ import { validateResponse } from 'utils/validations/responseValidation';
 import { validateSchema } from 'utils/validations/schemaValidation';
 import { TAGS } from 'data/testTags.data';
 import { ERROR_MESSAGES } from 'data/errorMessages';
-import { orderListSchema } from 'data/schemas/customer.schema';
 import { generateNonExistentId } from 'utils/testIdGenerator.utils';
+import { orderListSchema } from 'data/schemas/order.schema';
 
 test.describe('[API] [Customers] Get Customer Orders by ID', () => {
   let customerId = '';

@@ -52,7 +52,7 @@ export const allProductsResponseSchema = {
     },
     ...baseSchemaPart,
   },
-  required: ['Products', 'isSuccess', 'errorMessage'],
+  required: ['Products', 'IsSuccess', 'ErrorMessage'],
 };
 
 export const productsListSchema = {

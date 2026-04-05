@@ -6,8 +6,8 @@ import { DELIVERY } from './delivery.data';
 export function generateDeliveryData(params?: { finalDate?: string; condition?: DELIVERY; address?: Partial<IAddress> }): IDelivery {
   const defaultAddress: IAddress = {
     country: faker.helpers.arrayElement(Object.values(COUNTRIES)),
-    city: faker.location.city(),
-    street: faker.location.street(),
+    city: `TestCity ${faker.string.alpha(5)}`,
+    street: `TestStreet ${faker.string.alpha(10)}`,
     house: faker.number.int({ min: 1, max: 999 }),
     flat: faker.number.int({ min: 1, max: 9999 }),
   };

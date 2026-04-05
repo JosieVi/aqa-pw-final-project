@@ -1,8 +1,5 @@
 import { COUNTRIES } from 'data/customers/countries.data';
 import { baseSchemaPart, customersMetaSchema, sortingSchemaPart } from 'data/schemas/base.schema';
-import { productInOrderSchema } from 'data/schemas/product.schema';
-import { ORDER_STATUS } from 'data/orders/statuses.data';
-import { commentSchema, deliverySchema, orderHistorySchema } from './order.schema';
 
 export const customerSchema = {
   type: 'object',
@@ -101,56 +98,3 @@ export const customersListSchema = {
 //   },
 //   required: ['country', 'city', 'street', 'house', 'flat'],
 // };
-
-export const customerAssociatedOrdersSchema = {
-  type: 'object',
-  properties: {
-    _id: { type: 'string' },
-    status: {
-      type: 'string',
-      enum: Object.values(ORDER_STATUS),
-    },
-    customer: {
-      type: 'string',
-    },
-    // customerSchema,
-    products: {
-      type: 'array',
-      items: productInOrderSchema,
-    },
-    total_price: { type: 'number' },
-    createdOn: {
-      type: 'string',
-      format: 'date-time',
-    },
-
-    delivery: {
-      anyOf: [deliverySchema, { type: 'null' }],
-    },
-    comments: {
-      type: 'array',
-      items: commentSchema,
-    },
-    history: {
-      type: 'array',
-      items: orderHistorySchema,
-    },
-  },
-  // required: ['_id', 'status', 'customer', 'products', 'total_price', 'createdOn'],
-  if: {
-    properties: { status: { const: ORDER_STATUS.IN_PROCESS } },
-  },
-  then: {
-    required: ['_id', 'status', 'customer', 'products', 'total_price', 'createdOn', 'delivery'],
-  },
-  else: {
-    required: ['_id', 'status', 'customer', 'products', 'total_price', 'createdOn'],
-  },
-
-  // required: ['_id', 'status', 'customer', 'products', 'createdOn'],
-};
-
-export const orderListSchema = {
-  type: 'array',
-  items: customerAssociatedOrdersSchema,
-};

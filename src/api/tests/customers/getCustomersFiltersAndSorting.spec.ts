@@ -21,7 +21,7 @@ test.describe('[API] [Customers] GET customers - filters and sorting - 200 OK', 
         tag: [TAGS.API, TAGS.CUSTOMERS, TAGS.SMOKE, TAGS.REGRESSION],
       },
       async ({ workerToken, customersController, customerFactory }) => {
-        const expectedName = `SearchTest${faker.string.alphanumeric(8)}`;
+        const expectedName = `SearchTest${faker.string.alpha(8)}`;
         const expectedCustomer = await customerFactory.multipleCustomers(totalCustomers, { name: expectedName });
 
         const params: ICustomerFilterParams = {

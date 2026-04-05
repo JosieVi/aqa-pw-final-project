@@ -6,19 +6,6 @@ import { customerSchema } from './customer.schema';
 import { ordersMetaSchema } from './base.schema';
 import { addressSchema } from './address.schema';
 
-export const commentSchema = {
-  type: 'object',
-  properties: {
-    _id: { type: 'string' },
-    text: { type: 'string' },
-    createdOn: {
-      type: 'string',
-      format: 'date-time',
-    },
-  },
-  required: ['_id', 'text', 'createdOn'],
-};
-
 export const deliverySchema = {
   type: 'object',
   properties: {
@@ -31,6 +18,19 @@ export const deliverySchema = {
     address: addressSchema,
   },
   required: ['finalDate', 'condition', 'address'],
+};
+
+export const commentSchema = {
+  type: 'object',
+  properties: {
+    _id: { type: 'string' },
+    text: { type: 'string' },
+    createdOn: {
+      type: 'string',
+      format: 'date-time',
+    },
+  },
+  required: ['_id', 'text', 'createdOn'],
 };
 
 export const orderHistorySchema = {
@@ -53,6 +53,97 @@ export const orderHistorySchema = {
     changedOn: { type: 'string' },
   },
   required: ['status', 'customer', 'products', 'total_price', 'action', 'changedOn'],
+};
+
+export const orderSchema = {
+  type: 'object',
+  properties: {
+    _id: {
+      type: 'string',
+    },
+    status: {
+      type: 'string',
+      enum: Object.values(ORDER_STATUS),
+    },
+    customer: customerSchema,
+    products: {
+      type: 'array',
+      items: productInOrderSchema,
+    },
+    total_price: {
+      type: 'number',
+    },
+    createdOn: {
+      type: 'string',
+      format: 'date-time',
+    },
+    // delivery: { ...deliverySchema, nullable: true },
+    delivery: {
+      anyOf: [deliverySchema, { type: 'null' }],
+    },
+    comments: {
+      type: 'array',
+      items: commentSchema,
+    },
+    history: {
+      type: 'array',
+      items: orderHistorySchema,
+    },
+  },
+  required: ['status', 'customer', 'products', 'total_price', 'createdOn'],
+};
+
+export const customerAssociatedOrdersSchema = {
+  type: 'object',
+  properties: {
+    _id: { type: 'string' },
+    status: {
+      type: 'string',
+      enum: Object.values(ORDER_STATUS),
+    },
+    customer: {
+      type: 'string',
+    },
+    // customerSchema,
+    products: {
+      type: 'array',
+      items: productInOrderSchema,
+    },
+    total_price: { type: 'number' },
+    createdOn: {
+      type: 'string',
+      format: 'date-time',
+    },
+
+    delivery: {
+      anyOf: [deliverySchema, { type: 'null' }],
+    },
+    comments: {
+      type: 'array',
+      items: commentSchema,
+    },
+    history: {
+      type: 'array',
+      items: orderHistorySchema,
+    },
+  },
+  // required: ['_id', 'status', 'customer', 'products', 'total_price', 'createdOn'],
+  if: {
+    properties: { status: { const: ORDER_STATUS.IN_PROCESS } },
+  },
+  then: {
+    required: ['_id', 'status', 'customer', 'products', 'total_price', 'createdOn', 'delivery'],
+  },
+  else: {
+    required: ['_id', 'status', 'customer', 'products', 'total_price', 'createdOn'],
+  },
+
+  // required: ['_id', 'status', 'customer', 'products', 'createdOn'],
+};
+
+export const orderListSchema = {
+  type: 'array',
+  items: customerAssociatedOrdersSchema,
 };
 
 export const createOrderPayloadSchema = {
@@ -87,41 +178,6 @@ export const orderStatusUpdateSchema = {
     },
   },
   required: ['status'],
-};
-
-export const orderSchema = {
-  type: 'object',
-  properties: {
-    _id: {
-      type: 'string',
-    },
-    status: {
-      type: 'string',
-      enum: Object.values(ORDER_STATUS),
-    },
-    customer: customerSchema,
-    products: {
-      type: 'array',
-      items: productInOrderSchema,
-    },
-    total_price: {
-      type: 'number',
-    },
-    createdOn: {
-      type: 'string',
-      format: 'date-time',
-    },
-    delivery: { ...deliverySchema, nullable: true },
-    comments: {
-      type: 'array',
-      items: commentSchema,
-    },
-    history: {
-      type: 'array',
-      items: orderHistorySchema,
-    },
-  },
-  required: ['status', 'customer', 'products', 'total_price', 'createdOn'],
 };
 
 export const orderWithoutDeliverySchema = {
