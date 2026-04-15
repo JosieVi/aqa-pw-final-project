@@ -39,7 +39,7 @@ jobs:
 
       # 5. Ожидание готовности фронтенда (замени порт, если он другой)
       - name: Wait for App
-        run: npx wait-on http://localhost:${{ secrets.FRONTEND_PORT }} --timeout 60000
+        run: npx wait-on http://localhost:8585 --timeout 60000
 
       # 6. Установка зависимостей тестов и браузеров
       - name: Install dependencies
