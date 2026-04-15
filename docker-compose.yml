@@ -22,7 +22,7 @@ services:
       ME_CONFIG_BASICAUTH_PASSWORD: ${ME_CONFIG_BASICAUTH_PASSWORD}
 
   backend:
-    build: ./backend
+    image: ghcr.io/josievi/sales-backend:latest
     container_name: ${BACKEND_CONTAINER_NAME}
     ports:
       - '${BACKEND_PORT}:${BACKEND_PORT}'
@@ -35,7 +35,7 @@ services:
       - mongo
 
   frontend:
-    build: ./frontend
+    image: ghcr.io/josievi/sales-frontend:latest
     container_name: ${FRONTEND_CONTAINER_NAME}
     ports:
       - '${FRONTEND_PORT}:${FRONTEND_PORT}'
