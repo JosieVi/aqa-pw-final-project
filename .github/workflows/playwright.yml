@@ -35,13 +35,13 @@ jobs:
 
       # 4. Запуск приложения через Docker Compose
       - name: Start Application
-        run: docker-compose up -d
+        run: docker compose up -d
 
       # 5. Ожидание готовности фронтенда (замени порт, если он другой)
       - name: Wait for App
         run: |
-          npm install wait-on
-          npx wait-on http://localhost:8585 --timeout 60000
+          npm install -g wait-on
+          wait-on http://localhost:8585 --timeout 60000
 
       # 6. Установка зависимостей тестов и браузеров
       - name: Install dependencies
