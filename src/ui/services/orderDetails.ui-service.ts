@@ -18,13 +18,20 @@ export class OrderDetailsService extends BaseUIService {
   }
 
   @logStep('Verify all products are received')
-  async verifyAllProductsReceived() {
+  async verifyAllProductsReceived(): Promise<void> {
     const productAccordionCount = await this.orderDetailsPage.receivedProductsSection.getProductsAccordionCount();
     expect(productAccordionCount).toBeGreaterThan(0);
-    for (let i = 0; i < productAccordionCount; i++) {
-      const statusText = await this.orderDetailsPage.receivedProductsSection.allReceivedStatusSpans.nth(i).innerText();
-      expect(statusText).toBe(PRODUCT_STATUS.RECEIVED);
-    }
+
+    const allStatusTexts = await this.orderDetailsPage.receivedProductsSection.getAllProductReceivedStatusTexts();
+
+    // Use soft assertions to check all products without stopping at first failure
+    allStatusTexts.forEach((statusText, index) => {
+      expect.soft(statusText, `Product at index ${index} should have status "${PRODUCT_STATUS.RECEIVED}"`).toBe(PRODUCT_STATUS.RECEIVED);
+    });
+
+    // Final hard assertion to fail the test if any product has wrong status
+    const allReceived = allStatusTexts.every((status) => status === PRODUCT_STATUS.RECEIVED);
+    expect(allReceived, `All ${allStatusTexts.length} products should be received`).toBeTruthy();
   }
 
   @logStep('Verify no receive options are available')

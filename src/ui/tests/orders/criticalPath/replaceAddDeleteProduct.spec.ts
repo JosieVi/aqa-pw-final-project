@@ -5,16 +5,23 @@ test.describe('[UI] [Orders] [Orders Details] [Edit Products] Replace/add/delete
   let productNames: string[] = [];
   let orderId: string;
 
-  test.beforeEach(async ({ homeUIService, orderFactory, ordersPage, orderDetailsPage, productsApiService, signInApiService }) => {
+  test.beforeEach(async ({ homeUIService, orderFactory, ordersPage, orderDetailsPage }) => {
+    productNames = [];
     const PRODUCTS_TO_CREATE_COUNT = 3;
     const result = await orderFactory.orderDraftStatus(PRODUCTS_TO_CREATE_COUNT);
-    orderId = result.id;
+    orderId = result._id;
+    result.products.forEach((product) => productNames.push(product.name));
+    productNames.forEach((name) => console.log('name of product', name));
 
-    const token = await signInApiService.loginAsLocalUser();
+    // const token = await signInApiService.loginAsLocalUser();
 
-    const products = await Promise.all(result.productsIds.map((productId) => productsApiService.getById(token, productId)));
+    // const products = await Promise.all(result.productsIds.map((productId) => productsApiService.getById(token, productId)));
+    // const products = await productFactory.multipleProducts(PRODUCTS_TO_CREATE_COUNT);
+    // products.forEach((product) => {
+    //   productNames.push(product.name);
+    // });
 
-    productNames = products.map((p) => p.name);
+    // productNames = products.map((p) => p.name);
 
     await homeUIService.openAsLoggedInUser();
     await homeUIService.openModule('Orders');
@@ -46,6 +53,8 @@ test.describe('[UI] [Orders] [Orders Details] [Edit Products] Replace/add/delete
     await orderDetailsPage.editProductsInOrderModal.clickAddProduct();
 
     const totalProducts = await orderDetailsPage.editProductsInOrderModal.productsList.count();
+
+    // await orderDetailsPage.editProductsInOrderModal.waitForSpinner();
     await orderDetailsPage.editProductsInOrderModal.selectProductAtPosition(firstProductName, totalProducts);
 
     await orderDetailsPage.editProductsInOrderModal.clickSave();

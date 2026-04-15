@@ -1,7 +1,9 @@
+import { Locator } from '@playwright/test';
 import { logStep } from 'utils/reporter.utils';
 import { SalesPortalPage } from './salesPortal.page';
 import { IAddress } from 'types/order.types';
 import { DATE_PICKER_MONTHS, DELIVERY, LOCATION } from 'data/orders/delivery.data';
+import { TIMEOUTS } from 'data/timeouts.data';
 
 export abstract class BaseDeliveryPage extends SalesPortalPage {
   readonly pageContainer = this.page.locator('#delivery-container');
@@ -27,7 +29,7 @@ export abstract class BaseDeliveryPage extends SalesPortalPage {
   readonly datepickerMonth = (month: DATE_PICKER_MONTHS) => this.datepicker.locator('.month', { hasText: month });
   readonly datepickerDay = (day: string) => this.datepicker.locator(`td.day:not(.disabled):not(.old):not(.new):has-text('${day}')`);
 
-  uniqueElement = this.deliveryType;
+  readonly uniqueElement: Locator = this.deliveryType;
   abstract expectedTitle: string;
 
   @logStep('Select delivery type')
@@ -49,57 +51,57 @@ export abstract class BaseDeliveryPage extends SalesPortalPage {
     await this.datepickerMonth(month).click();
     await this.page.waitForSelector('.datepicker-days', {
       state: 'visible',
-      timeout: 5000,
+      timeout: TIMEOUTS.DATEPICKER_VISIBLE,
     });
 
     await this.datepickerDay(day).click();
   }
 
   @logStep('Fill delivery form (date + address)')
-  async fillAddress(address: IAddress & { finalDate: string }, deliveryType: DELIVERY) {
+  async fillAddress(address: IAddress & { finalDate: string }, deliveryType: DELIVERY): Promise<void> {
     if (address.finalDate) {
       await this.fillDateInput(address.finalDate);
     }
 
     if (deliveryType === DELIVERY.DELIVERY) {
-      if (address.location === LOCATION.OTHER) {
-        if (await this.location.isVisible()) {
-          await this.location.selectOption({ label: address.location });
-        }
+      await this.fillDeliveryAddressForDelivery(address);
+    } else if (deliveryType === DELIVERY.PICKUP) {
+      await this.fillDeliveryAddressForPickup(address);
+    }
+  }
 
-        if (address.country) {
-          await this.country.selectOption({ label: address.country });
-        }
-        if (address.city) await this.city.fill(address.city);
-        if (address.street) await this.street.fill(address.street);
-        if (address.house !== undefined) {
-          await this.house.fill(address.house.toString());
-        }
-        if (address.flat !== undefined) {
-          await this.flat.fill(address.flat.toString());
-        }
+  private async fillDeliveryAddressForDelivery(address: IAddress): Promise<void> {
+    if (address.location === LOCATION.OTHER) {
+      if (await this.location.isVisible()) {
+        await this.location.selectOption({ label: address.location });
       }
-
-      if (address.location === LOCATION.HOME) {
-        if (await this.location.isVisible()) {
-          await this.location.selectOption({ label: address.location });
-        }
+      await this.fillAddressFields(address);
+    } else if (address.location === LOCATION.HOME) {
+      if (await this.location.isVisible()) {
+        await this.location.selectOption({ label: address.location });
       }
     }
+  }
 
-    if (deliveryType === DELIVERY.PICKUP) {
-      if (address.country) {
-        await this.country.selectOption({ label: address.country });
-      }
+  private async fillDeliveryAddressForPickup(address: IAddress): Promise<void> {
+    await this.fillAddressFields(address);
+  }
 
-      if (address.city) await this.city.fill(address.city);
-      if (address.street) await this.street.fill(address.street);
-      if (address.house !== undefined) {
-        await this.house.fill(address.house.toString());
-      }
-      if (address.flat !== undefined) {
-        await this.flat.fill(address.flat.toString());
-      }
+  private async fillAddressFields(address: IAddress): Promise<void> {
+    if (address.country) {
+      await this.country.selectOption({ label: address.country });
+    }
+    if (address.city) {
+      await this.city.fill(address.city);
+    }
+    if (address.street) {
+      await this.street.fill(address.street);
+    }
+    if (address.house !== undefined) {
+      await this.house.fill(address.house.toString());
+    }
+    if (address.flat !== undefined) {
+      await this.flat.fill(address.flat.toString());
     }
   }
 

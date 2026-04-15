@@ -1,4 +1,4 @@
-import { MOCK_MANAGER_NASTYA } from 'data/orders/mockOrders.data';
+import { MOCK_MANAGER_OLGA } from 'data/orders/mockOrders.data';
 import { NOTIFICATION } from 'data/orders/notification.data';
 import { TOASTER } from 'data/orders/toaster.data';
 import { TAGS } from 'data/testTags.data';
@@ -10,14 +10,14 @@ test.describe('[UI] [Orders] [Orders Details] [Edit Products] Replace/delete ass
   let managerFirstName: string;
   let managerLastName: string;
 
-  test.beforeEach(async ({ homeUIService, ordersPage, orderDetailsPage, signInApiService, ordersApiService }) => {
-    const token = await signInApiService.loginAsLocalUser();
-    const result = await ordersApiService.createManagerAssignedOrder(1, token);
+  test.beforeEach(async ({ homeUIService, ordersPage, orderDetailsPage, orderFactory }) => {
+    // const token = await signInApiService.loginAsLocalUser();
+    const result = await orderFactory.orderManagerAssignedStatus(1);
     orderId = result._id;
 
-    managerUsername = MOCK_MANAGER_NASTYA.username;
-    managerFirstName = MOCK_MANAGER_NASTYA.firstName;
-    managerLastName = MOCK_MANAGER_NASTYA.lastName;
+    managerUsername = MOCK_MANAGER_OLGA.username;
+    managerFirstName = MOCK_MANAGER_OLGA.firstName;
+    managerLastName = MOCK_MANAGER_OLGA.lastName;
 
     await homeUIService.openAsLoggedInUser();
     await homeUIService.openModule('Orders');
@@ -32,6 +32,7 @@ test.describe('[UI] [Orders] [Orders Details] [Edit Products] Replace/delete ass
     await orderDetailsPage.waitForOpened();
 
     //выбираем отличного от назначнного
+    // await orderDetailsPage.editAssignedManagerInOrderModal.clickManagerListItem(managerUsername);
     await orderDetailsPage.editAssignedManagerInOrderModal.clickManagerListItem(managerUsername);
     await orderDetailsPage.editAssignedManagerInOrderModal.clickSaveButton();
     await orderDetailsPage.waitForSpinner();

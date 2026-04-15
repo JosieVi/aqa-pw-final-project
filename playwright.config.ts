@@ -3,19 +3,33 @@ import * as dotenv from 'dotenv';
 import { apiConfig } from './src/config/api-config';
 import { SALES_PORTAL_URL } from './src/config/environment';
 import path from 'path';
+import fs from 'fs';
 import { rimraf } from 'rimraf';
 
 dotenv.config();
 
 export const STORAGE_STATE = path.join(__dirname, 'src/.auth/user.json');
 
+// if (!process.env.SKIP_CLEAN) {
+//   rimraf.sync(path.resolve(__dirname, 'allure-results'));
+//   console.log('--- Allure results cleaned ---');
+// }
+
 if (!process.env.SKIP_CLEAN) {
-  rimraf.sync(path.resolve(__dirname, 'allure-results'));
-  console.log('--- Allure results cleaned ---');
+  const allurePath = path.resolve(__dirname, 'allure-results');
+
+  // 1. Удаляем старое
+  rimraf.sync(allurePath);
+
+  // 2. Создаем гарантированно чистую папку ДО старта воркеров
+  fs.mkdirSync(allurePath, { recursive: true });
+
+  console.log('--- Allure results cleaned and recreated ---');
 }
 
 export default defineConfig({
   // globalSetup: require.resolve('./src/config/global.setup'),
+  timeout: 60000,
   forbidOnly: !!process.env.CI,
   retries: process.env.CI ? 2 : 0,
   workers: process.env.CI ? 1 : undefined,

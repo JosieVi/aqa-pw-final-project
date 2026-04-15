@@ -8,7 +8,7 @@ test.describe('[UI] [Orders] [Order Details] [Delivery Tab]', () => {
   test.beforeEach(async ({ homeUIService, orderFactory, ordersPage, signInApiService, page }) => {
     const PRODUCTS_TO_CREATE_COUNT = 1;
     const order = await orderFactory.orderDraftStatus(PRODUCTS_TO_CREATE_COUNT);
-    targetOrderId = order.id;
+    targetOrderId = order._id;
 
     let token = await signInApiService.loginAsLocalUser();
 

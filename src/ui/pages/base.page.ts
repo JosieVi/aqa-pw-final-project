@@ -1,8 +1,11 @@
-import { Page, test } from '@playwright/test';
+import { Locator, Page, test } from '@playwright/test';
 import { IResponse } from 'types/api.types';
+import { IPage } from 'types/ui.types';
 
-export abstract class BasePage {
-  constructor(protected page: Page) {}
+export abstract class BasePage implements IPage {
+  constructor(readonly page: Page) {}
+
+  abstract readonly uniqueElement: Locator;
 
   async interceptRequest<T extends unknown[]>(url: string, triggerAction: (...args: T) => Promise<void>, ...args: T) {
     return await test.step(`Intercept Request for URL: ${url}`, async () => {

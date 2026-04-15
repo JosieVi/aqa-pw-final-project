@@ -1,16 +1,17 @@
-import test from '@playwright/test';
+import { Locator, test } from '@playwright/test';
 import { OrdersListColumn, OrdersListColumnForSorting } from 'data/orders/ordersListColumn.data';
-import { sortDirection } from 'types/api.types';
+import { SortDirection } from 'types/api.types';
 import { SalesPortalPage } from 'ui/pages/salesPortal.page';
 import { logStep } from 'utils/reporter.utils';
+import { PAGE_TITLES, BUTTON_NAMES, TABLE_HEADERS, FORM_LABELS } from 'data/uiTexts.data';
 
 export class OrdersPage extends SalesPortalPage {
   // Верхняя часть страницы Orders List
   readonly ordersListTitle = this.page.getByRole('heading', {
-    name: 'Orders List ',
+    name: PAGE_TITLES.ORDERS_LIST,
   });
   readonly createOrderButton = this.page.getByRole('button', {
-    name: 'Create Order',
+    name: BUTTON_NAMES.CREATE_ORDER,
   });
   readonly searchInputField = this.page.locator('#search');
   readonly searchButton = this.page.locator('#search-orders');
@@ -33,20 +34,20 @@ export class OrdersPage extends SalesPortalPage {
   readonly tableHeader = this.tableContainer.locator('thead');
   readonly tableBody = this.tableContainer.locator('tbody');
 
-  readonly orderNumberHeader = this.tableHeader.getByText('Order Number', {
+  readonly orderNumberHeader = this.tableHeader.getByText(TABLE_HEADERS.ORDER_NUMBER, {
     exact: true,
   });
-  readonly emailHeader = this.tableHeader.getByText('Email', { exact: true });
-  readonly priceHeader = this.tableHeader.getByText('Price', { exact: true });
-  readonly deliveryHeader = this.tableHeader.getByText('Delivery', {
+  readonly emailHeader = this.tableHeader.getByText(TABLE_HEADERS.EMAIL, { exact: true });
+  readonly priceHeader = this.tableHeader.getByText(TABLE_HEADERS.PRICE, { exact: true });
+  readonly deliveryHeader = this.tableHeader.getByText(TABLE_HEADERS.DELIVERY, {
     exact: true,
   });
-  readonly statusHeader = this.tableHeader.getByText('Status', { exact: true });
-  readonly assignedManagerHeader = this.tableHeader.getByText('Assigned Manager', { exact: true });
-  readonly createdOnHeader = this.tableHeader.getByText('Created On', {
+  readonly statusHeader = this.tableHeader.getByText(TABLE_HEADERS.STATUS, { exact: true });
+  readonly assignedManagerHeader = this.tableHeader.getByText(TABLE_HEADERS.ASSIGNED_MANAGER, { exact: true });
+  readonly createdOnHeader = this.tableHeader.getByText(TABLE_HEADERS.CREATED_ON, {
     exact: true,
   });
-  readonly actionsHeader = this.tableHeader.getByText('Actions', {
+  readonly actionsHeader = this.tableHeader.getByText(TABLE_HEADERS.ACTIONS, {
     exact: true,
   });
   readonly allTableRows = this.tableBody.locator('tr');
@@ -61,13 +62,13 @@ export class OrdersPage extends SalesPortalPage {
 
   // Нижняя часть страницы Orders List (пагинация)
   readonly paginationControlsContainer = this.page.locator('#pagination-controls');
-  readonly itemsOnPageLabel = this.paginationControlsContainer.getByText('Items on page:', {
+  readonly itemsOnPageLabel = this.paginationControlsContainer.getByText(FORM_LABELS.ITEMS_ON_PAGE, {
     exact: true,
   });
   readonly paginationSelect = this.page.locator('#pagination-select');
   readonly paginationButtonsContainer = this.page.locator('#pagination-buttons');
-  readonly previousPageButton = this.paginationButtonsContainer.locator('button[title="Previous"]');
-  readonly nextPageButton = this.paginationButtonsContainer.locator('button[title="Next"]');
+  readonly previousPageButton = this.paginationButtonsContainer.locator(`button[title="${BUTTON_NAMES.PREVIOUS}"]`);
+  readonly nextPageButton = this.paginationButtonsContainer.locator(`button[title="${BUTTON_NAMES.NEXT}"]`);
   getPageByNumber(pageNumber: number) {
     return this.paginationButtonsContainer.getByRole('button', {
       name: String(pageNumber),
@@ -81,7 +82,7 @@ export class OrdersPage extends SalesPortalPage {
     return this.tableRowByOrderNumber(orderNumber).locator('button.btn-link.table-btn i.bi-box-arrow-in-right');
   }
 
-  uniqueElement = this.ordersListTitle;
+  readonly uniqueElement: Locator = this.ordersListTitle;
 
   // Методы для работы с Orders List
   @logStep('Get Orders List Title')
@@ -120,17 +121,20 @@ export class OrdersPage extends SalesPortalPage {
   }
 
   @logStep('Click Details Button')
-  async clickDetailsButton(orderNumber: string) {
-    const row = this.tableRowByOrderNumber(orderNumber);
-    const detailsButton = row.locator('a.btn-link.table-btn i.bi-card-text').locator('..');
-    await detailsButton.click();
+  async clickDetailsButton(orderNumber: string): Promise<void> {
+    await this.getActionButtonInRow(orderNumber, 'details').click();
   }
 
   @logStep('Click Reopen Button')
-  async clickReopenButton(orderNumber: string) {
+  async clickReopenButton(orderNumber: string): Promise<void> {
+    await this.getActionButtonInRow(orderNumber, 'reopen').click();
+  }
+
+  private getActionButtonInRow(orderNumber: string, actionType: 'details' | 'reopen'): Locator {
     const row = this.tableRowByOrderNumber(orderNumber);
-    const reopenButton = row.locator('button.btn-link.table-btn i.bi-box-arrow-in-right').locator('..');
-    await reopenButton.click();
+    const titleText = actionType === 'details' ? 'Details' : 'Reopen';
+    // return row.getByTitle(titleText);
+    return row.getByTitle(titleText, { exact: true });
   }
 
   @logStep('Click Column Header For Sort')
@@ -148,7 +152,7 @@ export class OrdersPage extends SalesPortalPage {
     });
   }
 
-  async sortColumnBy(columnName: OrdersListColumnForSorting, direction: sortDirection) {
+  async sortColumnBy(columnName: OrdersListColumnForSorting, direction: SortDirection) {
     return await test.step(`Sort column ${columnName} by ${direction} direction`, async () => {
       const currentDirection = await this.getCurrentSortDirection(columnName);
 

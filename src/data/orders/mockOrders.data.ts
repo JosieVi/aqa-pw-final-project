@@ -11,8 +11,8 @@ import { ORDER_STATUS } from './statuses.data';
 
 // Моковые менеджеры (IManager)
 export const MOCK_MANAGER_OLGA: IManager = {
-  _id: '680d4d7dd006ba3d475ff67b',
-  username: 'OlgaMarushkina',
+  _id: '69d40967721bf3ededcd067d',
+  username: 'Olga Marushkina',
   firstName: 'Olga',
   lastName: 'Marushkina',
   roles: [ROLES.USER],
@@ -204,8 +204,8 @@ export const MOCK_ORDER_CANCELED: IOrder = {
 // API Response Mocks
 export const MOCK_ORDERS_LIST_API_RESPONSE: IOrderSearchResponse = {
   Orders: [MOCK_ORDER_IN_PROCESS, MOCK_ORDER_DRAFT, MOCK_ORDER_CANCELED],
-  errorMessage: null,
-  isSuccess: true,
+  ErrorMessage: null,
+  IsSuccess: true,
   total: 3,
   page: 1,
   limit: 10,

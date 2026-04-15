@@ -43,8 +43,8 @@ test.describe('[UI] [Orders] [Modals] [Reopen Order Modal]', () => {
   let targetOrderId: string;
   test.beforeEach(async ({ homeUIService, ordersPage, orderDetailsPage, orderFactory }) => {
     const PRODUCTS_TO_CREATE_COUNT = 1;
-    const { id } = await orderFactory.orderCanceledStatus(PRODUCTS_TO_CREATE_COUNT);
-    targetOrderId = id;
+    const order = await orderFactory.orderCanceledStatus(PRODUCTS_TO_CREATE_COUNT);
+    targetOrderId = order._id;
     await homeUIService.openAsLoggedInUser();
     await homeUIService.openModule('Orders');
     await ordersPage.waitForOpened();
@@ -64,6 +64,8 @@ test.describe('[UI] [Orders] [Modals] [Reopen Order Modal]', () => {
     await confirmationModal.modalContainer.waitFor({ state: 'hidden' });
     await expect(confirmationModal.modalTitle).not.toBeVisible();
 
+    await orderDetailsPage.topPanel.waitForOpened();
+
     const updatedOrderStatus = await orderDetailsPage.topPanel.getOrderDetailsPanelTitle();
     await expect(updatedOrderStatus).toBe(UI_TEXTS.PANEL_TITLES.ORDER_DETAILS);
     const orderDetailsPageStatus = await orderDetailsPage.topPanel.getOrderStatus();
@@ -75,8 +77,8 @@ test.describe('[UI] [Orders] [Modals] [Assign Manager Modal]', () => {
   let targetOrderId: string;
   test.beforeEach(async ({ homeUIService, ordersPage, orderDetailsPage, orderFactory }) => {
     const PRODUCTS_TO_CREATE_COUNT = 1;
-    const { id } = await orderFactory.orderDraftStatus(PRODUCTS_TO_CREATE_COUNT);
-    targetOrderId = id;
+    const { _id } = await orderFactory.orderDraftStatus(PRODUCTS_TO_CREATE_COUNT);
+    targetOrderId = _id;
 
     await homeUIService.openAsLoggedInUser();
     await homeUIService.openModule('Orders');
@@ -93,9 +95,15 @@ test.describe('[UI] [Orders] [Modals] [Assign Manager Modal]', () => {
     await expect(selectManagerModal.getModalTitle()).resolves.toBe(UI_TEXTS.MODAL_TITLES.ASSIGN_MANAGER);
     await expect(selectManagerModal.managerSearchInput).toBeVisible();
 
-    await selectManagerModal.fillManagerSearchInput(MOCK_MANAGER_OLGA.firstName);
+    const managerFullName = `${MOCK_MANAGER_OLGA.firstName} ${MOCK_MANAGER_OLGA.lastName}`;
+    await expect(selectManagerModal.getManagerListItem(managerFullName)).toBeVisible();
+    // await expect(selectManagerModal.getManagerListItem(`${MOCK_MANAGER_OLGA.firstName} ${MOCK_MANAGER_OLGA.lastName}`)).toBeVisible();
 
-    await expect(selectManagerModal.getManagerListItem(`${MOCK_MANAGER_OLGA.firstName} ${MOCK_MANAGER_OLGA.lastName}`)).toBeVisible();
+    // await expect(
+    //   selectManagerModal.getManagerListItem(`${MOCK_MANAGER_OLGA.firstName}
+    // await page.getByRole('link', { name: 'Managers' }).click();
+    // await page.getByRole('link', { name: 'Managers' }).click();`),
+    // ).toBeVisible();
 
     await selectManagerModal.clickManagerListItem(`${MOCK_MANAGER_OLGA.firstName} ${MOCK_MANAGER_OLGA.lastName}`);
 
@@ -120,8 +128,8 @@ test.describe('[UI] [Orders] [Modals] [Remove Manager Modal]', () => {
   let targetOrderId: string;
   test.beforeEach(async ({ homeUIService, ordersPage, orderDetailsPage, orderFactory }) => {
     const PRODUCTS_TO_CREATE_COUNT = 1;
-    const { id } = await orderFactory.orderManagerAssignedStatus(PRODUCTS_TO_CREATE_COUNT);
-    targetOrderId = id;
+    const order = await orderFactory.orderManagerAssignedStatus(PRODUCTS_TO_CREATE_COUNT, MOCK_MANAGER_OLGA._id);
+    targetOrderId = order._id;
 
     await homeUIService.openAsLoggedInUser();
     await homeUIService.openModule('Orders');

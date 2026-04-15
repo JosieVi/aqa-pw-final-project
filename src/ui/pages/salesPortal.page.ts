@@ -35,23 +35,23 @@ export class SalesPortalPage extends PageHolder {
   }
 
   @logStep('Check if the navigation item is active')
-  async isNavItemActive(name: string): Promise<boolean | undefined> {
+  async isNavItemActive(name: string): Promise<boolean> {
     const classes = await this.navItem(name).getAttribute('class');
-    return classes?.includes('active');
+    return classes?.includes('active') ?? false;
   }
 
   @logStep('Get current active navigation item')
-  async getActiveNavItem(): Promise<string | undefined> {
-    return (await this.activeNavItem.getAttribute('name')) ?? undefined;
+  async getActiveNavItem(): Promise<string | null> {
+    return await this.activeNavItem.getAttribute('name');
   }
 
   @logStep('Toggle theme')
-  async clickToggleTheme() {
+  async clickToggleTheme(): Promise<void> {
     await this.userControls.themeToggle.click();
   }
 
   @logStep('Open notifications')
-  async clickOpenNotifications() {
+  async clickOpenNotifications(): Promise<void> {
     await this.notifications.button.click();
   }
 
@@ -63,7 +63,7 @@ export class SalesPortalPage extends PageHolder {
   }
 
   @logStep('Sign out')
-  async clickSignOut() {
+  async clickSignOut(): Promise<void> {
     await this.userControls.signOutButton.click();
   }
 

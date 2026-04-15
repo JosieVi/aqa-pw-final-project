@@ -11,7 +11,7 @@ test.describe('[UI] [Orders] [Customer]', () => {
 
     test.beforeEach(async ({ homeUIService, ordersPage, orderDetailsPage, orderFactory, page }) => {
       const PRODUCTS_TO_CREATE_COUNT = 1;
-      const { id } = await orderFactory.orderDraftStatus(PRODUCTS_TO_CREATE_COUNT);
+      const { _id: id } = await orderFactory.orderDraftStatus(PRODUCTS_TO_CREATE_COUNT);
       targetOrderId = id;
 
       await homeUIService.openAsLoggedInUser();
@@ -91,7 +91,7 @@ test.describe('[UI] [Orders] [Customer]', () => {
       test.beforeEach(async ({ homeUIService, ordersPage, orderDetailsPage, orderFactory }) => {
         const PRODUCTS_TO_CREATE_COUNT = 1;
 
-        const { id } = await orderFactory.orderCanceledStatus(PRODUCTS_TO_CREATE_COUNT);
+        const { _id: id } = await orderFactory.orderCanceledStatus(PRODUCTS_TO_CREATE_COUNT);
         targetOrderId = id;
 
         await homeUIService.openAsLoggedInUser();
@@ -115,7 +115,7 @@ test.describe('[UI] [Orders] [Customer]', () => {
       test.beforeEach(async ({ homeUIService, ordersPage, orderDetailsPage, orderFactory }) => {
         const PRODUCTS_TO_CREATE_COUNT = 1;
 
-        const { id } = await orderFactory.orderInProcessStatus(PRODUCTS_TO_CREATE_COUNT);
+        const { _id: id } = await orderFactory.orderInProcessStatus(PRODUCTS_TO_CREATE_COUNT);
         targetOrderId = id;
 
         await homeUIService.openAsLoggedInUser();
@@ -139,7 +139,7 @@ test.describe('[UI] [Orders] [Customer]', () => {
       test.beforeEach(async ({ homeUIService, ordersPage, orderDetailsPage, orderFactory }) => {
         const PRODUCTS_TO_CREATE_COUNT = 1;
 
-        const { id } = await orderFactory.orderReceivedStatus(PRODUCTS_TO_CREATE_COUNT);
+        const { _id: id } = await orderFactory.orderReceivedStatus(PRODUCTS_TO_CREATE_COUNT);
         targetOrderId = id;
 
         await homeUIService.openAsLoggedInUser();
@@ -163,7 +163,7 @@ test.describe('[UI] [Orders] [Customer]', () => {
       test.beforeEach(async ({ homeUIService, ordersPage, orderDetailsPage, orderFactory }) => {
         const PRODUCTS_TO_CREATE_COUNT = 1;
 
-        const { id } = await orderFactory.orderPartiallyReceivedStatus(PRODUCTS_TO_CREATE_COUNT);
+        const { _id: id } = await orderFactory.orderPartiallyReceivedStatus(PRODUCTS_TO_CREATE_COUNT);
         targetOrderId = id;
 
         await homeUIService.openAsLoggedInUser();

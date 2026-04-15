@@ -1,18 +1,19 @@
 import { Locator, test } from '@playwright/test';
 import { SalesPortalPage } from './salesPortal.page';
 import { ModuleName } from 'types/home.types';
+import { PAGE_TITLES, LINK_NAMES } from 'data/uiTexts.data';
 
 export class HomePage extends SalesPortalPage {
-  title = this.page.getByRole('heading', {
-    name: 'Welcome to Sales Management Portal',
+  readonly title = this.page.getByRole('heading', {
+    name: PAGE_TITLES.WELCOME,
   });
-  customersButton = this.page.getByRole('link', { name: 'View Customers' });
-  productsButton = this.page.getByRole('link', { name: 'View Products' });
-  ordersButton = this.page.getByRole('link', { name: 'View Orders' });
+  readonly customersButton = this.page.getByRole('link', { name: LINK_NAMES.VIEW_CUSTOMERS });
+  readonly productsButton = this.page.getByRole('link', { name: LINK_NAMES.VIEW_PRODUCTS });
+  readonly ordersButton = this.page.getByRole('link', { name: LINK_NAMES.VIEW_ORDERS });
 
-  uniqueElement = this.title;
+  readonly uniqueElement: Locator = this.title;
 
-  async clickModuleButton(moduleName: ModuleName) {
+  async clickModuleButton(moduleName: ModuleName): Promise<void> {
     const moduleButtons: Record<ModuleName, Locator> = {
       Customers: this.customersButton,
       Products: this.productsButton,

@@ -1,3 +1,4 @@
+import { Locator } from '@playwright/test';
 import { logStep } from 'utils/reporter.utils';
 import { ManagmentOrderModal } from '../baseModalManagmentOrder.page';
 
@@ -5,10 +6,10 @@ export class EditOrderModal extends ManagmentOrderModal {
   readonly saveButton = this.page.locator('#update-products-btn');
   readonly saveButtonDisabled = this.saveButton.locator(':disabled');
 
-  uniqueElement = this.modalTitle;
+  readonly uniqueElement: Locator = this.modalTitle;
 
   @logStep('Click Save button')
-  async clickSave() {
+  async clickSave(): Promise<void> {
     await this.saveButton.click();
   }
 

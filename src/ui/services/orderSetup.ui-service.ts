@@ -43,7 +43,7 @@ export class OrderSetupService extends BaseUIService {
         throw new Error(`Unknown status: ${status}`);
     }
 
-    const { id } = await orderCreationFn(totalProducts, receivedCount);
+    const { _id: id } = await orderCreationFn(totalProducts, receivedCount);
     const targetOrderId = id;
 
     await this.homeUIService.openAsLoggedInUser();

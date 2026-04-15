@@ -1,4 +1,4 @@
-import { expect } from '@playwright/test';
+import { Locator, expect } from '@playwright/test';
 import { SalesPortalPage } from 'ui/pages/salesPortal.page';
 
 export class OrderDetailsReceivedProductsSection extends SalesPortalPage {
@@ -20,6 +20,7 @@ export class OrderDetailsReceivedProductsSection extends SalesPortalPage {
     return productHeaders.locator('+ .accordion-collapse .accordion-body');
   };
   readonly allReceivedStatusSpans = this.productsAccordionSection.locator('span.received-label');
+
   receivedStatusSpanTextByProductName = (productName: string) => {
     const productHeaders = this.productsAccordionSection.locator(`div.accordion-header:has(button:has-text("${productName}"))`);
     return productHeaders.locator('span.received-label');
@@ -43,7 +44,7 @@ export class OrderDetailsReceivedProductsSection extends SalesPortalPage {
     return productHeaders.locator('div.received-label label.form-check-label[for^="check"]');
   };
 
-  uniqueElement = this.title;
+  readonly uniqueElement: Locator = this.title;
 
   // Методы для взаимодействия с элементами раздела "Received Products" для заказа в статусе "Draft"
   async getTitle() {

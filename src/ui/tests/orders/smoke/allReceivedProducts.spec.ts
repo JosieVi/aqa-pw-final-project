@@ -6,7 +6,7 @@ import { expect, test } from 'fixtures/index.fixture';
 test.describe('[UI] [Orders] [Orders Details] [Received Products Section] Order without Received Products', () => {
   test.beforeEach(async ({ homeUIService, orderFactory, ordersPage, orderDetailsPage }) => {
     const PRODUCTS_TO_CREATE_COUNT = 3;
-    const { id: orderId } = await orderFactory.orderInProcessStatus(PRODUCTS_TO_CREATE_COUNT);
+    const { _id: orderId } = await orderFactory.orderInProcessStatus(PRODUCTS_TO_CREATE_COUNT);
 
     await homeUIService.openAsLoggedInUser();
     await homeUIService.openModule('Orders');
@@ -29,7 +29,9 @@ test.describe('[UI] [Orders] [Orders Details] [Received Products Section] Order 
 
   test.beforeEach(async ({ homeUIService, orderFactory, ordersPage, orderDetailsPage }) => {
     const PRODUCTS_TO_CREATE_COUNT = 3;
-    const { id: orderId, productsIds } = await orderFactory.orderPartiallyReceivedStatus(PRODUCTS_TO_CREATE_COUNT, RECEIVED_AT_START);
+    const order = await orderFactory.orderPartiallyReceivedStatus(RECEIVED_AT_START, PRODUCTS_TO_CREATE_COUNT);
+    const orderId = order._id;
+    const productsIds = order.products.map((product) => product._id);
     totalProductsCount = productsIds.length;
 
     await homeUIService.openAsLoggedInUser();
