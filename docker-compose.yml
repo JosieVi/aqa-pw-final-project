@@ -1,0 +1,46 @@
+version: '3.8'
+
+services:
+  mongo:
+    image: mongo:${MONGO_IMAGE_VERSION}
+    container_name: ${MONGO_CONTAINER_NAME}
+    ports:
+      - '${MONGO_PORT}:${MONGO_PORT}'
+    volumes:
+      - mongo-data:/data/db
+
+  mongo-express:
+    depends_on:
+      - mongo
+    image: mongo-express
+    container_name: ${MONGO_EXPRESS_CONTAINER_NAME}
+    ports:
+      - '${MONGO_EXPRESS_PORT}:${MONGO_EXPRESS_PORT}'
+    environment:
+      ME_CONFIG_MONGODB_SERVER: ${ME_CONFIG_MONGODB_SERVER}
+      ME_CONFIG_BASICAUTH_USERNAME: ${ME_CONFIG_BASICAUTH_USERNAME}
+      ME_CONFIG_BASICAUTH_PASSWORD: ${ME_CONFIG_BASICAUTH_PASSWORD}
+
+  backend:
+    build: ./backend
+    container_name: ${BACKEND_CONTAINER_NAME}
+    ports:
+      - '${BACKEND_PORT}:${BACKEND_PORT}'
+    environment:
+      PORT: ${PORT}
+      SECRET_KEY: ${SECRET_KEY}
+      ENVIRONMENT: ${ENVIRONMENT}
+      MONGO_URI_LOCAL: ${MONGO_URI_LOCAL}
+    depends_on:
+      - mongo
+
+  frontend:
+    build: ./frontend
+    container_name: ${FRONTEND_CONTAINER_NAME}
+    ports:
+      - '${FRONTEND_PORT}:${FRONTEND_PORT}'
+    depends_on:
+      - backend
+
+volumes:
+  mongo-data:

@@ -1,0 +1,64 @@
+name: Playwright Tests
+on:
+  push:
+    branches: [main, master]
+  pull_request:
+    branches: [main, master]
+  workflow_dispatch: # Кнопка для ручного запуска в интерфейсе GitHub
+
+jobs:
+  test:
+    timeout-minutes: 60
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      # 1. Установка Node.js
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 18
+          cache: 'npm'
+
+      # 2. Авторизация в GitHub Packages (чтобы скачать твои приватные образы)
+      - name: Log in to GHCR
+        uses: docker/login-action@v3
+        with:
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+
+      # 3. Создание .env файла из секрета GitHub
+      - name: Create .env file
+        run: |
+          echo "${{ secrets.ENV_FILE }}" > .env
+
+      # 4. Запуск приложения через Docker Compose
+      - name: Start Application
+        run: docker-compose up -d
+
+      # 5. Ожидание готовности фронтенда (замени порт, если он другой)
+      - name: Wait for App
+        run: npx wait-on http://localhost:${{ secrets.FRONTEND_PORT }} --timeout 60000
+
+      # 6. Установка зависимостей тестов и браузеров
+      - name: Install dependencies
+        run: npm ci
+      - name: Install Playwright Browsers
+        run: npx playwright install --with-deps
+
+      # 7. Прогон тестов
+      - name: Run Playwright tests
+        run: npx playwright test
+        env:
+          # Передаем URL фронтенда в тесты (берем из .env или хардкодим)
+          BASE_URL: http://localhost:8585
+
+      # 8. Сохранение отчета (доступен во вкладке Actions после прогона)
+      - name: Upload Report
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: playwright-report
+          path: playwright-report/
+          retention-days: 30

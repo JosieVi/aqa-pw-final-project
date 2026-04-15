@@ -1,5 +1,5 @@
 export const apiConfig = {
-  BASE_URL: 'http://localhost:8686',
+  BASE_URL: `${process.env.API_BASE_URL}`,
   ENDPOINTS: {
     CUSTOMERS: '/api/customers',
     ALL_CUSTOMERS: '/api/customers/all',
