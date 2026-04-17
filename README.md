@@ -390,3 +390,12 @@ Node.js не может загрузить два таких файла одно
 118 passed (2.0m) (без матчера)
 flaky изза импортов оредров на кастомеров в схема
 286 passed (6.2m), 288 passed (8.9m)
+
+---
+
+Удаление БД
+docker ps
+docker exec -it DATEBASENAME mongosh
+test> show dbs
+use TABLENAME
+TABLENAME> db.dropDatabase()

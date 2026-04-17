@@ -4,14 +4,11 @@ import { test as productTest } from './productFactory.fixture';
 import { CustomerMultipleOrdersParams, IOrderPayload, ICustomOrder, IOrder, MultipleOrdersParams } from '../types/order.types';
 import { ORDER_STATUS } from 'data/orders/statuses.data';
 import { generateDeliveryData } from 'data/orders/generateDeliveryData.data';
-import { MOCK_MANAGER_OLGA } from 'data/orders/mockOrders.data';
 import { IWorkerFixtures } from './api-services.fixture';
 const baseTest = mergeTests(customerTest, productTest);
 
 export const test = baseTest.extend<ICustomOrder, IWorkerFixtures>({
-  orderFactory: async ({ workerToken, ordersApiService, customerFactory, productFactory, dataDisposalUtils }, use) => {
-    // const token = await signInApiService.loginAsLocalUser();
-
+  orderFactory: async ({ workerToken, ordersApiService, managersApiService, customerFactory, productFactory, dataDisposalUtils }, use) => {
     const createDraftOrder = async (totalProducts = 1, existingCustomerId?: string): Promise<IOrder> => {
       const customerId = existingCustomerId || (await customerFactory.singleCustomer())._id;
       const productsIds = await productFactory.multipleProductsIds(totalProducts);
@@ -87,10 +84,15 @@ export const test = baseTest.extend<ICustomOrder, IWorkerFixtures>({
       return draftOrderWithDelivery;
     };
 
-    const createManagerAssignedOrder = async (totalProducts: number = 1, managerId: string = MOCK_MANAGER_OLGA._id) => {
+    const createManagerAssignedOrder = async (totalProducts: number = 1, customNanagerId?: string) => {
       const draftOrder = await createDraftOrder(totalProducts);
 
+      const response = await managersApiService.createManager(workerToken);
+      const managerId = customNanagerId || response._id;
+
       const assignedOrder = await ordersApiService.assignManager(draftOrder._id, managerId, workerToken);
+
+      dataDisposalUtils.trackManager(managerId);
 
       return assignedOrder;
     };

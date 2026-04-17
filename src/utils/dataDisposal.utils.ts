@@ -2,17 +2,20 @@ import { CustomersApiService } from 'api/services/customer.api-service';
 import { ProductsApiService } from 'api/services/product.api-service';
 import { OrdersAPIService } from 'api/services/order.api-service';
 import { SignInApiService } from 'api/services/signIn.api-service';
+import { ManagersApiService } from 'api/services/manager.api-services';
 
 export class DataDisposalUtils {
   private trackedOrders: string[] = [];
   private trackedProducts: string[] = [];
   private trackedCustomers: string[] = [];
+  private trackedManagers: string[] = [];
 
   constructor(
     private ordersApiService: OrdersAPIService,
     private customersApiService: CustomersApiService,
     private productsApiService: ProductsApiService,
     private signInApiService: SignInApiService,
+    private managersApiService: ManagersApiService,
   ) {}
 
   private token = '';
@@ -50,6 +53,14 @@ export class DataDisposalUtils {
 
   removeCustomer(id: string) {
     if (id) this.trackedCustomers = this.trackedCustomers.filter((customerId) => customerId !== id);
+  }
+
+  trackManager(id: string) {
+    if (id) this.trackedManagers.push(id);
+  }
+
+  removeManager(id: string) {
+    if (id) this.trackedManagers = this.trackedManagers.filter((managerId) => managerId !== id);
   }
 
   async clearOrders(orderIds: string[] | string = this.trackedOrders) {
@@ -108,15 +119,34 @@ export class DataDisposalUtils {
     if (customerIds === this.trackedCustomers) this.trackedCustomers = [];
   }
 
+  async clearManagers(managerIds: string[] | string = this.trackedManagers) {
+    const idsToProcess = await this.normalizeIds(managerIds);
+    if (!idsToProcess.length) return;
+    console.log(` Deleting managersIds: ${idsToProcess.join(', ')}`);
+    const authToken = await this.getToken();
+    for (const managerId of idsToProcess) {
+      try {
+        await this.managersApiService.deleteManager(managerId, authToken);
+      } catch (error: any) {
+        if (error.response?.status === 404) {
+          console.log(`Manager with ID ${managerId} was not found (already deleted or never existed). Skipping.`);
+        } else console.error(` The manager ${managerId} was not deleted`, error);
+      }
+    }
+    if (managerIds === this.trackedManagers) this.trackedManagers = [];
+  }
+
   async tearDown() {
     await this.clearOrders();
     await this.clearProducts();
     await this.clearCustomers();
+    await this.clearManagers();
   }
 
   async partialTearDown() {
     await this.clearProducts();
     await this.clearCustomers();
+    await this.clearManagers();
   }
 
   async normalizeIds(input: string | string[]): Promise<string[]> {

@@ -1,5 +1,5 @@
 import { expect, test } from 'fixtures/index.fixture';
-import { MOCK_MANAGER_OLGA, MOCK_ORDERS_LIST_API_RESPONSE } from 'data/orders/mockOrders.data';
+import { MOCK_ORDERS_LIST_API_RESPONSE } from 'data/orders/mockOrders.data';
 import { TAGS } from 'data/testTags.data';
 import { ORDER_STATUS } from 'data/orders/statuses.data';
 import { STATUS_CODES } from 'data/statusCodes';
@@ -75,10 +75,19 @@ test.describe('[UI] [Orders] [Modals] [Reopen Order Modal]', () => {
 
 test.describe('[UI] [Orders] [Modals] [Assign Manager Modal]', () => {
   let targetOrderId: string;
-  test.beforeEach(async ({ homeUIService, ordersPage, orderDetailsPage, orderFactory }) => {
+  let createdManagerId: string;
+  let managerFullName: string;
+
+  test.beforeEach(async ({ homeUIService, ordersPage, orderDetailsPage, orderFactory, workerToken, managersApiService, dataDisposalUtils }) => {
     const PRODUCTS_TO_CREATE_COUNT = 1;
-    const { _id } = await orderFactory.orderDraftStatus(PRODUCTS_TO_CREATE_COUNT);
-    targetOrderId = _id;
+    const order = await orderFactory.orderDraftStatus(PRODUCTS_TO_CREATE_COUNT);
+    targetOrderId = order._id;
+
+    const manager = await managersApiService.createManager(workerToken);
+    createdManagerId = manager._id;
+    dataDisposalUtils.trackManager(createdManagerId);
+
+    managerFullName = manager.firstName + ' ' + manager.lastName;
 
     await homeUIService.openAsLoggedInUser();
     await homeUIService.openModule('Orders');
@@ -95,17 +104,9 @@ test.describe('[UI] [Orders] [Modals] [Assign Manager Modal]', () => {
     await expect(selectManagerModal.getModalTitle()).resolves.toBe(UI_TEXTS.MODAL_TITLES.ASSIGN_MANAGER);
     await expect(selectManagerModal.managerSearchInput).toBeVisible();
 
-    const managerFullName = `${MOCK_MANAGER_OLGA.firstName} ${MOCK_MANAGER_OLGA.lastName}`;
     await expect(selectManagerModal.getManagerListItem(managerFullName)).toBeVisible();
-    // await expect(selectManagerModal.getManagerListItem(`${MOCK_MANAGER_OLGA.firstName} ${MOCK_MANAGER_OLGA.lastName}`)).toBeVisible();
 
-    // await expect(
-    //   selectManagerModal.getManagerListItem(`${MOCK_MANAGER_OLGA.firstName}
-    // await page.getByRole('link', { name: 'Managers' }).click();
-    // await page.getByRole('link', { name: 'Managers' }).click();`),
-    // ).toBeVisible();
-
-    await selectManagerModal.clickManagerListItem(`${MOCK_MANAGER_OLGA.firstName} ${MOCK_MANAGER_OLGA.lastName}`);
+    await selectManagerModal.clickManagerListItem(managerFullName);
 
     await selectManagerModal.clickSaveButton();
 
@@ -114,7 +115,8 @@ test.describe('[UI] [Orders] [Modals] [Assign Manager Modal]', () => {
     const updatedOrderStatusTitle = await orderDetailsPage.topPanel.getOrderDetailsPanelTitle();
     await expect(updatedOrderStatusTitle).toBe(UI_TEXTS.PANEL_TITLES.ORDER_DETAILS);
     const assignedManagerName = await orderDetailsPage.topPanel.getAssignedManagerName();
-    await expect(assignedManagerName).toBe(`${MOCK_MANAGER_OLGA.firstName} ${MOCK_MANAGER_OLGA.lastName}`);
+    await expect(assignedManagerName).toBe(managerFullName);
+
     await expect(orderDetailsPage.topPanel.editAssignedManagerButton).toBeVisible();
     await expect(orderDetailsPage.topPanel.editAssignedManagerButton).toBeEnabled();
 
@@ -126,10 +128,11 @@ test.describe('[UI] [Orders] [Modals] [Assign Manager Modal]', () => {
 });
 test.describe('[UI] [Orders] [Modals] [Remove Manager Modal]', () => {
   let targetOrderId: string;
+
   test.beforeEach(async ({ homeUIService, ordersPage, orderDetailsPage, orderFactory }) => {
     const PRODUCTS_TO_CREATE_COUNT = 1;
-    const order = await orderFactory.orderManagerAssignedStatus(PRODUCTS_TO_CREATE_COUNT, MOCK_MANAGER_OLGA._id);
-    targetOrderId = order._id;
+    const { _id } = await orderFactory.orderManagerAssignedStatus(PRODUCTS_TO_CREATE_COUNT);
+    targetOrderId = _id;
 
     await homeUIService.openAsLoggedInUser();
     await homeUIService.openModule('Orders');

@@ -13,16 +13,6 @@ test.describe('[UI] [Orders] [Orders Details] [Edit Products] Replace/add/delete
     result.products.forEach((product) => productNames.push(product.name));
     productNames.forEach((name) => console.log('name of product', name));
 
-    // const token = await signInApiService.loginAsLocalUser();
-
-    // const products = await Promise.all(result.productsIds.map((productId) => productsApiService.getById(token, productId)));
-    // const products = await productFactory.multipleProducts(PRODUCTS_TO_CREATE_COUNT);
-    // products.forEach((product) => {
-    //   productNames.push(product.name);
-    // });
-
-    // productNames = products.map((p) => p.name);
-
     await homeUIService.openAsLoggedInUser();
     await homeUIService.openModule('Orders');
 
@@ -54,7 +44,6 @@ test.describe('[UI] [Orders] [Orders Details] [Edit Products] Replace/add/delete
 
     const totalProducts = await orderDetailsPage.editProductsInOrderModal.productsList.count();
 
-    // await orderDetailsPage.editProductsInOrderModal.waitForSpinner();
     await orderDetailsPage.editProductsInOrderModal.selectProductAtPosition(firstProductName, totalProducts);
 
     await orderDetailsPage.editProductsInOrderModal.clickSave();

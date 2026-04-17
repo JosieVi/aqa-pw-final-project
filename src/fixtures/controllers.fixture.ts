@@ -3,6 +3,7 @@ import { SignInController } from 'api/controllers/signIn.controller';
 import { CustomersController } from 'api/controllers/customer.controller';
 import { ProductsController } from 'api/controllers/product.controller';
 import { OrdersController } from 'api/controllers/order.controller';
+import { ManagersController } from 'api/controllers/manager.controller';
 
 type ControllerConstructor<T> = new (request: APIRequestContext) => T;
 
@@ -17,6 +18,7 @@ interface ISalesPortalControllers {
   customersController: CustomersController;
   productsController: ProductsController;
   ordersController: OrdersController;
+  managersController: ManagersController;
 }
 
 export const test = base.extend<ISalesPortalControllers>({
@@ -24,6 +26,7 @@ export const test = base.extend<ISalesPortalControllers>({
   customersController: useController(CustomersController),
   productsController: useController(ProductsController),
   ordersController: useController(OrdersController),
+  managersController: useController(ManagersController),
 });
 
 export { expect } from '@playwright/test';

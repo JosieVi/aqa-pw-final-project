@@ -9,7 +9,6 @@ export class OrderCustomerDetailsComponentPage extends SalesPortalPage {
   });
   readonly editCustomerButton = this.uniqueElement.locator('#edit-customer-pencil');
 
-  // readonly valueByField = (name: string) => this.uniqueElement.locator(`.c-details:has(span:has-text("${name}")) > span.s-span:last-of-type`);
   readonly valueByField = (name: string) => this.uniqueElement.locator(`.c-details:has(span:text-is("${name}")) > span.s-span:last-of-type`);
   readonly customerEmail = this.valueByField('Email');
   readonly customerName = this.valueByField('Name');

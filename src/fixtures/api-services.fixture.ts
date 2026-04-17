@@ -6,6 +6,7 @@ import { OrdersAPIService } from 'api/services/order.api-service';
 import { DataDisposalUtils } from 'utils/dataDisposal.utils';
 import { SignInController } from 'api/controllers/signIn.controller';
 import { apiConfig } from 'config/api-config';
+import { ManagersApiService } from 'api/services/manager.api-services';
 
 interface IApiServices {
   customersApiService: CustomersApiService;
@@ -13,6 +14,7 @@ interface IApiServices {
   productsApiService: ProductsApiService;
   ordersApiService: OrdersAPIService;
   dataDisposalUtils: DataDisposalUtils;
+  managersApiService: ManagersApiService;
 }
 // NEW
 export interface IWorkerFixtures {
@@ -36,8 +38,12 @@ export const test = base.extend<IApiServices, IWorkerFixtures>({
     await use(new OrdersAPIService(ordersController));
   },
 
-  dataDisposalUtils: async ({ ordersApiService, customersApiService, productsApiService, signInApiService }, use) => {
-    const utils = new DataDisposalUtils(ordersApiService, customersApiService, productsApiService, signInApiService);
+  managersApiService: async ({ managersController }, use) => {
+    await use(new ManagersApiService(managersController));
+  },
+
+  dataDisposalUtils: async ({ ordersApiService, customersApiService, productsApiService, managersApiService, signInApiService }, use) => {
+    const utils = new DataDisposalUtils(ordersApiService, customersApiService, productsApiService, signInApiService, managersApiService);
     await use(utils);
     await utils.tearDown();
   },

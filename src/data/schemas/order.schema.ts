@@ -14,7 +14,6 @@ export const deliverySchema = {
       type: 'string',
       enum: Object.values(DELIVERY),
     },
-    // address: { type: 'object', properties: addressSchema },
     address: addressSchema,
   },
   required: ['finalDate', 'condition', 'address'],
@@ -77,7 +76,6 @@ export const orderSchema = {
       type: 'string',
       format: 'date-time',
     },
-    // delivery: { ...deliverySchema, nullable: true },
     delivery: {
       anyOf: [deliverySchema, { type: 'null' }],
     },
@@ -104,7 +102,6 @@ export const customerAssociatedOrdersSchema = {
     customer: {
       type: 'string',
     },
-    // customerSchema,
     products: {
       type: 'array',
       items: productInOrderSchema,
@@ -127,7 +124,6 @@ export const customerAssociatedOrdersSchema = {
       items: orderHistorySchema,
     },
   },
-  // required: ['_id', 'status', 'customer', 'products', 'total_price', 'createdOn'],
   if: {
     properties: { status: { const: ORDER_STATUS.IN_PROCESS } },
   },
@@ -137,8 +133,6 @@ export const customerAssociatedOrdersSchema = {
   else: {
     required: ['_id', 'status', 'customer', 'products', 'total_price', 'createdOn'],
   },
-
-  // required: ['_id', 'status', 'customer', 'products', 'createdOn'],
 };
 
 export const orderListSchema = {

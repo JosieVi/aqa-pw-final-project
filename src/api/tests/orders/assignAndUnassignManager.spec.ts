@@ -7,7 +7,14 @@ import { validateResponse } from 'utils/validations/responseValidation';
 import { ERROR_MESSAGES } from 'data/errorMessages';
 
 test.describe('[API] [Orders] Assign manager', () => {
-  const managerId = '69acb6dc273284b7a197451c';
+  let managerId: string = '';
+
+  test.beforeEach(async ({ workerToken, managersApiService, dataDisposalUtils }) => {
+    const response = await managersApiService.createManager(workerToken);
+    managerId = response._id;
+    console.log(`managerId: ${managerId}`);
+    dataDisposalUtils.trackManager(managerId);
+  });
 
   test.describe('Positive', () => {
     test(
@@ -68,7 +75,13 @@ test.describe('[API] [Orders] Assign manager', () => {
 });
 
 test.describe('[API] [Orders] Unassign manager', () => {
-  const managerId = '680795ced006ba3d475fca1f';
+  let managerId: string = '';
+
+  test.beforeAll(async ({ workerToken, managersApiService, dataDisposalUtils }) => {
+    const response = await managersApiService.createManager(workerToken);
+    managerId = response._id;
+    dataDisposalUtils.trackManager(managerId);
+  });
 
   test.describe('Positive', () => {
     test(

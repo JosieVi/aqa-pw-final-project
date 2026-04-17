@@ -16,10 +16,6 @@ test.describe('[API] [Products] Update product by ID', () => {
   });
 
   test.describe('Positive', () => {
-    // test.afterEach(async ({ workerToken, productsApiService }) => {
-    //   await productsApiService.delete(product._id, workerToken);
-    // });
-
     positiveTestCasesForUpdate.forEach(({ name, data }) => {
       test(
         `Should update product: ${name}`,
@@ -38,9 +34,6 @@ test.describe('[API] [Products] Update product by ID', () => {
   });
 
   test.describe('Negative', () => {
-    // test.afterEach(async ({ workerToken, productsApiService }) => {
-    //   await productsApiService.delete(product._id, workerToken);
-    // });
     negativeTestCasesForUpdate.forEach(({ name, data, token: testCaseToken, expectedError, expectedStatusCode }) => {
       test(`Should NOT update product: ${name}`, { tag: [TAGS.API, TAGS.PRODUCTS, TAGS.REGRESSION] }, async ({ workerToken, productsController }) => {
         const usedToken = testCaseToken ?? workerToken;

@@ -64,3 +64,19 @@ jobs:
           name: playwright-report
           path: playwright-report/
           retention-days: 30
+
+      # 9. Уведомление в Slack
+      - name: Slack Notification
+        uses: rtCamp/action-slack-notify@v2
+        if: always() # Запускать даже если тесты упали
+        env:
+          SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK_URL }}
+          SLACK_CHANNEL: qa-alerts # Имя твоего канала
+          SLACK_COLOR: ${{ job.status == 'success' && 'good' || 'danger' }}
+          SLACK_ICON: https://playwright.dev/img/playwright-logo.svg
+          SLACK_TITLE: 'Playwright Test Results'
+          SLACK_MESSAGE: |
+            *Repository:* ${{ github.repository }}
+            *Branch:* ${{ github.ref_name }}
+            *Status:* ${{ job.status == 'success' && '✅ PASSED' || '❌ FAILED' }}
+            *Report:* https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}

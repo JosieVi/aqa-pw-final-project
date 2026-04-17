@@ -11,8 +11,8 @@ import { ERROR_MESSAGES } from 'data/errorMessages';
 import { customersListSchema } from 'data/schemas/customer.schema';
 
 test.describe('[API] [Customers] GET customers - filters and sorting - 200 OK', () => {
-  const expectedIds: string[] = [];
-  const totalCustomers = 1;
+  let expectedIds: string[] = [];
+  const totalCustomers = 3;
 
   test.describe('Positive', () => {
     test(
@@ -22,7 +22,7 @@ test.describe('[API] [Customers] GET customers - filters and sorting - 200 OK', 
       },
       async ({ workerToken, customersController, customerFactory }) => {
         const expectedName = `SearchTest${faker.string.alpha(8)}`;
-        const expectedCustomer = await customerFactory.multipleCustomers(totalCustomers, { name: expectedName });
+        const expectedCustomers = await customerFactory.multipleCustomers(totalCustomers, { name: expectedName });
 
         const params: ICustomerFilterParams = {
           search: expectedName,
@@ -37,7 +37,15 @@ test.describe('[API] [Customers] GET customers - filters and sorting - 200 OK', 
         expect(response.body.search, `The parameter 'search' should be '${expectedName}', but it was '${response.body.search}'`).toBe(expectedName);
         expect(response.body.Customers.every((c) => c.name.toLowerCase().includes(expectedName.toLowerCase()))).toBeTruthy();
 
-        expect(response.body.Customers).toMatchObject(expectedCustomer);
+        expect(response.body.Customers.length).toBe(expectedCustomers.length);
+        for (const customer of expectedCustomers) {
+          expect(response.body.Customers).toContainEqual(
+            expect.objectContaining({
+              _id: customer._id,
+              name: customer.name,
+            }),
+          );
+        }
       },
     );
 
@@ -47,12 +55,12 @@ test.describe('[API] [Customers] GET customers - filters and sorting - 200 OK', 
         tag: [TAGS.API, TAGS.CUSTOMERS, TAGS.SMOKE, TAGS.REGRESSION],
       },
       async ({ workerToken, customersController, customerFactory }) => {
-        const expectedCustomerData = generateCustomerData({ country: COUNTRIES.BELARUS });
-        const expectedCustomer = await customerFactory.singleCustomer(expectedCustomerData);
-        expectedIds.push(expectedCustomer._id);
+        const targetCountry = COUNTRIES.BELARUS;
+        const expectedCustomerData = await customerFactory.multipleCustomers(totalCustomers, { country: targetCountry });
+        expectedIds = expectedCustomerData.map((c) => c._id);
 
         const params: ICustomerFilterParams = {
-          country: [expectedCustomerData.country],
+          country: [targetCountry],
           sortField: 'createdOn',
           sortOrder: 'desc',
         };
@@ -62,9 +70,10 @@ test.describe('[API] [Customers] GET customers - filters and sorting - 200 OK', 
         validateResponse(response, STATUS_CODES.OK, true, null);
         validateSchema(customersListSchema, response.body);
 
-        expect(response.body.Customers.length).toBeGreaterThan(totalCustomers);
-        expect(response.body.country).toEqual([expectedCustomerData.country]);
-        expect(response.body.Customers.every((c) => c.country === expectedCustomerData.country)).toBeTruthy();
+        const receivedIds = response.body.Customers.map((c) => c._id);
+        expectedIds.forEach((id) => expect(receivedIds).toContain(id));
+        expect(response.body.country).toEqual([targetCountry]);
+        expect(response.body.Customers.every((c) => c.country === targetCountry)).toBeTruthy();
       },
     );
 

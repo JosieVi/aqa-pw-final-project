@@ -24,7 +24,6 @@ export class ManagmentOrderModal extends BaseModal {
   @logStep('Select product in specific position')
   async selectProductAtPosition(productName: string, position = 0): Promise<void> {
     await this.productsList.nth(position - 1).selectOption({ label: productName });
-    // await this.productsList.nth(position - 1).selectOption(productName.trim());
   }
 
   @logStep('Click Add Product button')

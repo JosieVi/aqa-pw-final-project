@@ -297,10 +297,11 @@ test.describe('[UI] [Sales Portal]', () => {
       await ordersPage.clickCreateOrderButton();
     });
 
-    test('Should filter orders by search input', { tag: [TAGS.SMOKE] }, async ({ homeUIService, ordersPage, customerFactory }) => {
-      // Arrange - create a customer with known email
+    test('Should filter orders by search input', { tag: [TAGS.SMOKE] }, async ({ homeUIService, ordersPage, customerFactory, orderFactory }) => {
+      // Arrange - create a customer with known email and an order for that customer
       const customer = await customerFactory.singleCustomer();
       const searchEmail = customer.email ?? '';
+      await orderFactory.orderDraftStatus(1, customer._id); // Create order for this customer
 
       await homeUIService.openAsLoggedInUser();
       await homeUIService.openModule('Orders');
@@ -314,23 +315,31 @@ test.describe('[UI] [Sales Portal]', () => {
       await ordersPage.allTableRows.first().waitFor({ state: 'visible' });
     });
 
-    test('Should sort Order Number column to ASC when initially unsorted', { tag: [TAGS.SMOKE] }, async ({ homeUIService, ordersPage }) => {
-      // Arrange
-      await homeUIService.openAsLoggedInUser();
-      await homeUIService.openModule('Orders');
-      await ordersPage.waitForOpened();
+    test(
+      'Should sort Order Number column to ASC when initially unsorted',
+      { tag: [TAGS.SMOKE] },
+      async ({ homeUIService, ordersPage, orderFactory }) => {
+        // Arrange - create multiple orders for sorting test
+        await orderFactory.multipleDraftOrders({ totalOrders: 3 });
+        // const orderNumberToSort = (await orderFactory.orderDraftStatus(1))._id;
 
-      // Act & Assert - initial state
-      const initialDirection = await ordersPage.getCurrentSortDirection(OrdersListColumnForSorting.OrderNumber);
-      await expect(initialDirection).toBe('none');
+        await homeUIService.openAsLoggedInUser();
+        await homeUIService.openModule('Orders');
+        await ordersPage.waitForOpened();
 
-      // Act - sort
-      await ordersPage.sortColumnBy(OrdersListColumnForSorting.OrderNumber, 'asc');
+        // Act & Assert - initial state
+        const initialDirection = await ordersPage.getCurrentSortDirection(OrdersListColumnForSorting.OrderNumber);
 
-      // Assert - final state
-      const finalDirection = await ordersPage.getCurrentSortDirection(OrdersListColumnForSorting.OrderNumber);
-      await expect(finalDirection).toBe('asc');
-    });
+        await expect(initialDirection, `Initial direction should be none, but was ${initialDirection}`).toBe('none');
+
+        // Act - sort
+        await ordersPage.sortColumnBy(OrdersListColumnForSorting.OrderNumber, 'asc');
+
+        // Assert - final state
+        const finalDirection = await ordersPage.getCurrentSortDirection(OrdersListColumnForSorting.OrderNumber);
+        await expect(finalDirection, `Final direction should be asc, but was ${finalDirection}`).toBe('asc');
+      },
+    );
 
     test(
       'Should navigate to order details page after clicking details button',
@@ -373,8 +382,10 @@ test.describe('[UI] [Sales Portal]', () => {
       },
     );
 
-    test('Should change items per page to 25', { tag: [TAGS.SMOKE] }, async ({ homeUIService, ordersPage }) => {
-      // Arrange
+    test('Should change items per page to 25', { tag: [TAGS.SMOKE] }, async ({ homeUIService, ordersPage, orderFactory }) => {
+      // Arrange - create enough orders to test pagination
+      await orderFactory.multipleDraftOrders({ totalOrders: 26 });
+
       await homeUIService.openAsLoggedInUser();
       await homeUIService.openModule('Orders');
       await ordersPage.waitForOpened();
@@ -387,8 +398,10 @@ test.describe('[UI] [Sales Portal]', () => {
       await expect(rowCount).toBeLessThanOrEqual(25);
     });
 
-    test('Should navigate to next page', { tag: [TAGS.SMOKE] }, async ({ homeUIService, ordersPage }) => {
-      // Arrange
+    test('Should navigate to next page', { tag: [TAGS.SMOKE] }, async ({ homeUIService, ordersPage, orderFactory }) => {
+      // Arrange - create enough orders to have multiple pages
+      await orderFactory.multipleDraftOrders({ totalOrders: 11 });
+
       await homeUIService.openAsLoggedInUser();
       await homeUIService.openModule('Orders');
       await ordersPage.waitForOpened();
@@ -400,8 +413,10 @@ test.describe('[UI] [Sales Portal]', () => {
       await ordersPage.tableBody.waitFor({ state: 'visible' });
     });
 
-    test('Should navigate to previous page', { tag: [TAGS.SMOKE] }, async ({ homeUIService, ordersPage }) => {
-      // Arrange
+    test('Should navigate to previous page', { tag: [TAGS.SMOKE] }, async ({ homeUIService, ordersPage, orderFactory }) => {
+      // Arrange - create enough orders to have multiple pages
+      await orderFactory.multipleDraftOrders({ totalOrders: 11 });
+
       await homeUIService.openAsLoggedInUser();
       await homeUIService.openModule('Orders');
       await ordersPage.waitForOpened();
@@ -417,13 +432,15 @@ test.describe('[UI] [Sales Portal]', () => {
       await ordersPage.tableBody.waitFor({ state: 'visible' });
     });
 
-    test('Should navigate to a specific page number', { tag: [TAGS.SMOKE] }, async ({ homeUIService, ordersPage }) => {
-      // Arrange
+    test('Should navigate to a specific page number', { tag: [TAGS.SMOKE] }, async ({ homeUIService, ordersPage, orderFactory }) => {
+      // Arrange - create enough orders to have at least 3 pages
+      await orderFactory.multipleDraftOrders({ totalOrders: 11 });
+
       await homeUIService.openAsLoggedInUser();
       await homeUIService.openModule('Orders');
       await ordersPage.waitForOpened();
 
-      const targetPageNumber = 3;
+      const targetPageNumber = 2;
 
       // Act
       await ordersPage.clickPageNumberButton(targetPageNumber);

@@ -45,7 +45,6 @@ export interface ICustomOrder {
   orderFactory: IOrderFactory;
 }
 
-// ===== Запросы =====
 export interface IOrderFilterParams {
   search?: string;
   status?: ORDER_STATUS[];
@@ -57,7 +56,6 @@ export interface IAddCommentRequest {
   comment: string;
 }
 
-// ===== Ответы =====
 export interface IOrderResponse extends IResponseFields {
   Order: IOrder;
 }
@@ -79,36 +77,24 @@ export interface IOrderSearchResponse extends IResponseFields {
   };
 }
 
-// ===== Основные сущности =====
 export interface IOrderPayload {
   customer: string;
   products: string[];
 }
 
-// export interface IOrderDataWithId extends IOrderPayload {
-//   _id: string;
-// }
-
 export interface IOrder {
   readonly _id: string;
   readonly status: ORDER_STATUS;
   readonly customer: ICustomerEntity;
-  // "customer": "69a9ffa69ead50d82422182b"
   readonly products: IProductFromOrder[];
   readonly delivery: IDelivery | null;
   readonly total_price: number;
-  // total_price?: number;
   readonly createdOn: string;
   readonly history: IHistory[];
   readonly comments: IComment[];
   readonly assignedManager: IManager | null;
 }
 
-// export interface IOrder extends IOrder {
-//   readonly _id: string;
-// }
-
-// ===== Подсущности =====
 export interface IProductFromOrder extends IProductPayload {
   _id: string;
   received: boolean;

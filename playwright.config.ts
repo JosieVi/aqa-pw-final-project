@@ -29,10 +29,11 @@ if (!process.env.SKIP_CLEAN) {
 
 export default defineConfig({
   // globalSetup: require.resolve('./src/config/global.setup'),
+  workers: process.env.CI ? 2 : 4,
   timeout: 60000,
   forbidOnly: !!process.env.CI,
   retries: process.env.CI ? 2 : 0,
-  workers: process.env.CI ? 1 : undefined,
+  // workers: process.env.CI ? 1 : undefined,
 
   reporter: [['list'], ['html'], ['allure-playwright', { resultsDir: 'allure-results' }]],
 
@@ -67,11 +68,11 @@ export default defineConfig({
 
     {
       name: 'sales-portal-api',
+      dependencies: ['setup'],
       testDir: './src/api/tests',
       use: {
         baseURL: apiConfig.BASE_URL,
       },
-      metadata: { workers: 2 },
     },
   ],
 });

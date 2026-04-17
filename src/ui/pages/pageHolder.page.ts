@@ -15,7 +15,6 @@ export abstract class PageHolder extends BasePage {
 
   @logStep('Wait for Spinner to be hidden')
   async waitForSpinner(): Promise<void> {
-    // await expect(this.spinner).toHaveCount(0);
     await expect(this.spinner).toHaveCount(0, { timeout: 15000 });
   }
 

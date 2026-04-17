@@ -83,18 +83,3 @@ export const customersListSchema = {
   },
   required: ['Customers', 'sorting', 'IsSuccess', 'ErrorMessage', 'total', 'page', 'limit', 'search', 'country'],
 };
-
-// export const addressSchema = {
-//   type: 'object',
-//   properties: {
-//     country: {
-//       type: 'string',
-//       enum: Object.values(COUNTRIES),
-//     },
-//     city: { type: 'string' },
-//     street: { type: 'string' },
-//     house: { type: 'number' },
-//     flat: { type: 'number' },
-//   },
-//   required: ['country', 'city', 'street', 'house', 'flat'],
-// };

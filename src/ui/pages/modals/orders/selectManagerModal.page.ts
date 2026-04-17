@@ -2,6 +2,7 @@ import { BaseModal } from '../baseModal.page';
 import { logStep } from 'utils/reporter.utils';
 
 export class SelectManagerModal extends BaseModal {
+  readonly modalContainer = this.page.locator('.modal-content', { hasText: 'Edit Assigned Manager' });
   readonly modalTitle = this.page.locator('h5.modal-title');
   readonly managerSearchInput = this.page.locator('#manager-search-input');
   readonly managerList = this.page.locator('#manager-list');
@@ -19,10 +20,7 @@ export class SelectManagerModal extends BaseModal {
     await this.managerSearchInput.fill(managerName);
   }
 
-  // getManagerListItem(managerUsername: string) {
   getManagerListItem(managerIdentifier: string) {
-    // Ищем <li>, в котором есть <small> с точным текстом (username/email в скобках)
-    // return this.managerList.locator(`xpath=.//li[.//small[normalize-space(text())="(${managerUsername})"]]`);
     return this.managerList.locator('li').filter({ hasText: managerIdentifier });
   }
 

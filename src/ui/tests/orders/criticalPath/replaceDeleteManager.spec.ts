@@ -1,4 +1,3 @@
-import { MOCK_MANAGER_OLGA } from 'data/orders/mockOrders.data';
 import { NOTIFICATION } from 'data/orders/notification.data';
 import { TOASTER } from 'data/orders/toaster.data';
 import { TAGS } from 'data/testTags.data';
@@ -6,18 +5,13 @@ import { expect, test } from 'fixtures/index.fixture';
 
 test.describe('[UI] [Orders] [Orders Details] [Edit Products] Replace/delete assigned manager', () => {
   let orderId: string;
-  let managerUsername: string;
-  let managerFirstName: string;
-  let managerLastName: string;
+  let managerFullName: string;
 
   test.beforeEach(async ({ homeUIService, ordersPage, orderDetailsPage, orderFactory }) => {
-    // const token = await signInApiService.loginAsLocalUser();
     const result = await orderFactory.orderManagerAssignedStatus(1);
     orderId = result._id;
 
-    managerUsername = MOCK_MANAGER_OLGA.username;
-    managerFirstName = MOCK_MANAGER_OLGA.firstName;
-    managerLastName = MOCK_MANAGER_OLGA.lastName;
+    managerFullName = `Admin Admin`;
 
     await homeUIService.openAsLoggedInUser();
     await homeUIService.openModule('Orders');
@@ -27,42 +21,34 @@ test.describe('[UI] [Orders] [Orders Details] [Edit Products] Replace/delete ass
   });
 
   test('Replace assigned manager', { tag: [TAGS.ORDERS] }, async ({ orderDetailsPage, ordersPage, notificationsModal }) => {
-    //открываем модалку изменения менеджера
     await orderDetailsPage.topPanel.clickEditAssignedManagerButton();
     await orderDetailsPage.waitForOpened();
 
-    //выбираем отличного от назначнного
-    // await orderDetailsPage.editAssignedManagerInOrderModal.clickManagerListItem(managerUsername);
-    await orderDetailsPage.editAssignedManagerInOrderModal.clickManagerListItem(managerUsername);
+    await orderDetailsPage.editAssignedManagerInOrderModal.clickManagerListItem(managerFullName);
     await orderDetailsPage.editAssignedManagerInOrderModal.clickSaveButton();
-    await orderDetailsPage.waitForSpinner();
 
-    //проверка всплывающего уведомления о назначении менелджера
     await orderDetailsPage.waitForNotification(TOASTER.MANAGER_SUCCESSFULLY_ASSIGNED);
 
-    //проверка assigned manager в поле заказа
-    const updatedAssignedManager = await orderDetailsPage.topPanel.getAssignedManagerName();
-    await expect.soft(updatedAssignedManager, 'Manager name is incorrect').toBe(`${managerFirstName} ${managerLastName}`);
+    await expect(orderDetailsPage.editAssignedManagerInOrderModal.modalContainer).toBeHidden();
 
-    //проверка уведомления в модалке уведомлений о назначении менеджером
+    const updatedAssignedManager = await orderDetailsPage.topPanel.getAssignedManagerName();
+    await expect.soft(updatedAssignedManager, 'Manager name is incorrect').toBe(managerFullName);
+
     await ordersPage.clickOpenNotifications();
+    await notificationsModal.waitForSpinner();
     const notificationText = await notificationsModal.getNotificationText(0);
     await expect(notificationText, 'Notification text is incorrect').toBe(NOTIFICATION.MANAGER_ASSIGNED);
   });
 
   test('Delete assigned manager', { tag: [TAGS.ORDERS] }, async ({ orderDetailsPage, confirmationModal }) => {
-    //удаляем уже назначенного менеджера и ждем открытия модалки
     await orderDetailsPage.topPanel.clickRemoveAssignedManagerButton();
     await orderDetailsPage.waitForOpened();
 
-    // подтверждаем удаление
     await confirmationModal.clickConfirmButton();
     await orderDetailsPage.waitForSpinner();
 
-    //проверка всплывающего уведомления об удаление менелджера
     await orderDetailsPage.waitForNotification(TOASTER.MANAGER_SUCCESSFULLY_UNASSIGNED);
 
-    //проверка что менеджер пропал из поля назначенный менеджер в заказе
     await expect(orderDetailsPage.topPanel.assignManagerButton, '"Click to select manager" button is not displayed').toBeVisible();
   });
 });

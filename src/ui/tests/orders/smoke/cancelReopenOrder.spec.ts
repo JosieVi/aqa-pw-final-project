@@ -1,22 +1,10 @@
 import { ORDER_STATUS } from 'data/orders/statuses.data';
 import { TAGS } from 'data/testTags.data';
 import { expect, test } from 'fixtures/index.fixture';
-// import { aborted } from 'util';
 
 test.describe('[UI] [Orders] Cancel Order', () => {
-  // let token: string;
-
   type FactoryMethod = 'orderDraftStatus' | 'orderInProcessStatus' | 'orderDraftWithDeliveryStatus';
   type OrderCreationMethod = (count: number) => Promise<{ _id: string; products: any[] }>;
-
-  // const testCases = [
-  //   { testTitle: 'Canceled draft order', method: 'createDraftOrder' },
-  //   { testTitle: 'Canceled in process order', method: 'createInProcessOrder' },
-  //   {
-  //     testTitle: 'Canceled draft with delivery order',
-  //     method: 'createDraftOrderWithDelivery',
-  //   },
-  // ] as const;
 
   const testCases: { testTitle: string; method: FactoryMethod }[] = [
     { testTitle: 'Canceled draft order', method: 'orderDraftStatus' },
@@ -36,13 +24,6 @@ test.describe('[UI] [Orders] Cancel Order', () => {
         await homeUIService.openModule('Orders');
       });
 
-      // test.beforeEach(async ({ ordersApiService, signInApiService, homeUIService }) => {
-      //   token = await signInApiService.loginAsLocalUser();
-      //   orderId = (await ordersApiService[method](1, token))._id;
-      //   await homeUIService.openAsLoggedInUser();
-      //   await homeUIService.openModule('Orders');
-      // });
-
       test(testTitle, { tag: [TAGS.API, TAGS.ORDERS, TAGS.SMOKE] }, async ({ orderDetailsPage, ordersPage, confirmationModal }) => {
         await ordersPage.clickDetailsButton(orderId);
         await orderDetailsPage.waitForOpened();
@@ -61,11 +42,9 @@ test.describe('[UI] [Orders] Cancel Order', () => {
   });
 
   test.describe('[UI] [Orders] Reopen order', () => {
-    // let token: string;
     let orderId: string = '';
 
     test.beforeEach(async ({ homeUIService, orderFactory }) => {
-      // token = await signInApiService.loginAsLocalUser();
       orderId = (await orderFactory.orderCanceledStatus())._id;
       await homeUIService.openAsLoggedInUser();
       await homeUIService.openModule('Orders');
