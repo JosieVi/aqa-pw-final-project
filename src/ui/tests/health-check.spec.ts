@@ -4,18 +4,18 @@ import { expect, test } from 'fixtures/index.fixture';
 
 test.describe('[UI] [Sales Portal]', () => {
   test.describe('Login via services', () => {
-    test.skip('Should login to Sales Portal by openAsLoggedInUser and get token', { tag: [TAGS.SMOKE] }, async ({ page, homeUIService }) => {
+    test('Should login to Sales Portal by openAsLoggedInUser and get token', { tag: [TAGS.SMOKE] }, async ({ page, homeUIService }) => {
       await homeUIService.openAsLoggedInUser();
       const token = (await page.context().cookies()).find((c) => c.name === 'Authorization')!.value;
       console.log(`First token: ${token}`);
     });
 
-    test.skip('Should login to Sales Portal by loginAsLocalUser and get token', { tag: [TAGS.SMOKE] }, async ({ signInApiService }) => {
+    test('Should login to Sales Portal by loginAsLocalUser and get token', { tag: [TAGS.SMOKE] }, async ({ signInApiService }) => {
       const token = await signInApiService.loginAsLocalUser();
       console.log(`Second token: ${token}`);
     });
 
-    test.skip('Should open Order module', { tag: [TAGS.SMOKE] }, async ({ homeUIService }) => {
+    test('Should open Order module', { tag: [TAGS.SMOKE] }, async ({ homeUIService }) => {
       await homeUIService.openAsLoggedInUser();
       await homeUIService.openModule('Orders');
     });

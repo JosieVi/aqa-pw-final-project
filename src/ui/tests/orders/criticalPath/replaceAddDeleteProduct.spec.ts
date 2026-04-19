@@ -5,22 +5,26 @@ test.describe('[UI] [Orders] [Orders Details] [Edit Products] Replace/add/delete
   let productNames: string[] = [];
   let orderId: string;
 
-  test.beforeEach(async ({ homeUIService, orderFactory, ordersPage, orderDetailsPage }) => {
+  test.beforeEach(async ({ orderFactory, orderDetailsPage }) => {
     productNames = [];
     const PRODUCTS_TO_CREATE_COUNT = 3;
     const result = await orderFactory.orderDraftStatus(PRODUCTS_TO_CREATE_COUNT);
     orderId = result._id;
+
     result.products.forEach((product) => productNames.push(product.name));
-    productNames.forEach((name) => console.log('name of product', name));
+    // productNames.forEach((name) => console.log('name of product', name));
 
-    await homeUIService.openAsLoggedInUser();
-    await homeUIService.openModule('Orders');
+    // await homeUIService.openAsLoggedInUser();
+    // await homeUIService.openModule('Orders');
 
-    await ordersPage.clickDetailsButton(orderId);
+    // await ordersPage.clickDetailsButton(orderId);
+    // await orderDetailsPage.waitForOpened();
+
+    await orderDetailsPage.openById(orderId);
     await orderDetailsPage.waitForOpened();
 
     await orderDetailsPage.receivedProductsSection.clickEditProductsPencilButton();
-    await orderDetailsPage.waitForOpened();
+    await orderDetailsPage.editProductsInOrderModal.waitForOpened();
   });
 
   test('Replace the first product with the second', { tag: [TAGS.ORDERS] }, async ({ orderDetailsPage }) => {
