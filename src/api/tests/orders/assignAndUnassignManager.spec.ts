@@ -12,7 +12,6 @@ test.describe('[API] [Orders] Assign manager', () => {
   test.beforeEach(async ({ workerToken, managersApiService, dataDisposalUtils }) => {
     const response = await managersApiService.createManager(workerToken);
     managerId = response._id;
-    console.log(`managerId: ${managerId}`);
     dataDisposalUtils.trackManager(managerId);
   });
 

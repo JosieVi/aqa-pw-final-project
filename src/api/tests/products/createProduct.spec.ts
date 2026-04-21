@@ -16,7 +16,6 @@ test.describe('[API] [Products] Create a new product', () => {
         async ({ workerToken, productsController }) => {
           const response = await productsController.create(data, workerToken);
           validateSchema(oneProductResponseSchema, response.body);
-          console.log(response.body);
           validateResponse(response, STATUS_CODES.CREATED, true, null);
         },
       );

@@ -12,9 +12,6 @@ export class HomeUIService extends BaseUIService {
   async openModule(moduleName: ModuleName) {
     return await test.step(`Open ${moduleName} module on Home Page`, async () => {
       await this.homePage.clickModuleButton(moduleName);
-      console.log('Clicked Orders button, current URL:', this.page.url());
-      console.log('Page title:', await this.page.title());
-
       await (this as any)[`${moduleName.toLowerCase()}Page`].waitForOpened();
     });
   }

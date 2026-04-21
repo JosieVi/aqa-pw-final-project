@@ -4,7 +4,7 @@ import { STATUS_CODES } from 'data/statusCodes';
 import { OrdersSortField, SortDirection } from 'types/api.types';
 import { ISingleCustomerResponse } from 'types/customer.types';
 import { IOrderSearchResponse } from 'types/order.types';
-import { IProductResponse } from 'types/product.types';
+import { IProduct, IProductResponse } from 'types/product.types';
 
 export class Mock {
   constructor(private page: Page) {}
@@ -29,7 +29,7 @@ export class Mock {
     });
   }
 
-  async products(body: IProductResponse, statusCode: STATUS_CODES = STATUS_CODES.OK) {
+  async products(body: IProduct, statusCode: STATUS_CODES = STATUS_CODES.OK) {
     this.page.route(/\/api\/products(\?.*)?$/, async (route) => {
       await route.fulfill({
         status: statusCode,

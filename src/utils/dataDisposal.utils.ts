@@ -66,7 +66,6 @@ export class DataDisposalUtils {
   async clearOrders(orderIds: string[] | string = this.trackedOrders) {
     const idsToProcess = await this.normalizeIds(orderIds);
     if (!idsToProcess.length) return;
-    console.log(` Deleting orderIds: ${idsToProcess.join(', ')}`);
     const authToken = await this.getToken();
 
     for (const orderId of idsToProcess) {
@@ -84,7 +83,6 @@ export class DataDisposalUtils {
   async clearProducts(productsIds: string[] | string = this.trackedProducts) {
     const idsToProcess = await this.normalizeIds(productsIds);
     if (!idsToProcess.length) return;
-    console.log(` Deleting productsIds: ${idsToProcess.join(', ')}`);
     const authToken = await this.getToken();
 
     for (const productId of idsToProcess) {
@@ -104,7 +102,6 @@ export class DataDisposalUtils {
   async clearCustomers(customerIds: string[] | string = this.trackedCustomers) {
     const idsToProcess = await this.normalizeIds(customerIds);
     if (!idsToProcess.length) return;
-    console.log(` Deleting customersIds: ${idsToProcess.join(', ')}`);
     const authToken = await this.getToken();
 
     for (const customerId of idsToProcess) {
@@ -122,7 +119,6 @@ export class DataDisposalUtils {
   async clearManagers(managerIds: string[] | string = this.trackedManagers) {
     const idsToProcess = await this.normalizeIds(managerIds);
     if (!idsToProcess.length) return;
-    console.log(` Deleting managersIds: ${idsToProcess.join(', ')}`);
     const authToken = await this.getToken();
     for (const managerId of idsToProcess) {
       try {

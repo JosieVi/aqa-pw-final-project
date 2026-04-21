@@ -50,13 +50,11 @@ export const test = base.extend<IApiServices, IWorkerFixtures>({
 
   workerToken: [
     async ({ playwright }, use) => {
-      console.log('--- [Worker] Login process started ---');
       const context = await playwright.request.newContext({ baseURL: apiConfig.BASE_URL });
       const service = new SignInApiService(new SignInController(context));
       const token = await service.loginAsLocalUser();
       await use(token);
       await context.dispose();
-      console.log('--- [Worker] Token released ---');
     },
     { scope: 'worker' },
   ],

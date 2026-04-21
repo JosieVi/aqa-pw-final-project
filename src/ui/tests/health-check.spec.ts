@@ -4,15 +4,13 @@ import { expect, test } from 'fixtures/index.fixture';
 
 test.describe('[UI] [Sales Portal]', () => {
   test.describe('Login via services', () => {
-    test('Should login to Sales Portal by openAsLoggedInUser and get token', { tag: [TAGS.SMOKE] }, async ({ page, homeUIService }) => {
+    test('Should login to Sales Portal by openAsLoggedInUser and get token', { tag: [TAGS.SMOKE] }, async ({ homeUIService }) => {
       await homeUIService.openAsLoggedInUser();
-      const token = (await page.context().cookies()).find((c) => c.name === 'Authorization')!.value;
-      console.log(`First token: ${token}`);
+      // const await page.context().cookies()).find((c) => c.name === 'Authorization'!.value;
     });
 
     test('Should login to Sales Portal by loginAsLocalUser and get token', { tag: [TAGS.SMOKE] }, async ({ signInApiService }) => {
-      const token = await signInApiService.loginAsLocalUser();
-      console.log(`Second token: ${token}`);
+      await signInApiService.loginAsLocalUser();
     });
 
     test('Should open Order module', { tag: [TAGS.SMOKE] }, async ({ homeUIService }) => {
@@ -473,10 +471,6 @@ test.describe('[UI] [Sales Portal]', () => {
           // Act
           await ordersPage.clickDetailsButton(orderId);
           await orderDetailsPage.waitForOpened();
-
-          // Assert
-          const orderDetails = await orderDetailsPage.topPanel.getOrderDetails();
-          console.log(`orderDetails: ${JSON.stringify(orderDetails)}`);
 
           // Act - receive and cancel
           await orderDetailsPage.receivedProductsSection.clickReceiveButton();
