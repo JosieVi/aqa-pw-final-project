@@ -134,20 +134,22 @@ test.describe('[UI] [Orders] [Customer]', () => {
     });
 
     test.describe('[Negative] Orders were created without service', () => {
-      let targetOrderId: string;
+      // let targetOrderId: string;
 
-      test.beforeEach(async ({ homeUIService, ordersPage, orderDetailsPage, orderFactory }) => {
+      test.beforeEach(async ({ homeUIService, orderDetailsPage, orderFactory }) => {
         const PRODUCTS_TO_CREATE_COUNT = 1;
 
         const { _id: id } = await orderFactory.orderReceivedStatus(PRODUCTS_TO_CREATE_COUNT);
-        targetOrderId = id;
+        // targetOrderId = id;
 
         await homeUIService.openAsLoggedInUser();
-        await homeUIService.openModule('Orders');
-        await ordersPage.waitForOpened();
+        // await homeUIService.openModule('Orders');
+        // await ordersPage.waitForOpened();
 
-        await ordersPage.clickDetailsButton(targetOrderId);
-        await orderDetailsPage.topPanel.waitForOpened();
+        // await ordersPage.clickDetailsButton(targetOrderId);
+        // await orderDetailsPage.topPanel.waitForOpened();
+
+        await orderDetailsPage.openById(id);
       });
 
       test('Should not open edit customer modal for Received order', { tag: [TAGS.UI] }, async ({ orderDetailsPage }) => {
