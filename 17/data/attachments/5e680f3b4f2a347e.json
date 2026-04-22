@@ -1,0 +1,26 @@
+{
+  "headers": {
+    "x-powered-by": "Express",
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "Authorization,X-User-Name",
+    "content-type": "application/json; charset=utf-8",
+    "content-length": "223",
+    "etag": "W/\"df-9HO0HlZ54Y68D711aLKLKfsMny4\"",
+    "date": "Wed, 22 Apr 2026 23:52:33 GMT",
+    "connection": "keep-alive",
+    "keep-alive": "timeout=5"
+  },
+  "body": {
+    "Product": {
+      "name": "Test KIcCPvwNOJ",
+      "amount": 831,
+      "price": 11543,
+      "manufacturer": "Sony",
+      "createdOn": "2026-04-22T23:52:33.000Z",
+      "notes": "Notes KZrxrjewti",
+      "_id": "69e95f413f2877819060867e"
+    },
+    "IsSuccess": true,
+    "ErrorMessage": null
+  }
+}

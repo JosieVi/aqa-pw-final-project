@@ -1,0 +1,26 @@
+{
+  "headers": {
+    "x-powered-by": "Express",
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "Authorization,X-User-Name",
+    "content-type": "application/json; charset=utf-8",
+    "content-length": "225",
+    "etag": "W/\"e1-MRZ0/D54DJTyNFC0IKNfUyKLK9E\"",
+    "date": "Wed, 22 Apr 2026 23:53:14 GMT",
+    "connection": "keep-alive",
+    "keep-alive": "timeout=5"
+  },
+  "body": {
+    "Product": {
+      "name": "Test JPaRUbnVPU",
+      "amount": 964,
+      "price": 58359,
+      "manufacturer": "Xiaomi",
+      "createdOn": "2026-04-22T23:53:14.000Z",
+      "notes": "Notes rUCNbgvXCI",
+      "_id": "69e95f6a3f2877819060b1a1"
+    },
+    "IsSuccess": true,
+    "ErrorMessage": null
+  }
+}

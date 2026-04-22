@@ -1,0 +1,26 @@
+{
+  "headers": {
+    "x-powered-by": "Express",
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "Authorization,X-User-Name",
+    "content-type": "application/json; charset=utf-8",
+    "content-length": "223",
+    "etag": "W/\"df-UlApiAqQLlWkwN/0f+uJyyziBWU\"",
+    "date": "Wed, 22 Apr 2026 23:53:15 GMT",
+    "connection": "keep-alive",
+    "keep-alive": "timeout=5"
+  },
+  "body": {
+    "Product": {
+      "name": "Test WreJsamgDD",
+      "amount": 47,
+      "price": 36673,
+      "manufacturer": "Tesla",
+      "createdOn": "2026-04-22T23:53:15.000Z",
+      "notes": "Notes ZALRcflMWM",
+      "_id": "69e95f6b3f2877819060b47f"
+    },
+    "IsSuccess": true,
+    "ErrorMessage": null
+  }
+}

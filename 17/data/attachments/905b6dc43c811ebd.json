@@ -1,0 +1,26 @@
+{
+  "headers": {
+    "x-powered-by": "Express",
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "Authorization,X-User-Name",
+    "content-type": "application/json; charset=utf-8",
+    "content-length": "228",
+    "etag": "W/\"e4-EoDHTdP2REVrvcZt4Ei7y7B0PYs\"",
+    "date": "Wed, 22 Apr 2026 23:52:49 GMT",
+    "connection": "keep-alive",
+    "keep-alive": "timeout=5"
+  },
+  "body": {
+    "Product": {
+      "name": "Test hBhvBCpTaE",
+      "amount": 711,
+      "price": 65863,
+      "manufacturer": "Microsoft",
+      "createdOn": "2026-04-22T23:52:49.000Z",
+      "notes": "Notes nwCpVPBHNp",
+      "_id": "69e95f513f287781906090cc"
+    },
+    "IsSuccess": true,
+    "ErrorMessage": null
+  }
+}

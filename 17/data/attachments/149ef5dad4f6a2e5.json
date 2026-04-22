@@ -1,0 +1,26 @@
+{
+  "headers": {
+    "x-powered-by": "Express",
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "Authorization,X-User-Name",
+    "content-type": "application/json; charset=utf-8",
+    "content-length": "225",
+    "etag": "W/\"e1-xEhkLFH5BjiqNMkp8wa9kiZ+FH0\"",
+    "date": "Wed, 22 Apr 2026 23:53:13 GMT",
+    "connection": "keep-alive",
+    "keep-alive": "timeout=5"
+  },
+  "body": {
+    "Product": {
+      "name": "Test EFBHTekhDS",
+      "amount": 894,
+      "price": 6915,
+      "manufacturer": "Samsung",
+      "createdOn": "2026-04-22T23:53:13.000Z",
+      "notes": "Notes jRLJdNicLH",
+      "_id": "69e95f693f2877819060b00c"
+    },
+    "IsSuccess": true,
+    "ErrorMessage": null
+  }
+}

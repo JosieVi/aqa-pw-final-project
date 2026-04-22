@@ -1,0 +1,26 @@
+{
+  "headers": {
+    "x-powered-by": "Express",
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "Authorization,X-User-Name",
+    "content-type": "application/json; charset=utf-8",
+    "content-length": "225",
+    "etag": "W/\"e1-syVjoHGLXgEPmYexzqXUHw9JrnE\"",
+    "date": "Wed, 22 Apr 2026 23:53:14 GMT",
+    "connection": "keep-alive",
+    "keep-alive": "timeout=5"
+  },
+  "body": {
+    "Product": {
+      "name": "Test BMsXcShkJu",
+      "amount": 904,
+      "price": 12491,
+      "manufacturer": "Xiaomi",
+      "createdOn": "2026-04-22T23:53:14.000Z",
+      "notes": "Notes CdiCeqnYUX",
+      "_id": "69e95f6a3f2877819060b174"
+    },
+    "IsSuccess": true,
+    "ErrorMessage": null
+  }
+}

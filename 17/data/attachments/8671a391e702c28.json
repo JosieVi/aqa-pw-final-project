@@ -1,0 +1,26 @@
+{
+  "headers": {
+    "x-powered-by": "Express",
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "Authorization,X-User-Name",
+    "content-type": "application/json; charset=utf-8",
+    "content-length": "224",
+    "etag": "W/\"e0-WRF0qISd8Eh1rXBSi0eJCcdNURo\"",
+    "date": "Wed, 22 Apr 2026 23:53:15 GMT",
+    "connection": "keep-alive",
+    "keep-alive": "timeout=5"
+  },
+  "body": {
+    "Product": {
+      "name": "Test ydZXNADPCV",
+      "amount": 819,
+      "price": 83929,
+      "manufacturer": "Apple",
+      "createdOn": "2026-04-22T23:53:15.000Z",
+      "notes": "Notes YzsPfBkJJN",
+      "_id": "69e95f6b3f2877819060b27c"
+    },
+    "IsSuccess": true,
+    "ErrorMessage": null
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "headers": {
+    "x-powered-by": "Express",
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "Authorization,X-User-Name",
+    "content-type": "application/json; charset=utf-8",
+    "content-length": "223",
+    "etag": "W/\"df-udPtCMN972CVsscxHyS5tlTBLWQ\"",
+    "date": "Wed, 22 Apr 2026 23:53:16 GMT",
+    "connection": "keep-alive",
+    "keep-alive": "timeout=5"
+  },
+  "body": {
+    "Product": {
+      "name": "Test CUpajBrViH",
+      "amount": 418,
+      "price": 7560,
+      "manufacturer": "Tesla",
+      "createdOn": "2026-04-22T23:53:16.000Z",
+      "notes": "Notes VGcGuKqQKx",
+      "_id": "69e95f6c3f2877819060b535"
+    },
+    "IsSuccess": true,
+    "ErrorMessage": null
+  }
+}

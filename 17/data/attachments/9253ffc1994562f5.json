@@ -1,0 +1,26 @@
+{
+  "headers": {
+    "x-powered-by": "Express",
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "Authorization,X-User-Name",
+    "content-type": "application/json; charset=utf-8",
+    "content-length": "223",
+    "etag": "W/\"df-e9oko/jqXmSqOCcbEflG1IFCaeY\"",
+    "date": "Wed, 22 Apr 2026 23:52:49 GMT",
+    "connection": "keep-alive",
+    "keep-alive": "timeout=5"
+  },
+  "body": {
+    "Product": {
+      "name": "Test TJLttkcbIE",
+      "amount": 87,
+      "price": 88227,
+      "manufacturer": "Apple",
+      "createdOn": "2026-04-22T23:52:49.000Z",
+      "notes": "Notes qkpuUjTVzP",
+      "_id": "69e95f513f287781906090cf"
+    },
+    "IsSuccess": true,
+    "ErrorMessage": null
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "headers": {
+    "x-powered-by": "Express",
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "Authorization,X-User-Name",
+    "content-type": "application/json; charset=utf-8",
+    "content-length": "226",
+    "etag": "W/\"e2-m4DZ0XjjTpsUo3DGGzBfs+5RpEQ\"",
+    "date": "Wed, 22 Apr 2026 23:52:52 GMT",
+    "connection": "keep-alive",
+    "keep-alive": "timeout=5"
+  },
+  "body": {
+    "Product": {
+      "name": "Test hGVcYbOmXs",
+      "amount": 258,
+      "price": 33414,
+      "manufacturer": "Samsung",
+      "createdOn": "2026-04-22T23:52:52.000Z",
+      "notes": "Notes UAPmdlpONz",
+      "_id": "69e95f543f287781906096de"
+    },
+    "IsSuccess": true,
+    "ErrorMessage": null
+  }
+}

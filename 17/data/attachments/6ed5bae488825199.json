@@ -1,0 +1,26 @@
+{
+  "headers": {
+    "x-powered-by": "Express",
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "Authorization,X-User-Name",
+    "content-type": "application/json; charset=utf-8",
+    "content-length": "225",
+    "etag": "W/\"e1-vZ/1QrWeIwJeTt+tBXddgcVnWdY\"",
+    "date": "Wed, 22 Apr 2026 23:53:54 GMT",
+    "connection": "keep-alive",
+    "keep-alive": "timeout=5"
+  },
+  "body": {
+    "Product": {
+      "name": "Test RPKFgoOuuO",
+      "amount": 264,
+      "price": 78499,
+      "manufacturer": "Xiaomi",
+      "createdOn": "2026-04-22T23:53:54.000Z",
+      "notes": "Notes DnVJokKOdX",
+      "_id": "69e95f923f2877819060be9d"
+    },
+    "IsSuccess": true,
+    "ErrorMessage": null
+  }
+}

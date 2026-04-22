@@ -1,0 +1,26 @@
+{
+  "headers": {
+    "x-powered-by": "Express",
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "Authorization,X-User-Name",
+    "content-type": "application/json; charset=utf-8",
+    "content-length": "224",
+    "etag": "W/\"e0-OOitxdaY7ODy2wy+XyKD3AL1+yk\"",
+    "date": "Wed, 22 Apr 2026 23:53:54 GMT",
+    "connection": "keep-alive",
+    "keep-alive": "timeout=5"
+  },
+  "body": {
+    "Product": {
+      "name": "Test xrlBLFsrZC",
+      "amount": 350,
+      "price": 25121,
+      "manufacturer": "Tesla",
+      "createdOn": "2026-04-22T23:53:54.000Z",
+      "notes": "Notes LHruFlnGan",
+      "_id": "69e95f923f2877819060bea3"
+    },
+    "IsSuccess": true,
+    "ErrorMessage": null
+  }
+}

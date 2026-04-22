@@ -1,0 +1,26 @@
+{
+  "headers": {
+    "x-powered-by": "Express",
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "Authorization,X-User-Name",
+    "content-type": "application/json; charset=utf-8",
+    "content-length": "223",
+    "etag": "W/\"df-q31eyq4XvulgAuqspV+zNhuR8eU\"",
+    "date": "Wed, 22 Apr 2026 23:52:35 GMT",
+    "connection": "keep-alive",
+    "keep-alive": "timeout=5"
+  },
+  "body": {
+    "Product": {
+      "name": "Test DTwMSOIGKi",
+      "amount": 844,
+      "price": 74981,
+      "manufacturer": "Sony",
+      "createdOn": "2026-04-22T23:52:35.000Z",
+      "notes": "Notes GAyHKbgRAX",
+      "_id": "69e95f433f287781906087b2"
+    },
+    "IsSuccess": true,
+    "ErrorMessage": null
+  }
+}

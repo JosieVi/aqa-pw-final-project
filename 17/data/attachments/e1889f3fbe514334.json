@@ -1,0 +1,26 @@
+{
+  "headers": {
+    "x-powered-by": "Express",
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "Authorization,X-User-Name",
+    "content-type": "application/json; charset=utf-8",
+    "content-length": "223",
+    "etag": "W/\"df-/zTh0i+1lePj/4mnWj/mLoVpuKA\"",
+    "date": "Wed, 22 Apr 2026 23:52:46 GMT",
+    "connection": "keep-alive",
+    "keep-alive": "timeout=5"
+  },
+  "body": {
+    "Product": {
+      "name": "Test GPAtueqoFt",
+      "amount": 94,
+      "price": 50694,
+      "manufacturer": "Tesla",
+      "createdOn": "2026-04-22T23:52:46.000Z",
+      "notes": "Notes tRhnLMDzoF",
+      "_id": "69e95f4e3f28778190608dd7"
+    },
+    "IsSuccess": true,
+    "ErrorMessage": null
+  }
+}

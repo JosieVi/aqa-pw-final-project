@@ -1,0 +1,26 @@
+{
+  "headers": {
+    "x-powered-by": "Express",
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "Authorization,X-User-Name",
+    "content-type": "application/json; charset=utf-8",
+    "content-length": "227",
+    "etag": "W/\"e3-RdhKsie6jOTcOuTpVzdWeSTLRSo\"",
+    "date": "Wed, 22 Apr 2026 23:53:20 GMT",
+    "connection": "keep-alive",
+    "keep-alive": "timeout=5"
+  },
+  "body": {
+    "Product": {
+      "_id": "69e95f703f2877819060bc6c",
+      "name": "Test sewQwXJIXM",
+      "amount": 59,
+      "price": 99999,
+      "manufacturer": "Microsoft",
+      "createdOn": "2026-04-22T23:53:20.000Z",
+      "notes": "Notes uvdHWlAjor"
+    },
+    "IsSuccess": true,
+    "ErrorMessage": null
+  }
+}

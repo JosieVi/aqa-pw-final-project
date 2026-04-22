@@ -1,0 +1,26 @@
+{
+  "headers": {
+    "x-powered-by": "Express",
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "Authorization,X-User-Name",
+    "content-type": "application/json; charset=utf-8",
+    "content-length": "223",
+    "etag": "W/\"df-MRKGoYBzHWIJGXm2BkL6HhYmHNA\"",
+    "date": "Wed, 22 Apr 2026 23:53:19 GMT",
+    "connection": "keep-alive",
+    "keep-alive": "timeout=5"
+  },
+  "body": {
+    "Product": {
+      "name": "Test CWygftQcFN",
+      "amount": 693,
+      "price": 6532,
+      "manufacturer": "Tesla",
+      "createdOn": "2026-04-22T23:53:19.000Z",
+      "notes": "Notes WmWyZKhYcc",
+      "_id": "69e95f6f3f2877819060bbb2"
+    },
+    "IsSuccess": true,
+    "ErrorMessage": null
+  }
+}

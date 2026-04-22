@@ -1,0 +1,30 @@
+{
+  "headers": {
+    "x-powered-by": "Express",
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "Authorization,X-User-Name",
+    "content-type": "application/json; charset=utf-8",
+    "content-length": "633",
+    "etag": "W/\"279-jT/IBmQzd0XoDEmzZbIZfWofQI4\"",
+    "date": "Wed, 22 Apr 2026 23:53:04 GMT",
+    "connection": "keep-alive",
+    "keep-alive": "timeout=5"
+  },
+  "body": {
+    "Customer": {
+      "email": "test1776901984416_VPTV@example.com",
+      "name": "AAAAAAAAAAAAAAA AAAAAAAAAAAAAAAAAAAAAAAA",
+      "country": "Great Britain",
+      "city": "testCity cAUJxkRNhvq",
+      "street": "testStreet S7Rpu0Cejt5YuVTcLRwK7unBdoxUS",
+      "house": 814,
+      "flat": 3155,
+      "phone": "+3487560417",
+      "createdOn": "2026-04-22T23:53:04.000Z",
+      "notes": "Notes yHlNAyblUwoHbqqkKvuyEudoBYslevMjtOcnwROFHkwEQnLqVoIZXyPXqaizQdclVOXdURsRdLnAAHZurVjUPoZfXwEPioRCeartcakQJkMjgCccfbquaAfNzVrAaAoZcGADMCqCzMllJMaorLqGIUVEUTwDirxSOSXPUepokKDRqvCWMFphUZAtlLzcgxAMSMfTWJqEKNxtrzWyQrNuhCZiRUtyoBheAHXDnvKeghlFqHZZTZnN",
+      "_id": "69e95f603f28778190609d72"
+    },
+    "IsSuccess": true,
+    "ErrorMessage": null
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "headers": {
+    "x-powered-by": "Express",
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "Authorization,X-User-Name",
+    "content-type": "application/json; charset=utf-8",
+    "content-length": "223",
+    "etag": "W/\"df-/MgYI91GT/v61pkvBpsusxK34pI\"",
+    "date": "Wed, 22 Apr 2026 23:52:30 GMT",
+    "connection": "keep-alive",
+    "keep-alive": "timeout=5"
+  },
+  "body": {
+    "Product": {
+      "name": "Test dkteHDjNla",
+      "amount": 716,
+      "price": 64245,
+      "manufacturer": "Sony",
+      "createdOn": "2026-04-22T23:52:30.000Z",
+      "notes": "Notes jYplbbJHRH",
+      "_id": "69e95f3e3f28778190608419"
+    },
+    "IsSuccess": true,
+    "ErrorMessage": null
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "headers": {
+    "x-powered-by": "Express",
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "Authorization,X-User-Name",
+    "content-type": "application/json; charset=utf-8",
+    "content-length": "225",
+    "etag": "W/\"e1-EMdfLW3A3V2dQNnrrtkhA5i3Dd4\"",
+    "date": "Wed, 22 Apr 2026 23:53:15 GMT",
+    "connection": "keep-alive",
+    "keep-alive": "timeout=5"
+  },
+  "body": {
+    "Product": {
+      "name": "Test DEGobuIDOR",
+      "amount": 733,
+      "price": 62224,
+      "manufacturer": "Xiaomi",
+      "createdOn": "2026-04-22T23:53:15.000Z",
+      "notes": "Notes JsaeEfHavy",
+      "_id": "69e95f6b3f2877819060b2eb"
+    },
+    "IsSuccess": true,
+    "ErrorMessage": null
+  }
+}

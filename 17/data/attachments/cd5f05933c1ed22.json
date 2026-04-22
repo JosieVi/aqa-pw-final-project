@@ -1,0 +1,26 @@
+{
+  "headers": {
+    "x-powered-by": "Express",
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "Authorization,X-User-Name",
+    "content-type": "application/json; charset=utf-8",
+    "content-length": "224",
+    "etag": "W/\"e0-H6u9BIYZLbr4paAOI2tNwjPIqbM\"",
+    "date": "Wed, 22 Apr 2026 23:52:45 GMT",
+    "connection": "keep-alive",
+    "keep-alive": "timeout=5"
+  },
+  "body": {
+    "Product": {
+      "name": "Test gZPDoQQAeX",
+      "amount": 417,
+      "price": 6081,
+      "manufacturer": "Amazon",
+      "createdOn": "2026-04-22T23:52:45.000Z",
+      "notes": "Notes RmlvGOGKRI",
+      "_id": "69e95f4d3f28778190608d80"
+    },
+    "IsSuccess": true,
+    "ErrorMessage": null
+  }
+}

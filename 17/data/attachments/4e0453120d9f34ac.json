@@ -1,0 +1,67 @@
+{
+  "headers": {
+    "x-powered-by": "Express",
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "Authorization,X-User-Name",
+    "content-type": "application/json; charset=utf-8",
+    "content-length": "1846",
+    "etag": "W/\"736-teD3xLO5Z1SiYV43cg4WfSUPcMc\"",
+    "date": "Wed, 22 Apr 2026 23:53:06 GMT",
+    "connection": "keep-alive",
+    "keep-alive": "timeout=5"
+  },
+  "body": {
+    "Customers": [
+      {
+        "_id": "69e95f623f2877819060a0d1",
+        "email": "test1776901986744_DXNE@example.com",
+        "name": "SearchTestZTCrtAdY",
+        "country": "Russia",
+        "city": "testCity XhEfdwNCqxN",
+        "street": "testStreet xOYXdUSG5MwuQVOGAgV1eqWBArMBa",
+        "house": 500,
+        "flat": 9427,
+        "phone": "+5743194992",
+        "createdOn": "2026-04-22T23:53:06.000Z",
+        "notes": "Notes OWWvpnRRNMEbOwxfcEguxevVlnYCKhGHibWZaKydXFEckpIhgTGJMLmwBqepQFAYmKAwMoTaNTBLbqTWQwiVwaJWUEeiNdzmPAdpbQFobMPJgRJEuAXZYniYJSWjOYQkRSwqlalkJiMSxijnOofsvjVxfTYZnyaGgMXfttpGRWpmAKZeHjicXNFqbqkFKkRXdLFMHYSpJqPlESGktpiWPidXzXSbbSczDWjmcSwHBDDIvbGzxcsJ"
+      },
+      {
+        "_id": "69e95f623f2877819060a0d5",
+        "email": "test1776901986745_RNAG@example.com",
+        "name": "SearchTestZTCrtAdY",
+        "country": "Canada",
+        "city": "testCity sRelRBpxZEv",
+        "street": "testStreet jAS3Nqagir3Zh61oOlIhb22JCizRa",
+        "house": 129,
+        "flat": 8839,
+        "phone": "+3333036103",
+        "createdOn": "2026-04-22T23:53:06.000Z",
+        "notes": "Notes eAEdUvPMvbbAiedPyyGPsRyjBjzfTGhMencSGZwVmKKAjsUZoRyPasOuPpDNYldHidwzHUkfUMzVHbliINqanXqMRMcZgQZzgMYaceCaeoOylyZBEAksvmwqcGQLhEUzkUTaJeKmNxkFNPExvUhIITkIIWnKZiImsquAbBqPplolvsZEakOROFNKUYwFYSDsPnAIIDZeRtkLGHBQAsQDglHZXCXTqYLjbtadxWTNODyMoIJATYpr"
+      },
+      {
+        "_id": "69e95f623f2877819060a0d7",
+        "email": "test1776901986745_RVKI@example.com",
+        "name": "SearchTestZTCrtAdY",
+        "country": "Germany",
+        "city": "testCity ReoLpVkAVai",
+        "street": "testStreet HwPSlaSBlZ5dh2yddSVbXdpkFRZjM",
+        "house": 320,
+        "flat": 8147,
+        "phone": "+3883693499",
+        "createdOn": "2026-04-22T23:53:06.000Z",
+        "notes": "Notes nyjVViUoYZidxgpepKYPeCCVpmZnNqhyFNluJnbMJpFOaEBLlQTIxEzFQCmCRKzZyBeoScsuslOMtoEbDIDvjnoWaXUeeppaivZsFcmysHjwlzDEBvPHHBNhtrUBTwfCOxKilJvQsQDpqbJkRegipcOrPubkzTBlAOLSjtcgVWhSUCQIifTJdHcrejHdHrGeJGVNTspCpbMqxtHVRmoKNPkZmTBmtIsyMvaqGKJXAQnRsHMPuPGF"
+      }
+    ],
+    "total": 3,
+    "page": 1,
+    "limit": 10,
+    "search": "SearchTestZTCrtAdY",
+    "country": [],
+    "sorting": {
+      "sortField": "createdOn",
+      "sortOrder": "desc"
+    },
+    "IsSuccess": true,
+    "ErrorMessage": null
+  }
+}

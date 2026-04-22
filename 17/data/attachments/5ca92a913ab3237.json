@@ -1,0 +1,172 @@
+{
+  "headers": {
+    "x-powered-by": "Express",
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "Authorization,X-User-Name",
+    "content-type": "application/json; charset=utf-8",
+    "content-length": "3063",
+    "etag": "W/\"bf7-7CQJRcwkUAvvkoJ2UCMXRl2Vec8\"",
+    "date": "Wed, 22 Apr 2026 23:52:30 GMT",
+    "connection": "keep-alive",
+    "keep-alive": "timeout=5"
+  },
+  "body": {
+    "Order": {
+      "_id": "69e95f3e3f28778190608421",
+      "status": "In Process",
+      "customer": {
+        "_id": "69e95f3e3f28778190608414",
+        "email": "test1776901950203_DZVW@example.com",
+        "name": "test jdNSXkJfuMCommpfONtrHWpWSbdkojsbFRE",
+        "country": "France",
+        "city": "testCity UzQscpqCowy",
+        "street": "testStreet Y2pL9Hhg1H1FYegmRr0Mrft3lAjdR",
+        "house": 138,
+        "flat": 2174,
+        "phone": "+1654169277",
+        "createdOn": "2026-04-22T23:52:30.000Z",
+        "notes": "Notes qOmfxVGHkqTucCMhEsGUwseNFOPEsYfdudfWagTEeDHncukrvkkvnAuwCdVrByjOVRgYVfhFCQJsMCaLyJHKRJbPLNEnxqqWeRmFjTxGIaTJnsJrGvNnoIdTnZdDKfNODQkjIQLEGBlGoOpEIwfyeNmnwZDSiZQPhzKsjmEiHOrJWTSnQfYukyEGfYYehCtYObSyRzkCZAytSHSwUQogIhLbqFfTUIRTtlppgPPOvLxmZxgwbizH"
+      },
+      "products": [
+        {
+          "_id": "69e95f3e3f28778190608419",
+          "name": "Test dkteHDjNla",
+          "amount": 716,
+          "price": 64245,
+          "manufacturer": "Sony",
+          "notes": "Notes jYplbbJHRH",
+          "received": false
+        }
+      ],
+      "delivery": {
+        "address": {
+          "country": "Belarus",
+          "city": "TestCity ToNLi",
+          "street": "TestStreet WqvmcEkUcv",
+          "house": 646,
+          "flat": 5723
+        },
+        "finalDate": "2026-10-13T00:00:00.000Z",
+        "condition": "Delivery"
+      },
+      "total_price": 64245,
+      "createdOn": "2026-04-22T23:52:30.000Z",
+      "comments": [],
+      "history": [
+        {
+          "status": "In Process",
+          "customer": "69e95f3e3f28778190608414",
+          "products": [
+            {
+              "_id": "69e95f3e3f28778190608419",
+              "name": "Test dkteHDjNla",
+              "amount": 716,
+              "price": 64245,
+              "manufacturer": "Sony",
+              "notes": "Notes jYplbbJHRH",
+              "received": false
+            }
+          ],
+          "total_price": 64245,
+          "delivery": {
+            "address": {
+              "country": "Belarus",
+              "city": "TestCity ToNLi",
+              "street": "TestStreet WqvmcEkUcv",
+              "house": 646,
+              "flat": 5723
+            },
+            "finalDate": "2026-10-13T00:00:00.000Z",
+            "condition": "Delivery"
+          },
+          "changedOn": "2026-04-22T23:52:30.000Z",
+          "action": "Order processing started",
+          "performer": {
+            "_id": "69e95ee83f28778190607aec",
+            "username": "admin@example.com",
+            "firstName": "Admin",
+            "lastName": "Admin",
+            "roles": [
+              "ADMIN"
+            ],
+            "createdOn": "2026/04/22 23:51:04"
+          },
+          "assignedManager": null
+        },
+        {
+          "status": "Draft",
+          "customer": "69e95f3e3f28778190608414",
+          "products": [
+            {
+              "_id": "69e95f3e3f28778190608419",
+              "name": "Test dkteHDjNla",
+              "amount": 716,
+              "price": 64245,
+              "manufacturer": "Sony",
+              "notes": "Notes jYplbbJHRH",
+              "received": false
+            }
+          ],
+          "total_price": 64245,
+          "delivery": {
+            "address": {
+              "country": "Belarus",
+              "city": "TestCity ToNLi",
+              "street": "TestStreet WqvmcEkUcv",
+              "house": 646,
+              "flat": 5723
+            },
+            "finalDate": "2026-10-13T00:00:00.000Z",
+            "condition": "Delivery"
+          },
+          "changedOn": "2026-04-22T23:52:30.000Z",
+          "action": "Delivery Scheduled",
+          "performer": {
+            "_id": "69e95ee83f28778190607aec",
+            "username": "admin@example.com",
+            "firstName": "Admin",
+            "lastName": "Admin",
+            "roles": [
+              "ADMIN"
+            ],
+            "createdOn": "2026/04/22 23:51:04"
+          },
+          "assignedManager": null
+        },
+        {
+          "status": "Draft",
+          "customer": "69e95f3e3f28778190608414",
+          "products": [
+            {
+              "_id": "69e95f3e3f28778190608419",
+              "name": "Test dkteHDjNla",
+              "amount": 716,
+              "price": 64245,
+              "manufacturer": "Sony",
+              "notes": "Notes jYplbbJHRH",
+              "received": false
+            }
+          ],
+          "total_price": 64245,
+          "delivery": null,
+          "changedOn": "2026-04-22T23:52:30.000Z",
+          "action": "Order created",
+          "performer": {
+            "_id": "69e95ee83f28778190607aec",
+            "username": "admin@example.com",
+            "firstName": "Admin",
+            "lastName": "Admin",
+            "roles": [
+              "ADMIN"
+            ],
+            "createdOn": "2026/04/22 23:51:04"
+          },
+          "assignedManager": null
+        }
+      ],
+      "assignedManager": null
+    },
+    "IsSuccess": true,
+    "ErrorMessage": null
+  }
+}

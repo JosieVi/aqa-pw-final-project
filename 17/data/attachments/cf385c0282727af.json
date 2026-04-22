@@ -1,0 +1,26 @@
+{
+  "headers": {
+    "x-powered-by": "Express",
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "Authorization,X-User-Name",
+    "content-type": "application/json; charset=utf-8",
+    "content-length": "224",
+    "etag": "W/\"e0-NpA7JjOR3tAXV7Q+pGLdfBHMBH4\"",
+    "date": "Wed, 22 Apr 2026 23:53:21 GMT",
+    "connection": "keep-alive",
+    "keep-alive": "timeout=5"
+  },
+  "body": {
+    "Product": {
+      "name": "Test IUZTgToBpg",
+      "amount": 877,
+      "price": 19823,
+      "manufacturer": "Tesla",
+      "createdOn": "2026-04-22T23:53:21.000Z",
+      "notes": "Notes fsgylPjpAt",
+      "_id": "69e95f713f2877819060bd38"
+    },
+    "IsSuccess": true,
+    "ErrorMessage": null
+  }
+}

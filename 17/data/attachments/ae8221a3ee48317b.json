@@ -1,0 +1,26 @@
+{
+  "headers": {
+    "x-powered-by": "Express",
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "Authorization,X-User-Name",
+    "content-type": "application/json; charset=utf-8",
+    "content-length": "225",
+    "etag": "W/\"e1-eDGHvPF04FWzWGNg5ivkH2Z73dI\"",
+    "date": "Wed, 22 Apr 2026 23:53:21 GMT",
+    "connection": "keep-alive",
+    "keep-alive": "timeout=5"
+  },
+  "body": {
+    "Product": {
+      "name": "Test QKfLFqaDGX",
+      "amount": 559,
+      "price": 66420,
+      "manufacturer": "Amazon",
+      "createdOn": "2026-04-22T23:53:21.000Z",
+      "notes": "Notes DCCkRIuMYj",
+      "_id": "69e95f713f2877819060bd9b"
+    },
+    "IsSuccess": true,
+    "ErrorMessage": null
+  }
+}

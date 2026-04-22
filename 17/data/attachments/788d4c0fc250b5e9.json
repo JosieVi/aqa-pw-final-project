@@ -1,0 +1,26 @@
+{
+  "headers": {
+    "x-powered-by": "Express",
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "Authorization,X-User-Name",
+    "content-type": "application/json; charset=utf-8",
+    "content-length": "224",
+    "etag": "W/\"e0-tnayJZotS6PJOAaV1enl0TleV8w\"",
+    "date": "Wed, 22 Apr 2026 23:52:18 GMT",
+    "connection": "keep-alive",
+    "keep-alive": "timeout=5"
+  },
+  "body": {
+    "Product": {
+      "name": "Test NPMpGxefzv",
+      "amount": 949,
+      "price": 99061,
+      "manufacturer": "Apple",
+      "createdOn": "2026-04-22T23:52:18.000Z",
+      "notes": "Notes xNYczCVZSe",
+      "_id": "69e95f323f28778190607dc7"
+    },
+    "IsSuccess": true,
+    "ErrorMessage": null
+  }
+}
