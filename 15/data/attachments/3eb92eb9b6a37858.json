@@ -1,0 +1,26 @@
+{
+  "headers": {
+    "x-powered-by": "Express",
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "Authorization,X-User-Name",
+    "content-type": "application/json; charset=utf-8",
+    "content-length": "225",
+    "etag": "W/\"e1-IkuaqDLOTGMGm011fFFmSCGMBeo\"",
+    "date": "Wed, 22 Apr 2026 22:38:48 GMT",
+    "connection": "keep-alive",
+    "keep-alive": "timeout=5"
+  },
+  "body": {
+    "Product": {
+      "name": "Test ZARAGNPIkT",
+      "amount": 248,
+      "price": 45931,
+      "manufacturer": "Google",
+      "createdOn": "2026-04-22T22:38:48.000Z",
+      "notes": "Notes ZOMCUJldyw",
+      "_id": "69e94df8a15039fe15c73e60"
+    },
+    "IsSuccess": true,
+    "ErrorMessage": null
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "headers": {
+    "x-powered-by": "Express",
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "Authorization,X-User-Name",
+    "content-type": "application/json; charset=utf-8",
+    "content-length": "225",
+    "etag": "W/\"e1-5l//qSe6XQDywjk6NhsETflg3Qo\"",
+    "date": "Wed, 22 Apr 2026 22:39:17 GMT",
+    "connection": "keep-alive",
+    "keep-alive": "timeout=5"
+  },
+  "body": {
+    "Product": {
+      "name": "Test nvkyTCnmKR",
+      "amount": 154,
+      "price": 24917,
+      "manufacturer": "Xiaomi",
+      "createdOn": "2026-04-22T22:39:17.000Z",
+      "notes": "Notes fPxvbUXfhX",
+      "_id": "69e94e15a15039fe15c75571"
+    },
+    "IsSuccess": true,
+    "ErrorMessage": null
+  }
+}

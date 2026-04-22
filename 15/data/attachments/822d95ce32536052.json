@@ -1,0 +1,26 @@
+{
+  "headers": {
+    "x-powered-by": "Express",
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "Authorization,X-User-Name",
+    "content-type": "application/json; charset=utf-8",
+    "content-length": "223",
+    "etag": "W/\"df-2+D4qbyG9x2RYI593ZyIQ+s/cS8\"",
+    "date": "Wed, 22 Apr 2026 22:39:25 GMT",
+    "connection": "keep-alive",
+    "keep-alive": "timeout=5"
+  },
+  "body": {
+    "Product": {
+      "name": "Test EFmLbpzTHD",
+      "amount": 17,
+      "price": 2576,
+      "manufacturer": "Amazon",
+      "createdOn": "2026-04-22T22:39:25.000Z",
+      "notes": "Notes YxbFjcjrkg",
+      "_id": "69e94e1da15039fe15c76842"
+    },
+    "IsSuccess": true,
+    "ErrorMessage": null
+  }
+}

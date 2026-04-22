@@ -1,0 +1,26 @@
+{
+  "headers": {
+    "x-powered-by": "Express",
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "Authorization,X-User-Name",
+    "content-type": "application/json; charset=utf-8",
+    "content-length": "224",
+    "etag": "W/\"e0-yqpX0eupx4NdJRt7BMt13LKyGKo\"",
+    "date": "Wed, 22 Apr 2026 22:39:28 GMT",
+    "connection": "keep-alive",
+    "keep-alive": "timeout=5"
+  },
+  "body": {
+    "Product": {
+      "name": "Test bAzZfCPEMf",
+      "amount": 762,
+      "price": 1630,
+      "manufacturer": "Amazon",
+      "createdOn": "2026-04-22T22:39:28.000Z",
+      "notes": "Notes mlArNCzGfb",
+      "_id": "69e94e20a15039fe15c76f03"
+    },
+    "IsSuccess": true,
+    "ErrorMessage": null
+  }
+}

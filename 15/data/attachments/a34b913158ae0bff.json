@@ -1,0 +1,26 @@
+{
+  "headers": {
+    "x-powered-by": "Express",
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "Authorization,X-User-Name",
+    "content-type": "application/json; charset=utf-8",
+    "content-length": "223",
+    "etag": "W/\"df-QNsQ0cldmf/c8JzDN6eQ8h72ulM\"",
+    "date": "Wed, 22 Apr 2026 22:39:28 GMT",
+    "connection": "keep-alive",
+    "keep-alive": "timeout=5"
+  },
+  "body": {
+    "Product": {
+      "name": "Test DJHSDPhSmJ",
+      "amount": 924,
+      "price": 41244,
+      "manufacturer": "Sony",
+      "createdOn": "2026-04-22T22:39:28.000Z",
+      "notes": "Notes aZaxKIkKZL",
+      "_id": "69e94e20a15039fe15c76e53"
+    },
+    "IsSuccess": true,
+    "ErrorMessage": null
+  }
+}

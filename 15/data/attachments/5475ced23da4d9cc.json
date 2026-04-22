@@ -1,0 +1,26 @@
+{
+  "headers": {
+    "x-powered-by": "Express",
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "Authorization,X-User-Name",
+    "content-type": "application/json; charset=utf-8",
+    "content-length": "226",
+    "etag": "W/\"e2-7Z7LuqRrtvseUJz9o82arCbVJmA\"",
+    "date": "Wed, 22 Apr 2026 22:39:04 GMT",
+    "connection": "keep-alive",
+    "keep-alive": "timeout=5"
+  },
+  "body": {
+    "Product": {
+      "name": "Test WKZUtWlXfE",
+      "amount": 704,
+      "price": 87458,
+      "manufacturer": "Samsung",
+      "createdOn": "2026-04-22T22:39:04.000Z",
+      "notes": "Notes SiKxZbLYOj",
+      "_id": "69e94e08a15039fe15c7468d"
+    },
+    "IsSuccess": true,
+    "ErrorMessage": null
+  }
+}

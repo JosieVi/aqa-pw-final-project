@@ -1,0 +1,26 @@
+{
+  "headers": {
+    "x-powered-by": "Express",
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "Authorization,X-User-Name",
+    "content-type": "application/json; charset=utf-8",
+    "content-length": "225",
+    "etag": "W/\"e1-mr9wkZK5ARRWSEFPTBVqcpXNSVk\"",
+    "date": "Wed, 22 Apr 2026 22:39:27 GMT",
+    "connection": "keep-alive",
+    "keep-alive": "timeout=5"
+  },
+  "body": {
+    "Product": {
+      "name": "Test TSDLChiitp",
+      "amount": 682,
+      "price": 24477,
+      "manufacturer": "Xiaomi",
+      "createdOn": "2026-04-22T22:39:27.000Z",
+      "notes": "Notes mmOZkhSwZo",
+      "_id": "69e94e1fa15039fe15c76caf"
+    },
+    "IsSuccess": true,
+    "ErrorMessage": null
+  }
+}

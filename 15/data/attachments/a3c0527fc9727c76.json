@@ -1,0 +1,26 @@
+{
+  "headers": {
+    "x-powered-by": "Express",
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "Authorization,X-User-Name",
+    "content-type": "application/json; charset=utf-8",
+    "content-length": "228",
+    "etag": "W/\"e4-hjMZEf9Yy6HW4PgrTk8NBAGmwtQ\"",
+    "date": "Wed, 22 Apr 2026 22:39:21 GMT",
+    "connection": "keep-alive",
+    "keep-alive": "timeout=5"
+  },
+  "body": {
+    "Product": {
+      "name": "Test GJMCKygofr",
+      "amount": 456,
+      "price": 64245,
+      "manufacturer": "Microsoft",
+      "createdOn": "2026-04-22T22:39:21.000Z",
+      "notes": "Notes FTshHEQHEw",
+      "_id": "69e94e19a15039fe15c75e05"
+    },
+    "IsSuccess": true,
+    "ErrorMessage": null
+  }
+}

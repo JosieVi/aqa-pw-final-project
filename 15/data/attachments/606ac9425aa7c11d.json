@@ -1,0 +1,26 @@
+{
+  "headers": {
+    "x-powered-by": "Express",
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "Authorization,X-User-Name",
+    "content-type": "application/json; charset=utf-8",
+    "content-length": "226",
+    "etag": "W/\"e2-4DDIyQTpDr0Ymjz0RjcqWdZIjv4\"",
+    "date": "Wed, 22 Apr 2026 22:39:31 GMT",
+    "connection": "keep-alive",
+    "keep-alive": "timeout=5"
+  },
+  "body": {
+    "Product": {
+      "name": "Test TkvEBMdHTC",
+      "amount": 559,
+      "price": 37305,
+      "manufacturer": "Samsung",
+      "createdOn": "2026-04-22T22:39:31.000Z",
+      "notes": "Notes KefcNOVjyX",
+      "_id": "69e94e23a15039fe15c7742f"
+    },
+    "IsSuccess": true,
+    "ErrorMessage": null
+  }
+}

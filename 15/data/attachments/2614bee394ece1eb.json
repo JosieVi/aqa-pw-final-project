@@ -1,0 +1,26 @@
+{
+  "headers": {
+    "x-powered-by": "Express",
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "Authorization,X-User-Name",
+    "content-type": "application/json; charset=utf-8",
+    "content-length": "226",
+    "etag": "W/\"e2-0sTvm7TE2v9BYIYRHHTuNNv4QXk\"",
+    "date": "Wed, 22 Apr 2026 22:39:23 GMT",
+    "connection": "keep-alive",
+    "keep-alive": "timeout=5"
+  },
+  "body": {
+    "Product": {
+      "name": "Test CLteBIUtdu",
+      "amount": 334,
+      "price": 73886,
+      "manufacturer": "Samsung",
+      "createdOn": "2026-04-22T22:39:23.000Z",
+      "notes": "Notes RAQrgDEfUb",
+      "_id": "69e94e1ba15039fe15c76339"
+    },
+    "IsSuccess": true,
+    "ErrorMessage": null
+  }
+}

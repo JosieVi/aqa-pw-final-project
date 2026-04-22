@@ -1,0 +1,30 @@
+{
+  "headers": {
+    "x-powered-by": "Express",
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "Authorization,X-User-Name",
+    "content-type": "application/json; charset=utf-8",
+    "content-length": "627",
+    "etag": "W/\"273-ZqXpC5lo0cud8QFWuAdJzbbxaGU\"",
+    "date": "Wed, 22 Apr 2026 22:39:18 GMT",
+    "connection": "keep-alive",
+    "keep-alive": "timeout=5"
+  },
+  "body": {
+    "Customer": {
+      "email": "test1776897558266_OKNA@example.com",
+      "name": "test XcIcSANcMlFuCSuEcRAinWadphzflVRAnyc",
+      "country": "Germany",
+      "city": "testCity hTfNaqAmXKo",
+      "street": "testStreet cf0sEABBuiAdt7gp1cJjjgOgMbSiZ",
+      "house": 582,
+      "flat": 5733,
+      "phone": "+9565324441",
+      "createdOn": "2026-04-22T22:39:18.000Z",
+      "notes": "Notes XavtzwoJpXEMiGNRrWYAToIyuucwJWNhglybIkQVnJTGEUbpXbvMjjlxatIrLlukgxcGSEXXofSebkWmbUYDtxnlzHKMluLOAljNzaGqdAByvfEMJKflqemUqKFDjtrfdyzOuxzLeWpBhwSxfzARfppYisbDyARXzGUuucdpzWJksOlaWzMuqyGJYyFxYzPvGBgQWHpxXQjNpLFDZXRqPRpUCQvlsUGTzqRojbYCIeGkMqSOyFMq",
+      "_id": "69e94e16a15039fe15c757ed"
+    },
+    "IsSuccess": true,
+    "ErrorMessage": null
+  }
+}

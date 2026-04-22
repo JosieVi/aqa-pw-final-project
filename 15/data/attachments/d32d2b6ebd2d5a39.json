@@ -1,0 +1,26 @@
+{
+  "headers": {
+    "x-powered-by": "Express",
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "Authorization,X-User-Name",
+    "content-type": "application/json; charset=utf-8",
+    "content-length": "226",
+    "etag": "W/\"e2-a6GiX0DIw9f0P6wJ94wEfxonipE\"",
+    "date": "Wed, 22 Apr 2026 22:39:05 GMT",
+    "connection": "keep-alive",
+    "keep-alive": "timeout=5"
+  },
+  "body": {
+    "Product": {
+      "name": "Test rqpMAXTeQf",
+      "amount": 331,
+      "price": 13458,
+      "manufacturer": "Samsung",
+      "createdOn": "2026-04-22T22:39:05.000Z",
+      "notes": "Notes vVzCteKVBA",
+      "_id": "69e94e09a15039fe15c74837"
+    },
+    "IsSuccess": true,
+    "ErrorMessage": null
+  }
+}

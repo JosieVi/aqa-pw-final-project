@@ -1,0 +1,26 @@
+{
+  "headers": {
+    "x-powered-by": "Express",
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "Authorization,X-User-Name",
+    "content-type": "application/json; charset=utf-8",
+    "content-length": "222",
+    "etag": "W/\"de-phWq/3vqqP8WYW164qJqlj9556A\"",
+    "date": "Wed, 22 Apr 2026 22:39:29 GMT",
+    "connection": "keep-alive",
+    "keep-alive": "timeout=5"
+  },
+  "body": {
+    "Product": {
+      "name": "Test jYzsQCIbSc",
+      "amount": 79,
+      "price": 2093,
+      "manufacturer": "Apple",
+      "createdOn": "2026-04-22T22:39:29.000Z",
+      "notes": "Notes ZsebjqdEdo",
+      "_id": "69e94e21a15039fe15c7715a"
+    },
+    "IsSuccess": true,
+    "ErrorMessage": null
+  }
+}

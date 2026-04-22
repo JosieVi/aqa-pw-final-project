@@ -1,0 +1,26 @@
+{
+  "headers": {
+    "x-powered-by": "Express",
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "Authorization,X-User-Name",
+    "content-type": "application/json; charset=utf-8",
+    "content-length": "223",
+    "etag": "W/\"df-xmES3J5Tq0H8YZgMxfNkmEev4QE\"",
+    "date": "Wed, 22 Apr 2026 22:38:59 GMT",
+    "connection": "keep-alive",
+    "keep-alive": "timeout=5"
+  },
+  "body": {
+    "Product": {
+      "name": "Test bDzLVtLKAa",
+      "amount": 856,
+      "price": 49529,
+      "manufacturer": "Sony",
+      "createdOn": "2026-04-22T22:38:59.000Z",
+      "notes": "Notes wfDIhQlawU",
+      "_id": "69e94e03a15039fe15c74337"
+    },
+    "IsSuccess": true,
+    "ErrorMessage": null
+  }
+}

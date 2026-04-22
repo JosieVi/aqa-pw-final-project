@@ -1,0 +1,26 @@
+{
+  "headers": {
+    "x-powered-by": "Express",
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "Authorization,X-User-Name",
+    "content-type": "application/json; charset=utf-8",
+    "content-length": "223",
+    "etag": "W/\"df-egclyaZxRP4ZiANlF567rmjBzoI\"",
+    "date": "Wed, 22 Apr 2026 22:39:23 GMT",
+    "connection": "keep-alive",
+    "keep-alive": "timeout=5"
+  },
+  "body": {
+    "Product": {
+      "name": "Test EvCtLGXXIe",
+      "amount": 733,
+      "price": 47860,
+      "manufacturer": "Sony",
+      "createdOn": "2026-04-22T22:39:23.000Z",
+      "notes": "Notes bTknJSOjQJ",
+      "_id": "69e94e1ba15039fe15c760de"
+    },
+    "IsSuccess": true,
+    "ErrorMessage": null
+  }
+}

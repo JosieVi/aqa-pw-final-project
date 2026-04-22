@@ -1,0 +1,26 @@
+{
+  "headers": {
+    "x-powered-by": "Express",
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "Authorization,X-User-Name",
+    "content-type": "application/json; charset=utf-8",
+    "content-length": "224",
+    "etag": "W/\"e0-sZ4jyfZDSUvnJSKnQDN0eHNhvPA\"",
+    "date": "Wed, 22 Apr 2026 22:38:43 GMT",
+    "connection": "keep-alive",
+    "keep-alive": "timeout=5"
+  },
+  "body": {
+    "Product": {
+      "name": "Test SpomrSBUVu",
+      "amount": 824,
+      "price": 30346,
+      "manufacturer": "Apple",
+      "createdOn": "2026-04-22T22:38:43.000Z",
+      "notes": "Notes OGVodKsTdq",
+      "_id": "69e94df3a15039fe15c73b1c"
+    },
+    "IsSuccess": true,
+    "ErrorMessage": null
+  }
+}

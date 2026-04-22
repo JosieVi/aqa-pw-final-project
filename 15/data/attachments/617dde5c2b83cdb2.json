@@ -1,0 +1,67 @@
+{
+  "headers": {
+    "x-powered-by": "Express",
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "Authorization,X-User-Name",
+    "content-type": "application/json; charset=utf-8",
+    "content-length": "1902",
+    "etag": "W/\"76e-fWnpm2k0MoRSR0Sh6AMLMeknH9I\"",
+    "date": "Wed, 22 Apr 2026 22:39:18 GMT",
+    "connection": "keep-alive",
+    "keep-alive": "timeout=5"
+  },
+  "body": {
+    "Customers": [
+      {
+        "_id": "69e94e16a15039fe15c758ff",
+        "email": "test1776897558963_VPQA@example.com",
+        "name": "test mDSTjTHZzaanhwrpSjzwGGEKxrXRENdQFnc",
+        "country": "Germany",
+        "city": "testCity PLMPCralVmQ",
+        "street": "testStreet fxeECucwvNzdPuUrsHSs3Lq7ys91v",
+        "house": 304,
+        "flat": 6943,
+        "phone": "+1460827861",
+        "createdOn": "2026-04-22T22:39:18.000Z",
+        "notes": "Notes fcTHUlHDgoVvQcQeXBlFFGqpokiDImANXEWKtmRjAmYPSIQVoTbdpCEEbuVXQwmcBVhbRAUbvwhkiHxYdCwzashnorGtPMOhqfmdoQJKoNFVSjnXeNssWIlfHhSzCqNezqPprrZLTlBShcppgiMdYZYnvJCRiPdAJNfFxpOBdPChvJdjPBtjSZTozVlJPebWAmNfqBccfaHfYzygMCiTliUWoHHjroKKuzUCsOUJupIwocWccECr"
+      },
+      {
+        "_id": "69e94de7a15039fe15c7350d",
+        "email": "test1776897511591_NSNG@example.com",
+        "name": "test EJRFepubDAfphMEhsWxhNFddrlPFFfZbmuf",
+        "country": "Great Britain",
+        "city": "testCity bMfvvOattUk",
+        "street": "testStreet IG9kdcMehfroOVoNbj2Hlt1RWAqMy",
+        "house": 904,
+        "flat": 7899,
+        "phone": "+8189513577",
+        "createdOn": "2026-04-22T22:38:31.000Z",
+        "notes": "Notes qJzaCmUfSoHpbEVenzrGzyPtVDZLHAjTTNpgXKpDmrXIGkfQcjJbmWWsqqoWEneEBZnCtlUOUImiDJioTYpSRvFZPehNFiGrOuDNPTLEuFNLcTlrIlUxxExzxPlGuawcPOhKXpEIOXXhePKomHagNDePOCQHUmEysiRyoGADYMxrXQWrkbrGXrDNXcFdQtkwbutLIRUMuvUdOQRTWaFczoeHQOMKMwPEWoWBgkNHtyKpgoWuMGhf"
+      },
+      {
+        "_id": "69e94de5a15039fe15c73445",
+        "email": "test1776897509543_LCUQ@example.com",
+        "name": "test nCUensdDPWKHrLSUEeWFxriWOUTUEwJyOXY",
+        "country": "Ukraine",
+        "city": "testCity ofLefOcUSMJ",
+        "street": "testStreet LNCNkVxitKDSqJHj8jxyqEvBMGJWI",
+        "house": 747,
+        "flat": 5418,
+        "phone": "+8223653218",
+        "createdOn": "2026-04-22T22:38:29.000Z",
+        "notes": "Notes bKcljvnDAlbMLkzEatZECBInxQeHwWaTnFlJSXmmGHAClkrjnDpRMGYQTuEWArcWKWwOnKuZVEfqdskYyaLdiApZZBSuhlATOsDdhwexQuxzRDIhlggfYHiQrZVgIfRiOglvGqkYUzKcxmmkEYGxPqmeEphnzPmvTXXybybeIZIADDbUyDbRAWAdQXGPOzVufHQtmkENgfqUUbDPZjmrryJMnChABVSBUzmwjnJMZHSBlDBgygmJ"
+      }
+    ],
+    "total": 3,
+    "page": 1,
+    "limit": 10,
+    "search": "",
+    "country": [],
+    "sorting": {
+      "sortField": "createdOn",
+      "sortOrder": "desc"
+    },
+    "IsSuccess": true,
+    "ErrorMessage": null
+  }
+}

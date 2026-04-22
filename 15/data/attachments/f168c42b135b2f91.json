@@ -1,0 +1,26 @@
+{
+  "headers": {
+    "x-powered-by": "Express",
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "Authorization,X-User-Name",
+    "content-type": "application/json; charset=utf-8",
+    "content-length": "224",
+    "etag": "W/\"e0-mid2R3XlcYLDB5DNtW+mv2WK4bY\"",
+    "date": "Wed, 22 Apr 2026 22:39:09 GMT",
+    "connection": "keep-alive",
+    "keep-alive": "timeout=5"
+  },
+  "body": {
+    "Product": {
+      "name": "Test xTUiafnlRN",
+      "amount": 639,
+      "price": 92738,
+      "manufacturer": "Tesla",
+      "createdOn": "2026-04-22T22:39:09.000Z",
+      "notes": "Notes PKwJzLCFyM",
+      "_id": "69e94e0da15039fe15c74dde"
+    },
+    "IsSuccess": true,
+    "ErrorMessage": null
+  }
+}

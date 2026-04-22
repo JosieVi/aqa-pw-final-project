@@ -1,0 +1,26 @@
+{
+  "headers": {
+    "x-powered-by": "Express",
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "Authorization,X-User-Name",
+    "content-type": "application/json; charset=utf-8",
+    "content-length": "225",
+    "etag": "W/\"e1-hCZ1Sy8UuK3jOfi5bh/HFxx5l3I\"",
+    "date": "Wed, 22 Apr 2026 22:38:37 GMT",
+    "connection": "keep-alive",
+    "keep-alive": "timeout=5"
+  },
+  "body": {
+    "Product": {
+      "name": "Test lZtACTbWKa",
+      "amount": 408,
+      "price": 73812,
+      "manufacturer": "Amazon",
+      "createdOn": "2026-04-22T22:38:37.000Z",
+      "notes": "Notes NeCCnswMFN",
+      "_id": "69e94deda15039fe15c737c9"
+    },
+    "IsSuccess": true,
+    "ErrorMessage": null
+  }
+}

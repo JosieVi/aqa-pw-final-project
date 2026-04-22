@@ -1,0 +1,82 @@
+{
+  "headers": {
+    "x-powered-by": "Express",
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "Authorization,X-User-Name",
+    "content-type": "application/json; charset=utf-8",
+    "content-length": "1495",
+    "etag": "W/\"5d7-guMkjoZKTYV5jXhk/syGdD3JRbk\"",
+    "date": "Wed, 22 Apr 2026 22:39:22 GMT",
+    "connection": "keep-alive",
+    "keep-alive": "timeout=5"
+  },
+  "body": {
+    "Order": {
+      "_id": "69e94e1aa15039fe15c75ff2",
+      "status": "Draft",
+      "customer": {
+        "_id": "69e94e1aa15039fe15c75fdc",
+        "email": "test1776897562593_TAWA@example.com",
+        "name": "test PdUWIDGNYnjMKcwhlESZwFwXFUJWSLhzmsn",
+        "country": "Russia",
+        "city": "testCity mpoGSuxYGvv",
+        "street": "testStreet BoelYYDYFXelePCRlMi7k0t3FUhBn",
+        "house": 551,
+        "flat": 4516,
+        "phone": "+5663887036",
+        "createdOn": "2026-04-22T22:39:22.000Z",
+        "notes": "Notes MlQDFycVkxfAiKRBVEceamSmIeUIwSdJeCfauKzzyYZEqwAqIfliBzTqtNKIGmwiMFUfwPWbdbqyziRfgomhcAttZfgzaEuYwpLAtQcOnHVYwcNGWjbcPXFVLwGQzGApeGiwWMGnoeZukFpqaFnZzgaxyryShdccZvvUvjYHbDoyGoHtKnFEOvoKiURwacPPnOuloTIJLvdPmjYRGzHCSMWIyTSroKoYQFQDnscywQOcHUWFUmDt"
+      },
+      "products": [
+        {
+          "_id": "69e94e1aa15039fe15c75fe5",
+          "name": "Test qXwCgtfdbf",
+          "amount": 675,
+          "price": 63502,
+          "manufacturer": "Google",
+          "notes": "Notes LHoadXMfYj",
+          "received": false
+        }
+      ],
+      "delivery": null,
+      "total_price": 63502,
+      "createdOn": "2026-04-22T22:39:22.000Z",
+      "comments": [],
+      "history": [
+        {
+          "status": "Draft",
+          "customer": "69e94e1aa15039fe15c75fdc",
+          "products": [
+            {
+              "_id": "69e94e1aa15039fe15c75fe5",
+              "name": "Test qXwCgtfdbf",
+              "amount": 675,
+              "price": 63502,
+              "manufacturer": "Google",
+              "notes": "Notes LHoadXMfYj",
+              "received": false
+            }
+          ],
+          "total_price": 63502,
+          "delivery": null,
+          "changedOn": "2026-04-22T22:39:22.000Z",
+          "action": "Order created",
+          "performer": {
+            "_id": "69e94d91a15039fe15c72d42",
+            "username": "admin@example.com",
+            "firstName": "Admin",
+            "lastName": "Admin",
+            "roles": [
+              "ADMIN"
+            ],
+            "createdOn": "2026/04/22 22:37:05"
+          },
+          "assignedManager": null
+        }
+      ],
+      "assignedManager": null
+    },
+    "IsSuccess": true,
+    "ErrorMessage": null
+  }
+}

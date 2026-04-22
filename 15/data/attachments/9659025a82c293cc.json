@@ -1,0 +1,26 @@
+{
+  "headers": {
+    "x-powered-by": "Express",
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "Authorization,X-User-Name",
+    "content-type": "application/json; charset=utf-8",
+    "content-length": "224",
+    "etag": "W/\"e0-RU7f0G35Jd+39PEsrGduOMMzspc\"",
+    "date": "Wed, 22 Apr 2026 22:39:07 GMT",
+    "connection": "keep-alive",
+    "keep-alive": "timeout=5"
+  },
+  "body": {
+    "Product": {
+      "name": "Test GVDWnyuiQn",
+      "amount": 664,
+      "price": 52981,
+      "manufacturer": "Apple",
+      "createdOn": "2026-04-22T22:39:07.000Z",
+      "notes": "Notes fnIqYbnxcl",
+      "_id": "69e94e0ba15039fe15c74b51"
+    },
+    "IsSuccess": true,
+    "ErrorMessage": null
+  }
+}

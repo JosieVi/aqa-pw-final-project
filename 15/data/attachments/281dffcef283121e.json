@@ -1,0 +1,26 @@
+{
+  "headers": {
+    "x-powered-by": "Express",
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "Authorization,X-User-Name",
+    "content-type": "application/json; charset=utf-8",
+    "content-length": "227",
+    "etag": "W/\"e3-mLYK2mdKTXkLaPvL/X2eNgiHr3U\"",
+    "date": "Wed, 22 Apr 2026 22:39:23 GMT",
+    "connection": "keep-alive",
+    "keep-alive": "timeout=5"
+  },
+  "body": {
+    "Product": {
+      "name": "Test HtZcbJrbYt",
+      "amount": 87,
+      "price": 65626,
+      "manufacturer": "Microsoft",
+      "createdOn": "2026-04-22T22:39:23.000Z",
+      "notes": "Notes NzpnbWpdep",
+      "_id": "69e94e1ba15039fe15c76257"
+    },
+    "IsSuccess": true,
+    "ErrorMessage": null
+  }
+}

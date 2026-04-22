@@ -1,0 +1,26 @@
+{
+  "headers": {
+    "x-powered-by": "Express",
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "Authorization,X-User-Name",
+    "content-type": "application/json; charset=utf-8",
+    "content-length": "226",
+    "etag": "W/\"e2-zNc/oVQsqSji7zvsIm1wVqDPMS8\"",
+    "date": "Wed, 22 Apr 2026 22:39:23 GMT",
+    "connection": "keep-alive",
+    "keep-alive": "timeout=5"
+  },
+  "body": {
+    "Product": {
+      "name": "Test NhuTcvWgid",
+      "amount": 145,
+      "price": 12392,
+      "manufacturer": "Samsung",
+      "createdOn": "2026-04-22T22:39:23.000Z",
+      "notes": "Notes weEWaTZJyi",
+      "_id": "69e94e1ba15039fe15c762ac"
+    },
+    "IsSuccess": true,
+    "ErrorMessage": null
+  }
+}
