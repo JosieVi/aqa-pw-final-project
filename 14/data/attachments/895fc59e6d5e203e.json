@@ -1,0 +1,26 @@
+{
+  "headers": {
+    "x-powered-by": "Express",
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "Authorization,X-User-Name",
+    "content-type": "application/json; charset=utf-8",
+    "content-length": "223",
+    "etag": "W/\"df-O8KVXhuI3TppddQZxt4ir+spD0A\"",
+    "date": "Wed, 22 Apr 2026 22:26:19 GMT",
+    "connection": "keep-alive",
+    "keep-alive": "timeout=5"
+  },
+  "body": {
+    "Product": {
+      "name": "Test kaxTmrqyeA",
+      "amount": 802,
+      "price": 83935,
+      "manufacturer": "Sony",
+      "createdOn": "2026-04-22T22:26:19.000Z",
+      "notes": "Notes mGMffxmakL",
+      "_id": "69e94b0bb444c6ddb6ca2294"
+    },
+    "IsSuccess": true,
+    "ErrorMessage": null
+  }
+}

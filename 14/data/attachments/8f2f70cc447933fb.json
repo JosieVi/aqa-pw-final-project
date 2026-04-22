@@ -1,0 +1,26 @@
+{
+  "headers": {
+    "x-powered-by": "Express",
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "Authorization,X-User-Name",
+    "content-type": "application/json; charset=utf-8",
+    "content-length": "223",
+    "etag": "W/\"df-F2nq9KMVMnDqFSArDK9nmd26T3s\"",
+    "date": "Wed, 22 Apr 2026 22:26:21 GMT",
+    "connection": "keep-alive",
+    "keep-alive": "timeout=5"
+  },
+  "body": {
+    "Product": {
+      "name": "Test MTdPTjYtwb",
+      "amount": 11,
+      "price": 50428,
+      "manufacturer": "Tesla",
+      "createdOn": "2026-04-22T22:26:21.000Z",
+      "notes": "Notes TkpEbEZebT",
+      "_id": "69e94b0db444c6ddb6ca292d"
+    },
+    "IsSuccess": true,
+    "ErrorMessage": null
+  }
+}

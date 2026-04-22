@@ -1,0 +1,26 @@
+{
+  "headers": {
+    "x-powered-by": "Express",
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "Authorization,X-User-Name",
+    "content-type": "application/json; charset=utf-8",
+    "content-length": "226",
+    "etag": "W/\"e2-gQ3ZHO6MAUzcsFoB+Qe+0cgub00\"",
+    "date": "Wed, 22 Apr 2026 22:26:17 GMT",
+    "connection": "keep-alive",
+    "keep-alive": "timeout=5"
+  },
+  "body": {
+    "Product": {
+      "name": "Test chEMdyDUEQ",
+      "amount": 600,
+      "price": 13352,
+      "manufacturer": "Samsung",
+      "createdOn": "2026-04-22T22:26:17.000Z",
+      "notes": "Notes sgWWAthOXP",
+      "_id": "69e94b09b444c6ddb6ca1eec"
+    },
+    "IsSuccess": true,
+    "ErrorMessage": null
+  }
+}

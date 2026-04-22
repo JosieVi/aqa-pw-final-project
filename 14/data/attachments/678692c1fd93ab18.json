@@ -1,0 +1,26 @@
+{
+  "headers": {
+    "x-powered-by": "Express",
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "Authorization,X-User-Name",
+    "content-type": "application/json; charset=utf-8",
+    "content-length": "224",
+    "etag": "W/\"e0-PugE64n5pou3Dof0n6oht4FwJPw\"",
+    "date": "Wed, 22 Apr 2026 22:26:16 GMT",
+    "connection": "keep-alive",
+    "keep-alive": "timeout=5"
+  },
+  "body": {
+    "Product": {
+      "name": "Test DGERYzlVin",
+      "amount": 15,
+      "price": 28164,
+      "manufacturer": "Google",
+      "createdOn": "2026-04-22T22:26:16.000Z",
+      "notes": "Notes chlMFLtaTU",
+      "_id": "69e94b08b444c6ddb6ca1cad"
+    },
+    "IsSuccess": true,
+    "ErrorMessage": null
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "headers": {
+    "x-powered-by": "Express",
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "Authorization,X-User-Name",
+    "content-type": "application/json; charset=utf-8",
+    "content-length": "227",
+    "etag": "W/\"e3-N8ddcE04ZEh5DnCzECTlYmugvqI\"",
+    "date": "Wed, 22 Apr 2026 22:26:20 GMT",
+    "connection": "keep-alive",
+    "keep-alive": "timeout=5"
+  },
+  "body": {
+    "Product": {
+      "name": "Test MAFIFrMTSX",
+      "amount": 423,
+      "price": 3025,
+      "manufacturer": "Microsoft",
+      "createdOn": "2026-04-22T22:26:20.000Z",
+      "notes": "Notes glqLstfbPu",
+      "_id": "69e94b0cb444c6ddb6ca260d"
+    },
+    "IsSuccess": true,
+    "ErrorMessage": null
+  }
+}

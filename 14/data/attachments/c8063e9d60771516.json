@@ -1,0 +1,26 @@
+{
+  "headers": {
+    "x-powered-by": "Express",
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "Authorization,X-User-Name",
+    "content-type": "application/json; charset=utf-8",
+    "content-length": "225",
+    "etag": "W/\"e1-L72CFhgRuUcx3gIuTZD+0mX1fZg\"",
+    "date": "Wed, 22 Apr 2026 22:26:22 GMT",
+    "connection": "keep-alive",
+    "keep-alive": "timeout=5"
+  },
+  "body": {
+    "Product": {
+      "name": "Test irXlYBPBla",
+      "amount": 761,
+      "price": 83816,
+      "manufacturer": "Amazon",
+      "createdOn": "2026-04-22T22:26:22.000Z",
+      "notes": "Notes XVjPVJVaEg",
+      "_id": "69e94b0eb444c6ddb6ca2ac5"
+    },
+    "IsSuccess": true,
+    "ErrorMessage": null
+  }
+}

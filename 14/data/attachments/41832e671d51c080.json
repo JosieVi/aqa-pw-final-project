@@ -1,0 +1,26 @@
+{
+  "headers": {
+    "x-powered-by": "Express",
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "Authorization,X-User-Name",
+    "content-type": "application/json; charset=utf-8",
+    "content-length": "223",
+    "etag": "W/\"df-FznF/k9rgu49Nvu56FEKOf71CEc\"",
+    "date": "Wed, 22 Apr 2026 22:26:19 GMT",
+    "connection": "keep-alive",
+    "keep-alive": "timeout=5"
+  },
+  "body": {
+    "Product": {
+      "name": "Test ZsBCBREazb",
+      "amount": 98,
+      "price": 21214,
+      "manufacturer": "Apple",
+      "createdOn": "2026-04-22T22:26:19.000Z",
+      "notes": "Notes aWbBBsUMIL",
+      "_id": "69e94b0bb444c6ddb6ca23e1"
+    },
+    "IsSuccess": true,
+    "ErrorMessage": null
+  }
+}

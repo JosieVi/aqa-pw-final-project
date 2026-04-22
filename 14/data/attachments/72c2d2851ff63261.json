@@ -1,0 +1,26 @@
+{
+  "headers": {
+    "x-powered-by": "Express",
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "Authorization,X-User-Name",
+    "content-type": "application/json; charset=utf-8",
+    "content-length": "222",
+    "etag": "W/\"de-/R+Y234T6W11wDjegMSgN+GuyxA\"",
+    "date": "Wed, 22 Apr 2026 22:26:19 GMT",
+    "connection": "keep-alive",
+    "keep-alive": "timeout=5"
+  },
+  "body": {
+    "Product": {
+      "name": "Test tPAfeODbao",
+      "amount": 652,
+      "price": 1954,
+      "manufacturer": "Sony",
+      "createdOn": "2026-04-22T22:26:19.000Z",
+      "notes": "Notes OPIcpFjkmh",
+      "_id": "69e94b0bb444c6ddb6ca23c1"
+    },
+    "IsSuccess": true,
+    "ErrorMessage": null
+  }
+}

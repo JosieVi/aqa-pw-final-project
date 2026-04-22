@@ -1,0 +1,26 @@
+{
+  "headers": {
+    "x-powered-by": "Express",
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "Authorization,X-User-Name",
+    "content-type": "application/json; charset=utf-8",
+    "content-length": "226",
+    "etag": "W/\"e2-/1457s0Lg4n4eLUsAq215TY6SkQ\"",
+    "date": "Wed, 22 Apr 2026 22:26:25 GMT",
+    "connection": "keep-alive",
+    "keep-alive": "timeout=5"
+  },
+  "body": {
+    "Product": {
+      "name": "Test kkKYhDzPZN",
+      "amount": 440,
+      "price": 22950,
+      "manufacturer": "Samsung",
+      "createdOn": "2026-04-22T22:26:25.000Z",
+      "notes": "Notes MgehsigJzM",
+      "_id": "69e94b11b444c6ddb6ca2f1b"
+    },
+    "IsSuccess": true,
+    "ErrorMessage": null
+  }
+}

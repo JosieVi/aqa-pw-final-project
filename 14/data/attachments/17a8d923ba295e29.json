@@ -1,0 +1,88 @@
+{
+  "headers": {
+    "x-powered-by": "Express",
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "Authorization,X-User-Name",
+    "content-type": "application/json; charset=utf-8",
+    "content-length": "1606",
+    "etag": "W/\"646-vcAxF+SSAE42+xVpEvdE+9V84xw\"",
+    "date": "Wed, 22 Apr 2026 22:26:15 GMT",
+    "connection": "keep-alive",
+    "keep-alive": "timeout=5"
+  },
+  "body": {
+    "Order": {
+      "_id": "69e94b07b444c6ddb6ca1965",
+      "status": "Draft",
+      "customer": {
+        "_id": "69e94b07b444c6ddb6ca1954",
+        "email": "test1776896775119_YURH@example.com",
+        "name": "test aMgCBfxAVSpdaBBTebwEQXEAlUbUlSONCgk",
+        "country": "Belarus",
+        "city": "testCity jxRgmqDPVIo",
+        "street": "testStreet NO4k8a0Yo3NMbmIWNIGfjWOm8N2Fd",
+        "house": 964,
+        "flat": 6432,
+        "phone": "+6190452578",
+        "createdOn": "2026-04-22T22:26:15.000Z",
+        "notes": "Notes AytsLMehjnQQjKAUVymmpKNrEVVHxTPtnQMKXTresoeEbrcaQIrbqzOYKUkWwryBEBwCePbZeSbQwNdPufVXQuVtzpwNUCwLPHEzSCpfgCrxadcietqtgVXyKzIWASTEAnPWIEWNpfFAAHwHhADnEIUWAiYXvBjOHDPzAcmMScrxDAJtLZXHxQkbWTklrGUQIqMzuULYCPQbXMcJOcUxQExSsUFSEOrjkmthwuwssrrAqKoFxvRE"
+      },
+      "products": [
+        {
+          "_id": "69e94b07b444c6ddb6ca195d",
+          "name": "Test mwlAxdGSTS",
+          "amount": 977,
+          "price": 44641,
+          "manufacturer": "Microsoft",
+          "notes": "Notes xdgPapoByF",
+          "received": false
+        }
+      ],
+      "delivery": null,
+      "total_price": 44641,
+      "createdOn": "2026-04-22T22:26:15.000Z",
+      "comments": [
+        {
+          "text": "Notes AoAEoHuXGhuZiYd",
+          "createdOn": "2026-04-22T22:26:15.000Z",
+          "_id": "69e94b07b444c6ddb6ca1975"
+        }
+      ],
+      "history": [
+        {
+          "status": "Draft",
+          "customer": "69e94b07b444c6ddb6ca1954",
+          "products": [
+            {
+              "_id": "69e94b07b444c6ddb6ca195d",
+              "name": "Test mwlAxdGSTS",
+              "amount": 977,
+              "price": 44641,
+              "manufacturer": "Microsoft",
+              "notes": "Notes xdgPapoByF",
+              "received": false
+            }
+          ],
+          "total_price": 44641,
+          "delivery": null,
+          "changedOn": "2026-04-22T22:26:15.000Z",
+          "action": "Order created",
+          "performer": {
+            "_id": "69e94a8fb444c6ddb6c9e62a",
+            "username": "admin@example.com",
+            "firstName": "Admin",
+            "lastName": "Admin",
+            "roles": [
+              "ADMIN"
+            ],
+            "createdOn": "2026/04/22 22:24:15"
+          },
+          "assignedManager": null
+        }
+      ],
+      "assignedManager": null
+    },
+    "IsSuccess": true,
+    "ErrorMessage": null
+  }
+}

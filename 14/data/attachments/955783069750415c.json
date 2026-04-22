@@ -1,0 +1,26 @@
+{
+  "headers": {
+    "x-powered-by": "Express",
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "Authorization,X-User-Name",
+    "content-type": "application/json; charset=utf-8",
+    "content-length": "224",
+    "etag": "W/\"e0-hFWH4OJtG3ptQL/26X3Ci4AwgbM\"",
+    "date": "Wed, 22 Apr 2026 22:26:24 GMT",
+    "connection": "keep-alive",
+    "keep-alive": "timeout=5"
+  },
+  "body": {
+    "Product": {
+      "name": "Test NuMbQFEbNS",
+      "amount": 897,
+      "price": 21586,
+      "manufacturer": "Apple",
+      "createdOn": "2026-04-22T22:26:24.000Z",
+      "notes": "Notes KeMLtfcHrC",
+      "_id": "69e94b10b444c6ddb6ca2e30"
+    },
+    "IsSuccess": true,
+    "ErrorMessage": null
+  }
+}

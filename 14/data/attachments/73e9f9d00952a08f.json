@@ -1,0 +1,26 @@
+{
+  "headers": {
+    "x-powered-by": "Express",
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "Authorization,X-User-Name",
+    "content-type": "application/json; charset=utf-8",
+    "content-length": "225",
+    "etag": "W/\"e1-yoyMySIElJSnWZEEQdFl4UxIwC4\"",
+    "date": "Wed, 22 Apr 2026 22:26:18 GMT",
+    "connection": "keep-alive",
+    "keep-alive": "timeout=5"
+  },
+  "body": {
+    "Product": {
+      "name": "Test aeXcdHMZWb",
+      "amount": 633,
+      "price": 98003,
+      "manufacturer": "Google",
+      "createdOn": "2026-04-22T22:26:18.000Z",
+      "notes": "Notes jKIuBRKsSV",
+      "_id": "69e94b0ab444c6ddb6ca21ea"
+    },
+    "IsSuccess": true,
+    "ErrorMessage": null
+  }
+}

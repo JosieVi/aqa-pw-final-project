@@ -1,0 +1,26 @@
+{
+  "headers": {
+    "x-powered-by": "Express",
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "Authorization,X-User-Name",
+    "content-type": "application/json; charset=utf-8",
+    "content-length": "223",
+    "etag": "W/\"df-iJKlEaz7QK93nbkZCuDI7fIG/d4\"",
+    "date": "Wed, 22 Apr 2026 22:26:18 GMT",
+    "connection": "keep-alive",
+    "keep-alive": "timeout=5"
+  },
+  "body": {
+    "Product": {
+      "name": "Test eCnyqyPGFk",
+      "amount": 60,
+      "price": 9080,
+      "manufacturer": "Xiaomi",
+      "createdOn": "2026-04-22T22:26:18.000Z",
+      "notes": "Notes kkQBxcknNB",
+      "_id": "69e94b0ab444c6ddb6ca213f"
+    },
+    "IsSuccess": true,
+    "ErrorMessage": null
+  }
+}
