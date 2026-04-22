@@ -3,20 +3,18 @@ import * as dotenv from 'dotenv';
 import { apiConfig } from './src/config/api-config';
 import { SALES_PORTAL_URL } from './src/config/environment';
 import path from 'path';
-import fs from 'fs';
-import { rimraf } from 'rimraf';
 
 dotenv.config();
 
 export const STORAGE_STATE = path.join(__dirname, 'src/.auth/user.json');
 
-if (!process.env.SKIP_CLEAN) {
-  const allurePath = path.resolve(__dirname, 'allure-results');
+// if (!process.env.SKIP_CLEAN) {
+//   const allurePath = path.resolve(__dirname, 'allure-results');
 
-  rimraf.sync(allurePath);
+//   rimraf.sync(allurePath);
 
-  fs.mkdirSync(allurePath, { recursive: true });
-}
+//   fs.mkdirSync(allurePath, { recursive: true });
+// }
 
 export default defineConfig({
   workers: process.env.CI ? 2 : 4,

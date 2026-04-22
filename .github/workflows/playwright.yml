@@ -51,7 +51,9 @@ jobs:
 
       # 7. Прогон тестов
       - name: Run Playwright tests
-        run: npx playwright test
+        run: |
+          rm -rf allure-results # Очистка перед стартом
+          npx playwright test
         env:
           # Передаем URL фронтенда в тесты (берем из .env или хардкодим)
           BASE_URL: http://localhost:8585
