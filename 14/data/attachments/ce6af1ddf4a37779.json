@@ -1,0 +1,17 @@
+{
+  "headers": {
+    "x-powered-by": "Express",
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "Authorization,X-User-Name",
+    "content-type": "application/json; charset=utf-8",
+    "content-length": "108",
+    "etag": "W/\"6c-2GtS8fe4eIhf1Z5wrsqgM7DtivY\"",
+    "date": "Wed, 22 Apr 2026 22:13:36 GMT",
+    "connection": "keep-alive",
+    "keep-alive": "timeout=5"
+  },
+  "body": {
+    "IsSuccess": false,
+    "ErrorMessage": "Customer with email 'test1776896016900_CVXA@example.com' already exists"
+  }
+}

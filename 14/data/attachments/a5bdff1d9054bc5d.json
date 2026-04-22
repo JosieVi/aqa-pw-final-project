@@ -1,0 +1,26 @@
+{
+  "headers": {
+    "x-powered-by": "Express",
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "Authorization,X-User-Name",
+    "content-type": "application/json; charset=utf-8",
+    "content-length": "224",
+    "etag": "W/\"e0-xPNPoIV7+ZGMy/E9OQcACm8KByQ\"",
+    "date": "Wed, 22 Apr 2026 22:13:41 GMT",
+    "connection": "keep-alive",
+    "keep-alive": "timeout=5"
+  },
+  "body": {
+    "Product": {
+      "name": "Test RImbUSFXUM",
+      "amount": 683,
+      "price": 24291,
+      "manufacturer": "Tesla",
+      "createdOn": "2026-04-22T22:13:41.000Z",
+      "notes": "Notes BuLGIrheLq",
+      "_id": "69e948157cdde5657b8d2785"
+    },
+    "IsSuccess": true,
+    "ErrorMessage": null
+  }
+}

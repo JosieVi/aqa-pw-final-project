@@ -1,0 +1,172 @@
+{
+  "headers": {
+    "x-powered-by": "Express",
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "Authorization,X-User-Name",
+    "content-type": "application/json; charset=utf-8",
+    "content-length": "3074",
+    "etag": "W/\"c02-fOXT+P0AUHhMNa+gnSK+oWTayTY\"",
+    "date": "Wed, 22 Apr 2026 22:13:39 GMT",
+    "connection": "keep-alive",
+    "keep-alive": "timeout=5"
+  },
+  "body": {
+    "Order": {
+      "_id": "69e948137cdde5657b8d2394",
+      "status": "In Process",
+      "customer": {
+        "_id": "69e948137cdde5657b8d237c",
+        "email": "test1776896019631_XFYE@example.com",
+        "name": "test VyoKwzSNFNrsigomnmounpGvjcsmJJOZNRa",
+        "country": "Great Britain",
+        "city": "testCity xnlivHzDfuX",
+        "street": "testStreet NljZ86U2HkTG2Hk9pdKWregoNAbJF",
+        "house": 993,
+        "flat": 461,
+        "phone": "+6992752421",
+        "createdOn": "2026-04-22T22:13:39.000Z",
+        "notes": "Notes cezCfTilDvQmaFREZmMcuapyGWzentPuHTDJmFPVCNSrXvkLwaPAxjvioQOFCOarGSYOVzyjdlEmBnYDugtBzmQQKWZazmTXpWekdACVBrgQRBgeushtPbrtObOzqgcUmyYHSVWjcQFTZOXOkJvepBonxNANXmntcEKcOkHcuIprpVxxjFdlCyALwlrTlwbQmthIBxkNjPICcOgjvIWajxnwUlrXYbRqmyFZEuMpjIEdyYxKyfuq"
+      },
+      "products": [
+        {
+          "_id": "69e948137cdde5657b8d2386",
+          "name": "Test OtrSKYSDLL",
+          "amount": 958,
+          "price": 94755,
+          "manufacturer": "Xiaomi",
+          "notes": "Notes OfmIGEenld",
+          "received": false
+        }
+      ],
+      "delivery": {
+        "address": {
+          "country": "Canada",
+          "city": "TestCity BwVRV",
+          "street": "TestStreet cQSeEIWFjW",
+          "house": 436,
+          "flat": 2060
+        },
+        "finalDate": "2026-06-09T00:00:00.000Z",
+        "condition": "Delivery"
+      },
+      "total_price": 94755,
+      "createdOn": "2026-04-22T22:13:39.000Z",
+      "comments": [],
+      "history": [
+        {
+          "status": "In Process",
+          "customer": "69e948137cdde5657b8d237c",
+          "products": [
+            {
+              "_id": "69e948137cdde5657b8d2386",
+              "name": "Test OtrSKYSDLL",
+              "amount": 958,
+              "price": 94755,
+              "manufacturer": "Xiaomi",
+              "notes": "Notes OfmIGEenld",
+              "received": false
+            }
+          ],
+          "total_price": 94755,
+          "delivery": {
+            "address": {
+              "country": "Canada",
+              "city": "TestCity BwVRV",
+              "street": "TestStreet cQSeEIWFjW",
+              "house": 436,
+              "flat": 2060
+            },
+            "finalDate": "2026-06-09T00:00:00.000Z",
+            "condition": "Delivery"
+          },
+          "changedOn": "2026-04-22T22:13:39.000Z",
+          "action": "Order processing started",
+          "performer": {
+            "_id": "69e9479a7cdde5657b8ceda2",
+            "username": "admin@example.com",
+            "firstName": "Admin",
+            "lastName": "Admin",
+            "roles": [
+              "ADMIN"
+            ],
+            "createdOn": "2026/04/22 22:11:38"
+          },
+          "assignedManager": null
+        },
+        {
+          "status": "Draft",
+          "customer": "69e948137cdde5657b8d237c",
+          "products": [
+            {
+              "_id": "69e948137cdde5657b8d2386",
+              "name": "Test OtrSKYSDLL",
+              "amount": 958,
+              "price": 94755,
+              "manufacturer": "Xiaomi",
+              "notes": "Notes OfmIGEenld",
+              "received": false
+            }
+          ],
+          "total_price": 94755,
+          "delivery": {
+            "address": {
+              "country": "Canada",
+              "city": "TestCity BwVRV",
+              "street": "TestStreet cQSeEIWFjW",
+              "house": 436,
+              "flat": 2060
+            },
+            "finalDate": "2026-06-09T00:00:00.000Z",
+            "condition": "Delivery"
+          },
+          "changedOn": "2026-04-22T22:13:39.000Z",
+          "action": "Delivery Scheduled",
+          "performer": {
+            "_id": "69e9479a7cdde5657b8ceda2",
+            "username": "admin@example.com",
+            "firstName": "Admin",
+            "lastName": "Admin",
+            "roles": [
+              "ADMIN"
+            ],
+            "createdOn": "2026/04/22 22:11:38"
+          },
+          "assignedManager": null
+        },
+        {
+          "status": "Draft",
+          "customer": "69e948137cdde5657b8d237c",
+          "products": [
+            {
+              "_id": "69e948137cdde5657b8d2386",
+              "name": "Test OtrSKYSDLL",
+              "amount": 958,
+              "price": 94755,
+              "manufacturer": "Xiaomi",
+              "notes": "Notes OfmIGEenld",
+              "received": false
+            }
+          ],
+          "total_price": 94755,
+          "delivery": null,
+          "changedOn": "2026-04-22T22:13:39.000Z",
+          "action": "Order created",
+          "performer": {
+            "_id": "69e9479a7cdde5657b8ceda2",
+            "username": "admin@example.com",
+            "firstName": "Admin",
+            "lastName": "Admin",
+            "roles": [
+              "ADMIN"
+            ],
+            "createdOn": "2026/04/22 22:11:38"
+          },
+          "assignedManager": null
+        }
+      ],
+      "assignedManager": null
+    },
+    "IsSuccess": true,
+    "ErrorMessage": null
+  }
+}

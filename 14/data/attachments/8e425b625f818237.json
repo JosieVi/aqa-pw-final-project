@@ -1,0 +1,26 @@
+{
+  "headers": {
+    "x-powered-by": "Express",
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "Authorization,X-User-Name",
+    "content-type": "application/json; charset=utf-8",
+    "content-length": "225",
+    "etag": "W/\"e1-RM/W6WRhnm16JLqbG/78UapXYc0\"",
+    "date": "Wed, 22 Apr 2026 22:13:40 GMT",
+    "connection": "keep-alive",
+    "keep-alive": "timeout=5"
+  },
+  "body": {
+    "Product": {
+      "name": "Test ZDvuvjLMWA",
+      "amount": 730,
+      "price": 82362,
+      "manufacturer": "Google",
+      "createdOn": "2026-04-22T22:13:40.000Z",
+      "notes": "Notes LAkMMrKohj",
+      "_id": "69e948147cdde5657b8d26b8"
+    },
+    "IsSuccess": true,
+    "ErrorMessage": null
+  }
+}

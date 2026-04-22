@@ -1,0 +1,26 @@
+{
+  "headers": {
+    "x-powered-by": "Express",
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "Authorization,X-User-Name",
+    "content-type": "application/json; charset=utf-8",
+    "content-length": "223",
+    "etag": "W/\"df-tSZXUl2z0I5qG0G66Rbvq1Dd7Ow\"",
+    "date": "Wed, 22 Apr 2026 22:13:45 GMT",
+    "connection": "keep-alive",
+    "keep-alive": "timeout=5"
+  },
+  "body": {
+    "Product": {
+      "name": "Test QgFskshrlQ",
+      "amount": 418,
+      "price": 36220,
+      "manufacturer": "Sony",
+      "createdOn": "2026-04-22T22:13:45.000Z",
+      "notes": "Notes zEdNUjmbcQ",
+      "_id": "69e948197cdde5657b8d3249"
+    },
+    "IsSuccess": true,
+    "ErrorMessage": null
+  }
+}

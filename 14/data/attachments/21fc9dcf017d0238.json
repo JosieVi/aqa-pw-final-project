@@ -1,0 +1,26 @@
+{
+  "headers": {
+    "x-powered-by": "Express",
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "Authorization,X-User-Name",
+    "content-type": "application/json; charset=utf-8",
+    "content-length": "226",
+    "etag": "W/\"e2-5QZ2qcHxPo4woiKiVla9DaeAd/Q\"",
+    "date": "Wed, 22 Apr 2026 22:13:44 GMT",
+    "connection": "keep-alive",
+    "keep-alive": "timeout=5"
+  },
+  "body": {
+    "Product": {
+      "name": "Test WegzDKgnYS",
+      "amount": 295,
+      "price": 69540,
+      "manufacturer": "Samsung",
+      "createdOn": "2026-04-22T22:13:44.000Z",
+      "notes": "Notes aauElKaATm",
+      "_id": "69e948187cdde5657b8d322e"
+    },
+    "IsSuccess": true,
+    "ErrorMessage": null
+  }
+}

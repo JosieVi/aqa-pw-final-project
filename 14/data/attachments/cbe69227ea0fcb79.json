@@ -1,0 +1,26 @@
+{
+  "headers": {
+    "x-powered-by": "Express",
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "Authorization,X-User-Name",
+    "content-type": "application/json; charset=utf-8",
+    "content-length": "226",
+    "etag": "W/\"e2-zZwh1+7To7Ukf5tKAD4J/YeNsBI\"",
+    "date": "Wed, 22 Apr 2026 22:13:33 GMT",
+    "connection": "keep-alive",
+    "keep-alive": "timeout=5"
+  },
+  "body": {
+    "Product": {
+      "name": "Test WBFWrCMWNK",
+      "amount": 567,
+      "price": 19300,
+      "manufacturer": "Samsung",
+      "createdOn": "2026-04-22T22:13:33.000Z",
+      "notes": "Notes lOtglDlcnQ",
+      "_id": "69e9480d7cdde5657b8d1509"
+    },
+    "IsSuccess": true,
+    "ErrorMessage": null
+  }
+}

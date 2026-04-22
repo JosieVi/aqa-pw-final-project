@@ -1,0 +1,26 @@
+{
+  "headers": {
+    "x-powered-by": "Express",
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "Authorization,X-User-Name",
+    "content-type": "application/json; charset=utf-8",
+    "content-length": "222",
+    "etag": "W/\"de-yeW8SIPqaxAj1PXkeizIJU5heqs\"",
+    "date": "Wed, 22 Apr 2026 22:13:43 GMT",
+    "connection": "keep-alive",
+    "keep-alive": "timeout=5"
+  },
+  "body": {
+    "Product": {
+      "name": "Test PLQGTSTLMP",
+      "amount": 87,
+      "price": 53307,
+      "manufacturer": "Sony",
+      "createdOn": "2026-04-22T22:13:43.000Z",
+      "notes": "Notes EyEfMLpbzD",
+      "_id": "69e948177cdde5657b8d2f49"
+    },
+    "IsSuccess": true,
+    "ErrorMessage": null
+  }
+}

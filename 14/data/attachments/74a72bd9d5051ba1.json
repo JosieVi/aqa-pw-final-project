@@ -1,0 +1,26 @@
+{
+  "headers": {
+    "x-powered-by": "Express",
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "Authorization,X-User-Name",
+    "content-type": "application/json; charset=utf-8",
+    "content-length": "224",
+    "etag": "W/\"e0-eJ443FqFl2K6YhzW6p9b4R9vydE\"",
+    "date": "Wed, 22 Apr 2026 22:13:40 GMT",
+    "connection": "keep-alive",
+    "keep-alive": "timeout=5"
+  },
+  "body": {
+    "Product": {
+      "name": "Test WmnPRvJcPj",
+      "amount": 830,
+      "price": 28575,
+      "manufacturer": "Apple",
+      "createdOn": "2026-04-22T22:13:40.000Z",
+      "notes": "Notes eUCRKTSJyr",
+      "_id": "69e948147cdde5657b8d26bc"
+    },
+    "IsSuccess": true,
+    "ErrorMessage": null
+  }
+}

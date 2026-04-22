@@ -1,0 +1,26 @@
+{
+  "headers": {
+    "x-powered-by": "Express",
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "Authorization,X-User-Name",
+    "content-type": "application/json; charset=utf-8",
+    "content-length": "225",
+    "etag": "W/\"e1-FhDF/WdBQJacbPtA/pvQWK8ObC4\"",
+    "date": "Wed, 22 Apr 2026 22:13:37 GMT",
+    "connection": "keep-alive",
+    "keep-alive": "timeout=5"
+  },
+  "body": {
+    "Product": {
+      "name": "Test pyZkGjAflG",
+      "amount": 806,
+      "price": 66710,
+      "manufacturer": "Amazon",
+      "createdOn": "2026-04-22T22:13:37.000Z",
+      "notes": "Notes TXYSElTtiV",
+      "_id": "69e948117cdde5657b8d1e39"
+    },
+    "IsSuccess": true,
+    "ErrorMessage": null
+  }
+}
