@@ -1,0 +1,82 @@
+{
+  "headers": {
+    "x-powered-by": "Express",
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "Authorization,X-User-Name",
+    "content-type": "application/json; charset=utf-8",
+    "content-length": "1491",
+    "etag": "W/\"5d3-ioFU9Y/BCAkKLkHBL2JxLJbCWMs\"",
+    "date": "Wed, 22 Apr 2026 23:43:16 GMT",
+    "connection": "keep-alive",
+    "keep-alive": "timeout=5"
+  },
+  "body": {
+    "Order": {
+      "status": "Draft",
+      "customer": {
+        "_id": "69e95d1428facec5a762e595",
+        "email": "test1776901395992_UNCO@example.com",
+        "name": "test bTkddEVlcUFOJLsgDaElzptMOeAAnBsSEjs",
+        "country": "Russia",
+        "city": "testCity SXVQZyIZGRi",
+        "street": "testStreet EeOmRnsa7oVwacktNg6CDcOY94OVM",
+        "house": 841,
+        "flat": 8575,
+        "phone": "+3611096201",
+        "createdOn": "2026-04-22T23:43:16.000Z",
+        "notes": "Notes wAyJjdMLNdcbBoHudLeJbMACBxodHfjjvOHJvTPSRrorfpgTfGKywDDjQtKyBVRFfyEdGbzxSANXWvpTtBciPcTzqzzNlRqTOPQMcwAycyDttWfkTsrwrMJlQWQJomNAUhWUzfXBJJOnUtYtYHLFcDThHUDyYgoCogAfsLQnmupJkESlFQXVhbNdVcnyUEZWAYSzDXHEEilSTwuiBPIUqmDDfiqwQqptPHpdqVIjinSgTEYKYrhk"
+      },
+      "products": [
+        {
+          "_id": "69e95d1428facec5a762e5ea",
+          "name": "Test DiZSkCSori",
+          "amount": 969,
+          "price": 52126,
+          "manufacturer": "Sony",
+          "notes": "Notes AIZNHnKrlN",
+          "received": false
+        }
+      ],
+      "delivery": null,
+      "total_price": 52126,
+      "createdOn": "2026-04-22T23:43:16.000Z",
+      "comments": [],
+      "history": [
+        {
+          "status": "Draft",
+          "customer": "69e95d1428facec5a762e595",
+          "products": [
+            {
+              "_id": "69e95d1428facec5a762e5ea",
+              "name": "Test DiZSkCSori",
+              "amount": 969,
+              "price": 52126,
+              "manufacturer": "Sony",
+              "notes": "Notes AIZNHnKrlN",
+              "received": false
+            }
+          ],
+          "total_price": 52126,
+          "delivery": null,
+          "changedOn": "2026-04-22T23:43:16.000Z",
+          "action": "Order created",
+          "performer": {
+            "_id": "69e95cb428facec5a762ce74",
+            "username": "admin@example.com",
+            "firstName": "Admin",
+            "lastName": "Admin",
+            "roles": [
+              "ADMIN"
+            ],
+            "createdOn": "2026/04/22 23:41:40"
+          },
+          "assignedManager": null
+        }
+      ],
+      "assignedManager": null,
+      "_id": "69e95d1428facec5a762e6c6"
+    },
+    "IsSuccess": true,
+    "ErrorMessage": null
+  }
+}

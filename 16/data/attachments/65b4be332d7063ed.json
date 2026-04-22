@@ -1,0 +1,26 @@
+{
+  "headers": {
+    "x-powered-by": "Express",
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "Authorization,X-User-Name",
+    "content-type": "application/json; charset=utf-8",
+    "content-length": "212",
+    "etag": "W/\"d4-9iMMsE8LALGBnGC/ip5Y8s0SMak\"",
+    "date": "Wed, 22 Apr 2026 23:43:44 GMT",
+    "connection": "keep-alive",
+    "keep-alive": "timeout=5"
+  },
+  "body": {
+    "Product": {
+      "name": "EPu",
+      "amount": 896,
+      "price": 78106,
+      "manufacturer": "Apple",
+      "createdOn": "2026-04-22T23:43:44.000Z",
+      "notes": "Notes QryZUJZTVa",
+      "_id": "69e95d3028facec5a7630e36"
+    },
+    "IsSuccess": true,
+    "ErrorMessage": null
+  }
+}

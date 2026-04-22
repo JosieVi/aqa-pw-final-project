@@ -1,0 +1,26 @@
+{
+  "headers": {
+    "x-powered-by": "Express",
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "Authorization,X-User-Name",
+    "content-type": "application/json; charset=utf-8",
+    "content-length": "223",
+    "etag": "W/\"df-+oMT9JbxpybchHx6k3ESen0yHu4\"",
+    "date": "Wed, 22 Apr 2026 23:43:44 GMT",
+    "connection": "keep-alive",
+    "keep-alive": "timeout=5"
+  },
+  "body": {
+    "Product": {
+      "name": "Test VTDZUwBPuD",
+      "amount": 777,
+      "price": 29047,
+      "manufacturer": "Sony",
+      "createdOn": "2026-04-22T23:43:44.000Z",
+      "notes": "Notes VCdoySimhU",
+      "_id": "69e95d3028facec5a7630eb2"
+    },
+    "IsSuccess": true,
+    "ErrorMessage": null
+  }
+}

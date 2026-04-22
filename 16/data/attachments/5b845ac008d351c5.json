@@ -1,0 +1,26 @@
+{
+  "headers": {
+    "x-powered-by": "Express",
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "Authorization,X-User-Name",
+    "content-type": "application/json; charset=utf-8",
+    "content-length": "226",
+    "etag": "W/\"e2-nDizfTydtc4Vpeso+E3UFwCNmls\"",
+    "date": "Wed, 22 Apr 2026 23:43:12 GMT",
+    "connection": "keep-alive",
+    "keep-alive": "timeout=5"
+  },
+  "body": {
+    "Product": {
+      "name": "Test lpgmiXCBkw",
+      "amount": 602,
+      "price": 67335,
+      "manufacturer": "Samsung",
+      "createdOn": "2026-04-22T23:43:12.000Z",
+      "notes": "Notes mVAZWXZkVF",
+      "_id": "69e95d1028facec5a762e2cb"
+    },
+    "IsSuccess": true,
+    "ErrorMessage": null
+  }
+}

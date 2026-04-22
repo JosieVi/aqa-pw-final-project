@@ -1,0 +1,26 @@
+{
+  "headers": {
+    "x-powered-by": "Express",
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "Authorization,X-User-Name",
+    "content-type": "application/json; charset=utf-8",
+    "content-length": "226",
+    "etag": "W/\"e2-5wWBN9e+UpeO01wm21lNu8U+kTE\"",
+    "date": "Wed, 22 Apr 2026 23:43:30 GMT",
+    "connection": "keep-alive",
+    "keep-alive": "timeout=5"
+  },
+  "body": {
+    "Product": {
+      "name": "Test QIPUJRginM",
+      "amount": 871,
+      "price": 41278,
+      "manufacturer": "Samsung",
+      "createdOn": "2026-04-22T23:43:30.000Z",
+      "notes": "Notes OGdWftqRvD",
+      "_id": "69e95d2228facec5a762f38f"
+    },
+    "IsSuccess": true,
+    "ErrorMessage": null
+  }
+}

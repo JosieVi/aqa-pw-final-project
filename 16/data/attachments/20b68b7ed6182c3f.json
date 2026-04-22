@@ -1,0 +1,132 @@
+{
+  "headers": {
+    "x-powered-by": "Express",
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "Authorization,X-User-Name",
+    "content-type": "application/json; charset=utf-8",
+    "content-length": "2346",
+    "etag": "W/\"92a-IwaWre07qyWNtsWh3JK1/ZYmqAc\"",
+    "date": "Wed, 22 Apr 2026 23:43:38 GMT",
+    "connection": "keep-alive",
+    "keep-alive": "timeout=5"
+  },
+  "body": {
+    "Order": {
+      "_id": "69e95d2a28facec5a763010e",
+      "status": "Draft",
+      "customer": {
+        "_id": "69e95d2a28facec5a7630101",
+        "email": "test1776901418081_BKOK@example.com",
+        "name": "test NRGZNHWyIQsQYwjTpXQgicqXInoXiIMiURp",
+        "country": "USA",
+        "city": "testCity ngzdxLWoAtZ",
+        "street": "testStreet XRbmUHx1OHQpwUv49gKoEysCdiAL1",
+        "house": 580,
+        "flat": 5951,
+        "phone": "+5787242344",
+        "createdOn": "2026-04-22T23:43:38.000Z",
+        "notes": "Notes PVvjYdkbMgObpubVvAAbIXiyyoSNIEFeCbVnEzatgLxsnojFBUcTCqUBDpzzCrJdhrUmuSlKhmzHvIbkhuZcUvxWWYRCeqzxLcJVKbpexXnURJAdUPpxkIFWPoFaOWjcIiHLWJxuIHKeBIpgpNobRqxOfqylFAGqCRhpRtKIRcgdfRZSQtXfOQTVumBcHDdkxmfXtfNTkOSOyJjttWyZxmfigTHxthIkylwLEeQIPZrJZaeQbESx"
+      },
+      "products": [
+        {
+          "_id": "69e95d2a28facec5a7630106",
+          "name": "Test NJNblmntdy",
+          "amount": 450,
+          "price": 73535,
+          "manufacturer": "Amazon",
+          "notes": "Notes ctdgtpRGgz",
+          "received": false
+        }
+      ],
+      "delivery": {
+        "address": {
+          "country": "USA",
+          "city": "TestCity AmSZI",
+          "street": "TestStreet hDMmaGnvaQ",
+          "house": 501,
+          "flat": 9620
+        },
+        "finalDate": "2026-08-15T00:00:00.000Z",
+        "condition": "Pickup"
+      },
+      "total_price": 73535,
+      "createdOn": "2026-04-22T23:43:38.000Z",
+      "comments": [],
+      "history": [
+        {
+          "status": "Draft",
+          "customer": "69e95d2a28facec5a7630101",
+          "products": [
+            {
+              "_id": "69e95d2a28facec5a7630106",
+              "name": "Test NJNblmntdy",
+              "amount": 450,
+              "price": 73535,
+              "manufacturer": "Amazon",
+              "notes": "Notes ctdgtpRGgz",
+              "received": false
+            }
+          ],
+          "total_price": 73535,
+          "delivery": {
+            "address": {
+              "country": "USA",
+              "city": "TestCity AmSZI",
+              "street": "TestStreet hDMmaGnvaQ",
+              "house": 501,
+              "flat": 9620
+            },
+            "finalDate": "2026-08-15T00:00:00.000Z",
+            "condition": "Pickup"
+          },
+          "changedOn": "2026-04-22T23:43:38.000Z",
+          "action": "Delivery Scheduled",
+          "performer": {
+            "_id": "69e95cb428facec5a762ce74",
+            "username": "admin@example.com",
+            "firstName": "Admin",
+            "lastName": "Admin",
+            "roles": [
+              "ADMIN"
+            ],
+            "createdOn": "2026/04/22 23:41:40"
+          },
+          "assignedManager": null
+        },
+        {
+          "status": "Draft",
+          "customer": "69e95d2a28facec5a7630101",
+          "products": [
+            {
+              "_id": "69e95d2a28facec5a7630106",
+              "name": "Test NJNblmntdy",
+              "amount": 450,
+              "price": 73535,
+              "manufacturer": "Amazon",
+              "notes": "Notes ctdgtpRGgz",
+              "received": false
+            }
+          ],
+          "total_price": 73535,
+          "delivery": null,
+          "changedOn": "2026-04-22T23:43:38.000Z",
+          "action": "Order created",
+          "performer": {
+            "_id": "69e95cb428facec5a762ce74",
+            "username": "admin@example.com",
+            "firstName": "Admin",
+            "lastName": "Admin",
+            "roles": [
+              "ADMIN"
+            ],
+            "createdOn": "2026/04/22 23:41:40"
+          },
+          "assignedManager": null
+        }
+      ],
+      "assignedManager": null
+    },
+    "IsSuccess": true,
+    "ErrorMessage": null
+  }
+}

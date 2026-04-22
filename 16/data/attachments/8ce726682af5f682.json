@@ -1,0 +1,17 @@
+{
+  "headers": {
+    "content-type": "application/json",
+    "Authorization": "Bearer invalid_token"
+  },
+  "body": {
+    "finalDate": "2026-10-16",
+    "condition": "Delivery",
+    "address": {
+      "country": "France",
+      "city": "TestCity LSzkO",
+      "street": "TestStreet xIaIwWPluN",
+      "house": 941,
+      "flat": 7646
+    }
+  }
+}

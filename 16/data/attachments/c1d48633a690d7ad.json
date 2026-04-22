@@ -1,0 +1,26 @@
+{
+  "headers": {
+    "x-powered-by": "Express",
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "Authorization,X-User-Name",
+    "content-type": "application/json; charset=utf-8",
+    "content-length": "223",
+    "etag": "W/\"df-jB+FVeoWrCaQFKpyDa9i+44x9dE\"",
+    "date": "Wed, 22 Apr 2026 23:43:44 GMT",
+    "connection": "keep-alive",
+    "keep-alive": "timeout=5"
+  },
+  "body": {
+    "Product": {
+      "name": "Test lvbzVpvMrh",
+      "amount": 154,
+      "price": 64497,
+      "manufacturer": "Sony",
+      "createdOn": "2026-04-22T23:43:44.000Z",
+      "notes": "Notes GAqtQFAHRd",
+      "_id": "69e95d3028facec5a7630ea7"
+    },
+    "IsSuccess": true,
+    "ErrorMessage": null
+  }
+}

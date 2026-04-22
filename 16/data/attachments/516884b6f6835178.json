@@ -1,0 +1,26 @@
+{
+  "headers": {
+    "x-powered-by": "Express",
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "Authorization,X-User-Name",
+    "content-type": "application/json; charset=utf-8",
+    "content-length": "225",
+    "etag": "W/\"e1-ZxocVE2DkJXndUUQYM8OkK3slDM\"",
+    "date": "Wed, 22 Apr 2026 23:43:19 GMT",
+    "connection": "keep-alive",
+    "keep-alive": "timeout=5"
+  },
+  "body": {
+    "Product": {
+      "name": "Test LQsSErlShW",
+      "amount": 989,
+      "price": 60663,
+      "manufacturer": "Amazon",
+      "createdOn": "2026-04-22T23:43:19.000Z",
+      "notes": "Notes vOBRWfpEdB",
+      "_id": "69e95d1728facec5a762ebe7"
+    },
+    "IsSuccess": true,
+    "ErrorMessage": null
+  }
+}

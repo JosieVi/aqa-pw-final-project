@@ -1,0 +1,26 @@
+{
+  "headers": {
+    "x-powered-by": "Express",
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "Authorization,X-User-Name",
+    "content-type": "application/json; charset=utf-8",
+    "content-length": "224",
+    "etag": "W/\"e0-idHSXDiyL4P9T8gupbhWlhTLIEE\"",
+    "date": "Wed, 22 Apr 2026 23:43:12 GMT",
+    "connection": "keep-alive",
+    "keep-alive": "timeout=5"
+  },
+  "body": {
+    "Product": {
+      "name": "Test IGRjCMYNeP",
+      "amount": 320,
+      "price": 34213,
+      "manufacturer": "Apple",
+      "createdOn": "2026-04-22T23:43:12.000Z",
+      "notes": "Notes OEfBZeDHBd",
+      "_id": "69e95d1028facec5a762e2c6"
+    },
+    "IsSuccess": true,
+    "ErrorMessage": null
+  }
+}

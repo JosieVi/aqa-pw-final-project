@@ -1,0 +1,26 @@
+{
+  "headers": {
+    "x-powered-by": "Express",
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "Authorization,X-User-Name",
+    "content-type": "application/json; charset=utf-8",
+    "content-length": "224",
+    "etag": "W/\"e0-ySgV4yWqMlBOd0zDSPj8OSUyptM\"",
+    "date": "Wed, 22 Apr 2026 23:43:14 GMT",
+    "connection": "keep-alive",
+    "keep-alive": "timeout=5"
+  },
+  "body": {
+    "Product": {
+      "name": "Test kbcfmLfWkD",
+      "amount": 478,
+      "price": 22817,
+      "manufacturer": "Tesla",
+      "createdOn": "2026-04-22T23:43:14.000Z",
+      "notes": "Notes vOwSivzepu",
+      "_id": "69e95d1228facec5a762e400"
+    },
+    "IsSuccess": true,
+    "ErrorMessage": null
+  }
+}

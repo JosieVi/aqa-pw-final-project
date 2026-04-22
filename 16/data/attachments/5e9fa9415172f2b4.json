@@ -1,0 +1,172 @@
+{
+  "headers": {
+    "x-powered-by": "Express",
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "Authorization,X-User-Name",
+    "content-type": "application/json; charset=utf-8",
+    "content-length": "3065",
+    "etag": "W/\"bf9-33NMRL3ZcXelXpwu/LoytOrtagY\"",
+    "date": "Wed, 22 Apr 2026 23:43:43 GMT",
+    "connection": "keep-alive",
+    "keep-alive": "timeout=5"
+  },
+  "body": {
+    "Order": {
+      "_id": "69e95d2f28facec5a7630cdd",
+      "status": "In Process",
+      "customer": {
+        "_id": "69e95d2f28facec5a7630cd0",
+        "email": "test1776901423515_KHEG@example.com",
+        "name": "test vrlqVthNgRzSuYdYXjQGDkieHMxKhpLCAlo",
+        "country": "Canada",
+        "city": "testCity TdjJVAfqaPp",
+        "street": "testStreet SZxNlJzzuojm98BjiftbdTGk5vl3Z",
+        "house": 723,
+        "flat": 5799,
+        "phone": "+4497084496",
+        "createdOn": "2026-04-22T23:43:43.000Z",
+        "notes": "Notes RoqcLIZLsJbbCyjyesmclkGjgTRzwSSHEFtegryMxhoaJPZPbjxlCznQXeqHfJniJAJlmrBdDgxamkjiYhtRzcTQyGSaUFmsaofLRTcubCkGfivmMKFjFQyhROrzNBJcexfShHBMWgWEXnvbgisVSQUMBbtCMeuBeWXttlUwWYbFITHkSXgKNUQyKklUbjDNdVRbpCSmCiOHGLQVlyVRARkenVJOINrERZRLNqnxjuhmMZGIRzXN"
+      },
+      "products": [
+        {
+          "_id": "69e95d2f28facec5a7630cd5",
+          "name": "Test jsrSjYWCbf",
+          "amount": 923,
+          "price": 90051,
+          "manufacturer": "Microsoft",
+          "notes": "Notes rTUPvtmzmv",
+          "received": false
+        }
+      ],
+      "delivery": {
+        "address": {
+          "country": "USA",
+          "city": "TestCity GOfdQ",
+          "street": "TestStreet wyfIfkAscy",
+          "house": 922,
+          "flat": 4074
+        },
+        "finalDate": "2026-07-02T00:00:00.000Z",
+        "condition": "Pickup"
+      },
+      "total_price": 90051,
+      "createdOn": "2026-04-22T23:43:43.000Z",
+      "comments": [],
+      "history": [
+        {
+          "status": "In Process",
+          "customer": "69e95d2f28facec5a7630cd0",
+          "products": [
+            {
+              "_id": "69e95d2f28facec5a7630cd5",
+              "name": "Test jsrSjYWCbf",
+              "amount": 923,
+              "price": 90051,
+              "manufacturer": "Microsoft",
+              "notes": "Notes rTUPvtmzmv",
+              "received": false
+            }
+          ],
+          "total_price": 90051,
+          "delivery": {
+            "address": {
+              "country": "USA",
+              "city": "TestCity GOfdQ",
+              "street": "TestStreet wyfIfkAscy",
+              "house": 922,
+              "flat": 4074
+            },
+            "finalDate": "2026-07-02T00:00:00.000Z",
+            "condition": "Pickup"
+          },
+          "changedOn": "2026-04-22T23:43:43.000Z",
+          "action": "Order processing started",
+          "performer": {
+            "_id": "69e95cb428facec5a762ce74",
+            "username": "admin@example.com",
+            "firstName": "Admin",
+            "lastName": "Admin",
+            "roles": [
+              "ADMIN"
+            ],
+            "createdOn": "2026/04/22 23:41:40"
+          },
+          "assignedManager": null
+        },
+        {
+          "status": "Draft",
+          "customer": "69e95d2f28facec5a7630cd0",
+          "products": [
+            {
+              "_id": "69e95d2f28facec5a7630cd5",
+              "name": "Test jsrSjYWCbf",
+              "amount": 923,
+              "price": 90051,
+              "manufacturer": "Microsoft",
+              "notes": "Notes rTUPvtmzmv",
+              "received": false
+            }
+          ],
+          "total_price": 90051,
+          "delivery": {
+            "address": {
+              "country": "USA",
+              "city": "TestCity GOfdQ",
+              "street": "TestStreet wyfIfkAscy",
+              "house": 922,
+              "flat": 4074
+            },
+            "finalDate": "2026-07-02T00:00:00.000Z",
+            "condition": "Pickup"
+          },
+          "changedOn": "2026-04-22T23:43:43.000Z",
+          "action": "Delivery Scheduled",
+          "performer": {
+            "_id": "69e95cb428facec5a762ce74",
+            "username": "admin@example.com",
+            "firstName": "Admin",
+            "lastName": "Admin",
+            "roles": [
+              "ADMIN"
+            ],
+            "createdOn": "2026/04/22 23:41:40"
+          },
+          "assignedManager": null
+        },
+        {
+          "status": "Draft",
+          "customer": "69e95d2f28facec5a7630cd0",
+          "products": [
+            {
+              "_id": "69e95d2f28facec5a7630cd5",
+              "name": "Test jsrSjYWCbf",
+              "amount": 923,
+              "price": 90051,
+              "manufacturer": "Microsoft",
+              "notes": "Notes rTUPvtmzmv",
+              "received": false
+            }
+          ],
+          "total_price": 90051,
+          "delivery": null,
+          "changedOn": "2026-04-22T23:43:43.000Z",
+          "action": "Order created",
+          "performer": {
+            "_id": "69e95cb428facec5a762ce74",
+            "username": "admin@example.com",
+            "firstName": "Admin",
+            "lastName": "Admin",
+            "roles": [
+              "ADMIN"
+            ],
+            "createdOn": "2026/04/22 23:41:40"
+          },
+          "assignedManager": null
+        }
+      ],
+      "assignedManager": null
+    },
+    "IsSuccess": true,
+    "ErrorMessage": null
+  }
+}

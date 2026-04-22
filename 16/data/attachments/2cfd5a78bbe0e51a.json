@@ -1,0 +1,26 @@
+{
+  "headers": {
+    "x-powered-by": "Express",
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "Authorization,X-User-Name",
+    "content-type": "application/json; charset=utf-8",
+    "content-length": "225",
+    "etag": "W/\"e1-4PCBM2cRqZjFzfdfg390o/uMvs0\"",
+    "date": "Wed, 22 Apr 2026 23:43:45 GMT",
+    "connection": "keep-alive",
+    "keep-alive": "timeout=5"
+  },
+  "body": {
+    "Product": {
+      "name": "Test LXIyunQQKd",
+      "amount": 563,
+      "price": 67680,
+      "manufacturer": "Amazon",
+      "createdOn": "2026-04-22T23:43:45.000Z",
+      "notes": "Notes XpbPatJIOe",
+      "_id": "69e95d3128facec5a7630f2f"
+    },
+    "IsSuccess": true,
+    "ErrorMessage": null
+  }
+}

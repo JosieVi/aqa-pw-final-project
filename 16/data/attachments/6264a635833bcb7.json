@@ -1,0 +1,26 @@
+{
+  "headers": {
+    "x-powered-by": "Express",
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "Authorization,X-User-Name",
+    "content-type": "application/json; charset=utf-8",
+    "content-length": "228",
+    "etag": "W/\"e4-5unTbklMVQ73USfH19/QYJiZ4po\"",
+    "date": "Wed, 22 Apr 2026 23:43:33 GMT",
+    "connection": "keep-alive",
+    "keep-alive": "timeout=5"
+  },
+  "body": {
+    "Product": {
+      "name": "Test ObzcRlDpQb",
+      "amount": 142,
+      "price": 85602,
+      "manufacturer": "Microsoft",
+      "createdOn": "2026-04-22T23:43:33.000Z",
+      "notes": "Notes YCaxDWQrFl",
+      "_id": "69e95d2528facec5a762f8c8"
+    },
+    "IsSuccess": true,
+    "ErrorMessage": null
+  }
+}

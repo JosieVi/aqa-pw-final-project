@@ -1,0 +1,26 @@
+{
+  "headers": {
+    "x-powered-by": "Express",
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "Authorization,X-User-Name",
+    "content-type": "application/json; charset=utf-8",
+    "content-length": "225",
+    "etag": "W/\"e1-+aMZh2D10EoYB8KTo9bcNj7lr44\"",
+    "date": "Wed, 22 Apr 2026 23:43:36 GMT",
+    "connection": "keep-alive",
+    "keep-alive": "timeout=5"
+  },
+  "body": {
+    "Product": {
+      "name": "Test pVDlWOjCoM",
+      "amount": 312,
+      "price": 74290,
+      "manufacturer": "Amazon",
+      "createdOn": "2026-04-22T23:43:36.000Z",
+      "notes": "Notes IqbxgNBPDi",
+      "_id": "69e95d2828facec5a762fd20"
+    },
+    "IsSuccess": true,
+    "ErrorMessage": null
+  }
+}

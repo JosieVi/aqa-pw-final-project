@@ -1,0 +1,26 @@
+{
+  "headers": {
+    "x-powered-by": "Express",
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "Authorization,X-User-Name",
+    "content-type": "application/json; charset=utf-8",
+    "content-length": "225",
+    "etag": "W/\"e1-WgqoVgk5fqjXSlbB2NIRJr3ZiWo\"",
+    "date": "Wed, 22 Apr 2026 23:43:10 GMT",
+    "connection": "keep-alive",
+    "keep-alive": "timeout=5"
+  },
+  "body": {
+    "Product": {
+      "name": "Test jZFRRPTeni",
+      "amount": 895,
+      "price": 67335,
+      "manufacturer": "Amazon",
+      "createdOn": "2026-04-22T23:43:10.000Z",
+      "notes": "Notes rOPeGlcQnx",
+      "_id": "69e95d0e28facec5a762e18d"
+    },
+    "IsSuccess": true,
+    "ErrorMessage": null
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "headers": {
+    "x-powered-by": "Express",
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "Authorization,X-User-Name",
+    "content-type": "application/json; charset=utf-8",
+    "content-length": "225",
+    "etag": "W/\"e1-/eD1benCSpRCNpdP3hZ6UvvruIM\"",
+    "date": "Wed, 22 Apr 2026 23:43:12 GMT",
+    "connection": "keep-alive",
+    "keep-alive": "timeout=5"
+  },
+  "body": {
+    "Product": {
+      "name": "Test EMjajSJVFz",
+      "amount": 812,
+      "price": 81410,
+      "manufacturer": "Amazon",
+      "createdOn": "2026-04-22T23:43:12.000Z",
+      "notes": "Notes rfNmZnZtqe",
+      "_id": "69e95d1028facec5a762e281"
+    },
+    "IsSuccess": true,
+    "ErrorMessage": null
+  }
+}

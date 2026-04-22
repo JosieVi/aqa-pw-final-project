@@ -1,0 +1,26 @@
+{
+  "headers": {
+    "x-powered-by": "Express",
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "Authorization,X-User-Name",
+    "content-type": "application/json; charset=utf-8",
+    "content-length": "225",
+    "etag": "W/\"e1-UCab2Jtq7KSEbQ9+v0jxDFF6KjQ\"",
+    "date": "Wed, 22 Apr 2026 23:43:11 GMT",
+    "connection": "keep-alive",
+    "keep-alive": "timeout=5"
+  },
+  "body": {
+    "Product": {
+      "name": "Test BEaYIEViaW",
+      "amount": 447,
+      "price": 58716,
+      "manufacturer": "Amazon",
+      "createdOn": "2026-04-22T23:43:11.000Z",
+      "notes": "Notes ugPjVdpvEG",
+      "_id": "69e95d0f28facec5a762e1f7"
+    },
+    "IsSuccess": true,
+    "ErrorMessage": null
+  }
+}

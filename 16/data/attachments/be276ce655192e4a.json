@@ -1,0 +1,26 @@
+{
+  "headers": {
+    "x-powered-by": "Express",
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "Authorization,X-User-Name",
+    "content-type": "application/json; charset=utf-8",
+    "content-length": "224",
+    "etag": "W/\"e0-EXC9riI7EZ+sLNFMX+P2zcpWf8A\"",
+    "date": "Wed, 22 Apr 2026 23:43:18 GMT",
+    "connection": "keep-alive",
+    "keep-alive": "timeout=5"
+  },
+  "body": {
+    "Product": {
+      "name": "Test PtKMQatTdx",
+      "amount": 82,
+      "price": 38752,
+      "manufacturer": "Google",
+      "createdOn": "2026-04-22T23:43:18.000Z",
+      "notes": "Notes SMODsiNsiB",
+      "_id": "69e95d1628facec5a762e9e4"
+    },
+    "IsSuccess": true,
+    "ErrorMessage": null
+  }
+}

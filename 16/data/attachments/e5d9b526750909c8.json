@@ -1,0 +1,26 @@
+{
+  "headers": {
+    "x-powered-by": "Express",
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "Authorization,X-User-Name",
+    "content-type": "application/json; charset=utf-8",
+    "content-length": "224",
+    "etag": "W/\"e0-wFZOdjig3HVjKv+2AoFyuSwRm08\"",
+    "date": "Wed, 22 Apr 2026 23:43:39 GMT",
+    "connection": "keep-alive",
+    "keep-alive": "timeout=5"
+  },
+  "body": {
+    "Product": {
+      "name": "Test vlPsNhesPA",
+      "amount": 843,
+      "price": 92076,
+      "manufacturer": "Apple",
+      "createdOn": "2026-04-22T23:43:39.000Z",
+      "notes": "Notes VLlDIMMcQr",
+      "_id": "69e95d2b28facec5a7630400"
+    },
+    "IsSuccess": true,
+    "ErrorMessage": null
+  }
+}

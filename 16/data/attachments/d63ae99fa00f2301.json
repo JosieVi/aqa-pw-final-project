@@ -1,0 +1,17 @@
+{
+  "headers": {
+    "content-type": "application/json",
+    "Authorization": "Bearer "
+  },
+  "body": {
+    "finalDate": "2026-04-25",
+    "condition": "Delivery",
+    "address": {
+      "country": "Great Britain",
+      "city": "TestCity bXoef",
+      "street": "TestStreet uSjMHQwfqz",
+      "house": 631,
+      "flat": 8216
+    }
+  }
+}

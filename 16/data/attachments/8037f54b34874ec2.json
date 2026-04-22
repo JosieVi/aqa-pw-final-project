@@ -1,0 +1,26 @@
+{
+  "headers": {
+    "x-powered-by": "Express",
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "Authorization,X-User-Name",
+    "content-type": "application/json; charset=utf-8",
+    "content-length": "226",
+    "etag": "W/\"e2-JeNlYe98ZTsgKG4CDX217JtXCao\"",
+    "date": "Wed, 22 Apr 2026 23:42:50 GMT",
+    "connection": "keep-alive",
+    "keep-alive": "timeout=5"
+  },
+  "body": {
+    "Product": {
+      "name": "Test lkWROImosr",
+      "amount": 448,
+      "price": 80259,
+      "manufacturer": "Samsung",
+      "createdOn": "2026-04-22T23:42:50.000Z",
+      "notes": "Notes sReGmqEqES",
+      "_id": "69e95cfa28facec5a762d65e"
+    },
+    "IsSuccess": true,
+    "ErrorMessage": null
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "headers": {
+    "x-powered-by": "Express",
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "Authorization,X-User-Name",
+    "content-type": "application/json; charset=utf-8",
+    "content-length": "224",
+    "etag": "W/\"e0-24n/diXdZd5JwLmeegcuZBtJ7IE\"",
+    "date": "Wed, 22 Apr 2026 23:42:40 GMT",
+    "connection": "keep-alive",
+    "keep-alive": "timeout=5"
+  },
+  "body": {
+    "Product": {
+      "name": "Test SrtEEsYZrL",
+      "amount": 652,
+      "price": 23455,
+      "manufacturer": "Apple",
+      "createdOn": "2026-04-22T23:42:40.000Z",
+      "notes": "Notes YmHAMbfaQr",
+      "_id": "69e95cf028facec5a762d25d"
+    },
+    "IsSuccess": true,
+    "ErrorMessage": null
+  }
+}

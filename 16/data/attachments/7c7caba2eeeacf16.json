@@ -1,0 +1,26 @@
+{
+  "headers": {
+    "x-powered-by": "Express",
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "Authorization,X-User-Name",
+    "content-type": "application/json; charset=utf-8",
+    "content-length": "225",
+    "etag": "W/\"e1-NKMBS5QRXARZZCwX/yfyGZq9Y1s\"",
+    "date": "Wed, 22 Apr 2026 23:43:37 GMT",
+    "connection": "keep-alive",
+    "keep-alive": "timeout=5"
+  },
+  "body": {
+    "Product": {
+      "name": "Test PsLBgvllYY",
+      "amount": 593,
+      "price": 51244,
+      "manufacturer": "Google",
+      "createdOn": "2026-04-22T23:43:37.000Z",
+      "notes": "Notes QzYRbSZXAn",
+      "_id": "69e95d2928facec5a762fff9"
+    },
+    "IsSuccess": true,
+    "ErrorMessage": null
+  }
+}

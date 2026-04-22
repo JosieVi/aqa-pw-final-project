@@ -1,0 +1,26 @@
+{
+  "headers": {
+    "x-powered-by": "Express",
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "Authorization,X-User-Name",
+    "content-type": "application/json; charset=utf-8",
+    "content-length": "224",
+    "etag": "W/\"e0-mBYUC3RJRPiTqeFaa/qZMJqJW4g\"",
+    "date": "Wed, 22 Apr 2026 23:43:19 GMT",
+    "connection": "keep-alive",
+    "keep-alive": "timeout=5"
+  },
+  "body": {
+    "Product": {
+      "name": "Test GtGDPmOeqA",
+      "amount": 853,
+      "price": 91699,
+      "manufacturer": "Apple",
+      "createdOn": "2026-04-22T23:43:19.000Z",
+      "notes": "Notes kwCFCrdvzp",
+      "_id": "69e95d1728facec5a762ebe3"
+    },
+    "IsSuccess": true,
+    "ErrorMessage": null
+  }
+}

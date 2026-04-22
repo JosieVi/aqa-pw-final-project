@@ -1,0 +1,41 @@
+{
+  "headers": {
+    "x-powered-by": "Express",
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "Authorization,X-User-Name",
+    "content-type": "application/json; charset=utf-8",
+    "content-length": "745",
+    "etag": "W/\"2e9-6/MfPcDkAoXxnMAhFRZ21yH6dt0\"",
+    "date": "Wed, 22 Apr 2026 23:43:31 GMT",
+    "connection": "keep-alive",
+    "keep-alive": "timeout=5"
+  },
+  "body": {
+    "Customers": [
+      {
+        "_id": "69e95d2328facec5a762f5ab",
+        "email": "test1776901411435_SFHH@example.com",
+        "name": "test jydHArzvLUGAWrpaBTNesivAYmlicUVwNzz",
+        "country": "France",
+        "city": "testCity VfKOLNGrxyl",
+        "street": "testStreet LBGB2kb4n2F96oBE8U5OsnI7y26C6",
+        "house": 953,
+        "flat": 2184,
+        "phone": "+7299400334",
+        "createdOn": "2026-04-22T23:43:31.000Z",
+        "notes": "Notes IWYbMSdvEsrGBVVMKDltFuyTCQPTjdaTAOaOvzKxBfKRUXwKGYPwoesttNfxOXIhdCwDdQMtYDPeKsrZBVjZrdJvuuKGVZlBcuIWUSpEHjIMgPLWnfNMNuAvxaPfcCeoSmLDnqDvmzEQUiktMFKzIJgxdaVupAXFdSdZrcqHguhjSmeIGOXKYItrprQvhKopewxrGcQkHFfezscWcxeDOQeqcJhuDgwkPvwxLtjGhvYHfNNxipjU"
+      }
+    ],
+    "total": 1,
+    "page": 1,
+    "limit": 10,
+    "search": "France",
+    "country": [],
+    "sorting": {
+      "sortField": "createdOn",
+      "sortOrder": "desc"
+    },
+    "IsSuccess": true,
+    "ErrorMessage": null
+  }
+}

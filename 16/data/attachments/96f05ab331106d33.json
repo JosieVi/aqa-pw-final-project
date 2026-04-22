@@ -1,0 +1,26 @@
+{
+  "headers": {
+    "x-powered-by": "Express",
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "Authorization,X-User-Name",
+    "content-type": "application/json; charset=utf-8",
+    "content-length": "225",
+    "etag": "W/\"e1-AujD06eys5Jfaou4FJ8Z8ZauoSg\"",
+    "date": "Wed, 22 Apr 2026 23:43:30 GMT",
+    "connection": "keep-alive",
+    "keep-alive": "timeout=5"
+  },
+  "body": {
+    "Product": {
+      "name": "Test ckdhQPKfNA",
+      "amount": 217,
+      "price": 49838,
+      "manufacturer": "Google",
+      "createdOn": "2026-04-22T23:43:30.000Z",
+      "notes": "Notes UWmIpugRIO",
+      "_id": "69e95d2228facec5a762f332"
+    },
+    "IsSuccess": true,
+    "ErrorMessage": null
+  }
+}

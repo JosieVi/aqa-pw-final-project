@@ -1,0 +1,26 @@
+{
+  "headers": {
+    "x-powered-by": "Express",
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "Authorization,X-User-Name",
+    "content-type": "application/json; charset=utf-8",
+    "content-length": "225",
+    "etag": "W/\"e1-q9VQ7iJFOBCLrA5MR8XryzcQGus\"",
+    "date": "Wed, 22 Apr 2026 23:43:41 GMT",
+    "connection": "keep-alive",
+    "keep-alive": "timeout=5"
+  },
+  "body": {
+    "Product": {
+      "name": "Test fgQagXVHiB",
+      "amount": 288,
+      "price": 29025,
+      "manufacturer": "Amazon",
+      "createdOn": "2026-04-22T23:43:41.000Z",
+      "notes": "Notes wyJuwvKwPc",
+      "_id": "69e95d2d28facec5a7630763"
+    },
+    "IsSuccess": true,
+    "ErrorMessage": null
+  }
+}

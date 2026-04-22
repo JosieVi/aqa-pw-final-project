@@ -1,0 +1,26 @@
+{
+  "headers": {
+    "x-powered-by": "Express",
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "Authorization,X-User-Name",
+    "content-type": "application/json; charset=utf-8",
+    "content-length": "223",
+    "etag": "W/\"df-q4PDQTosi9f1Irzv3E4hfXmNwWE\"",
+    "date": "Wed, 22 Apr 2026 23:43:40 GMT",
+    "connection": "keep-alive",
+    "keep-alive": "timeout=5"
+  },
+  "body": {
+    "Product": {
+      "name": "Test fMwFPFhPLl",
+      "amount": 135,
+      "price": 78047,
+      "manufacturer": "Sony",
+      "createdOn": "2026-04-22T23:43:40.000Z",
+      "notes": "Notes vbteqyaxxD",
+      "_id": "69e95d2c28facec5a76304e1"
+    },
+    "IsSuccess": true,
+    "ErrorMessage": null
+  }
+}

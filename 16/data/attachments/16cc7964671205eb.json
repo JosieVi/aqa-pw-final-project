@@ -1,0 +1,67 @@
+{
+  "headers": {
+    "x-powered-by": "Express",
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "Authorization,X-User-Name",
+    "content-type": "application/json; charset=utf-8",
+    "content-length": "1851",
+    "etag": "W/\"73b-m8LyFpk7s6HzmaE+bzSpzTC47Lo\"",
+    "date": "Wed, 22 Apr 2026 23:43:30 GMT",
+    "connection": "keep-alive",
+    "keep-alive": "timeout=5"
+  },
+  "body": {
+    "Customers": [
+      {
+        "_id": "69e95d2228facec5a762f3e8",
+        "email": "test1776901410342_GNPE@example.com",
+        "name": "SearchTestLaThyofl",
+        "country": "Russia",
+        "city": "testCity wrFTIHLRJqq",
+        "street": "testStreet n2XL3OdBnxdQ9iGpGOSeLvyLmQ2lt",
+        "house": 590,
+        "flat": 6264,
+        "phone": "+4903646262",
+        "createdOn": "2026-04-22T23:43:30.000Z",
+        "notes": "Notes hquwFeUKztVgxTGtqvKlZYGnUfyUGIvmkwbnCRTLdgvbcTvxCZqMIPHNmKRfWqphoexucjtbTZZzsfThEDDaVALQDfTITPejEQQVjPbYRJufLQTWrYxDsaKdGpIbUZztPekBinDnmQDDCJEZJvJEJLLdBvyQRMzbVivOEyRJvyLRwvTWZtyOaoDqFuXnybMMTjFvYdgeSWyOJaQWWShfMMqQtUvHNkWCJibIYlUGyUmAcQrvRBoS"
+      },
+      {
+        "_id": "69e95d2228facec5a762f3ec",
+        "email": "test1776901410342_MVWG@example.com",
+        "name": "SearchTestLaThyofl",
+        "country": "Great Britain",
+        "city": "testCity ovopOcmAzjs",
+        "street": "testStreet OndvU1RvEAWHigMTOytbNNY93WUpa",
+        "house": 89,
+        "flat": 4097,
+        "phone": "+1263759062",
+        "createdOn": "2026-04-22T23:43:30.000Z",
+        "notes": "Notes zvbpRHKOrmMSVpqTZXJCMcvmDAzWvZfMslmzQFkSCGxIdPiYoQRGubfCMiONdVaqRvxzTaytcwXAwfwMrmdOgHcHtmfcrQpVokZpXlZqMOIuFXZWCDbYDmUhijPAJUqWHhPGDJqnexFxOMVCqmWdEDWrjhtxwJNivirFMusTOhgUcVOKQRNkNzDNBUmuwTfEVvVdvruNjDHTsbnayBHXYFIjAkkgpCbkZkZhcTGSsyphPtGfKvhD"
+      },
+      {
+        "_id": "69e95d2228facec5a762f3ee",
+        "email": "test1776901410342_RENH@example.com",
+        "name": "SearchTestLaThyofl",
+        "country": "Canada",
+        "city": "testCity cJxggLyobtc",
+        "street": "testStreet AXI4rhi5MasgiYNGnLRNJ1minUKwS",
+        "house": 195,
+        "flat": 4656,
+        "phone": "+5268310477",
+        "createdOn": "2026-04-22T23:43:30.000Z",
+        "notes": "Notes QxBYYYiBwUckzIeHVocqImgIsWQCoUiygWTpgOFaTYkhGxSFYwaqBjjEnmaRIdkdQWtYHSTnHzBdZIluxYLtlIliSMwmXeVzwVAcONvztcnpsmocNgPyDpoQrbCTKLtAcSTUBvIMQivDpfzNBpdznYqHZgaGFEycIcFZtmXPSOMThJwFHBFFFPQBegLxdmpyIMHytrXuxfZocoPRhBtXSIoapdhwToqCQFJrIgHrlmoIgpfumYjq"
+      }
+    ],
+    "total": 3,
+    "page": 1,
+    "limit": 10,
+    "search": "SearchTestLaThyofl",
+    "country": [],
+    "sorting": {
+      "sortField": "createdOn",
+      "sortOrder": "desc"
+    },
+    "IsSuccess": true,
+    "ErrorMessage": null
+  }
+}

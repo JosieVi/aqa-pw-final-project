@@ -1,0 +1,26 @@
+{
+  "headers": {
+    "x-powered-by": "Express",
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "Authorization,X-User-Name",
+    "content-type": "application/json; charset=utf-8",
+    "content-length": "225",
+    "etag": "W/\"e1-dEcnggbcBLJ9aGbPWwRKC70pa4w\"",
+    "date": "Wed, 22 Apr 2026 23:43:38 GMT",
+    "connection": "keep-alive",
+    "keep-alive": "timeout=5"
+  },
+  "body": {
+    "Product": {
+      "name": "Test NJNblmntdy",
+      "amount": 450,
+      "price": 73535,
+      "manufacturer": "Amazon",
+      "createdOn": "2026-04-22T23:43:38.000Z",
+      "notes": "Notes ctdgtpRGgz",
+      "_id": "69e95d2a28facec5a7630106"
+    },
+    "IsSuccess": true,
+    "ErrorMessage": null
+  }
+}
