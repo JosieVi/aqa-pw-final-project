@@ -16,7 +16,7 @@ interface IApiServices {
   dataDisposalUtils: DataDisposalUtils;
   managersApiService: ManagersApiService;
 }
-// NEW
+
 export interface IWorkerFixtures {
   workerToken: string;
 }
@@ -42,8 +42,8 @@ export const test = base.extend<IApiServices, IWorkerFixtures>({
     await use(new ManagersApiService(managersController));
   },
 
-  dataDisposalUtils: async ({ ordersApiService, customersApiService, productsApiService, managersApiService, signInApiService }, use) => {
-    const utils = new DataDisposalUtils(ordersApiService, customersApiService, productsApiService, signInApiService, managersApiService);
+  dataDisposalUtils: async ({ workerToken, ordersApiService, customersApiService, productsApiService, managersApiService }, use) => {
+    const utils = new DataDisposalUtils(workerToken, ordersApiService, customersApiService, productsApiService, managersApiService);
     await use(utils);
     await utils.tearDown();
   },

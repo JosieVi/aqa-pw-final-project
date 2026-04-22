@@ -1,7 +1,7 @@
 import { CustomersApiService } from 'api/services/customer.api-service';
 import { ProductsApiService } from 'api/services/product.api-service';
 import { OrdersAPIService } from 'api/services/order.api-service';
-import { SignInApiService } from 'api/services/signIn.api-service';
+// import { SignInApiService } from 'api/services/signIn.api-service';
 import { ManagersApiService } from 'api/services/manager.api-services';
 
 export class DataDisposalUtils {
@@ -11,25 +11,26 @@ export class DataDisposalUtils {
   private trackedManagers: string[] = [];
 
   constructor(
+    private workerToken: string,
     private ordersApiService: OrdersAPIService,
     private customersApiService: CustomersApiService,
     private productsApiService: ProductsApiService,
-    private signInApiService: SignInApiService,
+    // private signInApiService: SignInApiService,
     private managersApiService: ManagersApiService,
   ) {}
 
   private token = '';
 
-  private async prepareToken(): Promise<string> {
-    if (!this.token) {
-      this.token = await this.signInApiService.loginAsLocalUser();
-    }
-    return this.token;
-  }
+  // private async prepareToken(): Promise<string> {
+  //   if (!this.token) {
+  //     this.token = await this.signInApiService.loginAsLocalUser();
+  //   }
+  //   return this.token;
+  // }
 
-  private async getToken(token?: string): Promise<string> {
-    return token ?? (await this.prepareToken());
-  }
+  // private async getToken(token?: string): Promise<string> {
+  //   return token ?? (await this.prepareToken());
+  // }
 
   trackOrder(id: string) {
     if (id) this.trackedOrders.push(id);
@@ -66,11 +67,11 @@ export class DataDisposalUtils {
   async clearOrders(orderIds: string[] | string = this.trackedOrders) {
     const idsToProcess = await this.normalizeIds(orderIds);
     if (!idsToProcess.length) return;
-    const authToken = await this.getToken();
+    // const authToken = await this.getToken();
 
     for (const orderId of idsToProcess) {
       try {
-        await this.ordersApiService.deleteOrder(orderId, authToken);
+        await this.ordersApiService.deleteOrder(orderId, this.workerToken);
       } catch (error: any) {
         if (error.response?.status === 404) {
           console.log(`Order with ID ${orderId} was not found (already deleted or never existed). Skipping.`);
@@ -83,11 +84,11 @@ export class DataDisposalUtils {
   async clearProducts(productsIds: string[] | string = this.trackedProducts) {
     const idsToProcess = await this.normalizeIds(productsIds);
     if (!idsToProcess.length) return;
-    const authToken = await this.getToken();
+    //const authToken = await this.getToken();
 
     for (const productId of idsToProcess) {
       try {
-        await this.productsApiService.delete(productId, authToken);
+        await this.productsApiService.delete(productId, this.workerToken);
       } catch (error: any) {
         if (error.response?.status === 404) {
           console.log(`Product with ID ${productId} was not found (already deleted or never existed). Skipping.`);
@@ -102,11 +103,11 @@ export class DataDisposalUtils {
   async clearCustomers(customerIds: string[] | string = this.trackedCustomers) {
     const idsToProcess = await this.normalizeIds(customerIds);
     if (!idsToProcess.length) return;
-    const authToken = await this.getToken();
+    // const authToken = await this.getToken();
 
     for (const customerId of idsToProcess) {
       try {
-        await this.customersApiService.deleteCustomer(customerId, authToken);
+        await this.customersApiService.deleteCustomer(customerId, this.workerToken);
       } catch (error: any) {
         if (error.response?.status === 404) {
           console.log(`Customer with ID ${customerId} was not found (already deleted or never existed). Skipping.`);
@@ -119,10 +120,10 @@ export class DataDisposalUtils {
   async clearManagers(managerIds: string[] | string = this.trackedManagers) {
     const idsToProcess = await this.normalizeIds(managerIds);
     if (!idsToProcess.length) return;
-    const authToken = await this.getToken();
+    //const authToken = await this.getToken();
     for (const managerId of idsToProcess) {
       try {
-        await this.managersApiService.deleteManager(managerId, authToken);
+        await this.managersApiService.deleteManager(managerId, this.workerToken);
       } catch (error: any) {
         if (error.response?.status === 404) {
           console.log(`Manager with ID ${managerId} was not found (already deleted or never existed). Skipping.`);
