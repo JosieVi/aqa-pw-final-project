@@ -24,7 +24,7 @@ export default defineConfig({
   forbidOnly: !!process.env.CI,
   retries: process.env.CI ? 2 : 0,
 
-  reporter: [['list'], ['html'], ['allure-playwright', { resultsDir: 'allure-results' }]],
+  reporter: [['list'], ['html'], ['allure-playwright', { resultsDir: 'allure-results', detail: true }]],
 
   use: {
     baseURL: SALES_PORTAL_URL,
