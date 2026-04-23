@@ -183,17 +183,14 @@ test.describe('[UI] [Sales Portal]', () => {
       await expect(orderDetailsPage.receivedProductsSection.saveReceivedProductsButton).toBeVisible();
 
       // Assert - initial checkbox state
-      const initialSelectAllChecked = await orderDetailsPage.receivedProductsSection.isSelectAllCheckboxChecked();
-      await expect(initialSelectAllChecked).toBe(false);
+      await expect(orderDetailsPage.receivedProductsSection.selectAllCheckbox).not.toBeChecked();
 
       // Act - check and uncheck
       await orderDetailsPage.receivedProductsSection.clickSelectAllCheckbox();
-      const afterClickSelectAllChecked = await orderDetailsPage.receivedProductsSection.isSelectAllCheckboxChecked();
-      await expect(afterClickSelectAllChecked).toBe(true);
+      await expect(orderDetailsPage.receivedProductsSection.selectAllCheckbox).toBeChecked();
 
       await orderDetailsPage.receivedProductsSection.clickSelectAllCheckbox();
-      const afterUncheckSelectAllChecked = await orderDetailsPage.receivedProductsSection.isSelectAllCheckboxChecked();
-      await expect(afterUncheckSelectAllChecked).toBe(false);
+      await expect(orderDetailsPage.receivedProductsSection.selectAllCheckbox).not.toBeChecked();
     });
 
     test('Verify individual product received checkbox', { tag: [TAGS.SMOKE] }, async ({ homeUIService, ordersPage, orderDetailsPage }) => {
