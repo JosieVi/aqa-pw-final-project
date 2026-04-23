@@ -1,0 +1,26 @@
+{
+  "headers": {
+    "x-powered-by": "Express",
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "Authorization,X-User-Name",
+    "content-type": "application/json; charset=utf-8",
+    "content-length": "224",
+    "etag": "W/\"e0-sFH0O994OxVMZUIQQDkspvck2ro\"",
+    "date": "Thu, 23 Apr 2026 00:33:33 GMT",
+    "connection": "keep-alive",
+    "keep-alive": "timeout=5"
+  },
+  "body": {
+    "Product": {
+      "name": "Test CWMOTFcajX",
+      "amount": 527,
+      "price": 23591,
+      "manufacturer": "Apple",
+      "createdOn": "2026-04-23T00:33:33.000Z",
+      "notes": "Notes VUzJWvvsSt",
+      "_id": "69e968dd451d28c1a5cd839a"
+    },
+    "IsSuccess": true,
+    "ErrorMessage": null
+  }
+}

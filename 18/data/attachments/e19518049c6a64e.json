@@ -1,0 +1,26 @@
+{
+  "headers": {
+    "x-powered-by": "Express",
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "Authorization,X-User-Name",
+    "content-type": "application/json; charset=utf-8",
+    "content-length": "225",
+    "etag": "W/\"e1-+3b8bbJ5+FtSDPFOrYcw7gpGuJ0\"",
+    "date": "Thu, 23 Apr 2026 00:33:44 GMT",
+    "connection": "keep-alive",
+    "keep-alive": "timeout=5"
+  },
+  "body": {
+    "Product": {
+      "name": "Test EpcwbSwzmQ",
+      "amount": 822,
+      "price": 57140,
+      "manufacturer": "Amazon",
+      "createdOn": "2026-04-23T00:33:44.000Z",
+      "notes": "Notes fRJFDbfrFu",
+      "_id": "69e968e8451d28c1a5cd9542"
+    },
+    "IsSuccess": true,
+    "ErrorMessage": null
+  }
+}

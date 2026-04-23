@@ -1,0 +1,26 @@
+{
+  "headers": {
+    "x-powered-by": "Express",
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "Authorization,X-User-Name",
+    "content-type": "application/json; charset=utf-8",
+    "content-length": "223",
+    "etag": "W/\"df-eGbJIMhEbDIhU/YXOT5OV4q5woY\"",
+    "date": "Thu, 23 Apr 2026 00:33:32 GMT",
+    "connection": "keep-alive",
+    "keep-alive": "timeout=5"
+  },
+  "body": {
+    "Product": {
+      "name": "Test FYgunlUCgB",
+      "amount": 995,
+      "price": 60112,
+      "manufacturer": "Sony",
+      "createdOn": "2026-04-23T00:33:32.000Z",
+      "notes": "Notes ENQkMLFMEN",
+      "_id": "69e968dc451d28c1a5cd8139"
+    },
+    "IsSuccess": true,
+    "ErrorMessage": null
+  }
+}

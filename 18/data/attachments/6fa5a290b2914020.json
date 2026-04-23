@@ -1,0 +1,26 @@
+{
+  "headers": {
+    "x-powered-by": "Express",
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "Authorization,X-User-Name",
+    "content-type": "application/json; charset=utf-8",
+    "content-length": "225",
+    "etag": "W/\"e1-pAByNEZKp7WrcOPFlsvA5sxhd3w\"",
+    "date": "Thu, 23 Apr 2026 00:34:00 GMT",
+    "connection": "keep-alive",
+    "keep-alive": "timeout=5"
+  },
+  "body": {
+    "Product": {
+      "name": "Test eezGjOAqyI",
+      "amount": 914,
+      "price": 36400,
+      "manufacturer": "Amazon",
+      "createdOn": "2026-04-23T00:34:00.000Z",
+      "notes": "Notes ESRljnbsby",
+      "_id": "69e968f8451d28c1a5cd994d"
+    },
+    "IsSuccess": true,
+    "ErrorMessage": null
+  }
+}

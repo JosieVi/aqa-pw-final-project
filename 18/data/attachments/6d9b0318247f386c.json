@@ -1,0 +1,26 @@
+{
+  "headers": {
+    "x-powered-by": "Express",
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "Authorization,X-User-Name",
+    "content-type": "application/json; charset=utf-8",
+    "content-length": "224",
+    "etag": "W/\"e0-EScnkVPk/0z5uEEUCwqM7Gm3YzQ\"",
+    "date": "Thu, 23 Apr 2026 00:32:34 GMT",
+    "connection": "keep-alive",
+    "keep-alive": "timeout=5"
+  },
+  "body": {
+    "Product": {
+      "name": "Test CzSsHkTVTQ",
+      "amount": 522,
+      "price": 32702,
+      "manufacturer": "Apple",
+      "createdOn": "2026-04-23T00:32:34.000Z",
+      "notes": "Notes iOUpufipDo",
+      "_id": "69e968a2451d28c1a5cd5bbe"
+    },
+    "IsSuccess": true,
+    "ErrorMessage": null
+  }
+}

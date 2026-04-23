@@ -1,0 +1,26 @@
+{
+  "headers": {
+    "x-powered-by": "Express",
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "Authorization,X-User-Name",
+    "content-type": "application/json; charset=utf-8",
+    "content-length": "224",
+    "etag": "W/\"e0-o6HUrDyfWAjl54+lNe0yw3yrYQg\"",
+    "date": "Thu, 23 Apr 2026 00:33:36 GMT",
+    "connection": "keep-alive",
+    "keep-alive": "timeout=5"
+  },
+  "body": {
+    "Product": {
+      "name": "Test QfGptzNWyB",
+      "amount": 771,
+      "price": 14101,
+      "manufacturer": "Apple",
+      "createdOn": "2026-04-23T00:33:36.000Z",
+      "notes": "Notes lWKQzyjjkj",
+      "_id": "69e968e0451d28c1a5cd87ce"
+    },
+    "IsSuccess": true,
+    "ErrorMessage": null
+  }
+}

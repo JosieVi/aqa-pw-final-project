@@ -1,0 +1,26 @@
+{
+  "headers": {
+    "x-powered-by": "Express",
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "Authorization,X-User-Name",
+    "content-type": "application/json; charset=utf-8",
+    "content-length": "224",
+    "etag": "W/\"e0-nsyhitmZoqw5AyHuV1z/G9xgYao\"",
+    "date": "Thu, 23 Apr 2026 00:33:33 GMT",
+    "connection": "keep-alive",
+    "keep-alive": "timeout=5"
+  },
+  "body": {
+    "Product": {
+      "name": "Test DUqbhLDPpf",
+      "amount": 590,
+      "price": 28020,
+      "manufacturer": "Apple",
+      "createdOn": "2026-04-23T00:33:33.000Z",
+      "notes": "Notes piPIoazpyS",
+      "_id": "69e968dd451d28c1a5cd82df"
+    },
+    "IsSuccess": true,
+    "ErrorMessage": null
+  }
+}

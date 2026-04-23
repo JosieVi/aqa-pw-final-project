@@ -1,0 +1,26 @@
+{
+  "headers": {
+    "x-powered-by": "Express",
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "Authorization,X-User-Name",
+    "content-type": "application/json; charset=utf-8",
+    "content-length": "225",
+    "etag": "W/\"e1-xAvzc8+JKLH/pT+8FWfK8amgjKU\"",
+    "date": "Thu, 23 Apr 2026 00:32:52 GMT",
+    "connection": "keep-alive",
+    "keep-alive": "timeout=5"
+  },
+  "body": {
+    "Product": {
+      "name": "Test MHxyGwrxxH",
+      "amount": 202,
+      "price": 6874,
+      "manufacturer": "Samsung",
+      "createdOn": "2026-04-23T00:32:52.000Z",
+      "notes": "Notes FKRCUQvtyn",
+      "_id": "69e968b4451d28c1a5cd664b"
+    },
+    "IsSuccess": true,
+    "ErrorMessage": null
+  }
+}

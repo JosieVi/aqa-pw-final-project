@@ -1,0 +1,26 @@
+{
+  "headers": {
+    "x-powered-by": "Express",
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "Authorization,X-User-Name",
+    "content-type": "application/json; charset=utf-8",
+    "content-length": "225",
+    "etag": "W/\"e1-fd5CVgx1hcoQknDdVqzIGj8/bn8\"",
+    "date": "Thu, 23 Apr 2026 00:33:39 GMT",
+    "connection": "keep-alive",
+    "keep-alive": "timeout=5"
+  },
+  "body": {
+    "Product": {
+      "name": "Test vBThgsWaqT",
+      "amount": 26,
+      "price": 73290,
+      "manufacturer": "Samsung",
+      "createdOn": "2026-04-23T00:33:39.000Z",
+      "notes": "Notes ejufZhVlfP",
+      "_id": "69e968e3451d28c1a5cd8f48"
+    },
+    "IsSuccess": true,
+    "ErrorMessage": null
+  }
+}

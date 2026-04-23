@@ -1,0 +1,26 @@
+{
+  "headers": {
+    "x-powered-by": "Express",
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "Authorization,X-User-Name",
+    "content-type": "application/json; charset=utf-8",
+    "content-length": "226",
+    "etag": "W/\"e2-9bERJkv7kPO8MfpwrAimtki7tck\"",
+    "date": "Thu, 23 Apr 2026 00:33:39 GMT",
+    "connection": "keep-alive",
+    "keep-alive": "timeout=5"
+  },
+  "body": {
+    "Product": {
+      "name": "Test bRHDyIqpTO",
+      "amount": 210,
+      "price": 38703,
+      "manufacturer": "Samsung",
+      "createdOn": "2026-04-23T00:33:39.000Z",
+      "notes": "Notes zfqukCVxUa",
+      "_id": "69e968e3451d28c1a5cd8ed4"
+    },
+    "IsSuccess": true,
+    "ErrorMessage": null
+  }
+}

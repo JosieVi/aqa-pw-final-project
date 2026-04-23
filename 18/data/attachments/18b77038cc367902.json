@@ -1,0 +1,26 @@
+{
+  "headers": {
+    "x-powered-by": "Express",
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "Authorization,X-User-Name",
+    "content-type": "application/json; charset=utf-8",
+    "content-length": "223",
+    "etag": "W/\"df-J7VSyfaSrUk6J3tHlH8xTfFLB8c\"",
+    "date": "Thu, 23 Apr 2026 00:33:37 GMT",
+    "connection": "keep-alive",
+    "keep-alive": "timeout=5"
+  },
+  "body": {
+    "Product": {
+      "name": "Test FalRSuVtwA",
+      "amount": 5,
+      "price": 43962,
+      "manufacturer": "Amazon",
+      "createdOn": "2026-04-23T00:33:37.000Z",
+      "notes": "Notes qXCpYKjpwZ",
+      "_id": "69e968e1451d28c1a5cd8b75"
+    },
+    "IsSuccess": true,
+    "ErrorMessage": null
+  }
+}

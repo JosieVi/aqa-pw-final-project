@@ -1,0 +1,26 @@
+{
+  "headers": {
+    "x-powered-by": "Express",
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "Authorization,X-User-Name",
+    "content-type": "application/json; charset=utf-8",
+    "content-length": "225",
+    "etag": "W/\"e1-+KLp1wj92WQ53tUeQinWTc4g2FE\"",
+    "date": "Thu, 23 Apr 2026 00:33:33 GMT",
+    "connection": "keep-alive",
+    "keep-alive": "timeout=5"
+  },
+  "body": {
+    "Product": {
+      "name": "Test RPrZGKFTec",
+      "amount": 816,
+      "price": 1407,
+      "manufacturer": "Samsung",
+      "createdOn": "2026-04-23T00:33:33.000Z",
+      "notes": "Notes JTopFOYVBg",
+      "_id": "69e968dd451d28c1a5cd831f"
+    },
+    "IsSuccess": true,
+    "ErrorMessage": null
+  }
+}

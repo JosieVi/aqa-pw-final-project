@@ -1,0 +1,26 @@
+{
+  "headers": {
+    "x-powered-by": "Express",
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "Authorization,X-User-Name",
+    "content-type": "application/json; charset=utf-8",
+    "content-length": "226",
+    "etag": "W/\"e2-5L+51Q/iqeq002/sPY9ZpYobSag\"",
+    "date": "Thu, 23 Apr 2026 00:33:02 GMT",
+    "connection": "keep-alive",
+    "keep-alive": "timeout=5"
+  },
+  "body": {
+    "Product": {
+      "name": "Test TJOPdrJRLf",
+      "amount": 608,
+      "price": 81210,
+      "manufacturer": "Samsung",
+      "createdOn": "2026-04-23T00:33:02.000Z",
+      "notes": "Notes XWVPKAvsLR",
+      "_id": "69e968be451d28c1a5cd703f"
+    },
+    "IsSuccess": true,
+    "ErrorMessage": null
+  }
+}

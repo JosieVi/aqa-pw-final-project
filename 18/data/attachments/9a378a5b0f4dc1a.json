@@ -1,0 +1,26 @@
+{
+  "headers": {
+    "x-powered-by": "Express",
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "Authorization,X-User-Name",
+    "content-type": "application/json; charset=utf-8",
+    "content-length": "227",
+    "etag": "W/\"e3-K/L8jvZl2SXn3MB+HtS+96e8/Uc\"",
+    "date": "Thu, 23 Apr 2026 00:33:37 GMT",
+    "connection": "keep-alive",
+    "keep-alive": "timeout=5"
+  },
+  "body": {
+    "Product": {
+      "name": "Test NbdHAtngQv",
+      "amount": 497,
+      "price": 1536,
+      "manufacturer": "Microsoft",
+      "createdOn": "2026-04-23T00:33:37.000Z",
+      "notes": "Notes fuOvIWBPWX",
+      "_id": "69e968e1451d28c1a5cd8af8"
+    },
+    "IsSuccess": true,
+    "ErrorMessage": null
+  }
+}

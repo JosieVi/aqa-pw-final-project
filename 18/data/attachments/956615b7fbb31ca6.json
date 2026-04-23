@@ -1,0 +1,26 @@
+{
+  "headers": {
+    "x-powered-by": "Express",
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "Authorization,X-User-Name",
+    "content-type": "application/json; charset=utf-8",
+    "content-length": "225",
+    "etag": "W/\"e1-fqqo4WoQE0eXBGHhp3/G9qMOurU\"",
+    "date": "Thu, 23 Apr 2026 00:33:56 GMT",
+    "connection": "keep-alive",
+    "keep-alive": "timeout=5"
+  },
+  "body": {
+    "Product": {
+      "name": "Test lZerrtndDi",
+      "amount": 706,
+      "price": 44500,
+      "manufacturer": "Xiaomi",
+      "createdOn": "2026-04-23T00:33:56.000Z",
+      "notes": "Notes vMhIdDXflF",
+      "_id": "69e968f4451d28c1a5cd9775"
+    },
+    "IsSuccess": true,
+    "ErrorMessage": null
+  }
+}

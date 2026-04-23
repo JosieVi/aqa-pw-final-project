@@ -1,0 +1,26 @@
+{
+  "headers": {
+    "x-powered-by": "Express",
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "Authorization,X-User-Name",
+    "content-type": "application/json; charset=utf-8",
+    "content-length": "223",
+    "etag": "W/\"df-9AedisLli9x+p/vS3yBQta1skdg\"",
+    "date": "Thu, 23 Apr 2026 00:32:27 GMT",
+    "connection": "keep-alive",
+    "keep-alive": "timeout=5"
+  },
+  "body": {
+    "Product": {
+      "name": "Test iLWvGOTrzJ",
+      "amount": 502,
+      "price": 9827,
+      "manufacturer": "Tesla",
+      "createdOn": "2026-04-23T00:32:27.000Z",
+      "notes": "Notes swWjbdHkxu",
+      "_id": "69e9689b451d28c1a5cd5944"
+    },
+    "IsSuccess": true,
+    "ErrorMessage": null
+  }
+}

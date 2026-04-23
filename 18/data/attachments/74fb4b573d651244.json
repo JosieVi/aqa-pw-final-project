@@ -1,0 +1,26 @@
+{
+  "headers": {
+    "x-powered-by": "Express",
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "Authorization,X-User-Name",
+    "content-type": "application/json; charset=utf-8",
+    "content-length": "223",
+    "etag": "W/\"df-IhoQStZVm21I329i3ogFctxTloU\"",
+    "date": "Thu, 23 Apr 2026 00:33:38 GMT",
+    "connection": "keep-alive",
+    "keep-alive": "timeout=5"
+  },
+  "body": {
+    "Product": {
+      "name": "Test ZpDblMbqmS",
+      "amount": 684,
+      "price": 66196,
+      "manufacturer": "Sony",
+      "createdOn": "2026-04-23T00:33:38.000Z",
+      "notes": "Notes QvuesPRvTm",
+      "_id": "69e968e2451d28c1a5cd8c9a"
+    },
+    "IsSuccess": true,
+    "ErrorMessage": null
+  }
+}

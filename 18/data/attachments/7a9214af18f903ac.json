@@ -1,0 +1,26 @@
+{
+  "headers": {
+    "x-powered-by": "Express",
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "Authorization,X-User-Name",
+    "content-type": "application/json; charset=utf-8",
+    "content-length": "225",
+    "etag": "W/\"e1-ZlszTe6HdGDFNxCnSg6CdwJSnyA\"",
+    "date": "Thu, 23 Apr 2026 00:32:55 GMT",
+    "connection": "keep-alive",
+    "keep-alive": "timeout=5"
+  },
+  "body": {
+    "Product": {
+      "name": "Test CuMDjSOQsW",
+      "amount": 494,
+      "price": 78551,
+      "manufacturer": "Xiaomi",
+      "createdOn": "2026-04-23T00:32:55.000Z",
+      "notes": "Notes eMzefRwlkN",
+      "_id": "69e968b7451d28c1a5cd69de"
+    },
+    "IsSuccess": true,
+    "ErrorMessage": null
+  }
+}

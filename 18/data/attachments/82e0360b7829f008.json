@@ -1,0 +1,26 @@
+{
+  "headers": {
+    "x-powered-by": "Express",
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "Authorization,X-User-Name",
+    "content-type": "application/json; charset=utf-8",
+    "content-length": "225",
+    "etag": "W/\"e1-mnWvbmuDwNepct/vDbU9PxHYKE4\"",
+    "date": "Thu, 23 Apr 2026 00:33:31 GMT",
+    "connection": "keep-alive",
+    "keep-alive": "timeout=5"
+  },
+  "body": {
+    "Product": {
+      "name": "Test NDyffPWoIT",
+      "amount": 706,
+      "price": 99588,
+      "manufacturer": "Xiaomi",
+      "createdOn": "2026-04-23T00:33:31.000Z",
+      "notes": "Notes mjJCuGqtDn",
+      "_id": "69e968db451d28c1a5cd7eff"
+    },
+    "IsSuccess": true,
+    "ErrorMessage": null
+  }
+}

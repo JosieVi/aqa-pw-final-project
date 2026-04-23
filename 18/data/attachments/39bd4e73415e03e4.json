@@ -1,0 +1,26 @@
+{
+  "headers": {
+    "x-powered-by": "Express",
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "Authorization,X-User-Name",
+    "content-type": "application/json; charset=utf-8",
+    "content-length": "224",
+    "etag": "W/\"e0-uXppNV5NlTX3wW04Vpf0SztA3Bo\"",
+    "date": "Thu, 23 Apr 2026 00:33:16 GMT",
+    "connection": "keep-alive",
+    "keep-alive": "timeout=5"
+  },
+  "body": {
+    "Product": {
+      "name": "Test QWiWYMjers",
+      "amount": 493,
+      "price": 73306,
+      "manufacturer": "Tesla",
+      "createdOn": "2026-04-23T00:33:16.000Z",
+      "notes": "Notes gckhQIwZBN",
+      "_id": "69e968cc451d28c1a5cd7491"
+    },
+    "IsSuccess": true,
+    "ErrorMessage": null
+  }
+}

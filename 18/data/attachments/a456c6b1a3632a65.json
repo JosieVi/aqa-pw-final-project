@@ -1,0 +1,26 @@
+{
+  "headers": {
+    "x-powered-by": "Express",
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "Authorization,X-User-Name",
+    "content-type": "application/json; charset=utf-8",
+    "content-length": "227",
+    "etag": "W/\"e3-BpSnX+p/mBPhXMWweVvN+AeNNSI\"",
+    "date": "Thu, 23 Apr 2026 00:33:44 GMT",
+    "connection": "keep-alive",
+    "keep-alive": "timeout=5"
+  },
+  "body": {
+    "Product": {
+      "name": "Test ByDcLlYDrn",
+      "amount": 52,
+      "price": 17034,
+      "manufacturer": "Microsoft",
+      "createdOn": "2026-04-23T00:33:44.000Z",
+      "notes": "Notes ELeTQvSfzJ",
+      "_id": "69e968e8451d28c1a5cd9532"
+    },
+    "IsSuccess": true,
+    "ErrorMessage": null
+  }
+}

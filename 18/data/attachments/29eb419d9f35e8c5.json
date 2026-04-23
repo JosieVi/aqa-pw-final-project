@@ -1,0 +1,26 @@
+{
+  "headers": {
+    "x-powered-by": "Express",
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "Authorization,X-User-Name",
+    "content-type": "application/json; charset=utf-8",
+    "content-length": "227",
+    "etag": "W/\"e3-/SWuqoC8lDBKFgUIbhVvm50P+T8\"",
+    "date": "Thu, 23 Apr 2026 00:33:37 GMT",
+    "connection": "keep-alive",
+    "keep-alive": "timeout=5"
+  },
+  "body": {
+    "Product": {
+      "name": "Test YPLlTAsEgu",
+      "amount": 955,
+      "price": 1219,
+      "manufacturer": "Microsoft",
+      "createdOn": "2026-04-23T00:33:37.000Z",
+      "notes": "Notes QHtemFvrEq",
+      "_id": "69e968e1451d28c1a5cd8acb"
+    },
+    "IsSuccess": true,
+    "ErrorMessage": null
+  }
+}
