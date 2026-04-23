@@ -37,7 +37,6 @@ jobs:
       - name: Start Application
         run: docker compose up -d
 
-      # 5. Ожидание готовности фронтенда (замени порт, если он другой)
       - name: Wait for App
         run: |
           npm install -g wait-on

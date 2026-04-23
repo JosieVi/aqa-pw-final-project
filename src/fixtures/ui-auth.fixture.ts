@@ -32,7 +32,24 @@ export const authFixture = base.extend<IAuthTestFixtures, IWorkerAuthFixtures>({
 
       const controller = new SignInController(apiContext);
       const service = new SignInApiService(controller);
-      const token = await service.loginAsLocalUser();
+
+      // Retry login up to 3 times with exponential backoff to handle transient failures
+      // (server warming up, rate limits, network hiccups) that can occur when workers start
+      let token: string | undefined;
+      const maxRetries = 3;
+      for (let attempt = 1; attempt <= maxRetries; attempt++) {
+        try {
+          token = await service.loginAsLocalUser();
+          if (token) break;
+        } catch (error) {
+          if (attempt === maxRetries) throw error;
+          await new Promise((resolve) => setTimeout(resolve, 500 * attempt));
+        }
+      }
+
+      if (!token) {
+        throw new Error('Failed to obtain authentication token after multiple retries');
+      }
 
       await apiContext.dispose();
 
