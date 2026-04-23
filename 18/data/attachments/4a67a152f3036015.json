@@ -1,0 +1,26 @@
+{
+  "headers": {
+    "x-powered-by": "Express",
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "Authorization,X-User-Name",
+    "content-type": "application/json; charset=utf-8",
+    "content-length": "225",
+    "etag": "W/\"e1-bdGJRJbzrVJh7K/1Ze3J4eOj/po\"",
+    "date": "Thu, 23 Apr 2026 00:26:01 GMT",
+    "connection": "keep-alive",
+    "keep-alive": "timeout=5"
+  },
+  "body": {
+    "Product": {
+      "name": "Test naORBLYXiY",
+      "amount": 383,
+      "price": 52681,
+      "manufacturer": "Amazon",
+      "createdOn": "2026-04-23T00:26:01.000Z",
+      "notes": "Notes DDycaSgIGQ",
+      "_id": "69e9671922c631ff69966977"
+    },
+    "IsSuccess": true,
+    "ErrorMessage": null
+  }
+}

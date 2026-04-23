@@ -1,0 +1,26 @@
+{
+  "headers": {
+    "x-powered-by": "Express",
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "Authorization,X-User-Name",
+    "content-type": "application/json; charset=utf-8",
+    "content-length": "222",
+    "etag": "W/\"de-lWRcUmM8IJOE7bNf61gxb6i7XWc\"",
+    "date": "Thu, 23 Apr 2026 00:27:08 GMT",
+    "connection": "keep-alive",
+    "keep-alive": "timeout=5"
+  },
+  "body": {
+    "Product": {
+      "name": "Test gxllHamBEA",
+      "amount": 453,
+      "price": 9181,
+      "manufacturer": "Sony",
+      "createdOn": "2026-04-23T00:27:08.000Z",
+      "notes": "Notes tEAUjASHIf",
+      "_id": "69e9675c22c631ff69969660"
+    },
+    "IsSuccess": true,
+    "ErrorMessage": null
+  }
+}

@@ -1,0 +1,54 @@
+{
+  "headers": {
+    "x-powered-by": "Express",
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "Authorization,X-User-Name",
+    "content-type": "application/json; charset=utf-8",
+    "content-length": "1313",
+    "etag": "W/\"521-7Uk09dAWYY3hoKK6Fu/18qN97pY\"",
+    "date": "Thu, 23 Apr 2026 00:27:01 GMT",
+    "connection": "keep-alive",
+    "keep-alive": "timeout=5"
+  },
+  "body": {
+    "Customers": [
+      {
+        "_id": "69e9675522c631ff69968c3b",
+        "email": "test1776904021499_FDHC@example.com",
+        "name": "test FjKgDWSTspVkZmdsaPmOtlrniVmRbXaySch",
+        "country": "USA",
+        "city": "testCity tWInasdZjHb",
+        "street": "testStreet 3qIyJnEFAsxmwTGJ0WtlT3n71FUR5",
+        "house": 967,
+        "flat": 8333,
+        "phone": "+2970686511",
+        "createdOn": "2026-04-23T00:27:01.000Z",
+        "notes": "Notes cKhuaYPIhpyueMBcSMMZKbcveRQfyDFUwvHGmkknMiKyUhXkykSnvpZCQoBoetEMrUpdqlSAhHYJgXTUYfOdScxKrWDfsobiQkyXKegenNTbzNQuMVyvyouWjJscSNtXsjVvvzTlZJXePACWSMAWmSbktEfNrkvgdqQQMJfdzfIfCMBuHQpZmdIldkspQxAZPlsHHgDNGkKwMDjLybBAyNlAfRBBHEvXQUWQdaZtqIDNRHWXzfnm"
+      },
+      {
+        "_id": "69e9673222c631ff699677fc",
+        "email": "test1776903986900_ZWPW@example.com",
+        "name": "test LDFYjBrueQEyfTtDjQSVJjvxAohmfgHIibi",
+        "country": "USA",
+        "city": "testCity IBxlvZnlgcs",
+        "street": "testStreet YtDS5kyvGqEPjs3pJ7Eau18sCvETd",
+        "house": 639,
+        "flat": 9436,
+        "phone": "+2481055764",
+        "createdOn": "2026-04-23T00:26:26.000Z",
+        "notes": "Notes JlDcXBvefAdPjHWNWxdsLHFdojLdBWlWMPLVcWcwgShpIUezOjMFsqbObOQCibVzNBYmKpKoBhrVVZofrpyVXDJrxYZBfSXwWwqCnmFEzpSKXLwzguKZFMDFHvmYGAbGcwWMkueKQCeAJOWzmhAOqeSoRoMwKNRigihAdPFZJHBmjWxGxPRqAVcJAujTbNiUwVxvnSqCBaLWOOcgRvTcapVgrbSAAgPtYphzJqFsxUwuUVzvcMdN"
+      }
+    ],
+    "total": 2,
+    "page": 1,
+    "limit": 10,
+    "search": "USA",
+    "country": [],
+    "sorting": {
+      "sortField": "createdOn",
+      "sortOrder": "desc"
+    },
+    "IsSuccess": true,
+    "ErrorMessage": null
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "headers": {
+    "x-powered-by": "Express",
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "Authorization,X-User-Name",
+    "content-type": "application/json; charset=utf-8",
+    "content-length": "223",
+    "etag": "W/\"df-NXk178lwV9ymAdvEVMRI6gIuprw\"",
+    "date": "Thu, 23 Apr 2026 00:27:17 GMT",
+    "connection": "keep-alive",
+    "keep-alive": "timeout=5"
+  },
+  "body": {
+    "Product": {
+      "_id": "69e9676522c631ff6996a5f3",
+      "name": "Test zeQRIWDImT",
+      "amount": 999,
+      "price": 91227,
+      "manufacturer": "Sony",
+      "createdOn": "2026-04-23T00:27:17.000Z",
+      "notes": "Notes YGPHZVZGOP"
+    },
+    "IsSuccess": true,
+    "ErrorMessage": null
+  }
+}

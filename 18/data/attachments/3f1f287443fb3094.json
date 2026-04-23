@@ -1,0 +1,26 @@
+{
+  "headers": {
+    "x-powered-by": "Express",
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "Authorization,X-User-Name",
+    "content-type": "application/json; charset=utf-8",
+    "content-length": "224",
+    "etag": "W/\"e0-6LZ0SiWTiUsl7DTXFOeDxocpL/I\"",
+    "date": "Thu, 23 Apr 2026 00:26:26 GMT",
+    "connection": "keep-alive",
+    "keep-alive": "timeout=5"
+  },
+  "body": {
+    "Product": {
+      "name": "Test VmCTaTNJus",
+      "amount": 749,
+      "price": 1580,
+      "manufacturer": "Google",
+      "createdOn": "2026-04-23T00:26:26.000Z",
+      "notes": "Notes TxjtfUVrmh",
+      "_id": "69e9673222c631ff699676bc"
+    },
+    "IsSuccess": true,
+    "ErrorMessage": null
+  }
+}

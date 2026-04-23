@@ -1,0 +1,26 @@
+{
+  "headers": {
+    "x-powered-by": "Express",
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "Authorization,X-User-Name",
+    "content-type": "application/json; charset=utf-8",
+    "content-length": "223",
+    "etag": "W/\"df-mJFQFx+bL4waSRD7GYsgBKS4C+k\"",
+    "date": "Thu, 23 Apr 2026 00:27:04 GMT",
+    "connection": "keep-alive",
+    "keep-alive": "timeout=5"
+  },
+  "body": {
+    "Product": {
+      "name": "Test rVxEPBxlss",
+      "amount": 91,
+      "price": 42476,
+      "manufacturer": "Apple",
+      "createdOn": "2026-04-23T00:27:04.000Z",
+      "notes": "Notes flpLIIbYrU",
+      "_id": "69e9675822c631ff6996902a"
+    },
+    "IsSuccess": true,
+    "ErrorMessage": null
+  }
+}

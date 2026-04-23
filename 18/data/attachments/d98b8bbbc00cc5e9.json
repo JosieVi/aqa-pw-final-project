@@ -1,0 +1,26 @@
+{
+  "headers": {
+    "x-powered-by": "Express",
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "Authorization,X-User-Name",
+    "content-type": "application/json; charset=utf-8",
+    "content-length": "226",
+    "etag": "W/\"e2-JkmMh9EQh0nE2763MrKGaiDB3kw\"",
+    "date": "Thu, 23 Apr 2026 00:26:59 GMT",
+    "connection": "keep-alive",
+    "keep-alive": "timeout=5"
+  },
+  "body": {
+    "Product": {
+      "name": "Test lFhwnBTDIF",
+      "amount": 434,
+      "price": 10408,
+      "manufacturer": "Samsung",
+      "createdOn": "2026-04-23T00:26:59.000Z",
+      "notes": "Notes LsDfftZqYi",
+      "_id": "69e9675322c631ff69968957"
+    },
+    "IsSuccess": true,
+    "ErrorMessage": null
+  }
+}

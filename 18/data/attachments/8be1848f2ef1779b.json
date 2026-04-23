@@ -1,0 +1,26 @@
+{
+  "headers": {
+    "x-powered-by": "Express",
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "Authorization,X-User-Name",
+    "content-type": "application/json; charset=utf-8",
+    "content-length": "223",
+    "etag": "W/\"df-MZSRxIdnbF7QilOapuFToM8FcWM\"",
+    "date": "Thu, 23 Apr 2026 00:25:57 GMT",
+    "connection": "keep-alive",
+    "keep-alive": "timeout=5"
+  },
+  "body": {
+    "Product": {
+      "name": "Test InKlxMIZQp",
+      "amount": 22,
+      "price": 26039,
+      "manufacturer": "Tesla",
+      "createdOn": "2026-04-23T00:25:57.000Z",
+      "notes": "Notes kRNDFUmWeg",
+      "_id": "69e9671522c631ff69966835"
+    },
+    "IsSuccess": true,
+    "ErrorMessage": null
+  }
+}

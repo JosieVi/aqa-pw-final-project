@@ -1,0 +1,26 @@
+{
+  "headers": {
+    "x-powered-by": "Express",
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "Authorization,X-User-Name",
+    "content-type": "application/json; charset=utf-8",
+    "content-length": "225",
+    "etag": "W/\"e1-VWM+obAUgou6JAOHqc5C/4Ad5qU\"",
+    "date": "Thu, 23 Apr 2026 00:27:10 GMT",
+    "connection": "keep-alive",
+    "keep-alive": "timeout=5"
+  },
+  "body": {
+    "Product": {
+      "name": "Test lONBIMrmTf",
+      "amount": 114,
+      "price": 14661,
+      "manufacturer": "Amazon",
+      "createdOn": "2026-04-23T00:27:10.000Z",
+      "notes": "Notes mzTMrfrPTl",
+      "_id": "69e9675e22c631ff69969a3a"
+    },
+    "IsSuccess": true,
+    "ErrorMessage": null
+  }
+}

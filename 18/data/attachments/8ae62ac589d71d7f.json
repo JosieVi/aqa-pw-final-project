@@ -1,0 +1,26 @@
+{
+  "headers": {
+    "x-powered-by": "Express",
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "Authorization,X-User-Name",
+    "content-type": "application/json; charset=utf-8",
+    "content-length": "225",
+    "etag": "W/\"e1-w56da66V5kajIrqCehxmHb5Ibz0\"",
+    "date": "Thu, 23 Apr 2026 00:27:05 GMT",
+    "connection": "keep-alive",
+    "keep-alive": "timeout=5"
+  },
+  "body": {
+    "Product": {
+      "name": "Test PoGPWSOXgl",
+      "amount": 145,
+      "price": 87729,
+      "manufacturer": "Google",
+      "createdOn": "2026-04-23T00:27:05.000Z",
+      "notes": "Notes xkJKUkBKiG",
+      "_id": "69e9675922c631ff699690ec"
+    },
+    "IsSuccess": true,
+    "ErrorMessage": null
+  }
+}

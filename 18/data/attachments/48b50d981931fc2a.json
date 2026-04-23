@@ -1,0 +1,26 @@
+{
+  "headers": {
+    "x-powered-by": "Express",
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "Authorization,X-User-Name",
+    "content-type": "application/json; charset=utf-8",
+    "content-length": "225",
+    "etag": "W/\"e1-TpNDK93A/BtGyhGQPpCIl+7+Pc4\"",
+    "date": "Thu, 23 Apr 2026 00:27:04 GMT",
+    "connection": "keep-alive",
+    "keep-alive": "timeout=5"
+  },
+  "body": {
+    "Product": {
+      "name": "Test TKOvFuSRPi",
+      "amount": 401,
+      "price": 48765,
+      "manufacturer": "Google",
+      "createdOn": "2026-04-23T00:27:04.000Z",
+      "notes": "Notes comjpjgDlL",
+      "_id": "69e9675822c631ff69968fd0"
+    },
+    "IsSuccess": true,
+    "ErrorMessage": null
+  }
+}

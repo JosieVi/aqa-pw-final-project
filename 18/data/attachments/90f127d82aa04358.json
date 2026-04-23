@@ -1,0 +1,212 @@
+{
+  "headers": {
+    "x-powered-by": "Express",
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "Authorization,X-User-Name",
+    "content-type": "application/json; charset=utf-8",
+    "content-length": "3763",
+    "etag": "W/\"eb3-Ee5ihGqLNoEJpZy6xjHQ35oOSQ0\"",
+    "date": "Thu, 23 Apr 2026 00:27:13 GMT",
+    "connection": "keep-alive",
+    "keep-alive": "timeout=5"
+  },
+  "body": {
+    "Order": {
+      "_id": "69e9676122c631ff6996a1ce",
+      "status": "In Process",
+      "customer": {
+        "_id": "69e9676122c631ff6996a1c1",
+        "email": "test1776904033774_YQEE@example.com",
+        "name": "test dyhqAfefOpCLGMgctjipROqwmbjxpmwkvCC",
+        "country": "Russia",
+        "city": "testCity mPQJKASCuul",
+        "street": "testStreet 5ETBTPsdOwk0vQBfEOweY6ga04UDh",
+        "house": 675,
+        "flat": 2153,
+        "phone": "+3632785215",
+        "createdOn": "2026-04-23T00:27:13.000Z",
+        "notes": "Notes kRibEiKDQDAJOJBZPwInzPXtWmqPzORybNEMbtBtyMtjPwBHETiArMxgRMncfxykYratdfXWIyKicjOEYZNvNyqrOhvAOPNEmvpmQyEkAMyAYsJUIIpurmJDyHVaKxyRBILnaJxmeJyCgfAPEDHXdErejXAKGIsLJNpVBJutdMLZaAAYJhUHpbZGDAbyonIirdycOPzMynwJhfgjIKXmzMCkAXQMgbsMroSZRwsnqNhuCanoGygO"
+      },
+      "products": [
+        {
+          "_id": "69e9676122c631ff6996a1c6",
+          "name": "Test IgLyIZmxJx",
+          "amount": 232,
+          "price": 62453,
+          "manufacturer": "Apple",
+          "notes": "Notes JocKxNYGNz",
+          "received": false
+        }
+      ],
+      "delivery": {
+        "address": {
+          "country": "Belarus",
+          "city": "TestCity LBWOj",
+          "street": "TestStreet VulOkkFoSS",
+          "house": 941,
+          "flat": 6974
+        },
+        "finalDate": "2027-01-04T00:00:00.000Z",
+        "condition": "Pickup"
+      },
+      "total_price": 62453,
+      "createdOn": "2026-04-23T00:27:13.000Z",
+      "comments": [],
+      "history": [
+        {
+          "status": "In Process",
+          "customer": "69e9676122c631ff6996a1c1",
+          "products": [
+            {
+              "_id": "69e9676122c631ff6996a1c6",
+              "name": "Test IgLyIZmxJx",
+              "amount": 232,
+              "price": 62453,
+              "manufacturer": "Apple",
+              "notes": "Notes JocKxNYGNz",
+              "received": false
+            }
+          ],
+          "total_price": 62453,
+          "delivery": {
+            "address": {
+              "country": "Belarus",
+              "city": "TestCity LBWOj",
+              "street": "TestStreet VulOkkFoSS",
+              "house": 941,
+              "flat": 6974
+            },
+            "finalDate": "2027-01-04T00:00:00.000Z",
+            "condition": "Pickup"
+          },
+          "changedOn": "2026-04-23T00:27:13.000Z",
+          "action": "Order processing started",
+          "performer": {
+            "_id": "69e966d422c631ff69966652",
+            "username": "admin@example.com",
+            "firstName": "Admin",
+            "lastName": "Admin",
+            "roles": [
+              "ADMIN"
+            ],
+            "createdOn": "2026/04/23 00:24:52"
+          },
+          "assignedManager": null
+        },
+        {
+          "status": "In Process",
+          "customer": "69e9676122c631ff6996a1c1",
+          "products": [
+            {
+              "_id": "69e9676122c631ff6996a1c6",
+              "name": "Test IgLyIZmxJx",
+              "amount": 232,
+              "price": 62453,
+              "manufacturer": "Apple",
+              "notes": "Notes JocKxNYGNz",
+              "received": false
+            }
+          ],
+          "total_price": 62453,
+          "delivery": {
+            "address": {
+              "country": "Belarus",
+              "city": "TestCity LBWOj",
+              "street": "TestStreet VulOkkFoSS",
+              "house": 941,
+              "flat": 6974
+            },
+            "finalDate": "2027-01-04T00:00:00.000Z",
+            "condition": "Pickup"
+          },
+          "changedOn": "2026-04-23T00:27:13.000Z",
+          "action": "Order processing started",
+          "performer": {
+            "_id": "69e966d422c631ff69966652",
+            "username": "admin@example.com",
+            "firstName": "Admin",
+            "lastName": "Admin",
+            "roles": [
+              "ADMIN"
+            ],
+            "createdOn": "2026/04/23 00:24:52"
+          },
+          "assignedManager": null
+        },
+        {
+          "status": "Draft",
+          "customer": "69e9676122c631ff6996a1c1",
+          "products": [
+            {
+              "_id": "69e9676122c631ff6996a1c6",
+              "name": "Test IgLyIZmxJx",
+              "amount": 232,
+              "price": 62453,
+              "manufacturer": "Apple",
+              "notes": "Notes JocKxNYGNz",
+              "received": false
+            }
+          ],
+          "total_price": 62453,
+          "delivery": {
+            "address": {
+              "country": "Belarus",
+              "city": "TestCity LBWOj",
+              "street": "TestStreet VulOkkFoSS",
+              "house": 941,
+              "flat": 6974
+            },
+            "finalDate": "2027-01-04T00:00:00.000Z",
+            "condition": "Pickup"
+          },
+          "changedOn": "2026-04-23T00:27:13.000Z",
+          "action": "Delivery Scheduled",
+          "performer": {
+            "_id": "69e966d422c631ff69966652",
+            "username": "admin@example.com",
+            "firstName": "Admin",
+            "lastName": "Admin",
+            "roles": [
+              "ADMIN"
+            ],
+            "createdOn": "2026/04/23 00:24:52"
+          },
+          "assignedManager": null
+        },
+        {
+          "status": "Draft",
+          "customer": "69e9676122c631ff6996a1c1",
+          "products": [
+            {
+              "_id": "69e9676122c631ff6996a1c6",
+              "name": "Test IgLyIZmxJx",
+              "amount": 232,
+              "price": 62453,
+              "manufacturer": "Apple",
+              "notes": "Notes JocKxNYGNz",
+              "received": false
+            }
+          ],
+          "total_price": 62453,
+          "delivery": null,
+          "changedOn": "2026-04-23T00:27:13.000Z",
+          "action": "Order created",
+          "performer": {
+            "_id": "69e966d422c631ff69966652",
+            "username": "admin@example.com",
+            "firstName": "Admin",
+            "lastName": "Admin",
+            "roles": [
+              "ADMIN"
+            ],
+            "createdOn": "2026/04/23 00:24:52"
+          },
+          "assignedManager": null
+        }
+      ],
+      "assignedManager": null
+    },
+    "IsSuccess": true,
+    "ErrorMessage": null
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "headers": {
+    "x-powered-by": "Express",
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "Authorization,X-User-Name",
+    "content-type": "application/json; charset=utf-8",
+    "content-length": "228",
+    "etag": "W/\"e4-0iw6mO8i5azyKeNOdLcewEHUb1U\"",
+    "date": "Thu, 23 Apr 2026 00:27:12 GMT",
+    "connection": "keep-alive",
+    "keep-alive": "timeout=5"
+  },
+  "body": {
+    "Product": {
+      "name": "Test mjouyvSlQL",
+      "amount": 213,
+      "price": 96423,
+      "manufacturer": "Microsoft",
+      "createdOn": "2026-04-23T00:27:12.000Z",
+      "notes": "Notes TEjBvThVuK",
+      "_id": "69e9676022c631ff69969ee3"
+    },
+    "IsSuccess": true,
+    "ErrorMessage": null
+  }
+}

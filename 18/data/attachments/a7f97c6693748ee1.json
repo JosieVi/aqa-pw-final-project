@@ -1,0 +1,26 @@
+{
+  "headers": {
+    "x-powered-by": "Express",
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "Authorization,X-User-Name",
+    "content-type": "application/json; charset=utf-8",
+    "content-length": "228",
+    "etag": "W/\"e4-S9zlExFs0qj/ZZd7IKVN4x9TNk0\"",
+    "date": "Thu, 23 Apr 2026 00:27:17 GMT",
+    "connection": "keep-alive",
+    "keep-alive": "timeout=5"
+  },
+  "body": {
+    "Product": {
+      "name": "Test xUgJFHUavm",
+      "amount": 893,
+      "price": 67413,
+      "manufacturer": "Microsoft",
+      "createdOn": "2026-04-23T00:27:17.000Z",
+      "notes": "Notes gmuCIZWVbP",
+      "_id": "69e9676522c631ff6996a5d3"
+    },
+    "IsSuccess": true,
+    "ErrorMessage": null
+  }
+}

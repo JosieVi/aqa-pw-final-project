@@ -1,0 +1,26 @@
+{
+  "headers": {
+    "x-powered-by": "Express",
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "Authorization,X-User-Name",
+    "content-type": "application/json; charset=utf-8",
+    "content-length": "223",
+    "etag": "W/\"df-0Gaj1jTkaHSzDZw0v1LGSY99jSA\"",
+    "date": "Thu, 23 Apr 2026 00:27:15 GMT",
+    "connection": "keep-alive",
+    "keep-alive": "timeout=5"
+  },
+  "body": {
+    "Product": {
+      "name": "Test zientlIilX",
+      "amount": 650,
+      "price": 9840,
+      "manufacturer": "Tesla",
+      "createdOn": "2026-04-23T00:27:15.000Z",
+      "notes": "Notes UbMiuwyUzW",
+      "_id": "69e9676322c631ff6996a519"
+    },
+    "IsSuccess": true,
+    "ErrorMessage": null
+  }
+}

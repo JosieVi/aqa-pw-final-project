@@ -1,0 +1,26 @@
+{
+  "headers": {
+    "x-powered-by": "Express",
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "Authorization,X-User-Name",
+    "content-type": "application/json; charset=utf-8",
+    "content-length": "224",
+    "etag": "W/\"e0-/5b4t3Ml7uK3IOFYxrY4TD/+p2U\"",
+    "date": "Thu, 23 Apr 2026 00:25:58 GMT",
+    "connection": "keep-alive",
+    "keep-alive": "timeout=5"
+  },
+  "body": {
+    "Product": {
+      "name": "Test UmyBOlyqej",
+      "amount": 661,
+      "price": 69346,
+      "manufacturer": "Apple",
+      "createdOn": "2026-04-23T00:25:58.000Z",
+      "notes": "Notes PZPlLkjOSL",
+      "_id": "69e9671622c631ff69966889"
+    },
+    "IsSuccess": true,
+    "ErrorMessage": null
+  }
+}

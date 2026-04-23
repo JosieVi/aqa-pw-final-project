@@ -1,0 +1,26 @@
+{
+  "headers": {
+    "x-powered-by": "Express",
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "Authorization,X-User-Name",
+    "content-type": "application/json; charset=utf-8",
+    "content-length": "228",
+    "etag": "W/\"e4-0EgMlvRfFGIL6D4Af62jk1VoQuM\"",
+    "date": "Thu, 23 Apr 2026 00:27:11 GMT",
+    "connection": "keep-alive",
+    "keep-alive": "timeout=5"
+  },
+  "body": {
+    "Product": {
+      "name": "Test TXeNSWXXis",
+      "amount": 716,
+      "price": 40797,
+      "manufacturer": "Microsoft",
+      "createdOn": "2026-04-23T00:27:11.000Z",
+      "notes": "Notes iaotCHNrnY",
+      "_id": "69e9675f22c631ff69969c1d"
+    },
+    "IsSuccess": true,
+    "ErrorMessage": null
+  }
+}

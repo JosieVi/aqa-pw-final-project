@@ -1,0 +1,26 @@
+{
+  "headers": {
+    "x-powered-by": "Express",
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "Authorization,X-User-Name",
+    "content-type": "application/json; charset=utf-8",
+    "content-length": "226",
+    "etag": "W/\"e2-MWba3Br1Ao7aIibwoXfkuhLMCT0\"",
+    "date": "Thu, 23 Apr 2026 00:27:13 GMT",
+    "connection": "keep-alive",
+    "keep-alive": "timeout=5"
+  },
+  "body": {
+    "Product": {
+      "name": "Test lGbIntTWmE",
+      "amount": 965,
+      "price": 54450,
+      "manufacturer": "Samsung",
+      "createdOn": "2026-04-23T00:27:13.000Z",
+      "notes": "Notes qYuYDqOqlI",
+      "_id": "69e9676122c631ff6996a109"
+    },
+    "IsSuccess": true,
+    "ErrorMessage": null
+  }
+}

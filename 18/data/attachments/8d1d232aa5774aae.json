@@ -1,0 +1,26 @@
+{
+  "headers": {
+    "x-powered-by": "Express",
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "Authorization,X-User-Name",
+    "content-type": "application/json; charset=utf-8",
+    "content-length": "226",
+    "etag": "W/\"e2-Rz6T3cf2KQmSHIhbrufhKp0iaMU\"",
+    "date": "Thu, 23 Apr 2026 00:27:05 GMT",
+    "connection": "keep-alive",
+    "keep-alive": "timeout=5"
+  },
+  "body": {
+    "Product": {
+      "name": "Test PrJNDJytaA",
+      "amount": 908,
+      "price": 35302,
+      "manufacturer": "Samsung",
+      "createdOn": "2026-04-23T00:27:05.000Z",
+      "notes": "Notes rzQLMKwbPv",
+      "_id": "69e9675922c631ff69969154"
+    },
+    "IsSuccess": true,
+    "ErrorMessage": null
+  }
+}

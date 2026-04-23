@@ -1,0 +1,25 @@
+{
+  "headers": {
+    "x-powered-by": "Express",
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "Authorization,X-User-Name",
+    "content-type": "application/json; charset=utf-8",
+    "content-length": "198",
+    "etag": "W/\"c6-G5P/AX64NghjODPjlGjKTSYZNjA\"",
+    "date": "Thu, 23 Apr 2026 00:27:15 GMT",
+    "connection": "keep-alive",
+    "keep-alive": "timeout=5"
+  },
+  "body": {
+    "Product": {
+      "name": "Test FgqZiuDwtM",
+      "amount": 235,
+      "price": 19228,
+      "manufacturer": "Google",
+      "createdOn": "2026-04-23T00:27:15.000Z",
+      "_id": "69e9676322c631ff6996a498"
+    },
+    "IsSuccess": true,
+    "ErrorMessage": null
+  }
+}

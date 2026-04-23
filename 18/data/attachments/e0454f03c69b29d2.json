@@ -1,0 +1,26 @@
+{
+  "headers": {
+    "x-powered-by": "Express",
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "Authorization,X-User-Name",
+    "content-type": "application/json; charset=utf-8",
+    "content-length": "226",
+    "etag": "W/\"e2-v10J9XddWZ5MOATTwyrHYPsl1P8\"",
+    "date": "Thu, 23 Apr 2026 00:27:17 GMT",
+    "connection": "keep-alive",
+    "keep-alive": "timeout=5"
+  },
+  "body": {
+    "Product": {
+      "name": "Test HIMpWOyBrc",
+      "amount": 858,
+      "price": 53592,
+      "manufacturer": "Samsung",
+      "createdOn": "2026-04-23T00:27:17.000Z",
+      "notes": "Notes LhWGUCGvTA",
+      "_id": "69e9676522c631ff6996a643"
+    },
+    "IsSuccess": true,
+    "ErrorMessage": null
+  }
+}

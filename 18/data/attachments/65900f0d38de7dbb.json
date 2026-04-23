@@ -1,0 +1,26 @@
+{
+  "headers": {
+    "x-powered-by": "Express",
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "Authorization,X-User-Name",
+    "content-type": "application/json; charset=utf-8",
+    "content-length": "226",
+    "etag": "W/\"e2-8KvDjZPD0JeFhFmt8QpzpQT7HK0\"",
+    "date": "Thu, 23 Apr 2026 00:27:11 GMT",
+    "connection": "keep-alive",
+    "keep-alive": "timeout=5"
+  },
+  "body": {
+    "Product": {
+      "name": "Test SxgvcMNBzx",
+      "amount": 850,
+      "price": 46074,
+      "manufacturer": "Samsung",
+      "createdOn": "2026-04-23T00:27:11.000Z",
+      "notes": "Notes vLCBshRHGn",
+      "_id": "69e9675f22c631ff69969c46"
+    },
+    "IsSuccess": true,
+    "ErrorMessage": null
+  }
+}

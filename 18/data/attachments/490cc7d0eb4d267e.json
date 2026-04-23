@@ -1,0 +1,26 @@
+{
+  "headers": {
+    "x-powered-by": "Express",
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "Authorization,X-User-Name",
+    "content-type": "application/json; charset=utf-8",
+    "content-length": "224",
+    "etag": "W/\"e0-LK9WTj4gfId7rDLun0tgnyCn1Bo\"",
+    "date": "Thu, 23 Apr 2026 00:26:23 GMT",
+    "connection": "keep-alive",
+    "keep-alive": "timeout=5"
+  },
+  "body": {
+    "Product": {
+      "name": "Test prmLMqAssH",
+      "amount": 43,
+      "price": 15527,
+      "manufacturer": "Amazon",
+      "createdOn": "2026-04-23T00:26:23.000Z",
+      "notes": "Notes TmmtKsAMlV",
+      "_id": "69e9672f22c631ff699673c4"
+    },
+    "IsSuccess": true,
+    "ErrorMessage": null
+  }
+}

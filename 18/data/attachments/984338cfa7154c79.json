@@ -1,0 +1,26 @@
+{
+  "headers": {
+    "x-powered-by": "Express",
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "Authorization,X-User-Name",
+    "content-type": "application/json; charset=utf-8",
+    "content-length": "225",
+    "etag": "W/\"e1-Gfp7+Hc0QZRasoQLK1pP1h2j8dU\"",
+    "date": "Thu, 23 Apr 2026 00:27:11 GMT",
+    "connection": "keep-alive",
+    "keep-alive": "timeout=5"
+  },
+  "body": {
+    "Product": {
+      "name": "Test imhDclGThs",
+      "amount": 702,
+      "price": 16905,
+      "manufacturer": "Xiaomi",
+      "createdOn": "2026-04-23T00:27:11.000Z",
+      "notes": "Notes XIQVTmkfCI",
+      "_id": "69e9675f22c631ff69969cc1"
+    },
+    "IsSuccess": true,
+    "ErrorMessage": null
+  }
+}

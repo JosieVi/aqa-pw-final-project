@@ -1,0 +1,26 @@
+{
+  "headers": {
+    "x-powered-by": "Express",
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "Authorization,X-User-Name",
+    "content-type": "application/json; charset=utf-8",
+    "content-length": "224",
+    "etag": "W/\"e0-OoFKDW/fdZFjRnbgxq5Q3JKHZ9c\"",
+    "date": "Thu, 23 Apr 2026 00:26:38 GMT",
+    "connection": "keep-alive",
+    "keep-alive": "timeout=5"
+  },
+  "body": {
+    "Product": {
+      "name": "Test tSEACazmxy",
+      "amount": 664,
+      "price": 62894,
+      "manufacturer": "Tesla",
+      "createdOn": "2026-04-23T00:26:38.000Z",
+      "notes": "Notes HnoZhRodpg",
+      "_id": "69e9673e22c631ff699681fa"
+    },
+    "IsSuccess": true,
+    "ErrorMessage": null
+  }
+}

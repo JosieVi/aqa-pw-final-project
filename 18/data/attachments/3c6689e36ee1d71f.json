@@ -1,0 +1,26 @@
+{
+  "headers": {
+    "x-powered-by": "Express",
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "Authorization,X-User-Name",
+    "content-type": "application/json; charset=utf-8",
+    "content-length": "223",
+    "etag": "W/\"df-iyuHq3D1quPB5RC+LQ8duwVrYlg\"",
+    "date": "Thu, 23 Apr 2026 00:27:18 GMT",
+    "connection": "keep-alive",
+    "keep-alive": "timeout=5"
+  },
+  "body": {
+    "Product": {
+      "name": "Test GTpSnduIWq",
+      "amount": 533,
+      "price": 79697,
+      "manufacturer": "Sony",
+      "createdOn": "2026-04-23T00:27:18.000Z",
+      "notes": "Notes aNIdCdPcuf",
+      "_id": "69e9676622c631ff6996a742"
+    },
+    "IsSuccess": true,
+    "ErrorMessage": null
+  }
+}

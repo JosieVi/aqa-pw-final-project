@@ -1,0 +1,26 @@
+{
+  "headers": {
+    "x-powered-by": "Express",
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "Authorization,X-User-Name",
+    "content-type": "application/json; charset=utf-8",
+    "content-length": "225",
+    "etag": "W/\"e1-wDs5FS4309AgAYqT/uleguXPte4\"",
+    "date": "Thu, 23 Apr 2026 00:26:26 GMT",
+    "connection": "keep-alive",
+    "keep-alive": "timeout=5"
+  },
+  "body": {
+    "Product": {
+      "name": "Test bkvkfwgSRi",
+      "amount": 270,
+      "price": 73431,
+      "manufacturer": "Amazon",
+      "createdOn": "2026-04-23T00:26:26.000Z",
+      "notes": "Notes bDkAiPjyQy",
+      "_id": "69e9673222c631ff69967693"
+    },
+    "IsSuccess": true,
+    "ErrorMessage": null
+  }
+}

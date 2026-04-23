@@ -1,0 +1,26 @@
+{
+  "headers": {
+    "x-powered-by": "Express",
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "Authorization,X-User-Name",
+    "content-type": "application/json; charset=utf-8",
+    "content-length": "223",
+    "etag": "W/\"df-RweI2IfIb6rOo9KZ87PKvfD5o3E\"",
+    "date": "Thu, 23 Apr 2026 00:26:59 GMT",
+    "connection": "keep-alive",
+    "keep-alive": "timeout=5"
+  },
+  "body": {
+    "Product": {
+      "name": "Test DkMDeIHntt",
+      "amount": 974,
+      "price": 86790,
+      "manufacturer": "Sony",
+      "createdOn": "2026-04-23T00:26:59.000Z",
+      "notes": "Notes XkMYafvUqX",
+      "_id": "69e9675322c631ff699689c2"
+    },
+    "IsSuccess": true,
+    "ErrorMessage": null
+  }
+}

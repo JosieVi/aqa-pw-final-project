@@ -1,0 +1,26 @@
+{
+  "headers": {
+    "x-powered-by": "Express",
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "Authorization,X-User-Name",
+    "content-type": "application/json; charset=utf-8",
+    "content-length": "223",
+    "etag": "W/\"df-2ojOGF2BAvbIo6Kbe5zr//zK1N4\"",
+    "date": "Thu, 23 Apr 2026 00:26:31 GMT",
+    "connection": "keep-alive",
+    "keep-alive": "timeout=5"
+  },
+  "body": {
+    "Product": {
+      "name": "Test ypwucLudkN",
+      "amount": 130,
+      "price": 85488,
+      "manufacturer": "Sony",
+      "createdOn": "2026-04-23T00:26:31.000Z",
+      "notes": "Notes zyFhJCYMFn",
+      "_id": "69e9673722c631ff69967e68"
+    },
+    "IsSuccess": true,
+    "ErrorMessage": null
+  }
+}
