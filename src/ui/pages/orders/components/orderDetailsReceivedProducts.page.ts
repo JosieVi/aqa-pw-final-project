@@ -127,7 +127,14 @@ export class OrderDetailsReceivedProductsSection extends SalesPortalPage {
   async setProductReceivedCheckbox(productName: string, checkState: boolean, index: number = 0) {
     const checkbox = this.productReceivedCheckboxByName(productName).nth(index);
     await expect(checkbox).toBeVisible();
-    await (checkState ? checkbox.check() : checkbox.uncheck());
+
+    const isCurrentlyChecked = await checkbox.isChecked();
+    if (isCurrentlyChecked !== checkState) {
+      await checkbox.click();
+    }
+
+    // Explicitly wait for the checkbox to reach the expected state
+    await expect(checkbox).toBeChecked({ checked: checkState });
   }
 
   async isProductReceivedCheckboxChecked(productName: string, index: number = 0) {
