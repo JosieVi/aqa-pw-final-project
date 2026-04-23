@@ -1,0 +1,26 @@
+{
+  "headers": {
+    "x-powered-by": "Express",
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "Authorization,X-User-Name",
+    "content-type": "application/json; charset=utf-8",
+    "content-length": "225",
+    "etag": "W/\"e1-gPvLCDTKzYGtPjB8q5Sgrg5xXbA\"",
+    "date": "Thu, 23 Apr 2026 00:40:50 GMT",
+    "connection": "keep-alive",
+    "keep-alive": "timeout=5"
+  },
+  "body": {
+    "Product": {
+      "name": "Test CQvQUJKdit",
+      "amount": 483,
+      "price": 76114,
+      "manufacturer": "Xiaomi",
+      "createdOn": "2026-04-23T00:40:50.000Z",
+      "notes": "Notes IhcMPwIsCO",
+      "_id": "69e96a92533bf76850f871f0"
+    },
+    "IsSuccess": true,
+    "ErrorMessage": null
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "headers": {
+    "x-powered-by": "Express",
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "Authorization,X-User-Name",
+    "content-type": "application/json; charset=utf-8",
+    "content-length": "224",
+    "etag": "W/\"e0-J0e7u/PxldzGCbS0mtGX1uVvso0\"",
+    "date": "Thu, 23 Apr 2026 00:40:49 GMT",
+    "connection": "keep-alive",
+    "keep-alive": "timeout=5"
+  },
+  "body": {
+    "Product": {
+      "name": "Test pdnlSRJJSA",
+      "amount": 818,
+      "price": 81221,
+      "manufacturer": "Tesla",
+      "createdOn": "2026-04-23T00:40:49.000Z",
+      "notes": "Notes IPsHFPcWyw",
+      "_id": "69e96a91533bf76850f8700a"
+    },
+    "IsSuccess": true,
+    "ErrorMessage": null
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "headers": {
+    "x-powered-by": "Express",
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "Authorization,X-User-Name",
+    "content-type": "application/json; charset=utf-8",
+    "content-length": "228",
+    "etag": "W/\"e4-yHSl/fDgKdvW40W+OiYRZV/WJu8\"",
+    "date": "Thu, 23 Apr 2026 00:40:31 GMT",
+    "connection": "keep-alive",
+    "keep-alive": "timeout=5"
+  },
+  "body": {
+    "Product": {
+      "name": "Test bICFyIhPIT",
+      "amount": 446,
+      "price": 45798,
+      "manufacturer": "Microsoft",
+      "createdOn": "2026-04-23T00:40:31.000Z",
+      "notes": "Notes vpxyoLhaWc",
+      "_id": "69e96a7f533bf76850f855af"
+    },
+    "IsSuccess": true,
+    "ErrorMessage": null
+  }
+}

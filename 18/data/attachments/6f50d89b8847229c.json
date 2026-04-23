@@ -1,0 +1,118 @@
+{
+  "headers": {
+    "x-powered-by": "Express",
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "Authorization,X-User-Name",
+    "content-type": "application/json; charset=utf-8",
+    "content-length": "2112",
+    "etag": "W/\"840-WT2tf4B8g7RR21NWBKPv/R12/v0\"",
+    "date": "Thu, 23 Apr 2026 00:40:48 GMT",
+    "connection": "keep-alive",
+    "keep-alive": "timeout=5"
+  },
+  "body": {
+    "Order": {
+      "status": "Draft",
+      "customer": {
+        "_id": "69e96a90533bf76850f86b1e",
+        "email": "test1776904848219_PKNV@example.com",
+        "name": "test ttwVXQPPWYJSjPgcDStaFMviFKwWIQjpEiN",
+        "country": "Russia",
+        "city": "testCity FYEJhjvmPWu",
+        "street": "testStreet XI8oQhMEtsNL6aTyof8GLKexWkqIb",
+        "house": 69,
+        "flat": 5351,
+        "phone": "+6286182669",
+        "createdOn": "2026-04-23T00:40:48.000Z",
+        "notes": "Notes kCfoWkWijSOowGUbUCQNsguZZhMfkSxBoALxOwjvITBsbfSWClxzqeSghqdTlzvwiCynmxoXGHNZTgUUAcCkghjmxoPtSbRvvUSsBnSQFZQxZwUwirvVYJZCGrqHpcUpaCVLNrbXYCgXvjcPwwqCVOylsZbnrELyfDPhdSqRStGRVvODxKEzGUEmYdUZSCmeRZEhnyEMDRcXYjUBQfMyHUpgvWNIFsVeRWovEdeyoujdBRXNQdTf"
+      },
+      "products": [
+        {
+          "_id": "69e96a90533bf76850f86b33",
+          "name": "Test xlhNWxpAjP",
+          "amount": 615,
+          "price": 66743,
+          "manufacturer": "Microsoft",
+          "notes": "Notes JZmJRabnjA",
+          "received": false
+        },
+        {
+          "_id": "69e96a90533bf76850f86b37",
+          "name": "Test ZBHzAOguEb",
+          "amount": 220,
+          "price": 30210,
+          "manufacturer": "Samsung",
+          "notes": "Notes JUYFHjykAV",
+          "received": false
+        },
+        {
+          "_id": "69e96a90533bf76850f86b39",
+          "name": "Test lEWUROVcSA",
+          "amount": 50,
+          "price": 599,
+          "manufacturer": "Sony",
+          "notes": "Notes PajuQjQRsC",
+          "received": false
+        }
+      ],
+      "delivery": null,
+      "total_price": 97552,
+      "createdOn": "2026-04-23T00:40:48.000Z",
+      "comments": [],
+      "history": [
+        {
+          "status": "Draft",
+          "customer": "69e96a90533bf76850f86b1e",
+          "products": [
+            {
+              "_id": "69e96a90533bf76850f86b33",
+              "name": "Test xlhNWxpAjP",
+              "amount": 615,
+              "price": 66743,
+              "manufacturer": "Microsoft",
+              "notes": "Notes JZmJRabnjA",
+              "received": false
+            },
+            {
+              "_id": "69e96a90533bf76850f86b37",
+              "name": "Test ZBHzAOguEb",
+              "amount": 220,
+              "price": 30210,
+              "manufacturer": "Samsung",
+              "notes": "Notes JUYFHjykAV",
+              "received": false
+            },
+            {
+              "_id": "69e96a90533bf76850f86b39",
+              "name": "Test lEWUROVcSA",
+              "amount": 50,
+              "price": 599,
+              "manufacturer": "Sony",
+              "notes": "Notes PajuQjQRsC",
+              "received": false
+            }
+          ],
+          "total_price": 97552,
+          "delivery": null,
+          "changedOn": "2026-04-23T00:40:48.000Z",
+          "action": "Order created",
+          "performer": {
+            "_id": "69e96a28533bf76850f8382d",
+            "username": "admin@example.com",
+            "firstName": "Admin",
+            "lastName": "Admin",
+            "roles": [
+              "ADMIN"
+            ],
+            "createdOn": "2026/04/23 00:39:04"
+          },
+          "assignedManager": null
+        }
+      ],
+      "assignedManager": null,
+      "_id": "69e96a90533bf76850f86b51"
+    },
+    "IsSuccess": true,
+    "ErrorMessage": null
+  }
+}

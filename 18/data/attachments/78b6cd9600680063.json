@@ -1,0 +1,26 @@
+{
+  "headers": {
+    "x-powered-by": "Express",
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "Authorization,X-User-Name",
+    "content-type": "application/json; charset=utf-8",
+    "content-length": "226",
+    "etag": "W/\"e2-lyij37r6CgzHJWw1OkwT4qRuIng\"",
+    "date": "Thu, 23 Apr 2026 00:40:23 GMT",
+    "connection": "keep-alive",
+    "keep-alive": "timeout=5"
+  },
+  "body": {
+    "Product": {
+      "name": "Test SaZbFFtxCC",
+      "amount": 304,
+      "price": 38532,
+      "manufacturer": "Samsung",
+      "createdOn": "2026-04-23T00:40:23.000Z",
+      "notes": "Notes bbqbquNnrP",
+      "_id": "69e96a77533bf76850f84a3c"
+    },
+    "IsSuccess": true,
+    "ErrorMessage": null
+  }
+}

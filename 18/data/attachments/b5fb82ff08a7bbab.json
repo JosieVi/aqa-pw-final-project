@@ -1,0 +1,26 @@
+{
+  "headers": {
+    "x-powered-by": "Express",
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "Authorization,X-User-Name",
+    "content-type": "application/json; charset=utf-8",
+    "content-length": "226",
+    "etag": "W/\"e2-YhyNmnp8XNqbgESpm5bGBDI9tmk\"",
+    "date": "Thu, 23 Apr 2026 00:40:53 GMT",
+    "connection": "keep-alive",
+    "keep-alive": "timeout=5"
+  },
+  "body": {
+    "Product": {
+      "name": "Test SfRKxDhgjT",
+      "amount": 465,
+      "price": 73176,
+      "manufacturer": "Samsung",
+      "createdOn": "2026-04-23T00:40:53.000Z",
+      "notes": "Notes amzRguUMPF",
+      "_id": "69e96a95533bf76850f878a2"
+    },
+    "IsSuccess": true,
+    "ErrorMessage": null
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "headers": {
+    "x-powered-by": "Express",
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "Authorization,X-User-Name",
+    "content-type": "application/json; charset=utf-8",
+    "content-length": "90",
+    "etag": "W/\"5a-BCSmCxj0vigMqm4SH2o4ILP/dz4\"",
+    "date": "Thu, 23 Apr 2026 00:40:53 GMT",
+    "connection": "keep-alive",
+    "keep-alive": "timeout=5"
+  },
+  "body": {
+    "IsSuccess": false,
+    "ErrorMessage": "Order with id '69e96a95a5bbf414552ed0d8' wasn't found"
+  }
+}

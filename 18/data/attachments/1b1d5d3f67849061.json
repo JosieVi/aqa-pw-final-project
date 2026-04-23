@@ -1,0 +1,26 @@
+{
+  "headers": {
+    "x-powered-by": "Express",
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "Authorization,X-User-Name",
+    "content-type": "application/json; charset=utf-8",
+    "content-length": "224",
+    "etag": "W/\"e0-fY5pveT1jIliDVqrG1PBhfPIGoc\"",
+    "date": "Thu, 23 Apr 2026 00:40:48 GMT",
+    "connection": "keep-alive",
+    "keep-alive": "timeout=5"
+  },
+  "body": {
+    "Product": {
+      "name": "Test aSLcTxkCDU",
+      "amount": 643,
+      "price": 82192,
+      "manufacturer": "Tesla",
+      "createdOn": "2026-04-23T00:40:48.000Z",
+      "notes": "Notes kaFsCDwogr",
+      "_id": "69e96a90533bf76850f86d2e"
+    },
+    "IsSuccess": true,
+    "ErrorMessage": null
+  }
+}

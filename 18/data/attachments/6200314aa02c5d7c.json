@@ -1,0 +1,26 @@
+{
+  "headers": {
+    "x-powered-by": "Express",
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "Authorization,X-User-Name",
+    "content-type": "application/json; charset=utf-8",
+    "content-length": "222",
+    "etag": "W/\"de-Kj173iCvSqJLC3/UFVm+SatVzGA\"",
+    "date": "Thu, 23 Apr 2026 00:40:28 GMT",
+    "connection": "keep-alive",
+    "keep-alive": "timeout=5"
+  },
+  "body": {
+    "Product": {
+      "name": "Test sSOSjDZMTb",
+      "amount": 748,
+      "price": 6415,
+      "manufacturer": "Sony",
+      "createdOn": "2026-04-23T00:40:28.000Z",
+      "notes": "Notes gzeMbCHcdW",
+      "_id": "69e96a7c533bf76850f85113"
+    },
+    "IsSuccess": true,
+    "ErrorMessage": null
+  }
+}

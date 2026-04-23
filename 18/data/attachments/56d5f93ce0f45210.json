@@ -1,0 +1,26 @@
+{
+  "headers": {
+    "x-powered-by": "Express",
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "Authorization,X-User-Name",
+    "content-type": "application/json; charset=utf-8",
+    "content-length": "225",
+    "etag": "W/\"e1-eZFHAPkjIDeJme4b1+NCP0iJTQ8\"",
+    "date": "Thu, 23 Apr 2026 00:40:50 GMT",
+    "connection": "keep-alive",
+    "keep-alive": "timeout=5"
+  },
+  "body": {
+    "Product": {
+      "name": "Test bmCeSNwKPP",
+      "amount": 935,
+      "price": 77768,
+      "manufacturer": "Amazon",
+      "createdOn": "2026-04-23T00:40:50.000Z",
+      "notes": "Notes GmXLWRnWbz",
+      "_id": "69e96a92533bf76850f87273"
+    },
+    "IsSuccess": true,
+    "ErrorMessage": null
+  }
+}

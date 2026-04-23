@@ -1,0 +1,26 @@
+{
+  "headers": {
+    "x-powered-by": "Express",
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "Authorization,X-User-Name",
+    "content-type": "application/json; charset=utf-8",
+    "content-length": "226",
+    "etag": "W/\"e2-hEtO/8v1lLRd5uTqxLuXDjFWzmY\"",
+    "date": "Thu, 23 Apr 2026 00:40:51 GMT",
+    "connection": "keep-alive",
+    "keep-alive": "timeout=5"
+  },
+  "body": {
+    "Product": {
+      "name": "Test OQQvmqFpvv",
+      "amount": 853,
+      "price": 12296,
+      "manufacturer": "Samsung",
+      "createdOn": "2026-04-23T00:40:51.000Z",
+      "notes": "Notes EYLJouqxeo",
+      "_id": "69e96a93533bf76850f874a9"
+    },
+    "IsSuccess": true,
+    "ErrorMessage": null
+  }
+}

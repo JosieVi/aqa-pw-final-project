@@ -1,0 +1,26 @@
+{
+  "headers": {
+    "x-powered-by": "Express",
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "Authorization,X-User-Name",
+    "content-type": "application/json; charset=utf-8",
+    "content-length": "225",
+    "etag": "W/\"e1-7ARhSjSCJb3mOkz6xfAyh01BmTQ\"",
+    "date": "Thu, 23 Apr 2026 00:40:48 GMT",
+    "connection": "keep-alive",
+    "keep-alive": "timeout=5"
+  },
+  "body": {
+    "Product": {
+      "name": "Test bdzROuamPl",
+      "amount": 238,
+      "price": 58052,
+      "manufacturer": "Xiaomi",
+      "createdOn": "2026-04-23T00:40:48.000Z",
+      "notes": "Notes CMetPZjCcw",
+      "_id": "69e96a90533bf76850f86d77"
+    },
+    "IsSuccess": true,
+    "ErrorMessage": null
+  }
+}

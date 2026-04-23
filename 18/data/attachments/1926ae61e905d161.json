@@ -1,0 +1,26 @@
+{
+  "headers": {
+    "x-powered-by": "Express",
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "Authorization,X-User-Name",
+    "content-type": "application/json; charset=utf-8",
+    "content-length": "225",
+    "etag": "W/\"e1-XqLikjtF0NZ2Sb4Cdu92SV0pANg\"",
+    "date": "Thu, 23 Apr 2026 00:40:50 GMT",
+    "connection": "keep-alive",
+    "keep-alive": "timeout=5"
+  },
+  "body": {
+    "Product": {
+      "name": "Test CSZYmAWOZY",
+      "amount": 109,
+      "price": 54807,
+      "manufacturer": "Xiaomi",
+      "createdOn": "2026-04-23T00:40:50.000Z",
+      "notes": "Notes pXnIWocVxj",
+      "_id": "69e96a92533bf76850f8726f"
+    },
+    "IsSuccess": true,
+    "ErrorMessage": null
+  }
+}

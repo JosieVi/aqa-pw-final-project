@@ -1,0 +1,26 @@
+{
+  "headers": {
+    "x-powered-by": "Express",
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "Authorization,X-User-Name",
+    "content-type": "application/json; charset=utf-8",
+    "content-length": "223",
+    "etag": "W/\"df-tWX/uaH1IoSdLrdylJGbpbSXepI\"",
+    "date": "Thu, 23 Apr 2026 00:40:50 GMT",
+    "connection": "keep-alive",
+    "keep-alive": "timeout=5"
+  },
+  "body": {
+    "Product": {
+      "name": "Test LDOAuxNXcI",
+      "amount": 164,
+      "price": 5790,
+      "manufacturer": "Apple",
+      "createdOn": "2026-04-23T00:40:50.000Z",
+      "notes": "Notes vQMRflDKqf",
+      "_id": "69e96a92533bf76850f87186"
+    },
+    "IsSuccess": true,
+    "ErrorMessage": null
+  }
+}

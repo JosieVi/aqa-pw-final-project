@@ -1,0 +1,67 @@
+{
+  "headers": {
+    "x-powered-by": "Express",
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "Authorization,X-User-Name",
+    "content-type": "application/json; charset=utf-8",
+    "content-length": "1853",
+    "etag": "W/\"73d-7TUVxcPlUp6XFtkYK3+kGUBGSSM\"",
+    "date": "Thu, 23 Apr 2026 00:40:42 GMT",
+    "connection": "keep-alive",
+    "keep-alive": "timeout=5"
+  },
+  "body": {
+    "Customers": [
+      {
+        "_id": "69e96a8a533bf76850f85bff",
+        "email": "test1776904842203_SPYN@example.com",
+        "name": "SearchTestTIcDdrfY",
+        "country": "Great Britain",
+        "city": "testCity dwzLSbELunv",
+        "street": "testStreet d9Pxq48q0EnIqBNj1PxYgIaYoP0sW",
+        "house": 352,
+        "flat": 7444,
+        "phone": "+9035053008",
+        "createdOn": "2026-04-23T00:40:42.000Z",
+        "notes": "Notes WdvzvEpUEynAnpGhhmYoJaUQLXVRMCFcvFUGVplqMVhGIrAQqUaDikogjzVLHAitVqqnuBnJzCVONrWooeoiJIWNwTzANzSXZkxrDmWcFVcyBgzCJnPfWOLtfWeDhZkzbmPkYEPNhufPsdgGvZhVAGgOblxbPgAwKZoExlLcwPdgZvOkLOIMPdcDcXOKlMNdFtRAguUUPzraWexItIZRNgVTChRidbVlOSFDcbXkpUgqLtZRFDdX"
+      },
+      {
+        "_id": "69e96a8a533bf76850f85c02",
+        "email": "test1776904842202_QOFZ@example.com",
+        "name": "SearchTestTIcDdrfY",
+        "country": "Canada",
+        "city": "testCity rCtqMIztQIT",
+        "street": "testStreet 9ES1BrisK1uJSMM2opFqDPYNFl8F5",
+        "house": 139,
+        "flat": 4195,
+        "phone": "+9464696211",
+        "createdOn": "2026-04-23T00:40:42.000Z",
+        "notes": "Notes UqWIXsZoiEuOyTkDGTuDXFpFLFYvoBqYpKNjizcYJIHclUXxifvBBjCWHQCmvbzGbETblcskeJcwWiwVWOXRqHdcLWISZaRlDXdtuFePWgICZozMkiSNEoaWnHetpOQsDOtctYanVbigZKdIRepUMjUGnwRdMaPRUgHmOGwHdPZsDdxeRRGytRqdqOPurJbSRglviGsdEVetbXjflZACgfwZczMcPjwKtiAmoDmsgHPvMGxyFVQM"
+      },
+      {
+        "_id": "69e96a8a533bf76850f85c04",
+        "email": "test1776904842203_TJMC@example.com",
+        "name": "SearchTestTIcDdrfY",
+        "country": "Germany",
+        "city": "testCity eeyMmECmpAc",
+        "street": "testStreet qaUSUKMBYKqAQ12CEFKYRxt10m65y",
+        "house": 312,
+        "flat": 1624,
+        "phone": "+6585286435",
+        "createdOn": "2026-04-23T00:40:42.000Z",
+        "notes": "Notes LvAxXsKFrtiFFrMvwyogBfFJgcvgwRYthFXMhaSkMlFhROXChiLQZrnklYuLpAYLzREClcLVHNMjQRKvjKmOCBnzrZavaxUALQkffqWAjciGHMJEPoAAHPzKDoOsMYgJVQlKXIvNbLKfjpTcmBeAHRYnFzenhPFjWhPjRexgWltnmvjhernixCiHsbPLpWLesDncDimgNbFCZWHdMjEVdcWuSLpuVYFuYNKymHelbZrnFXqahTzd"
+      }
+    ],
+    "total": 3,
+    "page": 1,
+    "limit": 10,
+    "search": "SearchTestTIcDdrfY",
+    "country": [],
+    "sorting": {
+      "sortField": "createdOn",
+      "sortOrder": "desc"
+    },
+    "IsSuccess": true,
+    "ErrorMessage": null
+  }
+}

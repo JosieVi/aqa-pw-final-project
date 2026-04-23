@@ -1,0 +1,26 @@
+{
+  "headers": {
+    "x-powered-by": "Express",
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "Authorization,X-User-Name",
+    "content-type": "application/json; charset=utf-8",
+    "content-length": "224",
+    "etag": "W/\"e0-QZOqB2u1jl83QTpnH5Yf2O2wYyA\"",
+    "date": "Thu, 23 Apr 2026 00:40:50 GMT",
+    "connection": "keep-alive",
+    "keep-alive": "timeout=5"
+  },
+  "body": {
+    "Product": {
+      "name": "Test dhpzwVWCxl",
+      "amount": 778,
+      "price": 98113,
+      "manufacturer": "Apple",
+      "createdOn": "2026-04-23T00:40:50.000Z",
+      "notes": "Notes wJGawBBlKe",
+      "_id": "69e96a92533bf76850f8711f"
+    },
+    "IsSuccess": true,
+    "ErrorMessage": null
+  }
+}

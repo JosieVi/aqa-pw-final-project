@@ -1,0 +1,26 @@
+{
+  "headers": {
+    "x-powered-by": "Express",
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "Authorization,X-User-Name",
+    "content-type": "application/json; charset=utf-8",
+    "content-length": "224",
+    "etag": "W/\"e0-ZXigrBrOeE7cE4p1PiSN3KlNlqk\"",
+    "date": "Thu, 23 Apr 2026 00:40:13 GMT",
+    "connection": "keep-alive",
+    "keep-alive": "timeout=5"
+  },
+  "body": {
+    "Product": {
+      "name": "Test HYpyVqhgfS",
+      "amount": 963,
+      "price": 85187,
+      "manufacturer": "Tesla",
+      "createdOn": "2026-04-23T00:40:13.000Z",
+      "notes": "Notes XqkGFYeosT",
+      "_id": "69e96a6d533bf76850f8425d"
+    },
+    "IsSuccess": true,
+    "ErrorMessage": null
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "headers": {
+    "x-powered-by": "Express",
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "Authorization,X-User-Name",
+    "content-type": "application/json; charset=utf-8",
+    "content-length": "225",
+    "etag": "W/\"e1-dYNdT5KbP6JUi1aj7y5NIktfae8\"",
+    "date": "Thu, 23 Apr 2026 00:40:47 GMT",
+    "connection": "keep-alive",
+    "keep-alive": "timeout=5"
+  },
+  "body": {
+    "Product": {
+      "name": "Test SLXegDnZyW",
+      "amount": 866,
+      "price": 26574,
+      "manufacturer": "Xiaomi",
+      "createdOn": "2026-04-23T00:40:47.000Z",
+      "notes": "Notes ZmqQuUTGFq",
+      "_id": "69e96a8f533bf76850f869c7"
+    },
+    "IsSuccess": true,
+    "ErrorMessage": null
+  }
+}

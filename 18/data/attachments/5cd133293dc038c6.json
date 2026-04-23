@@ -1,0 +1,26 @@
+{
+  "headers": {
+    "x-powered-by": "Express",
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "Authorization,X-User-Name",
+    "content-type": "application/json; charset=utf-8",
+    "content-length": "224",
+    "etag": "W/\"e0-Um0VZb5+Ro6M1TLksqAeUyc7r5E\"",
+    "date": "Thu, 23 Apr 2026 00:40:45 GMT",
+    "connection": "keep-alive",
+    "keep-alive": "timeout=5"
+  },
+  "body": {
+    "Product": {
+      "name": "Test IfmksMgmOb",
+      "amount": 53,
+      "price": 34349,
+      "manufacturer": "Amazon",
+      "createdOn": "2026-04-23T00:40:45.000Z",
+      "notes": "Notes zXSbqaTvJv",
+      "_id": "69e96a8d533bf76850f864b3"
+    },
+    "IsSuccess": true,
+    "ErrorMessage": null
+  }
+}

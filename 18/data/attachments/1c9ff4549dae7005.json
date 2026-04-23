@@ -1,0 +1,26 @@
+{
+  "headers": {
+    "x-powered-by": "Express",
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "Authorization,X-User-Name",
+    "content-type": "application/json; charset=utf-8",
+    "content-length": "223",
+    "etag": "W/\"df-L/g5C8XByBZguVAV/2zlbNQWNlI\"",
+    "date": "Thu, 23 Apr 2026 00:40:35 GMT",
+    "connection": "keep-alive",
+    "keep-alive": "timeout=5"
+  },
+  "body": {
+    "Product": {
+      "name": "Test RnYECNyPkP",
+      "amount": 7,
+      "price": 26127,
+      "manufacturer": "Amazon",
+      "createdOn": "2026-04-23T00:40:35.000Z",
+      "notes": "Notes frCDflpJRa",
+      "_id": "69e96a83533bf76850f85892"
+    },
+    "IsSuccess": true,
+    "ErrorMessage": null
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "headers": {
+    "x-powered-by": "Express",
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "Authorization,X-User-Name",
+    "content-type": "application/json; charset=utf-8",
+    "content-length": "225",
+    "etag": "W/\"e1-7NZ8zplkmx47uz/QD9Ki7ldKSgk\"",
+    "date": "Thu, 23 Apr 2026 00:40:29 GMT",
+    "connection": "keep-alive",
+    "keep-alive": "timeout=5"
+  },
+  "body": {
+    "Product": {
+      "name": "Test quBRovIXfs",
+      "amount": 461,
+      "price": 76425,
+      "manufacturer": "Amazon",
+      "createdOn": "2026-04-23T00:40:29.000Z",
+      "notes": "Notes yxZykweKzk",
+      "_id": "69e96a7d533bf76850f85397"
+    },
+    "IsSuccess": true,
+    "ErrorMessage": null
+  }
+}

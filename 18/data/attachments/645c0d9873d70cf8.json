@@ -1,0 +1,26 @@
+{
+  "headers": {
+    "x-powered-by": "Express",
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "Authorization,X-User-Name",
+    "content-type": "application/json; charset=utf-8",
+    "content-length": "223",
+    "etag": "W/\"df-etRkJMTT0WP5SKhfMovuAMy39o4\"",
+    "date": "Thu, 23 Apr 2026 00:40:52 GMT",
+    "connection": "keep-alive",
+    "keep-alive": "timeout=5"
+  },
+  "body": {
+    "Product": {
+      "name": "Test eunoyoZcoR",
+      "amount": 6,
+      "price": 58193,
+      "manufacturer": "Google",
+      "createdOn": "2026-04-23T00:40:52.000Z",
+      "notes": "Notes MOdKVKhwLK",
+      "_id": "69e96a94533bf76850f8769c"
+    },
+    "IsSuccess": true,
+    "ErrorMessage": null
+  }
+}

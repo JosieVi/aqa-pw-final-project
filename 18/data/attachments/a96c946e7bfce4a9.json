@@ -1,0 +1,26 @@
+{
+  "headers": {
+    "x-powered-by": "Express",
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "Authorization,X-User-Name",
+    "content-type": "application/json; charset=utf-8",
+    "content-length": "224",
+    "etag": "W/\"e0-uvl8RS5RLE9Z6NCszfPKuks6BNs\"",
+    "date": "Thu, 23 Apr 2026 00:40:49 GMT",
+    "connection": "keep-alive",
+    "keep-alive": "timeout=5"
+  },
+  "body": {
+    "Product": {
+      "name": "Test SOyXhhILCq",
+      "amount": 851,
+      "price": 1641,
+      "manufacturer": "Amazon",
+      "createdOn": "2026-04-23T00:40:49.000Z",
+      "notes": "Notes lcmvmippvR",
+      "_id": "69e96a91533bf76850f86f3d"
+    },
+    "IsSuccess": true,
+    "ErrorMessage": null
+  }
+}

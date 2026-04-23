@@ -1,0 +1,212 @@
+{
+  "headers": {
+    "x-powered-by": "Express",
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "Authorization,X-User-Name",
+    "content-type": "application/json; charset=utf-8",
+    "content-length": "3774",
+    "etag": "W/\"ebe-UWTXfWute5UCaql8Ha+5sSdBk5M\"",
+    "date": "Thu, 23 Apr 2026 00:40:18 GMT",
+    "connection": "keep-alive",
+    "keep-alive": "timeout=5"
+  },
+  "body": {
+    "Order": {
+      "_id": "69e96a72533bf76850f84567",
+      "status": "Received",
+      "customer": {
+        "_id": "69e96a72533bf76850f8454e",
+        "email": "test1776904818151_CADR@example.com",
+        "name": "test NegjfceuDRvxgDVCEVIEvEgkoaRNwEpbVZz",
+        "country": "Great Britain",
+        "city": "testCity dKdiuehtIgo",
+        "street": "testStreet B1SsqX8e5zLZ6nvdzMFMI4CbslYMT",
+        "house": 960,
+        "flat": 2613,
+        "phone": "+4104904877",
+        "createdOn": "2026-04-23T00:40:18.000Z",
+        "notes": "Notes ejpSbxjRQsGUEvXFiHMHTRhrbeirtmkKsStbtuMglpDvBpGNUTVyTJPPeSGMhoBplBBZerlPbGyMVEZCPpOMmhQYixOxalDGOFfAxiiyCFcRAaAJGlMOmkRAGoANypJyVAReREzzpywuEsGjCAtbrcGXtHUDLxMbspcjpcMDshcpszzGpeqKuGFggxuCrOhwLltZSlYVIOgTfststypVCakGYsBsiyTMrzctQZVKBrXkWocdHxAJ"
+      },
+      "products": [
+        {
+          "_id": "69e96a72533bf76850f8455f",
+          "name": "Test bkQkDntOKp",
+          "amount": 842,
+          "price": 87715,
+          "manufacturer": "Xiaomi",
+          "notes": "Notes KabnoNpcRD",
+          "received": true
+        }
+      ],
+      "delivery": {
+        "address": {
+          "country": "Germany",
+          "city": "TestCity oGzKp",
+          "street": "TestStreet RMUzpAJjRk",
+          "house": 467,
+          "flat": 5962
+        },
+        "finalDate": "2026-12-07T00:00:00.000Z",
+        "condition": "Delivery"
+      },
+      "total_price": 87715,
+      "createdOn": "2026-04-23T00:40:18.000Z",
+      "comments": [],
+      "history": [
+        {
+          "status": "Received",
+          "customer": "69e96a72533bf76850f8454e",
+          "products": [
+            {
+              "_id": "69e96a72533bf76850f8455f",
+              "name": "Test bkQkDntOKp",
+              "amount": 842,
+              "price": 87715,
+              "manufacturer": "Xiaomi",
+              "notes": "Notes KabnoNpcRD",
+              "received": true
+            }
+          ],
+          "total_price": 87715,
+          "delivery": {
+            "address": {
+              "country": "Germany",
+              "city": "TestCity oGzKp",
+              "street": "TestStreet RMUzpAJjRk",
+              "house": 467,
+              "flat": 5962
+            },
+            "finalDate": "2026-12-07T00:00:00.000Z",
+            "condition": "Delivery"
+          },
+          "changedOn": "2026-04-23T00:40:18.000Z",
+          "action": "All products received",
+          "performer": {
+            "_id": "69e96a28533bf76850f8382d",
+            "username": "admin@example.com",
+            "firstName": "Admin",
+            "lastName": "Admin",
+            "roles": [
+              "ADMIN"
+            ],
+            "createdOn": "2026/04/23 00:39:04"
+          },
+          "assignedManager": null
+        },
+        {
+          "status": "In Process",
+          "customer": "69e96a72533bf76850f8454e",
+          "products": [
+            {
+              "_id": "69e96a72533bf76850f8455f",
+              "name": "Test bkQkDntOKp",
+              "amount": 842,
+              "price": 87715,
+              "manufacturer": "Xiaomi",
+              "notes": "Notes KabnoNpcRD",
+              "received": false
+            }
+          ],
+          "total_price": 87715,
+          "delivery": {
+            "address": {
+              "country": "Germany",
+              "city": "TestCity oGzKp",
+              "street": "TestStreet RMUzpAJjRk",
+              "house": 467,
+              "flat": 5962
+            },
+            "finalDate": "2026-12-07T00:00:00.000Z",
+            "condition": "Delivery"
+          },
+          "changedOn": "2026-04-23T00:40:18.000Z",
+          "action": "Order processing started",
+          "performer": {
+            "_id": "69e96a28533bf76850f8382d",
+            "username": "admin@example.com",
+            "firstName": "Admin",
+            "lastName": "Admin",
+            "roles": [
+              "ADMIN"
+            ],
+            "createdOn": "2026/04/23 00:39:04"
+          },
+          "assignedManager": null
+        },
+        {
+          "status": "Draft",
+          "customer": "69e96a72533bf76850f8454e",
+          "products": [
+            {
+              "_id": "69e96a72533bf76850f8455f",
+              "name": "Test bkQkDntOKp",
+              "amount": 842,
+              "price": 87715,
+              "manufacturer": "Xiaomi",
+              "notes": "Notes KabnoNpcRD",
+              "received": false
+            }
+          ],
+          "total_price": 87715,
+          "delivery": {
+            "address": {
+              "country": "Germany",
+              "city": "TestCity oGzKp",
+              "street": "TestStreet RMUzpAJjRk",
+              "house": 467,
+              "flat": 5962
+            },
+            "finalDate": "2026-12-07T00:00:00.000Z",
+            "condition": "Delivery"
+          },
+          "changedOn": "2026-04-23T00:40:18.000Z",
+          "action": "Delivery Scheduled",
+          "performer": {
+            "_id": "69e96a28533bf76850f8382d",
+            "username": "admin@example.com",
+            "firstName": "Admin",
+            "lastName": "Admin",
+            "roles": [
+              "ADMIN"
+            ],
+            "createdOn": "2026/04/23 00:39:04"
+          },
+          "assignedManager": null
+        },
+        {
+          "status": "Draft",
+          "customer": "69e96a72533bf76850f8454e",
+          "products": [
+            {
+              "_id": "69e96a72533bf76850f8455f",
+              "name": "Test bkQkDntOKp",
+              "amount": 842,
+              "price": 87715,
+              "manufacturer": "Xiaomi",
+              "notes": "Notes KabnoNpcRD",
+              "received": false
+            }
+          ],
+          "total_price": 87715,
+          "delivery": null,
+          "changedOn": "2026-04-23T00:40:18.000Z",
+          "action": "Order created",
+          "performer": {
+            "_id": "69e96a28533bf76850f8382d",
+            "username": "admin@example.com",
+            "firstName": "Admin",
+            "lastName": "Admin",
+            "roles": [
+              "ADMIN"
+            ],
+            "createdOn": "2026/04/23 00:39:04"
+          },
+          "assignedManager": null
+        }
+      ],
+      "assignedManager": null
+    },
+    "IsSuccess": true,
+    "ErrorMessage": null
+  }
+}

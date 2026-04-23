@@ -1,0 +1,26 @@
+{
+  "headers": {
+    "x-powered-by": "Express",
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "Authorization,X-User-Name",
+    "content-type": "application/json; charset=utf-8",
+    "content-length": "226",
+    "etag": "W/\"e2-DXsVD3KdfzgLPXf00Dcd0/525N4\"",
+    "date": "Thu, 23 Apr 2026 00:40:29 GMT",
+    "connection": "keep-alive",
+    "keep-alive": "timeout=5"
+  },
+  "body": {
+    "Product": {
+      "name": "Test BLkBgxRRoB",
+      "amount": 547,
+      "price": 16128,
+      "manufacturer": "Samsung",
+      "createdOn": "2026-04-23T00:40:29.000Z",
+      "notes": "Notes INydGoVClZ",
+      "_id": "69e96a7d533bf76850f85374"
+    },
+    "IsSuccess": true,
+    "ErrorMessage": null
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "headers": {
+    "x-powered-by": "Express",
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "Authorization,X-User-Name",
+    "content-type": "application/json; charset=utf-8",
+    "content-length": "225",
+    "etag": "W/\"e1-kwUgDyAt1w8XQrFS9TdAgWhe+Pc\"",
+    "date": "Thu, 23 Apr 2026 00:40:45 GMT",
+    "connection": "keep-alive",
+    "keep-alive": "timeout=5"
+  },
+  "body": {
+    "Product": {
+      "name": "Test QyPCSucscE",
+      "amount": 258,
+      "price": 30997,
+      "manufacturer": "Google",
+      "createdOn": "2026-04-23T00:40:45.000Z",
+      "notes": "Notes uLGdIufOOC",
+      "_id": "69e96a8d533bf76850f862eb"
+    },
+    "IsSuccess": true,
+    "ErrorMessage": null
+  }
+}

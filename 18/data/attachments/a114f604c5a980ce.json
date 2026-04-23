@@ -1,0 +1,26 @@
+{
+  "headers": {
+    "x-powered-by": "Express",
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "Authorization,X-User-Name",
+    "content-type": "application/json; charset=utf-8",
+    "content-length": "228",
+    "etag": "W/\"e4-JMh5B/oVirLK3JxPNBhJh+M8wjY\"",
+    "date": "Thu, 23 Apr 2026 00:39:56 GMT",
+    "connection": "keep-alive",
+    "keep-alive": "timeout=5"
+  },
+  "body": {
+    "Product": {
+      "name": "Test MiAQnMGRQe",
+      "amount": 380,
+      "price": 64337,
+      "manufacturer": "Microsoft",
+      "createdOn": "2026-04-23T00:39:56.000Z",
+      "notes": "Notes WVjpDPQpmP",
+      "_id": "69e96a5c533bf76850f83a13"
+    },
+    "IsSuccess": true,
+    "ErrorMessage": null
+  }
+}

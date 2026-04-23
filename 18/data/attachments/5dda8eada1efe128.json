@@ -1,0 +1,172 @@
+{
+  "headers": {
+    "x-powered-by": "Express",
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "Authorization,X-User-Name",
+    "content-type": "application/json; charset=utf-8",
+    "content-length": "3056",
+    "etag": "W/\"bf0-m3BZtmrUu5rONQPzea6cJ0/C92E\"",
+    "date": "Thu, 23 Apr 2026 00:40:13 GMT",
+    "connection": "keep-alive",
+    "keep-alive": "timeout=5"
+  },
+  "body": {
+    "Order": {
+      "_id": "69e96a6d533bf76850f842e2",
+      "status": "In Process",
+      "customer": {
+        "_id": "69e96a6d533bf76850f842d0",
+        "email": "test1776904813497_INIK@example.com",
+        "name": "test UGAxAZrpduZAqfeTqBXHiTeSKOHtYKYwFFx",
+        "country": "USA",
+        "city": "testCity FiezzSRxcyM",
+        "street": "testStreet mJtHhbXnM3aTuLTkXS8ry8wk67rBw",
+        "house": 756,
+        "flat": 3403,
+        "phone": "+7037146946",
+        "createdOn": "2026-04-23T00:40:13.000Z",
+        "notes": "Notes qSegSCBoRAKaaRtfvvrZEihSSPVBOgrhtEebfwqPfMvdFUeVxFUIDAQKCPZsoRIIAEudRCbdrbDhimqsopvJIjwrklncXGJuzhUzqGIFGxCfMgwetQxdJbNsBOqPOIEYXALdZvvejEMQSlnLIkyMCbLMhCdDwQzoJxoIjLYwszrYTOWGAfroIuWMEXTzLkeXdzTFSvxNVDwxGWcabyyagtQjvHEIBUaWHWTcGxsVqtdtJucTuCDu"
+      },
+      "products": [
+        {
+          "_id": "69e96a6d533bf76850f842d5",
+          "name": "Test xCHXjViJwj",
+          "amount": 918,
+          "price": 32204,
+          "manufacturer": "Amazon",
+          "notes": "Notes zdUulYuJiD",
+          "received": false
+        }
+      ],
+      "delivery": {
+        "address": {
+          "country": "France",
+          "city": "TestCity IeVDq",
+          "street": "TestStreet BeIarUCESR",
+          "house": 264,
+          "flat": 441
+        },
+        "finalDate": "2026-08-05T00:00:00.000Z",
+        "condition": "Pickup"
+      },
+      "total_price": 32204,
+      "createdOn": "2026-04-23T00:40:13.000Z",
+      "comments": [],
+      "history": [
+        {
+          "status": "In Process",
+          "customer": "69e96a6d533bf76850f842d0",
+          "products": [
+            {
+              "_id": "69e96a6d533bf76850f842d5",
+              "name": "Test xCHXjViJwj",
+              "amount": 918,
+              "price": 32204,
+              "manufacturer": "Amazon",
+              "notes": "Notes zdUulYuJiD",
+              "received": false
+            }
+          ],
+          "total_price": 32204,
+          "delivery": {
+            "address": {
+              "country": "France",
+              "city": "TestCity IeVDq",
+              "street": "TestStreet BeIarUCESR",
+              "house": 264,
+              "flat": 441
+            },
+            "finalDate": "2026-08-05T00:00:00.000Z",
+            "condition": "Pickup"
+          },
+          "changedOn": "2026-04-23T00:40:13.000Z",
+          "action": "Order processing started",
+          "performer": {
+            "_id": "69e96a28533bf76850f8382d",
+            "username": "admin@example.com",
+            "firstName": "Admin",
+            "lastName": "Admin",
+            "roles": [
+              "ADMIN"
+            ],
+            "createdOn": "2026/04/23 00:39:04"
+          },
+          "assignedManager": null
+        },
+        {
+          "status": "Draft",
+          "customer": "69e96a6d533bf76850f842d0",
+          "products": [
+            {
+              "_id": "69e96a6d533bf76850f842d5",
+              "name": "Test xCHXjViJwj",
+              "amount": 918,
+              "price": 32204,
+              "manufacturer": "Amazon",
+              "notes": "Notes zdUulYuJiD",
+              "received": false
+            }
+          ],
+          "total_price": 32204,
+          "delivery": {
+            "address": {
+              "country": "France",
+              "city": "TestCity IeVDq",
+              "street": "TestStreet BeIarUCESR",
+              "house": 264,
+              "flat": 441
+            },
+            "finalDate": "2026-08-05T00:00:00.000Z",
+            "condition": "Pickup"
+          },
+          "changedOn": "2026-04-23T00:40:13.000Z",
+          "action": "Delivery Scheduled",
+          "performer": {
+            "_id": "69e96a28533bf76850f8382d",
+            "username": "admin@example.com",
+            "firstName": "Admin",
+            "lastName": "Admin",
+            "roles": [
+              "ADMIN"
+            ],
+            "createdOn": "2026/04/23 00:39:04"
+          },
+          "assignedManager": null
+        },
+        {
+          "status": "Draft",
+          "customer": "69e96a6d533bf76850f842d0",
+          "products": [
+            {
+              "_id": "69e96a6d533bf76850f842d5",
+              "name": "Test xCHXjViJwj",
+              "amount": 918,
+              "price": 32204,
+              "manufacturer": "Amazon",
+              "notes": "Notes zdUulYuJiD",
+              "received": false
+            }
+          ],
+          "total_price": 32204,
+          "delivery": null,
+          "changedOn": "2026-04-23T00:40:13.000Z",
+          "action": "Order created",
+          "performer": {
+            "_id": "69e96a28533bf76850f8382d",
+            "username": "admin@example.com",
+            "firstName": "Admin",
+            "lastName": "Admin",
+            "roles": [
+              "ADMIN"
+            ],
+            "createdOn": "2026/04/23 00:39:04"
+          },
+          "assignedManager": null
+        }
+      ],
+      "assignedManager": null
+    },
+    "IsSuccess": true,
+    "ErrorMessage": null
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "headers": {
+    "x-powered-by": "Express",
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "Authorization,X-User-Name",
+    "content-type": "application/json; charset=utf-8",
+    "content-length": "224",
+    "etag": "W/\"e0-QZ9TnDP2bmE7cOQJZtSTrGoVjxw\"",
+    "date": "Thu, 23 Apr 2026 00:40:48 GMT",
+    "connection": "keep-alive",
+    "keep-alive": "timeout=5"
+  },
+  "body": {
+    "Product": {
+      "name": "Test xSwNomEday",
+      "amount": 900,
+      "price": 95105,
+      "manufacturer": "Apple",
+      "createdOn": "2026-04-23T00:40:48.000Z",
+      "notes": "Notes gWbWMcCgBP",
+      "_id": "69e96a90533bf76850f86d72"
+    },
+    "IsSuccess": true,
+    "ErrorMessage": null
+  }
+}
