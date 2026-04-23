@@ -1,0 +1,26 @@
+{
+  "headers": {
+    "x-powered-by": "Express",
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "Authorization,X-User-Name",
+    "content-type": "application/json; charset=utf-8",
+    "content-length": "225",
+    "etag": "W/\"e1-394q9YpDrSVaaRuIKn02gEjECmc\"",
+    "date": "Thu, 23 Apr 2026 01:14:24 GMT",
+    "connection": "keep-alive",
+    "keep-alive": "timeout=5"
+  },
+  "body": {
+    "Product": {
+      "name": "Test CnMzbyBXdk",
+      "amount": 627,
+      "price": 10623,
+      "manufacturer": "Amazon",
+      "createdOn": "2026-04-23T01:14:24.000Z",
+      "notes": "Notes YhdmQzQLLe",
+      "_id": "69e97270720bbde73d9ac0fc"
+    },
+    "IsSuccess": true,
+    "ErrorMessage": null
+  }
+}

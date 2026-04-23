@@ -1,0 +1,26 @@
+{
+  "headers": {
+    "x-powered-by": "Express",
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "Authorization,X-User-Name",
+    "content-type": "application/json; charset=utf-8",
+    "content-length": "225",
+    "etag": "W/\"e1-RUNd4S9r4sR2ievnH8X6V0m9dZs\"",
+    "date": "Thu, 23 Apr 2026 01:13:33 GMT",
+    "connection": "keep-alive",
+    "keep-alive": "timeout=5"
+  },
+  "body": {
+    "Product": {
+      "name": "Test pBUnxWYUiA",
+      "amount": 615,
+      "price": 10892,
+      "manufacturer": "Xiaomi",
+      "createdOn": "2026-04-23T01:13:33.000Z",
+      "notes": "Notes ygbTQbCJmn",
+      "_id": "69e9723d720bbde73d9a9e31"
+    },
+    "IsSuccess": true,
+    "ErrorMessage": null
+  }
+}

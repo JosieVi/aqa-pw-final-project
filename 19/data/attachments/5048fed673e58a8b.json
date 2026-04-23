@@ -1,0 +1,26 @@
+{
+  "headers": {
+    "x-powered-by": "Express",
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "Authorization,X-User-Name",
+    "content-type": "application/json; charset=utf-8",
+    "content-length": "222",
+    "etag": "W/\"de-VkL0bW1yn3dqqO7/9r4ttevg0H4\"",
+    "date": "Thu, 23 Apr 2026 01:14:17 GMT",
+    "connection": "keep-alive",
+    "keep-alive": "timeout=5"
+  },
+  "body": {
+    "Product": {
+      "name": "Test EdsViTeLrZ",
+      "amount": 330,
+      "price": 3434,
+      "manufacturer": "Sony",
+      "createdOn": "2026-04-23T01:14:17.000Z",
+      "notes": "Notes HkdHNLXEOE",
+      "_id": "69e97269720bbde73d9ab67f"
+    },
+    "IsSuccess": true,
+    "ErrorMessage": null
+  }
+}

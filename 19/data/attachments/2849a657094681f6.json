@@ -1,0 +1,26 @@
+{
+  "headers": {
+    "x-powered-by": "Express",
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "Authorization,X-User-Name",
+    "content-type": "application/json; charset=utf-8",
+    "content-length": "225",
+    "etag": "W/\"e1-rUPXKePY74/BKXyQq3YIwHDezqM\"",
+    "date": "Thu, 23 Apr 2026 01:14:29 GMT",
+    "connection": "keep-alive",
+    "keep-alive": "timeout=5"
+  },
+  "body": {
+    "Product": {
+      "name": "Test rtFPcVOuak",
+      "amount": 582,
+      "price": 22089,
+      "manufacturer": "Amazon",
+      "createdOn": "2026-04-23T01:14:29.000Z",
+      "notes": "Notes nTVxbwFlIy",
+      "_id": "69e97275720bbde73d9acb5d"
+    },
+    "IsSuccess": true,
+    "ErrorMessage": null
+  }
+}

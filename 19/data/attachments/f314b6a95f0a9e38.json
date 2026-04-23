@@ -1,0 +1,26 @@
+{
+  "headers": {
+    "x-powered-by": "Express",
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "Authorization,X-User-Name",
+    "content-type": "application/json; charset=utf-8",
+    "content-length": "225",
+    "etag": "W/\"e1-uS55quqZcdDfYscgEXy6FtYraU4\"",
+    "date": "Thu, 23 Apr 2026 01:13:50 GMT",
+    "connection": "keep-alive",
+    "keep-alive": "timeout=5"
+  },
+  "body": {
+    "Product": {
+      "name": "Test LKISlJfOqp",
+      "amount": 957,
+      "price": 30412,
+      "manufacturer": "Amazon",
+      "createdOn": "2026-04-23T01:13:50.000Z",
+      "notes": "Notes dukHyJwnuU",
+      "_id": "69e9724e720bbde73d9aabfe"
+    },
+    "IsSuccess": true,
+    "ErrorMessage": null
+  }
+}

@@ -1,0 +1,100 @@
+{
+  "headers": {
+    "x-powered-by": "Express",
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "Authorization,X-User-Name",
+    "content-type": "application/json; charset=utf-8",
+    "content-length": "1800",
+    "etag": "W/\"708-x3eRAJQWyVvFR+GQxxCNCnH+pFM\"",
+    "date": "Thu, 23 Apr 2026 01:14:17 GMT",
+    "connection": "keep-alive",
+    "keep-alive": "timeout=5"
+  },
+  "body": {
+    "Order": {
+      "status": "Draft",
+      "customer": {
+        "_id": "69e97269720bbde73d9ab674",
+        "email": "test1776906857443_WYAP@example.com",
+        "name": "test NCexlwuKxoDKLSJpZCrEeaZKBRjvqHKLdXA",
+        "country": "Germany",
+        "city": "testCity pntITKWNAgr",
+        "street": "testStreet pD0ennbTh2QqE250PmyBIiHlqC3X0",
+        "house": 381,
+        "flat": 6505,
+        "phone": "+9989847298",
+        "createdOn": "2026-04-23T01:14:17.000Z",
+        "notes": "Notes NqgQuAtjchinEWKDFDkygacOAcDOBhYvsSHdtHLZyTZeYPHTnzYEpQzqWEQsYmNOEKyeMIihanxHduVCaajvbPXFHEEUcKnCgzpekSgOcApCADVUhtNuGgLOVEwgzjRQdeayjnVcBcpxLxPnKcibXZjzbrBYJfAyVLDXubKHTbxTHNhnlVrraFmBxSEryflYcHSXjucAzqgOLAPipqTmwCOujXrAzMrwAhfQIWtXVVltrxFOSInG"
+      },
+      "products": [
+        {
+          "_id": "69e97269720bbde73d9ab67f",
+          "name": "Test EdsViTeLrZ",
+          "amount": 330,
+          "price": 3434,
+          "manufacturer": "Sony",
+          "notes": "Notes HkdHNLXEOE",
+          "received": false
+        },
+        {
+          "_id": "69e97269720bbde73d9ab686",
+          "name": "Test jOjHUkcBWX",
+          "amount": 260,
+          "price": 57651,
+          "manufacturer": "Xiaomi",
+          "notes": "Notes LTlYDlmxPd",
+          "received": false
+        }
+      ],
+      "delivery": null,
+      "total_price": 61085,
+      "createdOn": "2026-04-23T01:14:17.000Z",
+      "comments": [],
+      "history": [
+        {
+          "status": "Draft",
+          "customer": "69e97269720bbde73d9ab674",
+          "products": [
+            {
+              "_id": "69e97269720bbde73d9ab67f",
+              "name": "Test EdsViTeLrZ",
+              "amount": 330,
+              "price": 3434,
+              "manufacturer": "Sony",
+              "notes": "Notes HkdHNLXEOE",
+              "received": false
+            },
+            {
+              "_id": "69e97269720bbde73d9ab686",
+              "name": "Test jOjHUkcBWX",
+              "amount": 260,
+              "price": 57651,
+              "manufacturer": "Xiaomi",
+              "notes": "Notes LTlYDlmxPd",
+              "received": false
+            }
+          ],
+          "total_price": 61085,
+          "delivery": null,
+          "changedOn": "2026-04-23T01:14:17.000Z",
+          "action": "Order created",
+          "performer": {
+            "_id": "69e971fb720bbde73d9a9a72",
+            "username": "admin@example.com",
+            "firstName": "Admin",
+            "lastName": "Admin",
+            "roles": [
+              "ADMIN"
+            ],
+            "createdOn": "2026/04/23 01:12:27"
+          },
+          "assignedManager": null
+        }
+      ],
+      "assignedManager": null,
+      "_id": "69e97269720bbde73d9ab69a"
+    },
+    "IsSuccess": true,
+    "ErrorMessage": null
+  }
+}

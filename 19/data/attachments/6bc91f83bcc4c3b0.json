@@ -1,0 +1,26 @@
+{
+  "headers": {
+    "x-powered-by": "Express",
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "Authorization,X-User-Name",
+    "content-type": "application/json; charset=utf-8",
+    "content-length": "226",
+    "etag": "W/\"e2-P86uy8gRb/TlzK0JI/Awp867W5w\"",
+    "date": "Thu, 23 Apr 2026 01:14:29 GMT",
+    "connection": "keep-alive",
+    "keep-alive": "timeout=5"
+  },
+  "body": {
+    "Product": {
+      "name": "Test DKFREYKVoj",
+      "amount": 434,
+      "price": 54061,
+      "manufacturer": "Samsung",
+      "createdOn": "2026-04-23T01:14:29.000Z",
+      "notes": "Notes lRILhlzYvy",
+      "_id": "69e97275720bbde73d9ac9b0"
+    },
+    "IsSuccess": true,
+    "ErrorMessage": null
+  }
+}

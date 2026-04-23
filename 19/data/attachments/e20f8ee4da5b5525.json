@@ -1,0 +1,26 @@
+{
+  "headers": {
+    "x-powered-by": "Express",
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "Authorization,X-User-Name",
+    "content-type": "application/json; charset=utf-8",
+    "content-length": "225",
+    "etag": "W/\"e1-lc4kwT03nsmRw4paWz2KV3PikBg\"",
+    "date": "Thu, 23 Apr 2026 01:14:17 GMT",
+    "connection": "keep-alive",
+    "keep-alive": "timeout=5"
+  },
+  "body": {
+    "Product": {
+      "name": "Test WNBwlsWHTv",
+      "amount": 320,
+      "price": 37672,
+      "manufacturer": "Xiaomi",
+      "createdOn": "2026-04-23T01:14:17.000Z",
+      "notes": "Notes CXZNQNwHAl",
+      "_id": "69e97269720bbde73d9ab755"
+    },
+    "IsSuccess": true,
+    "ErrorMessage": null
+  }
+}

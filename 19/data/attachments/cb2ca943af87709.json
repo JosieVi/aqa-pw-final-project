@@ -1,0 +1,17 @@
+{
+  "headers": {
+    "x-powered-by": "Express",
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "Authorization,X-User-Name",
+    "content-type": "application/json; charset=utf-8",
+    "content-length": "55",
+    "etag": "W/\"37-nvPLaba7CKwD1pSohJ0Tvlg8IkU\"",
+    "date": "Thu, 23 Apr 2026 01:14:28 GMT",
+    "connection": "keep-alive",
+    "keep-alive": "timeout=5"
+  },
+  "body": {
+    "IsSuccess": false,
+    "ErrorMessage": "Invalid final date"
+  }
+}

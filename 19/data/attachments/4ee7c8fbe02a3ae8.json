@@ -1,0 +1,26 @@
+{
+  "headers": {
+    "x-powered-by": "Express",
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "Authorization,X-User-Name",
+    "content-type": "application/json; charset=utf-8",
+    "content-length": "224",
+    "etag": "W/\"e0-Stxoe1z1l32ZP3d9jRASEa2aFYc\"",
+    "date": "Thu, 23 Apr 2026 01:14:29 GMT",
+    "connection": "keep-alive",
+    "keep-alive": "timeout=5"
+  },
+  "body": {
+    "Product": {
+      "name": "Test HwgoWhqsLC",
+      "amount": 622,
+      "price": 82001,
+      "manufacturer": "Tesla",
+      "createdOn": "2026-04-23T01:14:29.000Z",
+      "notes": "Notes cJGeyZeBhw",
+      "_id": "69e97275720bbde73d9aca28"
+    },
+    "IsSuccess": true,
+    "ErrorMessage": null
+  }
+}

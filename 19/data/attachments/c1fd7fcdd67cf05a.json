@@ -1,0 +1,26 @@
+{
+  "headers": {
+    "x-powered-by": "Express",
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "Authorization,X-User-Name",
+    "content-type": "application/json; charset=utf-8",
+    "content-length": "224",
+    "etag": "W/\"e0-vMsCVfCuwvwC4wEliy/b4dvYg3c\"",
+    "date": "Thu, 23 Apr 2026 01:14:09 GMT",
+    "connection": "keep-alive",
+    "keep-alive": "timeout=5"
+  },
+  "body": {
+    "Product": {
+      "name": "Test sGCTaLfkrA",
+      "amount": 428,
+      "price": 60793,
+      "manufacturer": "Apple",
+      "createdOn": "2026-04-23T01:14:09.000Z",
+      "notes": "Notes fYTDxoAzjM",
+      "_id": "69e97261720bbde73d9ab371"
+    },
+    "IsSuccess": true,
+    "ErrorMessage": null
+  }
+}

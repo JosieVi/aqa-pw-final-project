@@ -1,0 +1,26 @@
+{
+  "headers": {
+    "x-powered-by": "Express",
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "Authorization,X-User-Name",
+    "content-type": "application/json; charset=utf-8",
+    "content-length": "224",
+    "etag": "W/\"e0-7YhxDLzKt3SKU7g3xPxGDd4aYwQ\"",
+    "date": "Thu, 23 Apr 2026 01:14:27 GMT",
+    "connection": "keep-alive",
+    "keep-alive": "timeout=5"
+  },
+  "body": {
+    "Product": {
+      "name": "Test nndFlGKhyE",
+      "amount": 390,
+      "price": 5348,
+      "manufacturer": "Amazon",
+      "createdOn": "2026-04-23T01:14:27.000Z",
+      "notes": "Notes ulucXtiCdd",
+      "_id": "69e97273720bbde73d9ac698"
+    },
+    "IsSuccess": true,
+    "ErrorMessage": null
+  }
+}

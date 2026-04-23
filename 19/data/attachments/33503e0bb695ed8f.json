@@ -1,0 +1,26 @@
+{
+  "headers": {
+    "x-powered-by": "Express",
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "Authorization,X-User-Name",
+    "content-type": "application/json; charset=utf-8",
+    "content-length": "224",
+    "etag": "W/\"e0-6dXLGZjbtg1RxVedKr6H9vx+1Y0\"",
+    "date": "Thu, 23 Apr 2026 01:14:32 GMT",
+    "connection": "keep-alive",
+    "keep-alive": "timeout=5"
+  },
+  "body": {
+    "Product": {
+      "name": "Test BLnOWYgVyq",
+      "amount": 645,
+      "price": 52195,
+      "manufacturer": "Tesla",
+      "createdOn": "2026-04-23T01:14:32.000Z",
+      "notes": "Notes WhecktKxhE",
+      "_id": "69e97278720bbde73d9ad040"
+    },
+    "IsSuccess": true,
+    "ErrorMessage": null
+  }
+}

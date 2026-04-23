@@ -1,0 +1,26 @@
+{
+  "headers": {
+    "x-powered-by": "Express",
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "Authorization,X-User-Name",
+    "content-type": "application/json; charset=utf-8",
+    "content-length": "224",
+    "etag": "W/\"e0-vw1DiEmz3p+6UV7bUQRmv+rQpaU\"",
+    "date": "Thu, 23 Apr 2026 01:13:29 GMT",
+    "connection": "keep-alive",
+    "keep-alive": "timeout=5"
+  },
+  "body": {
+    "Product": {
+      "name": "Test BPlcUCyAgj",
+      "amount": 59,
+      "price": 30616,
+      "manufacturer": "Amazon",
+      "createdOn": "2026-04-23T01:13:29.000Z",
+      "notes": "Notes kOINxmwNZB",
+      "_id": "69e97239720bbde73d9a9cf6"
+    },
+    "IsSuccess": true,
+    "ErrorMessage": null
+  }
+}
