@@ -1,0 +1,257 @@
+{
+  "headers": {
+    "x-powered-by": "Express",
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "Authorization,X-User-Name",
+    "content-type": "application/json; charset=utf-8",
+    "content-length": "4532",
+    "etag": "W/\"11b4-IOqHoHF4SF5UTqyOX8XAx8W6Z7U\"",
+    "date": "Thu, 23 Apr 2026 01:09:28 GMT",
+    "connection": "keep-alive",
+    "keep-alive": "timeout=5"
+  },
+  "body": {
+    "Order": {
+      "_id": "69e97148cf24a79be520cb27",
+      "status": "Partially Received",
+      "customer": {
+        "_id": "69e97148cf24a79be520cb13",
+        "email": "test1776906568625_IZTF@example.com",
+        "name": "test CkWUgRzrPMNzOedTrNZoGukGUrmoJjJFPUX",
+        "country": "Russia",
+        "city": "testCity ecQYtdqPODQ",
+        "street": "testStreet 9kCZRDkFlXASpFGxscXMCS77qn3YQ",
+        "house": 268,
+        "flat": 8662,
+        "phone": "+8037473893",
+        "createdOn": "2026-04-23T01:09:28.000Z",
+        "notes": "Notes dtzoCsrQtihbTmauUdsnOYwjJLLAvDpsfmbfmELvIHWgafWsgYgfxGyOJcTWIJIAUBkBefzUMGFhZOBcGEyJQFizNojZfgKnvpWecatEXpMBcuqZSyAowtgutpJexWsGnXOOMvyydwRbTsnaJfJakFDMtOQHjQgmKXaBLPywyveKlXFDcfIPPdvFTyQEHrJHBObhEyjdRxmXwAvsSIqVXDdTjotSJnHUyGChWStbyTjQLlXHNMIQ"
+      },
+      "products": [
+        {
+          "_id": "69e97148cf24a79be520cb1b",
+          "name": "Test LPIiGdwunJ",
+          "amount": 239,
+          "price": 5021,
+          "manufacturer": "Google",
+          "notes": "Notes VgjOSQUqmy",
+          "received": true
+        },
+        {
+          "_id": "69e97148cf24a79be520cb1d",
+          "name": "Test rLlMaUTrBu",
+          "amount": 724,
+          "price": 47116,
+          "manufacturer": "Amazon",
+          "notes": "Notes VGIVuMTGXr",
+          "received": false
+        }
+      ],
+      "delivery": {
+        "address": {
+          "country": "France",
+          "city": "TestCity ilaGk",
+          "street": "TestStreet CDUfZPrpSg",
+          "house": 325,
+          "flat": 9291
+        },
+        "finalDate": "2026-04-29T00:00:00.000Z",
+        "condition": "Pickup"
+      },
+      "total_price": 52137,
+      "createdOn": "2026-04-23T01:09:28.000Z",
+      "comments": [],
+      "history": [
+        {
+          "status": "Partially Received",
+          "customer": "69e97148cf24a79be520cb13",
+          "products": [
+            {
+              "_id": "69e97148cf24a79be520cb1b",
+              "name": "Test LPIiGdwunJ",
+              "amount": 239,
+              "price": 5021,
+              "manufacturer": "Google",
+              "notes": "Notes VgjOSQUqmy",
+              "received": true
+            },
+            {
+              "_id": "69e97148cf24a79be520cb1d",
+              "name": "Test rLlMaUTrBu",
+              "amount": 724,
+              "price": 47116,
+              "manufacturer": "Amazon",
+              "notes": "Notes VGIVuMTGXr",
+              "received": false
+            }
+          ],
+          "total_price": 52137,
+          "delivery": {
+            "address": {
+              "country": "France",
+              "city": "TestCity ilaGk",
+              "street": "TestStreet CDUfZPrpSg",
+              "house": 325,
+              "flat": 9291
+            },
+            "finalDate": "2026-04-29T00:00:00.000Z",
+            "condition": "Pickup"
+          },
+          "changedOn": "2026-04-23T01:09:28.000Z",
+          "action": "Received",
+          "performer": {
+            "_id": "69e970cccf24a79be520a073",
+            "username": "admin@example.com",
+            "firstName": "Admin",
+            "lastName": "Admin",
+            "roles": [
+              "ADMIN"
+            ],
+            "createdOn": "2026/04/23 01:07:24"
+          },
+          "assignedManager": null
+        },
+        {
+          "status": "In Process",
+          "customer": "69e97148cf24a79be520cb13",
+          "products": [
+            {
+              "_id": "69e97148cf24a79be520cb1b",
+              "name": "Test LPIiGdwunJ",
+              "amount": 239,
+              "price": 5021,
+              "manufacturer": "Google",
+              "notes": "Notes VgjOSQUqmy",
+              "received": false
+            },
+            {
+              "_id": "69e97148cf24a79be520cb1d",
+              "name": "Test rLlMaUTrBu",
+              "amount": 724,
+              "price": 47116,
+              "manufacturer": "Amazon",
+              "notes": "Notes VGIVuMTGXr",
+              "received": false
+            }
+          ],
+          "total_price": 52137,
+          "delivery": {
+            "address": {
+              "country": "France",
+              "city": "TestCity ilaGk",
+              "street": "TestStreet CDUfZPrpSg",
+              "house": 325,
+              "flat": 9291
+            },
+            "finalDate": "2026-04-29T00:00:00.000Z",
+            "condition": "Pickup"
+          },
+          "changedOn": "2026-04-23T01:09:28.000Z",
+          "action": "Order processing started",
+          "performer": {
+            "_id": "69e970cccf24a79be520a073",
+            "username": "admin@example.com",
+            "firstName": "Admin",
+            "lastName": "Admin",
+            "roles": [
+              "ADMIN"
+            ],
+            "createdOn": "2026/04/23 01:07:24"
+          },
+          "assignedManager": null
+        },
+        {
+          "status": "Draft",
+          "customer": "69e97148cf24a79be520cb13",
+          "products": [
+            {
+              "_id": "69e97148cf24a79be520cb1b",
+              "name": "Test LPIiGdwunJ",
+              "amount": 239,
+              "price": 5021,
+              "manufacturer": "Google",
+              "notes": "Notes VgjOSQUqmy",
+              "received": false
+            },
+            {
+              "_id": "69e97148cf24a79be520cb1d",
+              "name": "Test rLlMaUTrBu",
+              "amount": 724,
+              "price": 47116,
+              "manufacturer": "Amazon",
+              "notes": "Notes VGIVuMTGXr",
+              "received": false
+            }
+          ],
+          "total_price": 52137,
+          "delivery": {
+            "address": {
+              "country": "France",
+              "city": "TestCity ilaGk",
+              "street": "TestStreet CDUfZPrpSg",
+              "house": 325,
+              "flat": 9291
+            },
+            "finalDate": "2026-04-29T00:00:00.000Z",
+            "condition": "Pickup"
+          },
+          "changedOn": "2026-04-23T01:09:28.000Z",
+          "action": "Delivery Scheduled",
+          "performer": {
+            "_id": "69e970cccf24a79be520a073",
+            "username": "admin@example.com",
+            "firstName": "Admin",
+            "lastName": "Admin",
+            "roles": [
+              "ADMIN"
+            ],
+            "createdOn": "2026/04/23 01:07:24"
+          },
+          "assignedManager": null
+        },
+        {
+          "status": "Draft",
+          "customer": "69e97148cf24a79be520cb13",
+          "products": [
+            {
+              "_id": "69e97148cf24a79be520cb1b",
+              "name": "Test LPIiGdwunJ",
+              "amount": 239,
+              "price": 5021,
+              "manufacturer": "Google",
+              "notes": "Notes VgjOSQUqmy",
+              "received": false
+            },
+            {
+              "_id": "69e97148cf24a79be520cb1d",
+              "name": "Test rLlMaUTrBu",
+              "amount": 724,
+              "price": 47116,
+              "manufacturer": "Amazon",
+              "notes": "Notes VGIVuMTGXr",
+              "received": false
+            }
+          ],
+          "total_price": 52137,
+          "delivery": null,
+          "changedOn": "2026-04-23T01:09:28.000Z",
+          "action": "Order created",
+          "performer": {
+            "_id": "69e970cccf24a79be520a073",
+            "username": "admin@example.com",
+            "firstName": "Admin",
+            "lastName": "Admin",
+            "roles": [
+              "ADMIN"
+            ],
+            "createdOn": "2026/04/23 01:07:24"
+          },
+          "assignedManager": null
+        }
+      ],
+      "assignedManager": null
+    },
+    "IsSuccess": true,
+    "ErrorMessage": null
+  }
+}

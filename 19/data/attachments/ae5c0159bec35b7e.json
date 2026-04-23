@@ -1,0 +1,26 @@
+{
+  "headers": {
+    "x-powered-by": "Express",
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "Authorization,X-User-Name",
+    "content-type": "application/json; charset=utf-8",
+    "content-length": "223",
+    "etag": "W/\"df-UpMYn/cQIHV0qJIgS3LI9cV5tNI\"",
+    "date": "Thu, 23 Apr 2026 01:08:55 GMT",
+    "connection": "keep-alive",
+    "keep-alive": "timeout=5"
+  },
+  "body": {
+    "Product": {
+      "name": "Test PoXRPTMyBr",
+      "amount": 767,
+      "price": 92403,
+      "manufacturer": "Sony",
+      "createdOn": "2026-04-23T01:08:54.000Z",
+      "notes": "Notes GKHkpZdtOB",
+      "_id": "69e97126cf24a79be520acf1"
+    },
+    "IsSuccess": true,
+    "ErrorMessage": null
+  }
+}

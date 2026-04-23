@@ -1,0 +1,26 @@
+{
+  "headers": {
+    "x-powered-by": "Express",
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "Authorization,X-User-Name",
+    "content-type": "application/json; charset=utf-8",
+    "content-length": "211",
+    "etag": "W/\"d3-aTrFl2EqumicdaU3hDdPceeKOTQ\"",
+    "date": "Thu, 23 Apr 2026 01:09:36 GMT",
+    "connection": "keep-alive",
+    "keep-alive": "timeout=5"
+  },
+  "body": {
+    "Product": {
+      "_id": "69e97150cf24a79be520dba9",
+      "name": "Cid",
+      "amount": 87,
+      "price": 78735,
+      "manufacturer": "Tesla",
+      "createdOn": "2026-04-23T01:09:36.000Z",
+      "notes": "Notes AbyEKMZwfd"
+    },
+    "IsSuccess": true,
+    "ErrorMessage": null
+  }
+}

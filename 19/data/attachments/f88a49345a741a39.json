@@ -1,0 +1,26 @@
+{
+  "headers": {
+    "x-powered-by": "Express",
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "Authorization,X-User-Name",
+    "content-type": "application/json; charset=utf-8",
+    "content-length": "226",
+    "etag": "W/\"e2-zJ1pVPk7Ztw+zLe/9rc1H6gqwyg\"",
+    "date": "Thu, 23 Apr 2026 01:09:29 GMT",
+    "connection": "keep-alive",
+    "keep-alive": "timeout=5"
+  },
+  "body": {
+    "Product": {
+      "name": "Test WEEORbxMxA",
+      "amount": 177,
+      "price": 13549,
+      "manufacturer": "Samsung",
+      "createdOn": "2026-04-23T01:09:29.000Z",
+      "notes": "Notes kHnoJlpjte",
+      "_id": "69e97149cf24a79be520cdec"
+    },
+    "IsSuccess": true,
+    "ErrorMessage": null
+  }
+}

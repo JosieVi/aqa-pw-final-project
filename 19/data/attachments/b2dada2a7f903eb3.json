@@ -1,0 +1,54 @@
+{
+  "headers": {
+    "x-powered-by": "Express",
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "Authorization,X-User-Name",
+    "content-type": "application/json; charset=utf-8",
+    "content-length": "1341",
+    "etag": "W/\"53d-RGWjrjRg/UQ9i3sQmQg2gTV8sjI\"",
+    "date": "Thu, 23 Apr 2026 01:09:24 GMT",
+    "connection": "keep-alive",
+    "keep-alive": "timeout=5"
+  },
+  "body": {
+    "Customers": [
+      {
+        "_id": "69e97144cf24a79be520c221",
+        "email": "test1776906564054_IAGD@example.com",
+        "name": "test FhXYqZFihEPVhYpzRXaeLiXQeWcXyBZNJlR",
+        "country": "Great Britain",
+        "city": "testCity fxHAqksGfmd",
+        "street": "testStreet 4cULSknnbtnXn8HDgM0hzQzUe6y1b",
+        "house": 609,
+        "flat": 63,
+        "phone": "+8993192879",
+        "createdOn": "2026-04-23T01:09:24.000Z",
+        "notes": "Notes QPsipFhQDMUDVPnWAMCHCmasxPiQcJfVauuzqdywCPNonmDMFGmGaZnMVcgOiRODvjFpxvLeoKoOkxhfvHfgbtFkrxEoXXVNVrevArJnlWpVPAKoNgmqjRsuzjxjMvQgKANfdjVWqKVoSnLCktioAUCYHnNRhYgDGqMpbpgltQnLdfLpgWMbljwjguoSkIxsjFZBKKVeWdOIpVjJedQJKzcuUBesXAEdRAaeQpwjgkLTBISQusIc"
+      },
+      {
+        "_id": "69e97122cf24a79be520a8c7",
+        "email": "test1776906530469_PNAH@example.com",
+        "name": "test jfrCLUUVOXxbDEGdtxchtwnDpKVPhblEovj",
+        "country": "Great Britain",
+        "city": "testCity hhJHYlQARSo",
+        "street": "testStreet tW2sIONuUvATtw8gaRIFJGmpeupXD",
+        "house": 707,
+        "flat": 3275,
+        "phone": "+4828252624",
+        "createdOn": "2026-04-23T01:08:50.000Z",
+        "notes": "Notes NXqBkYatSdjTnyuxyisjAWtcwmLFwLZQFHcZGaKtmjHYwHHtLySVBtdcungBOnxHhejmlunXjxYrwsOCdTCkyfDdyzbSofteHsDpleIZtOzANJjMalrzoINrhWxOPEGLubayXSWPQMxTdbpOZCpmYkgpMKKKsXCsaosAOEydIeDQjRaXEXAFLAkMhijwKjRRzRvtjDECjxcoMkSkDJiQeqmuWvgBMnhznbgozCzJYTlRfrOvveZu"
+      }
+    ],
+    "total": 2,
+    "page": 1,
+    "limit": 10,
+    "search": "Great Britain",
+    "country": [],
+    "sorting": {
+      "sortField": "createdOn",
+      "sortOrder": "desc"
+    },
+    "IsSuccess": true,
+    "ErrorMessage": null
+  }
+}

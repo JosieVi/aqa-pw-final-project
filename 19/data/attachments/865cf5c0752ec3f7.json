@@ -1,0 +1,82 @@
+{
+  "headers": {
+    "x-powered-by": "Express",
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "Authorization,X-User-Name",
+    "content-type": "application/json; charset=utf-8",
+    "content-length": "1494",
+    "etag": "W/\"5d6-0sfqTrs3rkcUeuBNRVSMEnArrYM\"",
+    "date": "Thu, 23 Apr 2026 01:09:28 GMT",
+    "connection": "keep-alive",
+    "keep-alive": "timeout=5"
+  },
+  "body": {
+    "Order": {
+      "_id": "69e97148cf24a79be520ca59",
+      "status": "Draft",
+      "customer": {
+        "_id": "69e97148cf24a79be520ca4c",
+        "email": "test1776906568295_XGIM@example.com",
+        "name": "test DdwTtPIrRWghLNPZlmHtnaHdZSyIqEmpZWS",
+        "country": "Belarus",
+        "city": "testCity TCdCZHzSEIq",
+        "street": "testStreet cpTY3KeZ8ZJL4LiKOqpSvmvuKJkYC",
+        "house": 642,
+        "flat": 1681,
+        "phone": "+6457201367",
+        "createdOn": "2026-04-23T01:09:28.000Z",
+        "notes": "Notes CZmbyRTsobCkWjDpRAvjZuRqJwYiipuAIxEExQxyjIzEhrGdnZkLuFoYdLYIcZWMEUtIjDwTeXlFHESnBNElHZiEdNxDHRznpNYHesLxGsUatbbldcdrCqzXuHfbCkooHNLvcYrSyFdjHDCuVmbCDMJqHjCNFIBfQJfrcCyxFPuhIzWdvwhupPzDmgpyFHnluRWxcyrhgCfRCtbqBNJJWDqKttPVKeoBUMATtZZMAEFBRRLTErVc"
+      },
+      "products": [
+        {
+          "_id": "69e97148cf24a79be520ca51",
+          "name": "Test zSEaKyzjgM",
+          "amount": 392,
+          "price": 87882,
+          "manufacturer": "Apple",
+          "notes": "Notes bdLGKIKMnU",
+          "received": false
+        }
+      ],
+      "delivery": null,
+      "total_price": 87882,
+      "createdOn": "2026-04-23T01:09:28.000Z",
+      "comments": [],
+      "history": [
+        {
+          "status": "Draft",
+          "customer": "69e97148cf24a79be520ca4c",
+          "products": [
+            {
+              "_id": "69e97148cf24a79be520ca51",
+              "name": "Test zSEaKyzjgM",
+              "amount": 392,
+              "price": 87882,
+              "manufacturer": "Apple",
+              "notes": "Notes bdLGKIKMnU",
+              "received": false
+            }
+          ],
+          "total_price": 87882,
+          "delivery": null,
+          "changedOn": "2026-04-23T01:09:28.000Z",
+          "action": "Order created",
+          "performer": {
+            "_id": "69e970cccf24a79be520a073",
+            "username": "admin@example.com",
+            "firstName": "Admin",
+            "lastName": "Admin",
+            "roles": [
+              "ADMIN"
+            ],
+            "createdOn": "2026/04/23 01:07:24"
+          },
+          "assignedManager": null
+        }
+      ],
+      "assignedManager": null
+    },
+    "IsSuccess": true,
+    "ErrorMessage": null
+  }
+}

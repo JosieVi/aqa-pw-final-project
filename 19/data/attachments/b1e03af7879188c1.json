@@ -1,0 +1,26 @@
+{
+  "headers": {
+    "x-powered-by": "Express",
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "Authorization,X-User-Name",
+    "content-type": "application/json; charset=utf-8",
+    "content-length": "228",
+    "etag": "W/\"e4-UihjkKac+Cf3OyWGfqUbUl3fhzM\"",
+    "date": "Thu, 23 Apr 2026 01:09:27 GMT",
+    "connection": "keep-alive",
+    "keep-alive": "timeout=5"
+  },
+  "body": {
+    "Product": {
+      "name": "Test HUkcBgMBCO",
+      "amount": 248,
+      "price": 49951,
+      "manufacturer": "Microsoft",
+      "createdOn": "2026-04-23T01:09:27.000Z",
+      "notes": "Notes EdGMoBuhwH",
+      "_id": "69e97147cf24a79be520c894"
+    },
+    "IsSuccess": true,
+    "ErrorMessage": null
+  }
+}

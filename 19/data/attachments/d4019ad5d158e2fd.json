@@ -1,0 +1,26 @@
+{
+  "headers": {
+    "x-powered-by": "Express",
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "Authorization,X-User-Name",
+    "content-type": "application/json; charset=utf-8",
+    "content-length": "222",
+    "etag": "W/\"de-hggj1Dtta8ejDR4ubbF5D8KUAyQ\"",
+    "date": "Thu, 23 Apr 2026 01:09:36 GMT",
+    "connection": "keep-alive",
+    "keep-alive": "timeout=5"
+  },
+  "body": {
+    "Product": {
+      "_id": "69e97150cf24a79be520dbc9",
+      "name": "Test NUfaZTRlLP",
+      "amount": 0,
+      "price": 26182,
+      "manufacturer": "Apple",
+      "createdOn": "2026-04-23T01:09:36.000Z",
+      "notes": "Notes WtkeSknUVo"
+    },
+    "IsSuccess": true,
+    "ErrorMessage": null
+  }
+}

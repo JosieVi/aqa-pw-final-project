@@ -1,0 +1,132 @@
+{
+  "headers": {
+    "x-powered-by": "Express",
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "Authorization,X-User-Name",
+    "content-type": "application/json; charset=utf-8",
+    "content-length": "2346",
+    "etag": "W/\"92a-8eQxzzDJAOvgm1kUIr5ICvQSPsY\"",
+    "date": "Thu, 23 Apr 2026 01:09:33 GMT",
+    "connection": "keep-alive",
+    "keep-alive": "timeout=5"
+  },
+  "body": {
+    "Order": {
+      "_id": "69e9714dcf24a79be520d92a",
+      "status": "Draft",
+      "customer": {
+        "_id": "69e9714dcf24a79be520d91d",
+        "email": "test1776906573741_AYUB@example.com",
+        "name": "test cubgYJdQYMsmkATaCaffGmDspYQeeGLbNLh",
+        "country": "Canada",
+        "city": "testCity hUGsRHxOxWn",
+        "street": "testStreet GHEu0JCWUA7IRLysDYoEDYSLZf0zl",
+        "house": 61,
+        "flat": 6857,
+        "phone": "+8150448161",
+        "createdOn": "2026-04-23T01:09:33.000Z",
+        "notes": "Notes DDMbqOoOVLvmEwUGxHwfuTZmbTfyAODXreRaCueLUcIaePLDwhTdbeUwzqlvAaQAnKNIKtYKIEgHEmmpSvttcWXbclEOkVszaFLVimyttjsanUBwOxvZcAXEvqhdobvbSLdRUwAzhYqWKxGzuGEHcJhGnhIUvGcNeBDLZNZfWwaTUlTHklfewtTcsbcBtbffJdaReCNbiqCImMzRCDLPQYmvRsDnFLKJjflfyKkRhmfjDZgMRMym"
+      },
+      "products": [
+        {
+          "_id": "69e9714dcf24a79be520d922",
+          "name": "Test TLFtBOOLMH",
+          "amount": 469,
+          "price": 23150,
+          "manufacturer": "Sony",
+          "notes": "Notes eMvdJDQoBr",
+          "received": false
+        }
+      ],
+      "delivery": {
+        "address": {
+          "country": "USA",
+          "city": "TestCity EnqIG",
+          "street": "TestStreet edZqcaspvj",
+          "house": 310,
+          "flat": 1357
+        },
+        "finalDate": "2026-10-13T00:00:00.000Z",
+        "condition": "Delivery"
+      },
+      "total_price": 23150,
+      "createdOn": "2026-04-23T01:09:33.000Z",
+      "comments": [],
+      "history": [
+        {
+          "status": "Draft",
+          "customer": "69e9714dcf24a79be520d91d",
+          "products": [
+            {
+              "_id": "69e9714dcf24a79be520d922",
+              "name": "Test TLFtBOOLMH",
+              "amount": 469,
+              "price": 23150,
+              "manufacturer": "Sony",
+              "notes": "Notes eMvdJDQoBr",
+              "received": false
+            }
+          ],
+          "total_price": 23150,
+          "delivery": {
+            "address": {
+              "country": "USA",
+              "city": "TestCity EnqIG",
+              "street": "TestStreet edZqcaspvj",
+              "house": 310,
+              "flat": 1357
+            },
+            "finalDate": "2026-10-13T00:00:00.000Z",
+            "condition": "Delivery"
+          },
+          "changedOn": "2026-04-23T01:09:33.000Z",
+          "action": "Delivery Scheduled",
+          "performer": {
+            "_id": "69e970cccf24a79be520a073",
+            "username": "admin@example.com",
+            "firstName": "Admin",
+            "lastName": "Admin",
+            "roles": [
+              "ADMIN"
+            ],
+            "createdOn": "2026/04/23 01:07:24"
+          },
+          "assignedManager": null
+        },
+        {
+          "status": "Draft",
+          "customer": "69e9714dcf24a79be520d91d",
+          "products": [
+            {
+              "_id": "69e9714dcf24a79be520d922",
+              "name": "Test TLFtBOOLMH",
+              "amount": 469,
+              "price": 23150,
+              "manufacturer": "Sony",
+              "notes": "Notes eMvdJDQoBr",
+              "received": false
+            }
+          ],
+          "total_price": 23150,
+          "delivery": null,
+          "changedOn": "2026-04-23T01:09:33.000Z",
+          "action": "Order created",
+          "performer": {
+            "_id": "69e970cccf24a79be520a073",
+            "username": "admin@example.com",
+            "firstName": "Admin",
+            "lastName": "Admin",
+            "roles": [
+              "ADMIN"
+            ],
+            "createdOn": "2026/04/23 01:07:24"
+          },
+          "assignedManager": null
+        }
+      ],
+      "assignedManager": null
+    },
+    "IsSuccess": true,
+    "ErrorMessage": null
+  }
+}

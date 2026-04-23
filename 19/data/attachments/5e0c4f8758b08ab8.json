@@ -1,0 +1,130 @@
+{
+  "headers": {
+    "x-powered-by": "Express",
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "Authorization,X-User-Name",
+    "content-type": "application/json; charset=utf-8",
+    "content-length": "2332",
+    "etag": "W/\"91c-vBoCvDDHWEaOkHXBCT3eny7PI5Y\"",
+    "date": "Thu, 23 Apr 2026 01:09:05 GMT",
+    "connection": "keep-alive",
+    "keep-alive": "timeout=5"
+  },
+  "body": {
+    "Order": {
+      "_id": "69e97131cf24a79be520b7e8",
+      "status": "Draft",
+      "customer": {
+        "_id": "69e97131cf24a79be520b7db",
+        "email": "test1776906545406_XLKC@example.com",
+        "name": "test bIkYJFxGGmQIWYADbcwzClXkHMDwKdnDGDW",
+        "country": "Germany",
+        "city": "testCity DdFESgjdeeq",
+        "street": "testStreet U7AAz3rt96li2WMj0bifJ9ckQzr8w",
+        "house": 984,
+        "flat": 698,
+        "phone": "+7430213846",
+        "createdOn": "2026-04-23T01:09:05.000Z",
+        "notes": "Notes htjUZGoUsoNUzZVOjXBISykTxvFABJpKGBjCzgtyHpbCvyIazcdsxYGAiUYrgaPzyXgKHKpOLtOuIodkIkbPBWMPfLtlWgPRVtDTUYqufpaTgoyWJtetQHXGTmpSyUoccPDxKDhzxUztrvWNstTwRsGALWgVfDunQWufUiHpLitqzsRSLucGiqqWUPDLhDKDrdLsuLxjVCWADIcbjRXjFNODotrvvPboAnxNotoALPjZRwjsQrVT"
+      },
+      "products": [
+        {
+          "_id": "69e97131cf24a79be520b7e0",
+          "name": "Test mJtMVCrICJ",
+          "amount": 859,
+          "price": 44451,
+          "manufacturer": "Microsoft",
+          "notes": "Notes LdpussgeEs",
+          "received": false
+        }
+      ],
+      "delivery": null,
+      "total_price": 44451,
+      "createdOn": "2026-04-23T01:09:05.000Z",
+      "comments": [],
+      "history": [
+        {
+          "status": "Draft",
+          "customer": "69e97131cf24a79be520b7db",
+          "products": [
+            {
+              "_id": "69e97131cf24a79be520b7e0",
+              "name": "Test mJtMVCrICJ",
+              "amount": 859,
+              "price": 44451,
+              "manufacturer": "Microsoft",
+              "notes": "Notes LdpussgeEs",
+              "received": false
+            }
+          ],
+          "total_price": 44451,
+          "delivery": null,
+          "changedOn": "2026-04-23T01:09:05.000Z",
+          "action": "Manager Assigned",
+          "performer": {
+            "_id": "69e970cccf24a79be520a073",
+            "username": "admin@example.com",
+            "firstName": "Admin",
+            "lastName": "Admin",
+            "roles": [
+              "ADMIN"
+            ],
+            "createdOn": "2026/04/23 01:07:24"
+          },
+          "assignedManager": {
+            "_id": "69e97131cf24a79be520b7ef",
+            "username": "QhBZaumxji",
+            "firstName": "LObRjgbcyB",
+            "lastName": "QqOAqAeGap",
+            "roles": [
+              "USER"
+            ],
+            "createdOn": "2026/04/23 01:09:05"
+          }
+        },
+        {
+          "status": "Draft",
+          "customer": "69e97131cf24a79be520b7db",
+          "products": [
+            {
+              "_id": "69e97131cf24a79be520b7e0",
+              "name": "Test mJtMVCrICJ",
+              "amount": 859,
+              "price": 44451,
+              "manufacturer": "Microsoft",
+              "notes": "Notes LdpussgeEs",
+              "received": false
+            }
+          ],
+          "total_price": 44451,
+          "delivery": null,
+          "changedOn": "2026-04-23T01:09:05.000Z",
+          "action": "Order created",
+          "performer": {
+            "_id": "69e970cccf24a79be520a073",
+            "username": "admin@example.com",
+            "firstName": "Admin",
+            "lastName": "Admin",
+            "roles": [
+              "ADMIN"
+            ],
+            "createdOn": "2026/04/23 01:07:24"
+          },
+          "assignedManager": null
+        }
+      ],
+      "assignedManager": {
+        "_id": "69e97131cf24a79be520b7ef",
+        "username": "QhBZaumxji",
+        "firstName": "LObRjgbcyB",
+        "lastName": "QqOAqAeGap",
+        "roles": [
+          "USER"
+        ],
+        "createdOn": "2026/04/23 01:09:05"
+      }
+    },
+    "IsSuccess": true,
+    "ErrorMessage": null
+  }
+}

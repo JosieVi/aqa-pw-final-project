@@ -1,0 +1,26 @@
+{
+  "headers": {
+    "x-powered-by": "Express",
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "Authorization,X-User-Name",
+    "content-type": "application/json; charset=utf-8",
+    "content-length": "228",
+    "etag": "W/\"e4-0v/8D07LweHlVF7K51A/Kp/Ifjg\"",
+    "date": "Thu, 23 Apr 2026 01:09:05 GMT",
+    "connection": "keep-alive",
+    "keep-alive": "timeout=5"
+  },
+  "body": {
+    "Product": {
+      "name": "Test mJtMVCrICJ",
+      "amount": 859,
+      "price": 44451,
+      "manufacturer": "Microsoft",
+      "createdOn": "2026-04-23T01:09:05.000Z",
+      "notes": "Notes LdpussgeEs",
+      "_id": "69e97131cf24a79be520b7e0"
+    },
+    "IsSuccess": true,
+    "ErrorMessage": null
+  }
+}

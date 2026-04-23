@@ -1,0 +1,26 @@
+{
+  "headers": {
+    "x-powered-by": "Express",
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "Authorization,X-User-Name",
+    "content-type": "application/json; charset=utf-8",
+    "content-length": "225",
+    "etag": "W/\"e1-RvjYg3pS4lVy5d9qQGvuE4iW2qY\"",
+    "date": "Thu, 23 Apr 2026 01:08:53 GMT",
+    "connection": "keep-alive",
+    "keep-alive": "timeout=5"
+  },
+  "body": {
+    "Product": {
+      "name": "Test mqxCGEReRn",
+      "amount": 581,
+      "price": 58274,
+      "manufacturer": "Amazon",
+      "createdOn": "2026-04-23T01:08:53.000Z",
+      "notes": "Notes IeINBbCTGj",
+      "_id": "69e97125cf24a79be520ab36"
+    },
+    "IsSuccess": true,
+    "ErrorMessage": null
+  }
+}

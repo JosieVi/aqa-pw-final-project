@@ -1,0 +1,26 @@
+{
+  "headers": {
+    "x-powered-by": "Express",
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "Authorization,X-User-Name",
+    "content-type": "application/json; charset=utf-8",
+    "content-length": "225",
+    "etag": "W/\"e1-GbSNg7NZhY033OapnsFN/0lsdc4\"",
+    "date": "Thu, 23 Apr 2026 01:08:52 GMT",
+    "connection": "keep-alive",
+    "keep-alive": "timeout=5"
+  },
+  "body": {
+    "Product": {
+      "name": "Test BXdJsEzdEL",
+      "amount": 979,
+      "price": 33731,
+      "manufacturer": "Google",
+      "createdOn": "2026-04-23T01:08:52.000Z",
+      "notes": "Notes sVqbbsvToJ",
+      "_id": "69e97124cf24a79be520a9ea"
+    },
+    "IsSuccess": true,
+    "ErrorMessage": null
+  }
+}

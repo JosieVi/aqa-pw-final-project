@@ -1,0 +1,26 @@
+{
+  "headers": {
+    "x-powered-by": "Express",
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "Authorization,X-User-Name",
+    "content-type": "application/json; charset=utf-8",
+    "content-length": "225",
+    "etag": "W/\"e1-hBmjiN0SRlTdq/jsZcwnUfQHlhY\"",
+    "date": "Thu, 23 Apr 2026 01:09:34 GMT",
+    "connection": "keep-alive",
+    "keep-alive": "timeout=5"
+  },
+  "body": {
+    "Product": {
+      "name": "Test TpQnWTMyqp",
+      "amount": 481,
+      "price": 99999,
+      "manufacturer": "Google",
+      "createdOn": "2026-04-23T01:09:34.000Z",
+      "notes": "Notes YjfEdcNJwd",
+      "_id": "69e9714ecf24a79be520da9c"
+    },
+    "IsSuccess": true,
+    "ErrorMessage": null
+  }
+}

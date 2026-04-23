@@ -1,0 +1,26 @@
+{
+  "headers": {
+    "x-powered-by": "Express",
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "Authorization,X-User-Name",
+    "content-type": "application/json; charset=utf-8",
+    "content-length": "226",
+    "etag": "W/\"e2-W9fozEozaE759hl5UxmTxQP4zDQ\"",
+    "date": "Thu, 23 Apr 2026 01:08:55 GMT",
+    "connection": "keep-alive",
+    "keep-alive": "timeout=5"
+  },
+  "body": {
+    "Product": {
+      "name": "Test xvmWaKspGU",
+      "amount": 120,
+      "price": 29500,
+      "manufacturer": "Samsung",
+      "createdOn": "2026-04-23T01:08:55.000Z",
+      "notes": "Notes IVtzwqkzgG",
+      "_id": "69e97127cf24a79be520ad14"
+    },
+    "IsSuccess": true,
+    "ErrorMessage": null
+  }
+}

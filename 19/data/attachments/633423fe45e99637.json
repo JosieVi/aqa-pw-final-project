@@ -1,0 +1,26 @@
+{
+  "headers": {
+    "x-powered-by": "Express",
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "Authorization,X-User-Name",
+    "content-type": "application/json; charset=utf-8",
+    "content-length": "225",
+    "etag": "W/\"e1-Ls2reY2r9dz6E28HwRtOfFoOxMw\"",
+    "date": "Thu, 23 Apr 2026 01:09:35 GMT",
+    "connection": "keep-alive",
+    "keep-alive": "timeout=5"
+  },
+  "body": {
+    "Product": {
+      "name": "Test SxldGChwRW",
+      "amount": 866,
+      "price": 12710,
+      "manufacturer": "Google",
+      "createdOn": "2026-04-23T01:09:35.000Z",
+      "notes": "Notes FgOWYQLFiO",
+      "_id": "69e9714fcf24a79be520db56"
+    },
+    "IsSuccess": true,
+    "ErrorMessage": null
+  }
+}

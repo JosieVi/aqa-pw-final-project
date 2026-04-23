@@ -1,0 +1,172 @@
+{
+  "headers": {
+    "x-powered-by": "Express",
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "Authorization,X-User-Name",
+    "content-type": "application/json; charset=utf-8",
+    "content-length": "3064",
+    "etag": "W/\"bf8-zvKiy3e2u02MpaNlDrMt/kYv/Ok\"",
+    "date": "Thu, 23 Apr 2026 01:09:29 GMT",
+    "connection": "keep-alive",
+    "keep-alive": "timeout=5"
+  },
+  "body": {
+    "Order": {
+      "_id": "69e97148cf24a79be520cc08",
+      "status": "In Process",
+      "customer": {
+        "_id": "69e97148cf24a79be520cbfb",
+        "email": "test1776906568953_ORTI@example.com",
+        "name": "test rCcICUDzTEKDKWRDYkzpNzTXsuCBDIQAOle",
+        "country": "France",
+        "city": "testCity atEsYsNWAUs",
+        "street": "testStreet i3byoB4bfxZ40FXkdLjxwgieirzZV",
+        "house": 24,
+        "flat": 9488,
+        "phone": "+5505621702",
+        "createdOn": "2026-04-23T01:09:28.000Z",
+        "notes": "Notes xEwxCNPlljDenFlPGukFqGuKhxmyearUZsfjEnvLwFTIAANORGkfwOvOcXgSzfJybyiUGqMmQszglUaPfOgLQJpmVTxboqdrScZklBHvUeQTSyFSNhLkFRtVEyvkYAmqHhPKQeiOjufXURFdnaKXGnckrOUPmBWYUnhvrMqyeRzIuckTKPjWgrvBbvyVKhuNUwiklNtKuPtAxmKYQngXDHSjcAITcucbogGPgGlVVlTLrNiJBRLW"
+      },
+      "products": [
+        {
+          "_id": "69e97148cf24a79be520cc00",
+          "name": "Test SIKvFLoBmW",
+          "amount": 596,
+          "price": 89905,
+          "manufacturer": "Google",
+          "notes": "Notes VFHELJSGBE",
+          "received": false
+        }
+      ],
+      "delivery": {
+        "address": {
+          "country": "Germany",
+          "city": "TestCity UYrWM",
+          "street": "TestStreet PYqwpbLiWN",
+          "house": 596,
+          "flat": 1343
+        },
+        "finalDate": "2026-10-25T00:00:00.000Z",
+        "condition": "Pickup"
+      },
+      "total_price": 89905,
+      "createdOn": "2026-04-23T01:09:28.000Z",
+      "comments": [],
+      "history": [
+        {
+          "status": "In Process",
+          "customer": "69e97148cf24a79be520cbfb",
+          "products": [
+            {
+              "_id": "69e97148cf24a79be520cc00",
+              "name": "Test SIKvFLoBmW",
+              "amount": 596,
+              "price": 89905,
+              "manufacturer": "Google",
+              "notes": "Notes VFHELJSGBE",
+              "received": false
+            }
+          ],
+          "total_price": 89905,
+          "delivery": {
+            "address": {
+              "country": "Germany",
+              "city": "TestCity UYrWM",
+              "street": "TestStreet PYqwpbLiWN",
+              "house": 596,
+              "flat": 1343
+            },
+            "finalDate": "2026-10-25T00:00:00.000Z",
+            "condition": "Pickup"
+          },
+          "changedOn": "2026-04-23T01:09:29.000Z",
+          "action": "Order processing started",
+          "performer": {
+            "_id": "69e970cccf24a79be520a073",
+            "username": "admin@example.com",
+            "firstName": "Admin",
+            "lastName": "Admin",
+            "roles": [
+              "ADMIN"
+            ],
+            "createdOn": "2026/04/23 01:07:24"
+          },
+          "assignedManager": null
+        },
+        {
+          "status": "Draft",
+          "customer": "69e97148cf24a79be520cbfb",
+          "products": [
+            {
+              "_id": "69e97148cf24a79be520cc00",
+              "name": "Test SIKvFLoBmW",
+              "amount": 596,
+              "price": 89905,
+              "manufacturer": "Google",
+              "notes": "Notes VFHELJSGBE",
+              "received": false
+            }
+          ],
+          "total_price": 89905,
+          "delivery": {
+            "address": {
+              "country": "Germany",
+              "city": "TestCity UYrWM",
+              "street": "TestStreet PYqwpbLiWN",
+              "house": 596,
+              "flat": 1343
+            },
+            "finalDate": "2026-10-25T00:00:00.000Z",
+            "condition": "Pickup"
+          },
+          "changedOn": "2026-04-23T01:09:28.000Z",
+          "action": "Delivery Scheduled",
+          "performer": {
+            "_id": "69e970cccf24a79be520a073",
+            "username": "admin@example.com",
+            "firstName": "Admin",
+            "lastName": "Admin",
+            "roles": [
+              "ADMIN"
+            ],
+            "createdOn": "2026/04/23 01:07:24"
+          },
+          "assignedManager": null
+        },
+        {
+          "status": "Draft",
+          "customer": "69e97148cf24a79be520cbfb",
+          "products": [
+            {
+              "_id": "69e97148cf24a79be520cc00",
+              "name": "Test SIKvFLoBmW",
+              "amount": 596,
+              "price": 89905,
+              "manufacturer": "Google",
+              "notes": "Notes VFHELJSGBE",
+              "received": false
+            }
+          ],
+          "total_price": 89905,
+          "delivery": null,
+          "changedOn": "2026-04-23T01:09:28.000Z",
+          "action": "Order created",
+          "performer": {
+            "_id": "69e970cccf24a79be520a073",
+            "username": "admin@example.com",
+            "firstName": "Admin",
+            "lastName": "Admin",
+            "roles": [
+              "ADMIN"
+            ],
+            "createdOn": "2026/04/23 01:07:24"
+          },
+          "assignedManager": null
+        }
+      ],
+      "assignedManager": null
+    },
+    "IsSuccess": true,
+    "ErrorMessage": null
+  }
+}

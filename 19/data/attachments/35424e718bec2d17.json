@@ -1,0 +1,26 @@
+{
+  "headers": {
+    "x-powered-by": "Express",
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "Authorization,X-User-Name",
+    "content-type": "application/json; charset=utf-8",
+    "content-length": "224",
+    "etag": "W/\"e0-IRRCnvOM+m+vs/mIY2AAqkjzgBQ\"",
+    "date": "Thu, 23 Apr 2026 01:09:30 GMT",
+    "connection": "keep-alive",
+    "keep-alive": "timeout=5"
+  },
+  "body": {
+    "Product": {
+      "name": "Test mKLQaLpNVg",
+      "amount": 450,
+      "price": 48155,
+      "manufacturer": "Apple",
+      "createdOn": "2026-04-23T01:09:30.000Z",
+      "notes": "Notes FlFqxZAJIw",
+      "_id": "69e9714acf24a79be520cf6c"
+    },
+    "IsSuccess": true,
+    "ErrorMessage": null
+  }
+}

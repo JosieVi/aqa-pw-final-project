@@ -1,0 +1,26 @@
+{
+  "headers": {
+    "x-powered-by": "Express",
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "Authorization,X-User-Name",
+    "content-type": "application/json; charset=utf-8",
+    "content-length": "222",
+    "etag": "W/\"de-h6hXeuGCyk5qZ/hgW00Ti3ZNY60\"",
+    "date": "Thu, 23 Apr 2026 01:09:32 GMT",
+    "connection": "keep-alive",
+    "keep-alive": "timeout=5"
+  },
+  "body": {
+    "Product": {
+      "name": "Test JPUcraamVD",
+      "amount": 23,
+      "price": 7922,
+      "manufacturer": "Tesla",
+      "createdOn": "2026-04-23T01:09:32.000Z",
+      "notes": "Notes DCnoGYSkuK",
+      "_id": "69e9714ccf24a79be520d67b"
+    },
+    "IsSuccess": true,
+    "ErrorMessage": null
+  }
+}

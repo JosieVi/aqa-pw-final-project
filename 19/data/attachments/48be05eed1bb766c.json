@@ -1,0 +1,154 @@
+{
+  "headers": {
+    "x-powered-by": "Express",
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "Authorization,X-User-Name",
+    "content-type": "application/json; charset=utf-8",
+    "content-length": "2741",
+    "etag": "W/\"ab5-SKePOIhTWAwJKS838lHXrjX3sqo\"",
+    "date": "Thu, 23 Apr 2026 01:09:32 GMT",
+    "connection": "keep-alive",
+    "keep-alive": "timeout=5"
+  },
+  "body": {
+    "Order": {
+      "status": "Draft",
+      "customer": {
+        "_id": "69e9714ccf24a79be520d5f1",
+        "email": "test1776906572642_NTKF@example.com",
+        "name": "test cLxKFgAiRzTmfWCGWIsXXBjBTBCFbRlmdba",
+        "country": "Russia",
+        "city": "testCity QTUiJHnGJyA",
+        "street": "testStreet AzOdNgdtMC4DsWWxdJOcwrn2I7jLQ",
+        "house": 464,
+        "flat": 9331,
+        "phone": "+8610361422",
+        "createdOn": "2026-04-23T01:09:32.000Z",
+        "notes": "Notes sUMfFuspCNPZiMVaMrApyrEneYgJhjnOuRxIbZBwdBNinkopFBnABOfiGFwkATNNuAgVCXjHfLnuJInQUvJrIIbvWnCBqQqzywEvlgciVXwVCWRjigKgnXThlucDvQhEMBOUYJMEwOAirRoJHKNqHMAaYeYyYqRofrPngpyWmqWQuyENBSfGGPEoaDnfjImXVcXxhesIfZfHBekDvisQvCoehQbSkWGHHdQAFqrQtgAQcapIcyDY"
+      },
+      "products": [
+        {
+          "_id": "69e9714ccf24a79be520d604",
+          "name": "Test hFrPDGEbqd",
+          "amount": 922,
+          "price": 48760,
+          "manufacturer": "Xiaomi",
+          "notes": "Notes NBEnhXlJKK",
+          "received": false
+        },
+        {
+          "_id": "69e9714ccf24a79be520d602",
+          "name": "Test qETBMocxAA",
+          "amount": 646,
+          "price": 4045,
+          "manufacturer": "Microsoft",
+          "notes": "Notes XIqRDVRDwn",
+          "received": false
+        },
+        {
+          "_id": "69e9714ccf24a79be520d600",
+          "name": "Test pOxwaUjQcz",
+          "amount": 610,
+          "price": 33975,
+          "manufacturer": "Google",
+          "notes": "Notes vQGUTLwaCF",
+          "received": false
+        },
+        {
+          "_id": "69e9714ccf24a79be520d608",
+          "name": "Test sPoVPnNCOj",
+          "amount": 515,
+          "price": 24863,
+          "manufacturer": "Amazon",
+          "notes": "Notes zDeQgUWxIV",
+          "received": false
+        },
+        {
+          "_id": "69e9714ccf24a79be520d60a",
+          "name": "Test IjeTxUzJdI",
+          "amount": 665,
+          "price": 71068,
+          "manufacturer": "Amazon",
+          "notes": "Notes PeJhnGTJip",
+          "received": false
+        }
+      ],
+      "delivery": null,
+      "total_price": 182711,
+      "createdOn": "2026-04-23T01:09:32.000Z",
+      "comments": [],
+      "history": [
+        {
+          "status": "Draft",
+          "customer": "69e9714ccf24a79be520d5f1",
+          "products": [
+            {
+              "_id": "69e9714ccf24a79be520d604",
+              "name": "Test hFrPDGEbqd",
+              "amount": 922,
+              "price": 48760,
+              "manufacturer": "Xiaomi",
+              "notes": "Notes NBEnhXlJKK",
+              "received": false
+            },
+            {
+              "_id": "69e9714ccf24a79be520d602",
+              "name": "Test qETBMocxAA",
+              "amount": 646,
+              "price": 4045,
+              "manufacturer": "Microsoft",
+              "notes": "Notes XIqRDVRDwn",
+              "received": false
+            },
+            {
+              "_id": "69e9714ccf24a79be520d600",
+              "name": "Test pOxwaUjQcz",
+              "amount": 610,
+              "price": 33975,
+              "manufacturer": "Google",
+              "notes": "Notes vQGUTLwaCF",
+              "received": false
+            },
+            {
+              "_id": "69e9714ccf24a79be520d608",
+              "name": "Test sPoVPnNCOj",
+              "amount": 515,
+              "price": 24863,
+              "manufacturer": "Amazon",
+              "notes": "Notes zDeQgUWxIV",
+              "received": false
+            },
+            {
+              "_id": "69e9714ccf24a79be520d60a",
+              "name": "Test IjeTxUzJdI",
+              "amount": 665,
+              "price": 71068,
+              "manufacturer": "Amazon",
+              "notes": "Notes PeJhnGTJip",
+              "received": false
+            }
+          ],
+          "total_price": 182711,
+          "delivery": null,
+          "changedOn": "2026-04-23T01:09:32.000Z",
+          "action": "Order created",
+          "performer": {
+            "_id": "69e970cccf24a79be520a073",
+            "username": "admin@example.com",
+            "firstName": "Admin",
+            "lastName": "Admin",
+            "roles": [
+              "ADMIN"
+            ],
+            "createdOn": "2026/04/23 01:07:24"
+          },
+          "assignedManager": null
+        }
+      ],
+      "assignedManager": null,
+      "_id": "69e9714ccf24a79be520d61a"
+    },
+    "IsSuccess": true,
+    "ErrorMessage": null
+  }
+}

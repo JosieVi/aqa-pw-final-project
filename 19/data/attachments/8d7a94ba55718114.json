@@ -1,0 +1,26 @@
+{
+  "headers": {
+    "x-powered-by": "Express",
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "Authorization,X-User-Name",
+    "content-type": "application/json; charset=utf-8",
+    "content-length": "225",
+    "etag": "W/\"e1-soMkNdH3rcqHOpslZFt0YwcTEjQ\"",
+    "date": "Thu, 23 Apr 2026 01:09:23 GMT",
+    "connection": "keep-alive",
+    "keep-alive": "timeout=5"
+  },
+  "body": {
+    "Product": {
+      "name": "Test wWSwiEuDVg",
+      "amount": 627,
+      "price": 54474,
+      "manufacturer": "Xiaomi",
+      "createdOn": "2026-04-23T01:09:23.000Z",
+      "notes": "Notes qvbUDGtFTp",
+      "_id": "69e97143cf24a79be520c00c"
+    },
+    "IsSuccess": true,
+    "ErrorMessage": null
+  }
+}

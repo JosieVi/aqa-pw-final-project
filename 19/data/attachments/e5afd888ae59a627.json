@@ -1,0 +1,26 @@
+{
+  "headers": {
+    "x-powered-by": "Express",
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "Authorization,X-User-Name",
+    "content-type": "application/json; charset=utf-8",
+    "content-length": "224",
+    "etag": "W/\"e0-WzqTvFm+bg6nrenF5wYDJR9NDOc\"",
+    "date": "Thu, 23 Apr 2026 01:08:38 GMT",
+    "connection": "keep-alive",
+    "keep-alive": "timeout=5"
+  },
+  "body": {
+    "Product": {
+      "name": "Test CeKRruEmMK",
+      "amount": 30,
+      "price": 84080,
+      "manufacturer": "Google",
+      "createdOn": "2026-04-23T01:08:38.000Z",
+      "notes": "Notes fzcwXnhPbJ",
+      "_id": "69e97116cf24a79be520a27b"
+    },
+    "IsSuccess": true,
+    "ErrorMessage": null
+  }
+}

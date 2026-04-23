@@ -1,0 +1,100 @@
+{
+  "headers": {
+    "x-powered-by": "Express",
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "Authorization,X-User-Name",
+    "content-type": "application/json; charset=utf-8",
+    "content-length": "1814",
+    "etag": "W/\"716-qZoYR/yZepFRWu44IPDFSeextHk\"",
+    "date": "Thu, 23 Apr 2026 01:09:22 GMT",
+    "connection": "keep-alive",
+    "keep-alive": "timeout=5"
+  },
+  "body": {
+    "Order": {
+      "status": "Draft",
+      "customer": {
+        "_id": "69e97142cf24a79be520bf96",
+        "email": "test1776906562883_ZDZA@example.com",
+        "name": "test tjstkeSZFEZLTNYbjYUkFNSSWWpEtffFUhl",
+        "country": "Belarus",
+        "city": "testCity QsjzkoOhjVF",
+        "street": "testStreet sOX4h87uaHqkNuQOzNCNRj9ymxmfz",
+        "house": 800,
+        "flat": 9023,
+        "phone": "+7527263270",
+        "createdOn": "2026-04-23T01:09:22.000Z",
+        "notes": "Notes NfNswNkLTxmlHNxPerEgNAfbxbAyJUvqHqUwYXQxVjpuoIgTPbsJeESWZVAqfOeGuelYgIqpDXhozGAmltpPhyOGBtxPmvNtyXRTxkaRAjinQfcKPkrETXRfURNlYjSALOSotigDGeOgnWxiVmGqBXydUCAhHwjEqXotTWAfzoLZrcplTyvZgceaOoyyZJhwHxUMYwSxsNgzeGmsPhLAoDvwRceoSajMkikdwLVivbsugGIvPWdu"
+      },
+      "products": [
+        {
+          "_id": "69e97142cf24a79be520bfa4",
+          "name": "Test jhxAhycZds",
+          "amount": 742,
+          "price": 68114,
+          "manufacturer": "Microsoft",
+          "notes": "Notes vceZmbJDXv",
+          "received": false
+        },
+        {
+          "_id": "69e97142cf24a79be520bfa2",
+          "name": "Test GzNbrguXIZ",
+          "amount": 692,
+          "price": 60358,
+          "manufacturer": "Amazon",
+          "notes": "Notes TIbiuSnwaX",
+          "received": false
+        }
+      ],
+      "delivery": null,
+      "total_price": 128472,
+      "createdOn": "2026-04-23T01:09:22.000Z",
+      "comments": [],
+      "history": [
+        {
+          "status": "Draft",
+          "customer": "69e97142cf24a79be520bf96",
+          "products": [
+            {
+              "_id": "69e97142cf24a79be520bfa4",
+              "name": "Test jhxAhycZds",
+              "amount": 742,
+              "price": 68114,
+              "manufacturer": "Microsoft",
+              "notes": "Notes vceZmbJDXv",
+              "received": false
+            },
+            {
+              "_id": "69e97142cf24a79be520bfa2",
+              "name": "Test GzNbrguXIZ",
+              "amount": 692,
+              "price": 60358,
+              "manufacturer": "Amazon",
+              "notes": "Notes TIbiuSnwaX",
+              "received": false
+            }
+          ],
+          "total_price": 128472,
+          "delivery": null,
+          "changedOn": "2026-04-23T01:09:22.000Z",
+          "action": "Order created",
+          "performer": {
+            "_id": "69e970cccf24a79be520a073",
+            "username": "admin@example.com",
+            "firstName": "Admin",
+            "lastName": "Admin",
+            "roles": [
+              "ADMIN"
+            ],
+            "createdOn": "2026/04/23 01:07:24"
+          },
+          "assignedManager": null
+        }
+      ],
+      "assignedManager": null,
+      "_id": "69e97142cf24a79be520bfb6"
+    },
+    "IsSuccess": true,
+    "ErrorMessage": null
+  }
+}

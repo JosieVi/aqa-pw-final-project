@@ -1,0 +1,26 @@
+{
+  "headers": {
+    "x-powered-by": "Express",
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "Authorization,X-User-Name",
+    "content-type": "application/json; charset=utf-8",
+    "content-length": "224",
+    "etag": "W/\"e0-Ys84rxLj5bMMpjNyFBis+c/q6xQ\"",
+    "date": "Thu, 23 Apr 2026 01:09:28 GMT",
+    "connection": "keep-alive",
+    "keep-alive": "timeout=5"
+  },
+  "body": {
+    "Product": {
+      "name": "Test LPIiGdwunJ",
+      "amount": 239,
+      "price": 5021,
+      "manufacturer": "Google",
+      "createdOn": "2026-04-23T01:09:28.000Z",
+      "notes": "Notes VgjOSQUqmy",
+      "_id": "69e97148cf24a79be520cb1b"
+    },
+    "IsSuccess": true,
+    "ErrorMessage": null
+  }
+}
