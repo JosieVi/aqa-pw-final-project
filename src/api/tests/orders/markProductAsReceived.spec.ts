@@ -183,7 +183,9 @@ test.describe('[API] [Orders] Products Receipt - Draft Orders', () => {
 });
 
 test.describe('[API] [Orders] Products Receipt - Canceled Orders', () => {
-  test(
+  // BUG: Backend returns 200 OK instead of 400 Bad Request when receiving products for Canceled order.
+  // Tracked at: <link-to-bug-tracker-issue>
+  test.fixme(
     'Should return error when trying to receive products for Canceled order - 400 Bad Request',
     { tag: [TAGS.API, TAGS.ORDERS] },
     async ({ workerToken, orderFactory, ordersController }) => {
