@@ -57,6 +57,23 @@ jobs:
           # Передаем URL фронтенда в тесты (берем из .env или хардкодим)
           BASE_URL: http://localhost:8585
 
+      # NEW: 7.1 Скачиваем историю из ветки gh-pages ПЕРЕД генерацией отчета
+      - name: Load Allure history
+        uses: actions/checkout@v4
+        if: always()
+        continue-on-error: true
+        with:
+          ref: gh-pages
+          path: gh-pages-history # скачиваем в отдельную временную папку
+
+      # NEW: 7.2 Копируем папку history в allure-results
+      - name: Inject history into results
+        if: always()
+        run: |
+          mkdir -p allure-results/history
+          # Копируем историю из старого отчета в папку с новыми результатами
+          cp -r gh-pages-history/history/* allure-results/history/ || true
+
       # 8. Сохранение отчета (доступен во вкладке Actions после прогона)
       - name: Upload Report
         uses: actions/upload-artifact@v4
