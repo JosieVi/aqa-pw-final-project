@@ -1,0 +1,26 @@
+{
+  "headers": {
+    "x-powered-by": "Express",
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "Authorization,X-User-Name",
+    "content-type": "application/json; charset=utf-8",
+    "content-length": "224",
+    "etag": "W/\"e0-LEn2y4MowzoFXi/v9QEe0dBPWTo\"",
+    "date": "Fri, 24 Apr 2026 20:47:42 GMT",
+    "connection": "keep-alive",
+    "keep-alive": "timeout=5"
+  },
+  "body": {
+    "Product": {
+      "name": "Test BRlYHCVTmp",
+      "amount": 941,
+      "price": 90884,
+      "manufacturer": "Tesla",
+      "createdOn": "2026-04-24T20:47:42.000Z",
+      "notes": "Notes FUBkRFOgyL",
+      "_id": "69ebd6eed95a3171e146b3ae"
+    },
+    "IsSuccess": true,
+    "ErrorMessage": null
+  }
+}

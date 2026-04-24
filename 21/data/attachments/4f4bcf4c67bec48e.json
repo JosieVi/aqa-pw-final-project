@@ -1,0 +1,26 @@
+{
+  "headers": {
+    "x-powered-by": "Express",
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "Authorization,X-User-Name",
+    "content-type": "application/json; charset=utf-8",
+    "content-length": "225",
+    "etag": "W/\"e1-uL4ZY4QwkeWSk/6nntpMSDMMedE\"",
+    "date": "Fri, 24 Apr 2026 20:46:31 GMT",
+    "connection": "keep-alive",
+    "keep-alive": "timeout=5"
+  },
+  "body": {
+    "Product": {
+      "name": "Test SkoKWfbuKO",
+      "amount": 209,
+      "price": 85957,
+      "manufacturer": "Amazon",
+      "createdOn": "2026-04-24T20:46:31.000Z",
+      "notes": "Notes jnUygpTKAj",
+      "_id": "69ebd6a7d95a3171e1467aa1"
+    },
+    "IsSuccess": true,
+    "ErrorMessage": null
+  }
+}

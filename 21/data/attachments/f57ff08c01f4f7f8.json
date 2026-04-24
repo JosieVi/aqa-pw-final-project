@@ -1,0 +1,26 @@
+{
+  "headers": {
+    "x-powered-by": "Express",
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "Authorization,X-User-Name",
+    "content-type": "application/json; charset=utf-8",
+    "content-length": "224",
+    "etag": "W/\"e0-QMJ+GmKvA+6NX0JPkyfXkNBgp0A\"",
+    "date": "Fri, 24 Apr 2026 20:46:45 GMT",
+    "connection": "keep-alive",
+    "keep-alive": "timeout=5"
+  },
+  "body": {
+    "Product": {
+      "name": "Test mSfAQelEFx",
+      "amount": 871,
+      "price": 30828,
+      "manufacturer": "Apple",
+      "createdOn": "2026-04-24T20:46:45.000Z",
+      "notes": "Notes PMuPXzmMVy",
+      "_id": "69ebd6b5d95a3171e14683a5"
+    },
+    "IsSuccess": true,
+    "ErrorMessage": null
+  }
+}

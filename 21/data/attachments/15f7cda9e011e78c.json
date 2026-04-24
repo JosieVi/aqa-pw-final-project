@@ -1,0 +1,26 @@
+{
+  "headers": {
+    "x-powered-by": "Express",
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "Authorization,X-User-Name",
+    "content-type": "application/json; charset=utf-8",
+    "content-length": "225",
+    "etag": "W/\"e1-IF3VdXCTfV0VzoyYBO9H+7kOCjo\"",
+    "date": "Fri, 24 Apr 2026 20:47:22 GMT",
+    "connection": "keep-alive",
+    "keep-alive": "timeout=5"
+  },
+  "body": {
+    "Product": {
+      "name": "Test ZKvPipLCTk",
+      "amount": 901,
+      "price": 48311,
+      "manufacturer": "Xiaomi",
+      "createdOn": "2026-04-24T20:47:22.000Z",
+      "notes": "Notes aLXEefKObK",
+      "_id": "69ebd6dad95a3171e1469662"
+    },
+    "IsSuccess": true,
+    "ErrorMessage": null
+  }
+}

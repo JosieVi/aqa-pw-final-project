@@ -1,0 +1,26 @@
+{
+  "headers": {
+    "x-powered-by": "Express",
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "Authorization,X-User-Name",
+    "content-type": "application/json; charset=utf-8",
+    "content-length": "228",
+    "etag": "W/\"e4-p48+hhASHf+NQ4o8OX8Sof7jKbo\"",
+    "date": "Fri, 24 Apr 2026 20:47:42 GMT",
+    "connection": "keep-alive",
+    "keep-alive": "timeout=5"
+  },
+  "body": {
+    "Product": {
+      "name": "Test KXvGbFNbvb",
+      "amount": 350,
+      "price": 80194,
+      "manufacturer": "Microsoft",
+      "createdOn": "2026-04-24T20:47:42.000Z",
+      "notes": "Notes WxEoebKGzM",
+      "_id": "69ebd6eed95a3171e146b374"
+    },
+    "IsSuccess": true,
+    "ErrorMessage": null
+  }
+}

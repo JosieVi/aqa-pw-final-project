@@ -1,0 +1,26 @@
+{
+  "headers": {
+    "x-powered-by": "Express",
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "Authorization,X-User-Name",
+    "content-type": "application/json; charset=utf-8",
+    "content-length": "226",
+    "etag": "W/\"e2-IvPvUpT6AarMSRArYijOqlx1cX0\"",
+    "date": "Fri, 24 Apr 2026 20:47:36 GMT",
+    "connection": "keep-alive",
+    "keep-alive": "timeout=5"
+  },
+  "body": {
+    "Product": {
+      "name": "Test CnFBTZMUGA",
+      "amount": 541,
+      "price": 52906,
+      "manufacturer": "Samsung",
+      "createdOn": "2026-04-24T20:47:36.000Z",
+      "notes": "Notes qfmMidRquC",
+      "_id": "69ebd6e8d95a3171e146ad6c"
+    },
+    "IsSuccess": true,
+    "ErrorMessage": null
+  }
+}

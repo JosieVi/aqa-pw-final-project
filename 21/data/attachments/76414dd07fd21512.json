@@ -1,0 +1,26 @@
+{
+  "headers": {
+    "x-powered-by": "Express",
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "Authorization,X-User-Name",
+    "content-type": "application/json; charset=utf-8",
+    "content-length": "224",
+    "etag": "W/\"e0-Djh55bAY1UPcDNu+whV65AEu3Zc\"",
+    "date": "Fri, 24 Apr 2026 20:46:48 GMT",
+    "connection": "keep-alive",
+    "keep-alive": "timeout=5"
+  },
+  "body": {
+    "Product": {
+      "name": "Test BsODLXswOg",
+      "amount": 78,
+      "price": 78674,
+      "manufacturer": "Amazon",
+      "createdOn": "2026-04-24T20:46:48.000Z",
+      "notes": "Notes jXkgmZhRHu",
+      "_id": "69ebd6b8d95a3171e1468781"
+    },
+    "IsSuccess": true,
+    "ErrorMessage": null
+  }
+}

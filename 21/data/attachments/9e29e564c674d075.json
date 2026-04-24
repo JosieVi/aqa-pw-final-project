@@ -1,0 +1,26 @@
+{
+  "headers": {
+    "x-powered-by": "Express",
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "Authorization,X-User-Name",
+    "content-type": "application/json; charset=utf-8",
+    "content-length": "225",
+    "etag": "W/\"e1-J0HFVBaQU/9QnhtVDv3akCsb6Wk\"",
+    "date": "Fri, 24 Apr 2026 20:47:35 GMT",
+    "connection": "keep-alive",
+    "keep-alive": "timeout=5"
+  },
+  "body": {
+    "Product": {
+      "name": "Test OfzMFsDeGm",
+      "amount": 107,
+      "price": 59992,
+      "manufacturer": "Xiaomi",
+      "createdOn": "2026-04-24T20:47:35.000Z",
+      "notes": "Notes QzMetphvQq",
+      "_id": "69ebd6e7d95a3171e146ab83"
+    },
+    "IsSuccess": true,
+    "ErrorMessage": null
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "headers": {
+    "x-powered-by": "Express",
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "Authorization,X-User-Name",
+    "content-type": "application/json; charset=utf-8",
+    "content-length": "212",
+    "etag": "W/\"d4-70zVQiFz9NgkPbnBSthE0BN/92A\"",
+    "date": "Fri, 24 Apr 2026 20:47:41 GMT",
+    "connection": "keep-alive",
+    "keep-alive": "timeout=5"
+  },
+  "body": {
+    "Product": {
+      "_id": "69ebd6edd95a3171e146b267",
+      "name": "lcN",
+      "amount": 61,
+      "price": 53436,
+      "manufacturer": "Xiaomi",
+      "createdOn": "2026-04-24T20:47:41.000Z",
+      "notes": "Notes sQeAtacNwZ"
+    },
+    "IsSuccess": true,
+    "ErrorMessage": null
+  }
+}

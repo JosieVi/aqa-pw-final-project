@@ -1,0 +1,26 @@
+{
+  "headers": {
+    "x-powered-by": "Express",
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "Authorization,X-User-Name",
+    "content-type": "application/json; charset=utf-8",
+    "content-length": "225",
+    "etag": "W/\"e1-Uz0S8ZEBh22zaY8ws3y7vDIgS+Y\"",
+    "date": "Fri, 24 Apr 2026 20:47:39 GMT",
+    "connection": "keep-alive",
+    "keep-alive": "timeout=5"
+  },
+  "body": {
+    "Product": {
+      "name": "Test ZwDWTxEapJ",
+      "amount": 822,
+      "price": 90152,
+      "manufacturer": "Amazon",
+      "createdOn": "2026-04-24T20:47:39.000Z",
+      "notes": "Notes aFNGHFIwgS",
+      "_id": "69ebd6ebd95a3171e146b1e6"
+    },
+    "IsSuccess": true,
+    "ErrorMessage": null
+  }
+}

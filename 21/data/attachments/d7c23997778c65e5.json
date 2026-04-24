@@ -1,0 +1,26 @@
+{
+  "headers": {
+    "x-powered-by": "Express",
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "Authorization,X-User-Name",
+    "content-type": "application/json; charset=utf-8",
+    "content-length": "226",
+    "etag": "W/\"e2-rt7joFo7jDf+WVhPZpkY1pfgQbY\"",
+    "date": "Fri, 24 Apr 2026 20:47:38 GMT",
+    "connection": "keep-alive",
+    "keep-alive": "timeout=5"
+  },
+  "body": {
+    "Product": {
+      "name": "Test vhEcLNAnAU",
+      "amount": 201,
+      "price": 44896,
+      "manufacturer": "Samsung",
+      "createdOn": "2026-04-24T20:47:38.000Z",
+      "notes": "Notes DKfehHzDOP",
+      "_id": "69ebd6ead95a3171e146afe0"
+    },
+    "IsSuccess": true,
+    "ErrorMessage": null
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "headers": {
+    "x-powered-by": "Express",
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "Authorization,X-User-Name",
+    "content-type": "application/json; charset=utf-8",
+    "content-length": "224",
+    "etag": "W/\"e0-cml50rR4nfYVvmuJZ3ckzGcFZFw\"",
+    "date": "Fri, 24 Apr 2026 20:46:54 GMT",
+    "connection": "keep-alive",
+    "keep-alive": "timeout=5"
+  },
+  "body": {
+    "Product": {
+      "name": "Test SPlZFUUdBv",
+      "amount": 43,
+      "price": 25789,
+      "manufacturer": "Xiaomi",
+      "createdOn": "2026-04-24T20:46:54.000Z",
+      "notes": "Notes dpAmGBfNuP",
+      "_id": "69ebd6bed95a3171e1468d38"
+    },
+    "IsSuccess": true,
+    "ErrorMessage": null
+  }
+}

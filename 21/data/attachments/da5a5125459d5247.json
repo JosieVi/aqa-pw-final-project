@@ -1,0 +1,132 @@
+{
+  "headers": {
+    "x-powered-by": "Express",
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "Authorization,X-User-Name",
+    "content-type": "application/json; charset=utf-8",
+    "content-length": "2357",
+    "etag": "W/\"935-H1mvAPFNufaBLQ9jfbl9XfcjMcA\"",
+    "date": "Fri, 24 Apr 2026 20:47:31 GMT",
+    "connection": "keep-alive",
+    "keep-alive": "timeout=5"
+  },
+  "body": {
+    "Order": {
+      "_id": "69ebd6e3d95a3171e146a419",
+      "status": "Draft",
+      "customer": {
+        "_id": "69ebd6e3d95a3171e146a40c",
+        "email": "test1777063651785_KHNT@example.com",
+        "name": "test rKqaoAYoEHRAQrRIWLLJXKFexADZKZKdJvR",
+        "country": "Canada",
+        "city": "testCity EzLlmqdhELz",
+        "street": "testStreet iUu3TsInNQGznD52N1AatZPyBFz71",
+        "house": 253,
+        "flat": 5342,
+        "phone": "+7247230423",
+        "createdOn": "2026-04-24T20:47:31.000Z",
+        "notes": "Notes LPqpHxVOSdeeIeFwssqANXWnBPiNApkwbDMoigLXYapNnyTWCWuxPsskppAEtVvhgdFIwFtPDFcsZarOkhkLrxHdKcZsvKOVdHotUeSYDoQfZaMfCEkIXPDeazKydGBGDkFljqTnTiTIjnNDJAKyEmCkxhylEasEdMgYyyRDMPowVwaqyjsyjjhvAInfjpxdYRTyqwoUKuAKKhfTwGNWFVEGrWOaZfVzKlgStGaOvIPtqFnUiPLU"
+      },
+      "products": [
+        {
+          "_id": "69ebd6e3d95a3171e146a411",
+          "name": "Test IvlSkfgjZF",
+          "amount": 802,
+          "price": 35481,
+          "manufacturer": "Xiaomi",
+          "notes": "Notes GDMVSMpqzq",
+          "received": false
+        }
+      ],
+      "delivery": {
+        "address": {
+          "country": "Ukraine",
+          "city": "TestCity TpuOz",
+          "street": "TestStreet HmSutvfqTY",
+          "house": 136,
+          "flat": 7243
+        },
+        "finalDate": "2026-04-26T00:00:00.000Z",
+        "condition": "Pickup"
+      },
+      "total_price": 35481,
+      "createdOn": "2026-04-24T20:47:31.000Z",
+      "comments": [],
+      "history": [
+        {
+          "status": "Draft",
+          "customer": "69ebd6e3d95a3171e146a40c",
+          "products": [
+            {
+              "_id": "69ebd6e3d95a3171e146a411",
+              "name": "Test IvlSkfgjZF",
+              "amount": 802,
+              "price": 35481,
+              "manufacturer": "Xiaomi",
+              "notes": "Notes GDMVSMpqzq",
+              "received": false
+            }
+          ],
+          "total_price": 35481,
+          "delivery": {
+            "address": {
+              "country": "Ukraine",
+              "city": "TestCity TpuOz",
+              "street": "TestStreet HmSutvfqTY",
+              "house": 136,
+              "flat": 7243
+            },
+            "finalDate": "2026-04-26T00:00:00.000Z",
+            "condition": "Pickup"
+          },
+          "changedOn": "2026-04-24T20:47:31.000Z",
+          "action": "Delivery Scheduled",
+          "performer": {
+            "_id": "69ebd65fd95a3171e14674e2",
+            "username": "admin@example.com",
+            "firstName": "Admin",
+            "lastName": "Admin",
+            "roles": [
+              "ADMIN"
+            ],
+            "createdOn": "2026/04/24 20:45:19"
+          },
+          "assignedManager": null
+        },
+        {
+          "status": "Draft",
+          "customer": "69ebd6e3d95a3171e146a40c",
+          "products": [
+            {
+              "_id": "69ebd6e3d95a3171e146a411",
+              "name": "Test IvlSkfgjZF",
+              "amount": 802,
+              "price": 35481,
+              "manufacturer": "Xiaomi",
+              "notes": "Notes GDMVSMpqzq",
+              "received": false
+            }
+          ],
+          "total_price": 35481,
+          "delivery": null,
+          "changedOn": "2026-04-24T20:47:31.000Z",
+          "action": "Order created",
+          "performer": {
+            "_id": "69ebd65fd95a3171e14674e2",
+            "username": "admin@example.com",
+            "firstName": "Admin",
+            "lastName": "Admin",
+            "roles": [
+              "ADMIN"
+            ],
+            "createdOn": "2026/04/24 20:45:19"
+          },
+          "assignedManager": null
+        }
+      ],
+      "assignedManager": null
+    },
+    "IsSuccess": true,
+    "ErrorMessage": null
+  }
+}

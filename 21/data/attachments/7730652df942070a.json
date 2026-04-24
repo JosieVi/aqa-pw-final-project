@@ -1,0 +1,57 @@
+{
+  "headers": {
+    "x-powered-by": "Express",
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "Authorization,X-User-Name",
+    "content-type": "application/json; charset=utf-8",
+    "content-length": "1333",
+    "etag": "W/\"535-ZRVyq6nLBm0Lyn1rVZsbZj4jVMw\"",
+    "date": "Fri, 24 Apr 2026 20:47:23 GMT",
+    "connection": "keep-alive",
+    "keep-alive": "timeout=5"
+  },
+  "body": {
+    "Customers": [
+      {
+        "_id": "69ebd6dbd95a3171e146975d",
+        "email": "test1777063643158_XGYL@example.com",
+        "name": "test VxwVPOfYZuCtyaapoXLqZEyYOVPhxdhovJW",
+        "country": "France",
+        "city": "testCity wvpAcVokNHq",
+        "street": "testStreet zFTWAeexzuP5ePGgp5Ocor6G5tucG",
+        "house": 898,
+        "flat": 4394,
+        "phone": "+5153471350",
+        "createdOn": "2026-04-24T20:47:23.000Z",
+        "notes": "Notes vRyFerOgVNjahvODQsCkAkWkIWCFErgOIjJZdpaPvzOpMHznRWHXUvTLutKCAamgLxQXFxrtpsYvnxPaxQCQIGELbIoSpqYYtYgIHxcaxfNhQztsrmRJaTwIwpOfeCJGTddMtAFkPUsfVmHqmzvtbmeUpCGVQINTlNeTGBDSYGVKytYjUvitjoVWPzrtacSAtjbbyRBNWQQnMwyEnWIdhBdsMDNzaVbpbZnUULDVkHIpidQihjkl"
+      },
+      {
+        "_id": "69ebd6dbd95a3171e146975f",
+        "email": "test1777063643158_CPZO@example.com",
+        "name": "test CCFWrhvEDIQeUPvOQeBMudMdnpbSuOrTRud",
+        "country": "Russia",
+        "city": "testCity jpzKivyzMhX",
+        "street": "testStreet Ncv48tNl13hL9DaR3EToCef3PnLUI",
+        "house": 842,
+        "flat": 1387,
+        "phone": "+7803073187",
+        "createdOn": "2026-04-24T20:47:23.000Z",
+        "notes": "Notes JGePThSiyERTHpVBujOtEpGfKYHVjzwfpjscdzETHSvonpqHZGBenXHIpgEGVEzGDcxfXhXxuqhqrvaxxdghrfzBrQjGrkSSmmkTkjcsPLhUDhRyMjkWdXvqTDcCHqSpLyBrNFUsxKjogcoGCuTLHavrtEpuOGvwtEwGLZOHGjamNyHqjapkAdWRSkyDsazvWEczdRPyPlGChnIagVTQUikltEytAuVntgTfeBTXbTmUFTbGlggH"
+      }
+    ],
+    "total": 2,
+    "page": 1,
+    "limit": 10,
+    "search": "",
+    "country": [
+      "France",
+      "Russia"
+    ],
+    "sorting": {
+      "sortField": "createdOn",
+      "sortOrder": "desc"
+    },
+    "IsSuccess": true,
+    "ErrorMessage": null
+  }
+}

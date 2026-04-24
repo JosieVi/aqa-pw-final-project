@@ -1,0 +1,26 @@
+{
+  "headers": {
+    "x-powered-by": "Express",
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "Authorization,X-User-Name",
+    "content-type": "application/json; charset=utf-8",
+    "content-length": "225",
+    "etag": "W/\"e1-TYsayRXuyAEWdsdbTeDwj7aXF10\"",
+    "date": "Fri, 24 Apr 2026 20:47:39 GMT",
+    "connection": "keep-alive",
+    "keep-alive": "timeout=5"
+  },
+  "body": {
+    "Product": {
+      "name": "Test wrcfYMlvch",
+      "amount": 807,
+      "price": 15292,
+      "manufacturer": "Xiaomi",
+      "createdOn": "2026-04-24T20:47:39.000Z",
+      "notes": "Notes pFOfnjWgsv",
+      "_id": "69ebd6ebd95a3171e146b1d7"
+    },
+    "IsSuccess": true,
+    "ErrorMessage": null
+  }
+}

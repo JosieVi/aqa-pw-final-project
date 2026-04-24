@@ -1,0 +1,26 @@
+{
+  "headers": {
+    "x-powered-by": "Express",
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "Authorization,X-User-Name",
+    "content-type": "application/json; charset=utf-8",
+    "content-length": "225",
+    "etag": "W/\"e1-SccKYY8BGulUCroDi0UMq8mSJOY\"",
+    "date": "Fri, 24 Apr 2026 20:46:39 GMT",
+    "connection": "keep-alive",
+    "keep-alive": "timeout=5"
+  },
+  "body": {
+    "Product": {
+      "name": "Test clEJZKejzh",
+      "amount": 896,
+      "price": 88231,
+      "manufacturer": "Amazon",
+      "createdOn": "2026-04-24T20:46:39.000Z",
+      "notes": "Notes fKVrTvnNmX",
+      "_id": "69ebd6afd95a3171e1467efe"
+    },
+    "IsSuccess": true,
+    "ErrorMessage": null
+  }
+}

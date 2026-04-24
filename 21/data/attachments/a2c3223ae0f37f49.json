@@ -1,0 +1,26 @@
+{
+  "headers": {
+    "x-powered-by": "Express",
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "Authorization,X-User-Name",
+    "content-type": "application/json; charset=utf-8",
+    "content-length": "224",
+    "etag": "W/\"e0-/XpW9iL04zatC8kIZLzWDng4BXs\"",
+    "date": "Fri, 24 Apr 2026 20:47:30 GMT",
+    "connection": "keep-alive",
+    "keep-alive": "timeout=5"
+  },
+  "body": {
+    "Product": {
+      "name": "Test FrzuyLMPCC",
+      "amount": 738,
+      "price": 33885,
+      "manufacturer": "Apple",
+      "createdOn": "2026-04-24T20:47:30.000Z",
+      "notes": "Notes AHedeFHPzG",
+      "_id": "69ebd6e2d95a3171e146a18a"
+    },
+    "IsSuccess": true,
+    "ErrorMessage": null
+  }
+}

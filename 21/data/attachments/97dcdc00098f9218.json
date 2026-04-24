@@ -1,0 +1,26 @@
+{
+  "headers": {
+    "x-powered-by": "Express",
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "Authorization,X-User-Name",
+    "content-type": "application/json; charset=utf-8",
+    "content-length": "223",
+    "etag": "W/\"df-w00LVntJOsVYJOt5IQq6rCEsh6Q\"",
+    "date": "Fri, 24 Apr 2026 20:46:45 GMT",
+    "connection": "keep-alive",
+    "keep-alive": "timeout=5"
+  },
+  "body": {
+    "Product": {
+      "name": "Test SsHPWWILBX",
+      "amount": 975,
+      "price": 67740,
+      "manufacturer": "Sony",
+      "createdOn": "2026-04-24T20:46:45.000Z",
+      "notes": "Notes SJBidPCqKb",
+      "_id": "69ebd6b5d95a3171e146832c"
+    },
+    "IsSuccess": true,
+    "ErrorMessage": null
+  }
+}

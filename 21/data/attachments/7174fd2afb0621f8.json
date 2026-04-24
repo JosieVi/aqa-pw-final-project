@@ -1,0 +1,26 @@
+{
+  "headers": {
+    "x-powered-by": "Express",
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "Authorization,X-User-Name",
+    "content-type": "application/json; charset=utf-8",
+    "content-length": "224",
+    "etag": "W/\"e0-p6ZQHev5j24Yn54J8X7D3qcHrzE\"",
+    "date": "Fri, 24 Apr 2026 20:47:37 GMT",
+    "connection": "keep-alive",
+    "keep-alive": "timeout=5"
+  },
+  "body": {
+    "Product": {
+      "name": "Test xLPjCmAbzk",
+      "amount": 799,
+      "price": 92574,
+      "manufacturer": "Apple",
+      "createdOn": "2026-04-24T20:47:37.000Z",
+      "notes": "Notes JSWyLipGIe",
+      "_id": "69ebd6e9d95a3171e146adee"
+    },
+    "IsSuccess": true,
+    "ErrorMessage": null
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "headers": {
+    "x-powered-by": "Express",
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "Authorization,X-User-Name",
+    "content-type": "application/json; charset=utf-8",
+    "content-length": "224",
+    "etag": "W/\"e0-P6YQ/gTwkJ4hUBW9xsAje8DkK5M\"",
+    "date": "Fri, 24 Apr 2026 20:47:35 GMT",
+    "connection": "keep-alive",
+    "keep-alive": "timeout=5"
+  },
+  "body": {
+    "Product": {
+      "name": "Test BATmIGCycp",
+      "amount": 338,
+      "price": 74676,
+      "manufacturer": "Tesla",
+      "createdOn": "2026-04-24T20:47:35.000Z",
+      "notes": "Notes BNvFXuSnLD",
+      "_id": "69ebd6e7d95a3171e146aa6e"
+    },
+    "IsSuccess": true,
+    "ErrorMessage": null
+  }
+}

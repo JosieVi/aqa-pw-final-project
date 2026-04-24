@@ -1,0 +1,26 @@
+{
+  "headers": {
+    "x-powered-by": "Express",
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "Authorization,X-User-Name",
+    "content-type": "application/json; charset=utf-8",
+    "content-length": "224",
+    "etag": "W/\"e0-xhWKn6KnLGl8F64QNRa30zZiffo\"",
+    "date": "Fri, 24 Apr 2026 20:46:49 GMT",
+    "connection": "keep-alive",
+    "keep-alive": "timeout=5"
+  },
+  "body": {
+    "Product": {
+      "name": "Test GUXOWQwkFI",
+      "amount": 217,
+      "price": 65123,
+      "manufacturer": "Apple",
+      "createdOn": "2026-04-24T20:46:49.000Z",
+      "notes": "Notes pXNQWeCMwI",
+      "_id": "69ebd6b9d95a3171e1468958"
+    },
+    "IsSuccess": true,
+    "ErrorMessage": null
+  }
+}

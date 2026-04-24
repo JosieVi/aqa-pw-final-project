@@ -1,0 +1,212 @@
+{
+  "headers": {
+    "x-powered-by": "Express",
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "Authorization,X-User-Name",
+    "content-type": "application/json; charset=utf-8",
+    "content-length": "3756",
+    "etag": "W/\"eac-3aOWDUCujyZbd9x42i8wfZ+EZmg\"",
+    "date": "Fri, 24 Apr 2026 20:47:37 GMT",
+    "connection": "keep-alive",
+    "keep-alive": "timeout=5"
+  },
+  "body": {
+    "Order": {
+      "_id": "69ebd6e9d95a3171e146aec1",
+      "status": "Canceled",
+      "customer": {
+        "_id": "69ebd6e9d95a3171e146aeb4",
+        "email": "test1777063657442_TPMN@example.com",
+        "name": "test PHrtNiTENwxpkHPJHUWJrHojiRXxXReFtzY",
+        "country": "Ukraine",
+        "city": "testCity QzthArxGaJF",
+        "street": "testStreet g3AwJf6JzU4XBNd5gPyytHy5n6pKH",
+        "house": 436,
+        "flat": 7376,
+        "phone": "+8815992744",
+        "createdOn": "2026-04-24T20:47:37.000Z",
+        "notes": "Notes lznVPoJCcbQmfCeOrgnKgidbFyPgtBalDdmYtebEQRMeccfXytHmnHcfKFBWCALwUdpFHYDKqIFCgYVoJUmGLZpursQURVdxukckopeQjZmTVgWYvWJSwSdqNInMaYiavfXPHqeskQTvKJkNmHjVRLtgRwCjtXPQWwhQebgPnKrxgDlNtBJWLPrhwzkigKcWPIMNQQnMyXgUrHQthUrhYKZmEkImYWymehrVmSlTUYnYRpKzQcSK"
+      },
+      "products": [
+        {
+          "_id": "69ebd6e9d95a3171e146aeb9",
+          "name": "Test GyVmuUZxZZ",
+          "amount": 885,
+          "price": 35166,
+          "manufacturer": "Samsung",
+          "notes": "Notes FqCWNAwOPM",
+          "received": false
+        }
+      ],
+      "delivery": {
+        "address": {
+          "country": "Russia",
+          "city": "TestCity XBeEM",
+          "street": "TestStreet pkgsJRGvbP",
+          "house": 410,
+          "flat": 5138
+        },
+        "finalDate": "2026-11-14T00:00:00.000Z",
+        "condition": "Pickup"
+      },
+      "total_price": 35166,
+      "createdOn": "2026-04-24T20:47:37.000Z",
+      "comments": [],
+      "history": [
+        {
+          "status": "Canceled",
+          "customer": "69ebd6e9d95a3171e146aeb4",
+          "products": [
+            {
+              "_id": "69ebd6e9d95a3171e146aeb9",
+              "name": "Test GyVmuUZxZZ",
+              "amount": 885,
+              "price": 35166,
+              "manufacturer": "Samsung",
+              "notes": "Notes FqCWNAwOPM",
+              "received": false
+            }
+          ],
+          "total_price": 35166,
+          "delivery": {
+            "address": {
+              "country": "Russia",
+              "city": "TestCity XBeEM",
+              "street": "TestStreet pkgsJRGvbP",
+              "house": 410,
+              "flat": 5138
+            },
+            "finalDate": "2026-11-14T00:00:00.000Z",
+            "condition": "Pickup"
+          },
+          "changedOn": "2026-04-24T20:47:37.000Z",
+          "action": "Order canceled",
+          "performer": {
+            "_id": "69ebd65fd95a3171e14674e2",
+            "username": "admin@example.com",
+            "firstName": "Admin",
+            "lastName": "Admin",
+            "roles": [
+              "ADMIN"
+            ],
+            "createdOn": "2026/04/24 20:45:19"
+          },
+          "assignedManager": null
+        },
+        {
+          "status": "In Process",
+          "customer": "69ebd6e9d95a3171e146aeb4",
+          "products": [
+            {
+              "_id": "69ebd6e9d95a3171e146aeb9",
+              "name": "Test GyVmuUZxZZ",
+              "amount": 885,
+              "price": 35166,
+              "manufacturer": "Samsung",
+              "notes": "Notes FqCWNAwOPM",
+              "received": false
+            }
+          ],
+          "total_price": 35166,
+          "delivery": {
+            "address": {
+              "country": "Russia",
+              "city": "TestCity XBeEM",
+              "street": "TestStreet pkgsJRGvbP",
+              "house": 410,
+              "flat": 5138
+            },
+            "finalDate": "2026-11-14T00:00:00.000Z",
+            "condition": "Pickup"
+          },
+          "changedOn": "2026-04-24T20:47:37.000Z",
+          "action": "Order processing started",
+          "performer": {
+            "_id": "69ebd65fd95a3171e14674e2",
+            "username": "admin@example.com",
+            "firstName": "Admin",
+            "lastName": "Admin",
+            "roles": [
+              "ADMIN"
+            ],
+            "createdOn": "2026/04/24 20:45:19"
+          },
+          "assignedManager": null
+        },
+        {
+          "status": "Draft",
+          "customer": "69ebd6e9d95a3171e146aeb4",
+          "products": [
+            {
+              "_id": "69ebd6e9d95a3171e146aeb9",
+              "name": "Test GyVmuUZxZZ",
+              "amount": 885,
+              "price": 35166,
+              "manufacturer": "Samsung",
+              "notes": "Notes FqCWNAwOPM",
+              "received": false
+            }
+          ],
+          "total_price": 35166,
+          "delivery": {
+            "address": {
+              "country": "Russia",
+              "city": "TestCity XBeEM",
+              "street": "TestStreet pkgsJRGvbP",
+              "house": 410,
+              "flat": 5138
+            },
+            "finalDate": "2026-11-14T00:00:00.000Z",
+            "condition": "Pickup"
+          },
+          "changedOn": "2026-04-24T20:47:37.000Z",
+          "action": "Delivery Scheduled",
+          "performer": {
+            "_id": "69ebd65fd95a3171e14674e2",
+            "username": "admin@example.com",
+            "firstName": "Admin",
+            "lastName": "Admin",
+            "roles": [
+              "ADMIN"
+            ],
+            "createdOn": "2026/04/24 20:45:19"
+          },
+          "assignedManager": null
+        },
+        {
+          "status": "Draft",
+          "customer": "69ebd6e9d95a3171e146aeb4",
+          "products": [
+            {
+              "_id": "69ebd6e9d95a3171e146aeb9",
+              "name": "Test GyVmuUZxZZ",
+              "amount": 885,
+              "price": 35166,
+              "manufacturer": "Samsung",
+              "notes": "Notes FqCWNAwOPM",
+              "received": false
+            }
+          ],
+          "total_price": 35166,
+          "delivery": null,
+          "changedOn": "2026-04-24T20:47:37.000Z",
+          "action": "Order created",
+          "performer": {
+            "_id": "69ebd65fd95a3171e14674e2",
+            "username": "admin@example.com",
+            "firstName": "Admin",
+            "lastName": "Admin",
+            "roles": [
+              "ADMIN"
+            ],
+            "createdOn": "2026/04/24 20:45:19"
+          },
+          "assignedManager": null
+        }
+      ],
+      "assignedManager": null
+    },
+    "IsSuccess": true,
+    "ErrorMessage": null
+  }
+}
