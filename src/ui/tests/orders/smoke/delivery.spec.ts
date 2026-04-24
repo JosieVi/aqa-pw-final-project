@@ -34,7 +34,7 @@ test.describe('[UI] [Orders] [Order Details] [Delivery Tab]', () => {
   });
 
   test(
-    'Schedule delivery with type "Delivery" and "Home" Location',
+    'Should schedule delivery with type "Delivery" and "Home" location',
     {
       tag: [TAGS.API, TAGS.SMOKE, TAGS.UI, TAGS.ORDERS],
     },

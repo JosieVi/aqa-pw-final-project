@@ -2,8 +2,8 @@ import { TAGS } from 'data/testTags.data';
 import { OrdersListColumnForSorting } from 'data/orders/ordersListColumn.data';
 import { expect, test } from 'fixtures/index.fixture';
 
-test.describe('[UI] [Sales Portal]', () => {
-  test.describe('Login via services', () => {
+test.describe('[UI] [Orders] [Sales Portal] Health Check', () => {
+  test.describe('[UI] [Orders] Login via services', () => {
     test('Should login to Sales Portal by openAsLoggedInUser and get token', { tag: [TAGS.SMOKE] }, async ({ homeUIService }) => {
       await homeUIService.openAsLoggedInUser();
       // const await page.context().cookies()).find((c) => c.name === 'Authorization'!.value;
@@ -19,7 +19,7 @@ test.describe('[UI] [Sales Portal]', () => {
     });
   });
 
-  test.describe('Orders Details - Received Products section - Orders in Draft', () => {
+  test.describe('[UI] [Orders] [Order Details] [Received Products] Orders in Draft', () => {
     let orderId: string;
     let productName: string;
 
@@ -106,7 +106,7 @@ test.describe('[UI] [Sales Portal]', () => {
       await expect(isCollapsed).toBe(false);
     });
 
-    test('Verify clickEditProductsPencilButton', { tag: [TAGS.SMOKE] }, async ({ homeUIService, ordersPage, orderDetailsPage }) => {
+    test('Verify Edit Products pencil button opens edit modal', { tag: [TAGS.SMOKE] }, async ({ homeUIService, ordersPage, orderDetailsPage }) => {
       // Arrange
       await homeUIService.openAsLoggedInUser();
       await homeUIService.openModule('Orders');
@@ -120,7 +120,7 @@ test.describe('[UI] [Sales Portal]', () => {
       await orderDetailsPage.receivedProductsSection.clickEditProductsPencilButton();
     });
 
-    test('Verify product details as object', { tag: [TAGS.SMOKE] }, async ({ homeUIService, ordersPage, orderDetailsPage }) => {
+    test('Verify product details are displayed correctly', { tag: [TAGS.SMOKE] }, async ({ homeUIService, ordersPage, orderDetailsPage }) => {
       // Arrange
       await homeUIService.openAsLoggedInUser();
       await homeUIService.openModule('Orders');
@@ -141,7 +141,7 @@ test.describe('[UI] [Sales Portal]', () => {
     });
   });
 
-  test.describe('Orders Details - Received Products section - Orders in Progress', () => {
+  test.describe('[UI] [Orders] [Order Details] [Received Products] Orders in Progress', () => {
     let orderId: string;
     let productName: string;
 
@@ -268,7 +268,7 @@ test.describe('[UI] [Sales Portal]', () => {
     });
   });
 
-  test.describe('Orders list', () => {
+  test.describe('[UI] [Orders] [Orders List]', () => {
     test('Should display Orders List title', { tag: [TAGS.SMOKE] }, async ({ homeUIService, ordersPage }) => {
       // Arrange
       await homeUIService.openAsLoggedInUser();
@@ -446,7 +446,7 @@ test.describe('[UI] [Sales Portal]', () => {
     });
   });
 
-  test.describe('Order Details Page - Top Panel and Received Products Section', () => {
+  test.describe('[UI] [Orders] [Order Details] Top Panel and Received Products Section', () => {
     let orderId: string;
 
     test.beforeEach(async ({ orderFactory }) => {
@@ -455,25 +455,21 @@ test.describe('[UI] [Sales Portal]', () => {
       orderId = order._id;
     });
 
-    test(
-      'should verify order details from top panel and add a received product',
-      { tag: [TAGS.SMOKE] },
-      async ({ homeUIService, orderDetailsPage, ordersPage }) => {
-        await test.step('Navigate to an Order Details Page', async () => {
-          // Arrange
-          await homeUIService.openAsLoggedInUser();
-          await homeUIService.openModule('Orders');
-          await ordersPage.waitForOpened();
+    test('Should open receiving mode and cancel it', { tag: [TAGS.SMOKE] }, async ({ homeUIService, orderDetailsPage, ordersPage }) => {
+      await test.step('Navigate to an Order Details Page', async () => {
+        // Arrange
+        await homeUIService.openAsLoggedInUser();
+        await homeUIService.openModule('Orders');
+        await ordersPage.waitForOpened();
 
-          // Act
-          await ordersPage.clickDetailsButton(orderId);
-          await orderDetailsPage.waitForOpened();
+        // Act
+        await ordersPage.clickDetailsButton(orderId);
+        await orderDetailsPage.waitForOpened();
 
-          // Act - receive and cancel
-          await orderDetailsPage.receivedProductsSection.clickReceiveButton();
-          await orderDetailsPage.receivedProductsSection.clickCancelReceivingButton();
-        });
-      },
-    );
+        // Act - receive and cancel
+        await orderDetailsPage.receivedProductsSection.clickReceiveButton();
+        await orderDetailsPage.receivedProductsSection.clickCancelReceivingButton();
+      });
+    });
   });
 });

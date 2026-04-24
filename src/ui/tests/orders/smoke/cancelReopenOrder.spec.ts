@@ -7,13 +7,13 @@ test.describe('[UI] [Orders] Cancel Order', () => {
   type OrderCreationMethod = (count: number) => Promise<{ _id: string; products: any[] }>;
 
   const testCases: { testTitle: string; method: FactoryMethod }[] = [
-    { testTitle: 'Canceled draft order', method: 'orderDraftStatus' },
-    { testTitle: 'Canceled in process order', method: 'orderInProcessStatus' },
-    { testTitle: 'Canceled draft with delivery order', method: 'orderDraftWithDeliveryStatus' },
+    { testTitle: 'Should cancel draft order', method: 'orderDraftStatus' },
+    { testTitle: 'Should cancel in process order', method: 'orderInProcessStatus' },
+    { testTitle: 'Should cancel draft order with delivery', method: 'orderDraftWithDeliveryStatus' },
   ];
 
   testCases.forEach(({ testTitle, method }) => {
-    test.describe(`Order type: ${testTitle}`, () => {
+    test.describe(`[UI] [Orders] ${testTitle}`, () => {
       let orderId: string;
       const PRODUCTS_COUNT = 1;
 

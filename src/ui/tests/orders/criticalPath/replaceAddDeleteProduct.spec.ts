@@ -1,7 +1,7 @@
 import { TAGS } from 'data/testTags.data';
 import { expect, test } from 'fixtures/index.fixture';
 
-test.describe('[UI] [Orders] [Orders Details] [Edit Products] Replace/add/delete product', () => {
+test.describe('[UI] [Orders] [Order Details] [Edit Products] Replace/add/delete product', () => {
   let productNames: string[] = [];
   let orderId: string;
 
@@ -27,7 +27,7 @@ test.describe('[UI] [Orders] [Orders Details] [Edit Products] Replace/add/delete
     await orderDetailsPage.editProductsInOrderModal.waitForOpened();
   });
 
-  test('Replace the first product with the second', { tag: [TAGS.ORDERS] }, async ({ orderDetailsPage }) => {
+  test('Should replace the first product with the second', { tag: [TAGS.ORDERS] }, async ({ orderDetailsPage }) => {
     const firstProductName = productNames[0];
     const secondProductName = productNames[1];
 
@@ -41,7 +41,7 @@ test.describe('[UI] [Orders] [Orders Details] [Edit Products] Replace/add/delete
     expect(updatedProductNames).not.toContain(firstProductName);
   });
 
-  test('Add the same product as the second one', { tag: [TAGS.ORDERS] }, async ({ orderDetailsPage }) => {
+  test('Should add the same product as the second one', { tag: [TAGS.ORDERS] }, async ({ orderDetailsPage }) => {
     const firstProductName = productNames[0];
 
     await orderDetailsPage.editProductsInOrderModal.clickAddProduct();
@@ -57,7 +57,7 @@ test.describe('[UI] [Orders] [Orders Details] [Edit Products] Replace/add/delete
     expect(updatedProductNames.filter((name) => name === firstProductName).length).toEqual(2);
   });
 
-  test('Delete the first product from the order', { tag: [TAGS.ORDERS] }, async ({ orderDetailsPage }) => {
+  test('Should delete the first product from the order', { tag: [TAGS.ORDERS] }, async ({ orderDetailsPage }) => {
     const firstProductName = productNames[0];
 
     const initialCount = await orderDetailsPage.editProductsInOrderModal.productsList.count();

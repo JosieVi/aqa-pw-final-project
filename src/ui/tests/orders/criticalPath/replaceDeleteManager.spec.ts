@@ -3,7 +3,7 @@ import { TOASTER } from 'data/orders/toaster.data';
 import { TAGS } from 'data/testTags.data';
 import { expect, test } from 'fixtures/index.fixture';
 
-test.describe('[UI] [Orders] [Orders Details] [Edit Products] Replace/delete assigned manager', () => {
+test.describe('[UI] [Orders] [Order Details] [Manager] Replace/delete assigned manager', () => {
   let orderId: string;
   let managerFullName: string;
 
@@ -20,7 +20,7 @@ test.describe('[UI] [Orders] [Orders Details] [Edit Products] Replace/delete ass
     await orderDetailsPage.waitForOpened();
   });
 
-  test('Replace assigned manager', { tag: [TAGS.ORDERS] }, async ({ orderDetailsPage, ordersPage, notificationsModal }) => {
+  test('Should replace assigned manager', { tag: [TAGS.ORDERS] }, async ({ orderDetailsPage, ordersPage, notificationsModal }) => {
     await orderDetailsPage.topPanel.clickEditAssignedManagerButton();
     await orderDetailsPage.waitForOpened();
 
@@ -40,7 +40,7 @@ test.describe('[UI] [Orders] [Orders Details] [Edit Products] Replace/delete ass
     await expect(notificationText, 'Notification text is incorrect').toBe(NOTIFICATION.MANAGER_ASSIGNED);
   });
 
-  test('Delete assigned manager', { tag: [TAGS.ORDERS] }, async ({ orderDetailsPage, confirmationModal }) => {
+  test('Should delete assigned manager', { tag: [TAGS.ORDERS] }, async ({ orderDetailsPage, confirmationModal }) => {
     await orderDetailsPage.topPanel.clickRemoveAssignedManagerButton();
     await orderDetailsPage.waitForOpened();
 

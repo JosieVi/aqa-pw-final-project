@@ -4,7 +4,7 @@ import { TAGS } from 'data/testTags.data';
 // TODO почему не нужен импорт
 import { ORDER_STATUS } from 'data/orders/statuses.data';
 test.describe('[UI] [Orders] [Customer]', () => {
-  test.describe('[Positive]', () => {
+  test.describe('[UI] [Orders] [Customer] [Positive] Edit customer', () => {
     let targetOrderId: string;
     let initialCustomerNameInOrder: string | null;
     let token: string;
@@ -85,7 +85,7 @@ test.describe('[UI] [Orders] [Customer]', () => {
       },
     );
 
-    test.describe('[Negative] Orders were created without service', () => {
+    test.describe('[UI] [Orders] [Customer] [Negative] Edit customer modal for Canceled order (without service)', () => {
       let targetOrderId: string;
 
       test.beforeEach(async ({ homeUIService, ordersPage, orderDetailsPage, orderFactory }) => {
@@ -109,7 +109,7 @@ test.describe('[UI] [Orders] [Customer]', () => {
       });
     });
 
-    test.describe('[Negative] Orders were created without service', () => {
+    test.describe('[UI] [Orders] [Customer] [Negative] Edit customer modal for In Process order (without service)', () => {
       let targetOrderId: string;
 
       test.beforeEach(async ({ homeUIService, ordersPage, orderDetailsPage, orderFactory }) => {
@@ -133,7 +133,7 @@ test.describe('[UI] [Orders] [Customer]', () => {
       });
     });
 
-    test.describe('[Negative] Orders were created without service', () => {
+    test.describe('[UI] [Orders] [Customer] [Negative] Edit customer modal for Received order (without service)', () => {
       // let targetOrderId: string;
 
       test.beforeEach(async ({ homeUIService, orderDetailsPage, orderFactory }) => {
@@ -159,7 +159,7 @@ test.describe('[UI] [Orders] [Customer]', () => {
       });
     });
 
-    test.describe('[Negative] Orders were created without service', () => {
+    test.describe('[UI] [Orders] [Customer] [Negative] Edit customer modal for Partially Received order (without service)', () => {
       let targetOrderId: string;
 
       test.beforeEach(async ({ homeUIService, ordersPage, orderDetailsPage, orderFactory }) => {
@@ -182,7 +182,7 @@ test.describe('[UI] [Orders] [Customer]', () => {
       });
     });
 
-    test.describe('[Negative] Orders were created dynamically by service', () => {
+    test.describe('[UI] [Orders] [Customer] [Negative] Orders were created dynamically by service', () => {
       // let orderSetupService: OrderSetupService;
 
       // test.beforeEach(async ({ page, orderFactory }) => {
