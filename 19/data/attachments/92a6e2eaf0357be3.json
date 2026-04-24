@@ -1,0 +1,26 @@
+{
+  "headers": {
+    "x-powered-by": "Express",
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "Authorization,X-User-Name",
+    "content-type": "application/json; charset=utf-8",
+    "content-length": "225",
+    "etag": "W/\"e1-Aw/sGCS3o7EST5pl1Ri7MEjl9CE\"",
+    "date": "Fri, 24 Apr 2026 17:31:19 GMT",
+    "connection": "keep-alive",
+    "keep-alive": "timeout=5"
+  },
+  "body": {
+    "Product": {
+      "name": "Test RZSTriRMDo",
+      "amount": 704,
+      "price": 27081,
+      "manufacturer": "Amazon",
+      "createdOn": "2026-04-24T17:31:19.000Z",
+      "notes": "Notes VCSBebfRVu",
+      "_id": "69eba8e75103cf84dbbc899e"
+    },
+    "IsSuccess": true,
+    "ErrorMessage": null
+  }
+}

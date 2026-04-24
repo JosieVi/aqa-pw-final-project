@@ -1,0 +1,26 @@
+{
+  "headers": {
+    "x-powered-by": "Express",
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "Authorization,X-User-Name",
+    "content-type": "application/json; charset=utf-8",
+    "content-length": "227",
+    "etag": "W/\"e3-Sey4XU/64KxUljDO6v/2NiuBDtw\"",
+    "date": "Fri, 24 Apr 2026 17:31:26 GMT",
+    "connection": "keep-alive",
+    "keep-alive": "timeout=5"
+  },
+  "body": {
+    "Product": {
+      "name": "Test gfPmnPdrZU",
+      "amount": 56,
+      "price": 88906,
+      "manufacturer": "Microsoft",
+      "createdOn": "2026-04-24T17:31:26.000Z",
+      "notes": "Notes GfHmyhcomj",
+      "_id": "69eba8ee5103cf84dbbc9114"
+    },
+    "IsSuccess": true,
+    "ErrorMessage": null
+  }
+}

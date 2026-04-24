@@ -1,0 +1,26 @@
+{
+  "headers": {
+    "x-powered-by": "Express",
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "Authorization,X-User-Name",
+    "content-type": "application/json; charset=utf-8",
+    "content-length": "222",
+    "etag": "W/\"de-k8eNKt7XGxnnEx2zT03CdRnMsRQ\"",
+    "date": "Fri, 24 Apr 2026 17:31:02 GMT",
+    "connection": "keep-alive",
+    "keep-alive": "timeout=5"
+  },
+  "body": {
+    "Product": {
+      "name": "Test ZnsKlfCxPG",
+      "amount": 55,
+      "price": 86326,
+      "manufacturer": "Sony",
+      "createdOn": "2026-04-24T17:31:02.000Z",
+      "notes": "Notes zJGfVFwOuj",
+      "_id": "69eba8d65103cf84dbbc72ce"
+    },
+    "IsSuccess": true,
+    "ErrorMessage": null
+  }
+}

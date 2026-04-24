@@ -1,0 +1,18 @@
+{
+  "headers": {
+    "x-powered-by": "Express",
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "Authorization,X-User-Name",
+    "content-type": "application/json; charset=utf-8",
+    "content-length": "309",
+    "etag": "W/\"135-8nEQx5sUWZqJj32Z9kKT3K5y/Lg\"",
+    "date": "Fri, 24 Apr 2026 17:29:57 GMT",
+    "connection": "keep-alive",
+    "keep-alive": "timeout=5"
+  },
+  "body": {
+    "IsSuccess": false,
+    "ErrorMessage": "Login error",
+    "reason": "E11000 duplicate key error collection: aqa-course.tokens index: token_1 dup key: { token: \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5ZWJhODVjNTEwM2NmODRkYmJjNGZkOSIsInJvbGVzIjpbIkFETUlOIl0sImlhdCI6MTc3NzA1MTc5NywiZXhwIjoxNzc3MTM4MTk3f...\" }"
+  }
+}

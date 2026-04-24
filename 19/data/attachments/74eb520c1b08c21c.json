@@ -1,0 +1,26 @@
+{
+  "headers": {
+    "x-powered-by": "Express",
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "Authorization,X-User-Name",
+    "content-type": "application/json; charset=utf-8",
+    "content-length": "224",
+    "etag": "W/\"e0-nKQCLelzsKawvE4KGiLcmlr3a2c\"",
+    "date": "Fri, 24 Apr 2026 17:31:18 GMT",
+    "connection": "keep-alive",
+    "keep-alive": "timeout=5"
+  },
+  "body": {
+    "Product": {
+      "name": "Test UAggLhoPuT",
+      "amount": 273,
+      "price": 84812,
+      "manufacturer": "Apple",
+      "createdOn": "2026-04-24T17:31:18.000Z",
+      "notes": "Notes gMlQOqbvqG",
+      "_id": "69eba8e65103cf84dbbc869c"
+    },
+    "IsSuccess": true,
+    "ErrorMessage": null
+  }
+}

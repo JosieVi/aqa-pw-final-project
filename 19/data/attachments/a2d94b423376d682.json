@@ -1,0 +1,26 @@
+{
+  "headers": {
+    "x-powered-by": "Express",
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "Authorization,X-User-Name",
+    "content-type": "application/json; charset=utf-8",
+    "content-length": "224",
+    "etag": "W/\"e0-aK2SgzXap7MgJAdHckIhtSkM5nM\"",
+    "date": "Fri, 24 Apr 2026 17:30:32 GMT",
+    "connection": "keep-alive",
+    "keep-alive": "timeout=5"
+  },
+  "body": {
+    "Product": {
+      "name": "Test mCzhJrAfKt",
+      "amount": 420,
+      "price": 2245,
+      "manufacturer": "Amazon",
+      "createdOn": "2026-04-24T17:30:32.000Z",
+      "notes": "Notes goPcxdjXAb",
+      "_id": "69eba8b85103cf84dbbc63c2"
+    },
+    "IsSuccess": true,
+    "ErrorMessage": null
+  }
+}

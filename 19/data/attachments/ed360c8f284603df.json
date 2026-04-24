@@ -1,0 +1,26 @@
+{
+  "headers": {
+    "x-powered-by": "Express",
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "Authorization,X-User-Name",
+    "content-type": "application/json; charset=utf-8",
+    "content-length": "226",
+    "etag": "W/\"e2-fB/+/1/jFGO4ZAQrZ/w/uUyPlO4\"",
+    "date": "Fri, 24 Apr 2026 17:31:18 GMT",
+    "connection": "keep-alive",
+    "keep-alive": "timeout=5"
+  },
+  "body": {
+    "Product": {
+      "name": "Test pQKHRAPPmo",
+      "amount": 431,
+      "price": 99860,
+      "manufacturer": "Samsung",
+      "createdOn": "2026-04-24T17:31:18.000Z",
+      "notes": "Notes UlRmRZVjXR",
+      "_id": "69eba8e65103cf84dbbc8692"
+    },
+    "IsSuccess": true,
+    "ErrorMessage": null
+  }
+}

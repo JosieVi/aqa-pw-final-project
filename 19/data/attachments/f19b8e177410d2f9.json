@@ -1,0 +1,26 @@
+{
+  "headers": {
+    "x-powered-by": "Express",
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "Authorization,X-User-Name",
+    "content-type": "application/json; charset=utf-8",
+    "content-length": "224",
+    "etag": "W/\"e0-OJRMgFUK8NhxjTN0p+aitfQDw78\"",
+    "date": "Fri, 24 Apr 2026 17:31:13 GMT",
+    "connection": "keep-alive",
+    "keep-alive": "timeout=5"
+  },
+  "body": {
+    "Product": {
+      "name": "Test ahLezlDnCu",
+      "amount": 744,
+      "price": 3065,
+      "manufacturer": "Amazon",
+      "createdOn": "2026-04-24T17:31:13.000Z",
+      "notes": "Notes RMKnrIKCir",
+      "_id": "69eba8e15103cf84dbbc7edb"
+    },
+    "IsSuccess": true,
+    "ErrorMessage": null
+  }
+}

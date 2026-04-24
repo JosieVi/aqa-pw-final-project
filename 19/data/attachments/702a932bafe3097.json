@@ -1,0 +1,26 @@
+{
+  "headers": {
+    "x-powered-by": "Express",
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "Authorization,X-User-Name",
+    "content-type": "application/json; charset=utf-8",
+    "content-length": "223",
+    "etag": "W/\"df-FQFJUORwYSMvv4K6k0k/xKuYFro\"",
+    "date": "Fri, 24 Apr 2026 17:30:49 GMT",
+    "connection": "keep-alive",
+    "keep-alive": "timeout=5"
+  },
+  "body": {
+    "Product": {
+      "name": "Test zlzDFlNmaj",
+      "amount": 992,
+      "price": 57382,
+      "manufacturer": "Sony",
+      "createdOn": "2026-04-24T17:30:49.000Z",
+      "notes": "Notes FEpKesIwrd",
+      "_id": "69eba8c95103cf84dbbc6dbf"
+    },
+    "IsSuccess": true,
+    "ErrorMessage": null
+  }
+}

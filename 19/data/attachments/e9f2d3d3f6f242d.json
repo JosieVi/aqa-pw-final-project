@@ -1,0 +1,17 @@
+{
+  "headers": {
+    "x-powered-by": "Express",
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "Authorization,X-User-Name",
+    "content-type": "application/json; charset=utf-8",
+    "content-length": "92",
+    "etag": "W/\"5c-9ip1vtIbvWhASi4tyscTcH8Ti7U\"",
+    "date": "Fri, 24 Apr 2026 17:31:10 GMT",
+    "connection": "keep-alive",
+    "keep-alive": "timeout=5"
+  },
+  "body": {
+    "IsSuccess": false,
+    "ErrorMessage": "Manager with id '69eba8de5103cf84dbbc7acf' wasn't found"
+  }
+}

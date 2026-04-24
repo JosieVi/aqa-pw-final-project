@@ -1,0 +1,26 @@
+{
+  "headers": {
+    "x-powered-by": "Express",
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "Authorization,X-User-Name",
+    "content-type": "application/json; charset=utf-8",
+    "content-length": "223",
+    "etag": "W/\"df-F9kVTNhROdRy0K+fVKlk/z8/U3s\"",
+    "date": "Fri, 24 Apr 2026 17:30:30 GMT",
+    "connection": "keep-alive",
+    "keep-alive": "timeout=5"
+  },
+  "body": {
+    "Product": {
+      "name": "Test HfNiALgXtY",
+      "amount": 139,
+      "price": 22480,
+      "manufacturer": "Sony",
+      "createdOn": "2026-04-24T17:30:30.000Z",
+      "notes": "Notes njdpnuNbuk",
+      "_id": "69eba8b65103cf84dbbc5fe0"
+    },
+    "IsSuccess": true,
+    "ErrorMessage": null
+  }
+}

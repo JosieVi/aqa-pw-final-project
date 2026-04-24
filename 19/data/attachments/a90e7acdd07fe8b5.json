@@ -1,0 +1,26 @@
+{
+  "headers": {
+    "x-powered-by": "Express",
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "Authorization,X-User-Name",
+    "content-type": "application/json; charset=utf-8",
+    "content-length": "225",
+    "etag": "W/\"e1-boQ0gTxdTth/nZYXBdXB/0MO8zk\"",
+    "date": "Fri, 24 Apr 2026 17:31:22 GMT",
+    "connection": "keep-alive",
+    "keep-alive": "timeout=5"
+  },
+  "body": {
+    "Product": {
+      "name": "Test DnbKCUkxZy",
+      "amount": 385,
+      "price": 99999,
+      "manufacturer": "Google",
+      "createdOn": "2026-04-24T17:31:22.000Z",
+      "notes": "Notes YUGoQsFZAK",
+      "_id": "69eba8ea5103cf84dbbc8ecb"
+    },
+    "IsSuccess": true,
+    "ErrorMessage": null
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "headers": {
+    "x-powered-by": "Express",
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "Authorization,X-User-Name",
+    "content-type": "application/json; charset=utf-8",
+    "content-length": "224",
+    "etag": "W/\"e0-V98pbLPQpCD0WMRfLk8Nvas8r1c\"",
+    "date": "Fri, 24 Apr 2026 17:31:15 GMT",
+    "connection": "keep-alive",
+    "keep-alive": "timeout=5"
+  },
+  "body": {
+    "Product": {
+      "name": "Test jvtrsabRdk",
+      "amount": 497,
+      "price": 48709,
+      "manufacturer": "Tesla",
+      "createdOn": "2026-04-24T17:31:15.000Z",
+      "notes": "Notes nzJyGWPrTz",
+      "_id": "69eba8e35103cf84dbbc82f3"
+    },
+    "IsSuccess": true,
+    "ErrorMessage": null
+  }
+}

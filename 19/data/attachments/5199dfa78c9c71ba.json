@@ -1,0 +1,26 @@
+{
+  "headers": {
+    "x-powered-by": "Express",
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "Authorization,X-User-Name",
+    "content-type": "application/json; charset=utf-8",
+    "content-length": "226",
+    "etag": "W/\"e2-y+4DUwenIU9rIGH5EFKgVKaXWZg\"",
+    "date": "Fri, 24 Apr 2026 17:30:05 GMT",
+    "connection": "keep-alive",
+    "keep-alive": "timeout=5"
+  },
+  "body": {
+    "Product": {
+      "name": "Test DxaOKVvlMm",
+      "amount": 398,
+      "price": 28973,
+      "manufacturer": "Samsung",
+      "createdOn": "2026-04-24T17:30:05.000Z",
+      "notes": "Notes GtvLelfzzS",
+      "_id": "69eba89d5103cf84dbbc5235"
+    },
+    "IsSuccess": true,
+    "ErrorMessage": null
+  }
+}

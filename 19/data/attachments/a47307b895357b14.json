@@ -1,0 +1,25 @@
+{
+  "headers": {
+    "x-powered-by": "Express",
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "Authorization,X-User-Name",
+    "content-type": "application/json; charset=utf-8",
+    "content-length": "197",
+    "etag": "W/\"c5-6LARBKlUb+4CiGKGrvm6IGNnf1s\"",
+    "date": "Fri, 24 Apr 2026 17:31:22 GMT",
+    "connection": "keep-alive",
+    "keep-alive": "timeout=5"
+  },
+  "body": {
+    "Product": {
+      "name": "Test RyQKWWWWra",
+      "amount": 416,
+      "price": 81734,
+      "manufacturer": "Tesla",
+      "createdOn": "2026-04-24T17:31:22.000Z",
+      "_id": "69eba8ea5103cf84dbbc8ead"
+    },
+    "IsSuccess": true,
+    "ErrorMessage": null
+  }
+}

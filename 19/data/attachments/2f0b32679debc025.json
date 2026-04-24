@@ -1,0 +1,26 @@
+{
+  "headers": {
+    "x-powered-by": "Express",
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "Authorization,X-User-Name",
+    "content-type": "application/json; charset=utf-8",
+    "content-length": "225",
+    "etag": "W/\"e1-iRQw7k+eAKM6htzi01BW2w0DoMo\"",
+    "date": "Fri, 24 Apr 2026 17:30:32 GMT",
+    "connection": "keep-alive",
+    "keep-alive": "timeout=5"
+  },
+  "body": {
+    "Product": {
+      "name": "Test kdEVHSsVFJ",
+      "amount": 261,
+      "price": 19696,
+      "manufacturer": "Google",
+      "createdOn": "2026-04-24T17:30:32.000Z",
+      "notes": "Notes xbkQohJdxa",
+      "_id": "69eba8b85103cf84dbbc63c6"
+    },
+    "IsSuccess": true,
+    "ErrorMessage": null
+  }
+}

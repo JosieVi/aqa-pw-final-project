@@ -1,0 +1,26 @@
+{
+  "headers": {
+    "x-powered-by": "Express",
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "Authorization,X-User-Name",
+    "content-type": "application/json; charset=utf-8",
+    "content-length": "225",
+    "etag": "W/\"e1-J1EHnnihpBk+II/tk40xnWyC8FM\"",
+    "date": "Fri, 24 Apr 2026 17:31:14 GMT",
+    "connection": "keep-alive",
+    "keep-alive": "timeout=5"
+  },
+  "body": {
+    "Product": {
+      "name": "Test FTGMefcpKL",
+      "amount": 233,
+      "price": 7717,
+      "manufacturer": "Samsung",
+      "createdOn": "2026-04-24T17:31:14.000Z",
+      "notes": "Notes aWLQoMDGqC",
+      "_id": "69eba8e25103cf84dbbc7f82"
+    },
+    "IsSuccess": true,
+    "ErrorMessage": null
+  }
+}

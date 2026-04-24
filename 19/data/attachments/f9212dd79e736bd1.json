@@ -1,0 +1,26 @@
+{
+  "headers": {
+    "x-powered-by": "Express",
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "Authorization,X-User-Name",
+    "content-type": "application/json; charset=utf-8",
+    "content-length": "224",
+    "etag": "W/\"e0-LJOkDOb/XiUiqGFg/lBgfu+LOec\"",
+    "date": "Fri, 24 Apr 2026 17:31:15 GMT",
+    "connection": "keep-alive",
+    "keep-alive": "timeout=5"
+  },
+  "body": {
+    "Product": {
+      "name": "Test WUZthuIGUl",
+      "amount": 127,
+      "price": 41642,
+      "manufacturer": "Apple",
+      "createdOn": "2026-04-24T17:31:15.000Z",
+      "notes": "Notes wOTUoomdRG",
+      "_id": "69eba8e35103cf84dbbc8223"
+    },
+    "IsSuccess": true,
+    "ErrorMessage": null
+  }
+}

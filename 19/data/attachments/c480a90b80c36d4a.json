@@ -1,0 +1,26 @@
+{
+  "headers": {
+    "x-powered-by": "Express",
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "Authorization,X-User-Name",
+    "content-type": "application/json; charset=utf-8",
+    "content-length": "226",
+    "etag": "W/\"e2-+EB65TJin0UGw3ukeHIMouoUFro\"",
+    "date": "Fri, 24 Apr 2026 17:31:25 GMT",
+    "connection": "keep-alive",
+    "keep-alive": "timeout=5"
+  },
+  "body": {
+    "Product": {
+      "_id": "69eba8ed5103cf84dbbc9007",
+      "name": "Test NaDFPcMVNG",
+      "amount": 0,
+      "price": 23362,
+      "manufacturer": "Microsoft",
+      "createdOn": "2026-04-24T17:31:25.000Z",
+      "notes": "Notes wgebhbZzzd"
+    },
+    "IsSuccess": true,
+    "ErrorMessage": null
+  }
+}

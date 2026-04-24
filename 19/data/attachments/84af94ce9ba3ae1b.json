@@ -1,0 +1,26 @@
+{
+  "headers": {
+    "x-powered-by": "Express",
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "Authorization,X-User-Name",
+    "content-type": "application/json; charset=utf-8",
+    "content-length": "225",
+    "etag": "W/\"e1-18apvS44AYp5kdRP6lE8JQbC708\"",
+    "date": "Fri, 24 Apr 2026 17:31:17 GMT",
+    "connection": "keep-alive",
+    "keep-alive": "timeout=5"
+  },
+  "body": {
+    "Product": {
+      "name": "Test NLSNSxBeIu",
+      "amount": 61,
+      "price": 62641,
+      "manufacturer": "Samsung",
+      "createdOn": "2026-04-24T17:31:17.000Z",
+      "notes": "Notes QvwARNsatU",
+      "_id": "69eba8e55103cf84dbbc85f2"
+    },
+    "IsSuccess": true,
+    "ErrorMessage": null
+  }
+}

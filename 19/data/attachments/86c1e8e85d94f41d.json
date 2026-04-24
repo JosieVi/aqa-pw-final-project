@@ -1,0 +1,26 @@
+{
+  "headers": {
+    "x-powered-by": "Express",
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "Authorization,X-User-Name",
+    "content-type": "application/json; charset=utf-8",
+    "content-length": "227",
+    "etag": "W/\"e3-iAE9YGTDrXavF7NjMh7gMIK7Cfo\"",
+    "date": "Fri, 24 Apr 2026 17:31:25 GMT",
+    "connection": "keep-alive",
+    "keep-alive": "timeout=5"
+  },
+  "body": {
+    "Product": {
+      "name": "Test uXTAacvVbO",
+      "amount": 256,
+      "price": 7973,
+      "manufacturer": "Microsoft",
+      "createdOn": "2026-04-24T17:31:25.000Z",
+      "notes": "Notes KrSYSpFlIN",
+      "_id": "69eba8ed5103cf84dbbc90d6"
+    },
+    "IsSuccess": true,
+    "ErrorMessage": null
+  }
+}

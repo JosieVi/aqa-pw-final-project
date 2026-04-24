@@ -1,0 +1,26 @@
+{
+  "headers": {
+    "x-powered-by": "Express",
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "Authorization,X-User-Name",
+    "content-type": "application/json; charset=utf-8",
+    "content-length": "228",
+    "etag": "W/\"e4-oWH5gKGweQlu+kfw997P1fvRRXc\"",
+    "date": "Fri, 24 Apr 2026 17:30:52 GMT",
+    "connection": "keep-alive",
+    "keep-alive": "timeout=5"
+  },
+  "body": {
+    "Product": {
+      "name": "Test kkNDeThqlx",
+      "amount": 230,
+      "price": 26501,
+      "manufacturer": "Microsoft",
+      "createdOn": "2026-04-24T17:30:52.000Z",
+      "notes": "Notes XrvbUWxHki",
+      "_id": "69eba8cc5103cf84dbbc6ebf"
+    },
+    "IsSuccess": true,
+    "ErrorMessage": null
+  }
+}

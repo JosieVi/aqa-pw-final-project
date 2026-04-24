@@ -1,0 +1,26 @@
+{
+  "headers": {
+    "x-powered-by": "Express",
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "Authorization,X-User-Name",
+    "content-type": "application/json; charset=utf-8",
+    "content-length": "223",
+    "etag": "W/\"df-0aaOR8jBetABLD0fb/rEF+rE5DI\"",
+    "date": "Fri, 24 Apr 2026 17:31:03 GMT",
+    "connection": "keep-alive",
+    "keep-alive": "timeout=5"
+  },
+  "body": {
+    "Product": {
+      "name": "Test XBDiCkVUCn",
+      "amount": 417,
+      "price": 27709,
+      "manufacturer": "Sony",
+      "createdOn": "2026-04-24T17:31:03.000Z",
+      "notes": "Notes eEgiTOhZEc",
+      "_id": "69eba8d75103cf84dbbc7331"
+    },
+    "IsSuccess": true,
+    "ErrorMessage": null
+  }
+}

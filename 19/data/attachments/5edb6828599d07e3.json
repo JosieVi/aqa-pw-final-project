@@ -1,0 +1,26 @@
+{
+  "headers": {
+    "x-powered-by": "Express",
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "Authorization,X-User-Name",
+    "content-type": "application/json; charset=utf-8",
+    "content-length": "224",
+    "etag": "W/\"e0-5wHu3rKJ4hqMymZv8+vLGUh5Jxc\"",
+    "date": "Fri, 24 Apr 2026 17:31:23 GMT",
+    "connection": "keep-alive",
+    "keep-alive": "timeout=5"
+  },
+  "body": {
+    "Product": {
+      "name": "Test oxHVFbvAmL",
+      "amount": 81,
+      "price": 32981,
+      "manufacturer": "Google",
+      "createdOn": "2026-04-24T17:31:23.000Z",
+      "notes": "Notes xjXYtTCFzj",
+      "_id": "69eba8eb5103cf84dbbc8f69"
+    },
+    "IsSuccess": true,
+    "ErrorMessage": null
+  }
+}

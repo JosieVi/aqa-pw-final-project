@@ -1,0 +1,26 @@
+{
+  "headers": {
+    "x-powered-by": "Express",
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "Authorization,X-User-Name",
+    "content-type": "application/json; charset=utf-8",
+    "content-length": "228",
+    "etag": "W/\"e4-qP0lGyNLAG5cL5kF5uPMQRfLPSk\"",
+    "date": "Fri, 24 Apr 2026 17:31:24 GMT",
+    "connection": "keep-alive",
+    "keep-alive": "timeout=5"
+  },
+  "body": {
+    "Product": {
+      "_id": "69eba8ec5103cf84dbbc8fd4",
+      "name": "Test NAzWLnPWdw",
+      "amount": 613,
+      "price": 85928,
+      "manufacturer": "Microsoft",
+      "createdOn": "2026-04-24T17:31:24.000Z",
+      "notes": "Notes QnRuNhvrUm"
+    },
+    "IsSuccess": true,
+    "ErrorMessage": null
+  }
+}

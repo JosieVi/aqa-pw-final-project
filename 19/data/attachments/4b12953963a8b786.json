@@ -1,0 +1,26 @@
+{
+  "headers": {
+    "x-powered-by": "Express",
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "Authorization,X-User-Name",
+    "content-type": "application/json; charset=utf-8",
+    "content-length": "227",
+    "etag": "W/\"e3-9vVsieBMIq9o6InHPodoRUrTIY8\"",
+    "date": "Fri, 24 Apr 2026 17:31:19 GMT",
+    "connection": "keep-alive",
+    "keep-alive": "timeout=5"
+  },
+  "body": {
+    "Product": {
+      "name": "Test lsXVkeBTiG",
+      "amount": 752,
+      "price": 2738,
+      "manufacturer": "Microsoft",
+      "createdOn": "2026-04-24T17:31:19.000Z",
+      "notes": "Notes FenZgwmqNF",
+      "_id": "69eba8e75103cf84dbbc886b"
+    },
+    "IsSuccess": true,
+    "ErrorMessage": null
+  }
+}

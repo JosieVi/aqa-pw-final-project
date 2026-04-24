@@ -1,0 +1,26 @@
+{
+  "headers": {
+    "x-powered-by": "Express",
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "Authorization,X-User-Name",
+    "content-type": "application/json; charset=utf-8",
+    "content-length": "223",
+    "etag": "W/\"df-8uP1v6R8Gzp8k+tFgC+ERjh88Uo\"",
+    "date": "Fri, 24 Apr 2026 17:31:10 GMT",
+    "connection": "keep-alive",
+    "keep-alive": "timeout=5"
+  },
+  "body": {
+    "Product": {
+      "name": "Test wLiDuzPlXT",
+      "amount": 368,
+      "price": 73319,
+      "manufacturer": "Sony",
+      "createdOn": "2026-04-24T17:31:10.000Z",
+      "notes": "Notes USEhoPXvwh",
+      "_id": "69eba8de5103cf84dbbc7b12"
+    },
+    "IsSuccess": true,
+    "ErrorMessage": null
+  }
+}

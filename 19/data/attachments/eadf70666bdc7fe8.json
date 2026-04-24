@@ -1,0 +1,26 @@
+{
+  "headers": {
+    "x-powered-by": "Express",
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "Authorization,X-User-Name",
+    "content-type": "application/json; charset=utf-8",
+    "content-length": "228",
+    "etag": "W/\"e4-xZM+RS2oIjn3yRDoZRyphfqT2Yw\"",
+    "date": "Fri, 24 Apr 2026 17:31:08 GMT",
+    "connection": "keep-alive",
+    "keep-alive": "timeout=5"
+  },
+  "body": {
+    "Product": {
+      "name": "Test cNcIFrIUmA",
+      "amount": 276,
+      "price": 75555,
+      "manufacturer": "Microsoft",
+      "createdOn": "2026-04-24T17:31:08.000Z",
+      "notes": "Notes ErukLkKiWg",
+      "_id": "69eba8dc5103cf84dbbc78a3"
+    },
+    "IsSuccess": true,
+    "ErrorMessage": null
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "headers": {
+    "x-powered-by": "Express",
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "Authorization,X-User-Name",
+    "content-type": "application/json; charset=utf-8",
+    "content-length": "224",
+    "etag": "W/\"e0-eas38clMcdatjk+dyE3oXvjqIqY\"",
+    "date": "Fri, 24 Apr 2026 17:31:11 GMT",
+    "connection": "keep-alive",
+    "keep-alive": "timeout=5"
+  },
+  "body": {
+    "Product": {
+      "name": "Test LmktSrGYUC",
+      "amount": 49,
+      "price": 45383,
+      "manufacturer": "Amazon",
+      "createdOn": "2026-04-24T17:31:11.000Z",
+      "notes": "Notes yLdtDMOEvz",
+      "_id": "69eba8df5103cf84dbbc7bf5"
+    },
+    "IsSuccess": true,
+    "ErrorMessage": null
+  }
+}

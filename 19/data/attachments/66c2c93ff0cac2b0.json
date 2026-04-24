@@ -1,0 +1,26 @@
+{
+  "headers": {
+    "x-powered-by": "Express",
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "Authorization,X-User-Name",
+    "content-type": "application/json; charset=utf-8",
+    "content-length": "225",
+    "etag": "W/\"e1-oA5jd5E2oOA1BByoLTs6eSwTcTY\"",
+    "date": "Fri, 24 Apr 2026 17:30:46 GMT",
+    "connection": "keep-alive",
+    "keep-alive": "timeout=5"
+  },
+  "body": {
+    "Product": {
+      "name": "Test HEXzAwkVXp",
+      "amount": 677,
+      "price": 38676,
+      "manufacturer": "Amazon",
+      "createdOn": "2026-04-24T17:30:46.000Z",
+      "notes": "Notes vCFNjSKMEa",
+      "_id": "69eba8c65103cf84dbbc6c60"
+    },
+    "IsSuccess": true,
+    "ErrorMessage": null
+  }
+}

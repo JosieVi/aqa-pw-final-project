@@ -1,0 +1,26 @@
+{
+  "headers": {
+    "x-powered-by": "Express",
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "Authorization,X-User-Name",
+    "content-type": "application/json; charset=utf-8",
+    "content-length": "222",
+    "etag": "W/\"de-3PTNTUYnPl4hs99klASEfcRDlKA\"",
+    "date": "Fri, 24 Apr 2026 17:31:22 GMT",
+    "connection": "keep-alive",
+    "keep-alive": "timeout=5"
+  },
+  "body": {
+    "Product": {
+      "name": "Test QCimgfbula",
+      "amount": 619,
+      "price": 929,
+      "manufacturer": "Apple",
+      "createdOn": "2026-04-24T17:31:22.000Z",
+      "notes": "Notes fLozhoMYSV",
+      "_id": "69eba8ea5103cf84dbbc8dd8"
+    },
+    "IsSuccess": true,
+    "ErrorMessage": null
+  }
+}
