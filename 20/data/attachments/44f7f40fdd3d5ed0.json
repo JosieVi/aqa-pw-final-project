@@ -1,0 +1,26 @@
+{
+  "headers": {
+    "x-powered-by": "Express",
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "Authorization,X-User-Name",
+    "content-type": "application/json; charset=utf-8",
+    "content-length": "224",
+    "etag": "W/\"e0-hsJJ2CmXmEt5MjMM8mRi+rRjEOo\"",
+    "date": "Fri, 24 Apr 2026 19:02:47 GMT",
+    "connection": "keep-alive",
+    "keep-alive": "timeout=5"
+  },
+  "body": {
+    "Product": {
+      "name": "Test oryGuYFOsV",
+      "amount": 262,
+      "price": 62086,
+      "manufacturer": "Apple",
+      "createdOn": "2026-04-24T19:02:47.000Z",
+      "notes": "Notes VHsMeCYFbS",
+      "_id": "69ebbe574c0cd6973d017d7c"
+    },
+    "IsSuccess": true,
+    "ErrorMessage": null
+  }
+}

@@ -1,0 +1,112 @@
+{
+  "headers": {
+    "x-powered-by": "Express",
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "Authorization,X-User-Name",
+    "content-type": "application/json; charset=utf-8",
+    "content-length": "2019",
+    "etag": "W/\"7e3-TO73vdnd773yR1wlcWqV/Os4FTQ\"",
+    "date": "Fri, 24 Apr 2026 19:02:35 GMT",
+    "connection": "keep-alive",
+    "keep-alive": "timeout=5"
+  },
+  "body": {
+    "Order": {
+      "_id": "69ebbe4b4c0cd6973d016fa5",
+      "status": "Canceled",
+      "customer": {
+        "_id": "69ebbe4b4c0cd6973d016f98",
+        "email": "test1777057355325_XYCE@example.com",
+        "name": "test XXnSpIEPAwBHfuCkbZFvSEZTmldGqCErwBO",
+        "country": "Canada",
+        "city": "testCity MIsBQvEqxtW",
+        "street": "testStreet xNivq6n86l3CktOcnfrvYo7W2j1rU",
+        "house": 575,
+        "flat": 6053,
+        "phone": "+9090172998",
+        "createdOn": "2026-04-24T19:02:35.000Z",
+        "notes": "Notes yEEUjnuEkQEsWRkWRsgxhbfUdbbskHUhauRvNaGIBAAeaoedhjwfbJJLpkEcWSLISCvswphcParnwyHFeHBtgjuwbuJKnsWYnpBUArgQzMtLQkaEvrNzUzRdyenzuHhOJpnDnTvtuLWTBtPqQGTVTXQNDxqKuOgqURIaSQyAaNmUqjXfjDEnrkeDVYyheJgHfeNtuECJCeHUxLUvKGMXIhfvneNMcyUTLUaolHstHjmnCwQJZVQH"
+      },
+      "products": [
+        {
+          "_id": "69ebbe4b4c0cd6973d016f9d",
+          "name": "Test mCjadhrFAa",
+          "amount": 234,
+          "price": 57253,
+          "manufacturer": "Google",
+          "notes": "Notes qcOcCmHLRx",
+          "received": false
+        }
+      ],
+      "delivery": null,
+      "total_price": 57253,
+      "createdOn": "2026-04-24T19:02:35.000Z",
+      "comments": [],
+      "history": [
+        {
+          "status": "Canceled",
+          "customer": "69ebbe4b4c0cd6973d016f98",
+          "products": [
+            {
+              "_id": "69ebbe4b4c0cd6973d016f9d",
+              "name": "Test mCjadhrFAa",
+              "amount": 234,
+              "price": 57253,
+              "manufacturer": "Google",
+              "notes": "Notes qcOcCmHLRx",
+              "received": false
+            }
+          ],
+          "total_price": 57253,
+          "delivery": null,
+          "changedOn": "2026-04-24T19:02:35.000Z",
+          "action": "Order canceled",
+          "performer": {
+            "_id": "69ebbe024c0cd6973d016777",
+            "username": "admin@example.com",
+            "firstName": "Admin",
+            "lastName": "Admin",
+            "roles": [
+              "ADMIN"
+            ],
+            "createdOn": "2026/04/24 19:01:22"
+          },
+          "assignedManager": null
+        },
+        {
+          "status": "Draft",
+          "customer": "69ebbe4b4c0cd6973d016f98",
+          "products": [
+            {
+              "_id": "69ebbe4b4c0cd6973d016f9d",
+              "name": "Test mCjadhrFAa",
+              "amount": 234,
+              "price": 57253,
+              "manufacturer": "Google",
+              "notes": "Notes qcOcCmHLRx",
+              "received": false
+            }
+          ],
+          "total_price": 57253,
+          "delivery": null,
+          "changedOn": "2026-04-24T19:02:35.000Z",
+          "action": "Order created",
+          "performer": {
+            "_id": "69ebbe024c0cd6973d016777",
+            "username": "admin@example.com",
+            "firstName": "Admin",
+            "lastName": "Admin",
+            "roles": [
+              "ADMIN"
+            ],
+            "createdOn": "2026/04/24 19:01:22"
+          },
+          "assignedManager": null
+        }
+      ],
+      "assignedManager": null
+    },
+    "IsSuccess": true,
+    "ErrorMessage": null
+  }
+}

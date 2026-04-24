@@ -1,0 +1,26 @@
+{
+  "headers": {
+    "x-powered-by": "Express",
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "Authorization,X-User-Name",
+    "content-type": "application/json; charset=utf-8",
+    "content-length": "225",
+    "etag": "W/\"e1-dIBmnNqW65bTOwWEDK4cYSm+RoA\"",
+    "date": "Fri, 24 Apr 2026 19:03:23 GMT",
+    "connection": "keep-alive",
+    "keep-alive": "timeout=5"
+  },
+  "body": {
+    "Product": {
+      "name": "Test WdSGxDeqFn",
+      "amount": 896,
+      "price": 44504,
+      "manufacturer": "Amazon",
+      "createdOn": "2026-04-24T19:03:23.000Z",
+      "notes": "Notes zcuepmzrWq",
+      "_id": "69ebbe7b4c0cd6973d019520"
+    },
+    "IsSuccess": true,
+    "ErrorMessage": null
+  }
+}

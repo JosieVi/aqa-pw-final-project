@@ -1,0 +1,82 @@
+{
+  "headers": {
+    "x-powered-by": "Express",
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "Authorization,X-User-Name",
+    "content-type": "application/json; charset=utf-8",
+    "content-length": "2483",
+    "etag": "W/\"9b3-K6Sve2Lq8vYrP0++A5WXHEt0i7M\"",
+    "date": "Fri, 24 Apr 2026 19:03:16 GMT",
+    "connection": "keep-alive",
+    "keep-alive": "timeout=5"
+  },
+  "body": {
+    "Customers": [
+      {
+        "_id": "69ebbe744c0cd6973d018a04",
+        "email": "test1777057396803_UWFU@example.com",
+        "name": "test kIjZlQXvohSiSXZgBZGrKvZVzulHIOqrvaz",
+        "country": "Belarus",
+        "city": "testCity uvTfZPRnDKP",
+        "street": "testStreet n44g0Z0AyknETE8JyC4Ca57e5IFxf",
+        "house": 443,
+        "flat": 3493,
+        "phone": "+8054419284",
+        "createdOn": "2026-04-24T19:03:16.000Z",
+        "notes": "Notes LyIHrVpIfTqdjgnQTWwtUxFlAaXnjYBvIYdItTFCRXeKfOQcmqcElBgnkukWZZHLTEPhTIrVdkSbovsSzDQkQTRvOnvgMpRuyPlmXbJaATnecELeqXakJhNGvLtaUoIJMbvTHTujPBkAszOfiQseJTWBzguRXqwVKIpUPTHgyUpWcJyhWTnuEGolZyzClsfBkBVtOVWpCPiyiCjDAQNxcHyrcefQaPAkTIRCwVMMsUzwCHlKnfMH"
+      },
+      {
+        "_id": "69ebbe744c0cd6973d018a07",
+        "email": "test1777057396802_BPGR@example.com",
+        "name": "test YfQuizCbVqRnxxXSFDILRiKhcUlSwZpkEBh",
+        "country": "Belarus",
+        "city": "testCity yZxNpBAtVmu",
+        "street": "testStreet cK5sUm0X7AKdYlEMMuArmkavMVdhL",
+        "house": 302,
+        "flat": 1117,
+        "phone": "+9766462035",
+        "createdOn": "2026-04-24T19:03:16.000Z",
+        "notes": "Notes mfXgnMhOWBueQfIPHKTMYnQeFTYMSRhMRsWBcanwgcpfPzQBKVJlwhNOLXuxXrmuPJpVeqwaljRNUcNKeVCaOPZRkJDpZANdUwhWXvkJMPBllORVJFRURFHVqXjnWwFhDtNjKPAhQxXaEzJKQTLbybfwoRcZIbzGKiPUDfAeeiFIcYDTqfDpXTJLtnYGaPKYjNMvnoPWeatHWTEzVqZBrNGmSngahYmGWHdwVBPjJHEwYyQwrfok"
+      },
+      {
+        "_id": "69ebbe744c0cd6973d018a09",
+        "email": "test1777057396801_ZQQI@example.com",
+        "name": "test qHvZAhfCtlYFrGDUGCUMwsbRIBYrceLQowh",
+        "country": "Belarus",
+        "city": "testCity XznWGTunJxE",
+        "street": "testStreet hsDyFPZgf75VAsztBrhza8mST9Kx1",
+        "house": 800,
+        "flat": 5568,
+        "phone": "+1762125790",
+        "createdOn": "2026-04-24T19:03:16.000Z",
+        "notes": "Notes iwtakrJtcMhgjzCptLrzPLJIRybwSmJWtAKsNIStGxDiOFUGyvJrUyTLqxBLBBwONKtRZShUPzSfPGAGIzpiHsErnVhjAkFcYqkkbaHlrtXoYLeThrJSpTeuWhMVTesSvPhGzMkWBWGwQNZafkgZgFzVSJVtLAXfpRFXMoHYgOdhcMJNoSuJvFfmtSIpIeBQLQVaoGHDTJoBAjsIvAntrDlMomMZoXOwUZauoAVyYoIcWPzrKcOv"
+      },
+      {
+        "_id": "69ebbe524c0cd6973d01747f",
+        "email": "test1777057362165_VGCD@example.com",
+        "name": "test qAjVIWjdKeLWYlbpGPlvCDOwyTlZsYZojcQ",
+        "country": "Belarus",
+        "city": "testCity pYOalpXcmsP",
+        "street": "testStreet LpwMAdHatKOQSfAs16e437o7HuIWr",
+        "house": 135,
+        "flat": 6337,
+        "phone": "+7589043980",
+        "createdOn": "2026-04-24T19:02:42.000Z",
+        "notes": "Notes aonkVmLdhUZKyKrdXtgDfNIrByryIZelqZQomdFFcTInuCiuTtfKffEQuHGXHdEQdFZddlWQfChTOrSHDjNuzIfSXIPeppjbmzwWBnxLvIaFsyNksAQUcSmrsiPsabFXKDtHnICjtBPzqEzqLYweQngSUHOhuNMnPJupHjXsqaxUdXWBDGtjrayIrObpuhfUGxfvaLXaxcGeFvgivJQJTVkFYrwQeTBkBYZRYDqujIrnqQJwVywz"
+      }
+    ],
+    "total": 4,
+    "page": 1,
+    "limit": 10,
+    "search": "",
+    "country": [
+      "Belarus"
+    ],
+    "sorting": {
+      "sortField": "createdOn",
+      "sortOrder": "desc"
+    },
+    "IsSuccess": true,
+    "ErrorMessage": null
+  }
+}

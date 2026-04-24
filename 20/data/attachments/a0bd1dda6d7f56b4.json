@@ -1,0 +1,172 @@
+{
+  "headers": {
+    "x-powered-by": "Express",
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "Authorization,X-User-Name",
+    "content-type": "application/json; charset=utf-8",
+    "content-length": "3083",
+    "etag": "W/\"c0b-kn5eS900pFZq209x5Q2LSXE5Kug\"",
+    "date": "Fri, 24 Apr 2026 19:02:33 GMT",
+    "connection": "keep-alive",
+    "keep-alive": "timeout=5"
+  },
+  "body": {
+    "Order": {
+      "_id": "69ebbe494c0cd6973d016ea2",
+      "status": "In Process",
+      "customer": {
+        "_id": "69ebbe494c0cd6973d016e8d",
+        "email": "test1777057353263_RHTZ@example.com",
+        "name": "test fIlgVkguByVylahTYhteJTAKaLYKdYCLkcA",
+        "country": "Ukraine",
+        "city": "testCity sgrFbTkrSzq",
+        "street": "testStreet 8g3DNvuk6vyyqJTMGuGGN34YQw9hv",
+        "house": 19,
+        "flat": 2345,
+        "phone": "+9519050110",
+        "createdOn": "2026-04-24T19:02:33.000Z",
+        "notes": "Notes rzrBYxdsSjzwnhGXVJCLoxzNXktQUImEsxrIFqrzjAxtQVjIlyvIfWtymoikaLdmHhrxaATjumBnuuXknFozMZGRdjVXcNYtESfHyNftlUINJaZZLtpkNeFakwQGiiQyfCzQbteGuGduzYspWBNmnIjzzvAEvtNfyhpqooYRCkWwlGQwYfTqFLGBTpIQzRvapMsDWGjPJWmFuvQMORSlQNYSADVYHoqmhBxyxyYteQVfiqcDhmwR"
+      },
+      "products": [
+        {
+          "_id": "69ebbe494c0cd6973d016e95",
+          "name": "Test UHriGAlCwc",
+          "amount": 609,
+          "price": 58034,
+          "manufacturer": "Amazon",
+          "notes": "Notes IBZnVzpGwc",
+          "received": false
+        }
+      ],
+      "delivery": {
+        "address": {
+          "country": "Great Britain",
+          "city": "TestCity TTjUW",
+          "street": "TestStreet xSNozzYCJE",
+          "house": 443,
+          "flat": 4158
+        },
+        "finalDate": "2026-12-15T00:00:00.000Z",
+        "condition": "Pickup"
+      },
+      "total_price": 58034,
+      "createdOn": "2026-04-24T19:02:33.000Z",
+      "comments": [],
+      "history": [
+        {
+          "status": "In Process",
+          "customer": "69ebbe494c0cd6973d016e8d",
+          "products": [
+            {
+              "_id": "69ebbe494c0cd6973d016e95",
+              "name": "Test UHriGAlCwc",
+              "amount": 609,
+              "price": 58034,
+              "manufacturer": "Amazon",
+              "notes": "Notes IBZnVzpGwc",
+              "received": false
+            }
+          ],
+          "total_price": 58034,
+          "delivery": {
+            "address": {
+              "country": "Great Britain",
+              "city": "TestCity TTjUW",
+              "street": "TestStreet xSNozzYCJE",
+              "house": 443,
+              "flat": 4158
+            },
+            "finalDate": "2026-12-15T00:00:00.000Z",
+            "condition": "Pickup"
+          },
+          "changedOn": "2026-04-24T19:02:33.000Z",
+          "action": "Order processing started",
+          "performer": {
+            "_id": "69ebbe024c0cd6973d016777",
+            "username": "admin@example.com",
+            "firstName": "Admin",
+            "lastName": "Admin",
+            "roles": [
+              "ADMIN"
+            ],
+            "createdOn": "2026/04/24 19:01:22"
+          },
+          "assignedManager": null
+        },
+        {
+          "status": "Draft",
+          "customer": "69ebbe494c0cd6973d016e8d",
+          "products": [
+            {
+              "_id": "69ebbe494c0cd6973d016e95",
+              "name": "Test UHriGAlCwc",
+              "amount": 609,
+              "price": 58034,
+              "manufacturer": "Amazon",
+              "notes": "Notes IBZnVzpGwc",
+              "received": false
+            }
+          ],
+          "total_price": 58034,
+          "delivery": {
+            "address": {
+              "country": "Great Britain",
+              "city": "TestCity TTjUW",
+              "street": "TestStreet xSNozzYCJE",
+              "house": 443,
+              "flat": 4158
+            },
+            "finalDate": "2026-12-15T00:00:00.000Z",
+            "condition": "Pickup"
+          },
+          "changedOn": "2026-04-24T19:02:33.000Z",
+          "action": "Delivery Scheduled",
+          "performer": {
+            "_id": "69ebbe024c0cd6973d016777",
+            "username": "admin@example.com",
+            "firstName": "Admin",
+            "lastName": "Admin",
+            "roles": [
+              "ADMIN"
+            ],
+            "createdOn": "2026/04/24 19:01:22"
+          },
+          "assignedManager": null
+        },
+        {
+          "status": "Draft",
+          "customer": "69ebbe494c0cd6973d016e8d",
+          "products": [
+            {
+              "_id": "69ebbe494c0cd6973d016e95",
+              "name": "Test UHriGAlCwc",
+              "amount": 609,
+              "price": 58034,
+              "manufacturer": "Amazon",
+              "notes": "Notes IBZnVzpGwc",
+              "received": false
+            }
+          ],
+          "total_price": 58034,
+          "delivery": null,
+          "changedOn": "2026-04-24T19:02:33.000Z",
+          "action": "Order created",
+          "performer": {
+            "_id": "69ebbe024c0cd6973d016777",
+            "username": "admin@example.com",
+            "firstName": "Admin",
+            "lastName": "Admin",
+            "roles": [
+              "ADMIN"
+            ],
+            "createdOn": "2026/04/24 19:01:22"
+          },
+          "assignedManager": null
+        }
+      ],
+      "assignedManager": null
+    },
+    "IsSuccess": true,
+    "ErrorMessage": null
+  }
+}

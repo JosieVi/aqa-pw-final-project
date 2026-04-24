@@ -1,0 +1,26 @@
+{
+  "headers": {
+    "x-powered-by": "Express",
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "Authorization,X-User-Name",
+    "content-type": "application/json; charset=utf-8",
+    "content-length": "223",
+    "etag": "W/\"df-C9okrSK/Qa7wH7MlE/cPDPdLlmk\"",
+    "date": "Fri, 24 Apr 2026 19:02:45 GMT",
+    "connection": "keep-alive",
+    "keep-alive": "timeout=5"
+  },
+  "body": {
+    "Product": {
+      "name": "Test JCCMtVtPkj",
+      "amount": 780,
+      "price": 32392,
+      "manufacturer": "Sony",
+      "createdOn": "2026-04-24T19:02:45.000Z",
+      "notes": "Notes EAQGjHUpZU",
+      "_id": "69ebbe554c0cd6973d0179c4"
+    },
+    "IsSuccess": true,
+    "ErrorMessage": null
+  }
+}

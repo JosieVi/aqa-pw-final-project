@@ -1,0 +1,26 @@
+{
+  "headers": {
+    "x-powered-by": "Express",
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "Authorization,X-User-Name",
+    "content-type": "application/json; charset=utf-8",
+    "content-length": "228",
+    "etag": "W/\"e4-ogUjIH1rYBVWo6VO0SBcqfXnnxA\"",
+    "date": "Fri, 24 Apr 2026 19:02:42 GMT",
+    "connection": "keep-alive",
+    "keep-alive": "timeout=5"
+  },
+  "body": {
+    "Product": {
+      "name": "Test hhiChLUPMw",
+      "amount": 463,
+      "price": 70835,
+      "manufacturer": "Microsoft",
+      "createdOn": "2026-04-24T19:02:42.000Z",
+      "notes": "Notes VkIpuLLHWx",
+      "_id": "69ebbe524c0cd6973d017489"
+    },
+    "IsSuccess": true,
+    "ErrorMessage": null
+  }
+}

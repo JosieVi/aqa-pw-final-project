@@ -1,0 +1,26 @@
+{
+  "headers": {
+    "x-powered-by": "Express",
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "Authorization,X-User-Name",
+    "content-type": "application/json; charset=utf-8",
+    "content-length": "222",
+    "etag": "W/\"de-5yIM/rcVs5YfUkBMUEcIqp8+2fg\"",
+    "date": "Fri, 24 Apr 2026 19:02:42 GMT",
+    "connection": "keep-alive",
+    "keep-alive": "timeout=5"
+  },
+  "body": {
+    "Product": {
+      "name": "Test RgIHawlMkY",
+      "amount": 955,
+      "price": 127,
+      "manufacturer": "Tesla",
+      "createdOn": "2026-04-24T19:02:42.000Z",
+      "notes": "Notes vyQaBsmMBx",
+      "_id": "69ebbe524c0cd6973d0175b6"
+    },
+    "IsSuccess": true,
+    "ErrorMessage": null
+  }
+}

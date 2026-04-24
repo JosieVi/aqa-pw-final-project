@@ -1,0 +1,17 @@
+{
+  "headers": {
+    "x-powered-by": "Express",
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "Authorization,X-User-Name",
+    "content-type": "application/json; charset=utf-8",
+    "content-length": "108",
+    "etag": "W/\"6c-zify3XVktQ8XPNIdrZLa4xEn7YM\"",
+    "date": "Fri, 24 Apr 2026 19:03:20 GMT",
+    "connection": "keep-alive",
+    "keep-alive": "timeout=5"
+  },
+  "body": {
+    "IsSuccess": false,
+    "ErrorMessage": "Customer with email 'test1777057400015_VDNJ@example.com' already exists"
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "headers": {
+    "x-powered-by": "Express",
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "Authorization,X-User-Name",
+    "content-type": "application/json; charset=utf-8",
+    "content-length": "228",
+    "etag": "W/\"e4-YOP4JnxL+rEjM5p7vYTJOKN6phA\"",
+    "date": "Fri, 24 Apr 2026 19:03:30 GMT",
+    "connection": "keep-alive",
+    "keep-alive": "timeout=5"
+  },
+  "body": {
+    "Product": {
+      "name": "Test xRMdqUHASk",
+      "amount": 453,
+      "price": 10787,
+      "manufacturer": "Microsoft",
+      "createdOn": "2026-04-24T19:03:30.000Z",
+      "notes": "Notes HxmtDMPuOO",
+      "_id": "69ebbe824c0cd6973d019d52"
+    },
+    "IsSuccess": true,
+    "ErrorMessage": null
+  }
+}

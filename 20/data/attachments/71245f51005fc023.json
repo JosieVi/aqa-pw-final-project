@@ -1,0 +1,26 @@
+{
+  "headers": {
+    "x-powered-by": "Express",
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "Authorization,X-User-Name",
+    "content-type": "application/json; charset=utf-8",
+    "content-length": "226",
+    "etag": "W/\"e2-DV+JakFehZ169Ehc+U4U5qLlyR4\"",
+    "date": "Fri, 24 Apr 2026 19:03:31 GMT",
+    "connection": "keep-alive",
+    "keep-alive": "timeout=5"
+  },
+  "body": {
+    "Product": {
+      "name": "Test RXrRjLMKgk",
+      "amount": 758,
+      "price": 38015,
+      "manufacturer": "Samsung",
+      "createdOn": "2026-04-24T19:03:31.000Z",
+      "notes": "Notes hvOvYXTClu",
+      "_id": "69ebbe834c0cd6973d019f29"
+    },
+    "IsSuccess": true,
+    "ErrorMessage": null
+  }
+}

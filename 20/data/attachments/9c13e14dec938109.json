@@ -1,0 +1,26 @@
+{
+  "headers": {
+    "x-powered-by": "Express",
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "Authorization,X-User-Name",
+    "content-type": "application/json; charset=utf-8",
+    "content-length": "225",
+    "etag": "W/\"e1-d3RUiEh1ZVLHf8fPzRQx5X1aiSo\"",
+    "date": "Fri, 24 Apr 2026 19:03:15 GMT",
+    "connection": "keep-alive",
+    "keep-alive": "timeout=5"
+  },
+  "body": {
+    "Product": {
+      "name": "Test kFVXWSPyoL",
+      "amount": 381,
+      "price": 82742,
+      "manufacturer": "Amazon",
+      "createdOn": "2026-04-24T19:03:15.000Z",
+      "notes": "Notes iJojvlbgNU",
+      "_id": "69ebbe734c0cd6973d01884a"
+    },
+    "IsSuccess": true,
+    "ErrorMessage": null
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "headers": {
+    "x-powered-by": "Express",
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "Authorization,X-User-Name",
+    "content-type": "application/json; charset=utf-8",
+    "content-length": "224",
+    "etag": "W/\"e0-BhuVzqM3AVx36Ud3z2vHGznF3IU\"",
+    "date": "Fri, 24 Apr 2026 19:03:20 GMT",
+    "connection": "keep-alive",
+    "keep-alive": "timeout=5"
+  },
+  "body": {
+    "Product": {
+      "name": "Test HyapukLuBR",
+      "amount": 301,
+      "price": 84084,
+      "manufacturer": "Tesla",
+      "createdOn": "2026-04-24T19:03:20.000Z",
+      "notes": "Notes mPnlTiqrxt",
+      "_id": "69ebbe784c0cd6973d018fc0"
+    },
+    "IsSuccess": true,
+    "ErrorMessage": null
+  }
+}

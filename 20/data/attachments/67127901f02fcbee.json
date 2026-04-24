@@ -1,0 +1,26 @@
+{
+  "headers": {
+    "x-powered-by": "Express",
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "Authorization,X-User-Name",
+    "content-type": "application/json; charset=utf-8",
+    "content-length": "224",
+    "etag": "W/\"e0-vLX+aexOYoYUZnCFnx7Aa6GzRVU\"",
+    "date": "Fri, 24 Apr 2026 19:02:54 GMT",
+    "connection": "keep-alive",
+    "keep-alive": "timeout=5"
+  },
+  "body": {
+    "Product": {
+      "name": "Test QlfNKexTeW",
+      "amount": 386,
+      "price": 43703,
+      "manufacturer": "Apple",
+      "createdOn": "2026-04-24T19:02:54.000Z",
+      "notes": "Notes cHzMtssgms",
+      "_id": "69ebbe5e4c0cd6973d018128"
+    },
+    "IsSuccess": true,
+    "ErrorMessage": null
+  }
+}

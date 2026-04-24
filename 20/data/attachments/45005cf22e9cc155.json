@@ -1,0 +1,17 @@
+{
+  "headers": {
+    "x-powered-by": "Express",
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "Authorization,X-User-Name",
+    "content-type": "application/json; charset=utf-8",
+    "content-length": "92",
+    "etag": "W/\"5c-0Fb03RTwV/b43vzw4hwSMQkQzG0\"",
+    "date": "Fri, 24 Apr 2026 19:03:35 GMT",
+    "connection": "keep-alive",
+    "keep-alive": "timeout=5"
+  },
+  "body": {
+    "IsSuccess": false,
+    "ErrorMessage": "Product with id '69ebbe874c0cd6973d01a5cc' wasn't found"
+  }
+}

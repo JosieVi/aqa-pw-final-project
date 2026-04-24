@@ -1,0 +1,26 @@
+{
+  "headers": {
+    "x-powered-by": "Express",
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "Authorization,X-User-Name",
+    "content-type": "application/json; charset=utf-8",
+    "content-length": "227",
+    "etag": "W/\"e3-j63spW3PrzKgj5wNXmpGTC+j7yI\"",
+    "date": "Fri, 24 Apr 2026 19:02:46 GMT",
+    "connection": "keep-alive",
+    "keep-alive": "timeout=5"
+  },
+  "body": {
+    "Product": {
+      "name": "Test UhAnjunkJE",
+      "amount": 96,
+      "price": 93171,
+      "manufacturer": "Microsoft",
+      "createdOn": "2026-04-24T19:02:46.000Z",
+      "notes": "Notes rBvDdgdbok",
+      "_id": "69ebbe564c0cd6973d017ba1"
+    },
+    "IsSuccess": true,
+    "ErrorMessage": null
+  }
+}

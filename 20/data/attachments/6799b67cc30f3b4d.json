@@ -1,0 +1,26 @@
+{
+  "headers": {
+    "x-powered-by": "Express",
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "Authorization,X-User-Name",
+    "content-type": "application/json; charset=utf-8",
+    "content-length": "225",
+    "etag": "W/\"e1-wQzADiVhxwg8HaPYBqr4aRYpYIE\"",
+    "date": "Fri, 24 Apr 2026 19:02:31 GMT",
+    "connection": "keep-alive",
+    "keep-alive": "timeout=5"
+  },
+  "body": {
+    "Product": {
+      "name": "Test bLNSMOEYUD",
+      "amount": 716,
+      "price": 90736,
+      "manufacturer": "Amazon",
+      "createdOn": "2026-04-24T19:02:31.000Z",
+      "notes": "Notes aPXrCXvgHT",
+      "_id": "69ebbe474c0cd6973d016d5d"
+    },
+    "IsSuccess": true,
+    "ErrorMessage": null
+  }
+}

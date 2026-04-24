@@ -1,0 +1,26 @@
+{
+  "headers": {
+    "x-powered-by": "Express",
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "Authorization,X-User-Name",
+    "content-type": "application/json; charset=utf-8",
+    "content-length": "223",
+    "etag": "W/\"df-+cxKtIJd1Xq02Yr0C8mhgb3U+bk\"",
+    "date": "Fri, 24 Apr 2026 19:03:29 GMT",
+    "connection": "keep-alive",
+    "keep-alive": "timeout=5"
+  },
+  "body": {
+    "Product": {
+      "name": "Test KRPdHhTNOz",
+      "amount": 174,
+      "price": 5283,
+      "manufacturer": "Apple",
+      "createdOn": "2026-04-24T19:03:29.000Z",
+      "notes": "Notes swSCDoWTPW",
+      "_id": "69ebbe814c0cd6973d0199d1"
+    },
+    "IsSuccess": true,
+    "ErrorMessage": null
+  }
+}

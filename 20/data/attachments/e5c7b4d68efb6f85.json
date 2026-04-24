@@ -1,0 +1,26 @@
+{
+  "headers": {
+    "x-powered-by": "Express",
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "Authorization,X-User-Name",
+    "content-type": "application/json; charset=utf-8",
+    "content-length": "224",
+    "etag": "W/\"e0-Md+t1GDMj7vWXhUs+56CI53nz8c\"",
+    "date": "Fri, 24 Apr 2026 19:02:47 GMT",
+    "connection": "keep-alive",
+    "keep-alive": "timeout=5"
+  },
+  "body": {
+    "Product": {
+      "name": "Test OXHICqtyfk",
+      "amount": 120,
+      "price": 2251,
+      "manufacturer": "Amazon",
+      "createdOn": "2026-04-24T19:02:47.000Z",
+      "notes": "Notes nKlyQHfksJ",
+      "_id": "69ebbe574c0cd6973d017d97"
+    },
+    "IsSuccess": true,
+    "ErrorMessage": null
+  }
+}
