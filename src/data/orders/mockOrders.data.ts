@@ -1,8 +1,8 @@
 import { COUNTRIES } from 'data/customers/countries.data';
 import { MANUFACTURERS } from 'data/products/manufacturers.data';
-import { ICustomerEntity } from 'types/customer.types';
+import { ICustomerEntity, ICustomerListResponse } from 'types/customer.types';
 import { IManager, IDelivery, IHistory, IComment, IOrder, IOrderSearchResponse } from 'types/order.types';
-import { IProduct } from 'types/product.types';
+import { IProduct, IProductsListResponse } from 'types/product.types';
 import { generateUniqueId } from 'utils/generateUniqueID.utils';
 import { DELIVERY } from './delivery.data';
 import { ORDER_HISTORY_ACTIONS } from './history.data';
@@ -215,4 +215,16 @@ export const MOCK_ORDERS_LIST_API_RESPONSE: IOrderSearchResponse = {
     sortField: 'createdOn',
     sortOrder: 'desc',
   },
+};
+
+export const MOCK_PRODUCTS_LIST_API_RESPONSE: IProductsListResponse = {
+  Products: [MOCK_PRODUCT_ONE],
+  ErrorMessage: null,
+  IsSuccess: true,
+};
+
+export const MOCK_CUSTOMERS_LIST_API_RESPONSE: ICustomerListResponse = {
+  Customers: [MOCK_CUSTOMER_ALICE, MOCK_CUSTOMER_BOB, MOCK_CUSTOMER_CHARLIE],
+  ErrorMessage: null,
+  IsSuccess: true,
 };

@@ -1,5 +1,5 @@
 import { expect, test } from 'fixtures/index.fixture';
-import { MOCK_ORDERS_LIST_API_RESPONSE, MOCK_PRODUCT_ONE } from 'data/orders/mockOrders.data';
+import { MOCK_ORDERS_LIST_API_RESPONSE, MOCK_PRODUCTS_LIST_API_RESPONSE, MOCK_CUSTOMERS_LIST_API_RESPONSE } from 'data/orders/mockOrders.data';
 import { TAGS } from 'data/testTags.data';
 import { ORDER_STATUS } from 'data/orders/statuses.data';
 import { STATUS_CODES } from 'data/statusCodes';
@@ -22,7 +22,8 @@ test.describe('[UI] [Orders] [Modals] [Create Order Modal]', () => {
   test.beforeEach(async ({ homeUIService, ordersPage, mock }) => {
     await homeUIService.openAsLoggedInUser();
     await mock.orders(MOCK_ORDERS_LIST_API_RESPONSE, STATUS_CODES.OK);
-    await mock.products(MOCK_PRODUCT_ONE, STATUS_CODES.OK);
+    await mock.allCustomers(MOCK_CUSTOMERS_LIST_API_RESPONSE, STATUS_CODES.OK);
+    await mock.allProducts(MOCK_PRODUCTS_LIST_API_RESPONSE, STATUS_CODES.OK);
     await homeUIService.openModule('Orders');
     await ordersPage.waitForOpened();
   });

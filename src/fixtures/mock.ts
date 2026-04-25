@@ -2,9 +2,9 @@ import { Page } from '@playwright/test';
 import { apiConfig } from 'config/api-config';
 import { STATUS_CODES } from 'data/statusCodes';
 import { OrdersSortField, SortDirection } from 'types/api.types';
-import { ISingleCustomerResponse } from 'types/customer.types';
+import { ICustomerListResponse, ISingleCustomerResponse } from 'types/customer.types';
 import { IOrderSearchResponse } from 'types/order.types';
-import { IProduct, IProductResponse } from 'types/product.types';
+import { IProductResponse, IProductsListResponse } from 'types/product.types';
 
 export class Mock {
   constructor(private page: Page) {}
@@ -29,8 +29,28 @@ export class Mock {
     });
   }
 
-  async products(body: IProduct, statusCode: STATUS_CODES = STATUS_CODES.OK) {
-    this.page.route(/\/api\/products(\?.*)?$/, async (route) => {
+  async allCustomers(body: ICustomerListResponse, statusCode: STATUS_CODES = STATUS_CODES.OK) {
+    await this.page.route(/\/api\/customers\/all$/, async (route) => {
+      await route.fulfill({
+        status: statusCode,
+        contentType: 'application/json',
+        body: JSON.stringify(body),
+      });
+    });
+  }
+
+  async products(body: IProductsListResponse, statusCode: STATUS_CODES = STATUS_CODES.OK) {
+    await this.page.route(/\/api\/products(\?.*)?$/, async (route) => {
+      await route.fulfill({
+        status: statusCode,
+        contentType: 'application/json',
+        body: JSON.stringify(body),
+      });
+    });
+  }
+
+  async allProducts(body: IProductsListResponse, statusCode: STATUS_CODES = STATUS_CODES.OK) {
+    await this.page.route(/\/api\/products\/all$/, async (route) => {
       await route.fulfill({
         status: statusCode,
         contentType: 'application/json',
