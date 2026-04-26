@@ -1,0 +1,26 @@
+{
+  "headers": {
+    "x-powered-by": "Express",
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "Authorization,X-User-Name",
+    "content-type": "application/json; charset=utf-8",
+    "content-length": "224",
+    "etag": "W/\"e0-SoNHwEQJbpDXRIFA2nPGwnXGXXQ\"",
+    "date": "Sun, 26 Apr 2026 21:08:11 GMT",
+    "connection": "keep-alive",
+    "keep-alive": "timeout=5"
+  },
+  "body": {
+    "Product": {
+      "name": "Test VNTnkFJgEL",
+      "amount": 185,
+      "price": 63691,
+      "manufacturer": "Tesla",
+      "createdOn": "2026-04-26T21:08:11.000Z",
+      "notes": "Notes aYQpQQHFnf",
+      "_id": "69ee7ebb8b131b5ff4bf8b1c"
+    },
+    "IsSuccess": true,
+    "ErrorMessage": null
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "headers": {
+    "x-powered-by": "Express",
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "Authorization,X-User-Name",
+    "content-type": "application/json; charset=utf-8",
+    "content-length": "223",
+    "etag": "W/\"df-DlCyhO/YavbKM+KVnh8tUnW6PJQ\"",
+    "date": "Sun, 26 Apr 2026 21:09:28 GMT",
+    "connection": "keep-alive",
+    "keep-alive": "timeout=5"
+  },
+  "body": {
+    "Product": {
+      "name": "Test LLxRBXtpoH",
+      "amount": 379,
+      "price": 15608,
+      "manufacturer": "Sony",
+      "createdOn": "2026-04-26T21:09:28.000Z",
+      "notes": "Notes TEjQsCelaJ",
+      "_id": "69ee7f088b131b5ff4bfc94f"
+    },
+    "IsSuccess": true,
+    "ErrorMessage": null
+  }
+}

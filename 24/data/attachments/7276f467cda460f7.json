@@ -1,0 +1,26 @@
+{
+  "headers": {
+    "x-powered-by": "Express",
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "Authorization,X-User-Name",
+    "content-type": "application/json; charset=utf-8",
+    "content-length": "228",
+    "etag": "W/\"e4-jhFnYM23metMhK5Npp6A/XaGU4Y\"",
+    "date": "Sun, 26 Apr 2026 21:09:21 GMT",
+    "connection": "keep-alive",
+    "keep-alive": "timeout=5"
+  },
+  "body": {
+    "Product": {
+      "name": "Test ZUobVxSGYg",
+      "amount": 425,
+      "price": 60228,
+      "manufacturer": "Microsoft",
+      "createdOn": "2026-04-26T21:09:21.000Z",
+      "notes": "Notes NYCeLCMNBc",
+      "_id": "69ee7f018b131b5ff4bfc015"
+    },
+    "IsSuccess": true,
+    "ErrorMessage": null
+  }
+}

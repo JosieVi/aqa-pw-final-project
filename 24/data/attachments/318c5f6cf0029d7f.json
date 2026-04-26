@@ -1,0 +1,26 @@
+{
+  "headers": {
+    "x-powered-by": "Express",
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "Authorization,X-User-Name",
+    "content-type": "application/json; charset=utf-8",
+    "content-length": "226",
+    "etag": "W/\"e2-rPge7yxP+soJvXz8iQDV7EyIuHY\"",
+    "date": "Sun, 26 Apr 2026 21:09:08 GMT",
+    "connection": "keep-alive",
+    "keep-alive": "timeout=5"
+  },
+  "body": {
+    "Product": {
+      "name": "Test BNCVcrRCbC",
+      "amount": 209,
+      "price": 32867,
+      "manufacturer": "Samsung",
+      "createdOn": "2026-04-26T21:09:08.000Z",
+      "notes": "Notes mByWoCYmQI",
+      "_id": "69ee7ef48b131b5ff4bfac3b"
+    },
+    "IsSuccess": true,
+    "ErrorMessage": null
+  }
+}

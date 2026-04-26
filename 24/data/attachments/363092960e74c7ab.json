@@ -1,0 +1,26 @@
+{
+  "headers": {
+    "x-powered-by": "Express",
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "Authorization,X-User-Name",
+    "content-type": "application/json; charset=utf-8",
+    "content-length": "223",
+    "etag": "W/\"df-d1cHxD1QFC8dU4tQbwhExtpM5/c\"",
+    "date": "Sun, 26 Apr 2026 21:09:22 GMT",
+    "connection": "keep-alive",
+    "keep-alive": "timeout=5"
+  },
+  "body": {
+    "Product": {
+      "name": "Test ZsCgnljfea",
+      "amount": 174,
+      "price": 33959,
+      "manufacturer": "Sony",
+      "createdOn": "2026-04-26T21:09:22.000Z",
+      "notes": "Notes eMVYBhzmDN",
+      "_id": "69ee7f028b131b5ff4bfc178"
+    },
+    "IsSuccess": true,
+    "ErrorMessage": null
+  }
+}

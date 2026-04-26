@@ -1,0 +1,26 @@
+{
+  "headers": {
+    "x-powered-by": "Express",
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "Authorization,X-User-Name",
+    "content-type": "application/json; charset=utf-8",
+    "content-length": "227",
+    "etag": "W/\"e3-BFysbt3owq+4mws3DV9P9W8WRek\"",
+    "date": "Sun, 26 Apr 2026 21:09:26 GMT",
+    "connection": "keep-alive",
+    "keep-alive": "timeout=5"
+  },
+  "body": {
+    "Product": {
+      "name": "Test HDBNFllElS",
+      "amount": 19,
+      "price": 11652,
+      "manufacturer": "Microsoft",
+      "createdOn": "2026-04-26T21:09:26.000Z",
+      "notes": "Notes vIwRihDMjq",
+      "_id": "69ee7f068b131b5ff4bfc84c"
+    },
+    "IsSuccess": true,
+    "ErrorMessage": null
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "headers": {
+    "x-powered-by": "Express",
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "Authorization,X-User-Name",
+    "content-type": "application/json; charset=utf-8",
+    "content-length": "224",
+    "etag": "W/\"e0-SR1DrQaTDPHFvqvmgNEMlV3Vb40\"",
+    "date": "Sun, 26 Apr 2026 21:09:20 GMT",
+    "connection": "keep-alive",
+    "keep-alive": "timeout=5"
+  },
+  "body": {
+    "Product": {
+      "name": "Test sDCLHcGCcY",
+      "amount": 840,
+      "price": 71150,
+      "manufacturer": "Apple",
+      "createdOn": "2026-04-26T21:09:20.000Z",
+      "notes": "Notes zVlggIKbAH",
+      "_id": "69ee7f008b131b5ff4bfbee8"
+    },
+    "IsSuccess": true,
+    "ErrorMessage": null
+  }
+}

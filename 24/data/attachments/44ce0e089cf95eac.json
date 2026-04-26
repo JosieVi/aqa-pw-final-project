@@ -1,0 +1,26 @@
+{
+  "headers": {
+    "x-powered-by": "Express",
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "Authorization,X-User-Name",
+    "content-type": "application/json; charset=utf-8",
+    "content-length": "225",
+    "etag": "W/\"e1-/CH/KQZRqJ//PFkPI4xKwupZ28U\"",
+    "date": "Sun, 26 Apr 2026 21:08:35 GMT",
+    "connection": "keep-alive",
+    "keep-alive": "timeout=5"
+  },
+  "body": {
+    "Product": {
+      "name": "Test jwnHUOBoAm",
+      "amount": 106,
+      "price": 51382,
+      "manufacturer": "Amazon",
+      "createdOn": "2026-04-26T21:08:35.000Z",
+      "notes": "Notes bTBwzDmeEd",
+      "_id": "69ee7ed38b131b5ff4bf99f6"
+    },
+    "IsSuccess": true,
+    "ErrorMessage": null
+  }
+}

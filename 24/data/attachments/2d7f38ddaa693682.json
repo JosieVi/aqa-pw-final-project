@@ -1,0 +1,26 @@
+{
+  "headers": {
+    "x-powered-by": "Express",
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "Authorization,X-User-Name",
+    "content-type": "application/json; charset=utf-8",
+    "content-length": "224",
+    "etag": "W/\"e0-+aNK9sSq8Chi+lKh1zQU7m7slwk\"",
+    "date": "Sun, 26 Apr 2026 21:08:15 GMT",
+    "connection": "keep-alive",
+    "keep-alive": "timeout=5"
+  },
+  "body": {
+    "Product": {
+      "name": "Test dSHIOCFwPA",
+      "amount": 665,
+      "price": 89547,
+      "manufacturer": "Tesla",
+      "createdOn": "2026-04-26T21:08:15.000Z",
+      "notes": "Notes dCvhUIPxAg",
+      "_id": "69ee7ebf8b131b5ff4bf8ce7"
+    },
+    "IsSuccess": true,
+    "ErrorMessage": null
+  }
+}

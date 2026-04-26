@@ -1,0 +1,186 @@
+{
+  "headers": {
+    "x-powered-by": "Express",
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "Authorization,X-User-Name",
+    "content-type": "application/json; charset=utf-8",
+    "content-length": "3289",
+    "etag": "W/\"cd9-2oPQZAwsZsO86iTtdUE4zlsifcY\"",
+    "date": "Sun, 26 Apr 2026 21:08:28 GMT",
+    "connection": "keep-alive",
+    "keep-alive": "timeout=5"
+  },
+  "body": {
+    "Order": {
+      "_id": "69ee7ecc8b131b5ff4bf9465",
+      "status": "Draft",
+      "customer": {
+        "_id": "69ee7ecc8b131b5ff4bf944a",
+        "email": "test1777237708033_UASZ@example.com",
+        "name": "test grDiFgXPTtkYNbdJmbaGuWNgUWTXVHWJrTD",
+        "country": "Canada",
+        "city": "testCity sWLITfPAXKm",
+        "street": "testStreet I5lrpwLTpzWst5ut6AsONsP6BJuox",
+        "house": 649,
+        "flat": 9139,
+        "phone": "+9987266172",
+        "createdOn": "2026-04-26T21:08:28.000Z",
+        "notes": "Notes ThYLdVgtbCsFJBdAubQLlurRdXpghrKlfapIxNQGOkcIhhaSOqvSuEomFFRrrGMClJDlbkKIsFfklTxpuCsRkOhQrlNHdVjHQEpjXoSXSBLqcbMXvkyJizYDZLiFvWpTpTZsTnEkrvnvKrCmzEmSkRarotnlAoKdmwXwuAYYDmqtjruhcaERrtgIYNoisrnGeDnKEqjZVjTxNncTJYTbRqzLdPLGFuRZkqRhXthxVNNdrcwAcQPJ"
+      },
+      "products": [
+        {
+          "_id": "69ee7ecc8b131b5ff4bf944f",
+          "name": "Test fzzwaJVzXF",
+          "amount": 498,
+          "price": 8787,
+          "manufacturer": "Google",
+          "notes": "Notes sVugJrLpqw",
+          "received": false
+        },
+        {
+          "_id": "69ee7ecc8b131b5ff4bf9457",
+          "name": "Test bXspQDiHUv",
+          "amount": 520,
+          "price": 88277,
+          "manufacturer": "Xiaomi",
+          "notes": "Notes hDNdlTFyeg",
+          "received": false
+        },
+        {
+          "_id": "69ee7ecc8b131b5ff4bf9459",
+          "name": "Test BwVpfLRgzi",
+          "amount": 446,
+          "price": 16751,
+          "manufacturer": "Google",
+          "notes": "Notes BopDPpDSxn",
+          "received": false
+        }
+      ],
+      "delivery": {
+        "address": {
+          "country": "Russia",
+          "city": "TestCity KpEjQ",
+          "street": "TestStreet NsDTlgDkXZ",
+          "house": 140,
+          "flat": 3259
+        },
+        "finalDate": "2026-07-13T00:00:00.000Z",
+        "condition": "Delivery"
+      },
+      "total_price": 113815,
+      "createdOn": "2026-04-26T21:08:28.000Z",
+      "comments": [],
+      "history": [
+        {
+          "status": "Draft",
+          "customer": "69ee7ecc8b131b5ff4bf944a",
+          "products": [
+            {
+              "_id": "69ee7ecc8b131b5ff4bf944f",
+              "name": "Test fzzwaJVzXF",
+              "amount": 498,
+              "price": 8787,
+              "manufacturer": "Google",
+              "notes": "Notes sVugJrLpqw",
+              "received": false
+            },
+            {
+              "_id": "69ee7ecc8b131b5ff4bf9457",
+              "name": "Test bXspQDiHUv",
+              "amount": 520,
+              "price": 88277,
+              "manufacturer": "Xiaomi",
+              "notes": "Notes hDNdlTFyeg",
+              "received": false
+            },
+            {
+              "_id": "69ee7ecc8b131b5ff4bf9459",
+              "name": "Test BwVpfLRgzi",
+              "amount": 446,
+              "price": 16751,
+              "manufacturer": "Google",
+              "notes": "Notes BopDPpDSxn",
+              "received": false
+            }
+          ],
+          "total_price": 113815,
+          "delivery": {
+            "address": {
+              "country": "Russia",
+              "city": "TestCity KpEjQ",
+              "street": "TestStreet NsDTlgDkXZ",
+              "house": 140,
+              "flat": 3259
+            },
+            "finalDate": "2026-07-13T00:00:00.000Z",
+            "condition": "Delivery"
+          },
+          "changedOn": "2026-04-26T21:08:28.000Z",
+          "action": "Delivery Scheduled",
+          "performer": {
+            "_id": "69ee7e7e8b131b5ff4bf89d7",
+            "username": "admin@example.com",
+            "firstName": "Admin",
+            "lastName": "Admin",
+            "roles": [
+              "ADMIN"
+            ],
+            "createdOn": "2026/04/26 21:07:10"
+          },
+          "assignedManager": null
+        },
+        {
+          "status": "Draft",
+          "customer": "69ee7ecc8b131b5ff4bf944a",
+          "products": [
+            {
+              "_id": "69ee7ecc8b131b5ff4bf944f",
+              "name": "Test fzzwaJVzXF",
+              "amount": 498,
+              "price": 8787,
+              "manufacturer": "Google",
+              "notes": "Notes sVugJrLpqw",
+              "received": false
+            },
+            {
+              "_id": "69ee7ecc8b131b5ff4bf9457",
+              "name": "Test bXspQDiHUv",
+              "amount": 520,
+              "price": 88277,
+              "manufacturer": "Xiaomi",
+              "notes": "Notes hDNdlTFyeg",
+              "received": false
+            },
+            {
+              "_id": "69ee7ecc8b131b5ff4bf9459",
+              "name": "Test BwVpfLRgzi",
+              "amount": 446,
+              "price": 16751,
+              "manufacturer": "Google",
+              "notes": "Notes BopDPpDSxn",
+              "received": false
+            }
+          ],
+          "total_price": 113815,
+          "delivery": null,
+          "changedOn": "2026-04-26T21:08:28.000Z",
+          "action": "Order created",
+          "performer": {
+            "_id": "69ee7e7e8b131b5ff4bf89d7",
+            "username": "admin@example.com",
+            "firstName": "Admin",
+            "lastName": "Admin",
+            "roles": [
+              "ADMIN"
+            ],
+            "createdOn": "2026/04/26 21:07:10"
+          },
+          "assignedManager": null
+        }
+      ],
+      "assignedManager": null
+    },
+    "IsSuccess": true,
+    "ErrorMessage": null
+  }
+}

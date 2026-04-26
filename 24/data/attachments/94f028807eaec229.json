@@ -1,0 +1,26 @@
+{
+  "headers": {
+    "x-powered-by": "Express",
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "Authorization,X-User-Name",
+    "content-type": "application/json; charset=utf-8",
+    "content-length": "225",
+    "etag": "W/\"e1-ueAxBQVXBsX0vnFKfqASN9uTh9g\"",
+    "date": "Sun, 26 Apr 2026 21:08:40 GMT",
+    "connection": "keep-alive",
+    "keep-alive": "timeout=5"
+  },
+  "body": {
+    "Product": {
+      "name": "Test KAFcCDDpDE",
+      "amount": 602,
+      "price": 26561,
+      "manufacturer": "Amazon",
+      "createdOn": "2026-04-26T21:08:40.000Z",
+      "notes": "Notes KhbdrylzuH",
+      "_id": "69ee7ed88b131b5ff4bfa1af"
+    },
+    "IsSuccess": true,
+    "ErrorMessage": null
+  }
+}

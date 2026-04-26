@@ -1,0 +1,30 @@
+{
+  "headers": {
+    "x-powered-by": "Express",
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "Authorization,X-User-Name",
+    "content-type": "application/json; charset=utf-8",
+    "content-length": "623",
+    "etag": "W/\"26f-/kEOytZJ73VqL/ffUudKDhkDdM4\"",
+    "date": "Sun, 26 Apr 2026 21:09:12 GMT",
+    "connection": "keep-alive",
+    "keep-alive": "timeout=5"
+  },
+  "body": {
+    "Customer": {
+      "_id": "69ee7ef88b131b5ff4bfb0df",
+      "email": "test1777237751288_MVTF@example.com",
+      "name": "test FIMXlMQhGmsbRjgsgfPnJfiyGSNkcKJcsIP",
+      "country": "USA",
+      "city": "testCity RFxpwxnyNSb",
+      "street": "testStreet slVBKPBI5Zs8ZX6gyQHRaT6m0TJWb",
+      "house": 511,
+      "flat": 8211,
+      "phone": "+1735200253",
+      "createdOn": "2026-04-26T21:09:12.000Z",
+      "notes": "NNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNN"
+    },
+    "IsSuccess": true,
+    "ErrorMessage": null
+  }
+}

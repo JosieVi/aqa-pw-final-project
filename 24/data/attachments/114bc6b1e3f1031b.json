@@ -1,0 +1,26 @@
+{
+  "headers": {
+    "x-powered-by": "Express",
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "Authorization,X-User-Name",
+    "content-type": "application/json; charset=utf-8",
+    "content-length": "224",
+    "etag": "W/\"e0-v9k587uWMeB3T91NBlx/5US2GdM\"",
+    "date": "Sun, 26 Apr 2026 21:09:27 GMT",
+    "connection": "keep-alive",
+    "keep-alive": "timeout=5"
+  },
+  "body": {
+    "Product": {
+      "name": "Test DkjlundLUX",
+      "amount": 130,
+      "price": 4373,
+      "manufacturer": "Xiaomi",
+      "createdOn": "2026-04-26T21:09:27.000Z",
+      "notes": "Notes OiGpjoVgzu",
+      "_id": "69ee7f078b131b5ff4bfc8bc"
+    },
+    "IsSuccess": true,
+    "ErrorMessage": null
+  }
+}

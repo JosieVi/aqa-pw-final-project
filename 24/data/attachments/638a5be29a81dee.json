@@ -1,0 +1,26 @@
+{
+  "headers": {
+    "x-powered-by": "Express",
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "Authorization,X-User-Name",
+    "content-type": "application/json; charset=utf-8",
+    "content-length": "219",
+    "etag": "W/\"db-ko8zWOn6SauV9b8s0YyoRmOSVIY\"",
+    "date": "Sun, 26 Apr 2026 21:09:25 GMT",
+    "connection": "keep-alive",
+    "keep-alive": "timeout=5"
+  },
+  "body": {
+    "Product": {
+      "name": "Test wgwbgfZvsL",
+      "amount": 894,
+      "price": 1,
+      "manufacturer": "Sony",
+      "createdOn": "2026-04-26T21:09:25.000Z",
+      "notes": "Notes vLrfeOnqQK",
+      "_id": "69ee7f058b131b5ff4bfc7fd"
+    },
+    "IsSuccess": true,
+    "ErrorMessage": null
+  }
+}

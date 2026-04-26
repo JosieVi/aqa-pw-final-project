@@ -1,0 +1,26 @@
+{
+  "headers": {
+    "x-powered-by": "Express",
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "Authorization,X-User-Name",
+    "content-type": "application/json; charset=utf-8",
+    "content-length": "225",
+    "etag": "W/\"e1-k0kLkQLo9Mg5G8e6BmvL5hsnFjI\"",
+    "date": "Sun, 26 Apr 2026 21:09:09 GMT",
+    "connection": "keep-alive",
+    "keep-alive": "timeout=5"
+  },
+  "body": {
+    "Product": {
+      "name": "Test fiTKfbTrAI",
+      "amount": 549,
+      "price": 75158,
+      "manufacturer": "Amazon",
+      "createdOn": "2026-04-26T21:09:09.000Z",
+      "notes": "Notes kIXCFiUqoK",
+      "_id": "69ee7ef58b131b5ff4bfad0e"
+    },
+    "IsSuccess": true,
+    "ErrorMessage": null
+  }
+}

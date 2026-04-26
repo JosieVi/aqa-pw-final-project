@@ -1,0 +1,112 @@
+{
+  "headers": {
+    "x-powered-by": "Express",
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "Authorization,X-User-Name",
+    "content-type": "application/json; charset=utf-8",
+    "content-length": "2019",
+    "etag": "W/\"7e3-EUuT/nGKLMfOn8gyB3mqpLhYnkM\"",
+    "date": "Sun, 26 Apr 2026 21:09:23 GMT",
+    "connection": "keep-alive",
+    "keep-alive": "timeout=5"
+  },
+  "body": {
+    "Order": {
+      "_id": "69ee7f038b131b5ff4bfc49e",
+      "status": "Canceled",
+      "customer": {
+        "_id": "69ee7f038b131b5ff4bfc491",
+        "email": "test1777237763613_XIGJ@example.com",
+        "name": "test hroJwwuRRBMJygQgJGAQViLqPihtCyJRPIT",
+        "country": "Canada",
+        "city": "testCity DKMqmuIbNAG",
+        "street": "testStreet 4iAMpGsUyX7Zbdw4Y6eMlaDVLj8rD",
+        "house": 659,
+        "flat": 8338,
+        "phone": "+1999148029",
+        "createdOn": "2026-04-26T21:09:23.000Z",
+        "notes": "Notes dDuueZdijilOGzlcwfTLdlUxkiZnDuZBMievwRdxrQgAzmriGahljKkmBjvLbWdJIXHSLqYDTKzQeZLdCCfUgRjHNaanNLxyugnZkAoaeHOYrWvJHdQLYjNPOltkyxkuNpsukXWRUDnslbRzXhNxKXlehEhIHgyjSyuPQjjnjFGCMozQqbvbcNtngUJmktnHttWYJamyTifGrowsXsPOTOoFsIPzBatfCXxrCfybInDrvsarsvSW"
+      },
+      "products": [
+        {
+          "_id": "69ee7f038b131b5ff4bfc496",
+          "name": "Test txPPTkjePB",
+          "amount": 345,
+          "price": 74073,
+          "manufacturer": "Amazon",
+          "notes": "Notes rBGAnZyfHD",
+          "received": false
+        }
+      ],
+      "delivery": null,
+      "total_price": 74073,
+      "createdOn": "2026-04-26T21:09:23.000Z",
+      "comments": [],
+      "history": [
+        {
+          "status": "Canceled",
+          "customer": "69ee7f038b131b5ff4bfc491",
+          "products": [
+            {
+              "_id": "69ee7f038b131b5ff4bfc496",
+              "name": "Test txPPTkjePB",
+              "amount": 345,
+              "price": 74073,
+              "manufacturer": "Amazon",
+              "notes": "Notes rBGAnZyfHD",
+              "received": false
+            }
+          ],
+          "total_price": 74073,
+          "delivery": null,
+          "changedOn": "2026-04-26T21:09:23.000Z",
+          "action": "Order canceled",
+          "performer": {
+            "_id": "69ee7e7e8b131b5ff4bf89d7",
+            "username": "admin@example.com",
+            "firstName": "Admin",
+            "lastName": "Admin",
+            "roles": [
+              "ADMIN"
+            ],
+            "createdOn": "2026/04/26 21:07:10"
+          },
+          "assignedManager": null
+        },
+        {
+          "status": "Draft",
+          "customer": "69ee7f038b131b5ff4bfc491",
+          "products": [
+            {
+              "_id": "69ee7f038b131b5ff4bfc496",
+              "name": "Test txPPTkjePB",
+              "amount": 345,
+              "price": 74073,
+              "manufacturer": "Amazon",
+              "notes": "Notes rBGAnZyfHD",
+              "received": false
+            }
+          ],
+          "total_price": 74073,
+          "delivery": null,
+          "changedOn": "2026-04-26T21:09:23.000Z",
+          "action": "Order created",
+          "performer": {
+            "_id": "69ee7e7e8b131b5ff4bf89d7",
+            "username": "admin@example.com",
+            "firstName": "Admin",
+            "lastName": "Admin",
+            "roles": [
+              "ADMIN"
+            ],
+            "createdOn": "2026/04/26 21:07:10"
+          },
+          "assignedManager": null
+        }
+      ],
+      "assignedManager": null
+    },
+    "IsSuccess": true,
+    "ErrorMessage": null
+  }
+}

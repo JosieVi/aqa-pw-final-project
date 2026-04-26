@@ -1,0 +1,26 @@
+{
+  "headers": {
+    "x-powered-by": "Express",
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "Authorization,X-User-Name",
+    "content-type": "application/json; charset=utf-8",
+    "content-length": "224",
+    "etag": "W/\"e0-h3cJdlwNnTyRy98aXBUW/lFSOrE\"",
+    "date": "Sun, 26 Apr 2026 21:08:40 GMT",
+    "connection": "keep-alive",
+    "keep-alive": "timeout=5"
+  },
+  "body": {
+    "Product": {
+      "name": "Test eFqQMopVOn",
+      "amount": 777,
+      "price": 9580,
+      "manufacturer": "Xiaomi",
+      "createdOn": "2026-04-26T21:08:40.000Z",
+      "notes": "Notes uyShiPnZYb",
+      "_id": "69ee7ed88b131b5ff4bfa1ca"
+    },
+    "IsSuccess": true,
+    "ErrorMessage": null
+  }
+}
