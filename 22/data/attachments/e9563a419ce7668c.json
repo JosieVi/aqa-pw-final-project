@@ -1,0 +1,26 @@
+{
+  "headers": {
+    "x-powered-by": "Express",
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "Authorization,X-User-Name",
+    "content-type": "application/json; charset=utf-8",
+    "content-length": "226",
+    "etag": "W/\"e2-DVxK8Z+AuyTu5n6BhqY9N/FycBY\"",
+    "date": "Sun, 26 Apr 2026 20:05:29 GMT",
+    "connection": "keep-alive",
+    "keep-alive": "timeout=5"
+  },
+  "body": {
+    "Product": {
+      "name": "Test YrACBbsync",
+      "amount": 772,
+      "price": 80385,
+      "manufacturer": "Samsung",
+      "createdOn": "2026-04-26T20:05:29.000Z",
+      "notes": "Notes lOLDzfwfTN",
+      "_id": "69ee70095a5a8497438ab177"
+    },
+    "IsSuccess": true,
+    "ErrorMessage": null
+  }
+}

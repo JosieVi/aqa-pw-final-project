@@ -1,0 +1,26 @@
+{
+  "headers": {
+    "x-powered-by": "Express",
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "Authorization,X-User-Name",
+    "content-type": "application/json; charset=utf-8",
+    "content-length": "225",
+    "etag": "W/\"e1-JPbH9D62Cfh2a95PZrDaVokNo5E\"",
+    "date": "Sun, 26 Apr 2026 20:05:33 GMT",
+    "connection": "keep-alive",
+    "keep-alive": "timeout=5"
+  },
+  "body": {
+    "Product": {
+      "name": "Test dTXeDfQOAW",
+      "amount": 7,
+      "price": 1974,
+      "manufacturer": "Microsoft",
+      "createdOn": "2026-04-26T20:05:33.000Z",
+      "notes": "Notes hTNzsQYAkE",
+      "_id": "69ee700d5a5a8497438ab926"
+    },
+    "IsSuccess": true,
+    "ErrorMessage": null
+  }
+}

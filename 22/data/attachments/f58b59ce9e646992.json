@@ -1,0 +1,26 @@
+{
+  "headers": {
+    "x-powered-by": "Express",
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "Authorization,X-User-Name",
+    "content-type": "application/json; charset=utf-8",
+    "content-length": "224",
+    "etag": "W/\"e0-lxLlzVfJdCfpgiyVD+vGxXG+Zag\"",
+    "date": "Sun, 26 Apr 2026 20:05:32 GMT",
+    "connection": "keep-alive",
+    "keep-alive": "timeout=5"
+  },
+  "body": {
+    "Product": {
+      "name": "Test DqhsDyMhiv",
+      "amount": 762,
+      "price": 23259,
+      "manufacturer": "Apple",
+      "createdOn": "2026-04-26T20:05:32.000Z",
+      "notes": "Notes IJxsPvppGU",
+      "_id": "69ee700c5a5a8497438ab61e"
+    },
+    "IsSuccess": true,
+    "ErrorMessage": null
+  }
+}

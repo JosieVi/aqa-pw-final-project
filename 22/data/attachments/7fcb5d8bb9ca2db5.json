@@ -1,0 +1,26 @@
+{
+  "headers": {
+    "x-powered-by": "Express",
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "Authorization,X-User-Name",
+    "content-type": "application/json; charset=utf-8",
+    "content-length": "222",
+    "etag": "W/\"de-UyBuNlnGxFNMhZFjA7bafsW773Y\"",
+    "date": "Sun, 26 Apr 2026 20:05:32 GMT",
+    "connection": "keep-alive",
+    "keep-alive": "timeout=5"
+  },
+  "body": {
+    "Product": {
+      "name": "Test IEzzMiDwaY",
+      "amount": 52,
+      "price": 51576,
+      "manufacturer": "Sony",
+      "createdOn": "2026-04-26T20:05:32.000Z",
+      "notes": "Notes ONRvhahGBP",
+      "_id": "69ee700c5a5a8497438ab672"
+    },
+    "IsSuccess": true,
+    "ErrorMessage": null
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "headers": {
+    "x-powered-by": "Express",
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "Authorization,X-User-Name",
+    "content-type": "application/json; charset=utf-8",
+    "content-length": "225",
+    "etag": "W/\"e1-qTTPHoks9r2yFJ+sqYW5hsNmzto\"",
+    "date": "Sun, 26 Apr 2026 20:05:39 GMT",
+    "connection": "keep-alive",
+    "keep-alive": "timeout=5"
+  },
+  "body": {
+    "Product": {
+      "name": "Test XHNQUaThiN",
+      "amount": 431,
+      "price": 61048,
+      "manufacturer": "Amazon",
+      "createdOn": "2026-04-26T20:05:39.000Z",
+      "notes": "Notes OfPwEiRKaO",
+      "_id": "69ee70135a5a8497438ac052"
+    },
+    "IsSuccess": true,
+    "ErrorMessage": null
+  }
+}

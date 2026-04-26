@@ -1,0 +1,26 @@
+{
+  "headers": {
+    "x-powered-by": "Express",
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "Authorization,X-User-Name",
+    "content-type": "application/json; charset=utf-8",
+    "content-length": "225",
+    "etag": "W/\"e1-wnIzSVrIMSNwA0RiBkrXH8bCZ4w\"",
+    "date": "Sun, 26 Apr 2026 20:05:35 GMT",
+    "connection": "keep-alive",
+    "keep-alive": "timeout=5"
+  },
+  "body": {
+    "Product": {
+      "name": "Test jwqlNXgrGO",
+      "amount": 979,
+      "price": 72340,
+      "manufacturer": "Xiaomi",
+      "createdOn": "2026-04-26T20:05:35.000Z",
+      "notes": "Notes nIzPEffFbC",
+      "_id": "69ee700f5a5a8497438abd3d"
+    },
+    "IsSuccess": true,
+    "ErrorMessage": null
+  }
+}

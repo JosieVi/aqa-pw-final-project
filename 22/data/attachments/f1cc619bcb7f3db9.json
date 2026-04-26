@@ -1,0 +1,26 @@
+{
+  "headers": {
+    "x-powered-by": "Express",
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "Authorization,X-User-Name",
+    "content-type": "application/json; charset=utf-8",
+    "content-length": "225",
+    "etag": "W/\"e1-oKWvySKUm02i/3O6Zbssx811YxI\"",
+    "date": "Sun, 26 Apr 2026 20:05:30 GMT",
+    "connection": "keep-alive",
+    "keep-alive": "timeout=5"
+  },
+  "body": {
+    "Product": {
+      "name": "Test TpGKgSMetb",
+      "amount": 698,
+      "price": 67761,
+      "manufacturer": "Google",
+      "createdOn": "2026-04-26T20:05:30.000Z",
+      "notes": "Notes IMCSUuDnJs",
+      "_id": "69ee700a5a5a8497438ab2be"
+    },
+    "IsSuccess": true,
+    "ErrorMessage": null
+  }
+}

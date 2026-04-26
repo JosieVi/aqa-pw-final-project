@@ -1,0 +1,26 @@
+{
+  "headers": {
+    "x-powered-by": "Express",
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "Authorization,X-User-Name",
+    "content-type": "application/json; charset=utf-8",
+    "content-length": "225",
+    "etag": "W/\"e1-k6GiDWEneQqfXxgoFmif6vYj+qg\"",
+    "date": "Sun, 26 Apr 2026 20:05:36 GMT",
+    "connection": "keep-alive",
+    "keep-alive": "timeout=5"
+  },
+  "body": {
+    "Product": {
+      "name": "Test nAMdsITUyt",
+      "amount": 220,
+      "price": 16492,
+      "manufacturer": "Google",
+      "createdOn": "2026-04-26T20:05:36.000Z",
+      "notes": "Notes DWEaohwssn",
+      "_id": "69ee70105a5a8497438abdfd"
+    },
+    "IsSuccess": true,
+    "ErrorMessage": null
+  }
+}

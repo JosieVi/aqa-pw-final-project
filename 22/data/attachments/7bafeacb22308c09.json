@@ -1,0 +1,26 @@
+{
+  "headers": {
+    "x-powered-by": "Express",
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "Authorization,X-User-Name",
+    "content-type": "application/json; charset=utf-8",
+    "content-length": "226",
+    "etag": "W/\"e2-uNiJS6v1lrhQ0zPPVMPoHfuDTkM\"",
+    "date": "Sun, 26 Apr 2026 20:05:24 GMT",
+    "connection": "keep-alive",
+    "keep-alive": "timeout=5"
+  },
+  "body": {
+    "Product": {
+      "name": "Test QCLNBjfOgc",
+      "amount": 166,
+      "price": 56514,
+      "manufacturer": "Samsung",
+      "createdOn": "2026-04-26T20:05:24.000Z",
+      "notes": "Notes FIEbaZmzgV",
+      "_id": "69ee70045a5a8497438aa989"
+    },
+    "IsSuccess": true,
+    "ErrorMessage": null
+  }
+}

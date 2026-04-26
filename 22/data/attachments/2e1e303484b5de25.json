@@ -1,0 +1,26 @@
+{
+  "headers": {
+    "x-powered-by": "Express",
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "Authorization,X-User-Name",
+    "content-type": "application/json; charset=utf-8",
+    "content-length": "228",
+    "etag": "W/\"e4-wiSEnXoHAA/b1nVG7qzaSh3QDqk\"",
+    "date": "Sun, 26 Apr 2026 20:04:50 GMT",
+    "connection": "keep-alive",
+    "keep-alive": "timeout=5"
+  },
+  "body": {
+    "Product": {
+      "name": "Test tJEgDTKUNd",
+      "amount": 829,
+      "price": 84764,
+      "manufacturer": "Microsoft",
+      "createdOn": "2026-04-26T20:04:50.000Z",
+      "notes": "Notes hshLjrSbRz",
+      "_id": "69ee6fe25a5a8497438a95b0"
+    },
+    "IsSuccess": true,
+    "ErrorMessage": null
+  }
+}

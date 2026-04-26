@@ -1,0 +1,26 @@
+{
+  "headers": {
+    "x-powered-by": "Express",
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "Authorization,X-User-Name",
+    "content-type": "application/json; charset=utf-8",
+    "content-length": "224",
+    "etag": "W/\"e0-q1nDCiUaq/ILHDXHl2+WuLbYnZc\"",
+    "date": "Sun, 26 Apr 2026 20:05:34 GMT",
+    "connection": "keep-alive",
+    "keep-alive": "timeout=5"
+  },
+  "body": {
+    "Product": {
+      "name": "Test StYfZGDBDx",
+      "amount": 714,
+      "price": 88890,
+      "manufacturer": "Apple",
+      "createdOn": "2026-04-26T20:05:34.000Z",
+      "notes": "Notes kQeNsLHRED",
+      "_id": "69ee700e5a5a8497438aba96"
+    },
+    "IsSuccess": true,
+    "ErrorMessage": null
+  }
+}

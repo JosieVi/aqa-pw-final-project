@@ -1,0 +1,26 @@
+{
+  "headers": {
+    "x-powered-by": "Express",
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "Authorization,X-User-Name",
+    "content-type": "application/json; charset=utf-8",
+    "content-length": "224",
+    "etag": "W/\"e0-RGz6zC32s9rN5I9N/JsX9Q+r/A4\"",
+    "date": "Sun, 26 Apr 2026 20:05:13 GMT",
+    "connection": "keep-alive",
+    "keep-alive": "timeout=5"
+  },
+  "body": {
+    "Product": {
+      "name": "Test hiScnpAIRL",
+      "amount": 451,
+      "price": 51807,
+      "manufacturer": "Tesla",
+      "createdOn": "2026-04-26T20:05:13.000Z",
+      "notes": "Notes HlMnolMGzC",
+      "_id": "69ee6ff95a5a8497438a9f65"
+    },
+    "IsSuccess": true,
+    "ErrorMessage": null
+  }
+}

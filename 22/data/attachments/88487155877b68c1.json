@@ -1,0 +1,26 @@
+{
+  "headers": {
+    "x-powered-by": "Express",
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "Authorization,X-User-Name",
+    "content-type": "application/json; charset=utf-8",
+    "content-length": "224",
+    "etag": "W/\"e0-pBv/D/REZh8qQUxLN9GhNStLJzM\"",
+    "date": "Sun, 26 Apr 2026 20:04:46 GMT",
+    "connection": "keep-alive",
+    "keep-alive": "timeout=5"
+  },
+  "body": {
+    "Product": {
+      "name": "Test jSWEjAdrid",
+      "amount": 856,
+      "price": 68844,
+      "manufacturer": "Apple",
+      "createdOn": "2026-04-26T20:04:46.000Z",
+      "notes": "Notes oPvotYFbCv",
+      "_id": "69ee6fde5a5a8497438a8fce"
+    },
+    "IsSuccess": true,
+    "ErrorMessage": null
+  }
+}
