@@ -1,0 +1,26 @@
+{
+  "headers": {
+    "x-powered-by": "Express",
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "Authorization,X-User-Name",
+    "content-type": "application/json; charset=utf-8",
+    "content-length": "225",
+    "etag": "W/\"e1-Cdou/SoztEvZYl/hF0DWg/CCB0E\"",
+    "date": "Sun, 26 Apr 2026 20:16:21 GMT",
+    "connection": "keep-alive",
+    "keep-alive": "timeout=5"
+  },
+  "body": {
+    "Product": {
+      "name": "Test KRvHJrADBy",
+      "amount": 991,
+      "price": 56992,
+      "manufacturer": "Google",
+      "createdOn": "2026-04-26T20:16:21.000Z",
+      "notes": "Notes LnqkCtwoIA",
+      "_id": "69ee72954a792a07c07a4cf6"
+    },
+    "IsSuccess": true,
+    "ErrorMessage": null
+  }
+}

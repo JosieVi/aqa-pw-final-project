@@ -1,0 +1,82 @@
+{
+  "headers": {
+    "x-powered-by": "Express",
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "Authorization,X-User-Name",
+    "content-type": "application/json; charset=utf-8",
+    "content-length": "1496",
+    "etag": "W/\"5d8-452jgZDHWPF1SX1V19+66FNs+w0\"",
+    "date": "Sun, 26 Apr 2026 20:16:17 GMT",
+    "connection": "keep-alive",
+    "keep-alive": "timeout=5"
+  },
+  "body": {
+    "Order": {
+      "_id": "69ee72914a792a07c07a4305",
+      "status": "Draft",
+      "customer": {
+        "_id": "69ee72914a792a07c07a42f8",
+        "email": "test1777234577240_CMUS@example.com",
+        "name": "test UAeVOVKkWLRSgXfjhEjxlDBiBUmHbwgpFjC",
+        "country": "Belarus",
+        "city": "testCity gERaVpfjizd",
+        "street": "testStreet Pjn69pDYJmQD7cRIiF0Dw1rBP3v3h",
+        "house": 265,
+        "flat": 2374,
+        "phone": "+9841889266",
+        "createdOn": "2026-04-26T20:16:17.000Z",
+        "notes": "Notes INRGVThVfbprIvnGFHTxlAdYduZsDkJnavyspvsXudItIfOuyBcOFCFZLuuUUvXKbDMeJYfpRpwLWjOqQexFtacWkqxCznckHzxfEdoozQRwpfnQjsGUyDSnkhUVxyDVOSdgTQgROuDtpldszxeEwFNYFFXdStyqYcZrDlddgREYqdoQbBDNuelPvkKdfDiCnvxBNVkZkFETPXzqodPCPiHpVHxwfsUtKZFqRymwongSOsjBPaFi"
+      },
+      "products": [
+        {
+          "_id": "69ee72914a792a07c07a42fd",
+          "name": "Test yJkMICFzEw",
+          "amount": 408,
+          "price": 47805,
+          "manufacturer": "Google",
+          "notes": "Notes cTiHEANvmh",
+          "received": false
+        }
+      ],
+      "delivery": null,
+      "total_price": 47805,
+      "createdOn": "2026-04-26T20:16:17.000Z",
+      "comments": [],
+      "history": [
+        {
+          "status": "Draft",
+          "customer": "69ee72914a792a07c07a42f8",
+          "products": [
+            {
+              "_id": "69ee72914a792a07c07a42fd",
+              "name": "Test yJkMICFzEw",
+              "amount": 408,
+              "price": 47805,
+              "manufacturer": "Google",
+              "notes": "Notes cTiHEANvmh",
+              "received": false
+            }
+          ],
+          "total_price": 47805,
+          "delivery": null,
+          "changedOn": "2026-04-26T20:16:17.000Z",
+          "action": "Order created",
+          "performer": {
+            "_id": "69ee721c4a792a07c07a15bc",
+            "username": "admin@example.com",
+            "firstName": "Admin",
+            "lastName": "Admin",
+            "roles": [
+              "ADMIN"
+            ],
+            "createdOn": "2026/04/26 20:14:20"
+          },
+          "assignedManager": null
+        }
+      ],
+      "assignedManager": null
+    },
+    "IsSuccess": true,
+    "ErrorMessage": null
+  }
+}

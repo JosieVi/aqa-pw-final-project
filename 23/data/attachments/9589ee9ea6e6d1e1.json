@@ -1,0 +1,41 @@
+{
+  "headers": {
+    "x-powered-by": "Express",
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "Authorization,X-User-Name",
+    "content-type": "application/json; charset=utf-8",
+    "content-length": "745",
+    "etag": "W/\"2e9-brWZ4evRWiAlsWghCfyI6PA3wJU\"",
+    "date": "Sun, 26 Apr 2026 20:16:12 GMT",
+    "connection": "keep-alive",
+    "keep-alive": "timeout=5"
+  },
+  "body": {
+    "Customers": [
+      {
+        "_id": "69ee728b4a792a07c07a3aa8",
+        "email": "test1777234571987_XKHQ@example.com",
+        "name": "test TtbFiuyrRgwvBuYXEQRBtVlidHZobSBJNbQ",
+        "country": "Canada",
+        "city": "testCity VsKBGCGzaMb",
+        "street": "testStreet 79pm1MQfGfQVwEj8KuRxEcmWnkEGN",
+        "house": 750,
+        "flat": 2291,
+        "phone": "+1734590462",
+        "createdOn": "2026-04-26T20:16:11.000Z",
+        "notes": "Notes KZCwqYSStbhqTuikBkUJCIKQaYJkmkZoazNTMrvpcoOUvgOLIjuszSzowrNUJcHeeYaQQWTzlHwFamHCGKZcLegfmIjLXiwrheVqUQNcJvbIMSNTMZGOerjtKjArKOyJKvFlKFELTVnVYlzFOCaJIiBmWIMjjRlNZBnECljnKSMamLAOkkqCYgHGNYfuWSwfIIJOjWmpoSBEfegcpDxtzqVuRsyefoUJiqZyPUOPxksopEeIkMxb"
+      }
+    ],
+    "total": 1,
+    "page": 1,
+    "limit": 10,
+    "search": "Canada",
+    "country": [],
+    "sorting": {
+      "sortField": "createdOn",
+      "sortOrder": "desc"
+    },
+    "IsSuccess": true,
+    "ErrorMessage": null
+  }
+}

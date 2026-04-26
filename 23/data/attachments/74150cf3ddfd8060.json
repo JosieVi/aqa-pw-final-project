@@ -1,0 +1,26 @@
+{
+  "headers": {
+    "x-powered-by": "Express",
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "Authorization,X-User-Name",
+    "content-type": "application/json; charset=utf-8",
+    "content-length": "225",
+    "etag": "W/\"e1-2E32V9ruQ1qzNiZh0eXJH73gluk\"",
+    "date": "Sun, 26 Apr 2026 20:16:09 GMT",
+    "connection": "keep-alive",
+    "keep-alive": "timeout=5"
+  },
+  "body": {
+    "Product": {
+      "name": "Test TyrRJMezau",
+      "amount": 808,
+      "price": 53645,
+      "manufacturer": "Xiaomi",
+      "createdOn": "2026-04-26T20:16:09.000Z",
+      "notes": "Notes aVZTjiKrRn",
+      "_id": "69ee72894a792a07c07a36e6"
+    },
+    "IsSuccess": true,
+    "ErrorMessage": null
+  }
+}

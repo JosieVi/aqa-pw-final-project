@@ -1,0 +1,26 @@
+{
+  "headers": {
+    "x-powered-by": "Express",
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "Authorization,X-User-Name",
+    "content-type": "application/json; charset=utf-8",
+    "content-length": "223",
+    "etag": "W/\"df-7RBOd9MjABHXIF1sPXVzRJH52jA\"",
+    "date": "Sun, 26 Apr 2026 20:16:17 GMT",
+    "connection": "keep-alive",
+    "keep-alive": "timeout=5"
+  },
+  "body": {
+    "Product": {
+      "name": "Test HSvZxliaLm",
+      "amount": 721,
+      "price": 51691,
+      "manufacturer": "Sony",
+      "createdOn": "2026-04-26T20:16:17.000Z",
+      "notes": "Notes AAIAzrobCD",
+      "_id": "69ee72914a792a07c07a4354"
+    },
+    "IsSuccess": true,
+    "ErrorMessage": null
+  }
+}

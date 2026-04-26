@@ -1,0 +1,26 @@
+{
+  "headers": {
+    "x-powered-by": "Express",
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "Authorization,X-User-Name",
+    "content-type": "application/json; charset=utf-8",
+    "content-length": "224",
+    "etag": "W/\"e0-YGufxBaNiKzGsuNjK0z2Odq/XjI\"",
+    "date": "Sun, 26 Apr 2026 20:15:39 GMT",
+    "connection": "keep-alive",
+    "keep-alive": "timeout=5"
+  },
+  "body": {
+    "Product": {
+      "name": "Test XioIWgGpSk",
+      "amount": 561,
+      "price": 9454,
+      "manufacturer": "Amazon",
+      "createdOn": "2026-04-26T20:15:39.000Z",
+      "notes": "Notes bqXjPoOWei",
+      "_id": "69ee726b4a792a07c07a2868"
+    },
+    "IsSuccess": true,
+    "ErrorMessage": null
+  }
+}

@@ -1,0 +1,212 @@
+{
+  "headers": {
+    "x-powered-by": "Express",
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "Authorization,X-User-Name",
+    "content-type": "application/json; charset=utf-8",
+    "content-length": "3737",
+    "etag": "W/\"e99-q/EL8XXtCYLlBs36jJN11MyDR3Y\"",
+    "date": "Sun, 26 Apr 2026 20:16:42 GMT",
+    "connection": "keep-alive",
+    "keep-alive": "timeout=5"
+  },
+  "body": {
+    "Order": {
+      "_id": "69ee72aa4a792a07c07a57e8",
+      "status": "Received",
+      "customer": {
+        "_id": "69ee72aa4a792a07c07a57db",
+        "email": "test1777234602891_FQVZ@example.com",
+        "name": "test WyeaSOtfRvZEonoyqLLlBvUkZsLzAMjOubk",
+        "country": "Ukraine",
+        "city": "testCity zmOVsfIsXXp",
+        "street": "testStreet LosDnfKAWKwSf9GRDukPbm4xnZdYD",
+        "house": 573,
+        "flat": 9970,
+        "phone": "+7658760179",
+        "createdOn": "2026-04-26T20:16:42.000Z",
+        "notes": "Notes GYMOcdLOtOPLpgNVoqDgktIbQRUDNMQUTZNgAkVjVnZNLxgPiRzNSwoFOadRXOWbMWAKGWFfVumCrkusvqrUMtcaoKHsJDdCoLNaBUYGofVqcQDxmdSQrwBaTeahaoavxJbprkJgwsamuHjhfbtHAXduOEjVIlXuHmcIBzTYqOuCcDtykbkCmsYpCIxRyavMfaKCEilePbuhfqJLAqKtUyYVSfOHdTQITAmhnRtsDFhbUjOkRRsn"
+      },
+      "products": [
+        {
+          "_id": "69ee72aa4a792a07c07a57e0",
+          "name": "Test uCKgBybgJu",
+          "amount": 49,
+          "price": 3017,
+          "manufacturer": "Amazon",
+          "notes": "Notes TROxUaROHO",
+          "received": true
+        }
+      ],
+      "delivery": {
+        "address": {
+          "country": "USA",
+          "city": "TestCity RBxqD",
+          "street": "TestStreet NTIUCiLjgq",
+          "house": 770,
+          "flat": 4895
+        },
+        "finalDate": "2027-03-01T00:00:00.000Z",
+        "condition": "Delivery"
+      },
+      "total_price": 3017,
+      "createdOn": "2026-04-26T20:16:42.000Z",
+      "comments": [],
+      "history": [
+        {
+          "status": "Received",
+          "customer": "69ee72aa4a792a07c07a57db",
+          "products": [
+            {
+              "_id": "69ee72aa4a792a07c07a57e0",
+              "name": "Test uCKgBybgJu",
+              "amount": 49,
+              "price": 3017,
+              "manufacturer": "Amazon",
+              "notes": "Notes TROxUaROHO",
+              "received": true
+            }
+          ],
+          "total_price": 3017,
+          "delivery": {
+            "address": {
+              "country": "USA",
+              "city": "TestCity RBxqD",
+              "street": "TestStreet NTIUCiLjgq",
+              "house": 770,
+              "flat": 4895
+            },
+            "finalDate": "2027-03-01T00:00:00.000Z",
+            "condition": "Delivery"
+          },
+          "changedOn": "2026-04-26T20:16:42.000Z",
+          "action": "All products received",
+          "performer": {
+            "_id": "69ee721c4a792a07c07a15bc",
+            "username": "admin@example.com",
+            "firstName": "Admin",
+            "lastName": "Admin",
+            "roles": [
+              "ADMIN"
+            ],
+            "createdOn": "2026/04/26 20:14:20"
+          },
+          "assignedManager": null
+        },
+        {
+          "status": "In Process",
+          "customer": "69ee72aa4a792a07c07a57db",
+          "products": [
+            {
+              "_id": "69ee72aa4a792a07c07a57e0",
+              "name": "Test uCKgBybgJu",
+              "amount": 49,
+              "price": 3017,
+              "manufacturer": "Amazon",
+              "notes": "Notes TROxUaROHO",
+              "received": false
+            }
+          ],
+          "total_price": 3017,
+          "delivery": {
+            "address": {
+              "country": "USA",
+              "city": "TestCity RBxqD",
+              "street": "TestStreet NTIUCiLjgq",
+              "house": 770,
+              "flat": 4895
+            },
+            "finalDate": "2027-03-01T00:00:00.000Z",
+            "condition": "Delivery"
+          },
+          "changedOn": "2026-04-26T20:16:42.000Z",
+          "action": "Order processing started",
+          "performer": {
+            "_id": "69ee721c4a792a07c07a15bc",
+            "username": "admin@example.com",
+            "firstName": "Admin",
+            "lastName": "Admin",
+            "roles": [
+              "ADMIN"
+            ],
+            "createdOn": "2026/04/26 20:14:20"
+          },
+          "assignedManager": null
+        },
+        {
+          "status": "Draft",
+          "customer": "69ee72aa4a792a07c07a57db",
+          "products": [
+            {
+              "_id": "69ee72aa4a792a07c07a57e0",
+              "name": "Test uCKgBybgJu",
+              "amount": 49,
+              "price": 3017,
+              "manufacturer": "Amazon",
+              "notes": "Notes TROxUaROHO",
+              "received": false
+            }
+          ],
+          "total_price": 3017,
+          "delivery": {
+            "address": {
+              "country": "USA",
+              "city": "TestCity RBxqD",
+              "street": "TestStreet NTIUCiLjgq",
+              "house": 770,
+              "flat": 4895
+            },
+            "finalDate": "2027-03-01T00:00:00.000Z",
+            "condition": "Delivery"
+          },
+          "changedOn": "2026-04-26T20:16:42.000Z",
+          "action": "Delivery Scheduled",
+          "performer": {
+            "_id": "69ee721c4a792a07c07a15bc",
+            "username": "admin@example.com",
+            "firstName": "Admin",
+            "lastName": "Admin",
+            "roles": [
+              "ADMIN"
+            ],
+            "createdOn": "2026/04/26 20:14:20"
+          },
+          "assignedManager": null
+        },
+        {
+          "status": "Draft",
+          "customer": "69ee72aa4a792a07c07a57db",
+          "products": [
+            {
+              "_id": "69ee72aa4a792a07c07a57e0",
+              "name": "Test uCKgBybgJu",
+              "amount": 49,
+              "price": 3017,
+              "manufacturer": "Amazon",
+              "notes": "Notes TROxUaROHO",
+              "received": false
+            }
+          ],
+          "total_price": 3017,
+          "delivery": null,
+          "changedOn": "2026-04-26T20:16:42.000Z",
+          "action": "Order created",
+          "performer": {
+            "_id": "69ee721c4a792a07c07a15bc",
+            "username": "admin@example.com",
+            "firstName": "Admin",
+            "lastName": "Admin",
+            "roles": [
+              "ADMIN"
+            ],
+            "createdOn": "2026/04/26 20:14:20"
+          },
+          "assignedManager": null
+        }
+      ],
+      "assignedManager": null
+    },
+    "IsSuccess": true,
+    "ErrorMessage": null
+  }
+}

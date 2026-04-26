@@ -1,0 +1,100 @@
+{
+  "headers": {
+    "x-powered-by": "Express",
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "Authorization,X-User-Name",
+    "content-type": "application/json; charset=utf-8",
+    "content-length": "1808",
+    "etag": "W/\"710-bscmB+LaC0X4lJ917SSa6wNAZZA\"",
+    "date": "Sun, 26 Apr 2026 20:16:10 GMT",
+    "connection": "keep-alive",
+    "keep-alive": "timeout=5"
+  },
+  "body": {
+    "Order": {
+      "status": "Draft",
+      "customer": {
+        "_id": "69ee728a4a792a07c07a387d",
+        "email": "test1777234570681_ZDER@example.com",
+        "name": "test vjdFTiRCstbqvOtNLDzBKADUxlBQREJSlbJ",
+        "country": "Belarus",
+        "city": "testCity rmbphNHJLbh",
+        "street": "testStreet Q6ONjM4TjSKJCPgZNNpYLDTbGeaco",
+        "house": 217,
+        "flat": 7678,
+        "phone": "+6198011924",
+        "createdOn": "2026-04-26T20:16:10.000Z",
+        "notes": "Notes voOyJuWmIhLwUuUbInLcsPYJrYYjFzpvUAIhxlZLhNRQUWLbTBBpAczKFeJHGRkJnlWMvasjdJwEbqCXaTdQEmMDIfxQofHKUVLffxXumJKmTMpiRSyAbMnbCojiWpGesWAkFSawNHKtEWHsTeTuyDWvoSeqSGWtlqmIIVLTqMlMHLzEpsOfFDOTYbPGadlMACjVtrRUKaOjnoTKpRyCByvfgnEqoBJtnhIXGpMtwCdEXcRcLBix"
+      },
+      "products": [
+        {
+          "_id": "69ee728a4a792a07c07a3888",
+          "name": "Test GyEmYlpLcZ",
+          "amount": 684,
+          "price": 68737,
+          "manufacturer": "Xiaomi",
+          "notes": "Notes gdkaqTySVL",
+          "received": false
+        },
+        {
+          "_id": "69ee728a4a792a07c07a388f",
+          "name": "Test kBDMIoEeZF",
+          "amount": 495,
+          "price": 35121,
+          "manufacturer": "Amazon",
+          "notes": "Notes ofGrNUwdYD",
+          "received": false
+        }
+      ],
+      "delivery": null,
+      "total_price": 103858,
+      "createdOn": "2026-04-26T20:16:10.000Z",
+      "comments": [],
+      "history": [
+        {
+          "status": "Draft",
+          "customer": "69ee728a4a792a07c07a387d",
+          "products": [
+            {
+              "_id": "69ee728a4a792a07c07a3888",
+              "name": "Test GyEmYlpLcZ",
+              "amount": 684,
+              "price": 68737,
+              "manufacturer": "Xiaomi",
+              "notes": "Notes gdkaqTySVL",
+              "received": false
+            },
+            {
+              "_id": "69ee728a4a792a07c07a388f",
+              "name": "Test kBDMIoEeZF",
+              "amount": 495,
+              "price": 35121,
+              "manufacturer": "Amazon",
+              "notes": "Notes ofGrNUwdYD",
+              "received": false
+            }
+          ],
+          "total_price": 103858,
+          "delivery": null,
+          "changedOn": "2026-04-26T20:16:10.000Z",
+          "action": "Order created",
+          "performer": {
+            "_id": "69ee721c4a792a07c07a15bc",
+            "username": "admin@example.com",
+            "firstName": "Admin",
+            "lastName": "Admin",
+            "roles": [
+              "ADMIN"
+            ],
+            "createdOn": "2026/04/26 20:14:20"
+          },
+          "assignedManager": null
+        }
+      ],
+      "assignedManager": null,
+      "_id": "69ee728a4a792a07c07a389d"
+    },
+    "IsSuccess": true,
+    "ErrorMessage": null
+  }
+}

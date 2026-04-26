@@ -1,0 +1,26 @@
+{
+  "headers": {
+    "x-powered-by": "Express",
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "Authorization,X-User-Name",
+    "content-type": "application/json; charset=utf-8",
+    "content-length": "226",
+    "etag": "W/\"e2-VfZ2On+fMWf9whW33LZjzcZ+bXc\"",
+    "date": "Sun, 26 Apr 2026 20:16:15 GMT",
+    "connection": "keep-alive",
+    "keep-alive": "timeout=5"
+  },
+  "body": {
+    "Product": {
+      "name": "Test zlnpaGKPHf",
+      "amount": 949,
+      "price": 86547,
+      "manufacturer": "Samsung",
+      "createdOn": "2026-04-26T20:16:15.000Z",
+      "notes": "Notes DyxKeUfeOa",
+      "_id": "69ee728f4a792a07c07a4029"
+    },
+    "IsSuccess": true,
+    "ErrorMessage": null
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "headers": {
+    "x-powered-by": "Express",
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "Authorization,X-User-Name",
+    "content-type": "application/json; charset=utf-8",
+    "content-length": "228",
+    "etag": "W/\"e4-CwrFOXbCJkuehjej8rTXkOtR8us\"",
+    "date": "Sun, 26 Apr 2026 20:16:16 GMT",
+    "connection": "keep-alive",
+    "keep-alive": "timeout=5"
+  },
+  "body": {
+    "Product": {
+      "name": "Test HrrgobPiBU",
+      "amount": 203,
+      "price": 54812,
+      "manufacturer": "Microsoft",
+      "createdOn": "2026-04-26T20:16:16.000Z",
+      "notes": "Notes SKxPgyWpnt",
+      "_id": "69ee72904a792a07c07a4082"
+    },
+    "IsSuccess": true,
+    "ErrorMessage": null
+  }
+}

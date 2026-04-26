@@ -1,0 +1,26 @@
+{
+  "headers": {
+    "x-powered-by": "Express",
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "Authorization,X-User-Name",
+    "content-type": "application/json; charset=utf-8",
+    "content-length": "223",
+    "etag": "W/\"df-46lmIDL2LnUOSDwygV8mm73P7m8\"",
+    "date": "Sun, 26 Apr 2026 20:16:18 GMT",
+    "connection": "keep-alive",
+    "keep-alive": "timeout=5"
+  },
+  "body": {
+    "Product": {
+      "name": "Test RHKiDmyzYL",
+      "amount": 468,
+      "price": 73763,
+      "manufacturer": "Sony",
+      "createdOn": "2026-04-26T20:16:18.000Z",
+      "notes": "Notes ZzGyFVRIyf",
+      "_id": "69ee72924a792a07c07a4643"
+    },
+    "IsSuccess": true,
+    "ErrorMessage": null
+  }
+}

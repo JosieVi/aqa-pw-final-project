@@ -1,0 +1,26 @@
+{
+  "headers": {
+    "x-powered-by": "Express",
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "Authorization,X-User-Name",
+    "content-type": "application/json; charset=utf-8",
+    "content-length": "225",
+    "etag": "W/\"e1-zHpx/ySLmVNis9L+fE1sOd6RgC4\"",
+    "date": "Sun, 26 Apr 2026 20:16:25 GMT",
+    "connection": "keep-alive",
+    "keep-alive": "timeout=5"
+  },
+  "body": {
+    "Product": {
+      "name": "Test jLcaoHADed",
+      "amount": 892,
+      "price": 30181,
+      "manufacturer": "Amazon",
+      "createdOn": "2026-04-26T20:16:25.000Z",
+      "notes": "Notes RgSgWHhYiI",
+      "_id": "69ee72994a792a07c07a5421"
+    },
+    "IsSuccess": true,
+    "ErrorMessage": null
+  }
+}

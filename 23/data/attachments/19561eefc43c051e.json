@@ -1,0 +1,26 @@
+{
+  "headers": {
+    "x-powered-by": "Express",
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "Authorization,X-User-Name",
+    "content-type": "application/json; charset=utf-8",
+    "content-length": "228",
+    "etag": "W/\"e4-gnqE1t5GlCX1MxHBb7ZZzPCiJfE\"",
+    "date": "Sun, 26 Apr 2026 20:16:21 GMT",
+    "connection": "keep-alive",
+    "keep-alive": "timeout=5"
+  },
+  "body": {
+    "Product": {
+      "name": "Test DsEHZLxWkM",
+      "amount": 825,
+      "price": 87844,
+      "manufacturer": "Microsoft",
+      "createdOn": "2026-04-26T20:16:21.000Z",
+      "notes": "Notes LnYfDYSAvC",
+      "_id": "69ee72954a792a07c07a4b7f"
+    },
+    "IsSuccess": true,
+    "ErrorMessage": null
+  }
+}

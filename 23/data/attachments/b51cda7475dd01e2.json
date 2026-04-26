@@ -1,0 +1,26 @@
+{
+  "headers": {
+    "x-powered-by": "Express",
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "Authorization,X-User-Name",
+    "content-type": "application/json; charset=utf-8",
+    "content-length": "225",
+    "etag": "W/\"e1-NCUcExHJg+FZp6ehUU20cIGrd50\"",
+    "date": "Sun, 26 Apr 2026 20:15:31 GMT",
+    "connection": "keep-alive",
+    "keep-alive": "timeout=5"
+  },
+  "body": {
+    "Product": {
+      "name": "Test otchyrnNyQ",
+      "amount": 101,
+      "price": 54237,
+      "manufacturer": "Google",
+      "createdOn": "2026-04-26T20:15:31.000Z",
+      "notes": "Notes LjLiYsVtce",
+      "_id": "69ee72634a792a07c07a1ecc"
+    },
+    "IsSuccess": true,
+    "ErrorMessage": null
+  }
+}
