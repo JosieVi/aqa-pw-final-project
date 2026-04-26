@@ -1,0 +1,26 @@
+{
+  "headers": {
+    "x-powered-by": "Express",
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "Authorization,X-User-Name",
+    "content-type": "application/json; charset=utf-8",
+    "content-length": "223",
+    "etag": "W/\"df-9tdO80Bfy313pBHLB19h7DHjpf4\"",
+    "date": "Sun, 26 Apr 2026 21:39:42 GMT",
+    "connection": "keep-alive",
+    "keep-alive": "timeout=5"
+  },
+  "body": {
+    "Product": {
+      "name": "Test EknNMNlxql",
+      "amount": 7,
+      "price": 11703,
+      "manufacturer": "Google",
+      "createdOn": "2026-04-26T21:39:42.000Z",
+      "notes": "Notes dThMZYFpua",
+      "_id": "69ee861e4ba1bb928e220383"
+    },
+    "IsSuccess": true,
+    "ErrorMessage": null
+  }
+}

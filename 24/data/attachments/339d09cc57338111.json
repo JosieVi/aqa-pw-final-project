@@ -1,0 +1,26 @@
+{
+  "headers": {
+    "x-powered-by": "Express",
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "Authorization,X-User-Name",
+    "content-type": "application/json; charset=utf-8",
+    "content-length": "225",
+    "etag": "W/\"e1-7AXl6Ki9/OWLfSag9qK6VrfWa38\"",
+    "date": "Sun, 26 Apr 2026 21:39:17 GMT",
+    "connection": "keep-alive",
+    "keep-alive": "timeout=5"
+  },
+  "body": {
+    "Product": {
+      "name": "Test sJGafJjktJ",
+      "amount": 841,
+      "price": 15386,
+      "manufacturer": "Amazon",
+      "createdOn": "2026-04-26T21:39:17.000Z",
+      "notes": "Notes QGFHbxamKD",
+      "_id": "69ee86054ba1bb928e21df6b"
+    },
+    "IsSuccess": true,
+    "ErrorMessage": null
+  }
+}

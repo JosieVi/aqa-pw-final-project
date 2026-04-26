@@ -1,0 +1,26 @@
+{
+  "headers": {
+    "x-powered-by": "Express",
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "Authorization,X-User-Name",
+    "content-type": "application/json; charset=utf-8",
+    "content-length": "225",
+    "etag": "W/\"e1-OquC1magbTxIWD+TmqDLtzcTHrY\"",
+    "date": "Sun, 26 Apr 2026 21:39:46 GMT",
+    "connection": "keep-alive",
+    "keep-alive": "timeout=5"
+  },
+  "body": {
+    "Product": {
+      "name": "Test PMMUgzxLiY",
+      "amount": 152,
+      "price": 87869,
+      "manufacturer": "Google",
+      "createdOn": "2026-04-26T21:39:46.000Z",
+      "notes": "Notes aXBzkbvlnu",
+      "_id": "69ee86224ba1bb928e220a6d"
+    },
+    "IsSuccess": true,
+    "ErrorMessage": null
+  }
+}

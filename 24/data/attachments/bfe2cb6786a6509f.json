@@ -1,0 +1,26 @@
+{
+  "headers": {
+    "x-powered-by": "Express",
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "Authorization,X-User-Name",
+    "content-type": "application/json; charset=utf-8",
+    "content-length": "225",
+    "etag": "W/\"e1-qZ7Y2iUyDEJT+1MErFXq2xQTKVM\"",
+    "date": "Sun, 26 Apr 2026 21:39:14 GMT",
+    "connection": "keep-alive",
+    "keep-alive": "timeout=5"
+  },
+  "body": {
+    "Product": {
+      "name": "Test HPgSdjgAgp",
+      "amount": 157,
+      "price": 58497,
+      "manufacturer": "Xiaomi",
+      "createdOn": "2026-04-26T21:39:14.000Z",
+      "notes": "Notes XzfNnHbMDy",
+      "_id": "69ee86024ba1bb928e21daee"
+    },
+    "IsSuccess": true,
+    "ErrorMessage": null
+  }
+}

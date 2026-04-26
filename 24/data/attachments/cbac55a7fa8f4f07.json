@@ -1,0 +1,80 @@
+{
+  "headers": {
+    "x-powered-by": "Express",
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "Authorization,X-User-Name",
+    "content-type": "application/json; charset=utf-8",
+    "content-length": "2468",
+    "etag": "W/\"9a4-VvsbxhNtqcKQftyQcQ0AdLLvgio\"",
+    "date": "Sun, 26 Apr 2026 21:39:36 GMT",
+    "connection": "keep-alive",
+    "keep-alive": "timeout=5"
+  },
+  "body": {
+    "Customers": [
+      {
+        "_id": "69ee86184ba1bb928e21f1e5",
+        "email": "test1777239576089_FQQH@example.com",
+        "name": "test IftCKEzKOwCLYPdKMyfRGCPkmRoTkGetHPH",
+        "country": "Ukraine",
+        "city": "testCity XzaupRSkFrJ",
+        "street": "testStreet fEKzYdMPB5cDI8gl8Cew2nbJp26Fw",
+        "house": 459,
+        "flat": 5038,
+        "phone": "+1374530015",
+        "createdOn": "2026-04-26T21:39:36.000Z",
+        "notes": "Notes cLbGokMRfNaqMEvGZQNmAFKvUmyLSaXsJZPnZgtKvHlyFtqXYrkkQpmtfWZIozdXVFpeWUSyrBaUQTAXmKgiLRQcSOlAGpdwsiEaSzFgVAmxTWTMMUAPwqmumdMHAbadrBpXVlkciEFWzKEgePvXNirRTChJwOFZBAldKIcLEmAGynAijMkifXyZjnkoGQaSCLMoDUfXillnuqwWzQoLLgRABKUwHPYwuvsLfflNRYLPhfEnPQQr"
+      },
+      {
+        "_id": "69ee86184ba1bb928e21f1e7",
+        "email": "test1777239576091_BIFE@example.com",
+        "name": "test yvfLtdaKNdYvNAfzaSqJjbPPOOTaNjdmJkt",
+        "country": "USA",
+        "city": "testCity fsXimrhBDxD",
+        "street": "testStreet zzPrFvKdzHeozvhybg011cjKnYWFn",
+        "house": 483,
+        "flat": 3910,
+        "phone": "+9989505433",
+        "createdOn": "2026-04-26T21:39:36.000Z",
+        "notes": "Notes KFaJWoHtoOOJJiiTfsZOWQEKwhfqjUKeXgClqkgFwcgJmxccjbVIZsoFMwfkcXeCOnLHzOSRvABhuBZUNvXKZBHJiccxyZbiMfsnBdwMDUgjcXbUgeksHYtvrZvuvSYRXTfIbWrTQTqdDdmfitdtOelSJTQdGlCtanykPZGDCFzVlisnDUsBZMUVMuwIjLTbFoQxPUBNzFcNBitJwSSebPdxOtjrRaUYNEgLQviKQoxkKRGGAiDw"
+      },
+      {
+        "_id": "69ee85f34ba1bb928e21cff8",
+        "email": "test1777239539282_DYOE@example.com",
+        "name": "test eVvXHYRQqaCEKNhKcvdHMcjAHXqgahbbMnR",
+        "country": "Germany",
+        "city": "testCity DnFRPnoPLon",
+        "street": "testStreet 2DDE4F5BQhoKeeBZ4aZypRGbRlklC",
+        "house": 380,
+        "flat": 600,
+        "phone": "+8096573763",
+        "createdOn": "2026-04-26T21:38:59.000Z",
+        "notes": "Notes FfGXRgBhZItqfjfbkTYIdZyStPLphZoJWAYJXkQEcpNyuUZgHSGmvhrwNvYCEoRnAmGeXuHGlKWDVnTwiINSQDzvENcnCYrBfABiverPutnpeEDWBBKwbVwfudETJfCMrWHeUxAsKWlxnDHSYqBRFvgdSfHNJgTlWMPliXnnNgTyuBPoiajkLempBJETZPsKbKLPFrJjLMXbfwsuYPHNIGhYWGWrjsWRbzCKuqvPbmhgzUNcEdSW"
+      },
+      {
+        "_id": "69ee85f14ba1bb928e21cf02",
+        "email": "test1777239537356_UYQS@example.com",
+        "name": "test ezScHEjQgPhtYWRHTStqjvfEaxnDDwTTFZc",
+        "country": "Canada",
+        "city": "testCity SBmrbLhrkMB",
+        "street": "testStreet 19blQBTCJRI0lLdarwHFQcrtF2Vzm",
+        "house": 894,
+        "flat": 2459,
+        "phone": "+3754245526",
+        "createdOn": "2026-04-26T21:38:57.000Z",
+        "notes": "Notes zXSyghXRBLPKaISzOnFYwrhRVznYZEqPxZbzXTaaYzuzQcNVzYcCZQEhapvnkLRUwHLvKEevFIJBLaXDvgJoVNyLBvqXnChQTtmGeiHFjnBRoLASXSMLNUOsLdRqUBVRzTVaMGYTHZDfcelyBCsZPXDozCidLMRDTpwVhWoWuABebNblxETLQiVbDATUSBfmeRcRgopLCeBPqzlnYrnXjhOQTeTFIxBBovIBEdpkeDnQkfxjituH"
+      }
+    ],
+    "total": 4,
+    "page": 1,
+    "limit": 10,
+    "search": "",
+    "country": [],
+    "sorting": {
+      "sortField": "createdOn",
+      "sortOrder": "desc"
+    },
+    "IsSuccess": true,
+    "ErrorMessage": null
+  }
+}

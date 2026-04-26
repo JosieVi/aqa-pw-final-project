@@ -1,0 +1,26 @@
+{
+  "headers": {
+    "x-powered-by": "Express",
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "Authorization,X-User-Name",
+    "content-type": "application/json; charset=utf-8",
+    "content-length": "224",
+    "etag": "W/\"e0-4Q4oNnSxcXZJTl27fGI4u/2KQ7Y\"",
+    "date": "Sun, 26 Apr 2026 21:39:40 GMT",
+    "connection": "keep-alive",
+    "keep-alive": "timeout=5"
+  },
+  "body": {
+    "Product": {
+      "name": "Test SElPmsXMNd",
+      "amount": 438,
+      "price": 8610,
+      "manufacturer": "Xiaomi",
+      "createdOn": "2026-04-26T21:39:40.000Z",
+      "notes": "Notes KJBRjgmgRD",
+      "_id": "69ee861c4ba1bb928e21fbcc"
+    },
+    "IsSuccess": true,
+    "ErrorMessage": null
+  }
+}

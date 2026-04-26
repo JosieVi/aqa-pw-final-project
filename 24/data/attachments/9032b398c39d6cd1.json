@@ -1,0 +1,26 @@
+{
+  "headers": {
+    "x-powered-by": "Express",
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "Authorization,X-User-Name",
+    "content-type": "application/json; charset=utf-8",
+    "content-length": "228",
+    "etag": "W/\"e4-SWkiK20w/blUqekM+jfT5ZcDkrk\"",
+    "date": "Sun, 26 Apr 2026 21:39:34 GMT",
+    "connection": "keep-alive",
+    "keep-alive": "timeout=5"
+  },
+  "body": {
+    "Product": {
+      "name": "Test MuRsyhvmlB",
+      "amount": 501,
+      "price": 67563,
+      "manufacturer": "Microsoft",
+      "createdOn": "2026-04-26T21:39:34.000Z",
+      "notes": "Notes eccfVHKlVp",
+      "_id": "69ee86164ba1bb928e21edec"
+    },
+    "IsSuccess": true,
+    "ErrorMessage": null
+  }
+}

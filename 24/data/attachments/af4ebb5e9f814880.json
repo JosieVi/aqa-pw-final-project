@@ -1,0 +1,26 @@
+{
+  "headers": {
+    "x-powered-by": "Express",
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "Authorization,X-User-Name",
+    "content-type": "application/json; charset=utf-8",
+    "content-length": "225",
+    "etag": "W/\"e1-TTh3D+bwrnGtcbzECI/9RdFSgmA\"",
+    "date": "Sun, 26 Apr 2026 21:39:38 GMT",
+    "connection": "keep-alive",
+    "keep-alive": "timeout=5"
+  },
+  "body": {
+    "Product": {
+      "name": "Test TuHkfDOaRt",
+      "amount": 632,
+      "price": 77691,
+      "manufacturer": "Xiaomi",
+      "createdOn": "2026-04-26T21:39:38.000Z",
+      "notes": "Notes HdytXplFfI",
+      "_id": "69ee861a4ba1bb928e21f861"
+    },
+    "IsSuccess": true,
+    "ErrorMessage": null
+  }
+}

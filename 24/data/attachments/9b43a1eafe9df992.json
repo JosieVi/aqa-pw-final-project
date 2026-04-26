@@ -1,0 +1,26 @@
+{
+  "headers": {
+    "x-powered-by": "Express",
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "Authorization,X-User-Name",
+    "content-type": "application/json; charset=utf-8",
+    "content-length": "223",
+    "etag": "W/\"df-+YZQhUpYgujJ1p8TFlFlqlWxiEc\"",
+    "date": "Sun, 26 Apr 2026 21:39:39 GMT",
+    "connection": "keep-alive",
+    "keep-alive": "timeout=5"
+  },
+  "body": {
+    "Product": {
+      "name": "Test UAzSPmfCyw",
+      "amount": 112,
+      "price": 19417,
+      "manufacturer": "Sony",
+      "createdOn": "2026-04-26T21:39:39.000Z",
+      "notes": "Notes DjNKgjpPbg",
+      "_id": "69ee861b4ba1bb928e21f915"
+    },
+    "IsSuccess": true,
+    "ErrorMessage": null
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "headers": {
+    "content-type": "application/json",
+    "Authorization": "Bearer invalid_token"
+  },
+  "body": {
+    "finalDate": "2026-08-25",
+    "condition": "Pickup",
+    "address": {
+      "country": "Canada",
+      "city": "TestCity wPrIl",
+      "street": "TestStreet ujeojgHRLj",
+      "house": 525,
+      "flat": 6311
+    }
+  }
+}

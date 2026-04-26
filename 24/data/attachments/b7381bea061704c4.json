@@ -1,0 +1,25 @@
+{
+  "headers": {
+    "x-powered-by": "Express",
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "Authorization,X-User-Name",
+    "content-type": "application/json; charset=utf-8",
+    "content-length": "198",
+    "etag": "W/\"c6-wgA9Tm+Xu5c0gTvvFYp7Gs1T7UI\"",
+    "date": "Sun, 26 Apr 2026 21:39:43 GMT",
+    "connection": "keep-alive",
+    "keep-alive": "timeout=5"
+  },
+  "body": {
+    "Product": {
+      "name": "Test jLEWZIyoSb",
+      "amount": 740,
+      "price": 52738,
+      "manufacturer": "Amazon",
+      "createdOn": "2026-04-26T21:39:43.000Z",
+      "_id": "69ee861f4ba1bb928e22059d"
+    },
+    "IsSuccess": true,
+    "ErrorMessage": null
+  }
+}

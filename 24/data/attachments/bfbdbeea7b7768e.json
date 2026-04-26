@@ -1,0 +1,26 @@
+{
+  "headers": {
+    "x-powered-by": "Express",
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "Authorization,X-User-Name",
+    "content-type": "application/json; charset=utf-8",
+    "content-length": "224",
+    "etag": "W/\"e0-Wf8vYClgbUU72dYS3IZUeKOWK9s\"",
+    "date": "Sun, 26 Apr 2026 21:39:14 GMT",
+    "connection": "keep-alive",
+    "keep-alive": "timeout=5"
+  },
+  "body": {
+    "Product": {
+      "name": "Test AdhUJBRKoU",
+      "amount": 996,
+      "price": 67984,
+      "manufacturer": "Tesla",
+      "createdOn": "2026-04-26T21:39:14.000Z",
+      "notes": "Notes GmIsMVhZSC",
+      "_id": "69ee86024ba1bb928e21daac"
+    },
+    "IsSuccess": true,
+    "ErrorMessage": null
+  }
+}
