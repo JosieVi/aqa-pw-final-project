@@ -1,0 +1,67 @@
+{
+  "headers": {
+    "x-powered-by": "Express",
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "Authorization,X-User-Name",
+    "content-type": "application/json; charset=utf-8",
+    "content-length": "1844",
+    "etag": "W/\"734-dYDt/4e/XLuHMmWppQnWNF7qrGQ\"",
+    "date": "Sun, 26 Apr 2026 21:02:07 GMT",
+    "connection": "keep-alive",
+    "keep-alive": "timeout=5"
+  },
+  "body": {
+    "Customers": [
+      {
+        "_id": "69ee7d4f02c17317a418835c",
+        "email": "test1777237327842_GNRO@example.com",
+        "name": "SearchTestbsaGpmlk",
+        "country": "France",
+        "city": "testCity lTRGdqIbUgk",
+        "street": "testStreet LEIFv130M8Eg3JVvg92BbT71jKrzD",
+        "house": 683,
+        "flat": 5970,
+        "phone": "+9183188578",
+        "createdOn": "2026-04-26T21:02:07.000Z",
+        "notes": "Notes JrXYjwyabCijSUyIvPrbxTVuLznsGVswhTgKwQWmPkArBEskkUWStEaPiuAvHWXphaQjApgzADjEBufvSyhGKCHfwZmYSbAVnsLDOKOXPXwIMDiCFPqoiyDEOxgNWoreCouPFrROFMkTzeqrbeNVkLTgwSEvUMLRhdUhjhhMZDXOXwgtrBSPdKfrjPuNnvfWVOYpEnZpBAZizJZumGMPTxGWFqZbwwvBcJpMlvRZhAtElsDIRWdS"
+      },
+      {
+        "_id": "69ee7d4f02c17317a4188360",
+        "email": "test1777237327842_GGYK@example.com",
+        "name": "SearchTestbsaGpmlk",
+        "country": "France",
+        "city": "testCity pDOSydpUTGY",
+        "street": "testStreet 12B2gg0YKWXSdHsijMOUx3JPraRmS",
+        "house": 685,
+        "flat": 7522,
+        "phone": "+1590354319",
+        "createdOn": "2026-04-26T21:02:07.000Z",
+        "notes": "Notes lvUoSBoPkaHZVjBLOXIyzUsKSqLntXhomIiSXySNAaEXatiPIauNpAKStQuUzKXRCJpGVFPKnypJMQAEGpaHagKyKypLQFwfPhKXEWdRGDXtEzstfLiqSnJBCXtScCAXNbGnPDIxxrJjDmMDuibJlODfasRsfKMkoIDgxrKscNUYyOhqmrfGZpaMKqLeZrDhrJdmerNnnVzeHnMKjjjuAAIbyJEaELtkcBRWHhkDMnBcbXxralJU"
+      },
+      {
+        "_id": "69ee7d4f02c17317a4188362",
+        "email": "test1777237327842_NPCV@example.com",
+        "name": "SearchTestbsaGpmlk",
+        "country": "Belarus",
+        "city": "testCity fKbYliQiVvh",
+        "street": "testStreet ZNbhzAECEmfr9oLNwifq3rmTgZDGm",
+        "house": 77,
+        "flat": 214,
+        "phone": "+4867881172",
+        "createdOn": "2026-04-26T21:02:07.000Z",
+        "notes": "Notes cnHsQcgThRUcngOYHItIwayJXXqhfbegnXGEenQZEJvRmrXubZuxBhrcjKdgwsvPyXOYDpEStrvbhibFHBpPFdlXHXKgOlledOcTNWeuAXLDaaxBQwpWhVuxssmbhyyOQTDEXFKSRoSvXfUFpgjllbMYskBQWeTTcbcxokBwoszIgRYJzVqkSwPrycUKmYhvVflDNDWJuDnGoxObozbLKXwZjahfmvperxGzArALmOSCbpplKhFl"
+      }
+    ],
+    "total": 3,
+    "page": 1,
+    "limit": 10,
+    "search": "SearchTestbsaGpmlk",
+    "country": [],
+    "sorting": {
+      "sortField": "createdOn",
+      "sortOrder": "desc"
+    },
+    "IsSuccess": true,
+    "ErrorMessage": null
+  }
+}

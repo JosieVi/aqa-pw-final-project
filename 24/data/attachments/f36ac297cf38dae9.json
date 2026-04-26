@@ -1,0 +1,30 @@
+{
+  "headers": {
+    "x-powered-by": "Express",
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "Authorization,X-User-Name",
+    "content-type": "application/json; charset=utf-8",
+    "content-length": "623",
+    "etag": "W/\"26f-MGRnTB6uMxxApcRHkCQrjSnJEIE\"",
+    "date": "Sun, 26 Apr 2026 21:02:08 GMT",
+    "connection": "keep-alive",
+    "keep-alive": "timeout=5"
+  },
+  "body": {
+    "Customer": {
+      "email": "test1777237328651_ORPL@example.com",
+      "name": "test zSKpPLgXeLQVcnMEgqWiVmXodCOdPxQiCRA",
+      "country": "USA",
+      "city": "testCity wDbCbIIxYAT",
+      "street": "testStreet b6f4Zmz0yV1hUQCwDiNKefGGCUvCZ",
+      "house": 288,
+      "flat": 2681,
+      "phone": "+3612834482",
+      "createdOn": "2026-04-26T21:02:08.000Z",
+      "notes": "Notes PAMCYJvWDCHbfZMByiXRoRAyfXFnBJvbDWyGyrccZHDQYzrzRtzzYvLwwEDDEFRSXustErtApTJCjTVQVxMogrgXnEDlbDPbOVsgKHFndSTCIDnTWlyXuWBiQQHSKdiYZQYZhArGJDTafJqTivsoaPcitoDlizyjpcnoeegQmPkBVQLqZwFaKvfdUABhiVpfCidEKeAbAtHugmPSdApYqTGWVuGbbcMjYFCwAPtVFFLWFJfZNyGo",
+      "_id": "69ee7d5002c17317a41884ae"
+    },
+    "IsSuccess": true,
+    "ErrorMessage": null
+  }
+}

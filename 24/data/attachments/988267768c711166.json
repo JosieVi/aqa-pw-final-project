@@ -1,0 +1,26 @@
+{
+  "headers": {
+    "x-powered-by": "Express",
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "Authorization,X-User-Name",
+    "content-type": "application/json; charset=utf-8",
+    "content-length": "225",
+    "etag": "W/\"e1-+bZOAPaWrLmd6mU+dhb93oLbQU4\"",
+    "date": "Sun, 26 Apr 2026 21:01:55 GMT",
+    "connection": "keep-alive",
+    "keep-alive": "timeout=5"
+  },
+  "body": {
+    "Product": {
+      "name": "Test DGMCRgkTfO",
+      "amount": 637,
+      "price": 93029,
+      "manufacturer": "Google",
+      "createdOn": "2026-04-26T21:01:55.000Z",
+      "notes": "Notes lCjjyDLLjm",
+      "_id": "69ee7d4302c17317a4187d26"
+    },
+    "IsSuccess": true,
+    "ErrorMessage": null
+  }
+}

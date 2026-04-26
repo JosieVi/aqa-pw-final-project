@@ -1,0 +1,26 @@
+{
+  "headers": {
+    "x-powered-by": "Express",
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "Authorization,X-User-Name",
+    "content-type": "application/json; charset=utf-8",
+    "content-length": "225",
+    "etag": "W/\"e1-dH/db3W1BBYQBi5ben/+Wu5Wd3M\"",
+    "date": "Sun, 26 Apr 2026 21:01:49 GMT",
+    "connection": "keep-alive",
+    "keep-alive": "timeout=5"
+  },
+  "body": {
+    "Product": {
+      "name": "Test QZxpSUNMvA",
+      "amount": 465,
+      "price": 13972,
+      "manufacturer": "Xiaomi",
+      "createdOn": "2026-04-26T21:01:49.000Z",
+      "notes": "Notes GNHDtGpfFM",
+      "_id": "69ee7d3d02c17317a4187bc7"
+    },
+    "IsSuccess": true,
+    "ErrorMessage": null
+  }
+}

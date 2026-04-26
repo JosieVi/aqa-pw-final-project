@@ -1,0 +1,26 @@
+{
+  "headers": {
+    "x-powered-by": "Express",
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "Authorization,X-User-Name",
+    "content-type": "application/json; charset=utf-8",
+    "content-length": "224",
+    "etag": "W/\"e0-cKaFg2eMqKtwbo/grP811Y2tyHI\"",
+    "date": "Sun, 26 Apr 2026 21:02:13 GMT",
+    "connection": "keep-alive",
+    "keep-alive": "timeout=5"
+  },
+  "body": {
+    "Product": {
+      "name": "Test lxiViHFAVB",
+      "amount": 484,
+      "price": 82137,
+      "manufacturer": "Tesla",
+      "createdOn": "2026-04-26T21:02:13.000Z",
+      "notes": "Notes RLgNRDVckr",
+      "_id": "69ee7d5502c17317a4188c6e"
+    },
+    "IsSuccess": true,
+    "ErrorMessage": null
+  }
+}

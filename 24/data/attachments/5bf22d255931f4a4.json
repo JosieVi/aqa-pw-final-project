@@ -1,0 +1,26 @@
+{
+  "headers": {
+    "x-powered-by": "Express",
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "Authorization,X-User-Name",
+    "content-type": "application/json; charset=utf-8",
+    "content-length": "224",
+    "etag": "W/\"e0-RSR7vd6SeE0vtDbp7z0thHjKB/I\"",
+    "date": "Sun, 26 Apr 2026 21:02:22 GMT",
+    "connection": "keep-alive",
+    "keep-alive": "timeout=5"
+  },
+  "body": {
+    "Product": {
+      "name": "Test zNWQlntjkO",
+      "amount": 615,
+      "price": 71588,
+      "manufacturer": "Apple",
+      "createdOn": "2026-04-26T21:02:22.000Z",
+      "notes": "Notes svIwduHFaQ",
+      "_id": "69ee7d5e02c17317a4189ed0"
+    },
+    "IsSuccess": true,
+    "ErrorMessage": null
+  }
+}

@@ -1,0 +1,82 @@
+{
+  "headers": {
+    "x-powered-by": "Express",
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "Authorization,X-User-Name",
+    "content-type": "application/json; charset=utf-8",
+    "content-length": "1495",
+    "etag": "W/\"5d7-ZD7IMrDSrJrjboAHh74UcJo2Z2s\"",
+    "date": "Sun, 26 Apr 2026 21:02:14 GMT",
+    "connection": "keep-alive",
+    "keep-alive": "timeout=5"
+  },
+  "body": {
+    "Order": {
+      "_id": "69ee7d5602c17317a4188d7c",
+      "status": "Draft",
+      "customer": {
+        "_id": "69ee7d5602c17317a4188d6f",
+        "email": "test1777237334306_TXJC@example.com",
+        "name": "test aUUjiLaHRzHiLxsaRHXoFezvEkKuGQVdbLi",
+        "country": "Russia",
+        "city": "testCity PxvYHzCoBoB",
+        "street": "testStreet rvxdpalnA6KBd1tfSAJGDVDEUdsj4",
+        "house": 479,
+        "flat": 1517,
+        "phone": "+9942014804",
+        "createdOn": "2026-04-26T21:02:14.000Z",
+        "notes": "Notes PRHLNNWwAaToVhDbYcoutQIGOcMzRKvDLtDjFxiSUbntcvqxYaekRRjoPWWUntTaLFmkJLZIbTybffoqGohOSmpxgqBjkDTCRlvbTwuZYIhwjOBZsBfaPmMPnWERZXZnVrkCgoVeolpFCOFiZYyjmgUBcsOMLBOkWJbiMVxSsNQGLiaxavTsQAFmpbqOxVVpOsaGezMmzPJLAvnGRIYUPmBhywkzuIRcYhpRFxNAoUpdsCNgEfMm"
+      },
+      "products": [
+        {
+          "_id": "69ee7d5602c17317a4188d74",
+          "name": "Test vVObHPvjqt",
+          "amount": 165,
+          "price": 97387,
+          "manufacturer": "Xiaomi",
+          "notes": "Notes HfQWhDpDUL",
+          "received": false
+        }
+      ],
+      "delivery": null,
+      "total_price": 97387,
+      "createdOn": "2026-04-26T21:02:14.000Z",
+      "comments": [],
+      "history": [
+        {
+          "status": "Draft",
+          "customer": "69ee7d5602c17317a4188d6f",
+          "products": [
+            {
+              "_id": "69ee7d5602c17317a4188d74",
+              "name": "Test vVObHPvjqt",
+              "amount": 165,
+              "price": 97387,
+              "manufacturer": "Xiaomi",
+              "notes": "Notes HfQWhDpDUL",
+              "received": false
+            }
+          ],
+          "total_price": 97387,
+          "delivery": null,
+          "changedOn": "2026-04-26T21:02:14.000Z",
+          "action": "Order created",
+          "performer": {
+            "_id": "69ee7cda02c17317a4185e78",
+            "username": "admin@example.com",
+            "firstName": "Admin",
+            "lastName": "Admin",
+            "roles": [
+              "ADMIN"
+            ],
+            "createdOn": "2026/04/26 21:00:10"
+          },
+          "assignedManager": null
+        }
+      ],
+      "assignedManager": null
+    },
+    "IsSuccess": true,
+    "ErrorMessage": null
+  }
+}

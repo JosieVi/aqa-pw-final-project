@@ -1,0 +1,26 @@
+{
+  "headers": {
+    "x-powered-by": "Express",
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "Authorization,X-User-Name",
+    "content-type": "application/json; charset=utf-8",
+    "content-length": "225",
+    "etag": "W/\"e1-IoxJjHLmW7cjb8wxiaSvlysk5vY\"",
+    "date": "Sun, 26 Apr 2026 21:02:24 GMT",
+    "connection": "keep-alive",
+    "keep-alive": "timeout=5"
+  },
+  "body": {
+    "Product": {
+      "name": "Test OGTajPWkGL",
+      "amount": 660,
+      "price": 49468,
+      "manufacturer": "Amazon",
+      "createdOn": "2026-04-26T21:02:24.000Z",
+      "notes": "Notes FNiOWtkCjy",
+      "_id": "69ee7d6002c17317a4189f4c"
+    },
+    "IsSuccess": true,
+    "ErrorMessage": null
+  }
+}

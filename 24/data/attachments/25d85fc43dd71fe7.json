@@ -1,0 +1,26 @@
+{
+  "headers": {
+    "x-powered-by": "Express",
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "Authorization,X-User-Name",
+    "content-type": "application/json; charset=utf-8",
+    "content-length": "224",
+    "etag": "W/\"e0-ggz9zdoHZZQgdPlmGhOpTcOHymI\"",
+    "date": "Sun, 26 Apr 2026 21:02:24 GMT",
+    "connection": "keep-alive",
+    "keep-alive": "timeout=5"
+  },
+  "body": {
+    "Product": {
+      "_id": "69ee7d6002c17317a4189fc3",
+      "name": "Test mzSBlLLBGo",
+      "amount": 384,
+      "price": 99242,
+      "manufacturer": "Apple",
+      "createdOn": "2026-04-26T21:02:24.000Z",
+      "notes": "Notes ZxwsUEDbAr"
+    },
+    "IsSuccess": true,
+    "ErrorMessage": null
+  }
+}

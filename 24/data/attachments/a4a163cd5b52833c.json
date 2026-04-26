@@ -1,0 +1,26 @@
+{
+  "headers": {
+    "x-powered-by": "Express",
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "Authorization,X-User-Name",
+    "content-type": "application/json; charset=utf-8",
+    "content-length": "225",
+    "etag": "W/\"e1-BCNF1czTRuKrapQ0JCwsmH5twYI\"",
+    "date": "Sun, 26 Apr 2026 21:01:34 GMT",
+    "connection": "keep-alive",
+    "keep-alive": "timeout=5"
+  },
+  "body": {
+    "Product": {
+      "name": "Test KIGMVmjYWD",
+      "amount": 527,
+      "price": 66679,
+      "manufacturer": "Amazon",
+      "createdOn": "2026-04-26T21:01:34.000Z",
+      "notes": "Notes IOttPCObKf",
+      "_id": "69ee7d2e02c17317a4186f0b"
+    },
+    "IsSuccess": true,
+    "ErrorMessage": null
+  }
+}

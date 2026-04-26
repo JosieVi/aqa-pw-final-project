@@ -1,0 +1,26 @@
+{
+  "headers": {
+    "x-powered-by": "Express",
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "Authorization,X-User-Name",
+    "content-type": "application/json; charset=utf-8",
+    "content-length": "224",
+    "etag": "W/\"e0-HfOKClXjvKavSUpKXEmb2mYAuaI\"",
+    "date": "Sun, 26 Apr 2026 21:02:13 GMT",
+    "connection": "keep-alive",
+    "keep-alive": "timeout=5"
+  },
+  "body": {
+    "Product": {
+      "name": "Test WYvPWVWYma",
+      "amount": 610,
+      "price": 49567,
+      "manufacturer": "Apple",
+      "createdOn": "2026-04-26T21:02:13.000Z",
+      "notes": "Notes XHuBhfDhQi",
+      "_id": "69ee7d5502c17317a4188b01"
+    },
+    "IsSuccess": true,
+    "ErrorMessage": null
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "headers": {
+    "x-powered-by": "Express",
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "Authorization,X-User-Name",
+    "content-type": "application/json; charset=utf-8",
+    "content-length": "93",
+    "etag": "W/\"5d-sQ2R2nsk/VSvNLrXs4lXKY41W8k\"",
+    "date": "Sun, 26 Apr 2026 21:02:06 GMT",
+    "connection": "keep-alive",
+    "keep-alive": "timeout=5"
+  },
+  "body": {
+    "IsSuccess": false,
+    "ErrorMessage": "Customer with id '69ee7d4e02c17317a4188087' wasn't found"
+  }
+}

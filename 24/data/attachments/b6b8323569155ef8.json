@@ -1,0 +1,26 @@
+{
+  "headers": {
+    "x-powered-by": "Express",
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "Authorization,X-User-Name",
+    "content-type": "application/json; charset=utf-8",
+    "content-length": "225",
+    "etag": "W/\"e1-W95QSFPJpXpNVc+ojwWGt8nJN8o\"",
+    "date": "Sun, 26 Apr 2026 21:02:16 GMT",
+    "connection": "keep-alive",
+    "keep-alive": "timeout=5"
+  },
+  "body": {
+    "Product": {
+      "name": "Test dTPpklMNnu",
+      "amount": 433,
+      "price": 60306,
+      "manufacturer": "Amazon",
+      "createdOn": "2026-04-26T21:02:16.000Z",
+      "notes": "Notes PAMFnKmInD",
+      "_id": "69ee7d5802c17317a41890ee"
+    },
+    "IsSuccess": true,
+    "ErrorMessage": null
+  }
+}

@@ -1,0 +1,112 @@
+{
+  "headers": {
+    "x-powered-by": "Express",
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "Authorization,X-User-Name",
+    "content-type": "application/json; charset=utf-8",
+    "content-length": "2013",
+    "etag": "W/\"7dd-AljuteXaDWX/nSW4sk3OoM9Ef2I\"",
+    "date": "Sun, 26 Apr 2026 21:01:28 GMT",
+    "connection": "keep-alive",
+    "keep-alive": "timeout=5"
+  },
+  "body": {
+    "Order": {
+      "_id": "69ee7d2802c17317a4186a3b",
+      "status": "Canceled",
+      "customer": {
+        "_id": "69ee7d2802c17317a4186a27",
+        "email": "test1777237288650_EKRI@example.com",
+        "name": "test yaCHlNTExOAVyfKYzaAmaDMFsAaLEKvddXw",
+        "country": "USA",
+        "city": "testCity iJJjLGHgbEt",
+        "street": "testStreet uD38e9UmJoQCVPwXt14Drx3U0S4oN",
+        "house": 792,
+        "flat": 9189,
+        "phone": "+3185313415",
+        "createdOn": "2026-04-26T21:01:28.000Z",
+        "notes": "Notes jeujSuOAyCXNIFYJuDmnUaMxqlNblCaDGGCzuWZtlybVLrxenWUxDNiZlGhfqewShWHdVejjYCeFsEVbzHnCrcQZjgNQMmeEUPlNyMtmygZVJvEmVVxxnNGoWtoijVgbhhBVsAUNubTDVadRyGvPdsadqMVSzxlmyGbiPanKairWxSPYNhVPOKdAiFbDtlBHEmEYwSXjVfdkUMbiWsjfuiJYYpLZeUwKcSnAibvjCaBMkkEQlAjl"
+      },
+      "products": [
+        {
+          "_id": "69ee7d2802c17317a4186a33",
+          "name": "Test QTaybrtSnT",
+          "amount": 529,
+          "price": 17755,
+          "manufacturer": "Apple",
+          "notes": "Notes ByqDsGBoQz",
+          "received": false
+        }
+      ],
+      "delivery": null,
+      "total_price": 17755,
+      "createdOn": "2026-04-26T21:01:28.000Z",
+      "comments": [],
+      "history": [
+        {
+          "status": "Canceled",
+          "customer": "69ee7d2802c17317a4186a27",
+          "products": [
+            {
+              "_id": "69ee7d2802c17317a4186a33",
+              "name": "Test QTaybrtSnT",
+              "amount": 529,
+              "price": 17755,
+              "manufacturer": "Apple",
+              "notes": "Notes ByqDsGBoQz",
+              "received": false
+            }
+          ],
+          "total_price": 17755,
+          "delivery": null,
+          "changedOn": "2026-04-26T21:01:28.000Z",
+          "action": "Order canceled",
+          "performer": {
+            "_id": "69ee7cda02c17317a4185e78",
+            "username": "admin@example.com",
+            "firstName": "Admin",
+            "lastName": "Admin",
+            "roles": [
+              "ADMIN"
+            ],
+            "createdOn": "2026/04/26 21:00:10"
+          },
+          "assignedManager": null
+        },
+        {
+          "status": "Draft",
+          "customer": "69ee7d2802c17317a4186a27",
+          "products": [
+            {
+              "_id": "69ee7d2802c17317a4186a33",
+              "name": "Test QTaybrtSnT",
+              "amount": 529,
+              "price": 17755,
+              "manufacturer": "Apple",
+              "notes": "Notes ByqDsGBoQz",
+              "received": false
+            }
+          ],
+          "total_price": 17755,
+          "delivery": null,
+          "changedOn": "2026-04-26T21:01:28.000Z",
+          "action": "Order created",
+          "performer": {
+            "_id": "69ee7cda02c17317a4185e78",
+            "username": "admin@example.com",
+            "firstName": "Admin",
+            "lastName": "Admin",
+            "roles": [
+              "ADMIN"
+            ],
+            "createdOn": "2026/04/26 21:00:10"
+          },
+          "assignedManager": null
+        }
+      ],
+      "assignedManager": null
+    },
+    "IsSuccess": true,
+    "ErrorMessage": null
+  }
+}

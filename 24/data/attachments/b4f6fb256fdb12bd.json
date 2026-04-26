@@ -1,0 +1,26 @@
+{
+  "headers": {
+    "x-powered-by": "Express",
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "Authorization,X-User-Name",
+    "content-type": "application/json; charset=utf-8",
+    "content-length": "224",
+    "etag": "W/\"e0-h+gGoBE2DvSK3ZFEqUcRBrF0GZc\"",
+    "date": "Sun, 26 Apr 2026 21:02:17 GMT",
+    "connection": "keep-alive",
+    "keep-alive": "timeout=5"
+  },
+  "body": {
+    "Product": {
+      "name": "Test MDedYWAePU",
+      "amount": 68,
+      "price": 98159,
+      "manufacturer": "Xiaomi",
+      "createdOn": "2026-04-26T21:02:17.000Z",
+      "notes": "Notes HvtQWZHWHY",
+      "_id": "69ee7d5902c17317a41894cc"
+    },
+    "IsSuccess": true,
+    "ErrorMessage": null
+  }
+}

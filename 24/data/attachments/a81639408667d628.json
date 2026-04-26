@@ -1,0 +1,26 @@
+{
+  "headers": {
+    "x-powered-by": "Express",
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "Authorization,X-User-Name",
+    "content-type": "application/json; charset=utf-8",
+    "content-length": "223",
+    "etag": "W/\"df-V7CLZbIUw/7Rv8nN10HPxfNKc5I\"",
+    "date": "Sun, 26 Apr 2026 21:02:14 GMT",
+    "connection": "keep-alive",
+    "keep-alive": "timeout=5"
+  },
+  "body": {
+    "Product": {
+      "name": "Test EFIoKSIoio",
+      "amount": 189,
+      "price": 53204,
+      "manufacturer": "Sony",
+      "createdOn": "2026-04-26T21:02:14.000Z",
+      "notes": "Notes VuevpMyZEj",
+      "_id": "69ee7d5602c17317a4188df2"
+    },
+    "IsSuccess": true,
+    "ErrorMessage": null
+  }
+}

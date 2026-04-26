@@ -1,0 +1,112 @@
+{
+  "headers": {
+    "x-powered-by": "Express",
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "Authorization,X-User-Name",
+    "content-type": "application/json; charset=utf-8",
+    "content-length": "2020",
+    "etag": "W/\"7e4-k1LZwZAgPUWJRSYvkU5uKU05ZPc\"",
+    "date": "Sun, 26 Apr 2026 21:01:21 GMT",
+    "connection": "keep-alive",
+    "keep-alive": "timeout=5"
+  },
+  "body": {
+    "Order": {
+      "_id": "69ee7d2102c17317a418650a",
+      "status": "Canceled",
+      "customer": {
+        "_id": "69ee7d2102c17317a41864fd",
+        "email": "test1777237280993_PNNG@example.com",
+        "name": "test kWzDsefKDOsBHjgfTLqFFEyhBkmUmTWjSNj",
+        "country": "France",
+        "city": "testCity vvqnUDkJeDJ",
+        "street": "testStreet jhIEuOcVRCYjzrC1j8M66Ik82onON",
+        "house": 34,
+        "flat": 170,
+        "phone": "+6847547753",
+        "createdOn": "2026-04-26T21:01:21.000Z",
+        "notes": "Notes QBAbbLKRvFZCHPZTrTCGfwmiGQMNEPNXHFzFFZvsjGsUujnNMhdtwgiFfVOTcVAyNRvXbVyWXvPhROHuAqCFcbMOEPBXXmpOtcNJbtDoauxeJiiGpxhIOOformPlUerKwLtwVCpJCUxlISAEUvySAPMnwIBBTZIzOiJVMzHNjnHWHEggvZFeshchTjqTTRmnqBfqUOVCHgyiVQEMVSsqIEnVVEeYlCOGRUCzWpWHQXOPTINwKbnu"
+      },
+      "products": [
+        {
+          "_id": "69ee7d2102c17317a4186502",
+          "name": "Test JURODboHFm",
+          "amount": 102,
+          "price": 27591,
+          "manufacturer": "Samsung",
+          "notes": "Notes XjDCvqTxDJ",
+          "received": false
+        }
+      ],
+      "delivery": null,
+      "total_price": 27591,
+      "createdOn": "2026-04-26T21:01:21.000Z",
+      "comments": [],
+      "history": [
+        {
+          "status": "Canceled",
+          "customer": "69ee7d2102c17317a41864fd",
+          "products": [
+            {
+              "_id": "69ee7d2102c17317a4186502",
+              "name": "Test JURODboHFm",
+              "amount": 102,
+              "price": 27591,
+              "manufacturer": "Samsung",
+              "notes": "Notes XjDCvqTxDJ",
+              "received": false
+            }
+          ],
+          "total_price": 27591,
+          "delivery": null,
+          "changedOn": "2026-04-26T21:01:21.000Z",
+          "action": "Order canceled",
+          "performer": {
+            "_id": "69ee7cda02c17317a4185e78",
+            "username": "admin@example.com",
+            "firstName": "Admin",
+            "lastName": "Admin",
+            "roles": [
+              "ADMIN"
+            ],
+            "createdOn": "2026/04/26 21:00:10"
+          },
+          "assignedManager": null
+        },
+        {
+          "status": "Draft",
+          "customer": "69ee7d2102c17317a41864fd",
+          "products": [
+            {
+              "_id": "69ee7d2102c17317a4186502",
+              "name": "Test JURODboHFm",
+              "amount": 102,
+              "price": 27591,
+              "manufacturer": "Samsung",
+              "notes": "Notes XjDCvqTxDJ",
+              "received": false
+            }
+          ],
+          "total_price": 27591,
+          "delivery": null,
+          "changedOn": "2026-04-26T21:01:21.000Z",
+          "action": "Order created",
+          "performer": {
+            "_id": "69ee7cda02c17317a4185e78",
+            "username": "admin@example.com",
+            "firstName": "Admin",
+            "lastName": "Admin",
+            "roles": [
+              "ADMIN"
+            ],
+            "createdOn": "2026/04/26 21:00:10"
+          },
+          "assignedManager": null
+        }
+      ],
+      "assignedManager": null
+    },
+    "IsSuccess": true,
+    "ErrorMessage": null
+  }
+}

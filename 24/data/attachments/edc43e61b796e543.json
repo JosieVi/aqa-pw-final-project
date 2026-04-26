@@ -1,0 +1,93 @@
+{
+  "headers": {
+    "x-powered-by": "Express",
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "Authorization,X-User-Name",
+    "content-type": "application/json; charset=utf-8",
+    "content-length": "1704",
+    "etag": "W/\"6a8-Ro8jSHNU+Mo3HNhBNpoOHhbMQxw\"",
+    "date": "Sun, 26 Apr 2026 21:02:11 GMT",
+    "connection": "keep-alive",
+    "keep-alive": "timeout=5"
+  },
+  "body": {
+    "Order": {
+      "_id": "69ee7d5302c17317a418887a",
+      "status": "Draft",
+      "customer": {
+        "_id": "69ee7d5302c17317a418886d",
+        "email": "test1777237331615_LJSA@example.com",
+        "name": "test OCYSQfUUzRalXFlONFuVCKeyNSgocXWDNAW",
+        "country": "Russia",
+        "city": "testCity KUyuKXxgWpt",
+        "street": "testStreet kGyKfGhKx9S2lLCNbE8RK0pcjpVyJ",
+        "house": 581,
+        "flat": 7232,
+        "phone": "+2592518987",
+        "createdOn": "2026-04-26T21:02:11.000Z",
+        "notes": "Notes YkNJuBKijSCzWGHEaSzEWDRGspwvtcmwAZfFWaSMqqUPRvixbncewXBDzBkUBggbYFrEUvIWXuddLdYeVQukULXWhSQdfpXzBOsBjzsnbTZgtNHnMctZhYWiolNwymjjmwpleJJdDyAZmgWdEilyoKjyiQtlsRdFNLXxVheGVLyJAbcaWLIijukopRIOoNdGPxWGPNqvbKPagWUquZTyTMHpEmLYGOqvYcqgMJZkcJusZrIOIUSE"
+      },
+      "products": [
+        {
+          "_id": "69ee7d5302c17317a4188872",
+          "name": "Test CYRWDlKMMv",
+          "amount": 198,
+          "price": 65817,
+          "manufacturer": "Amazon",
+          "notes": "Notes ozXXfWVjtZ",
+          "received": false
+        }
+      ],
+      "delivery": null,
+      "total_price": 65817,
+      "createdOn": "2026-04-26T21:02:11.000Z",
+      "comments": [
+        {
+          "text": "Notes tldqFNLfLMhpDJx",
+          "createdOn": "2026-04-26T21:02:11.000Z",
+          "_id": "69ee7d5302c17317a4188885"
+        },
+        {
+          "text": "Notes UdopbLrmcxRRJjR",
+          "createdOn": "2026-04-26T21:02:11.000Z",
+          "_id": "69ee7d5302c17317a4188894"
+        }
+      ],
+      "history": [
+        {
+          "status": "Draft",
+          "customer": "69ee7d5302c17317a418886d",
+          "products": [
+            {
+              "_id": "69ee7d5302c17317a4188872",
+              "name": "Test CYRWDlKMMv",
+              "amount": 198,
+              "price": 65817,
+              "manufacturer": "Amazon",
+              "notes": "Notes ozXXfWVjtZ",
+              "received": false
+            }
+          ],
+          "total_price": 65817,
+          "delivery": null,
+          "changedOn": "2026-04-26T21:02:11.000Z",
+          "action": "Order created",
+          "performer": {
+            "_id": "69ee7cda02c17317a4185e78",
+            "username": "admin@example.com",
+            "firstName": "Admin",
+            "lastName": "Admin",
+            "roles": [
+              "ADMIN"
+            ],
+            "createdOn": "2026/04/26 21:00:10"
+          },
+          "assignedManager": null
+        }
+      ],
+      "assignedManager": null
+    },
+    "IsSuccess": true,
+    "ErrorMessage": null
+  }
+}

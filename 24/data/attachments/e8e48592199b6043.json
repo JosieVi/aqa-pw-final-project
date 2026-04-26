@@ -1,0 +1,26 @@
+{
+  "headers": {
+    "x-powered-by": "Express",
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "Authorization,X-User-Name",
+    "content-type": "application/json; charset=utf-8",
+    "content-length": "223",
+    "etag": "W/\"df-hAcVSXySMdpFz1qzxDC8O25cqLw\"",
+    "date": "Sun, 26 Apr 2026 21:02:15 GMT",
+    "connection": "keep-alive",
+    "keep-alive": "timeout=5"
+  },
+  "body": {
+    "Product": {
+      "name": "Test JrSEBCWJcJ",
+      "amount": 492,
+      "price": 92208,
+      "manufacturer": "Sony",
+      "createdOn": "2026-04-26T21:02:15.000Z",
+      "notes": "Notes FgTYaoELwy",
+      "_id": "69ee7d5702c17317a4188fec"
+    },
+    "IsSuccess": true,
+    "ErrorMessage": null
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "headers": {
+    "x-powered-by": "Express",
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "Authorization,X-User-Name",
+    "content-type": "application/json; charset=utf-8",
+    "content-length": "227",
+    "etag": "W/\"e3-C8E9QJUvRCoZy4I3x+y71IX41ik\"",
+    "date": "Sun, 26 Apr 2026 21:01:10 GMT",
+    "connection": "keep-alive",
+    "keep-alive": "timeout=5"
+  },
+  "body": {
+    "Product": {
+      "name": "Test fmHOKGttov",
+      "amount": 449,
+      "price": 2088,
+      "manufacturer": "Microsoft",
+      "createdOn": "2026-04-26T21:01:10.000Z",
+      "notes": "Notes jXQtwytEKR",
+      "_id": "69ee7d1602c17317a4185fb7"
+    },
+    "IsSuccess": true,
+    "ErrorMessage": null
+  }
+}

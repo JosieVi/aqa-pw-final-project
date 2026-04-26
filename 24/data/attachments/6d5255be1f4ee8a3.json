@@ -1,0 +1,26 @@
+{
+  "headers": {
+    "x-powered-by": "Express",
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "Authorization,X-User-Name",
+    "content-type": "application/json; charset=utf-8",
+    "content-length": "224",
+    "etag": "W/\"e0-FQIK+Y3AAXVbeCKAZaaBYspNinc\"",
+    "date": "Sun, 26 Apr 2026 21:01:29 GMT",
+    "connection": "keep-alive",
+    "keep-alive": "timeout=5"
+  },
+  "body": {
+    "Product": {
+      "name": "Test SEjkSaZIct",
+      "amount": 948,
+      "price": 86155,
+      "manufacturer": "Apple",
+      "createdOn": "2026-04-26T21:01:29.000Z",
+      "notes": "Notes ruHLzNmiHS",
+      "_id": "69ee7d2902c17317a4186b10"
+    },
+    "IsSuccess": true,
+    "ErrorMessage": null
+  }
+}

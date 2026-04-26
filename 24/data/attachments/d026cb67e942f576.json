@@ -1,0 +1,29 @@
+{
+  "headers": {
+    "x-powered-by": "Express",
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "Authorization,X-User-Name",
+    "authorization": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5ZWU3Y2RhMDJjMTczMTdhNDE4NWU3OCIsInJvbGVzIjpbIkFETUlOIl0sImlhdCI6MTc3NzIzNzI2NSwiZXhwIjoxNzc3MzIzNjY1fQ.LKpzT9uLFH-XmMO8rrHCUwbig-kPPscbkfIDFpuiE6M",
+    "x-user-name": "Admin",
+    "content-type": "application/json; charset=utf-8",
+    "content-length": "202",
+    "etag": "W/\"ca-bWnJUDd9O2z4Xbhv0pft0cB+vCw\"",
+    "date": "Sun, 26 Apr 2026 21:01:09 GMT",
+    "connection": "keep-alive",
+    "keep-alive": "timeout=5"
+  },
+  "body": {
+    "IsSuccess": true,
+    "ErrorMessage": null,
+    "User": {
+      "_id": "69ee7cda02c17317a4185e78",
+      "username": "admin@example.com",
+      "firstName": "Admin",
+      "lastName": "Admin",
+      "roles": [
+        "ADMIN"
+      ],
+      "createdOn": "2026/04/26 21:00:10"
+    }
+  }
+}

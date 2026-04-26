@@ -1,0 +1,26 @@
+{
+  "headers": {
+    "x-powered-by": "Express",
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "Authorization,X-User-Name",
+    "content-type": "application/json; charset=utf-8",
+    "content-length": "222",
+    "etag": "W/\"de-oZTpu2si7f2IwweHImVoxXG4LIA\"",
+    "date": "Sun, 26 Apr 2026 21:02:13 GMT",
+    "connection": "keep-alive",
+    "keep-alive": "timeout=5"
+  },
+  "body": {
+    "Product": {
+      "name": "Test LkLJXVpITt",
+      "amount": 694,
+      "price": 1904,
+      "manufacturer": "Sony",
+      "createdOn": "2026-04-26T21:02:13.000Z",
+      "notes": "Notes XdodOBfSfi",
+      "_id": "69ee7d5502c17317a4188b5f"
+    },
+    "IsSuccess": true,
+    "ErrorMessage": null
+  }
+}
