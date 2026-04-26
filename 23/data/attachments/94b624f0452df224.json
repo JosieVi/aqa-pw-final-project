@@ -1,0 +1,26 @@
+{
+  "headers": {
+    "x-powered-by": "Express",
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "Authorization,X-User-Name",
+    "content-type": "application/json; charset=utf-8",
+    "content-length": "228",
+    "etag": "W/\"e4-35luA0CyEKRz3b85VyxpVQw3e/o\"",
+    "date": "Sun, 26 Apr 2026 20:47:02 GMT",
+    "connection": "keep-alive",
+    "keep-alive": "timeout=5"
+  },
+  "body": {
+    "Product": {
+      "name": "Test BBkIZhMUNL",
+      "amount": 318,
+      "price": 86755,
+      "manufacturer": "Microsoft",
+      "createdOn": "2026-04-26T20:47:02.000Z",
+      "notes": "Notes luXgMQKPsQ",
+      "_id": "69ee79c66cae78c676e21189"
+    },
+    "IsSuccess": true,
+    "ErrorMessage": null
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "headers": {
+    "x-powered-by": "Express",
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "Authorization,X-User-Name",
+    "content-type": "application/json; charset=utf-8",
+    "content-length": "223",
+    "etag": "W/\"df-U3f0faJY3Tyy7Ok+wLbTtSQxszQ\"",
+    "date": "Sun, 26 Apr 2026 20:47:32 GMT",
+    "connection": "keep-alive",
+    "keep-alive": "timeout=5"
+  },
+  "body": {
+    "Product": {
+      "name": "Test lLSTllpkVM",
+      "amount": 650,
+      "price": 38778,
+      "manufacturer": "Sony",
+      "createdOn": "2026-04-26T20:47:32.000Z",
+      "notes": "Notes QFbYUswqei",
+      "_id": "69ee79e46cae78c676e23b56"
+    },
+    "IsSuccess": true,
+    "ErrorMessage": null
+  }
+}

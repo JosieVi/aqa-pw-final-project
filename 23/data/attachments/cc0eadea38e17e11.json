@@ -1,0 +1,26 @@
+{
+  "headers": {
+    "x-powered-by": "Express",
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "Authorization,X-User-Name",
+    "content-type": "application/json; charset=utf-8",
+    "content-length": "224",
+    "etag": "W/\"e0-5w1tTBzVX69k0JgVv3SmiD6XVCo\"",
+    "date": "Sun, 26 Apr 2026 20:46:44 GMT",
+    "connection": "keep-alive",
+    "keep-alive": "timeout=5"
+  },
+  "body": {
+    "Product": {
+      "name": "Test RytzccHHxV",
+      "amount": 605,
+      "price": 42128,
+      "manufacturer": "Tesla",
+      "createdOn": "2026-04-26T20:46:44.000Z",
+      "notes": "Notes oPjcpswDrP",
+      "_id": "69ee79b46cae78c676e206c0"
+    },
+    "IsSuccess": true,
+    "ErrorMessage": null
+  }
+}

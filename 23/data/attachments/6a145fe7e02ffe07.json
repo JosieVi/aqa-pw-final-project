@@ -1,0 +1,26 @@
+{
+  "headers": {
+    "x-powered-by": "Express",
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "Authorization,X-User-Name",
+    "content-type": "application/json; charset=utf-8",
+    "content-length": "224",
+    "etag": "W/\"e0-3BIOuN2wO4VstFuChfAgf7RkTxQ\"",
+    "date": "Sun, 26 Apr 2026 20:46:56 GMT",
+    "connection": "keep-alive",
+    "keep-alive": "timeout=5"
+  },
+  "body": {
+    "Product": {
+      "name": "Test QbGOHfZpGl",
+      "amount": 21,
+      "price": 21588,
+      "manufacturer": "Amazon",
+      "createdOn": "2026-04-26T20:46:56.000Z",
+      "notes": "Notes QHmlpiHEFX",
+      "_id": "69ee79c06cae78c676e20c45"
+    },
+    "IsSuccess": true,
+    "ErrorMessage": null
+  }
+}

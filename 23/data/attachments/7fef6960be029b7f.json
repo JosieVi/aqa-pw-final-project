@@ -1,0 +1,26 @@
+{
+  "headers": {
+    "x-powered-by": "Express",
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "Authorization,X-User-Name",
+    "content-type": "application/json; charset=utf-8",
+    "content-length": "225",
+    "etag": "W/\"e1-OarMwJhAAGbbZrw5QTQTGP8sQxw\"",
+    "date": "Sun, 26 Apr 2026 20:47:25 GMT",
+    "connection": "keep-alive",
+    "keep-alive": "timeout=5"
+  },
+  "body": {
+    "Product": {
+      "name": "Test LHUdXIUSaL",
+      "amount": 789,
+      "price": 72388,
+      "manufacturer": "Xiaomi",
+      "createdOn": "2026-04-26T20:47:25.000Z",
+      "notes": "Notes ODKVRLZxog",
+      "_id": "69ee79dd6cae78c676e22882"
+    },
+    "IsSuccess": true,
+    "ErrorMessage": null
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "headers": {
+    "x-powered-by": "Express",
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "Authorization,X-User-Name",
+    "content-type": "application/json; charset=utf-8",
+    "content-length": "223",
+    "etag": "W/\"df-bYctHNvoZIf4zBXeNnm11/u7pcY\"",
+    "date": "Sun, 26 Apr 2026 20:47:15 GMT",
+    "connection": "keep-alive",
+    "keep-alive": "timeout=5"
+  },
+  "body": {
+    "Product": {
+      "name": "Test kYOaduNgMg",
+      "amount": 473,
+      "price": 63409,
+      "manufacturer": "Sony",
+      "createdOn": "2026-04-26T20:47:15.000Z",
+      "notes": "Notes ypwgBcBVpS",
+      "_id": "69ee79d36cae78c676e2216c"
+    },
+    "IsSuccess": true,
+    "ErrorMessage": null
+  }
+}

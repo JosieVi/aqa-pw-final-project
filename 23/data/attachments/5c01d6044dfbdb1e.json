@@ -1,0 +1,26 @@
+{
+  "headers": {
+    "x-powered-by": "Express",
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "Authorization,X-User-Name",
+    "content-type": "application/json; charset=utf-8",
+    "content-length": "224",
+    "etag": "W/\"e0-FN2VDPMDXv9Unrr0LgJ9NFq7jOI\"",
+    "date": "Sun, 26 Apr 2026 20:47:38 GMT",
+    "connection": "keep-alive",
+    "keep-alive": "timeout=5"
+  },
+  "body": {
+    "Product": {
+      "name": "Test TlKiezbFrl",
+      "amount": 797,
+      "price": 76237,
+      "manufacturer": "Tesla",
+      "createdOn": "2026-04-26T20:47:38.000Z",
+      "notes": "Notes QaDQzQTfmq",
+      "_id": "69ee79ea6cae78c676e24518"
+    },
+    "IsSuccess": true,
+    "ErrorMessage": null
+  }
+}

@@ -1,0 +1,82 @@
+{
+  "headers": {
+    "x-powered-by": "Express",
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "Authorization,X-User-Name",
+    "content-type": "application/json; charset=utf-8",
+    "content-length": "1484",
+    "etag": "W/\"5cc-ZzpPEQb3Is7ErQKsh3xIZPaP9hg\"",
+    "date": "Sun, 26 Apr 2026 20:47:05 GMT",
+    "connection": "keep-alive",
+    "keep-alive": "timeout=5"
+  },
+  "body": {
+    "Order": {
+      "status": "Draft",
+      "customer": {
+        "_id": "69ee79c96cae78c676e21728",
+        "email": "test1777236425580_UMEC@example.com",
+        "name": "test StJjdKCwxgEfnpxnMKsocZkiKzSIyTzsdYP",
+        "country": "Belarus",
+        "city": "testCity eVnrqgkhPpL",
+        "street": "testStreet IpKU24jPf8jZSemiO8OHZE6egq9pD",
+        "house": 833,
+        "flat": 4267,
+        "phone": "+2392260735",
+        "createdOn": "2026-04-26T20:47:05.000Z",
+        "notes": "Notes NlgkhlSlHDRGhhTuDZZdcIxLJmxDEuTtZppvioYGcfbCiPkqxRxwYgJxDaDWBzWjxaMqXKzyEVMsAImgNMoLZMzJqGvXAqnxMkUVHzXSzAOPCwggizzsSXdWDNvczSioTtQBxHaEckEytRucHTnvKvCnDNbLDZsWRuKnZSinWnoibmaXRvXhhdhDKJroRtVYKkVEJLhodVTobejcbAohlZPJAWuIoghIbneDmLhYLIeIDQeRaoTH"
+      },
+      "products": [
+        {
+          "_id": "69ee79c96cae78c676e21730",
+          "name": "Test tFjqJAybaU",
+          "amount": 941,
+          "price": 557,
+          "manufacturer": "Sony",
+          "notes": "Notes gnYqgJCHaY",
+          "received": false
+        }
+      ],
+      "delivery": null,
+      "total_price": 557,
+      "createdOn": "2026-04-26T20:47:05.000Z",
+      "comments": [],
+      "history": [
+        {
+          "status": "Draft",
+          "customer": "69ee79c96cae78c676e21728",
+          "products": [
+            {
+              "_id": "69ee79c96cae78c676e21730",
+              "name": "Test tFjqJAybaU",
+              "amount": 941,
+              "price": 557,
+              "manufacturer": "Sony",
+              "notes": "Notes gnYqgJCHaY",
+              "received": false
+            }
+          ],
+          "total_price": 557,
+          "delivery": null,
+          "changedOn": "2026-04-26T20:47:05.000Z",
+          "action": "Order created",
+          "performer": {
+            "_id": "69ee79716cae78c676e203f5",
+            "username": "admin@example.com",
+            "firstName": "Admin",
+            "lastName": "Admin",
+            "roles": [
+              "ADMIN"
+            ],
+            "createdOn": "2026/04/26 20:45:37"
+          },
+          "assignedManager": null
+        }
+      ],
+      "assignedManager": null,
+      "_id": "69ee79c96cae78c676e21738"
+    },
+    "IsSuccess": true,
+    "ErrorMessage": null
+  }
+}

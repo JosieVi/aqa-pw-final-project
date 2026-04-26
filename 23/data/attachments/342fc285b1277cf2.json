@@ -1,0 +1,392 @@
+{
+  "headers": {
+    "x-powered-by": "Express",
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "Authorization,X-User-Name",
+    "content-type": "application/json; charset=utf-8",
+    "content-length": "6879",
+    "etag": "W/\"1adf-Nnx/13ZhtK6k2T3e2cbhaIhLWGw\"",
+    "date": "Sun, 26 Apr 2026 20:47:34 GMT",
+    "connection": "keep-alive",
+    "keep-alive": "timeout=5"
+  },
+  "body": {
+    "Order": {
+      "_id": "69ee79e66cae78c676e23edb",
+      "status": "Received",
+      "customer": {
+        "_id": "69ee79e66cae78c676e23e98",
+        "email": "test1777236454046_EPJR@example.com",
+        "name": "test rDGSMFmjlmmeAjHjwuhblWiVrBIpBLCrlPy",
+        "country": "Russia",
+        "city": "testCity pfpKSoPxMvT",
+        "street": "testStreet H6J6bfChCwmHCEIg2wPgvGQnR1xDq",
+        "house": 792,
+        "flat": 9298,
+        "phone": "+7651128984",
+        "createdOn": "2026-04-26T20:47:34.000Z",
+        "notes": "Notes VMGXwxfEzmDDAZtelOdeqtGvGfsbRRkwWwYdRkNCkxSxvoOBNTmnZNldlzaqTvQTopWsEmgLOmWUbljycMcFouFjbxolNKIUmaEWIBRsMRyZwCnhuwVAsBciIlBjtFdqLgZeSSijnzqgYdPKzmemCNXXYeXJAZTNYdQbawxeUonyfSsWalhaHiTpQTpMbZDFwlQwqaqxFdQlzdROrzyAEHMZdvJZvmIAbclgeFiWfeBLqIOtJOCq"
+      },
+      "products": [
+        {
+          "_id": "69ee79e66cae78c676e23eab",
+          "name": "Test wRsbZunxMI",
+          "amount": 257,
+          "price": 92262,
+          "manufacturer": "Microsoft",
+          "notes": "Notes CDSgqnKstM",
+          "received": true
+        },
+        {
+          "_id": "69ee79e66cae78c676e23eb5",
+          "name": "Test MuoltDpBMk",
+          "amount": 76,
+          "price": 80241,
+          "manufacturer": "Tesla",
+          "notes": "Notes BQOKdOtbeW",
+          "received": true
+        },
+        {
+          "_id": "69ee79e66cae78c676e23eb3",
+          "name": "Test UmInLqOvNw",
+          "amount": 968,
+          "price": 99940,
+          "manufacturer": "Google",
+          "notes": "Notes BITsAZarEp",
+          "received": true
+        },
+        {
+          "_id": "69ee79e66cae78c676e23eb9",
+          "name": "Test TltrZmRMQo",
+          "amount": 370,
+          "price": 60836,
+          "manufacturer": "Apple",
+          "notes": "Notes NWmOngRPvO",
+          "received": true
+        },
+        {
+          "_id": "69ee79e66cae78c676e23eb1",
+          "name": "Test xpdncIfxAW",
+          "amount": 670,
+          "price": 61169,
+          "manufacturer": "Microsoft",
+          "notes": "Notes QzafDkqgmj",
+          "received": true
+        }
+      ],
+      "delivery": {
+        "address": {
+          "country": "Belarus",
+          "city": "TestCity NDfKk",
+          "street": "TestStreet AWQuLIQnvr",
+          "house": 905,
+          "flat": 3711
+        },
+        "finalDate": "2027-02-27T00:00:00.000Z",
+        "condition": "Delivery"
+      },
+      "total_price": 394448,
+      "createdOn": "2026-04-26T20:47:34.000Z",
+      "comments": [],
+      "history": [
+        {
+          "status": "Received",
+          "customer": "69ee79e66cae78c676e23e98",
+          "products": [
+            {
+              "_id": "69ee79e66cae78c676e23eab",
+              "name": "Test wRsbZunxMI",
+              "amount": 257,
+              "price": 92262,
+              "manufacturer": "Microsoft",
+              "notes": "Notes CDSgqnKstM",
+              "received": true
+            },
+            {
+              "_id": "69ee79e66cae78c676e23eb5",
+              "name": "Test MuoltDpBMk",
+              "amount": 76,
+              "price": 80241,
+              "manufacturer": "Tesla",
+              "notes": "Notes BQOKdOtbeW",
+              "received": true
+            },
+            {
+              "_id": "69ee79e66cae78c676e23eb3",
+              "name": "Test UmInLqOvNw",
+              "amount": 968,
+              "price": 99940,
+              "manufacturer": "Google",
+              "notes": "Notes BITsAZarEp",
+              "received": true
+            },
+            {
+              "_id": "69ee79e66cae78c676e23eb9",
+              "name": "Test TltrZmRMQo",
+              "amount": 370,
+              "price": 60836,
+              "manufacturer": "Apple",
+              "notes": "Notes NWmOngRPvO",
+              "received": true
+            },
+            {
+              "_id": "69ee79e66cae78c676e23eb1",
+              "name": "Test xpdncIfxAW",
+              "amount": 670,
+              "price": 61169,
+              "manufacturer": "Microsoft",
+              "notes": "Notes QzafDkqgmj",
+              "received": true
+            }
+          ],
+          "total_price": 394448,
+          "delivery": {
+            "address": {
+              "country": "Belarus",
+              "city": "TestCity NDfKk",
+              "street": "TestStreet AWQuLIQnvr",
+              "house": 905,
+              "flat": 3711
+            },
+            "finalDate": "2027-02-27T00:00:00.000Z",
+            "condition": "Delivery"
+          },
+          "changedOn": "2026-04-26T20:47:34.000Z",
+          "action": "All products received",
+          "performer": {
+            "_id": "69ee79716cae78c676e203f5",
+            "username": "admin@example.com",
+            "firstName": "Admin",
+            "lastName": "Admin",
+            "roles": [
+              "ADMIN"
+            ],
+            "createdOn": "2026/04/26 20:45:37"
+          },
+          "assignedManager": null
+        },
+        {
+          "status": "In Process",
+          "customer": "69ee79e66cae78c676e23e98",
+          "products": [
+            {
+              "_id": "69ee79e66cae78c676e23eab",
+              "name": "Test wRsbZunxMI",
+              "amount": 257,
+              "price": 92262,
+              "manufacturer": "Microsoft",
+              "notes": "Notes CDSgqnKstM",
+              "received": false
+            },
+            {
+              "_id": "69ee79e66cae78c676e23eb5",
+              "name": "Test MuoltDpBMk",
+              "amount": 76,
+              "price": 80241,
+              "manufacturer": "Tesla",
+              "notes": "Notes BQOKdOtbeW",
+              "received": false
+            },
+            {
+              "_id": "69ee79e66cae78c676e23eb3",
+              "name": "Test UmInLqOvNw",
+              "amount": 968,
+              "price": 99940,
+              "manufacturer": "Google",
+              "notes": "Notes BITsAZarEp",
+              "received": false
+            },
+            {
+              "_id": "69ee79e66cae78c676e23eb9",
+              "name": "Test TltrZmRMQo",
+              "amount": 370,
+              "price": 60836,
+              "manufacturer": "Apple",
+              "notes": "Notes NWmOngRPvO",
+              "received": false
+            },
+            {
+              "_id": "69ee79e66cae78c676e23eb1",
+              "name": "Test xpdncIfxAW",
+              "amount": 670,
+              "price": 61169,
+              "manufacturer": "Microsoft",
+              "notes": "Notes QzafDkqgmj",
+              "received": false
+            }
+          ],
+          "total_price": 394448,
+          "delivery": {
+            "address": {
+              "country": "Belarus",
+              "city": "TestCity NDfKk",
+              "street": "TestStreet AWQuLIQnvr",
+              "house": 905,
+              "flat": 3711
+            },
+            "finalDate": "2027-02-27T00:00:00.000Z",
+            "condition": "Delivery"
+          },
+          "changedOn": "2026-04-26T20:47:34.000Z",
+          "action": "Order processing started",
+          "performer": {
+            "_id": "69ee79716cae78c676e203f5",
+            "username": "admin@example.com",
+            "firstName": "Admin",
+            "lastName": "Admin",
+            "roles": [
+              "ADMIN"
+            ],
+            "createdOn": "2026/04/26 20:45:37"
+          },
+          "assignedManager": null
+        },
+        {
+          "status": "Draft",
+          "customer": "69ee79e66cae78c676e23e98",
+          "products": [
+            {
+              "_id": "69ee79e66cae78c676e23eab",
+              "name": "Test wRsbZunxMI",
+              "amount": 257,
+              "price": 92262,
+              "manufacturer": "Microsoft",
+              "notes": "Notes CDSgqnKstM",
+              "received": false
+            },
+            {
+              "_id": "69ee79e66cae78c676e23eb5",
+              "name": "Test MuoltDpBMk",
+              "amount": 76,
+              "price": 80241,
+              "manufacturer": "Tesla",
+              "notes": "Notes BQOKdOtbeW",
+              "received": false
+            },
+            {
+              "_id": "69ee79e66cae78c676e23eb3",
+              "name": "Test UmInLqOvNw",
+              "amount": 968,
+              "price": 99940,
+              "manufacturer": "Google",
+              "notes": "Notes BITsAZarEp",
+              "received": false
+            },
+            {
+              "_id": "69ee79e66cae78c676e23eb9",
+              "name": "Test TltrZmRMQo",
+              "amount": 370,
+              "price": 60836,
+              "manufacturer": "Apple",
+              "notes": "Notes NWmOngRPvO",
+              "received": false
+            },
+            {
+              "_id": "69ee79e66cae78c676e23eb1",
+              "name": "Test xpdncIfxAW",
+              "amount": 670,
+              "price": 61169,
+              "manufacturer": "Microsoft",
+              "notes": "Notes QzafDkqgmj",
+              "received": false
+            }
+          ],
+          "total_price": 394448,
+          "delivery": {
+            "address": {
+              "country": "Belarus",
+              "city": "TestCity NDfKk",
+              "street": "TestStreet AWQuLIQnvr",
+              "house": 905,
+              "flat": 3711
+            },
+            "finalDate": "2027-02-27T00:00:00.000Z",
+            "condition": "Delivery"
+          },
+          "changedOn": "2026-04-26T20:47:34.000Z",
+          "action": "Delivery Scheduled",
+          "performer": {
+            "_id": "69ee79716cae78c676e203f5",
+            "username": "admin@example.com",
+            "firstName": "Admin",
+            "lastName": "Admin",
+            "roles": [
+              "ADMIN"
+            ],
+            "createdOn": "2026/04/26 20:45:37"
+          },
+          "assignedManager": null
+        },
+        {
+          "status": "Draft",
+          "customer": "69ee79e66cae78c676e23e98",
+          "products": [
+            {
+              "_id": "69ee79e66cae78c676e23eab",
+              "name": "Test wRsbZunxMI",
+              "amount": 257,
+              "price": 92262,
+              "manufacturer": "Microsoft",
+              "notes": "Notes CDSgqnKstM",
+              "received": false
+            },
+            {
+              "_id": "69ee79e66cae78c676e23eb5",
+              "name": "Test MuoltDpBMk",
+              "amount": 76,
+              "price": 80241,
+              "manufacturer": "Tesla",
+              "notes": "Notes BQOKdOtbeW",
+              "received": false
+            },
+            {
+              "_id": "69ee79e66cae78c676e23eb3",
+              "name": "Test UmInLqOvNw",
+              "amount": 968,
+              "price": 99940,
+              "manufacturer": "Google",
+              "notes": "Notes BITsAZarEp",
+              "received": false
+            },
+            {
+              "_id": "69ee79e66cae78c676e23eb9",
+              "name": "Test TltrZmRMQo",
+              "amount": 370,
+              "price": 60836,
+              "manufacturer": "Apple",
+              "notes": "Notes NWmOngRPvO",
+              "received": false
+            },
+            {
+              "_id": "69ee79e66cae78c676e23eb1",
+              "name": "Test xpdncIfxAW",
+              "amount": 670,
+              "price": 61169,
+              "manufacturer": "Microsoft",
+              "notes": "Notes QzafDkqgmj",
+              "received": false
+            }
+          ],
+          "total_price": 394448,
+          "delivery": null,
+          "changedOn": "2026-04-26T20:47:34.000Z",
+          "action": "Order created",
+          "performer": {
+            "_id": "69ee79716cae78c676e203f5",
+            "username": "admin@example.com",
+            "firstName": "Admin",
+            "lastName": "Admin",
+            "roles": [
+              "ADMIN"
+            ],
+            "createdOn": "2026/04/26 20:45:37"
+          },
+          "assignedManager": null
+        }
+      ],
+      "assignedManager": null
+    },
+    "IsSuccess": true,
+    "ErrorMessage": null
+  }
+}

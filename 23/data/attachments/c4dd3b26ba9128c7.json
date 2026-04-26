@@ -1,0 +1,26 @@
+{
+  "headers": {
+    "x-powered-by": "Express",
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "Authorization,X-User-Name",
+    "content-type": "application/json; charset=utf-8",
+    "content-length": "224",
+    "etag": "W/\"e0-7rwto155gcOnXVvX3NiznzuYZyo\"",
+    "date": "Sun, 26 Apr 2026 20:47:17 GMT",
+    "connection": "keep-alive",
+    "keep-alive": "timeout=5"
+  },
+  "body": {
+    "Product": {
+      "name": "Test vTNowKzPgW",
+      "amount": 820,
+      "price": 58540,
+      "manufacturer": "Tesla",
+      "createdOn": "2026-04-26T20:47:17.000Z",
+      "notes": "Notes DzVnQLXaxP",
+      "_id": "69ee79d56cae78c676e22292"
+    },
+    "IsSuccess": true,
+    "ErrorMessage": null
+  }
+}

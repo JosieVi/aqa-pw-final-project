@@ -1,0 +1,26 @@
+{
+  "headers": {
+    "x-powered-by": "Express",
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "Authorization,X-User-Name",
+    "content-type": "application/json; charset=utf-8",
+    "content-length": "214",
+    "etag": "W/\"d6-b3QXz0my/Ac5VOAlCPlbFRC+znc\"",
+    "date": "Sun, 26 Apr 2026 20:47:34 GMT",
+    "connection": "keep-alive",
+    "keep-alive": "timeout=5"
+  },
+  "body": {
+    "Product": {
+      "name": "YnT",
+      "amount": 577,
+      "price": 12067,
+      "manufacturer": "Samsung",
+      "createdOn": "2026-04-26T20:47:34.000Z",
+      "notes": "Notes rCjpDYkJqs",
+      "_id": "69ee79e66cae78c676e23fa8"
+    },
+    "IsSuccess": true,
+    "ErrorMessage": null
+  }
+}

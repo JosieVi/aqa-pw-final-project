@@ -1,0 +1,27 @@
+{
+  "headers": {
+    "x-powered-by": "Express",
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "Authorization,X-User-Name",
+    "content-type": "application/json; charset=utf-8",
+    "content-length": "204",
+    "etag": "W/\"cc-IFs6N59crYLuKqQcHiptmXK6ZXE\"",
+    "date": "Sun, 26 Apr 2026 20:47:14 GMT",
+    "connection": "keep-alive",
+    "keep-alive": "timeout=5"
+  },
+  "body": {
+    "IsSuccess": true,
+    "ErrorMessage": null,
+    "User": {
+      "username": "fVqSBVgKtl",
+      "firstName": "cRgfZIprgw",
+      "lastName": "ltAXDsbetM",
+      "roles": [
+        "USER"
+      ],
+      "createdOn": "2026/04/26 20:47:14",
+      "_id": "69ee79d26cae78c676e22074"
+    }
+  }
+}

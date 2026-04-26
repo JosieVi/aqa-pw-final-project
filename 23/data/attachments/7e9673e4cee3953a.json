@@ -1,0 +1,26 @@
+{
+  "headers": {
+    "x-powered-by": "Express",
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "Authorization,X-User-Name",
+    "content-type": "application/json; charset=utf-8",
+    "content-length": "223",
+    "etag": "W/\"df-THaWVWN7L0jZyJECFm4UeW4cffc\"",
+    "date": "Sun, 26 Apr 2026 20:47:38 GMT",
+    "connection": "keep-alive",
+    "keep-alive": "timeout=5"
+  },
+  "body": {
+    "Product": {
+      "name": "Test GBWUEqEuwv",
+      "amount": 871,
+      "price": 13830,
+      "manufacturer": "Sony",
+      "createdOn": "2026-04-26T20:47:38.000Z",
+      "notes": "Notes XvfVRWbFgR",
+      "_id": "69ee79ea6cae78c676e244f0"
+    },
+    "IsSuccess": true,
+    "ErrorMessage": null
+  }
+}
