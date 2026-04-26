@@ -56,6 +56,9 @@ jobs:
         env:
           # Передаем URL фронтенда в тесты (берем из .env или хардкодим)
           BASE_URL: http://localhost:8585
+          INFLUX_URL: ${{ secrets.INFLUX_URL }}
+          INFLUX_TOKEN: ${{ secrets.INFLUX_TOKEN }}
+          ENVIRONMENT: ci # Жестко задаем тег окружения для Grafana
 
       # NEW: 7.1 Скачиваем историю из ветки gh-pages ПЕРЕД генерацией отчета
       - name: Load Allure history

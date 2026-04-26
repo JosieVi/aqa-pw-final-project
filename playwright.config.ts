@@ -10,7 +10,7 @@ export default defineConfig({
   forbidOnly: !!process.env.CI,
   retries: process.env.CI ? 2 : 0,
 
-  reporter: [['list'], ['html'], ['allure-playwright', { resultsDir: 'allure-results', detail: true }]],
+  reporter: [['list'], ['html'], ['allure-playwright', { resultsDir: 'allure-results', detail: true }], ['./src/utils/reporters/InfluxReporter.ts']],
 
   use: {
     baseURL: SALES_PORTAL_URL,

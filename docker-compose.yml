@@ -42,5 +42,25 @@ services:
     depends_on:
       - backend
 
+  influxdb:
+    image: influxdb:2.7
+    container_name: aqa-influxdb
+    ports:
+      - '8086:8086'
+    volumes:
+      - influxdb-data:/var/lib/influxdb2
+
+  grafana:
+    image: grafana/grafana:latest
+    container_name: aqa-grafana
+    ports:
+      - '3000:3000'
+    depends_on:
+      - influxdb
+    volumes:
+      - grafana-data:/var/lib/grafana
+
 volumes:
   mongo-data:
+  influxdb-data:
+  grafana-data:
