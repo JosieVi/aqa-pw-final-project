@@ -12,6 +12,10 @@ class InfluxReporter implements Reporter {
     const bucket = 'playwright-metrics';
 
     const influxDB = new InfluxDB({ url, token });
+    console.log('--- DEBUG INFLUX ---');
+    console.log('URL:', process.env.INFLUX_URL);
+    console.log('ENV:', process.env.ENVIRONMENT);
+    console.log('--------------------');
     this.writeApi = influxDB.getWriteApi(org, bucket, 'ms');
   }
 
