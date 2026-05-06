@@ -1,0 +1,26 @@
+{
+  "headers": {
+    "x-powered-by": "Express",
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "Authorization,X-User-Name",
+    "content-type": "application/json; charset=utf-8",
+    "content-length": "224",
+    "etag": "W/\"e0-lwuQQFfWGPz9sQgFCLDZ5mC4JSQ\"",
+    "date": "Wed, 06 May 2026 21:46:56 GMT",
+    "connection": "keep-alive",
+    "keep-alive": "timeout=5"
+  },
+  "body": {
+    "Product": {
+      "name": "Test WiKnQalVFE",
+      "amount": 117,
+      "price": 83102,
+      "manufacturer": "Tesla",
+      "createdOn": "2026-05-06T21:46:55.000Z",
+      "notes": "Notes DUcyNPjzmH",
+      "_id": "69fbb6cf9b4f76ec7ef003bd"
+    },
+    "IsSuccess": true,
+    "ErrorMessage": null
+  }
+}

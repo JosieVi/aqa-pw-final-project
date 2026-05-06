@@ -1,0 +1,26 @@
+{
+  "headers": {
+    "x-powered-by": "Express",
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "Authorization,X-User-Name",
+    "content-type": "application/json; charset=utf-8",
+    "content-length": "222",
+    "etag": "W/\"de-uXdqMRxxQtcauifIM0TgtcL/IgQ\"",
+    "date": "Wed, 06 May 2026 21:47:31 GMT",
+    "connection": "keep-alive",
+    "keep-alive": "timeout=5"
+  },
+  "body": {
+    "Product": {
+      "_id": "69fbb6f39b4f76ec7ef02d35",
+      "name": "Test wZnDLZtOld",
+      "amount": 0,
+      "price": 73553,
+      "manufacturer": "Apple",
+      "createdOn": "2026-05-06T21:47:31.000Z",
+      "notes": "Notes UcDlsEKJvZ"
+    },
+    "IsSuccess": true,
+    "ErrorMessage": null
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "headers": {
+    "x-powered-by": "Express",
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "Authorization,X-User-Name",
+    "content-type": "application/json; charset=utf-8",
+    "content-length": "226",
+    "etag": "W/\"e2-OpC89ANsBemNtNDbXShyEy7CP7M\"",
+    "date": "Wed, 06 May 2026 21:47:31 GMT",
+    "connection": "keep-alive",
+    "keep-alive": "timeout=5"
+  },
+  "body": {
+    "Product": {
+      "_id": "69fbb6f39b4f76ec7ef02cf9",
+      "name": "Test BxxLQoUzSs",
+      "amount": 652,
+      "price": 58490,
+      "manufacturer": "Samsung",
+      "createdOn": "2026-05-06T21:47:31.000Z",
+      "notes": "Notes tciTsphmbv"
+    },
+    "IsSuccess": true,
+    "ErrorMessage": null
+  }
+}

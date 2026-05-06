@@ -1,0 +1,130 @@
+{
+  "headers": {
+    "x-powered-by": "Express",
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "Authorization,X-User-Name",
+    "content-type": "application/json; charset=utf-8",
+    "content-length": "2324",
+    "etag": "W/\"914-jlFkhw3t5b8rOYLA9T/ibK8GHhk\"",
+    "date": "Wed, 06 May 2026 21:46:31 GMT",
+    "connection": "keep-alive",
+    "keep-alive": "timeout=5"
+  },
+  "body": {
+    "Order": {
+      "_id": "69fbb6b79b4f76ec7eefefd8",
+      "status": "Draft",
+      "customer": {
+        "_id": "69fbb6b69b4f76ec7eefefcb",
+        "email": "test1778103990982_LACX@example.com",
+        "name": "test IiQsrfSxEnmupIzIhRxxNlxYDLohLzPSTrE",
+        "country": "Belarus",
+        "city": "testCity ORvGdwhhXch",
+        "street": "testStreet XK7Vw0ANfwHHM2Frg4yU4ffHHfGOv",
+        "house": 299,
+        "flat": 6246,
+        "phone": "+7821678572",
+        "createdOn": "2026-05-06T21:46:30.000Z",
+        "notes": "Notes PcQtazKtgDAjsThAHUsrDyfebMMlPLDjamiVFLJCintVLAAhYbWhqmHLNXvyfbfbGtJaUlAHdJdhEUtIJThIxEaFqJPkiqmwINHKKQNnFgScNSPriAThmajhAaeFNkAXEfyOUZUqmXfMbMdZBtvJyVbHCTEdEwhZTSbMxXQyfBBlnpkkoIrjgEtNrKOpvMbAPceOGggkmAVZtBJBZesKsLKHBjmUbUZafrwSOvZirvCpwQWmnobq"
+      },
+      "products": [
+        {
+          "_id": "69fbb6b79b4f76ec7eefefd0",
+          "name": "Test vtHXxQhhid",
+          "amount": 923,
+          "price": 94122,
+          "manufacturer": "Google",
+          "notes": "Notes dsRPPNEUIS",
+          "received": false
+        }
+      ],
+      "delivery": null,
+      "total_price": 94122,
+      "createdOn": "2026-05-06T21:46:31.000Z",
+      "comments": [],
+      "history": [
+        {
+          "status": "Draft",
+          "customer": "69fbb6b69b4f76ec7eefefcb",
+          "products": [
+            {
+              "_id": "69fbb6b79b4f76ec7eefefd0",
+              "name": "Test vtHXxQhhid",
+              "amount": 923,
+              "price": 94122,
+              "manufacturer": "Google",
+              "notes": "Notes dsRPPNEUIS",
+              "received": false
+            }
+          ],
+          "total_price": 94122,
+          "delivery": null,
+          "changedOn": "2026-05-06T21:46:31.000Z",
+          "action": "Manager Assigned",
+          "performer": {
+            "_id": "69fbaea89b4f76ec7eefed7d",
+            "username": "admin@example.com",
+            "firstName": "Admin",
+            "lastName": "Admin",
+            "roles": [
+              "ADMIN"
+            ],
+            "createdOn": "2026/05/06 21:12:08"
+          },
+          "assignedManager": {
+            "_id": "69fbb6b79b4f76ec7eefefe7",
+            "username": "mHSuVctWqe",
+            "firstName": "jySOgfpggu",
+            "lastName": "PdnBaJtTMM",
+            "roles": [
+              "USER"
+            ],
+            "createdOn": "2026/05/06 21:46:31"
+          }
+        },
+        {
+          "status": "Draft",
+          "customer": "69fbb6b69b4f76ec7eefefcb",
+          "products": [
+            {
+              "_id": "69fbb6b79b4f76ec7eefefd0",
+              "name": "Test vtHXxQhhid",
+              "amount": 923,
+              "price": 94122,
+              "manufacturer": "Google",
+              "notes": "Notes dsRPPNEUIS",
+              "received": false
+            }
+          ],
+          "total_price": 94122,
+          "delivery": null,
+          "changedOn": "2026-05-06T21:46:31.000Z",
+          "action": "Order created",
+          "performer": {
+            "_id": "69fbaea89b4f76ec7eefed7d",
+            "username": "admin@example.com",
+            "firstName": "Admin",
+            "lastName": "Admin",
+            "roles": [
+              "ADMIN"
+            ],
+            "createdOn": "2026/05/06 21:12:08"
+          },
+          "assignedManager": null
+        }
+      ],
+      "assignedManager": {
+        "_id": "69fbb6b79b4f76ec7eefefe7",
+        "username": "mHSuVctWqe",
+        "firstName": "jySOgfpggu",
+        "lastName": "PdnBaJtTMM",
+        "roles": [
+          "USER"
+        ],
+        "createdOn": "2026/05/06 21:46:31"
+      }
+    },
+    "IsSuccess": true,
+    "ErrorMessage": null
+  }
+}

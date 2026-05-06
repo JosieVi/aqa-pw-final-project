@@ -1,0 +1,26 @@
+{
+  "headers": {
+    "x-powered-by": "Express",
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "Authorization,X-User-Name",
+    "content-type": "application/json; charset=utf-8",
+    "content-length": "224",
+    "etag": "W/\"e0-swF98XU4E9Wb/95Y3Ft5ilZT9ns\"",
+    "date": "Wed, 06 May 2026 21:46:39 GMT",
+    "connection": "keep-alive",
+    "keep-alive": "timeout=5"
+  },
+  "body": {
+    "Product": {
+      "name": "Test mYpBOLbvUB",
+      "amount": 149,
+      "price": 13348,
+      "manufacturer": "Apple",
+      "createdOn": "2026-05-06T21:46:39.000Z",
+      "notes": "Notes lCccgJhKfc",
+      "_id": "69fbb6bf9b4f76ec7eeff407"
+    },
+    "IsSuccess": true,
+    "ErrorMessage": null
+  }
+}

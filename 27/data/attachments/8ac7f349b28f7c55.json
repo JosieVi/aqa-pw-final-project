@@ -1,0 +1,26 @@
+{
+  "headers": {
+    "x-powered-by": "Express",
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "Authorization,X-User-Name",
+    "content-type": "application/json; charset=utf-8",
+    "content-length": "225",
+    "etag": "W/\"e1-tqmIky1Uc2oeFmGbHuA+YDFoHm0\"",
+    "date": "Wed, 06 May 2026 21:46:40 GMT",
+    "connection": "keep-alive",
+    "keep-alive": "timeout=5"
+  },
+  "body": {
+    "Product": {
+      "name": "Test DPlIrbearF",
+      "amount": 602,
+      "price": 90864,
+      "manufacturer": "Xiaomi",
+      "createdOn": "2026-05-06T21:46:40.000Z",
+      "notes": "Notes WShCKUdFUm",
+      "_id": "69fbb6c09b4f76ec7eeff53f"
+    },
+    "IsSuccess": true,
+    "ErrorMessage": null
+  }
+}

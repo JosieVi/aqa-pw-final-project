@@ -1,0 +1,17 @@
+{
+  "headers": {
+    "content-type": "application/json",
+    "Authorization": "Bearer "
+  },
+  "body": {
+    "finalDate": "2026-10-08",
+    "condition": "Delivery",
+    "address": {
+      "country": "Ukraine",
+      "city": "TestCity hYVMa",
+      "street": "TestStreet PHSMvvUCrV",
+      "house": 269,
+      "flat": 8549
+    }
+  }
+}

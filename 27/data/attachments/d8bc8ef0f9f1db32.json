@@ -1,0 +1,26 @@
+{
+  "headers": {
+    "x-powered-by": "Express",
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "Authorization,X-User-Name",
+    "content-type": "application/json; charset=utf-8",
+    "content-length": "223",
+    "etag": "W/\"df-W68r+Q8LMADzuKoBrAqu1jy+q6Q\"",
+    "date": "Wed, 06 May 2026 21:46:51 GMT",
+    "connection": "keep-alive",
+    "keep-alive": "timeout=5"
+  },
+  "body": {
+    "Product": {
+      "name": "Test GPQmrOajVb",
+      "amount": 965,
+      "price": 6586,
+      "manufacturer": "Tesla",
+      "createdOn": "2026-05-06T21:46:51.000Z",
+      "notes": "Notes mwCkshBWCs",
+      "_id": "69fbb6cb9b4f76ec7eeffd99"
+    },
+    "IsSuccess": true,
+    "ErrorMessage": null
+  }
+}

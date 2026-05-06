@@ -1,0 +1,26 @@
+{
+  "headers": {
+    "x-powered-by": "Express",
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "Authorization,X-User-Name",
+    "content-type": "application/json; charset=utf-8",
+    "content-length": "224",
+    "etag": "W/\"e0-qf8D1Wk3mIIu+JyM5S5B+GgsL4Y\"",
+    "date": "Wed, 06 May 2026 21:46:56 GMT",
+    "connection": "keep-alive",
+    "keep-alive": "timeout=5"
+  },
+  "body": {
+    "Product": {
+      "name": "Test iEZnXXIPER",
+      "amount": 137,
+      "price": 79439,
+      "manufacturer": "Tesla",
+      "createdOn": "2026-05-06T21:46:55.000Z",
+      "notes": "Notes CqgrKVhtfH",
+      "_id": "69fbb6cf9b4f76ec7ef003c7"
+    },
+    "IsSuccess": true,
+    "ErrorMessage": null
+  }
+}

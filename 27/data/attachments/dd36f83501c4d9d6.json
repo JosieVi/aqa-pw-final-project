@@ -1,0 +1,26 @@
+{
+  "headers": {
+    "x-powered-by": "Express",
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "Authorization,X-User-Name",
+    "content-type": "application/json; charset=utf-8",
+    "content-length": "225",
+    "etag": "W/\"e1-CaJvb/c2P7gVpGAl1f6xa74EtDY\"",
+    "date": "Wed, 06 May 2026 21:47:25 GMT",
+    "connection": "keep-alive",
+    "keep-alive": "timeout=5"
+  },
+  "body": {
+    "Product": {
+      "name": "Test oKDmEqsKig",
+      "amount": 246,
+      "price": 83544,
+      "manufacturer": "Amazon",
+      "createdOn": "2026-05-06T21:47:25.000Z",
+      "notes": "Notes VRdFLVInGI",
+      "_id": "69fbb6ed9b4f76ec7ef01d49"
+    },
+    "IsSuccess": true,
+    "ErrorMessage": null
+  }
+}

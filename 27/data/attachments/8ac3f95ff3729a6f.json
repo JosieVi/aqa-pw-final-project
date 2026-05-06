@@ -1,0 +1,88 @@
+{
+  "headers": {
+    "x-powered-by": "Express",
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "Authorization,X-User-Name",
+    "content-type": "application/json; charset=utf-8",
+    "content-length": "1597",
+    "etag": "W/\"63d-EvDA9bJ05yzbFQkcb/vV5Wnhbv8\"",
+    "date": "Wed, 06 May 2026 21:47:24 GMT",
+    "connection": "keep-alive",
+    "keep-alive": "timeout=5"
+  },
+  "body": {
+    "Order": {
+      "_id": "69fbb6ec9b4f76ec7ef01c6a",
+      "status": "Draft",
+      "customer": {
+        "_id": "69fbb6ec9b4f76ec7ef01c4d",
+        "email": "test1778104044720_PYNB@example.com",
+        "name": "test ywmcxJVBASCWrBiMUlqWlYqkATWVnpIhDkM",
+        "country": "France",
+        "city": "testCity bAAJIWqDLwK",
+        "street": "testStreet qbCl15zokVxv0xyA4kofEWazxDlVu",
+        "house": 436,
+        "flat": 4686,
+        "phone": "+2871618612",
+        "createdOn": "2026-05-06T21:47:24.000Z",
+        "notes": "Notes MYhkDOVgGQQWDotEHChQzGvrXUUlcahctijasDILRtVBAExBxsjHwQXUNNfmizjUWyPHNmgnWEhqNPJkjpxfVVKVeNvarIqQApqMkQiYVszilEFZDLjEDkrFSubiRXwHLFkxFEnkLUJsGQXnuwhNuZayHyLjQaaApWdJkwqnqPKkQsJwOXzpNsGLjjabRYwoTEhcsCvaXMiowmgwjcFGnDtnkdTLtpYBAAJaiJHxxvkjxKolBWgd"
+      },
+      "products": [
+        {
+          "_id": "69fbb6ec9b4f76ec7ef01c5a",
+          "name": "Test elywavvuyg",
+          "amount": 93,
+          "price": 43526,
+          "manufacturer": "Amazon",
+          "notes": "Notes rlQcgrZDWz",
+          "received": false
+        }
+      ],
+      "delivery": null,
+      "total_price": 43526,
+      "createdOn": "2026-05-06T21:47:24.000Z",
+      "comments": [
+        {
+          "text": "Notes UFiQCvnbUsXVCeH",
+          "createdOn": "2026-05-06T21:47:24.000Z",
+          "_id": "69fbb6ec9b4f76ec7ef01c78"
+        }
+      ],
+      "history": [
+        {
+          "status": "Draft",
+          "customer": "69fbb6ec9b4f76ec7ef01c4d",
+          "products": [
+            {
+              "_id": "69fbb6ec9b4f76ec7ef01c5a",
+              "name": "Test elywavvuyg",
+              "amount": 93,
+              "price": 43526,
+              "manufacturer": "Amazon",
+              "notes": "Notes rlQcgrZDWz",
+              "received": false
+            }
+          ],
+          "total_price": 43526,
+          "delivery": null,
+          "changedOn": "2026-05-06T21:47:24.000Z",
+          "action": "Order created",
+          "performer": {
+            "_id": "69fbaea89b4f76ec7eefed7d",
+            "username": "admin@example.com",
+            "firstName": "Admin",
+            "lastName": "Admin",
+            "roles": [
+              "ADMIN"
+            ],
+            "createdOn": "2026/05/06 21:12:08"
+          },
+          "assignedManager": null
+        }
+      ],
+      "assignedManager": null
+    },
+    "IsSuccess": true,
+    "ErrorMessage": null
+  }
+}

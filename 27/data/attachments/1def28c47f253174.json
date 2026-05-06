@@ -1,0 +1,26 @@
+{
+  "headers": {
+    "x-powered-by": "Express",
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "Authorization,X-User-Name",
+    "content-type": "application/json; charset=utf-8",
+    "content-length": "228",
+    "etag": "W/\"e4-N1iXyQKOiSxVfi5p6G87D8OBikM\"",
+    "date": "Wed, 06 May 2026 21:46:54 GMT",
+    "connection": "keep-alive",
+    "keep-alive": "timeout=5"
+  },
+  "body": {
+    "Product": {
+      "name": "Test PXAZUWgNgl",
+      "amount": 282,
+      "price": 65679,
+      "manufacturer": "Microsoft",
+      "createdOn": "2026-05-06T21:46:54.000Z",
+      "notes": "Notes fCVpDjGXpb",
+      "_id": "69fbb6ce9b4f76ec7ef001ed"
+    },
+    "IsSuccess": true,
+    "ErrorMessage": null
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "headers": {
+    "x-powered-by": "Express",
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "Authorization,X-User-Name",
+    "content-type": "application/json; charset=utf-8",
+    "content-length": "270",
+    "etag": "W/\"10e-ai0vZfdQpErMa2O9fHKGQrobD90\"",
+    "date": "Wed, 06 May 2026 21:47:26 GMT",
+    "connection": "keep-alive",
+    "keep-alive": "timeout=5"
+  },
+  "body": {
+    "IsSuccess": false,
+    "ErrorMessage": "Incorrect request body",
+    "SchemaErrors": [
+      {
+        "instancePath": "/condition",
+        "schemaPath": "#/properties/condition/enum",
+        "keyword": "enum",
+        "params": {
+          "allowedValues": [
+            "Delivery",
+            "Pickup"
+          ]
+        },
+        "message": "must be equal to one of the allowed values"
+      }
+    ]
+  }
+}

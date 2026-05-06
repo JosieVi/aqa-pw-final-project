@@ -1,0 +1,26 @@
+{
+  "headers": {
+    "x-powered-by": "Express",
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "Authorization,X-User-Name",
+    "content-type": "application/json; charset=utf-8",
+    "content-length": "223",
+    "etag": "W/\"df-SmSuYAwof30xlQg3HglWIOuYfp8\"",
+    "date": "Wed, 06 May 2026 21:47:27 GMT",
+    "connection": "keep-alive",
+    "keep-alive": "timeout=5"
+  },
+  "body": {
+    "Product": {
+      "name": "Test bcuITsDtRK",
+      "amount": 729,
+      "price": 40779,
+      "manufacturer": "Sony",
+      "createdOn": "2026-05-06T21:47:27.000Z",
+      "notes": "Notes OsaqKtDiMm",
+      "_id": "69fbb6ef9b4f76ec7ef02490"
+    },
+    "IsSuccess": true,
+    "ErrorMessage": null
+  }
+}

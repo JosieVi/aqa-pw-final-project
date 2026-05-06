@@ -1,0 +1,26 @@
+{
+  "headers": {
+    "x-powered-by": "Express",
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "Authorization,X-User-Name",
+    "content-type": "application/json; charset=utf-8",
+    "content-length": "225",
+    "etag": "W/\"e1-XrfIrpbuu0SoCSfjVDt5PYuoYnU\"",
+    "date": "Wed, 06 May 2026 21:47:20 GMT",
+    "connection": "keep-alive",
+    "keep-alive": "timeout=5"
+  },
+  "body": {
+    "Product": {
+      "name": "Test rNURsylOQl",
+      "amount": 145,
+      "price": 34513,
+      "manufacturer": "Xiaomi",
+      "createdOn": "2026-05-06T21:47:20.000Z",
+      "notes": "Notes gwhsUjhiar",
+      "_id": "69fbb6e89b4f76ec7ef011a1"
+    },
+    "IsSuccess": true,
+    "ErrorMessage": null
+  }
+}

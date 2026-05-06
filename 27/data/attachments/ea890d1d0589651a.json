@@ -1,0 +1,30 @@
+{
+  "headers": {
+    "x-powered-by": "Express",
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "Authorization,X-User-Name",
+    "content-type": "application/json; charset=utf-8",
+    "content-length": "625",
+    "etag": "W/\"271-EjWI/PuuDYUAYxT2Y8OV5/NVARE\"",
+    "date": "Wed, 06 May 2026 21:47:21 GMT",
+    "connection": "keep-alive",
+    "keep-alive": "timeout=5"
+  },
+  "body": {
+    "Customer": {
+      "_id": "69fbb6e99b4f76ec7ef01485",
+      "email": "test1778104040703_BNXF@example.com",
+      "name": "AAAAAAAAAAAAAAA AAAAAAAAAAAAAAAAAAAAAAAA",
+      "country": "Russia",
+      "city": "testCity qGwPgSLxjWi",
+      "street": "testStreet 55pj7BjC2Yyk6lJC2AI1LfpWjchSG",
+      "house": 78,
+      "flat": 3925,
+      "phone": "+6718468972",
+      "createdOn": "2026-05-06T21:47:21.000Z",
+      "notes": "Notes zlNRraMWbDKNKWiuEbLZtcTUFdYOOLLXczvXPvMGbkRRsRyUPfxujXaUIeqewNHqaWoIlFIyoWQuWsUlgVUgCGqdfMFGeOlHnNTevkWvMuQNuACjRmpbrxQoNiPJtJhUypuIfyMbLgCeULwknRGTlzMuIDqAxlUblyFIwGMimYjsGHdJniahVDwqYOrFlWDdQuzbcBMVYHQieOpXpGGosTKwGWbkVuYzCPKINsEwgVSiygTqAEhR"
+    },
+    "IsSuccess": true,
+    "ErrorMessage": null
+  }
+}

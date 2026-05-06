@@ -1,0 +1,26 @@
+{
+  "headers": {
+    "x-powered-by": "Express",
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "Authorization,X-User-Name",
+    "content-type": "application/json; charset=utf-8",
+    "content-length": "226",
+    "etag": "W/\"e2-00Uttw9U1Y8pSLprlZOxXOv9wZY\"",
+    "date": "Wed, 06 May 2026 21:46:56 GMT",
+    "connection": "keep-alive",
+    "keep-alive": "timeout=5"
+  },
+  "body": {
+    "Product": {
+      "name": "Test HOefCBVZYI",
+      "amount": 354,
+      "price": 23503,
+      "manufacturer": "Samsung",
+      "createdOn": "2026-05-06T21:46:55.000Z",
+      "notes": "Notes GYmHPRArex",
+      "_id": "69fbb6cf9b4f76ec7ef003c3"
+    },
+    "IsSuccess": true,
+    "ErrorMessage": null
+  }
+}

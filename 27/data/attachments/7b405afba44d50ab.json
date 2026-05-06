@@ -1,0 +1,29 @@
+{
+  "headers": {
+    "x-powered-by": "Express",
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "Authorization,X-User-Name",
+    "content-type": "application/json; charset=utf-8",
+    "content-length": "170",
+    "etag": "W/\"aa-wzy9veOJDvdssbVt1Z3Q0WY/WyU\"",
+    "date": "Wed, 06 May 2026 21:47:21 GMT",
+    "connection": "keep-alive",
+    "keep-alive": "timeout=5"
+  },
+  "body": {
+    "Customers": [],
+    "total": 0,
+    "page": 1,
+    "limit": 10,
+    "search": "",
+    "country": [
+      "Brazil"
+    ],
+    "sorting": {
+      "sortField": "createdOn",
+      "sortOrder": "asc"
+    },
+    "IsSuccess": true,
+    "ErrorMessage": null
+  }
+}

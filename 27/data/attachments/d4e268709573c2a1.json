@@ -1,0 +1,26 @@
+{
+  "headers": {
+    "x-powered-by": "Express",
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "Authorization,X-User-Name",
+    "content-type": "application/json; charset=utf-8",
+    "content-length": "223",
+    "etag": "W/\"df-i17AnSWDsMI/YjX3iDPzJ4M+Ju8\"",
+    "date": "Wed, 06 May 2026 21:47:19 GMT",
+    "connection": "keep-alive",
+    "keep-alive": "timeout=5"
+  },
+  "body": {
+    "Product": {
+      "name": "Test JIzGRYmsuQ",
+      "amount": 960,
+      "price": 29771,
+      "manufacturer": "Sony",
+      "createdOn": "2026-05-06T21:47:19.000Z",
+      "notes": "Notes PNsvKZyfQr",
+      "_id": "69fbb6e79b4f76ec7ef01055"
+    },
+    "IsSuccess": true,
+    "ErrorMessage": null
+  }
+}

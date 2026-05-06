@@ -1,0 +1,30 @@
+{
+  "headers": {
+    "x-powered-by": "Express",
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "Authorization,X-User-Name",
+    "content-type": "application/json; charset=utf-8",
+    "content-length": "626",
+    "etag": "W/\"272-H5x4MiICay8pTCdM1Qa+g//NkwA\"",
+    "date": "Wed, 06 May 2026 21:47:27 GMT",
+    "connection": "keep-alive",
+    "keep-alive": "timeout=5"
+  },
+  "body": {
+    "Customer": {
+      "email": "test1778104047618_FTSP@example.com",
+      "name": "test EBHRsMtnZJRGbfaxrEcUuWhCjKqyZcYoFAg",
+      "country": "France",
+      "city": "testCity HSQXGDMwDZH",
+      "street": "testStreet VgRjiM95chELp4G0iK7H8QxHk458R",
+      "house": 841,
+      "flat": 2060,
+      "phone": "+8770611264",
+      "createdOn": "2026-05-06T21:47:27.000Z",
+      "notes": "Notes bCPkWbHYpGZhtbYZeFCJDgXLijjIqKzfumPIhhSifIOnfqxpIDyuDyEcSjEIHmUhNkWpcqhPHaWyddsDWMkoBSolWyuzTVkhIAhLVYHhkLMlnlJjwVJxNLUAQpbDzEKoPIrxToteuXtOYfRBxXBbrnfIQLRtYhMVEPCDEBeNQlPpDhfjjQVGeTXryDhPpDBYhTYsiZvcDQyGfuqkXkemgKWjwxzlwesLIfdLTTvpqLmddXWxhAiO",
+      "_id": "69fbb6ef9b4f76ec7ef02513"
+    },
+    "IsSuccess": true,
+    "ErrorMessage": null
+  }
+}

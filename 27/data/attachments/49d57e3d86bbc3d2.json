@@ -1,0 +1,26 @@
+{
+  "headers": {
+    "x-powered-by": "Express",
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "Authorization,X-User-Name",
+    "content-type": "application/json; charset=utf-8",
+    "content-length": "224",
+    "etag": "W/\"e0-uYbCzD+4U6SWwP55RbMu2fD+vv4\"",
+    "date": "Wed, 06 May 2026 21:46:39 GMT",
+    "connection": "keep-alive",
+    "keep-alive": "timeout=5"
+  },
+  "body": {
+    "Product": {
+      "name": "Test JqFVnBMxCF",
+      "amount": 23,
+      "price": 29482,
+      "manufacturer": "Amazon",
+      "createdOn": "2026-05-06T21:46:39.000Z",
+      "notes": "Notes QrYWtrkwwH",
+      "_id": "69fbb6bf9b4f76ec7eeff44b"
+    },
+    "IsSuccess": true,
+    "ErrorMessage": null
+  }
+}

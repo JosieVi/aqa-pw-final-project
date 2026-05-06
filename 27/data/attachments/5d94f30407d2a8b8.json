@@ -1,0 +1,26 @@
+{
+  "headers": {
+    "x-powered-by": "Express",
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "Authorization,X-User-Name",
+    "content-type": "application/json; charset=utf-8",
+    "content-length": "225",
+    "etag": "W/\"e1-ISKON2QM+FT0qROxcDsfIiy8U+M\"",
+    "date": "Wed, 06 May 2026 21:46:54 GMT",
+    "connection": "keep-alive",
+    "keep-alive": "timeout=5"
+  },
+  "body": {
+    "Product": {
+      "name": "Test LgqWHmgVKi",
+      "amount": 592,
+      "price": 21033,
+      "manufacturer": "Xiaomi",
+      "createdOn": "2026-05-06T21:46:54.000Z",
+      "notes": "Notes LqwNCYZFZF",
+      "_id": "69fbb6ce9b4f76ec7ef001f5"
+    },
+    "IsSuccess": true,
+    "ErrorMessage": null
+  }
+}

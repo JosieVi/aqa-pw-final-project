@@ -1,0 +1,132 @@
+{
+  "headers": {
+    "x-powered-by": "Express",
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "Authorization,X-User-Name",
+    "content-type": "application/json; charset=utf-8",
+    "content-length": "2358",
+    "etag": "W/\"936-cia4R8bSxc7GPHH+OyEM+cUpf0A\"",
+    "date": "Wed, 06 May 2026 21:47:25 GMT",
+    "connection": "keep-alive",
+    "keep-alive": "timeout=5"
+  },
+  "body": {
+    "Order": {
+      "_id": "69fbb6ed9b4f76ec7ef01d56",
+      "status": "Draft",
+      "customer": {
+        "_id": "69fbb6ed9b4f76ec7ef01d44",
+        "email": "test1778104045029_OJFG@example.com",
+        "name": "test qDZbIqXnLGCAkyLTKKrjyfokazxuGHbfOoj",
+        "country": "USA",
+        "city": "testCity oUyxIZzkgSu",
+        "street": "testStreet aogAOrOB88fDNI3CEz8psJBD2BH34",
+        "house": 774,
+        "flat": 5879,
+        "phone": "+1601814023",
+        "createdOn": "2026-05-06T21:47:25.000Z",
+        "notes": "Notes puWzgnmmMsRaLAzYULHBusRyUqyEKZGHXZHGflckFXkFBISegPKYJRMlrFkQcbdJIxpWWcLQKcvGNWaFblbIZFTXSwMvzcLjBcpdNQKAaXHnEhAkyarPPLprOreDNNysVCdkxjManvNZgwJsUZFFwnTvvdofQfGFGWKvsnqgbchdgAiTHUiLKlRoezccOCeJXfFJgiJdaHagZGSRFEFaFisXKbZtBPQOEhuOwIjyPEyleqhqCuem"
+      },
+      "products": [
+        {
+          "_id": "69fbb6ed9b4f76ec7ef01d49",
+          "name": "Test oKDmEqsKig",
+          "amount": 246,
+          "price": 83544,
+          "manufacturer": "Amazon",
+          "notes": "Notes VRdFLVInGI",
+          "received": false
+        }
+      ],
+      "delivery": {
+        "address": {
+          "country": "Germany",
+          "city": "TestCity ZTnXa",
+          "street": "TestStreet VQlkPqPNRP",
+          "house": 430,
+          "flat": 9367
+        },
+        "finalDate": "2027-01-21T00:00:00.000Z",
+        "condition": "Delivery"
+      },
+      "total_price": 83544,
+      "createdOn": "2026-05-06T21:47:25.000Z",
+      "comments": [],
+      "history": [
+        {
+          "status": "Draft",
+          "customer": "69fbb6ed9b4f76ec7ef01d44",
+          "products": [
+            {
+              "_id": "69fbb6ed9b4f76ec7ef01d49",
+              "name": "Test oKDmEqsKig",
+              "amount": 246,
+              "price": 83544,
+              "manufacturer": "Amazon",
+              "notes": "Notes VRdFLVInGI",
+              "received": false
+            }
+          ],
+          "total_price": 83544,
+          "delivery": {
+            "address": {
+              "country": "Germany",
+              "city": "TestCity ZTnXa",
+              "street": "TestStreet VQlkPqPNRP",
+              "house": 430,
+              "flat": 9367
+            },
+            "finalDate": "2027-01-21T00:00:00.000Z",
+            "condition": "Delivery"
+          },
+          "changedOn": "2026-05-06T21:47:25.000Z",
+          "action": "Delivery Scheduled",
+          "performer": {
+            "_id": "69fbaea89b4f76ec7eefed7d",
+            "username": "admin@example.com",
+            "firstName": "Admin",
+            "lastName": "Admin",
+            "roles": [
+              "ADMIN"
+            ],
+            "createdOn": "2026/05/06 21:12:08"
+          },
+          "assignedManager": null
+        },
+        {
+          "status": "Draft",
+          "customer": "69fbb6ed9b4f76ec7ef01d44",
+          "products": [
+            {
+              "_id": "69fbb6ed9b4f76ec7ef01d49",
+              "name": "Test oKDmEqsKig",
+              "amount": 246,
+              "price": 83544,
+              "manufacturer": "Amazon",
+              "notes": "Notes VRdFLVInGI",
+              "received": false
+            }
+          ],
+          "total_price": 83544,
+          "delivery": null,
+          "changedOn": "2026-05-06T21:47:25.000Z",
+          "action": "Order created",
+          "performer": {
+            "_id": "69fbaea89b4f76ec7eefed7d",
+            "username": "admin@example.com",
+            "firstName": "Admin",
+            "lastName": "Admin",
+            "roles": [
+              "ADMIN"
+            ],
+            "createdOn": "2026/05/06 21:12:08"
+          },
+          "assignedManager": null
+        }
+      ],
+      "assignedManager": null
+    },
+    "IsSuccess": true,
+    "ErrorMessage": null
+  }
+}

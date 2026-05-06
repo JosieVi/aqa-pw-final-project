@@ -1,0 +1,88 @@
+{
+  "headers": {
+    "x-powered-by": "Express",
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "Authorization,X-User-Name",
+    "content-type": "application/json; charset=utf-8",
+    "content-length": "1598",
+    "etag": "W/\"63e-7+2uWfVukjuyLeUq5z/r+MWNl8w\"",
+    "date": "Wed, 06 May 2026 21:47:22 GMT",
+    "connection": "keep-alive",
+    "keep-alive": "timeout=5"
+  },
+  "body": {
+    "Order": {
+      "_id": "69fbb6ea9b4f76ec7ef016b8",
+      "status": "Draft",
+      "customer": {
+        "_id": "69fbb6ea9b4f76ec7ef016a2",
+        "email": "test1778104042377_PEKL@example.com",
+        "name": "test SOszASQDcAekZZmFXZnKiPyeuhCGdXAJMrp",
+        "country": "Belarus",
+        "city": "testCity EDoLJrjHrxx",
+        "street": "testStreet hQ0DYXyCzNXVM3LdMFtmqOqXKCjdt",
+        "house": 521,
+        "flat": 4395,
+        "phone": "+6269647013",
+        "createdOn": "2026-05-06T21:47:22.000Z",
+        "notes": "Notes CEgfQRDfaSZICcIiICKmnSBYZqmJqpIEaezermEHVVJNZJiuhwCQXUbSSbGAhuhyTsvKnnVKiLRAtyaDguSDMWrdUfeBIPbDTlKupevBUKGdECzCTRsdiCRWPSGYawfvXcQDRrtIeSpiGNoRaLCyfOnBeQVYtZavPIhxGFKnPWsWtoUpaJpDWhOKeaGPlZzZOJKcgGSkLcScPPEelhtsIwRRsDBaJmJBAUpgWTVTaFdiFkVVxLmm"
+      },
+      "products": [
+        {
+          "_id": "69fbb6ea9b4f76ec7ef016ab",
+          "name": "Test pZyWPnSIbd",
+          "amount": 520,
+          "price": 82070,
+          "manufacturer": "Apple",
+          "notes": "Notes nPcxmRGAsi",
+          "received": false
+        }
+      ],
+      "delivery": null,
+      "total_price": 82070,
+      "createdOn": "2026-05-06T21:47:22.000Z",
+      "comments": [
+        {
+          "text": "Notes PDNKyfqjNwPZtzU",
+          "createdOn": "2026-05-06T21:47:22.000Z",
+          "_id": "69fbb6ea9b4f76ec7ef016c3"
+        }
+      ],
+      "history": [
+        {
+          "status": "Draft",
+          "customer": "69fbb6ea9b4f76ec7ef016a2",
+          "products": [
+            {
+              "_id": "69fbb6ea9b4f76ec7ef016ab",
+              "name": "Test pZyWPnSIbd",
+              "amount": 520,
+              "price": 82070,
+              "manufacturer": "Apple",
+              "notes": "Notes nPcxmRGAsi",
+              "received": false
+            }
+          ],
+          "total_price": 82070,
+          "delivery": null,
+          "changedOn": "2026-05-06T21:47:22.000Z",
+          "action": "Order created",
+          "performer": {
+            "_id": "69fbaea89b4f76ec7eefed7d",
+            "username": "admin@example.com",
+            "firstName": "Admin",
+            "lastName": "Admin",
+            "roles": [
+              "ADMIN"
+            ],
+            "createdOn": "2026/05/06 21:12:08"
+          },
+          "assignedManager": null
+        }
+      ],
+      "assignedManager": null
+    },
+    "IsSuccess": true,
+    "ErrorMessage": null
+  }
+}

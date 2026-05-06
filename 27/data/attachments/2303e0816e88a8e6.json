@@ -1,0 +1,26 @@
+{
+  "headers": {
+    "x-powered-by": "Express",
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "Authorization,X-User-Name",
+    "content-type": "application/json; charset=utf-8",
+    "content-length": "224",
+    "etag": "W/\"e0-XE9uTvwp41h0RhrhrnjY46vExFg\"",
+    "date": "Wed, 06 May 2026 21:47:20 GMT",
+    "connection": "keep-alive",
+    "keep-alive": "timeout=5"
+  },
+  "body": {
+    "Product": {
+      "name": "Test PEVXabXXss",
+      "amount": 996,
+      "price": 8099,
+      "manufacturer": "Google",
+      "createdOn": "2026-05-06T21:47:20.000Z",
+      "notes": "Notes oexnMkDVfA",
+      "_id": "69fbb6e89b4f76ec7ef01247"
+    },
+    "IsSuccess": true,
+    "ErrorMessage": null
+  }
+}
