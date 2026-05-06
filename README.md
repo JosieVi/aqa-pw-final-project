@@ -1,6 +1,6 @@
 # 🎯 AQA Playwright Final Project
 
-[![Playwright](https://img.shields.io/badge/Playwright-%5E1.51-45ba4b?logo=playwright)](https://playwright.dev/)
+[![Playwright](https://img.shields.io/badge/Playwright-%5E1.59-45ba4b?logo=playwright)](https://playwright.dev/)
 [![TypeScript](https://img.shields.io/badge/Language-TypeScript-3178c6?logo=typescript)](https://www.typescriptlang.org/)
 [![Node.js](https://img.shields.io/badge/node.js-%3E%3D18-339933?logo=nodedotjs)](https://nodejs.org/)
 [![Lint](https://img.shields.io/badge/Lint-ESLint-4B32C3?logo=eslint)](https://eslint.org/)
@@ -17,13 +17,15 @@ The suite validates order and customer flows in a sales application: REST API ch
 
 ## 🏗 Architecture (high level)
 
-| Layer | Role |
-|--------|------|
-| **Application under test** | `docker-compose.yml` brings up **MongoDB**, optional **mongo-express**, **backend** (`ghcr.io/josievi/sales-backend:latest`), and **frontend** (`ghcr.io/josievi/sales-frontend:latest`). Ports and secrets are driven by `.env`. |
-| **Playwright projects** | **`setup`** (`src/auth`) — API login and `storageState` written to `src/.auth/user.json`. **`sales-portal-ui`** — UI specs under `src/ui/tests`, uses saved storage. **`sales-portal-api`** — API specs under `src/api/tests`, uses `APIRequestContext` with `baseURL` from config. Both depend on **`setup`**. |
-| **Fixtures** | `controllers.fixture` → HTTP controllers; `api-services.fixture` exposes services plus **`workerToken`** (`scope: 'worker'`); factories (`customerFactory`, `productFactory`, `orderFactory`) and UI services merge in `index.fixture` (composition root). |
-| **Assertions** | `fixtures/index.fixture` re-exports `expect` from `src/utils/validations/customMatchers.ts` (extended with **`toMatchSchema`** via a shared **Ajv** instance). |
-| **CI** | `.github/workflows/playwright.yml` checks out the repo, logs into GHCR, creates `.env` from secrets, runs `docker compose up -d`, installs browsers, and runs `npx playwright test`. |
+| Layer                      | Role                                                                                                                                                                                                                                                                                                                                                                   |
+| -------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Application under test** | `docker-compose.yml` brings up **MongoDB**, optional **mongo-express**, **backend** (`ghcr.io/josievi/sales-backend:latest`), **frontend** (`ghcr.io/josievi/sales-frontend:latest`), **InfluxDB** (metrics storage), and **Grafana** (metrics dashboard). Ports and secrets are driven by `.env`.                                                                     |
+| **Playwright projects**    | **`sales-portal-ui`** — UI specs under `src/ui/tests`, uses worker-scoped auth cookies. **`sales-portal-api`** — API specs under `src/api/tests`, uses `APIRequestContext` with `baseURL` from config.                                                                                                                                                                 |
+| **Authentication**         | No `storageState` file. Instead, `ui-auth.fixture.ts` performs **one API login per worker** and injects the JWT as a browser cookie (`workerAuthCookies`, `scope: 'worker'`). Each test gets a fresh `authPage` with those cookies applied.                                                                                                                            |
+| **Fixtures**               | `controllers.fixture` → HTTP controllers; `api-services.fixture` exposes services plus **`workerToken`** (`scope: 'worker'`); `pages.fixture` → page objects; `ui-services.fixture` → UI services; `mock.fixture` → network mocking; factories (`customerFactory`, `productFactory`, `orderFactory`) and all of the above merge in `index.fixture` (composition root). |
+| **Assertions**             | `fixtures/index.fixture` re-exports `expect` from `src/utils/validations/customMatchers.ts` (extended with **`toMatchSchema`** via a shared **Ajv** instance).                                                                                                                                                                                                         |
+| **Metrics**                | `src/utils/reporters/InfluxReporter.ts` — custom Playwright reporter that pushes test results to **InfluxDB** for visualization in **Grafana**.                                                                                                                                                                                                                        |
+| **CI**                     | `.github/workflows/playwright.yml` checks out the repo, logs into GHCR, creates `.env` from secrets, runs `docker compose up -d`, installs browsers, runs `npx playwright test`, publishes **Allure** report to **GitHub Pages**, and sends a **Slack** notification with the result.                                                                                  |
 
 ```mermaid
 flowchart LR
@@ -31,35 +33,40 @@ flowchart LR
     FE[Frontend]
     BE[Backend]
     DB[(MongoDB)]
+    INFLUX[(InfluxDB)]
+    GRAFANA[Grafana]
   end
   subgraph pw [Playwright]
-    SETUP[setup project]
     UI[sales-portal-ui]
     API[sales-portal-api]
   end
-  SETUP --> UI
-  SETUP --> API
   UI --> FE
   API --> BE
   BE --> DB
+  pw -- metrics --> INFLUX
+  INFLUX --> GRAFANA
 ```
 
 ---
 
 ## 🧰 Tech stack
 
-| Tool | Notes |
-|------|--------|
-| **Node.js** | >= **18.x** (`.github/workflows/playwright.yml` uses 18); **20.x LTS** recommended for local development. |
-| **npm** | Lockfile: `package-lock.json`. |
-| **TypeScript** | `module` / resolution: **NodeNext** (`tsconfig.json`). |
-| **@playwright/test** | ^1.51.x |
-| **ESLint 9** + **typescript-eslint** | Flat config: `eslint.config.mjs`. |
-| **Prettier** | `.prettierrc`, `.prettierignore`. |
-| **Allure** | `allure-playwright` + `allure-commandline` for reports. |
-| **Ajv** + **ajv-formats** | JSON Schema validation; custom `expect` matcher. |
-| **dotenv** | Loaded in `playwright.config.ts`. |
-| **Husky** | Git hooks via `npm run prepare`. |
+| Tool                                 | Notes                                                                                                     |
+| ------------------------------------ | --------------------------------------------------------------------------------------------------------- |
+| **Node.js**                          | >= **18.x** (`.github/workflows/playwright.yml` uses 18); **20.x LTS** recommended for local development. |
+| **npm**                              | Lockfile: `package-lock.json`.                                                                            |
+| **TypeScript**                       | `module` / resolution: **NodeNext** (`tsconfig.json`).                                                    |
+| **@playwright/test**                 | ^1.59.x                                                                                                   |
+| **ESLint 9** + **typescript-eslint** | Flat config: `eslint.config.mjs`.                                                                         |
+| **Prettier**                         | `.prettierrc`, `.prettierignore`.                                                                         |
+| **Allure**                           | `allure-playwright` ^3.x + `allure-commandline` for reports; history published to **GitHub Pages**.       |
+| **Ajv** + **ajv-formats**            | JSON Schema validation; custom `expect` matcher.                                                          |
+| **dotenv**                           | Loaded in `playwright.config.ts`.                                                                         |
+| **Husky**                            | Git hooks via `npm run prepare`.                                                                          |
+| **@influxdata/influxdb-client**      | Used by `InfluxReporter` to push metrics to InfluxDB.                                                     |
+| **winston**                          | Logging inside utilities and reporters.                                                                   |
+| **@faker-js/faker**                  | Test data generation in factories.                                                                        |
+| **lodash** / **moment** / **bson**   | Utility helpers used across the project.                                                                  |
 
 ---
 
@@ -69,23 +76,25 @@ Copy `.env.dist` to `.env` and fill values. Variables used **directly by tests**
 
 ### Tests and Playwright
 
-| Variable | Description |
-|----------|-------------|
-| `USER_LOGIN` | User login for API/UI auth flows. |
-| `USER_PASSWORD` | User password. |
-| `SALES_PORTAL_URL` | Frontend base URL (Playwright `baseURL` for UI + setup). |
-| `API_BASE_URL` | Backend API base URL (`apiConfig.BASE_URL`, setup + API project). |
-| `CI` | When set, Playwright uses fewer workers and enables retries (`playwright.config.ts`). |
-| `SKIP_CLEAN` | If set, skips clearing/recreating `allure-results` at config load time. |
+| Variable           | Description                                                                               |
+| ------------------ | ----------------------------------------------------------------------------------------- |
+| `USER_LOGIN`       | User login for API/UI auth flows.                                                         |
+| `USER_PASSWORD`    | User password.                                                                            |
+| `SALES_PORTAL_URL` | Frontend base URL (Playwright `baseURL` for UI project).                                  |
+| `API_BASE_URL`     | Backend API base URL (`apiConfig.BASE_URL`, used by API project and auth fixtures).       |
+| `CI`               | When set, Playwright uses fewer workers (2) and enables retries (`playwright.config.ts`). |
+| `INFLUX_URL`       | InfluxDB endpoint for the custom metrics reporter.                                        |
+| `INFLUX_TOKEN`     | Auth token for InfluxDB.                                                                  |
+| `ENVIRONMENT`      | Tag sent to InfluxDB/Grafana to identify the environment (e.g. `ci`, `local`).            |
 
 ### Docker Compose (see `.env.dist`)
 
-| Variable | Description |
-|----------|-------------|
-| `MONGO_IMAGE_VERSION`, `MONGO_CONTAINER_NAME`, `MONGO_PORT` | MongoDB image and port mapping. |
-| `MONGO_EXPRESS_*`, `ME_CONFIG_*` | mongo-express container and basic auth to Mongo. |
-| `BACKEND_CONTAINER_NAME`, `BACKEND_PORT`, `PORT`, `SECRET_KEY`, `ENVIRONMENT`, `MONGO_URI_LOCAL` | Backend service. |
-| `FRONTEND_CONTAINER_NAME`, `FRONTEND_PORT` | Frontend service. |
+| Variable                                                                                         | Description                                      |
+| ------------------------------------------------------------------------------------------------ | ------------------------------------------------ |
+| `MONGO_IMAGE_VERSION`, `MONGO_CONTAINER_NAME`, `MONGO_PORT`                                      | MongoDB image and port mapping.                  |
+| `MONGO_EXPRESS_CONTAINER_NAME`, `MONGO_EXPRESS_PORT`, `ME_CONFIG_*`                              | mongo-express container and basic auth to Mongo. |
+| `BACKEND_CONTAINER_NAME`, `BACKEND_PORT`, `PORT`, `SECRET_KEY`, `ENVIRONMENT`, `MONGO_URI_LOCAL` | Backend service.                                 |
+| `FRONTEND_CONTAINER_NAME`, `FRONTEND_PORT`                                                       | Frontend service.                                |
 
 > **Note:** Ensure `SALES_PORTAL_URL` / `API_BASE_URL` match the URLs where Compose (or your manual stack) exposes the frontend and API (e.g. `http://localhost:<FRONTEND_PORT>` and `http://localhost:<BACKEND_PORT>`).
 
@@ -164,23 +173,23 @@ npm run typecheck
 
 ## ⚙️ Developer scripts
 
-| Command | Description |
-|---------|-------------|
-| `npm run lint` | ESLint over the project. |
-| `npm run lint-fix` | ESLint with `--fix`. |
-| `npm run format` | Prettier check on `src/**/*.ts`. |
-| `npm run format-fix` | Prettier write on `src/**/*.ts`. |
-| `npm run typecheck` | `tsc --noEmit`. |
-| `npm run test:ui` | All UI tests (`--project=sales-portal-ui`). |
-| `npm run test:api` | All API tests (`--project=sales-portal-api`). |
-| `npm run test:ui:smoke` | UI tests filtered by `@smoke`. |
-| `npm run test:api:smoke` | API tests filtered by `@smoke`. |
-| `npm run ui-mode` | Playwright UI mode. |
-| `npm run report-html-open` | Open the HTML report (`playwright show-report`). |
-| `npm run allure-report` | Generate Allure report from `allure-results`. |
-| `npm run allure-report-open` | Generate and open Allure report. |
+| Command                      | Description                                      |
+| ---------------------------- | ------------------------------------------------ |
+| `npm run lint`               | ESLint over the project.                         |
+| `npm run lint-fix`           | ESLint with `--fix`.                             |
+| `npm run format`             | Prettier check on `src/**/*.ts`.                 |
+| `npm run format-fix`         | Prettier write on `src/**/*.ts`.                 |
+| `npm run typecheck`          | `tsc --noEmit`.                                  |
+| `npm run test:ui`            | All UI tests (`--project=sales-portal-ui`).      |
+| `npm run test:api`           | All API tests (`--project=sales-portal-api`).    |
+| `npm run test:ui:smoke`      | UI tests filtered by `@smoke`.                   |
+| `npm run test:api:smoke`     | API tests filtered by `@smoke`.                  |
+| `npm run ui-mode`            | Playwright UI mode.                              |
+| `npm run report-html-open`   | Open the HTML report (`playwright show-report`). |
+| `npm run allure-report`      | Generate Allure report from `allure-results`.    |
+| `npm run allure-report-open` | Generate and open Allure report.                 |
 
-`pretest` clears `allure-results` and runs automatically when you use **`npm test`** (add a `test` script if you want a single entrypoint).
+`pretest` clears `allure-results` and runs automatically before `npm test`.
 
 ---
 
@@ -220,6 +229,8 @@ npm run allure-report
 npm run allure-report-open
 ```
 
+In CI, the Allure report is automatically published to **GitHub Pages** and a **Slack** notification is sent with a link to the report and the GitHub Actions run.
+
 ---
 
 ## 🔄 Git
@@ -235,19 +246,40 @@ git commit -am "commit message" -n   # skip hooks where appropriate
 
 ```text
 aqa-pw-final-project
-├── .github/workflows          # CI (Playwright + Docker)
+├── .github/workflows          # CI (Playwright + Docker + Allure + Slack)
 ├── .husky                     # Git hooks
 ├── src
 │   ├── api                    # Controllers, services, API tests, schemas
-│   ├── auth                   # Storage-state setup (`*.setup.ts`)
-│   ├── config                 # `api-config`, environment
-│   ├── data                   # Test data, JSON schemas, tags
-│   ├── fixtures               # Playwright fixtures (API, UI, factories, index)
-│   ├── types                  # Shared types
+│   │   ├── apiClients/        # Low-level HTTP clients
+│   │   ├── controllers/       # Request builders (customers, orders, products, managers, signIn)
+│   │   ├── services/          # Business-logic wrappers over controllers
+│   │   └── tests/             # API specs (customers/, orders/, products/)
+│   ├── auth                   # Reserved for auth setup (currently unused)
+│   ├── config                 # `api-config.ts` (endpoints), `environment.ts` (env vars)
+│   ├── data                   # Test data, JSON schemas, tags, status codes, UI texts
+│   ├── fixtures               # Playwright fixtures
+│   │   ├── index.fixture.ts   # Composition root — merge all fixtures, re-export expect
+│   │   ├── controllers.fixture.ts
+│   │   ├── api-services.fixture.ts  # API services + workerToken (worker scope)
+│   │   ├── ui-auth.fixture.ts       # Worker-scoped auth cookies + authPage
+│   │   ├── pages.fixture.ts         # All page objects
+│   │   ├── ui-services.fixture.ts   # UI service layer
+│   │   ├── mock.fixture.ts          # Network mocking helper
+│   │   ├── customerFactory.fixture.ts
+│   │   ├── productFactory.fixture.ts
+│   │   └── orderFactory.fixture.ts
+│   ├── types                  # Shared TypeScript interfaces
 │   ├── ui                     # Page objects, UI services, UI tests
-│   └── utils                  # Helpers, validations, custom `expect`
+│   │   ├── pages/             # Page objects (base, orders, managers, modals, delivery)
+│   │   ├── services/          # UI service layer (home, signIn, orderDetails, orderSetup)
+│   │   └── tests/             # UI specs (orders/smoke, orders/criticalPath, orders/checkUI)
+│   └── utils                  # Helpers, validations, custom `expect`, reporters
+│       ├── reporters/
+│       │   └── InfluxReporter.ts   # Custom reporter → InfluxDB → Grafana
+│       └── validations/
+│           └── customMatchers.ts   # Extended expect with toMatchSchema
 ├── .env.dist                  # Environment template
-├── docker-compose.yml         # Local Mongo + backend + frontend
+├── docker-compose.yml         # Local Mongo + backend + frontend + InfluxDB + Grafana
 ├── eslint.config.mjs          # ESLint flat config
 ├── package.json
 ├── playwright.config.ts       # Projects, reporters, workers
@@ -269,14 +301,25 @@ import { expect, test } from 'fixtures/index.fixture';
 
 ### Worker token and controllers
 
-API tests typically use `workerToken` with a controller from fixtures, for example:
+API tests typically use `workerToken` with a service from fixtures, for example:
 
 ```typescript
-test('example', async ({ workerToken, customersController, dataDisposalUtils }) => {
-  const response = await customersController.create(payload, workerToken);
-  dataDisposalUtils.trackCustomer(response.body.Customer._id);
+test('example', async ({ workerToken, customersApiService, dataDisposalUtils }) => {
+  const customer = await customersApiService.createCustomer(workerToken, payload);
+  dataDisposalUtils.trackCustomer(customer._id);
   // ... assertions
 });
+```
+
+### DataDisposalUtils — tracking created entities
+
+`dataDisposalUtils` tracks created entities and deletes them after each test (`tearDown` is called automatically in the fixture). Available tracking methods:
+
+```typescript
+dataDisposalUtils.trackCustomer(id);
+dataDisposalUtils.trackProduct(id);
+dataDisposalUtils.trackOrder(id);
+dataDisposalUtils.trackManager(id);
 ```
 
 ### JSON Schema assertion
@@ -325,15 +368,17 @@ If you need a clean database while using Docker Desktop:
    exit
    ```
 
-Parallel workers hammering the same login can cause backend or Mongo uniqueness issues; the **`workerToken`** fixture is intended to perform **one login per worker** to reduce that load.
+Parallel workers hammering the same login can cause backend or Mongo uniqueness issues; the **`workerToken`** and **`workerAuthCookies`** fixtures are intended to perform **one login per worker** to reduce that load.
 
 ---
 
 ## 🏆 Technologies used
 
-- [Playwright](https://playwright.dev/) — browser and API testing  
-- [TypeScript](https://www.typescriptlang.org/) — typed test code  
-- [ESLint](https://eslint.org/) — linting  
-- [Prettier](https://prettier.io/) — formatting  
-- [Allure](https://docs.qameta.io/allure/) — test reporting  
-- [Ajv](https://ajv.js.org/) — JSON Schema validation in custom matchers  
+- [Playwright](https://playwright.dev/) — browser and API testing
+- [TypeScript](https://www.typescriptlang.org/) — typed test code
+- [ESLint](https://eslint.org/) — linting
+- [Prettier](https://prettier.io/) — formatting
+- [Allure](https://docs.qameta.io/allure/) — test reporting (with GitHub Pages history)
+- [Ajv](https://ajv.js.org/) — JSON Schema validation in custom matchers
+- [InfluxDB](https://www.influxdata.com/) + [Grafana](https://grafana.com/) — metrics collection and visualization via custom reporter
+- [@faker-js/faker](https://fakerjs.dev/) — test data generation
