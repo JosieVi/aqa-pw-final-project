@@ -13,6 +13,13 @@ export class EditOrderModal extends ManagmentOrderModal {
     await this.saveButton.click();
   }
 
+  @logStep('Click Save button and wait for API response')
+  async clickSaveAndWaitForResponse(): Promise<void> {
+    // Intercept the PUT/PATCH response so we know the backend has processed
+    // the update before we start asserting the updated DOM state
+    await Promise.all([this.page.waitForResponse((resp) => resp.url().includes('/api/orders') && resp.status() === 200), this.saveButton.click()]);
+  }
+
   @logStep('Check if Save button is enabled')
   async isSaveEnabled(): Promise<boolean> {
     return await this.saveButton.isEnabled();

@@ -4,9 +4,13 @@ import { expect, test } from 'fixtures/index.fixture';
 
 test.describe('[UI] [Orders] [Sales Portal] Health Check', () => {
   test.describe('[UI] [Orders] Login via services', () => {
-    test('Should login to Sales Portal by openAsLoggedInUser and get token', { tag: [TAGS.SMOKE] }, async ({ homeUIService }) => {
+    test('Should login to Sales Portal by openAsLoggedInUser and get token', { tag: [TAGS.SMOKE] }, async ({ homeUIService, page }) => {
       await homeUIService.openAsLoggedInUser();
-      // const await page.context().cookies()).find((c) => c.name === 'Authorization'!.value;
+      // Verify that the Authorization cookie is present and non-empty after login
+      const cookies = await page.context().cookies();
+      const authCookie = cookies.find((c) => c.name === 'Authorization');
+      expect(authCookie).toBeDefined();
+      expect(authCookie!.value).toBeTruthy();
     });
 
     test('Should login to Sales Portal by loginAsLocalUser and get token', { tag: [TAGS.SMOKE] }, async ({ signInApiService }) => {
@@ -203,6 +207,7 @@ test.describe('[UI] [Orders] [Sales Portal] Health Check', () => {
       await ordersPage.clickDetailsButton(orderId);
       await orderDetailsPage.receivedProductsSection.waitForOpened();
       await expect(orderDetailsPage.receivedProductsSection.receiveButton).toBeVisible();
+
       await orderDetailsPage.receivedProductsSection.clickReceiveButton();
 
       // Assert - initial state

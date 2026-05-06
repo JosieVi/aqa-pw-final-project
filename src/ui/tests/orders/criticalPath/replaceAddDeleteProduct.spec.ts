@@ -33,7 +33,9 @@ test.describe('[UI] [Orders] [Order Details] [Edit Products] Replace/add/delete 
 
     await orderDetailsPage.editProductsInOrderModal.selectProductAtPosition(secondProductName, 1);
 
-    await orderDetailsPage.editProductsInOrderModal.clickSave();
+    // Use clickSaveAndWaitForResponse to ensure the backend has processed the update
+    // before asserting the DOM state — prevents race condition between API response and re-render
+    await orderDetailsPage.editProductsInOrderModal.clickSaveAndWaitForResponse();
     await orderDetailsPage.waitForSpinner();
 
     const updatedProductNames = await orderDetailsPage.receivedProductsSection.getAllProductNames();
@@ -50,7 +52,9 @@ test.describe('[UI] [Orders] [Order Details] [Edit Products] Replace/add/delete 
 
     await orderDetailsPage.editProductsInOrderModal.selectProductAtPosition(firstProductName, totalProducts);
 
-    await orderDetailsPage.editProductsInOrderModal.clickSave();
+    // Use clickSaveAndWaitForResponse to ensure the backend has processed the update
+    // before asserting the DOM state — prevents race condition between API response and re-render
+    await orderDetailsPage.editProductsInOrderModal.clickSaveAndWaitForResponse();
     await orderDetailsPage.waitForSpinner();
 
     const updatedProductNames = await orderDetailsPage.receivedProductsSection.getAllProductNames();
@@ -63,7 +67,9 @@ test.describe('[UI] [Orders] [Order Details] [Edit Products] Replace/add/delete 
     const initialCount = await orderDetailsPage.editProductsInOrderModal.productsList.count();
     await orderDetailsPage.editProductsInOrderModal.removeProduct(0);
 
-    await orderDetailsPage.editProductsInOrderModal.clickSave();
+    // Use clickSaveAndWaitForResponse to ensure the backend has processed the update
+    // before asserting the DOM state — prevents race condition between API response and re-render
+    await orderDetailsPage.editProductsInOrderModal.clickSaveAndWaitForResponse();
     await orderDetailsPage.waitForSpinner();
 
     const updatedProductNames = await orderDetailsPage.receivedProductsSection.getAllProductNames();

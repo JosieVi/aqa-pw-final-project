@@ -14,9 +14,9 @@ export default defineConfig({
 
   use: {
     baseURL: SALES_PORTAL_URL,
-    trace: 'on-first-retry',
     screenshot: 'only-on-failure',
     video: 'on-first-retry',
+    trace: 'on-first-retry',
   },
 
   projects: [

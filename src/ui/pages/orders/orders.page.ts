@@ -116,13 +116,22 @@ export class OrdersPage extends SalesPortalPage {
     return await cell.innerText();
   }
 
+  @logStep('Wait for order row to appear in the table')
+  async waitForOrderRow(orderNumber: string, timeout = 15000): Promise<void> {
+    await this.tableRowByOrderNumber(orderNumber).waitFor({ state: 'visible', timeout });
+  }
+
   @logStep('Click Details Button on Orders List')
   async clickDetailsButton(orderNumber: string): Promise<void> {
+    // Wait for the row to be visible before clicking to avoid race conditions
+    // when the table is still loading after API data arrives
+    await this.waitForOrderRow(orderNumber);
     await this.getActionButtonInRow(orderNumber, 'details').click();
   }
 
   @logStep('Click Reopen Button on Orders List')
   async clickReopenButton(orderNumber: string): Promise<void> {
+    await this.waitForOrderRow(orderNumber);
     await this.getActionButtonInRow(orderNumber, 'reopen').click();
   }
 
@@ -155,8 +164,11 @@ export class OrdersPage extends SalesPortalPage {
           return;
         }
 
-        await this.clickColumnHeaderForSort(columnName);
-        await this.page.waitForTimeout(300);
+        // Wait for the API response instead of a static timeout to avoid flakiness
+        await Promise.all([
+          this.page.waitForResponse((resp) => resp.url().includes('/api/orders') && resp.status() === 200).catch(() => {}),
+          this.clickColumnHeaderForSort(columnName),
+        ]);
       }
     });
   }
