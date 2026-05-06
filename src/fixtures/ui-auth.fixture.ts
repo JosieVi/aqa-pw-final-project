@@ -28,6 +28,7 @@ export const authFixture = base.extend<IAuthTestFixtures, IWorkerAuthFixtures>({
     async ({ playwright }, use) => {
       const apiContext = await playwright.request.newContext({
         baseURL: apiConfig.BASE_URL,
+        timeout: 5000,
       });
 
       const controller = new SignInController(apiContext);
